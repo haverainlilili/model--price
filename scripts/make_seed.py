@@ -1,7 +1,7 @@
 """生成/刷新种子数据 data/providers/*.json + data/news/*.json + 变动流水。
 
 种子数据是对各厂商官网页面的手工抓取整理(2026-08-31 从各官网刷新,
-抓取脚本 /tmp/fetch_fresh.py), 让站点在配置 ANTHROPIC_API_KEY(自动
+抓取脚本 /tmp/fetch_fresh.py), 让站点在配置 OPENAI_API_KEY(自动
 抽取)之前不至于空白; source 标为 "seed", 首次 Claude 抽取成功后自动
 替换(站点上显示「种子数据 · 待校准」徽标)。
 用法: .venv/bin/python3 scripts/make_seed.py

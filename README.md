@@ -47,7 +47,7 @@ providers.yaml        # 厂商入口配置 —— 增删厂商只改这个文件
 scraper/
   fetch.py            # 抓取层: requests + 无头浏览器(渲染 JS 页面)
   models.py           # Pydantic 抽取 schema (价格页 / 公告页)
-  extract.py          # Claude 结构化抽取 (anthropic SDK)
+  extract.py          # OpenAI 结构化抽取 (openai SDK)
   history.py          # 数据持久化 + 价格 diff
   fx.py               # 汇率
   run.py              # 主流程
@@ -61,7 +61,7 @@ scripts/make_seed.py  # 一次性种子数据(首次抽取前的初始展示)
 ## 自部署
 
 1. Fork 或复制本仓库。
-2. 在仓库 **Settings → Secrets and variables → Actions** 添加 `ANTHROPIC_API_KEY`(Claude API 密钥)。不配置也能跑，但只有种子数据、不会抽取新内容。
+2. 在仓库 **Settings → Secrets and variables → Actions** 添加 `OPENAI_API_KEY`(OpenAI 系 API 密钥)。不配置也能跑，但只有种子数据、不会抽取新内容。
 3. 在 **Settings → Pages** 把 Source 设为 **GitHub Actions**。
 4. 手动触发一次 workflow(Actions → update → Run workflow)验证，之后每小时自动运行。
 
@@ -70,7 +70,7 @@ scripts/make_seed.py  # 一次性种子数据(首次抽取前的初始展示)
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/playwright install chromium   # 渲染智谱/火山方舟的 JS 页面需要
-export ANTHROPIC_API_KEY=sk-...
+export OPENAI_API_KEY=sk-...
 .venv/bin/python -m scraper             # 抓取 + 抽取 + 建站
 .venv/bin/python -m scraper --build-only  # 只重建站点
 .venv/bin/python -m scraper --only zhipu  # 只处理单个厂商(调试)

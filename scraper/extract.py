@@ -1,29 +1,32 @@
-"""Claude 结构化抽取: 官网价格页 -> PricingPage, 公告页 -> NewsPage。
+"""OpenAI 系接口结构化抽取: 官网价格页 -> PricingPage, 公告页 -> NewsPage。
 
 实现要点(为什么这样写):
-- 官方 anthropic SDK 的 client.messages.parse(output_format=模型):
-  内部等价于 output_config={"format": {"type": "json_schema", ...}}, 响应
-  经 Pydantic 校验, 校验不过 SDK 会自动带错误重试 —— 不需要自己写
-  "请输出 JSON" 的解析循环。
-- 模型默认 claude-opus-5; 可用环境变量 CLAUDE_MODEL 覆盖(如
-  claude-sonnet-5, 抽取成本约为 opus-5 的 40%)。
-- thinking 用自适应模式({"type": "adaptive"}): 解析混乱的 HTML 表格时
-  自动启用推理。遇到 400(个别参数组合不被接受)会自动降级重试一次。
-- system 和页面文本都加了 cache_control: SDK 对 429/5xx 的自动重试会
-  命中前缀缓存, 重试几乎不额外花钱。
-- 需要 ANTHROPIC_API_KEY 环境变量; 没有密钥时上层(run.py)直接跳过抽取。
+- openai SDK 自动读环境变量 OPENAI_API_KEY / OPENAI_BASE_URL, 所以
+  OpenAI 官方 API、各类中转/网关、本地推理服务都只靠 .env(本地)或
+  Secrets/Variables(CI)配置, 代码零改动。
+- 结构化输出用 response_format={"type":"json_object"} + 提示词内嵌
+  JSON Schema, 响应经 Pydantic 校验, 校验不过带错误自动重试一次。
+  不用 json_schema 严格模式: 它要求所有字段必填, 与本 schema 的大量
+  Optional 字段冲突, 且不少兼容端点不支持。
+- 抽取模型由 OPENAI_MODEL 指定, 默认 gpt-5.6-sol。
+- 需要 OPENAI_API_KEY; 没有密钥时上层(run.py)直接跳过抽取。
 """
 from __future__ import annotations
 
+import json
 import os
 
-import anthropic
+import openai
+from pydantic import BaseModel, ValidationError
 
 from .models import NewsPage, PricingPage
 
-MODEL = os.environ.get("CLAUDE_MODEL") or "claude-opus-5"
+MODEL = os.environ.get("OPENAI_MODEL") or "gpt-5.6-sol"
 MAX_PAGE_CHARS = 250_000
-MAX_TOKENS = 24000
+MAX_OUTPUT_TOKENS = 24000
+
+# 端点不支持 response_format / max_completion_tokens 时置 True, 之后走最小参数集
+_MINIMAL_PARAMS = False
 
 
 class ExtractionError(RuntimeError):
@@ -56,48 +59,87 @@ NEWS_SYSTEM = """你从厂商官方公告 / changelog / 新闻页文本中抽取
 
 
 def has_api_key() -> bool:
-    return bool(os.environ.get("ANTHROPIC_API_KEY")
-                or os.environ.get("ANTHROPIC_AUTH_TOKEN"))
+    return bool(os.environ.get("OPENAI_API_KEY"))
 
 
-def _parse(client, system: str, user_text: str, output_format):
-    def call(minimal: bool):
-        kwargs = dict(
-            model=MODEL,
-            max_tokens=MAX_TOKENS,
-            system=[{"type": "text", "text": system,
-                     "cache_control": {"type": "ephemeral"}}],
-            messages=[{"role": "user", "content": [
-                {"type": "text", "text": user_text,
-                 "cache_control": {"type": "ephemeral"}},
-            ]}],
-            output_format=output_format,
-        )
-        if not minimal:
-            kwargs["thinking"] = {"type": "adaptive"}
-        return client.messages.parse(**kwargs)
+def _client() -> openai.OpenAI:
+    kwargs = {"timeout": 240.0}
+    base = (os.environ.get("OPENAI_BASE_URL") or "").strip()
+    if base:
+        kwargs["base_url"] = base
+    return openai.OpenAI(**kwargs)
 
+
+def _loads_json(text: str):
+    """解析模型输出; 兼容个别端点在 JSON 外包 ``` 围栏或夹带说明文字。"""
     try:
-        return call(minimal=False)
-    except anthropic.BadRequestError as exc:
-        # 个别参数组合(如 thinking + 结构化输出)在特定网关/版本下可能被拒,
-        # 降级为最小参数集再试一次
+        return json.loads(text)
+    except ValueError:
+        pass
+    start, end = text.find("{"), text.rfind("}")
+    if start >= 0 and end > start:
+        return json.loads(text[start:end + 1])
+    raise ValueError("输出中找不到 JSON 对象")
+
+
+def _create(client: openai.OpenAI, messages: list):
+    global _MINIMAL_PARAMS
+    try:
+        if _MINIMAL_PARAMS:
+            return client.chat.completions.create(model=MODEL, messages=messages)
+        return client.chat.completions.create(
+            model=MODEL,
+            messages=messages,
+            response_format={"type": "json_object"},
+            max_completion_tokens=MAX_OUTPUT_TOKENS,
+        )
+    except openai.BadRequestError:
+        # 端点不认 response_format / max_completion_tokens: 降级为最小参数集
+        if _MINIMAL_PARAMS:
+            raise ExtractionError("请求被拒绝(400), 检查 OPENAI_MODEL 是否为该端点支持的模型") from None
+        _MINIMAL_PARAMS = True
         try:
-            return call(minimal=True)
-        except anthropic.BadRequestError as exc2:
-            raise ExtractionError(f"请求被拒绝(400): {exc2.message}") from exc2
-    except anthropic.RateLimitError as exc:
+            return client.chat.completions.create(model=MODEL, messages=messages)
+        except Exception as exc:
+            raise ExtractionError(f"请求被拒绝(400): {exc}") from exc
+    except openai.RateLimitError as exc:
         raise ExtractionError("限流(429), SDK 自动重试后仍失败") from exc
-    except anthropic.APIStatusError as exc:
+    except openai.AuthenticationError as exc:
+        raise ExtractionError("认证失败: 检查 OPENAI_API_KEY") from exc
+    except openai.APIStatusError as exc:
         raise ExtractionError(f"API 错误({exc.status_code}): {exc.message}") from exc
-    except anthropic.APIConnectionError as exc:
+    except openai.APIConnectionError as exc:
         raise ExtractionError(f"网络错误: {exc}") from exc
-    except anthropic.AuthenticationError as exc:
-        raise ExtractionError("认证失败: 检查 ANTHROPIC_API_KEY") from exc
     except ExtractionError:
         raise
-    except Exception as exc:  # 校验失败等 —— 不能让单厂商异常拖垮整轮
+    except Exception as exc:  # 不能让单厂商异常拖垮整轮
         raise ExtractionError(f"{type(exc).__name__}: {exc}") from exc
+
+
+def _parse(client: openai.OpenAI, system: str, user_text: str,
+           output_type: type[BaseModel]) -> BaseModel:
+    schema = json.dumps(output_type.model_json_schema(), ensure_ascii=False)
+    messages = [
+        {"role": "system", "content":
+            f"{system}\n\n只输出一个 JSON 对象, 结构必须符合下面的 JSON Schema"
+            f"(页面没提到的值一律填 null, 不要编造):\n{schema}"},
+        {"role": "user", "content": user_text},
+    ]
+    last_err: Exception = ValueError("no output")
+    for _ in range(2):
+        resp = _create(client, messages)
+        text = (resp.choices[0].message.content or "").strip()
+        try:
+            return output_type.model_validate(_loads_json(text))
+        except (ValueError, ValidationError) as exc:
+            last_err = exc
+            messages += [
+                {"role": "assistant", "content": text[:4000]},
+                {"role": "user", "content":
+                    f"上面的 JSON 未通过 Schema 校验: {str(exc)[:500]}\n"
+                    "请重新输出修正后的完整 JSON 对象。"},
+            ]
+    raise ExtractionError(f"结构化输出校验失败: {str(last_err)[:300]}")
 
 
 def _page_text_header(provider: str, url: str, page_text: str) -> str:
@@ -109,12 +151,9 @@ def _page_text_header(provider: str, url: str, page_text: str) -> str:
 
 def extract_pricing(provider: str, url: str, page_text: str) -> PricingPage:
     """抽取一个厂商价格页。失败抛 ExtractionError。"""
-    client = anthropic.Anthropic()
+    client = _client()
     user_text = _page_text_header(provider, url, page_text) + "\n请抽取价格表。"
-    resp = _parse(client, PRICING_SYSTEM, user_text, PricingPage)
-    parsed = getattr(resp, "parsed_output", None)
-    if parsed is None:
-        raise ExtractionError("模型未返回可解析的结构化输出")
+    parsed = _parse(client, PRICING_SYSTEM, user_text, PricingPage)
     # 清洗明显异常的行: 空名, 或输入输出都没价(通常是表头/误识别)
     parsed.models = [
         m for m in parsed.models
@@ -126,10 +165,6 @@ def extract_pricing(provider: str, url: str, page_text: str) -> PricingPage:
 
 def extract_news(provider: str, url: str, page_text: str) -> NewsPage:
     """抽取一个厂商公告页。失败抛 ExtractionError。"""
-    client = anthropic.Anthropic()
+    client = _client()
     user_text = _page_text_header(provider, url, page_text) + "\n请抽取公告条目。"
-    resp = _parse(client, NEWS_SYSTEM, user_text, NewsPage)
-    parsed = getattr(resp, "parsed_output", None)
-    if parsed is None:
-        raise ExtractionError("模型未返回可解析的结构化输出")
-    return parsed
+    return _parse(client, NEWS_SYSTEM, user_text, NewsPage)

@@ -3,7 +3,7 @@
 
 设计原则:
 - 任何单厂商失败都不中断整体(保留旧数据, 把错误写进状态)
-- 没有 ANTHROPIC_API_KEY 时跳过抽取, 仅用已有数据建站
+- 没有 OPENAI_API_KEY 时跳过抽取, 仅用已有数据建站
 - 页面内容 hash 没变就完全不调 Claude —— 绝大多数小时级运行是零成本的
 """
 from __future__ import annotations
@@ -72,7 +72,7 @@ def process_provider(cfg: dict) -> None:
         return
 
     if not extract.has_api_key():
-        record["status_note"] = "等待 ANTHROPIC_API_KEY"
+        record["status_note"] = "等待 OPENAI_API_KEY"
         history.save_provider(pid, record)
         print(f"[{pid}] 内容有变化, 但未配置 API key, 保留旧数据")
         return

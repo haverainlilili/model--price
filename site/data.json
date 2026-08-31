@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-08-31T05:24:47Z",
+ "generated_at": "2026-08-31T07:10:00Z",
  "fx": {
   "usd_cny": 6.7209,
-  "source": "frankfurter.dev",
-  "fetched_at": "2026-08-31T05:24:47Z"
+  "source": "frankfurter.app",
+  "fetched_at": "2026-08-31T07:10:00Z"
  },
  "providers": {
   "anthropic": {
@@ -39,7 +39,7 @@
       "output_per_1m": 25,
       "cached_input_per_1m": null,
       "currency": null,
-      "note": null
+      "note": "旧代, 仍可用"
      },
      {
       "model": "claude-opus-4-6",
@@ -47,7 +47,7 @@
       "output_per_1m": 25,
       "cached_input_per_1m": null,
       "currency": null,
-      "note": null
+      "note": "旧代, 仍可用"
      },
      {
       "model": "claude-sonnet-5",
@@ -63,7 +63,7 @@
       "output_per_1m": 15,
       "cached_input_per_1m": null,
       "currency": null,
-      "note": null
+      "note": "旧代, 仍可用"
      },
      {
       "model": "claude-haiku-4-5",
@@ -76,10 +76,8 @@
     ],
     "page_has_pricing": true,
     "price_hash": null,
-    "fetched_at": null,
-    "status_note": "等待 ANTHROPIC_API_KEY",
-    "last_error": null,
-    "last_fetch_ts": "2026-08-31T05:23:43Z"
+    "fetched_at": "2026-08-31T07:10:00Z",
+    "status_note": null
    }
   },
   "openai": {
@@ -280,10 +278,8 @@
     ],
     "page_has_pricing": true,
     "price_hash": null,
-    "fetched_at": null,
-    "status_note": "等待 ANTHROPIC_API_KEY",
-    "last_error": null,
-    "last_fetch_ts": "2026-08-31T05:23:44Z"
+    "fetched_at": "2026-08-31T07:10:00Z",
+    "status_note": null
    }
   },
   "google": {
@@ -372,10 +368,8 @@
     ],
     "page_has_pricing": true,
     "price_hash": null,
-    "fetched_at": null,
-    "status_note": "等待 ANTHROPIC_API_KEY",
-    "last_error": null,
-    "last_fetch_ts": "2026-08-31T05:23:44Z"
+    "fetched_at": "2026-08-31T07:10:00Z",
+    "status_note": null
    }
   },
   "xai": {
@@ -392,9 +386,7 @@
     "page_has_pricing": false,
     "price_hash": null,
     "fetched_at": null,
-    "status_note": "等待 ANTHROPIC_API_KEY",
-    "last_error": null,
-    "last_fetch_ts": "2026-08-31T05:23:45Z"
+    "status_note": "本地网络无法访问该站点, 等待 CI 首次抓取"
    }
   },
   "mistral": {
@@ -411,9 +403,7 @@
     "page_has_pricing": false,
     "price_hash": null,
     "fetched_at": null,
-    "status_note": "等待 ANTHROPIC_API_KEY",
-    "last_error": null,
-    "last_fetch_ts": "2026-08-31T05:23:45Z"
+    "status_note": "本地网络无法访问该站点, 等待 CI 首次抓取"
    }
   },
   "deepseek": {
@@ -433,7 +423,7 @@
       "output_per_1m": 9.0,
       "cached_input_per_1m": 0.1,
       "currency": null,
-      "note": "高峰时段价; 空闲时段半价; vision 实验版同价"
+      "note": "高峰时段价; 空闲时段半价"
      },
      {
       "model": "deepseek-v4-pro",
@@ -442,14 +432,20 @@
       "cached_input_per_1m": 0.3,
       "currency": null,
       "note": "高峰时段价; 空闲时段半价"
+     },
+     {
+      "model": "deepseek-v4-flash-vision-exp",
+      "input_per_1m": 3.0,
+      "output_per_1m": 9.0,
+      "cached_input_per_1m": 0.1,
+      "currency": null,
+      "note": "实验性视觉理解模型, 2026-08-21 上线; 价格同 v4-flash"
      }
     ],
     "page_has_pricing": true,
     "price_hash": null,
-    "fetched_at": null,
-    "status_note": "等待 ANTHROPIC_API_KEY",
-    "last_error": null,
-    "last_fetch_ts": "2026-08-31T05:23:45Z"
+    "fetched_at": "2026-08-31T07:10:00Z",
+    "status_note": null
    }
   },
   "qwen": {
@@ -461,7 +457,7 @@
     "url": "https://help.aliyun.com/zh/model-studio/model-pricing.md",
     "source": "seed",
     "currency": "CNY",
-    "promotions": "新人免费额度(每模型100万Token, 90天有效); Batch 调用半价; 上下文缓存享折扣; qwen3.7-max 限时5折。",
+    "promotions": "新人免费额度(每模型100万Token, 90天有效); Batch 调用半价; 上下文缓存享折扣; 部分模型限时折扣。",
     "models": [
      {
       "model": "qwen3.8-max-prime",
@@ -514,10 +510,8 @@
     ],
     "page_has_pricing": true,
     "price_hash": null,
-    "fetched_at": null,
-    "status_note": "等待 ANTHROPIC_API_KEY",
-    "last_error": null,
-    "last_fetch_ts": "2026-08-31T05:23:47Z"
+    "fetched_at": "2026-08-31T07:10:00Z",
+    "status_note": null
    }
   },
   "doubao": {
@@ -529,15 +523,31 @@
     "url": "https://www.volcengine.com/docs/82379/1099320",
     "source": "seed",
     "currency": "CNY",
-    "promotions": "火山方舟 deepseek-v4-pro 计费标准将于 2026-08-28 起调整(输入 4.5→9 元, 输出 13.5→27 元), 调整前仍按当前价格计费。",
+    "promotions": "deepseek-v4-pro 已于 2026-08-28 起调价(输入 ¥4.5→¥9, 输出 ¥13.5→¥27); 新一代 doubao-seed-2.1 系列(pro / turbo)上线; 批量推理为在线价五折。",
     "models": [
      {
+      "model": "doubao-seed-2.1-pro",
+      "input_per_1m": 6.0,
+      "output_per_1m": 30.0,
+      "cached_input_per_1m": 1.2,
+      "currency": null,
+      "note": "新一代旗舰; 输入长度 [0,256]K 档; 批量推理 ¥3/¥15"
+     },
+     {
+      "model": "doubao-seed-2.1-turbo",
+      "input_per_1m": 3.0,
+      "output_per_1m": 15.0,
+      "cached_input_per_1m": 0.6,
+      "currency": null,
+      "note": "输入长度 [0,256]K 档; 批量推理 ¥1.5/¥7.5"
+     },
+     {
       "model": "deepseek-v4-pro",
-      "input_per_1m": 4.5,
-      "output_per_1m": 13.5,
+      "input_per_1m": 9.0,
+      "output_per_1m": 27.0,
       "cached_input_per_1m": 0.3,
       "currency": null,
-      "note": "2026-08-28 起调整为 输入¥9/输出¥27"
+      "note": "2026-08-28 调价生效(原 ¥4.5/¥13.5); 批量推理 ¥4.5/¥13.5"
      },
      {
       "model": "deepseek-v4-flash",
@@ -545,7 +555,7 @@
       "output_per_1m": 9.0,
       "cached_input_per_1m": 0.1,
       "currency": null,
-      "note": "2026-08-21 已完成价格上调"
+      "note": "批量推理 ¥1.5/¥4.5"
      },
      {
       "model": "doubao-seed-2.0-lite",
@@ -566,10 +576,8 @@
     ],
     "page_has_pricing": true,
     "price_hash": null,
-    "fetched_at": null,
-    "status_note": "等待 ANTHROPIC_API_KEY",
-    "last_error": null,
-    "last_fetch_ts": "2026-08-31T05:23:50Z"
+    "fetched_at": "2026-08-31T07:10:00Z",
+    "status_note": null
    }
   },
   "zhipu": {
@@ -608,20 +616,26 @@
       "note": null
      },
      {
-      "model": "GLM-5",
-      "input_per_1m": 8,
-      "output_per_1m": 28,
-      "cached_input_per_1m": 2,
+      "model": "GLM-5.1",
+      "input_per_1m": 6,
+      "output_per_1m": 24,
+      "cached_input_per_1m": 1.3,
       "currency": null,
-      "note": null
+      "note": "输入 [0,32)K 档; [32+K) 档 ¥8/¥28"
+     },
+     {
+      "model": "GLM-5",
+      "input_per_1m": 4,
+      "output_per_1m": 18,
+      "cached_input_per_1m": 1,
+      "currency": null,
+      "note": "输入 [0,32)K 档; [32+K) 档 ¥6/¥22"
      }
     ],
     "page_has_pricing": true,
     "price_hash": null,
-    "fetched_at": null,
-    "status_note": "等待 ANTHROPIC_API_KEY",
-    "last_error": null,
-    "last_fetch_ts": "2026-08-31T05:24:12Z"
+    "fetched_at": "2026-08-31T07:10:00Z",
+    "status_note": null
    }
   },
   "moonshot": {
@@ -702,10 +716,8 @@
     ],
     "page_has_pricing": true,
     "price_hash": null,
-    "fetched_at": null,
-    "status_note": "等待 ANTHROPIC_API_KEY",
-    "last_error": null,
-    "last_fetch_ts": "2026-08-31T05:24:27Z"
+    "fetched_at": "2026-08-31T07:10:00Z",
+    "status_note": null
    }
   },
   "minimax": {
@@ -717,7 +729,7 @@
     "url": "https://platform.minimaxi.com/docs/guides/pricing-paygo.md",
     "source": "seed",
     "currency": "CNY",
-    "promotions": "MiniMax-M3 按量价格永久五折; 另有优先档(约1.5倍价)与 Token Plan 订阅。",
+    "promotions": "MiniMax-M3 按量价格永久五折; 优先档为标准价 1.5 倍; 另有 Token Plan 订阅。",
     "models": [
      {
       "model": "MiniMax-M3",
@@ -734,60 +746,173 @@
       "cached_input_per_1m": 0.84,
       "currency": null,
       "note": ">512K 长输入档; 永久五折, 原价 ¥8.4/¥33.6"
+     },
+     {
+      "model": "MiniMax-M2.7",
+      "input_per_1m": 2.1,
+      "output_per_1m": 8.4,
+      "cached_input_per_1m": 0.42,
+      "currency": null,
+      "note": "缓存写入 ¥2.625"
+     },
+     {
+      "model": "MiniMax-M2.7-highspeed",
+      "input_per_1m": 4.2,
+      "output_per_1m": 16.8,
+      "cached_input_per_1m": 0.42,
+      "currency": null,
+      "note": "高速版; 缓存写入 ¥2.625"
      }
     ],
     "page_has_pricing": true,
     "price_hash": null,
-    "fetched_at": null,
-    "status_note": "等待 ANTHROPIC_API_KEY",
-    "last_error": null,
-    "last_fetch_ts": "2026-08-31T05:24:36Z"
+    "fetched_at": "2026-08-31T07:10:00Z",
+    "status_note": null
    }
   }
  },
- "changes": [],
+ "changes": [
+  {
+   "ts": "2026-08-31T07:10:00Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "change",
+   "model": "deepseek-v4-pro",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 4.5,
+     "new": 9.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": 13.5,
+     "new": 27.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-08-31T07:10:00Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "new",
+   "model": "doubao-seed-2.1-pro",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 6.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 30.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-08-31T07:10:00Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "new",
+   "model": "doubao-seed-2.1-turbo",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 3.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 15.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-08-31T07:10:00Z",
+   "provider": "deepseek",
+   "provider_name": "DeepSeek",
+   "kind": "new",
+   "model": "deepseek-v4-flash-vision-exp",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 3.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 9.0
+    }
+   ]
+  }
+ ],
  "news": {
   "anthropic": [],
   "openai": [],
   "google": [],
   "xai": [],
   "mistral": [],
-  "deepseek": [],
+  "deepseek": [
+   {
+    "date": "2026-08-21",
+    "title": "DeepSeek-V4-Flash-Vision-Exp 发布",
+    "url": "https://api-docs.deepseek.com/zh-cn/updates",
+    "summary": "实验性多模态视觉理解模型上线, model=deepseek-v4-flash-vision-exp, 价格与 v4-flash 相同。",
+    "first_seen": "2026-08-31T07:10:00Z"
+   },
+   {
+    "date": "2026-08-13",
+    "title": "DeepSeek-V4-Pro 更新",
+    "url": "https://api-docs.deepseek.com/zh-cn/updates",
+    "summary": "V4-Pro 正式版同步在 APP、网页端和 API 上线, 调用方式不变。",
+    "first_seen": "2026-08-31T07:10:00Z"
+   },
+   {
+    "date": "2026-07-31",
+    "title": "DeepSeek-V4-Flash 更新",
+    "url": "https://api-docs.deepseek.com/zh-cn/updates",
+    "summary": "V4-Flash 正式版 API 上线公测。",
+    "first_seen": "2026-08-31T07:10:00Z"
+   }
+  ],
   "qwen": [
    {
     "date": "2026-08",
     "title": "模型升级通知与 Token Plan 权益升级",
     "url": "https://help.aliyun.com/zh/model-studio/model-release-notes.md",
     "summary": "百炼平台功能动态: 模型升级通知、个人版 Token Plan 用户权益升级。",
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    },
    {
     "date": null,
     "title": "阿里云百炼部分模型上下文缓存降价通知",
     "url": "https://www.aliyun.com/notice/117497",
     "summary": null,
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    },
    {
     "date": null,
     "title": "Qwen3-Coder-Plus 限时优惠",
     "url": "https://help.aliyun.com/document_detail/2949810.html",
     "summary": null,
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    },
    {
     "date": null,
     "title": "通义千问VL系列模型降价通知",
     "url": "https://help.aliyun.com/document_detail/2864425.html",
     "summary": null,
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    },
    {
     "date": null,
     "title": "千问系列模型降价通知",
     "url": "https://help.aliyun.com/document_detail/2849941.html",
     "summary": null,
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    }
   ],
   "doubao": [],
@@ -797,35 +922,35 @@
     "title": "GLM-5.3-Flash 原生多模态模型上线",
     "url": "https://docs.bigmodel.cn/cn/guide/models/vlm/glm-5.3-flash",
     "summary": "原生视觉能力, 总参320B激活18B混合架构, 支持代码/浏览器/GUI 协同闭环。",
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    },
    {
     "date": "2026-08-19",
     "title": "GLM-5.3 新一代旗舰模型上线",
     "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-5.3",
     "summary": "编程能力较 GLM-5.2 提升 50%, 网络安全能力持平 Mythos 5。",
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    },
    {
     "date": "2026-06-16",
     "title": "GLM-5.2 新一代旗舰模型上线",
     "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-5.2",
     "summary": "支持 1M 无损上下文, Coding 与长程任务开源 SOTA。",
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    },
    {
     "date": "2026-04-07",
     "title": "GLM-5.1 新一代旗舰模型上线",
     "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-5.1",
     "summary": "长程任务一次可持续工作 8 小时, 综合能力对齐 Claude Opus 4.6。",
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    },
    {
     "date": "2026-02-12",
     "title": "GLM-5 新一代旗舰模型上线",
     "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-5",
     "summary": "新一代旗舰模型。",
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    }
   ],
   "moonshot": [],
@@ -835,28 +960,28 @@
     "title": "MiniMax H3 多模态视频模型发布",
     "url": "https://www.minimaxi.com/blog/minimax-h3",
     "summary": "新一代开放通用多模态视频模型, 文本/图像/视频/声音统一上下文。",
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    },
    {
     "date": "2026-06-01",
     "title": "MiniMax M3 语言模型正式发布",
     "url": "https://www.minimaxi.com/models/text/m3",
     "summary": "面向 Agent 推理、工具调用、代码与长上下文任务。",
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    },
    {
     "date": "2026-03-18",
     "title": "MiniMax M2.7 系列发布",
     "url": "https://www.minimaxi.com/news/minimax-m27-zh",
     "summary": "M2.7 / M2.7-highspeed 正式发布, 开启模型自我迭代。",
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    },
    {
     "date": "2026-02",
     "title": "MiniMax M2.5 系列发布",
     "url": "https://www.minimaxi.com/news/minimax-m25",
     "summary": "编程、工具调用、办公生产力场景达到或刷新行业 SOTA。",
-    "first_seen": "2026-08-27T05:00:00Z"
+    "first_seen": "2026-08-31T07:10:00Z"
    }
   ]
  }

@@ -29,18 +29,24 @@
    "note": null
   },
   {
-   "model": "GLM-5",
-   "input_per_1m": 8,
-   "output_per_1m": 28,
-   "cached_input_per_1m": 2,
+   "model": "GLM-5.1",
+   "input_per_1m": 6,
+   "output_per_1m": 24,
+   "cached_input_per_1m": 1.3,
    "currency": null,
-   "note": null
+   "note": "输入 [0,32)K 档; [32+K) 档 ¥8/¥28"
+  },
+  {
+   "model": "GLM-5",
+   "input_per_1m": 4,
+   "output_per_1m": 18,
+   "cached_input_per_1m": 1,
+   "currency": null,
+   "note": "输入 [0,32)K 档; [32+K) 档 ¥6/¥22"
   }
  ],
  "page_has_pricing": true,
  "price_hash": null,
- "fetched_at": null,
- "status_note": "等待 ANTHROPIC_API_KEY",
- "last_error": null,
- "last_fetch_ts": "2026-08-31T05:24:12Z"
+ "fetched_at": "2026-08-31T07:10:00Z",
+ "status_note": null
 }

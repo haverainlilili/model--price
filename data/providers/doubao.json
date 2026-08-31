@@ -2,15 +2,31 @@
  "url": "https://www.volcengine.com/docs/82379/1099320",
  "source": "seed",
  "currency": "CNY",
- "promotions": "火山方舟 deepseek-v4-pro 计费标准将于 2026-08-28 起调整(输入 4.5→9 元, 输出 13.5→27 元), 调整前仍按当前价格计费。",
+ "promotions": "deepseek-v4-pro 已于 2026-08-28 起调价(输入 ¥4.5→¥9, 输出 ¥13.5→¥27); 新一代 doubao-seed-2.1 系列(pro / turbo)上线; 批量推理为在线价五折。",
  "models": [
   {
+   "model": "doubao-seed-2.1-pro",
+   "input_per_1m": 6.0,
+   "output_per_1m": 30.0,
+   "cached_input_per_1m": 1.2,
+   "currency": null,
+   "note": "新一代旗舰; 输入长度 [0,256]K 档; 批量推理 ¥3/¥15"
+  },
+  {
+   "model": "doubao-seed-2.1-turbo",
+   "input_per_1m": 3.0,
+   "output_per_1m": 15.0,
+   "cached_input_per_1m": 0.6,
+   "currency": null,
+   "note": "输入长度 [0,256]K 档; 批量推理 ¥1.5/¥7.5"
+  },
+  {
    "model": "deepseek-v4-pro",
-   "input_per_1m": 4.5,
-   "output_per_1m": 13.5,
+   "input_per_1m": 9.0,
+   "output_per_1m": 27.0,
    "cached_input_per_1m": 0.3,
    "currency": null,
-   "note": "2026-08-28 起调整为 输入¥9/输出¥27"
+   "note": "2026-08-28 调价生效(原 ¥4.5/¥13.5); 批量推理 ¥4.5/¥13.5"
   },
   {
    "model": "deepseek-v4-flash",
@@ -18,7 +34,7 @@
    "output_per_1m": 9.0,
    "cached_input_per_1m": 0.1,
    "currency": null,
-   "note": "2026-08-21 已完成价格上调"
+   "note": "批量推理 ¥1.5/¥4.5"
   },
   {
    "model": "doubao-seed-2.0-lite",
@@ -39,8 +55,6 @@
  ],
  "page_has_pricing": true,
  "price_hash": null,
- "fetched_at": null,
- "status_note": "等待 ANTHROPIC_API_KEY",
- "last_error": null,
- "last_fetch_ts": "2026-08-31T05:23:50Z"
+ "fetched_at": "2026-08-31T07:10:00Z",
+ "status_note": null
 }

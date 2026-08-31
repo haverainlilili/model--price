@@ -2,7 +2,7 @@
  "url": "https://platform.minimaxi.com/docs/guides/pricing-paygo.md",
  "source": "seed",
  "currency": "CNY",
- "promotions": "MiniMax-M3 按量价格永久五折; 另有优先档(约1.5倍价)与 Token Plan 订阅。",
+ "promotions": "MiniMax-M3 按量价格永久五折; 优先档为标准价 1.5 倍; 另有 Token Plan 订阅。",
  "models": [
   {
    "model": "MiniMax-M3",
@@ -19,12 +19,26 @@
    "cached_input_per_1m": 0.84,
    "currency": null,
    "note": ">512K 长输入档; 永久五折, 原价 ¥8.4/¥33.6"
+  },
+  {
+   "model": "MiniMax-M2.7",
+   "input_per_1m": 2.1,
+   "output_per_1m": 8.4,
+   "cached_input_per_1m": 0.42,
+   "currency": null,
+   "note": "缓存写入 ¥2.625"
+  },
+  {
+   "model": "MiniMax-M2.7-highspeed",
+   "input_per_1m": 4.2,
+   "output_per_1m": 16.8,
+   "cached_input_per_1m": 0.42,
+   "currency": null,
+   "note": "高速版; 缓存写入 ¥2.625"
   }
  ],
  "page_has_pricing": true,
  "price_hash": null,
- "fetched_at": null,
- "status_note": "等待 ANTHROPIC_API_KEY",
- "last_error": null,
- "last_fetch_ts": "2026-08-31T05:24:36Z"
+ "fetched_at": "2026-08-31T07:10:00Z",
+ "status_note": null
 }

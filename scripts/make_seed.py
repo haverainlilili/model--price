@@ -1,8 +1,9 @@
-"""一次性生成种子数据 data/providers/*.json + data/news/*.json。
+"""生成/刷新种子数据 data/providers/*.json + data/news/*.json + 变动流水。
 
-种子数据来自 2026-08-27 手动抓取的各厂商官网页面(详见 /tmp/seed),
-仅为让站点在首次成功抽取前不至于空白; source 标为 "seed", 首次 Claude
-抽取成功后自动替换(站点上会显示「种子数据 · 待校准」徽标)。
+种子数据是对各厂商官网页面的手工抓取整理(2026-08-31 从各官网刷新,
+抓取脚本 /tmp/fetch_fresh.py), 让站点在配置 ANTHROPIC_API_KEY(自动
+抽取)之前不至于空白; source 标为 "seed", 首次 Claude 抽取成功后自动
+替换(站点上显示「种子数据 · 待校准」徽标)。
 用法: .venv/bin/python3 scripts/make_seed.py
 """
 import json
@@ -10,15 +11,15 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from scraper.history import (DATA, NEWS_DIR, PROVIDERS_DIR,  # noqa: E402
-                             _atomic_write_json)
+from scraper.history import (CHANGES_FILE, DATA, NEWS_DIR,  # noqa: E402
+                             PROVIDERS_DIR, _atomic_write_json)
 
-NOW = "2026-08-27T05:00:00Z"
+NOW = "2026-08-31T07:10:00Z"
 SEED = "seed"
 
 
 def provider(pid, currency, models, url=None, promotions=None,
-             note_extra=None, page_has_pricing=True):
+             note_extra=None, page_has_pricing=True, fetched=NOW):
     rec = {
         "url": url,
         "source": SEED,
@@ -32,7 +33,7 @@ def provider(pid, currency, models, url=None, promotions=None,
         ],
         "page_has_pricing": page_has_pricing,
         "price_hash": None,
-        "fetched_at": None,
+        "fetched_at": fetched,
         "status_note": note_extra,
     }
     _atomic_write_json(PROVIDERS_DIR / f"{pid}.json", rec)
@@ -47,15 +48,15 @@ def news(pid, entries):
     })
 
 
-# ---------------- 国际 ----------------
+# ---------------- 国际(2026-08-31 复核, 价格与 08-27 一致) ----------------
 
 provider("anthropic", "USD", [
     ("claude-fable-5", 10, 50, None, "最强旗舰"),
     ("claude-opus-5", 5, 25, None, None),
-    ("claude-opus-4-8", 5, 25, None, None),
-    ("claude-opus-4-6", 5, 25, None, None),
+    ("claude-opus-4-8", 5, 25, None, "旧代, 仍可用"),
+    ("claude-opus-4-6", 5, 25, None, "旧代, 仍可用"),
     ("claude-sonnet-5", 2, 10, None, None),
-    ("claude-sonnet-4-6", 3, 15, None, None),
+    ("claude-sonnet-4-6", 3, 15, None, "旧代, 仍可用"),
     ("claude-haiku-4-5", 1, 5, None, None),
 ], url="https://platform.claude.com/docs/en/about-claude/models/overview.md")
 
@@ -101,17 +102,18 @@ provider("google", "USD", [
 
 provider("xai", None, [], url="https://docs.x.ai/docs/models",
          note_extra="本地网络无法访问该站点, 等待 CI 首次抓取",
-         page_has_pricing=False)
+         page_has_pricing=False, fetched=None)
 provider("mistral", None, [], url="https://mistral.ai/pricing",
          note_extra="本地网络无法访问该站点, 等待 CI 首次抓取",
-         page_has_pricing=False)
+         page_has_pricing=False, fetched=None)
 
-# ---------------- 国内 ----------------
+# ---------------- 国内(2026-08-31 从官网刷新) ----------------
 
 provider("deepseek", "CNY", [
-    ("deepseek-v4-flash", 3.0, 9.0, 0.1,
-     "高峰时段价; 空闲时段半价; vision 实验版同价"),
+    ("deepseek-v4-flash", 3.0, 9.0, 0.1, "高峰时段价; 空闲时段半价"),
     ("deepseek-v4-pro", 9.0, 27.0, 0.3, "高峰时段价; 空闲时段半价"),
+    ("deepseek-v4-flash-vision-exp", 3.0, 9.0, 0.1,
+     "实验性视觉理解模型, 2026-08-21 上线; 价格同 v4-flash"),
 ], url="https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
    promotions="空闲时段(工作日 9-12 / 14-18 点以外)所有价格五折; 上下文缓存命中价再低一个数量级。")
 
@@ -123,23 +125,29 @@ provider("qwen", "CNY", [
     ("qwen3.7-flash", 0.2, 0.8, None, "阶梯计价, 长上下文更高"),
     ("qwen3.5-plus", 0.8, 4.8, None, None),
 ], url="https://help.aliyun.com/zh/model-studio/model-pricing.md",
-   promotions="新人免费额度(每模型100万Token, 90天有效); Batch 调用半价; 上下文缓存享折扣; qwen3.7-max 限时5折。")
+   promotions="新人免费额度(每模型100万Token, 90天有效); Batch 调用半价; 上下文缓存享折扣; 部分模型限时折扣。")
 
 provider("doubao", "CNY", [
-    ("deepseek-v4-pro", 4.5, 13.5, 0.3,
-     "2026-08-28 起调整为 输入¥9/输出¥27"),
-    ("deepseek-v4-flash", 3.0, 9.0, 0.1, "2026-08-21 已完成价格上调"),
+    ("doubao-seed-2.1-pro", 6.0, 30.0, 1.2,
+     "新一代旗舰; 输入长度 [0,256]K 档; 批量推理 ¥3/¥15"),
+    ("doubao-seed-2.1-turbo", 3.0, 15.0, 0.6,
+     "输入长度 [0,256]K 档; 批量推理 ¥1.5/¥7.5"),
+    ("deepseek-v4-pro", 9.0, 27.0, 0.3,
+     "2026-08-28 调价生效(原 ¥4.5/¥13.5); 批量推理 ¥4.5/¥13.5"),
+    ("deepseek-v4-flash", 3.0, 9.0, 0.1, "批量推理 ¥1.5/¥4.5"),
     ("doubao-seed-2.0-lite", 0.48, 5.76, 0.48, "阶梯计价(≤32K 档)"),
     ("doubao-seed-2.0-mini", 0.48, 5.76, 0.48, "阶梯计价(≤32K 档)"),
 ], url="https://www.volcengine.com/docs/82379/1099320",
-   promotions="火山方舟 deepseek-v4-pro 计费标准将于 2026-08-28 起调整(输入 4.5→9 元, 输出 13.5→27 元), 调整前仍按当前价格计费。")
+   promotions="deepseek-v4-pro 已于 2026-08-28 起调价(输入 ¥4.5→¥9, 输出 ¥13.5→¥27); "
+              "新一代 doubao-seed-2.1 系列(pro / turbo)上线; 批量推理为在线价五折。")
 
 provider("zhipu", "CNY", [
     ("GLM-5.3", 8, 28, 2, "新品"),
     ("GLM-5.3-Flash", 0.4, 1.4, 0.115,
      "5折限时两周, 原价 ¥0.8/¥2.8; 缓存存储限时免费"),
     ("GLM-5.2", 8, 28, 2, None),
-    ("GLM-5", 8, 28, 2, None),
+    ("GLM-5.1", 6, 24, 1.3, "输入 [0,32)K 档; [32+K) 档 ¥8/¥28"),
+    ("GLM-5", 4, 18, 1, "输入 [0,32)K 档; [32+K) 档 ¥6/¥22"),
 ], url="https://open.bigmodel.cn/pricing",
    promotions="GLM-5.3-Flash 限时五折(两周); 多个模型缓存存储限时免费。")
 
@@ -160,10 +168,25 @@ provider("minimax", "CNY", [
      "≤512K 输入; 永久五折, 原价 ¥4.2/¥16.8"),
     ("MiniMax-M3 (>512K)", 4.2, 16.8, 0.84,
      ">512K 长输入档; 永久五折, 原价 ¥8.4/¥33.6"),
+    ("MiniMax-M2.7", 2.1, 8.4, 0.42, "缓存写入 ¥2.625"),
+    ("MiniMax-M2.7-highspeed", 4.2, 16.8, 0.42,
+     "高速版; 缓存写入 ¥2.625"),
 ], url="https://platform.minimaxi.com/docs/guides/pricing-paygo.md",
-   promotions="MiniMax-M3 按量价格永久五折; 另有优先档(约1.5倍价)与 Token Plan 订阅。")
+   promotions="MiniMax-M3 按量价格永久五折; 优先档为标准价 1.5 倍; 另有 Token Plan 订阅。")
 
 # ---------------- 公告种子(取自官网公告页) ----------------
+
+news("deepseek", [
+    ("2026-08-21", "DeepSeek-V4-Flash-Vision-Exp 发布",
+     "https://api-docs.deepseek.com/zh-cn/updates",
+     "实验性多模态视觉理解模型上线, model=deepseek-v4-flash-vision-exp, 价格与 v4-flash 相同。"),
+    ("2026-08-13", "DeepSeek-V4-Pro 更新",
+     "https://api-docs.deepseek.com/zh-cn/updates",
+     "V4-Pro 正式版同步在 APP、网页端和 API 上线, 调用方式不变。"),
+    ("2026-07-31", "DeepSeek-V4-Flash 更新",
+     "https://api-docs.deepseek.com/zh-cn/updates",
+     "V4-Flash 正式版 API 上线公测。"),
+])
 
 news("zhipu", [
     ("2026-08-26", "GLM-5.3-Flash 原生多模态模型上线",
@@ -212,9 +235,37 @@ news("qwen", [
      "https://help.aliyun.com/document_detail/2849941.html", None),
 ])
 
-# 汇率 + 元信息
+# ---------------- 变动流水(真实市场事件, 手工记录) ----------------
+
+CHANGES = [
+    ("doubao", "火山方舟 (豆包)", "change", "deepseek-v4-pro",
+     [("input_per_1m", 4.5, 9.0), ("output_per_1m", 13.5, 27.0)]),
+    ("doubao", "火山方舟 (豆包)", "new", "doubao-seed-2.1-pro",
+     [("input_per_1m", None, 6.0), ("output_per_1m", None, 30.0)]),
+    ("doubao", "火山方舟 (豆包)", "new", "doubao-seed-2.1-turbo",
+     [("input_per_1m", None, 3.0), ("output_per_1m", None, 15.0)]),
+    ("deepseek", "DeepSeek", "new", "deepseek-v4-flash-vision-exp",
+     [("input_per_1m", None, 3.0), ("output_per_1m", None, 9.0)]),
+]
+
+try:
+    changes = json.loads(CHANGES_FILE.read_text(encoding="utf-8"))
+except Exception:
+    changes = []
+known = {(c.get("provider"), c.get("model"), c.get("kind")) for c in changes}
+for prov, pname, kind, model, fields in CHANGES:
+    if (prov, model, kind) in known:
+        continue
+    changes.append({"ts": NOW, "provider": prov, "provider_name": pname,
+                    "kind": kind, "model": model,
+                    "fields": [{"field": f, "old": o, "new": n}
+                               for f, o, n in fields]})
+_atomic_write_json(CHANGES_FILE, changes)
+
+# ---------------- 汇率 + 元信息 ----------------
+
 _atomic_write_json(DATA / "meta.json", {
-    "fx": {"usd_cny": 6.7205, "source": "frankfurter.app",
+    "fx": {"usd_cny": 6.7209, "source": "frankfurter.app",
            "fetched_at": NOW},
     "generated_at": NOW,
 })
@@ -224,3 +275,4 @@ for p in sorted(PROVIDERS_DIR.glob("*.json")):
     print("  provider:", p.name)
 for p in sorted(NEWS_DIR.glob("*.json")):
     print("  news:    ", p.name)
+print("  changes: ", len(changes), "条")

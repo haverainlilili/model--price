@@ -158,6 +158,9 @@ h1{margin:0;font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:.01em
 .tarea i{position:absolute;bottom:2px;transform:translateX(-50%);
   font:500 10.5px var(--mono);font-style:normal;color:var(--ink2);
   font-variant-numeric:tabular-nums}
+.tarea .tk-lin{display:none}
+body[data-scale=lin] .tarea .tk-log{display:none}
+body[data-scale=lin] .tarea .tk-lin{display:block}
 .bgroup+.bgroup{border-top:1px solid var(--line2);margin-top:6px;padding-top:4px}
 .brow{display:grid;grid-template-columns:minmax(116px,168px) 1fr;gap:0 12px;
   align-items:center;padding:3px 0}
@@ -167,7 +170,9 @@ h1{margin:0;font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:.01em
 .bmodel{font-family:var(--mono);font-size:12px;color:var(--ink);
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .bbars{display:flex;flex-direction:column;margin-right:86px}
-.bbar{position:relative;height:11px;border-radius:0 4px 4px 0}
+.bbar{position:relative;height:11px;border-radius:0 4px 4px 0;min-width:2px;
+  width:var(--wl,0)}
+body[data-scale=lin] .bbar{width:var(--wi,0)}
 .b-in{background:#2a78d6;margin-bottom:2px}
 .b-out{background:#eb6834}
 .b-none{background:none}
@@ -328,7 +333,19 @@ JS = """
   document.querySelectorAll('[data-cur-btn]').forEach(function(x){
     x.addEventListener('click',function(){setCur(x.dataset.curBtn)});
   });
+  function setScale(s){
+    if(s==='lin'){b.dataset.scale='lin'}else{delete b.dataset.scale}
+    document.querySelectorAll('[data-scale-btn]').forEach(function(x){
+      var on=x.dataset.scaleBtn===s;
+      x.classList.toggle('on',on);x.setAttribute('aria-pressed',on);
+    });
+    try{localStorage.setItem('lpw-scale',s)}catch(e){}
+  }
+  document.querySelectorAll('[data-scale-btn]').forEach(function(x){
+    x.addEventListener('click',function(){setScale(x.dataset.scaleBtn)});
+  });
   try{var c=localStorage.getItem('lpw-cur');if(c==='orig'||c==='cny')setCur(c)}catch(e){}
+  try{var s=localStorage.getItem('lpw-scale');if(s==='lin')setScale(s)}catch(e){}
 })();
 """
 
@@ -387,9 +404,11 @@ def _ticker_chips(changes: list, prov_names: dict, prov_cur: dict) -> str:
 
 
 def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
-    """首页顶部价格速览: 每家厂商价格页最前的 2 个模型, 输入/输出双条,
-    对数刻度横向条形图(纯 CSS, 价格跨 2-3 个数量级, 线性刻度会把便宜模型压扁)。
+    """首页顶部价格速览: 每家厂商价格页最前的 2 个模型, 输入/输出双条。
 
+    对数/线性双刻度同时渲染(条宽写进 CSS 变量 --wl/--wi, 按钮切换):
+    线性刻度价格差异直观, 但跨数量级时低价模型被压成一条线; 对数刻度
+    完整但压缩差异。两种互补, 读者自选。
     跨厂商可比的前提是同一币种: USD 统一按汇率折算成人民币。
     「最新 2 个」按各官网价格页的排列顺序取(各家都把最新模型放在最前)。
     """
@@ -417,22 +436,41 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
     lo, hi = min(vals), max(vals)
     span = math.log10(hi) - math.log10(lo) if hi > lo else 1.0
 
-    def pct(v) -> str:
+    def w_log(v) -> str:
         if v is None:
             return "0"
-        return f"{max(3.0, min(100.0, (math.log10(v) - math.log10(lo)) / span * 100)):.1f}"
+        return f"{max(2.0, min(100.0, (math.log10(v) - math.log10(lo)) / span * 100)):.1f}"
+
+    def w_lin(v) -> str:
+        if v is None:
+            return "0"
+        return f"{max(1.5, v / hi * 100):.1f}"
 
     def vlabel(v) -> str:
         return f"¥{_fmt(round(v, 2))}" if v is not None else "—"
 
-    # 对数刻度: 取数据范围内的 10 的幂做刻度(¥1 / ¥10 / ¥100 / ...)
-    ticks = []
+    # 对数刻度刻度线: 数据范围内的 10 的幂(¥1 / ¥10 / ¥100 / ...)
+    log_ticks = []
     e = math.floor(math.log10(lo))
-    while 10 ** e <= hi * 1.001 and len(ticks) < 5:
+    while 10 ** e <= hi * 1.001 and len(log_ticks) < 5:
         if 10 ** e >= lo * 0.999:
-            ticks.append(10 ** e)
+            log_ticks.append(10 ** e)
         e += 1
-    ticks_html = "".join(f'<i style="left:{pct(t)}%">¥{_fmt(t)}</i>' for t in ticks)
+    # 线性刻度刻度线: 从 0 起取"整"步长
+    raw = hi / 4
+    mag = 10 ** math.floor(math.log10(raw)) if raw > 0 else 1
+    step = next(m * mag for m in (1, 2, 2.5, 5, 10) if m * mag >= raw)
+    lin_ticks = []
+    t = 0.0
+    while t <= hi * 1.001 and len(lin_ticks) < 7:
+        lin_ticks.append(t)
+        t += step
+
+    ticks_html = (
+        "".join(f'<i class="tk tk-log" style="left:{w_log(t)}%">¥{_fmt(t)}</i>'
+                for t in log_ticks)
+        + "".join(f'<i class="tk tk-lin" style="left:{w_lin(t)}%">¥{_fmt(t)}</i>'
+                  for t in lin_ticks))
 
     parts = []
     for cfg, rows in groups:
@@ -440,10 +478,10 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
         dr = "domestic" if region == "国内" else "intl"
         inner = []
         for model, ci, co in rows:
-            bars = (f'<div class="bbar b-in" style="width:{pct(ci)}%">'
-                    f'<i>{vlabel(ci)}</i></div>'
-                    f'<div class="bbar b-out" style="width:{pct(co)}%">'
-                    f'<i>{vlabel(co)}</i></div>')
+            bars = (f'<div class="bbar b-in" style="--wl:{w_log(ci)}%;'
+                    f'--wi:{w_lin(ci)}%"><i>{vlabel(ci)}</i></div>'
+                    f'<div class="bbar b-out" style="--wl:{w_log(co)}%;'
+                    f'--wi:{w_lin(co)}%"><i>{vlabel(co)}</i></div>')
             inner.append(f'<div class="brow"><span class="bmodel">{_e(model)}</span>'
                          f'<div class="bbars">{bars}</div></div>')
         parts.append(f'<div class="bgroup" data-region="{dr}">'
@@ -456,12 +494,16 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
         '<div class="quick-head"><h2 class="quick-title">价格速览 · 每家最新的 2 个模型'
         '</h2><div class="blegend"><span><i class="sw sw-in"></i>输入</span>'
         '<span><i class="sw sw-out"></i>输出</span>'
-        '<span class="bnote">统一折算人民币 · 对数刻度</span></div></div>'
+        '<span class="bnote">统一折算人民币</span>'
+        '<div class="seg seg-scale" role="group" aria-label="刻度切换">'
+        '<button data-scale-btn="log" class="on" aria-pressed="true">对数刻度</button>'
+        '<button data-scale-btn="lin" aria-pressed="false">线性刻度</button></div>'
+        '</div></div>'
         f'<div class="bticks"><div></div><div class="tarea">{ticks_html}</div></div>'
         f'{"".join(parts)}'
-        f'<p class="bfoot">条长为对数刻度(图中价格跨约 {round(span)} 个数量级, 线性刻度'
-        f'会把低价模型压成一条线) · USD 按 1 USD ≈ ¥{_fmt(rate)} 折算 · 每家取官网'
-        '价格页最前的 2 个模型(即最新), 完整价格与备注见下方明细表。</p></section>')
+        f'<p class="bfoot">线性刻度下价格差异直观, 但低价模型会被压扁; 对数刻度完整'
+        f'但压缩差异 —— 右上角可切换 · USD 按 1 USD ≈ ¥{_fmt(rate)} 折算 · 每家取'
+        '官网价格页最前的 2 个模型(即最新), 完整价格与备注见下方明细表。</p></section>')
 
 
 def _prov_section(cfg: dict, rec: dict | None, rate: float) -> str:

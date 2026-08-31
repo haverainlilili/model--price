@@ -10,7 +10,7 @@
    "output_per_1m": 9.0,
    "cached_input_per_1m": 0.1,
    "currency": null,
-   "note": "高峰时段价; 空闲时段半价; vision 实验版同价"
+   "note": "高峰时段价; 空闲时段半价"
   },
   {
    "model": "deepseek-v4-pro",
@@ -19,12 +19,18 @@
    "cached_input_per_1m": 0.3,
    "currency": null,
    "note": "高峰时段价; 空闲时段半价"
+  },
+  {
+   "model": "deepseek-v4-flash-vision-exp",
+   "input_per_1m": 3.0,
+   "output_per_1m": 9.0,
+   "cached_input_per_1m": 0.1,
+   "currency": null,
+   "note": "实验性视觉理解模型, 2026-08-21 上线; 价格同 v4-flash"
   }
  ],
  "page_has_pricing": true,
  "price_hash": null,
- "fetched_at": null,
- "status_note": "等待 ANTHROPIC_API_KEY",
- "last_error": null,
- "last_fetch_ts": "2026-08-31T05:23:45Z"
+ "fetched_at": "2026-08-31T07:10:00Z",
+ "status_note": null
 }

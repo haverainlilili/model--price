@@ -1,78 +1,46 @@
 {
  "url": "https://platform.kimi.com/docs/pricing/chat.md",
- "source": "seed",
+ "source": "claude",
  "currency": "CNY",
- "promotions": "文件内容抽取/文件存储接口限时免费; moonshot-v1 系列预计 8 月 31 日全平台下线。",
+ "promotions": "文件相关接口（文件内容抽取/文件存储）接口**限时免费**，即您只上传并抽取文档，这个API本身不会产生费用。",
  "models": [
   {
    "model": "kimi-k3",
-   "input_per_1m": 20,
-   "output_per_1m": 100,
-   "cached_input_per_1m": 2,
-   "currency": null,
-   "note": "旗舰, 1M 上下文"
+   "input_per_1m": 20.0,
+   "output_per_1m": 100.0,
+   "cached_input_per_1m": 2.0,
+   "currency": "CNY",
+   "note": "上下文窗口：1,048,576 tokens"
   },
   {
    "model": "kimi-k2.7-code",
    "input_per_1m": 6.5,
-   "output_per_1m": 27,
+   "output_per_1m": 27.0,
    "cached_input_per_1m": 1.3,
-   "currency": null,
-   "note": "Coding 模型"
+   "currency": "CNY",
+   "note": "Coding 多模态模型；上下文窗口：262,144 tokens"
   },
   {
    "model": "kimi-k2.7-code-highspeed",
-   "input_per_1m": 13,
-   "output_per_1m": 54,
+   "input_per_1m": 13.0,
+   "output_per_1m": 54.0,
    "cached_input_per_1m": 2.6,
-   "currency": null,
-   "note": "Coding 高速版"
+   "currency": "CNY",
+   "note": "Coding 多模态模型高速版；上下文窗口：262,144 tokens"
   },
   {
    "model": "kimi-k2.6",
    "input_per_1m": 6.5,
-   "output_per_1m": 27,
+   "output_per_1m": 27.0,
    "cached_input_per_1m": 1.1,
-   "currency": null,
-   "note": null
-  },
-  {
-   "model": "kimi-k2.5",
-   "input_per_1m": 4,
-   "output_per_1m": 21,
-   "cached_input_per_1m": 0.7,
-   "currency": null,
-   "note": "视觉+文本多模态"
-  },
-  {
-   "model": "moonshot-v1-8k",
-   "input_per_1m": 2,
-   "output_per_1m": 10,
-   "cached_input_per_1m": null,
-   "currency": null,
-   "note": "经典系列, 预计 8月31日全平台下线"
-  },
-  {
-   "model": "moonshot-v1-32k",
-   "input_per_1m": 5,
-   "output_per_1m": 20,
-   "cached_input_per_1m": null,
-   "currency": null,
-   "note": "经典系列, 预计 8月31日全平台下线"
-  },
-  {
-   "model": "moonshot-v1-128k",
-   "input_per_1m": 10,
-   "output_per_1m": 30,
-   "cached_input_per_1m": null,
-   "currency": null,
-   "note": "经典系列, 预计 8月31日全平台下线"
+   "currency": "CNY",
+   "note": "多模态模型；上下文窗口：262,144 tokens"
   }
  ],
  "page_has_pricing": true,
- "price_hash": null,
- "fetched_at": "2026-08-31T07:10:00Z",
- "status_note": "等待 OPENAI_API_KEY",
+ "price_hash": "a8f2e24f9f53d28b4cfa2d46a000380ffc5af71777b44d1fe122dff8a28cbcf2",
+ "fetched_at": "2026-08-31T10:21:05Z",
+ "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-08-31T09:22:17Z"
+ "last_fetch_ts": "2026-08-31T10:31:34Z"
 }

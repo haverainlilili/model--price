@@ -1,38 +1,62 @@
 {
  "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
- "source": "seed",
+ "source": "claude",
  "currency": "CNY",
- "promotions": "空闲时段(工作日 9-12 / 14-18 点以外)所有价格五折; 上下文缓存命中价再低一个数量级。",
+ "promotions": null,
  "models": [
+  {
+   "model": "deepseek-v4-flash",
+   "input_per_1m": 1.5,
+   "output_per_1m": 4.5,
+   "cached_input_per_1m": 0.05,
+   "currency": "CNY",
+   "note": "空闲时段：北京时间周一至周五 9:00-12:00、14:00-18:00 以外的时段；价格为高峰时段的一半"
+  },
   {
    "model": "deepseek-v4-flash",
    "input_per_1m": 3.0,
    "output_per_1m": 9.0,
    "cached_input_per_1m": 0.1,
-   "currency": null,
-   "note": "高峰时段价; 空闲时段半价"
+   "currency": "CNY",
+   "note": "高峰时段：北京时间周一至周五 9:00-12:00、14:00-18:00"
+  },
+  {
+   "model": "deepseek-v4-pro",
+   "input_per_1m": 4.5,
+   "output_per_1m": 13.5,
+   "cached_input_per_1m": 0.15,
+   "currency": "CNY",
+   "note": "空闲时段：北京时间周一至周五 9:00-12:00、14:00-18:00 以外的时段；价格为高峰时段的一半"
   },
   {
    "model": "deepseek-v4-pro",
    "input_per_1m": 9.0,
    "output_per_1m": 27.0,
    "cached_input_per_1m": 0.3,
-   "currency": null,
-   "note": "高峰时段价; 空闲时段半价"
+   "currency": "CNY",
+   "note": "高峰时段：北京时间周一至周五 9:00-12:00、14:00-18:00"
+  },
+  {
+   "model": "deepseek-v4-flash-vision-exp",
+   "input_per_1m": 1.5,
+   "output_per_1m": 4.5,
+   "cached_input_per_1m": 0.05,
+   "currency": "CNY",
+   "note": "空闲时段：北京时间周一至周五 9:00-12:00、14:00-18:00 以外的时段；价格为高峰时段的一半。多模态视觉模型，图片按尺寸换算成 token，与文本 token 一并计费"
   },
   {
    "model": "deepseek-v4-flash-vision-exp",
    "input_per_1m": 3.0,
    "output_per_1m": 9.0,
    "cached_input_per_1m": 0.1,
-   "currency": null,
-   "note": "实验性视觉理解模型, 2026-08-21 上线; 价格同 v4-flash"
+   "currency": "CNY",
+   "note": "高峰时段：北京时间周一至周五 9:00-12:00、14:00-18:00。多模态视觉模型，图片按尺寸换算成 token，与文本 token 一并计费"
   }
  ],
  "page_has_pricing": true,
- "price_hash": null,
- "fetched_at": "2026-08-31T07:10:00Z",
- "status_note": "等待 OPENAI_API_KEY",
+ "price_hash": "b638346f4c1537c4e249ccd1b05b636011a0d86763d3df14dadcd3d4f4f8889b",
+ "fetched_at": "2026-08-31T10:08:47Z",
+ "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-08-31T09:21:37Z"
+ "last_fetch_ts": "2026-08-31T10:31:02Z"
 }

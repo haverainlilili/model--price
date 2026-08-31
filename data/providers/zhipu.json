@@ -1,54 +1,310 @@
 {
  "url": "https://open.bigmodel.cn/pricing",
- "source": "seed",
+ "source": "claude",
  "currency": "CNY",
- "promotions": "GLM-5.3-Flash 限时五折(两周); 多个模型缓存存储限时免费。",
+ "promotions": "GLM-5.3-Flash：5折限时两周。缓存存储：限时免费。新品上线限时抢4折体验包，立享优惠。",
  "models": [
   {
    "model": "GLM-5.3",
-   "input_per_1m": 8,
-   "output_per_1m": 28,
-   "cached_input_per_1m": 2,
-   "currency": null,
-   "note": "新品"
+   "input_per_1m": 8.0,
+   "output_per_1m": 28.0,
+   "cached_input_per_1m": 2.0,
+   "currency": "CNY",
+   "note": "上下文 1M；缓存存储限时免费"
   },
   {
    "model": "GLM-5.3-Flash",
    "input_per_1m": 0.4,
    "output_per_1m": 1.4,
    "cached_input_per_1m": 0.115,
-   "currency": null,
-   "note": "5折限时两周, 原价 ¥0.8/¥2.8; 缓存存储限时免费"
+   "currency": "CNY",
+   "note": "5折限时两周；原价输入 ¥0.8/百万、输出 ¥2.8/百万、缓存命中 ¥0.23/百万；缓存存储限时免费；上下文 1M"
   },
   {
    "model": "GLM-5.2",
-   "input_per_1m": 8,
-   "output_per_1m": 28,
-   "cached_input_per_1m": 2,
-   "currency": null,
-   "note": null
+   "input_per_1m": 8.0,
+   "output_per_1m": 28.0,
+   "cached_input_per_1m": 2.0,
+   "currency": "CNY",
+   "note": "上下文 1M；缓存存储限时免费"
   },
   {
    "model": "GLM-5.1",
-   "input_per_1m": 6,
-   "output_per_1m": 24,
+   "input_per_1m": 6.0,
+   "output_per_1m": 24.0,
    "cached_input_per_1m": 1.3,
-   "currency": null,
-   "note": "输入 [0,32)K 档; [32+K) 档 ¥8/¥28"
+   "currency": "CNY",
+   "note": "输入长度 [0, 32)；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-5.1",
+   "input_per_1m": 8.0,
+   "output_per_1m": 28.0,
+   "cached_input_per_1m": 2.0,
+   "currency": "CNY",
+   "note": "输入长度 [32+)；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-5V-Turbo",
+   "input_per_1m": 5.0,
+   "output_per_1m": 22.0,
+   "cached_input_per_1m": 1.2,
+   "currency": "CNY",
+   "note": "输入长度 [0, 32)；多模态（图片、视频、文件、文本）；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-5V-Turbo",
+   "input_per_1m": 7.0,
+   "output_per_1m": 26.0,
+   "cached_input_per_1m": 1.8,
+   "currency": "CNY",
+   "note": "输入长度 [32+)；多模态（图片、视频、文件、文本）；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-5-Turbo",
+   "input_per_1m": 5.0,
+   "output_per_1m": 22.0,
+   "cached_input_per_1m": 1.2,
+   "currency": "CNY",
+   "note": "输入长度 [0, 32)；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-5-Turbo",
+   "input_per_1m": 7.0,
+   "output_per_1m": 26.0,
+   "cached_input_per_1m": 1.8,
+   "currency": "CNY",
+   "note": "输入长度 [32+)；缓存存储限时免费"
   },
   {
    "model": "GLM-5",
-   "input_per_1m": 4,
-   "output_per_1m": 18,
-   "cached_input_per_1m": 1,
-   "currency": null,
-   "note": "输入 [0,32)K 档; [32+K) 档 ¥6/¥22"
+   "input_per_1m": 4.0,
+   "output_per_1m": 18.0,
+   "cached_input_per_1m": 1.0,
+   "currency": "CNY",
+   "note": "输入长度 [0, 32)；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-5",
+   "input_per_1m": 6.0,
+   "output_per_1m": 22.0,
+   "cached_input_per_1m": 1.5,
+   "currency": "CNY",
+   "note": "输入长度 [32+)；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.7",
+   "input_per_1m": 2.0,
+   "output_per_1m": 8.0,
+   "cached_input_per_1m": 0.4,
+   "currency": "CNY",
+   "note": "输入长度 [0, 32)，输出长度 [0, 0.2)；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.7",
+   "input_per_1m": 3.0,
+   "output_per_1m": 14.0,
+   "cached_input_per_1m": 0.6,
+   "currency": "CNY",
+   "note": "输入长度 [0, 32)，输出长度 [0.2+)；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.7",
+   "input_per_1m": 4.0,
+   "output_per_1m": 16.0,
+   "cached_input_per_1m": 0.8,
+   "currency": "CNY",
+   "note": "输入长度 [32, 200)；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.6V",
+   "input_per_1m": 1.0,
+   "output_per_1m": 3.0,
+   "cached_input_per_1m": 0.2,
+   "currency": "CNY",
+   "note": "输入长度 [0, 32)；多模态（图片、视频、文件、文本）；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.6V",
+   "input_per_1m": 2.0,
+   "output_per_1m": 6.0,
+   "cached_input_per_1m": 0.4,
+   "currency": "CNY",
+   "note": "输入长度 [32, 128)；多模态（图片、视频、文件、文本）；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.5-Air",
+   "input_per_1m": 0.8,
+   "output_per_1m": 2.0,
+   "cached_input_per_1m": 0.16,
+   "currency": "CNY",
+   "note": "输入长度 [0, 32)，输出长度 [0, 0.2)；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.5-Air",
+   "input_per_1m": 0.8,
+   "output_per_1m": 6.0,
+   "cached_input_per_1m": 0.16,
+   "currency": "CNY",
+   "note": "输入长度 [0, 32)，输出长度 [0.2+)；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.5-Air",
+   "input_per_1m": 1.2,
+   "output_per_1m": 8.0,
+   "cached_input_per_1m": 0.24,
+   "currency": "CNY",
+   "note": "输入长度 [32, 128)；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.7-FlashX",
+   "input_per_1m": 0.5,
+   "output_per_1m": 3.0,
+   "cached_input_per_1m": 0.1,
+   "currency": "CNY",
+   "note": "上下文 200K；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.7-Flash",
+   "input_per_1m": 0.0,
+   "output_per_1m": 0.0,
+   "cached_input_per_1m": 0.0,
+   "currency": "CNY",
+   "note": "上下文 200K；限时免费（含缓存存储）"
+  },
+  {
+   "model": "GLM-4.6V-FlashX",
+   "input_per_1m": 0.15,
+   "output_per_1m": 1.5,
+   "cached_input_per_1m": 0.03,
+   "currency": "CNY",
+   "note": "输入长度 [0, 32)；多模态（图片、视频、文件、文本）；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.6V-FlashX",
+   "input_per_1m": 0.3,
+   "output_per_1m": 3.0,
+   "cached_input_per_1m": 0.03,
+   "currency": "CNY",
+   "note": "输入长度 [32, 128)；多模态（图片、视频、文件、文本）；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.6V-Flash",
+   "input_per_1m": 0.0,
+   "output_per_1m": 0.0,
+   "cached_input_per_1m": 0.0,
+   "currency": "CNY",
+   "note": "多模态（图片、视频、文件、文本）；限时免费（含缓存存储）"
+  },
+  {
+   "model": "GLM-4.5V",
+   "input_per_1m": 2.0,
+   "output_per_1m": 6.0,
+   "cached_input_per_1m": 0.4,
+   "currency": "CNY",
+   "note": "输入长度 [0, 32)；多模态（图片、视频、文件、文本）；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4.5V",
+   "input_per_1m": 4.0,
+   "output_per_1m": 12.0,
+   "cached_input_per_1m": 0.8,
+   "currency": "CNY",
+   "note": "输入长度 [32, 64)；多模态（图片、视频、文件、文本）；缓存存储限时免费"
+  },
+  {
+   "model": "GLM-4-Plus",
+   "input_per_1m": 5.0,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "文本模型；上下文 128K；页面仅列单价，未区分输入/输出；Batch API ¥2.5/百万 Tokens"
+  },
+  {
+   "model": "GLM-4-Air-250414",
+   "input_per_1m": 0.5,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "文本模型；上下文 128K；页面仅列单价，未区分输入/输出；Batch API ¥0.25/百万 Tokens"
+  },
+  {
+   "model": "GLM-4-AirX",
+   "input_per_1m": 10.0,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "文本模型；上下文 8K；页面仅列单价，未区分输入/输出"
+  },
+  {
+   "model": "GLM-4-Long",
+   "input_per_1m": 1.0,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "文本模型；上下文 1M；页面仅列单价，未区分输入/输出；Batch API ¥0.5/百万 Tokens"
+  },
+  {
+   "model": "GLM-4-Assistant",
+   "input_per_1m": 5.0,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "文本模型；上下文 128K；页面仅列单价，未区分输入/输出"
+  },
+  {
+   "model": "GLM-Z1-Air",
+   "input_per_1m": 0.5,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "文本模型；上下文 128K；页面仅列单价，未区分输入/输出"
+  },
+  {
+   "model": "GLM-Z1-AirX",
+   "input_per_1m": 5.0,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "文本模型；上下文 32K；页面仅列单价，未区分输入/输出"
+  },
+  {
+   "model": "GLM-Z1-FlashX",
+   "input_per_1m": 0.1,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "文本模型；上下文 128K；页面仅列单价，未区分输入/输出"
+  },
+  {
+   "model": "GLM-4-FlashX-250414",
+   "input_per_1m": 0.1,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "文本模型；上下文 128K；页面仅列单价，未区分输入/输出；Batch API ¥0.05/百万 Tokens"
+  },
+  {
+   "model": "GLM-4-Flash-250414",
+   "input_per_1m": 0.0,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "文本模型；上下文 128K；限时免费；页面仅列单价，未区分输入/输出"
+  },
+  {
+   "model": "GLM-Z1-Flash",
+   "input_per_1m": 0.0,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "推理模型；上下文 128K；限时免费；页面仅列单价，未区分输入/输出"
   }
  ],
  "page_has_pricing": true,
- "price_hash": null,
- "fetched_at": "2026-08-31T07:10:00Z",
- "status_note": "等待 OPENAI_API_KEY",
+ "price_hash": "31657fe58b2187fdc3ae434a1c041ec7050283a3e26cb452b5fa256238b5cefd",
+ "fetched_at": "2026-08-31T10:27:01Z",
+ "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-08-31T09:22:02Z"
+ "last_fetch_ts": "2026-08-31T10:31:21Z"
 }

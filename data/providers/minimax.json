@@ -1,46 +1,110 @@
 {
  "url": "https://platform.minimaxi.com/docs/guides/pricing-paygo.md",
- "source": "seed",
+ "source": "claude",
  "currency": "CNY",
- "promotions": "MiniMax-M3 按量价格永久五折; 优先档为标准价 1.5 倍; 另有 Token Plan 订阅。",
+ "promotions": "永久五折",
  "models": [
   {
    "model": "MiniMax-M3",
    "input_per_1m": 2.1,
    "output_per_1m": 8.4,
    "cached_input_per_1m": 0.42,
-   "currency": null,
-   "note": "≤512K 输入; 永久五折, 原价 ¥4.2/¥16.8"
+   "currency": "CNY",
+   "note": "标准服务；≤ 512k 输入 tokens；永久五折，原价：输入 ¥4.20/百万 tokens，输出 ¥16.80/百万 tokens，缓存读取 ¥0.84/百万 tokens"
   },
   {
-   "model": "MiniMax-M3 (>512K)",
+   "model": "MiniMax-M3",
    "input_per_1m": 4.2,
    "output_per_1m": 16.8,
    "cached_input_per_1m": 0.84,
-   "currency": null,
-   "note": ">512K 长输入档; 永久五折, 原价 ¥8.4/¥33.6"
+   "currency": "CNY",
+   "note": "标准服务；> 512k 输入 tokens；永久五折，原价：输入 ¥8.40/百万 tokens，输出 ¥33.60/百万 tokens，缓存读取 ¥1.68/百万 tokens"
+  },
+  {
+   "model": "MiniMax-M3",
+   "input_per_1m": 3.15,
+   "output_per_1m": 12.6,
+   "cached_input_per_1m": 0.63,
+   "currency": "CNY",
+   "note": "优先服务；≤ 512k 输入 tokens；永久五折，原价：输入 ¥6.30/百万 tokens，输出 ¥25.20/百万 tokens，缓存读取 ¥1.26/百万 tokens。调用时将 service_tier 设为 priority"
+  },
+  {
+   "model": "MiniMax-M3",
+   "input_per_1m": 6.3,
+   "output_per_1m": 25.2,
+   "cached_input_per_1m": 1.26,
+   "currency": "CNY",
+   "note": "优先服务；> 512k 输入 tokens；永久五折，原价：输入 ¥12.60/百万 tokens，输出 ¥50.40/百万 tokens，缓存读取 ¥2.52/百万 tokens。调用时将 service_tier 设为 priority"
   },
   {
    "model": "MiniMax-M2.7",
    "input_per_1m": 2.1,
    "output_per_1m": 8.4,
    "cached_input_per_1m": 0.42,
-   "currency": null,
-   "note": "缓存写入 ¥2.625"
+   "currency": "CNY",
+   "note": "缓存写入 ¥2.625/百万 tokens"
   },
   {
    "model": "MiniMax-M2.7-highspeed",
    "input_per_1m": 4.2,
    "output_per_1m": 16.8,
    "cached_input_per_1m": 0.42,
-   "currency": null,
-   "note": "高速版; 缓存写入 ¥2.625"
+   "currency": "CNY",
+   "note": "缓存写入 ¥2.625/百万 tokens"
+  },
+  {
+   "model": "MiniMax-M2.5",
+   "input_per_1m": 2.1,
+   "output_per_1m": 8.4,
+   "cached_input_per_1m": 0.21,
+   "currency": "CNY",
+   "note": "历史模型；缓存写入 ¥2.625/百万 tokens"
+  },
+  {
+   "model": "MiniMax-M2.5-highspeed",
+   "input_per_1m": 4.2,
+   "output_per_1m": 16.8,
+   "cached_input_per_1m": 0.21,
+   "currency": "CNY",
+   "note": "历史模型；缓存写入 ¥2.625/百万 tokens"
+  },
+  {
+   "model": "MiniMax-M2.1",
+   "input_per_1m": 2.1,
+   "output_per_1m": 8.4,
+   "cached_input_per_1m": 0.21,
+   "currency": "CNY",
+   "note": "历史模型；缓存写入 ¥2.625/百万 tokens"
+  },
+  {
+   "model": "MiniMax-M2.1-highspeed",
+   "input_per_1m": 4.2,
+   "output_per_1m": 16.8,
+   "cached_input_per_1m": 0.21,
+   "currency": "CNY",
+   "note": "历史模型；缓存写入 ¥2.625/百万 tokens"
+  },
+  {
+   "model": "MiniMax-M2",
+   "input_per_1m": 2.1,
+   "output_per_1m": 8.4,
+   "cached_input_per_1m": 0.21,
+   "currency": "CNY",
+   "note": "历史模型；缓存写入 ¥2.625/百万 tokens"
+  },
+  {
+   "model": "MiniMax-H3-Context-IR",
+   "input_per_1m": 5.8,
+   "output_per_1m": 23.0,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "H3-Context-IR 任务"
   }
  ],
  "page_has_pricing": true,
- "price_hash": null,
- "fetched_at": "2026-08-31T07:10:00Z",
- "status_note": "等待 OPENAI_API_KEY",
+ "price_hash": "043d7313a8a01c7b727ef6703eb5cc2364b8e8ae67bb685a34d12d4596bb5bce",
+ "fetched_at": "2026-08-31T10:21:15Z",
+ "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-08-31T09:22:25Z"
+ "last_fetch_ts": "2026-08-31T10:31:38Z"
 }

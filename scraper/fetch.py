@@ -103,22 +103,24 @@ def _find_chrome_executable() -> str | None:
     return None
 
 
-def fetch_rendered(url: str, wait_ms: int = 6000) -> str:
-    """用无头浏览器渲染页面后取可见文本(智谱/火山方舟这类纯前端渲染站)。
+def _chrome_launch_options() -> dict:
+    """生成渲染浏览器参数；禁用 QUIC 规避部分站点的间歇性连接关闭。"""
+    options = {"headless": True, "args": ["--disable-quic"]}
+    executable = _find_chrome_executable()
+    if executable:
+        options["executable_path"] = executable
+    return options
 
-    playwright 未安装时抛 FetchError, 上层按普通抓取失败处理(保留旧数据)。
-    """
+
+def _render_once(url: str, wait_ms: int) -> str:
+    """执行一次浏览器渲染；重试策略由 fetch_rendered 统一处理。"""
     try:
         from playwright.sync_api import sync_playwright
     except ImportError as exc:
         raise FetchError("playwright 未安装, 无法渲染 JS 页面") from exc
     try:
         with sync_playwright() as p:
-            launch_options = {"headless": True}
-            executable = _find_chrome_executable()
-            if executable:
-                launch_options["executable_path"] = executable
-            browser = p.chromium.launch(**launch_options)
+            browser = p.chromium.launch(**_chrome_launch_options())
             try:
                 ctx = browser.new_context(user_agent=DEFAULT_UA, locale="zh-CN")
                 page = ctx.new_page()
@@ -138,6 +140,22 @@ def fetch_rendered(url: str, wait_ms: int = 6000) -> str:
         raise
     except Exception as exc:
         raise FetchError(f"渲染失败: {exc}") from exc
+
+
+def fetch_rendered(url: str, wait_ms: int = 6000, retries: int = 2) -> str:
+    """用无头浏览器渲染页面并返回可见文本，瞬时导航失败会有限重试。
+
+    playwright 未安装或全部尝试失败时抛 FetchError，上层保留旧数据。
+    """
+    last_err: FetchError = FetchError("unknown")
+    for attempt in range(retries + 1):
+        try:
+            return _render_once(url, wait_ms)
+        except FetchError as exc:
+            last_err = exc
+        if attempt < retries:
+            time.sleep(2 * (attempt + 1))
+    raise last_err
 
 
 def fetch(url: str, retries: int = 2) -> str:

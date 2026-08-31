@@ -91,198 +91,238 @@ def _price_cell(v, cur: str | None, rate: float) -> str:
 
 CSS = """
 :root{
-  --bg:#F2F4F7; --panel:#FFFFFF; --ink:#1B2735; --ink2:#5C6878;
-  --line:#DCE1E8; --line2:#C7CEDB;
-  --up:#C13B2A; --up-bg:#FBEFED;
-  --down:#17754E; --down-bg:#EAF5EF;
-  --new:#20508F; --new-bg:#EBF1F9;
-  --seed:#8A6A15; --seed-bg:#FBF3D8;
-  --err:#A32F21; --err-bg:#F9ECEA;
+  --bg:#F3F2EC; --panel:#FFFEFB; --panel2:#F8F7F1;
+  --ink:#17231E; --ink2:#66716C; --ink3:#8D9691;
+  --line:#DDE0D9; --line2:#C8CEC5;
+  --accent:#0A6E59; --accent-dark:#075746; --accent-bg:#E4F2EC;
+  --up:#B53A2E; --up-bg:#F9E9E5;
+  --down:#087352; --down-bg:#E2F1EA;
+  --new:#17649A; --new-bg:#E5EFF6;
+  --seed:#84620A; --seed-bg:#F8F0D2;
+  --err:#A32F21; --err-bg:#F9E7E3;
+  --chart-in:#2878C7; --chart-out:#E56B37;
+  --shadow:0 16px 38px rgba(36,48,42,.07);
   --mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,Consolas,"Liberation Mono",monospace;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 var(--sans)}
-a{color:var(--new);text-decoration:none}
+a{color:var(--accent-dark);text-decoration-thickness:1px;text-underline-offset:3px}
 a:hover{text-decoration:underline}
-:focus-visible{outline:2px solid var(--new);outline-offset:2px;border-radius:2px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+button,a{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid rgba(10,110,89,.34);outline-offset:3px;border-radius:6px}
+.skip-link{position:fixed;left:16px;top:12px;z-index:100;transform:translateY(-180%);
+  padding:10px 14px;background:var(--panel);border:1px solid var(--line2);
+  border-radius:8px;color:var(--ink);font-weight:700;box-shadow:var(--shadow)}
+.skip-link:focus{transform:translateY(0)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
 .up{color:var(--up)} .down{color:var(--down)} .neu{color:var(--ink2)}
 .strike{text-decoration:line-through;color:var(--ink2)}
 
-/* ---- 顶部行情条(签名元素) ---- */
-.ticker{display:flex;align-items:stretch;background:#141D28;border-bottom:3px solid var(--ink)}
-.ticker-label{flex:none;display:flex;align-items:center;padding:0 16px;
-  font:600 11px/1 var(--mono);letter-spacing:.22em;color:#8FA1B8;
-  border-right:1px solid #2A3644}
+/* ---- 顶部行情条 ---- */
+.ticker{display:flex;align-items:stretch;background:#12211B;border-bottom:1px solid #2B3E36}
+.ticker-label{flex:none;display:flex;align-items:center;gap:8px;padding:0 20px;
+  font:700 10px/1 var(--mono);letter-spacing:.22em;color:#D4E7DF;
+  border-right:1px solid #30433B;background:#0A6E59}
+.ticker-label::before{content:"";width:6px;height:6px;border-radius:50%;background:#B7F4DA;
+  box-shadow:0 0 0 4px rgba(183,244,218,.1)}
 .ticker-view{flex:1;overflow:hidden}
 .ticker-track{display:inline-flex;align-items:center;white-space:nowrap;
-  padding:10px 0;animation:tk 60s linear infinite;will-change:transform}
+  padding:11px 0;animation:tk 72s linear infinite;will-change:transform}
+.ticker-copy{display:inline-flex}
 .ticker:hover .ticker-track{animation-play-state:paused}
 @keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .chip{font-family:var(--mono);font-variant-numeric:tabular-nums;
-  font-size:12.5px;color:#C7D2DF;margin-right:38px}
-.chip b{color:#fff;font-weight:600}
-.chip .up{color:#FF927D} .chip .down{color:#5BCB9B} .chip .neu{color:#93A5BB}
+  font-size:11.5px;color:#B7C8C0;margin-right:42px}
+.chip::before{content:"/";color:#557167;margin-right:12px}
+.chip b{color:#F7FBF9;font-weight:650}
+.chip .up{color:#FF9D8E}.chip .down{color:#65D0A5}.chip .neu{color:#A9BBB3}
 
 /* ---- 报头 ---- */
-.masthead{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;
-  padding:34px 0 20px;border-bottom:2px solid var(--ink);margin-bottom:6px;flex-wrap:wrap}
-.eyebrow{font:600 11px/1 var(--mono);letter-spacing:.24em;color:var(--ink2);
-  text-transform:uppercase;margin-bottom:10px}
-h1{margin:0;font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:.01em}
-.sub{margin:8px 0 0;color:var(--ink2);font-size:13.5px}
-.spec{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:12px;
-  color:var(--ink2);border:1px solid var(--line2);border-radius:8px;
-  padding:10px 14px;background:var(--panel);min-width:250px}
-.spec div{display:flex;justify-content:space-between;gap:18px;padding:2px 0}
-.spec b{color:var(--ink);font-weight:600}
+.masthead{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(360px,.65fr);
+  gap:72px;align-items:end;padding:68px 0 44px}
+.intro{min-width:0}
+.brand-line{display:flex;align-items:center;gap:12px;margin-bottom:26px;flex-wrap:wrap}
+.brand-mark{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;
+  background:var(--ink);color:#fff;font:700 18px/1 var(--mono)}
+.eyebrow{font:700 11px/1 var(--mono);letter-spacing:.19em;color:var(--ink2);
+  text-transform:uppercase;margin:0}
+.live-pill{display:inline-flex;align-items:center;gap:7px;margin-left:4px;padding:5px 9px;
+  border:1px solid #BFD7CC;border-radius:999px;background:var(--accent-bg);
+  color:var(--accent-dark);font:700 10px/1 var(--mono);letter-spacing:.05em}
+.live-pill i{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{max-width:780px;margin:0;font-size:clamp(46px,6.3vw,78px);font-weight:760;
+  line-height:.98;letter-spacing:-.055em}
+h1 span{color:var(--accent)}
+.sub{max-width:700px;margin:24px 0 0;color:var(--ink2);font-size:15px;line-height:1.8}
+.header-actions{display:flex;align-items:center;gap:20px;margin-top:30px;flex-wrap:wrap}
+.header-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+  font-weight:700;text-decoration:none}
+.primary-action{padding:0 17px;border-radius:9px;background:var(--ink);color:#fff}
+.primary-action:hover{background:var(--accent-dark);text-decoration:none}
+.secondary-action{border-bottom:1px solid var(--line2)}
+.spec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0;
+  padding:10px;background:#172820;color:#fff;border-radius:18px;box-shadow:var(--shadow)}
+.metric{min-width:0;margin:0;padding:14px 15px;border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;background:rgba(255,255,255,.035)}
+.metric-wide{grid-column:1/-1}
+.metric dt{margin:0 0 5px;color:#9CB0A7;font:650 10px/1.3 var(--mono);
+  letter-spacing:.08em;text-transform:uppercase}
+.metric dd{margin:0;color:#F7FAF8;font:650 14px/1.4 var(--mono);
+  font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.metric-wide dd{font-size:16px}
+.metric .b-warn{vertical-align:1px}
 
-/* ---- 价格速览图(首页顶部, 纯 CSS 横向条形) ---- */
-.quick{background:var(--panel);border:1px solid var(--line);border-radius:10px;
-  padding:16px 18px 10px;margin-bottom:28px}
-.quick-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;
-  margin:0 0 4px}
-.quick-title{font-size:15px;font-weight:600;margin:0}
-.blegend{display:inline-flex;gap:14px;align-items:center;
-  font-size:12px;color:var(--ink2)}
-.sw{display:inline-block;width:14px;height:9px;border-radius:0 3px 3px 0;
-  margin-right:6px;vertical-align:-1px}
-.sw-in{background:#2a78d6}.sw-out{background:#eb6834}
-.bnote{margin-left:auto;font-size:11.5px}
-.bticks{display:grid;grid-template-columns:minmax(116px,168px) 1fr;gap:0 12px;
-  padding:2px 0 4px}
-.tarea{position:relative;height:16px;border-bottom:1px solid var(--line2);
-  margin-right:86px}
-.tarea i{position:absolute;bottom:2px;transform:translateX(-50%);
-  font:500 10.5px var(--mono);font-style:normal;color:var(--ink2);
-  font-variant-numeric:tabular-nums}
-.tarea .tk-lin{display:none}
-body[data-scale=lin] .tarea .tk-log{display:none}
-body[data-scale=lin] .tarea .tk-lin{display:block}
-.bgroup+.bgroup{border-top:1px solid var(--line2);margin-top:6px;padding-top:4px}
-.brow{display:grid;grid-template-columns:minmax(116px,168px) 1fr;gap:0 12px;
-  align-items:center;padding:3px 0}
-.bprov{grid-column:1/-1;font-weight:600;font-size:13px;padding:3px 0 2px}
-.btag{font:600 10px var(--mono);color:var(--ink2);margin-left:8px;
-  letter-spacing:.08em}
-.bmodel{font-family:var(--mono);font-size:12px;color:var(--ink);
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bbars{display:flex;flex-direction:column;margin-right:86px}
-.bbar{position:relative;height:11px;border-radius:0 4px 4px 0;min-width:2px;
-  width:var(--wl,0)}
-body[data-scale=lin] .bbar{width:var(--wi,0)}
-.b-in{background:#2a78d6;margin-bottom:2px}
-.b-out{background:#eb6834}
-.b-none{background:none}
-.bbar i{position:absolute;left:100%;top:50%;transform:translateY(-52%);
-  padding-left:6px;font:500 11px/1 var(--mono);font-style:normal;
-  font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
-.bfoot{margin:10px 0 2px;font-size:11.5px;color:var(--ink2)}
-
-/* ---- 吸顶控制条 ---- */
-.controls{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;
-  gap:14px;background:rgba(242,244,247,.93);backdrop-filter:blur(6px);
-  padding:10px 0;margin-bottom:28px;flex-wrap:wrap}
+/* ---- 吸顶导航与控制 ---- */
+.controls{position:sticky;top:0;z-index:20;display:flex;align-items:center;
+  justify-content:space-between;gap:18px;margin:0 0 24px;padding:11px 0;
+  background:rgba(243,242,236,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(200,206,197,.7)}
+.jump-nav{display:flex;align-items:center;gap:4px}
+.jump-nav a{padding:8px 10px;border-radius:7px;color:var(--ink2);font-size:12.5px;
+  font-weight:650;text-decoration:none;white-space:nowrap}
+.jump-nav a:hover{background:var(--panel);color:var(--ink);text-decoration:none}
+.control-groups{display:flex;align-items:center;justify-content:flex-end;gap:8px;min-width:max-content}
+.control-label{margin-right:3px;color:var(--ink3);font:700 10px var(--mono);
+  letter-spacing:.1em;text-transform:uppercase}
 .seg{display:inline-flex;background:var(--panel);border:1px solid var(--line2);
-  border-radius:999px;padding:3px;gap:2px}
-.seg button{border:0;background:transparent;font:600 12.5px/1 var(--sans);
-  color:var(--ink2);padding:7px 14px;border-radius:999px;cursor:pointer}
-.seg button.on{background:var(--ink);color:#fff}
+  border-radius:10px;padding:3px;gap:2px;box-shadow:0 1px 0 rgba(25,35,30,.04)}
+.seg button{min-height:34px;border:0;background:transparent;font:650 12px/1 var(--sans);
+  color:var(--ink2);padding:0 12px;border-radius:7px;cursor:pointer;white-space:nowrap}
+.seg button:hover{color:var(--ink);background:var(--panel2)}
+.seg button.on{background:var(--ink);color:#fff;box-shadow:0 2px 7px rgba(23,35,30,.2)}
+
+/* ---- 价格速览图 ---- */
+.quick{scroll-margin-top:76px;background:var(--panel);border:1px solid var(--line);
+  border-radius:18px;margin:0 0 76px;overflow:hidden;box-shadow:var(--shadow)}
+.quick-head{display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:20px 22px;border-bottom:1px solid var(--line);background:var(--panel2)}
+.quick-title{font-size:17px;line-height:1.35;font-weight:730;margin:0;letter-spacing:-.01em}
+.quick-title::before{content:"01";display:inline-grid;place-items:center;width:27px;height:27px;
+  margin-right:10px;border-radius:8px;background:var(--accent);color:#fff;
+  font:700 10px/1 var(--mono);vertical-align:2px}
+.blegend{display:inline-flex;gap:13px;align-items:center;justify-content:flex-end;
+  color:var(--ink2);font-size:11.5px;flex-wrap:wrap}
+.sw{display:inline-block;width:17px;height:7px;border-radius:99px;
+  margin-right:6px;vertical-align:1px}
+.sw-in{background:var(--chart-in)}.sw-out{background:var(--chart-out)}
+.bnote{padding-right:4px;color:var(--ink3);font-family:var(--mono)}
+.seg-scale button{min-height:30px;padding:0 10px;font-size:11px}
+.chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+  padding:18px}
+.bgroup{min-width:0;padding:10px 12px 11px;border:1px solid var(--line);
+  border-radius:12px;background:#FFF}
+.brow{display:grid;grid-template-columns:minmax(102px,132px) minmax(0,1fr);gap:10px;
+  align-items:center;padding:4px 0}
+.bprov{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  min-height:30px;margin-bottom:4px;padding-bottom:7px;border-bottom:1px solid var(--line);
+  font-weight:720;font-size:13px}
+.btag{flex:none;font:650 9px var(--mono);color:var(--ink3);letter-spacing:.08em}
+.bmodel{font-family:var(--mono);font-size:10.5px;color:var(--ink2);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bbars{display:flex;flex-direction:column;margin-right:64px;border-left:1px solid var(--line2);
+  background:repeating-linear-gradient(to right,transparent 0,transparent calc(25% - 1px),
+  rgba(221,224,217,.55) 25%)}
+.bbar{position:relative;height:9px;border-radius:0 99px 99px 0;min-width:2px;
+  width:var(--wl,0);transition:width .28s ease}
+body[data-scale=lin] .bbar{width:var(--wi,0)}
+.b-in{background:var(--chart-in);margin-bottom:3px}
+.b-out{background:var(--chart-out)}
+.b-none{background:none}
+.bbar i{position:absolute;left:100%;top:50%;transform:translateY(-51%);
+  padding-left:5px;color:var(--ink);font:650 9.5px/1 var(--mono);font-style:normal;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.bfoot{margin:0;padding:12px 20px;border-top:1px solid var(--line);background:var(--panel2);
+  color:var(--ink2);font-size:11.5px}
 
 /* ---- 区块标题 ---- */
-section.block{margin:46px 0}
-.sec-eyebrow{font:600 11px var(--mono);letter-spacing:.22em;color:var(--ink2);
-  text-transform:uppercase;margin:0 0 3px}
-h2.sec-title{margin:0 0 5px;font-size:20px}
-.sec-sub{margin:0 0 18px;color:var(--ink2);font-size:13px}
+section.block{scroll-margin-top:76px;margin:0 0 88px}
+.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.7fr);
+  gap:32px;align-items:end;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line2)}
+.sec-eyebrow{font:700 10px var(--mono);letter-spacing:.18em;color:var(--accent);
+  text-transform:uppercase;margin:0 0 5px}
+h2.sec-title{margin:0;font-size:clamp(25px,3vw,34px);line-height:1.15;letter-spacing:-.035em}
+.sec-sub{margin:0;color:var(--ink2);font-size:13px;text-align:right}
 
 /* ---- 厂商价格块 ---- */
-.prov{background:var(--panel);border:1px solid var(--line);border-radius:10px;
-  margin:0 0 18px;overflow:hidden}
-.prov-head{display:flex;justify-content:space-between;align-items:baseline;
-  gap:14px;padding:13px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap;
-  background:linear-gradient(#FBFCFD,#F6F8FA)}
-.prov-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.prov-title h3{margin:0;font-size:16.5px}
-.tag{font:600 10.5px var(--mono);letter-spacing:.08em;padding:3px 8px;
-  border-radius:4px}
-.tag-region{background:#EDF0F5;color:var(--ink2);border:1px solid var(--line2)}
-.badge{font-size:11px;padding:3px 9px;border-radius:999px;font-weight:600}
+.prov{background:var(--panel);border:1px solid var(--line);border-radius:15px;
+  margin:0 0 16px;overflow:hidden;box-shadow:0 4px 14px rgba(36,48,42,.025)}
+.prov-head{display:flex;justify-content:space-between;align-items:center;gap:16px;
+  min-height:64px;padding:13px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap;
+  background:var(--panel2)}
+.prov-title{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.prov-title::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent)}
+.prov-title h3{margin:0;font-size:15.5px;letter-spacing:-.01em}
+.tag{font:650 9.5px var(--mono);letter-spacing:.07em;padding:3px 7px;border-radius:5px}
+.tag-region{background:#EEF0EB;color:var(--ink2);border:1px solid var(--line)}
+.badge{font-size:10px;padding:3px 8px;border-radius:999px;font-weight:700}
 .b-seed{background:var(--seed-bg);color:var(--seed)}
 .b-err{background:var(--err-bg);color:var(--err)}
-.b-warn{background:#F0F2F5;color:var(--ink2)}
-.prov-meta{font-family:var(--mono);font-variant-numeric:tabular-nums;
-  font-size:11.5px;color:var(--ink2);display:flex;gap:16px;flex-wrap:wrap}
-.promo{margin:0;padding:9px 18px;background:var(--up-bg);color:#7C2E1F;
-  font-size:13px;border-bottom:1px solid var(--line)}
-.promo b{font:600 10.5px var(--mono);letter-spacing:.18em;color:var(--up);
-  margin-right:8px}
+.b-warn{background:#EEF0EB;color:var(--ink2)}
+.prov-meta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;color:var(--ink2);
+  font:500 10.5px var(--mono);font-variant-numeric:tabular-nums}
+.prov-meta a{font-weight:700}
+.promo{margin:0;padding:10px 18px;background:var(--up-bg);color:#7C2E1F;
+  font-size:12.5px;border-bottom:1px solid #EACFC8}
+.promo b{font:700 9.5px var(--mono);letter-spacing:.16em;color:var(--up);margin-right:8px}
 
 /* ---- 价格表 ---- */
 .table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:660px}
-thead th{font:600 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;
-  color:var(--ink2);text-align:right;padding:10px 14px;
-  border-bottom:2px solid var(--ink);background:var(--panel)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:720px}
+thead th{background:#FCFCF8;color:var(--ink2);text-align:right;padding:11px 14px;
+  border-bottom:1px solid var(--line2);font:700 9.5px var(--mono);
+  letter-spacing:.09em;text-transform:uppercase;white-space:nowrap}
 thead th:first-child{text-align:left}
 thead th.c-note-h{text-align:left}
-tbody td{padding:8.5px 14px;border-bottom:1px solid var(--line);
-  text-align:right;vertical-align:top}
+tbody td{padding:10px 14px;border-bottom:1px solid var(--line);text-align:right;
+  vertical-align:top;transition:background .15s ease}
 tbody tr:last-child td{border-bottom:0}
-tbody tr:nth-child(even){background:#FAFBFC}
-td.c-model{font-family:var(--mono);font-size:12.5px;text-align:left;
+tbody tr:nth-child(even){background:#FAFAF6}
+tbody tr:hover td{background:#F1F6F2}
+td.c-model{font-family:var(--mono);font-size:11.5px;font-weight:650;text-align:left;
   color:var(--ink);word-break:break-all}
-td.c-note{text-align:left;font-size:12.5px;color:var(--ink2);max-width:340px}
-.price{font-family:var(--mono);font-variant-numeric:tabular-nums;
-  font-weight:500;white-space:nowrap}
-.price-zero{color:var(--down);font-weight:700}
-.empty-row td{text-align:left;padding:16px 18px;color:var(--ink2);font-size:13px}
+td.c-note{text-align:left;font-size:11.5px;color:var(--ink2);max-width:360px}
+.price{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:650;white-space:nowrap}
+.price-zero{color:var(--down);font-weight:750}
+.empty-row td{text-align:left;padding:18px;color:var(--ink2);font-size:12px}
 body[data-currency=orig] .p-cny{display:none}
 body[data-currency=cny] .p-orig{display:none}
 
 /* ---- 变动流水 ---- */
-.chg-list{list-style:none;margin:0;padding:0}
-.chg{display:grid;grid-template-columns:104px 128px 1fr;gap:4px 16px;
+.chg-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.chg{position:relative;display:grid;grid-template-columns:100px 128px 1fr;gap:5px 16px;
   align-items:baseline;background:var(--panel);border:1px solid var(--line);
-  border-left:3px solid var(--line2);border-radius:8px;padding:10px 16px;
-  margin-bottom:8px}
-.chg-up{border-left-color:var(--up)}
-.chg-down{border-left-color:var(--down)}
-.chg-new{border-left-color:var(--new)}
-.chg-removed{border-left-color:var(--ink2)}
-.chg-time{font-family:var(--mono);font-variant-numeric:tabular-nums;
-  font-size:11.5px;color:var(--ink2)}
-.chg-prov{font-weight:600;font-size:13.5px}
-.chg-body{font-size:13.5px}
-.chg-body .m{font-family:var(--mono);font-size:12.5px}
-.arrow{font-weight:700}
-.blank{background:var(--panel);border:1px dashed var(--line2);border-radius:10px;
-  padding:22px;color:var(--ink2);font-size:13.5px;text-align:center}
+  border-left:4px solid var(--line2);border-radius:11px;padding:12px 16px}
+.chg-up{border-left-color:var(--up)}.chg-down{border-left-color:var(--down)}
+.chg-new{border-left-color:var(--new)}.chg-removed{border-left-color:var(--ink3)}
+.chg-time{color:var(--ink3);font:550 10.5px var(--mono);font-variant-numeric:tabular-nums}
+.chg-prov{font-weight:720;font-size:12.5px}
+.chg-body{font-size:12.5px}.chg-body .m{font:650 11.5px var(--mono)}
+.arrow{font-weight:750}
+.blank{background:var(--panel);border:1px dashed var(--line2);border-radius:13px;
+  padding:28px;color:var(--ink2);font-size:13px;text-align:center}
 
 /* ---- 公告 ---- */
-.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
-  gap:16px}
-.news-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;
-  padding:14px 16px}
-.news-card h3{margin:0 0 8px;font-size:15px;display:flex;
-  justify-content:space-between;align-items:baseline;gap:10px}
-.news-card h3 a{font:600 11px var(--mono);color:var(--ink2);letter-spacing:.08em;
-  white-space:nowrap}
+.news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.news-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:16px 17px;box-shadow:0 4px 14px rgba(36,48,42,.025)}
+.news-card h3{margin:0 0 8px;font-size:14.5px;display:flex;justify-content:space-between;
+  align-items:baseline;gap:10px}
+.news-card h3 a{color:var(--ink3);font:700 9.5px var(--mono);letter-spacing:.06em;white-space:nowrap}
 .news-card ul{list-style:none;margin:0;padding:0}
-.n-item{padding:8px 0;border-top:1px solid var(--line)}
-.n-date{display:inline-block;font:600 11px var(--mono);color:var(--ink2);
-  background:#EDF0F5;border-radius:4px;padding:2px 6px;margin-right:8px}
-.n-title{font-weight:600;font-size:13.5px}
-.n-summary{margin:4px 0 0;font-size:12.5px;color:var(--ink2)}
-.news-empty{color:var(--ink2);font-size:12.5px;padding:8px 0 2px}
+.n-item{padding:10px 0;border-top:1px solid var(--line)}
+.n-date{display:inline-block;margin-right:6px;padding:2px 5px;border-radius:4px;
+  background:#EEF0EB;color:var(--ink2);font:650 9.5px var(--mono);vertical-align:1px}
+.n-title{font-weight:680;font-size:12.5px;line-height:1.55}
+.n-summary{margin:5px 0 0;color:var(--ink2);font-size:11.5px;line-height:1.65}
+.news-empty{color:var(--ink2);font-size:11.5px;padding:10px 0 2px}
 
 /* ---- 页脚 ---- */
-footer{margin:64px 0 42px;padding-top:18px;border-top:2px solid var(--ink);
-  color:var(--ink2);font-size:12.5px;display:flex;justify-content:space-between;
-  gap:20px;flex-wrap:wrap}
-footer .mono{font-size:11.5px}
+footer{margin:0 0 32px;padding:24px 26px;border-radius:16px;background:#172820;
+  color:#AFC0B8;font-size:11.5px;display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap}
+footer p{max-width:860px}footer a{color:#D8EFE6}footer .mono{font-size:10.5px}
 
 /* ---- 筛选 ---- */
 body[data-region=intl] .prov[data-region=domestic],
@@ -292,20 +332,60 @@ body[data-region=domestic] .prov[data-region=intl],
 body[data-region=domestic] .news-card[data-region=intl],
 body[data-region=domestic] .bgroup[data-region=intl]{display:none}
 
-@media(max-width:820px){
-  .masthead{align-items:flex-start;flex-direction:column;padding-top:26px}
-  .spec{min-width:0;width:100%}
-  .chg{grid-template-columns:1fr;gap:2px 0}
-  .chg-time::after{content:" · "}
+@media(hover:hover){
+  .prov,.news-card{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .prov:hover,.news-card:hover{transform:translateY(-2px);border-color:var(--line2);
+    box-shadow:0 12px 28px rgba(36,48,42,.07)}
+}
+@media(max-width:960px){
+  .masthead{grid-template-columns:1fr;gap:34px;padding:52px 0 38px}
+  .spec{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .metric-wide{grid-column:span 2}
+  .chart-grid{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  .wrap{padding:0 18px}
   .ticker-label{display:none}
-  .quick{padding:12px 12px 6px}
-  .brow{grid-template-columns:minmax(96px,132px) 1fr;gap:0 8px}
-  .bbars,.tarea{margin-right:62px}
-  .bnote{margin-left:0;flex-basis:100%}
+  .masthead{padding-top:38px}
+  h1{font-size:clamp(40px,13vw,58px)}
+  .sub{margin-top:18px;font-size:14px}
+  .spec{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .metric-wide{grid-column:1/-1}
+  .controls{align-items:flex-start;margin-left:-18px;margin-right:-18px;padding:10px 18px;
+    overflow-x:auto;scrollbar-width:none}
+  .controls::-webkit-scrollbar{display:none}
+  .jump-nav{display:none}
+  .control-groups{justify-content:flex-start}
+  .control-label{display:none}
+  .seg button{min-height:44px;padding:0 13px}
+  .quick{margin-bottom:64px}
+  .quick-head{align-items:flex-start;flex-direction:column;padding:17px}
+  .blegend{justify-content:flex-start}
+  .chart-grid{padding:10px}
+  .brow{grid-template-columns:minmax(90px,116px) minmax(0,1fr);gap:8px}
+  .bbars{margin-right:56px}
+  .bfoot{padding:12px 15px}
+  section.block{margin-bottom:68px}
+  .section-head{grid-template-columns:1fr;gap:9px;margin-bottom:16px}
+  .sec-sub{text-align:left}
+  .prov-head{align-items:flex-start;flex-direction:column;gap:8px}
+  table{min-width:680px}
+  thead th:first-child,td.c-model{position:sticky;left:0;z-index:1;background:#FFFEFB;
+    box-shadow:1px 0 0 var(--line)}
+  tbody tr:nth-child(even) td.c-model{background:#FAFAF6}
+  .chg{grid-template-columns:1fr;gap:2px;padding:12px 14px}
+  .news-grid{grid-template-columns:1fr}
+  footer{margin-left:-4px;margin-right:-4px;padding:22px}
+}
+@media(max-width:380px){
+  .brand-line{gap:9px}.live-pill{margin-left:0}.spec{grid-template-columns:1fr}
+  .metric-wide{grid-column:auto}.header-actions{align-items:stretch;flex-direction:column}
+  .header-actions a{width:100%}.brow{grid-template-columns:88px minmax(0,1fr)}
 }
 @media(prefers-reduced-motion:reduce){
-  .ticker-track{animation:none}
-  .ticker-view{overflow-x:auto}
+  html{scroll-behavior:auto}.ticker-track{animation:none}.ticker-view{overflow-x:auto}
+  .bbar,.prov,.news-card{transition:none}
 }
 """
 
@@ -399,7 +479,8 @@ def _ticker_chips(changes: list, prov_names: dict, prov_cur: dict) -> str:
     # 内容渲染两遍, 配合 translateX(-50%) 实现无缝循环
     return (f'<div class="ticker" aria-label="最新价格变动">'
             f'<span class="ticker-label">LIVE</span>'
-            f'<div class="ticker-view"><div class="ticker-track">{row}{row}'
+            f'<div class="ticker-view"><div class="ticker-track">{row}'
+            f'<span class="ticker-copy" aria-hidden="true">{row}</span>'
             f'</div></div></div>')
 
 
@@ -449,29 +530,6 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
     def vlabel(v) -> str:
         return f"¥{_fmt(round(v, 2))}" if v is not None else "—"
 
-    # 对数刻度刻度线: 数据范围内的 10 的幂(¥1 / ¥10 / ¥100 / ...)
-    log_ticks = []
-    e = math.floor(math.log10(lo))
-    while 10 ** e <= hi * 1.001 and len(log_ticks) < 5:
-        if 10 ** e >= lo * 0.999:
-            log_ticks.append(10 ** e)
-        e += 1
-    # 线性刻度刻度线: 从 0 起取"整"步长
-    raw = hi / 4
-    mag = 10 ** math.floor(math.log10(raw)) if raw > 0 else 1
-    step = next(m * mag for m in (1, 2, 2.5, 5, 10) if m * mag >= raw)
-    lin_ticks = []
-    t = 0.0
-    while t <= hi * 1.001 and len(lin_ticks) < 7:
-        lin_ticks.append(t)
-        t += step
-
-    ticks_html = (
-        "".join(f'<i class="tk tk-log" style="left:{w_log(t)}%">¥{_fmt(t)}</i>'
-                for t in log_ticks)
-        + "".join(f'<i class="tk tk-lin" style="left:{w_lin(t)}%">¥{_fmt(t)}</i>'
-                  for t in lin_ticks))
-
     parts = []
     for cfg, rows in groups:
         region = cfg.get("region", "")
@@ -499,8 +557,7 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
         '<button data-scale-btn="log" class="on" aria-pressed="true">对数刻度</button>'
         '<button data-scale-btn="lin" aria-pressed="false">线性刻度</button></div>'
         '</div></div>'
-        f'<div class="bticks"><div></div><div class="tarea">{ticks_html}</div></div>'
-        f'{"".join(parts)}'
+        f'<div class="chart-grid">{"".join(parts)}</div>'
         f'<p class="bfoot">线性刻度下价格差异直观, 但低价模型会被压扁; 对数刻度完整'
         f'但压缩差异 —— 右上角可切换 · USD 按 1 USD ≈ ¥{_fmt(rate)} 折算 · 每家取'
         '官网价格页最前的 2 个模型(即最新), 完整价格与备注见下方明细表。</p></section>')
@@ -644,7 +701,7 @@ def _news_card(cfg: dict, rec: dict) -> str:
         date_html = f'<span class="n-date">{date}</span>' if date else ""
         items.append(f'<li class="n-item">{date_html}{title}{sum_html}</li>')
     body = ("".join(items) if items else
-            '<p class="news-empty">尚未抓到公告条目, 每小时自动重试。</p>')
+            '<li class="news-empty">尚未抓到公告条目, 每小时自动重试。</li>')
     return (f'<div class="news-card" data-region="{data_region}">'
             f'<h3>{_e(name)}{link}</h3><ul>{body}</ul></div>')
 
@@ -676,24 +733,33 @@ def build(providers_cfg: list) -> Path:
     fx_line = f"1 USD ≈ ¥{_fmt(rate)}"
     ticker = _ticker_chips(changes, prov_names, prov_cur)
 
-    spec = (f'<aside class="spec">'
-            f'<div><span>最近更新</span><b>{gen}</b></div>'
-            f'<div><span>汇率</span><b>{_e(fx_line)}</b></div>'
-            f'<div><span>汇率来源</span><b>{_e(fx_src)}{fx_stale}</b></div>'
-            f'<div><span>覆盖</span><b>{len(providers_cfg)} 厂商 · {total_models} 模型</b></div>'
-            f'<div><span>变动记录</span><b>{len(changes)} 条</b></div>'
-            f'</aside>')
+    spec = (f'<dl class="spec" aria-label="数据概览">'
+            f'<div class="metric metric-wide"><dt>最近更新 · 北京时间</dt><dd>{gen}</dd></div>'
+            f'<div class="metric"><dt>覆盖厂商</dt><dd>{len(providers_cfg)} 家</dd></div>'
+            f'<div class="metric"><dt>在列模型</dt><dd>{total_models} 个</dd></div>'
+            f'<div class="metric"><dt>变动记录</dt><dd>{len(changes)} 条</dd></div>'
+            f'<div class="metric"><dt>实时汇率</dt><dd>{_e(fx_line)}{fx_stale}</dd></div>'
+            f'<div class="metric metric-wide"><dt>汇率来源</dt><dd>{_e(fx_src)}</dd></div>'
+            f'</dl>')
 
     masthead = (
-        f'<header class="masthead"><div>'
-        f'<p class="eyebrow">LLM PRICE WATCH · HOURLY</p>'
-        f'<h1>大模型 API 价格看板</h1>'
-        f'<p class="sub">自动抓取各厂商官网价格页 · 每小时更新 · 红涨绿跌 · '
-        f'时间均为北京时间 · 实际价格以各厂商官网为准</p>'
+        f'<header class="masthead"><div class="intro">'
+        f'<div class="brand-line"><span class="brand-mark" aria-hidden="true">↗</span>'
+        f'<p class="eyebrow">LLM PRICE WATCH</p>'
+        f'<span class="live-pill"><i aria-hidden="true"></i>每小时更新</span></div>'
+        f'<h1>大模型 API<br><span>价格看板</span></h1>'
+        f'<p class="sub">把 {len(providers_cfg)} 家主流厂商的公开价格、变动与公告放进同一张可比较的账本。'
+        f'支持人民币折算，时间统一为北京时间；实际价格以各厂商官网为准。</p>'
+        f'<div class="header-actions"><a class="primary-action" href="#prices">查看完整价格 ↓</a>'
+        f'<a class="secondary-action" href="{REPO_URL}" target="_blank" rel="noopener">'
+        f'查看开源管线 ↗</a></div>'
         f'</div>{spec}</header>')
 
     controls = (
-        '<div class="controls">'
+        '<nav class="controls" aria-label="页面导航与数据筛选">'
+        '<div class="jump-nav"><a href="#quick">价格速览</a><a href="#prices">完整价格</a>'
+        '<a href="#changes">变动流水</a><a href="#news">官方公告</a></div>'
+        '<div class="control-groups"><span class="control-label">FILTER</span>'
         '<div class="seg" role="group" aria-label="地区筛选">'
         '<button data-region-btn="all" class="on" aria-pressed="true">全部</button>'
         '<button data-region-btn="intl" aria-pressed="false">国际</button>'
@@ -701,7 +767,7 @@ def build(providers_cfg: list) -> Path:
         '<div class="seg" role="group" aria-label="币种显示">'
         '<button data-cur-btn="cny" class="on" aria-pressed="true">折算 ¥</button>'
         '<button data-cur-btn="orig" aria-pressed="false">原币</button></div>'
-        '</div>')
+        '</div></nav>')
 
     quick = _quick_chart(providers_cfg, recs, rate)
 
@@ -710,10 +776,10 @@ def build(providers_cfg: list) -> Path:
                         for cfg in providers_cfg)
     prices = (
         f'<section class="block" id="prices">'
-        f'<p class="sec-eyebrow">PRICES</p>'
-        f'<h2 class="sec-title">价格对比</h2>'
-        f'<p class="sec-sub">按厂商分组 · 单位: 每百万 tokens · '
-        f'<span class="mono">USD 按 1 USD ≈ ¥{_fmt(rate)} 折算(标注 ≈)</span></p>'
+        f'<div class="section-head"><div><p class="sec-eyebrow">02 / PRICES</p>'
+        f'<h2 class="sec-title">完整价格账本</h2></div>'
+        f'<p class="sec-sub">按厂商分组 · 单位：每百万 tokens<br>'
+        f'<span class="mono">USD 按 1 USD ≈ ¥{_fmt(rate)} 折算（标注 ≈）</span></p></div>'
         f'{prov_html}</section>')
 
     # ---- 变动流水
@@ -725,19 +791,19 @@ def build(providers_cfg: list) -> Path:
                     '一旦有价格或活动变化, 会自动出现在这里。</div>')
     changes_sec = (
         f'<section class="block" id="changes">'
-        f'<p class="sec-eyebrow">CHANGES</p>'
-        f'<h2 class="sec-title">价格变动流水</h2>'
-        f'<p class="sec-sub">每次官网价格页内容变化时自动记录, 新进在前 · '
-        f'红 = 涨价 / 新增, 绿 = 降价</p>{chg_html}</section>')
+        f'<div class="section-head"><div><p class="sec-eyebrow">03 / CHANGES</p>'
+        f'<h2 class="sec-title">价格变动流水</h2></div>'
+        f'<p class="sec-sub">官网价格页变化时自动留痕，新记录在前<br>'
+        f'红 = 涨价 / 新增，绿 = 降价</p></div>{chg_html}</section>')
 
     # ---- 公告区
     news_cards = "".join(_news_card(cfg, news_recs.get(cfg["id"], {}))
                          for cfg in providers_cfg if cfg.get("news_url"))
     news_sec = (
         f'<section class="block" id="news">'
-        f'<p class="sec-eyebrow">NOTICES</p>'
-        f'<h2 class="sec-title">官方公告</h2>'
-        f'<p class="sec-sub">来自各厂商官网公告 / changelog 页, 每小时抓取新条目</p>'
+        f'<div class="section-head"><div><p class="sec-eyebrow">04 / NOTICES</p>'
+        f'<h2 class="sec-title">官方公告雷达</h2></div>'
+        f'<p class="sec-sub">来自各厂商官网公告 / changelog 页面<br>每小时抓取新条目</p></div>'
         f'<div class="news-grid">{news_cards}</div></section>')
 
     footer = (
@@ -759,9 +825,10 @@ def build(providers_cfg: list) -> Path:
         'DeepSeek / Qwen / 豆包 / 智谱 / Kimi 等官网价格页, 每小时更新的大模型 '
         'API 价格对比、变动流水与官方公告。">'
         f'<style>{CSS}</style></head>'
-        f'<body data-region="all" data-currency="cny">{ticker}'
-        f'<div class="wrap">{masthead}{controls}{quick}'
-        f'<main>{prices}{changes_sec}{news_sec}</main>{footer}</div>'
+        f'<body data-region="all" data-currency="cny">'
+        f'<a class="skip-link" href="#main-content">跳到主要内容</a>{ticker}'
+        f'<div class="wrap">{masthead}{controls}'
+        f'<main id="main-content">{quick}{prices}{changes_sec}{news_sec}</main>{footer}</div>'
         f'<script>{JS}</script></body></html>')
 
     SITE_DIR.mkdir(parents=True, exist_ok=True)

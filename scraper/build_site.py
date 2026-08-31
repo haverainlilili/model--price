@@ -12,6 +12,7 @@ from __future__ import annotations
 import html
 import json
 import math
+import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -214,14 +215,18 @@ h1 span{color:var(--accent)}
   padding:18px}
 .bgroup{min-width:0;padding:10px 12px 11px;border:1px solid var(--line);
   border-radius:12px;background:#FFF}
-.brow{display:grid;grid-template-columns:minmax(102px,132px) minmax(0,1fr);gap:10px;
+.brow{display:grid;grid-template-columns:minmax(132px,176px) minmax(0,1fr);gap:10px;
   align-items:center;padding:4px 0}
 .bprov{display:flex;align-items:center;justify-content:space-between;gap:10px;
   min-height:30px;margin-bottom:4px;padding-bottom:7px;border-bottom:1px solid var(--line);
   font-weight:720;font-size:13px}
 .btag{flex:none;font:650 9px var(--mono);color:var(--ink3);letter-spacing:.08em}
-.bmodel{font-family:var(--mono);font-size:10.5px;color:var(--ink2);
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bmodel{display:flex;align-items:center;gap:5px;min-width:0;font-family:var(--mono);
+  font-size:10.5px;color:var(--ink2)}
+.bmodel-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bvariant{flex:none;max-width:74px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  padding:2px 5px;border-radius:4px;background:var(--accent-bg);color:var(--accent-dark);
+  font:700 8.5px/1.2 var(--sans)}
 .bbars{display:flex;flex-direction:column;margin-right:64px;border-left:1px solid var(--line2);
   background:repeating-linear-gradient(to right,transparent 0,transparent calc(25% - 1px),
   rgba(221,224,217,.55) 25%)}
@@ -484,20 +489,88 @@ def _ticker_chips(changes: list, prov_names: dict, prov_cur: dict) -> str:
             f'</div></div></div>')
 
 
+def _quick_variant(note: str | None) -> str:
+    """把同名模型的长备注压缩成速览区可读的价格档位标签。"""
+    text = str(note or "").strip()
+    if not text:
+        return "不同档位"
+
+    def compact_number(value: str) -> str:
+        return value.rstrip("0").rstrip(".") if "." in value else value
+
+    lower = text.lower()
+    tier = ""
+    if "批量" in text or "batch" in lower:
+        tier = "批量"
+    elif "flex" in lower:
+        tier = "Flex"
+    elif "优先级" in text or "优先服务" in text or "priority" in lower:
+        tier = "优先"
+    elif "standard" in lower or "标准" in text:
+        tier = "标准"
+
+    context = ""
+    if "短上下文" in text:
+        context = "短"
+    elif "长上下文" in text:
+        context = "长"
+
+    band = ""
+    range_match = re.search(
+        r"输入长度\s*[\[\(]\s*(\d+(?:\.\d+)?)\s*,\s*"
+        r"(\d+(?:\.\d+)?)\s*[\]\)](?:\s*千\s*tokens?)?",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if range_match:
+        start = compact_number(range_match.group(1))
+        end = compact_number(range_match.group(2))
+        band = f"{start}–{end}K"
+    else:
+        open_match = re.search(
+            r"输入长度\s*\[\s*(\d+(?:\.\d+)?)\s*\+\s*\)", text)
+        limit_match = re.search(
+            r"([≤≥<>])\s*(\d+(?:\.\d+)?)\s*[kK]\s*输入", text)
+        if open_match:
+            band = f"{compact_number(open_match.group(1))}K+"
+        elif limit_match:
+            limit = compact_number(limit_match.group(2))
+            band = f"{limit_match.group(1)}{limit}K"
+
+    if context:
+        return f"{tier}·{context}" if tier else f"{context}上下文"
+    if band:
+        return f"{tier}·{band}" if tier else band
+    if "空闲时段" in text:
+        return "空闲"
+    if "高峰时段" in text:
+        return "高峰"
+    if tier:
+        return tier
+
+    first = re.split(r"[；;]", text, maxsplit=1)[0].strip()
+    return first if len(first) <= 10 else first[:9] + "…"
+
+
 def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
-    """首页顶部价格速览: 每家厂商价格页最前的 2 个模型, 输入/输出双条。
+    """首页顶部价格速览: 每家厂商价格页最前的 4 个模型, 输入/输出双条。
 
     对数/线性双刻度同时渲染(条宽写进 CSS 变量 --wl/--wi, 按钮切换):
     线性刻度价格差异直观, 但跨数量级时低价模型被压成一条线; 对数刻度
     完整但压缩差异。两种互补, 读者自选。
     跨厂商可比的前提是同一币种: USD 统一按汇率折算成人民币。
-    「最新 2 个」按各官网价格页的排列顺序取(各家都把最新模型放在最前)。
+    「最新 4 个」按各官网价格页的排列顺序取(各家都把最新模型放在最前)。
     """
     groups, vals = [], []
     for cfg in providers_cfg:
         rec = recs.get(cfg["id"]) or {}
+        models = rec.get("models") or []
+        name_counts: dict[str, int] = {}
+        for model in models:
+            name = str(model.get("model") or "")
+            name_counts[name] = name_counts.get(name, 0) + 1
         rows = []
-        for m in (rec.get("models") or [])[:2]:
+        for m in models[:4]:
             cur = (m.get("currency") or rec.get("currency") or "").upper()
             fx = rate if cur == "USD" else 1.0
 
@@ -507,7 +580,10 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
             ci, co = cv(m.get("input_per_1m")), cv(m.get("output_per_1m"))
             if ci is None and co is None:
                 continue
-            rows.append((m.get("model", ""), ci, co))
+            model = str(m.get("model") or "")
+            note = str(m.get("note") or "").strip()
+            variant = _quick_variant(note) if name_counts.get(model, 0) > 1 else ""
+            rows.append((model, ci, co, variant, note))
             vals += [v for v in (ci, co) if v]
         if rows:
             groups.append((cfg, rows))
@@ -535,12 +611,15 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
         region = cfg.get("region", "")
         dr = "domestic" if region == "国内" else "intl"
         inner = []
-        for model, ci, co in rows:
+        for model, ci, co, variant, note in rows:
             bars = (f'<div class="bbar b-in" style="--wl:{w_log(ci)}%;'
                     f'--wi:{w_lin(ci)}%"><i>{vlabel(ci)}</i></div>'
                     f'<div class="bbar b-out" style="--wl:{w_log(co)}%;'
                     f'--wi:{w_lin(co)}%"><i>{vlabel(co)}</i></div>')
-            inner.append(f'<div class="brow"><span class="bmodel">{_e(model)}</span>'
+            tag = (f'<span class="bvariant" title="{_e(note)}">{_e(variant)}</span>'
+                   if variant else "")
+            inner.append(f'<div class="brow"><span class="bmodel">'
+                         f'<span class="bmodel-name">{_e(model)}</span>{tag}</span>'
                          f'<div class="bbars">{bars}</div></div>')
         parts.append(f'<div class="bgroup" data-region="{dr}">'
                      f'<div class="bprov">{_e(cfg.get("name_cn") or cfg["name"])}'
@@ -549,7 +628,7 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
 
     return (
         '<section class="quick" id="quick" aria-label="价格速览图">'
-        '<div class="quick-head"><h2 class="quick-title">价格速览 · 每家最新的 2 个模型'
+        '<div class="quick-head"><h2 class="quick-title">价格速览 · 每家最新的 4 个模型'
         '</h2><div class="blegend"><span><i class="sw sw-in"></i>输入</span>'
         '<span><i class="sw sw-out"></i>输出</span>'
         '<span class="bnote">统一折算人民币</span>'
@@ -560,7 +639,8 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
         f'<div class="chart-grid">{"".join(parts)}</div>'
         f'<p class="bfoot">线性刻度下价格差异直观, 但低价模型会被压扁; 对数刻度完整'
         f'但压缩差异 —— 右上角可切换 · USD 按 1 USD ≈ ¥{_fmt(rate)} 折算 · 每家取'
-        '官网价格页最前的 2 个模型(即最新), 完整价格与备注见下方明细表。</p></section>')
+        '官网价格页最前的 4 个模型(即最新), 同名模型后的标签说明价格档位差异; '
+        '完整价格与备注见下方明细表。</p></section>')
 
 
 def _prov_section(cfg: dict, rec: dict | None, rate: float) -> str:
@@ -820,6 +900,7 @@ def build(providers_cfg: list) -> Path:
     page = (
         '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width, initial-scale=1">'
+        '<link rel="icon" href="data:,">'
         '<title>大模型 API 价格看板 · LLM Price Watch</title>'
         '<meta name="description" content="自动抓取 OpenAI / Anthropic / Google / '
         'DeepSeek / Qwen / 豆包 / 智谱 / Kimi 等官网价格页, 每小时更新的大模型 '

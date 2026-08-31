@@ -6,9 +6,12 @@
 """
 from __future__ import annotations
 
+import os
 import re
+import shutil
 import time
 from html.parser import HTMLParser
+from pathlib import Path
 
 import requests
 
@@ -76,6 +79,30 @@ def _clean(text: str) -> str:
     return text.strip()[:MAX_TEXT_CHARS]
 
 
+def _find_chrome_executable() -> str | None:
+    """优先复用系统 Chrome；CI 找不到时交给 Playwright 使用自带 Chromium。"""
+    configured = (os.environ.get("CHROME_EXECUTABLE") or "").strip()
+    if configured:
+        path = Path(configured).expanduser()
+        if path.is_file() and os.access(path, os.X_OK):
+            return str(path)
+        raise FetchError(f"CHROME_EXECUTABLE 不可执行: {path}")
+
+    candidates = [
+        Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"),
+        Path.home() / "Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        Path("/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary"),
+    ]
+    for path in candidates:
+        if path.is_file() and os.access(path, os.X_OK):
+            return str(path)
+    for command in ("google-chrome", "google-chrome-stable", "chromium", "chromium-browser"):
+        found = shutil.which(command)
+        if found:
+            return found
+    return None
+
+
 def fetch_rendered(url: str, wait_ms: int = 6000) -> str:
     """用无头浏览器渲染页面后取可见文本(智谱/火山方舟这类纯前端渲染站)。
 
@@ -87,7 +114,11 @@ def fetch_rendered(url: str, wait_ms: int = 6000) -> str:
         raise FetchError("playwright 未安装, 无法渲染 JS 页面") from exc
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
+            launch_options = {"headless": True}
+            executable = _find_chrome_executable()
+            if executable:
+                launch_options["executable_path"] = executable
+            browser = p.chromium.launch(**launch_options)
             try:
                 ctx = browser.new_context(user_agent=DEFAULT_UA, locale="zh-CN")
                 page = ctx.new_page()

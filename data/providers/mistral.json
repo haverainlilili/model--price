@@ -1,13 +1,102 @@
 {
- "url": "https://mistral.ai/pricing",
- "source": "seed",
- "currency": null,
+ "url": "https://docs.mistral.ai/inference/pricing",
+ "source": "claude",
+ "currency": "USD",
  "promotions": null,
- "models": [],
- "page_has_pricing": false,
- "price_hash": null,
- "fetched_at": null,
- "status_note": "等待 OPENAI_API_KEY",
- "last_error": "HTTPSConnectionPool(host='mistral.ai', port=443): Max retries exceeded with url: /pricing (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)')))",
- "last_fetch_ts": "2026-08-31T10:30:40Z"
+ "models": [
+  {
+   "model": "Mistral Large 3",
+   "input_per_1m": 0.5,
+   "output_per_1m": 1.5,
+   "cached_input_per_1m": 0.05,
+   "currency": "USD",
+   "note": null
+  },
+  {
+   "model": "Mistral Medium 3.5",
+   "input_per_1m": 1.5,
+   "output_per_1m": 7.5,
+   "cached_input_per_1m": 0.15,
+   "currency": "USD",
+   "note": null
+  },
+  {
+   "model": "Mistral Small 4",
+   "input_per_1m": 0.15,
+   "output_per_1m": 0.6,
+   "cached_input_per_1m": 0.015,
+   "currency": "USD",
+   "note": null
+  },
+  {
+   "model": "Ministral 3 14B",
+   "input_per_1m": 0.2,
+   "output_per_1m": 0.2,
+   "cached_input_per_1m": 0.02,
+   "currency": "USD",
+   "note": null
+  },
+  {
+   "model": "Ministral 3 8B",
+   "input_per_1m": 0.15,
+   "output_per_1m": 0.15,
+   "cached_input_per_1m": 0.015,
+   "currency": "USD",
+   "note": null
+  },
+  {
+   "model": "Ministral 3 3B",
+   "input_per_1m": 0.1,
+   "output_per_1m": 0.1,
+   "cached_input_per_1m": 0.01,
+   "currency": "USD",
+   "note": null
+  },
+  {
+   "model": "Mistral Moderation 2",
+   "input_per_1m": 0.0,
+   "output_per_1m": 0.0,
+   "cached_input_per_1m": 0.0,
+   "currency": "USD",
+   "note": "免费"
+  },
+  {
+   "model": "Z.ai GLM 5.2",
+   "input_per_1m": 1.4,
+   "output_per_1m": 4.4,
+   "cached_input_per_1m": 0.14,
+   "currency": "USD",
+   "note": "第三方托管模型"
+  },
+  {
+   "model": "Codestral",
+   "input_per_1m": 0.3,
+   "output_per_1m": 0.9,
+   "cached_input_per_1m": 0.03,
+   "currency": "USD",
+   "note": "代码模型"
+  },
+  {
+   "model": "Codestral Embed",
+   "input_per_1m": 0.15,
+   "output_per_1m": null,
+   "cached_input_per_1m": 0.015,
+   "currency": "USD",
+   "note": "embedding 模型"
+  },
+  {
+   "model": "Leanstral 1.5",
+   "input_per_1m": 0.0,
+   "output_per_1m": 0.0,
+   "cached_input_per_1m": 0.0,
+   "currency": "USD",
+   "note": "免费；Labs 研究预览/实验版本"
+  }
+ ],
+ "page_has_pricing": true,
+ "price_hash": "34e93ddefb1c3710bdab0696b302439dc03db93d95823370ac3d094d143b8555",
+ "fetched_at": "2026-08-31T11:40:03Z",
+ "status_note": null,
+ "last_error": "渲染失败: Page.goto: net::ERR_CONNECTION_CLOSED at https://docs.mistral.ai/inference/pricing\nCall log:\n  - navigating to \"https://docs.mistral.ai/inference/pricing\", waiting until \"domcontentloaded\"\n",
+ "last_fetch_ts": "2026-08-31T11:58:42Z"
 }

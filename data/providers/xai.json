@@ -1,13 +1,22 @@
 {
  "url": "https://docs.x.ai/docs/models",
- "source": "seed",
- "currency": null,
+ "source": "claude",
+ "currency": "USD",
  "promotions": null,
- "models": [],
- "page_has_pricing": false,
- "price_hash": null,
- "fetched_at": null,
- "status_note": "等待 OPENAI_API_KEY",
- "last_error": "HTTPSConnectionPool(host='docs.x.ai', port=443): Max retries exceeded with url: /docs/models (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)')))",
- "last_fetch_ts": "2026-08-31T10:30:19Z"
+ "models": [
+  {
+   "model": "grok-4.6",
+   "input_per_1m": 2.0,
+   "output_per_1m": 6.0,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": null
+  }
+ ],
+ "page_has_pricing": true,
+ "price_hash": "1680c6e9575df694f3bbd8cd8b230e9f2b3fe1f32457a7e849dd809c9308c89f",
+ "fetched_at": "2026-08-31T11:39:03Z",
+ "status_note": "页面无变化",
+ "last_error": null,
+ "last_fetch_ts": "2026-08-31T11:52:56Z"
 }

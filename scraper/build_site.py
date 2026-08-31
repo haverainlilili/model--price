@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import html
 import json
+import math
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -18,7 +19,7 @@ from .history import ROOT, load_changes, load_meta, load_news, load_provider
 
 SITE_DIR = ROOT / "site"
 UTC8 = timezone(timedelta(hours=8))
-REPO_URL = "https://github.com/haverainlilili/llm-price-watch"
+REPO_URL = "https://github.com/haverainlilili/model--price"
 
 FIELD_LABEL = {
     "input_per_1m": "输入价",
@@ -138,6 +139,43 @@ h1{margin:0;font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:.01em
 .spec div{display:flex;justify-content:space-between;gap:18px;padding:2px 0}
 .spec b{color:var(--ink);font-weight:600}
 
+/* ---- 价格速览图(首页顶部, 纯 CSS 横向条形) ---- */
+.quick{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  padding:16px 18px 10px;margin-bottom:28px}
+.quick-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;
+  margin:0 0 4px}
+.quick-title{font-size:15px;font-weight:600;margin:0}
+.blegend{display:inline-flex;gap:14px;align-items:center;
+  font-size:12px;color:var(--ink2)}
+.sw{display:inline-block;width:14px;height:9px;border-radius:0 3px 3px 0;
+  margin-right:6px;vertical-align:-1px}
+.sw-in{background:#2a78d6}.sw-out{background:#eb6834}
+.bnote{margin-left:auto;font-size:11.5px}
+.bticks{display:grid;grid-template-columns:minmax(116px,168px) 1fr;gap:0 12px;
+  padding:2px 0 4px}
+.tarea{position:relative;height:16px;border-bottom:1px solid var(--line2);
+  margin-right:86px}
+.tarea i{position:absolute;bottom:2px;transform:translateX(-50%);
+  font:500 10.5px var(--mono);font-style:normal;color:var(--ink2);
+  font-variant-numeric:tabular-nums}
+.bgroup+.bgroup{border-top:1px solid var(--line2);margin-top:6px;padding-top:4px}
+.brow{display:grid;grid-template-columns:minmax(116px,168px) 1fr;gap:0 12px;
+  align-items:center;padding:3px 0}
+.bprov{grid-column:1/-1;font-weight:600;font-size:13px;padding:3px 0 2px}
+.btag{font:600 10px var(--mono);color:var(--ink2);margin-left:8px;
+  letter-spacing:.08em}
+.bmodel{font-family:var(--mono);font-size:12px;color:var(--ink);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bbars{display:flex;flex-direction:column;margin-right:86px}
+.bbar{position:relative;height:11px;border-radius:0 4px 4px 0}
+.b-in{background:#2a78d6;margin-bottom:2px}
+.b-out{background:#eb6834}
+.b-none{background:none}
+.bbar i{position:absolute;left:100%;top:50%;transform:translateY(-52%);
+  padding-left:6px;font:500 11px/1 var(--mono);font-style:normal;
+  font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+.bfoot{margin:10px 0 2px;font-size:11.5px;color:var(--ink2)}
+
 /* ---- 吸顶控制条 ---- */
 .controls{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;
   gap:14px;background:rgba(242,244,247,.93);backdrop-filter:blur(6px);
@@ -243,9 +281,11 @@ footer .mono{font-size:11.5px}
 
 /* ---- 筛选 ---- */
 body[data-region=intl] .prov[data-region=domestic],
-body[data-region=intl] .news-card[data-region=domestic]{display:none}
+body[data-region=intl] .news-card[data-region=domestic],
+body[data-region=intl] .bgroup[data-region=domestic]{display:none}
 body[data-region=domestic] .prov[data-region=intl],
-body[data-region=domestic] .news-card[data-region=intl]{display:none}
+body[data-region=domestic] .news-card[data-region=intl],
+body[data-region=domestic] .bgroup[data-region=intl]{display:none}
 
 @media(max-width:820px){
   .masthead{align-items:flex-start;flex-direction:column;padding-top:26px}
@@ -253,6 +293,10 @@ body[data-region=domestic] .news-card[data-region=intl]{display:none}
   .chg{grid-template-columns:1fr;gap:2px 0}
   .chg-time::after{content:" · "}
   .ticker-label{display:none}
+  .quick{padding:12px 12px 6px}
+  .brow{grid-template-columns:minmax(96px,132px) 1fr;gap:0 8px}
+  .bbars,.tarea{margin-right:62px}
+  .bnote{margin-left:0;flex-basis:100%}
 }
 @media(prefers-reduced-motion:reduce){
   .ticker-track{animation:none}
@@ -340,6 +384,84 @@ def _ticker_chips(changes: list, prov_names: dict, prov_cur: dict) -> str:
             f'<span class="ticker-label">LIVE</span>'
             f'<div class="ticker-view"><div class="ticker-track">{row}{row}'
             f'</div></div></div>')
+
+
+def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
+    """首页顶部价格速览: 每家厂商价格页最前的 2 个模型, 输入/输出双条,
+    对数刻度横向条形图(纯 CSS, 价格跨 2-3 个数量级, 线性刻度会把便宜模型压扁)。
+
+    跨厂商可比的前提是同一币种: USD 统一按汇率折算成人民币。
+    「最新 2 个」按各官网价格页的排列顺序取(各家都把最新模型放在最前)。
+    """
+    groups, vals = [], []
+    for cfg in providers_cfg:
+        rec = recs.get(cfg["id"]) or {}
+        rows = []
+        for m in (rec.get("models") or [])[:2]:
+            cur = (m.get("currency") or rec.get("currency") or "").upper()
+            fx = rate if cur == "USD" else 1.0
+
+            def cv(v, _fx=fx):
+                return float(v) * _fx if isinstance(v, (int, float)) and v > 0 else None
+
+            ci, co = cv(m.get("input_per_1m")), cv(m.get("output_per_1m"))
+            if ci is None and co is None:
+                continue
+            rows.append((m.get("model", ""), ci, co))
+            vals += [v for v in (ci, co) if v]
+        if rows:
+            groups.append((cfg, rows))
+    if not groups or not vals:
+        return ""
+
+    lo, hi = min(vals), max(vals)
+    span = math.log10(hi) - math.log10(lo) if hi > lo else 1.0
+
+    def pct(v) -> str:
+        if v is None:
+            return "0"
+        return f"{max(3.0, min(100.0, (math.log10(v) - math.log10(lo)) / span * 100)):.1f}"
+
+    def vlabel(v) -> str:
+        return f"¥{_fmt(round(v, 2))}" if v is not None else "—"
+
+    # 对数刻度: 取数据范围内的 10 的幂做刻度(¥1 / ¥10 / ¥100 / ...)
+    ticks = []
+    e = math.floor(math.log10(lo))
+    while 10 ** e <= hi * 1.001 and len(ticks) < 5:
+        if 10 ** e >= lo * 0.999:
+            ticks.append(10 ** e)
+        e += 1
+    ticks_html = "".join(f'<i style="left:{pct(t)}%">¥{_fmt(t)}</i>' for t in ticks)
+
+    parts = []
+    for cfg, rows in groups:
+        region = cfg.get("region", "")
+        dr = "domestic" if region == "国内" else "intl"
+        inner = []
+        for model, ci, co in rows:
+            bars = (f'<div class="bbar b-in" style="width:{pct(ci)}%">'
+                    f'<i>{vlabel(ci)}</i></div>'
+                    f'<div class="bbar b-out" style="width:{pct(co)}%">'
+                    f'<i>{vlabel(co)}</i></div>')
+            inner.append(f'<div class="brow"><span class="bmodel">{_e(model)}</span>'
+                         f'<div class="bbars">{bars}</div></div>')
+        parts.append(f'<div class="bgroup" data-region="{dr}">'
+                     f'<div class="bprov">{_e(cfg.get("name_cn") or cfg["name"])}'
+                     f'<span class="btag">{_e(region)}</span></div>'
+                     f'{"".join(inner)}</div>')
+
+    return (
+        '<section class="quick" id="quick" aria-label="价格速览图">'
+        '<div class="quick-head"><h2 class="quick-title">价格速览 · 每家最新的 2 个模型'
+        '</h2><div class="blegend"><span><i class="sw sw-in"></i>输入</span>'
+        '<span><i class="sw sw-out"></i>输出</span>'
+        '<span class="bnote">统一折算人民币 · 对数刻度</span></div></div>'
+        f'<div class="bticks"><div></div><div class="tarea">{ticks_html}</div></div>'
+        f'{"".join(parts)}'
+        f'<p class="bfoot">条长为对数刻度(图中价格跨约 {round(span)} 个数量级, 线性刻度'
+        f'会把低价模型压成一条线) · USD 按 1 USD ≈ ¥{_fmt(rate)} 折算 · 每家取官网'
+        '价格页最前的 2 个模型(即最新), 完整价格与备注见下方明细表。</p></section>')
 
 
 def _prov_section(cfg: dict, rec: dict | None, rate: float) -> str:
@@ -539,6 +661,8 @@ def build(providers_cfg: list) -> Path:
         '<button data-cur-btn="orig" aria-pressed="false">原币</button></div>'
         '</div>')
 
+    quick = _quick_chart(providers_cfg, recs, rate)
+
     # ---- 价格区
     prov_html = "".join(_prov_section(cfg, recs.get(cfg["id"]), rate)
                         for cfg in providers_cfg)
@@ -594,7 +718,7 @@ def build(providers_cfg: list) -> Path:
         'API 价格对比、变动流水与官方公告。">'
         f'<style>{CSS}</style></head>'
         f'<body data-region="all" data-currency="cny">{ticker}'
-        f'<div class="wrap">{masthead}{controls}'
+        f'<div class="wrap">{masthead}{controls}{quick}'
         f'<main>{prices}{changes_sec}{news_sec}</main>{footer}</div>'
         f'<script>{JS}</script></body></html>')
 

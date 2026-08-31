@@ -44,6 +44,13 @@ def _fetch_pricing_text(cfg: dict) -> tuple[str, str]:
     return urls[0], "\n\n".join(texts)
 
 
+def _fetch_news_text(cfg: dict) -> str:
+    """抓取公告页；对声明为动态页面的来源启用浏览器渲染。"""
+    if cfg.get("news_render"):
+        return fetch_rendered(cfg["news_url"])
+    return fetch(cfg["news_url"])
+
+
 def process_provider(cfg: dict) -> None:
     pid = cfg["id"]
     name = cfg.get("name_cn") or cfg["name"]
@@ -112,7 +119,7 @@ def process_news(cfg: dict) -> None:
     prev = history.load_news(pid)
 
     try:
-        text = fetch(cfg["news_url"])
+        text = _fetch_news_text(cfg)
     except FetchError as exc:
         print(f"[{pid}/news] 抓取失败: {exc}")
         return

@@ -7,6 +7,7 @@
 #                (各页文本拼接后一起送抽取, Kimi 按模型分页就是这么处理的)
 # render:        true = 页面由前端脚本渲染, 需要无头浏览器(智谱/火山方舟)
 # news_url:      官网公开公告 / changelog 页(可选; 没有就不追踪该厂商公告)
+# news_render:   true = 公告页也需要前端脚本渲染
 #
 # 入口选型(2026-08 实测): 优先选 .md / docs 这类对爬虫友好的文档源, 拿到的
 # 就是干净的价格表; open.bigmodel.cn 与 volcengine.com 是纯前端渲染必须走
@@ -36,12 +37,15 @@ providers:
     name_cn: xAI (Grok)
     region: 国际
     pricing_url: https://docs.x.ai/docs/models
+    render: true
   - id: mistral
     name: Mistral
     name_cn: Mistral
     region: 国际
-    pricing_url: https://mistral.ai/pricing
+    pricing_url: https://docs.mistral.ai/inference/pricing
+    render: true
     news_url: https://mistral.ai/news
+    news_render: true
   - id: deepseek
     name: DeepSeek
     name_cn: DeepSeek

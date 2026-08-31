@@ -61,7 +61,7 @@ scripts/make_seed.py  # 一次性种子数据(首次抽取前的初始展示)
 ## 自部署
 
 1. Fork 或复制本仓库。
-2. 在仓库 **Settings → Secrets and variables → Actions** 添加 `OPENAI_API_KEY`(OpenAI 系 API 密钥)。不配置也能跑，但只有种子数据、不会抽取新内容。
+2. 在仓库 **Settings → Secrets and variables → Actions** 添加 Secret `OPENAI_API_KEY`；使用兼容接口时再添加 Secret `OPENAI_BASE_URL`，并用 Variable `OPENAI_MODEL` 指定模型。不配置 Key 也能跑，但只有种子数据、不会抽取新内容。
 3. 在 **Settings → Pages** 把 Source 设为 **GitHub Actions**。
 4. 手动触发一次 workflow(Actions → update → Run workflow)验证，之后每小时自动运行。
 
@@ -76,7 +76,7 @@ export OPENAI_API_KEY=sk-...
 .venv/bin/python -m scraper --only zhipu  # 只处理单个厂商(调试)
 ```
 
-抽取模型默认 `claude-opus-5`,可用环境变量 `CLAUDE_MODEL` 覆盖(如 `claude-sonnet-5` 降低成本)。
+抽取模型默认 `gpt-5.6-sol`，可用环境变量 `OPENAI_MODEL` 覆盖（如 `gpt-5.6-terra` / `gpt-5.6-luna` 降低成本）；兼容接口地址通过 `OPENAI_BASE_URL` 配置。
 
 ## 数据说明
 

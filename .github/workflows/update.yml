@@ -2,7 +2,9 @@
 # 重新生成静态站点 -> 发布到 GitHub Pages
 #
 # 需要在仓库 Settings > Secrets and variables > Actions 配置:
-#   OPENAI_API_KEY  OpenAI 系 API 密钥(未配置时只建站, 保留旧数据)
+#   Secret OPENAI_API_KEY   OpenAI 系 API 密钥(未配置时只建站, 保留旧数据)
+#   Secret OPENAI_BASE_URL  兼容接口地址(官方 OpenAI API 留空)
+#   Variable OPENAI_MODEL   抽取模型名(留空使用代码默认值)
 name: update
 
 on:
@@ -50,6 +52,8 @@ jobs:
       - name: Scrape, extract, build
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
         run: python -m scraper
 
       - name: Commit data & site

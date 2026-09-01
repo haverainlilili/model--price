@@ -209,6 +209,62 @@ class ProviderSectionTests(unittest.TestCase):
 
 
 class PlansSectionTests(unittest.TestCase):
+    def test_explains_primary_quota_as_a_short_readable_sentence(self):
+        cases = [
+            (
+                {
+                    "label": "Usage Capacity",
+                    "value": "5x Pro capacity per session",
+                    "window": "per session",
+                },
+                "每次会话约为 Pro 套餐的 5 倍额度",
+            ),
+            (
+                {"label": "Usage credits", "value": "$50", "window": ""},
+                "包含 $50 使用额度",
+            ),
+            (
+                {
+                    "label": "请求数",
+                    "value": "最多约1200次请求",
+                    "window": "每5小时",
+                },
+                "每 5 小时最多约 1,200 次请求",
+            ),
+            (
+                {
+                    "label": "Agent 用量",
+                    "value": "约 30 个",
+                    "window": "每个计费周期（按月刷新）",
+                },
+                "每月约 30 个 Agent 用量",
+            ),
+            (
+                {"label": "M3 用量", "value": "约 6 亿+ token", "window": "月度"},
+                "每月约 6 亿+ M3 Tokens",
+            ),
+            (
+                {
+                    "label": "积分",
+                    "value": "4,489 积分",
+                    "window": "购买之日起 1 年内有效",
+                },
+                "1 年有效期内包含 4,489 积分",
+            ),
+            (
+                {
+                    "label": "包含输入和输出总Tokens",
+                    "value": "1,200万/1.1亿",
+                    "window": "",
+                },
+                "输入和输出合计 1,200 万 / 1.1 亿 Tokens",
+            ),
+        ]
+
+        for quota, expected in cases:
+            with self.subTest(quota=quota):
+                self.assertEqual(build_site._quota_explanation(quota), expected)
+
     def test_parses_official_quota_magnitudes_without_cross_unit_conversion(self):
         self.assertEqual(build_site._quota_magnitude("5x Pro capacity"), 5)
         self.assertEqual(build_site._quota_magnitude("约 6 亿+ token"), 600_000_000)
@@ -283,6 +339,8 @@ class PlansSectionTests(unittest.TestCase):
         self.assertIn('data-region="domestic"', section)
         self.assertIn('class="plan-quota-chart"', section)
         self.assertIn('class="plan-bar-col"', section)
+        self.assertIn('class="plan-bar-summary"', section)
+        self.assertIn("每 5 小时包含 1,500 次请求", section)
         self.assertIn('style="--plan-bar-height:100.0%"', section)
         self.assertNotIn("Derived", section)
         self.assertNotIn("按周推算月用量", section)

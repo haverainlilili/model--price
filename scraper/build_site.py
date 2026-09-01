@@ -377,8 +377,9 @@ body[data-currency=cny] .p-orig{display:none}
 .plan-chart-channel-head span{color:var(--ink3);font:650 9px var(--mono);letter-spacing:.06em}
 .plan-bars-scroll{overflow-x:auto;scrollbar-color:var(--line2) transparent}
 .plan-bars{display:flex;align-items:stretch;gap:8px;
-  min-width:max(460px,calc(var(--plan-count) * 104px));padding:14px 12px 11px}
-.plan-bar-col{display:grid;grid-template-rows:32px 152px 38px 31px 27px;flex:1 0 88px;
+  min-width:max(460px,calc(var(--plan-count) * 112px));padding:14px 12px 13px}
+.plan-bar-col{display:grid;grid-template-rows:32px 152px 38px 31px 27px minmax(45px,auto);
+  flex:1 0 96px;
   min-width:0;text-align:center}
 .plan-bar-value{align-self:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
   color:var(--ink);font:720 9.5px/1.2 var(--mono)}
@@ -396,6 +397,8 @@ body[data-currency=cny] .p-orig{display:none}
   color:var(--accent-dark);font:720 9.5px/1.2 var(--mono)}
 .plan-bar-quota{align-self:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
   color:var(--ink3);font:650 8.5px/1.2 var(--sans)}
+.plan-bar-summary{align-self:start;margin:4px 2px 0;padding-top:6px;border-top:1px solid var(--line);
+  color:var(--ink2);font:600 10px/1.45 var(--sans);overflow-wrap:anywhere}
 .plan-chart-foot{margin:0;padding:11px 18px;border-top:1px solid var(--line);
   background:var(--panel2);color:var(--ink2);font-size:11.5px}
 .plan-grid{columns:2 480px;column-gap:14px}
@@ -788,6 +791,67 @@ def _quota_magnitude(value: str | None) -> float | None:
     return int(maximum) if maximum.is_integer() else maximum
 
 
+def _quota_explanation(quota: dict) -> str:
+    """把柱图首项官网额度整理成短中文说明，不做额度换算。"""
+    label = str(quota.get("label") or "").strip()
+    value = str(quota.get("value") or "").strip()
+    window = str(quota.get("window") or "").strip()
+    label_key = re.sub(r"\s+", "", label).casefold()
+
+    def readable_amount(text: str) -> str:
+        text = re.sub(
+            r"(?<![\d,.])(\d{4,})(?![\d,.])",
+            lambda match: f"{int(match.group(1)):,}",
+            text,
+        )
+        text = re.sub(r"(?<=\d)([万亿])", r" \1", text)
+        text = re.sub(r"\s*/\s*", " / ", text)
+        text = re.sub(r"(?<=\d)(次请求|积分)", r" \1", text)
+        text = re.sub(r"(最多约|至少约|约)(?=\d)", r"\1 ", text)
+        text = re.sub(r"\btoken(s)?\b", "Tokens", text, flags=re.I)
+        return re.sub(r"\s+", " ", text).strip()
+
+    amount = readable_amount(value)
+    if "usagecapacity" in label_key:
+        multiple = re.search(r"(\d+(?:\.\d+)?)\s*x\s*Pro\s*capacity", value, re.I)
+        if multiple:
+            return f"每次会话约为 Pro 套餐的 {multiple.group(1)} 倍额度"
+    if "usagecredits" in label_key:
+        return f"包含 {amount} 使用额度"
+
+    if "按月" in window or window == "月度":
+        period = "每月"
+    elif "每5小时" in re.sub(r"\s+", "", window):
+        period = "每 5 小时"
+    elif "1 年内有效" in window:
+        period = "1 年有效期内"
+    elif window.casefold() == "per session":
+        period = "每次会话"
+    else:
+        period = window
+
+    if "输入和输出总tokens" in label_key:
+        return f"输入和输出合计 {amount} Tokens"
+    if label_key == "agent用量":
+        return f"{period or '每个计费周期'}{amount} Agent 用量"
+    if label_key == "m3用量":
+        amount = re.sub(r"\s*Tokens$", "", amount, flags=re.I)
+        return f"{period or '套餐内'}{amount} M3 Tokens"
+    if label_key == "积分":
+        prefix = f"{period}" if period else "套餐内"
+        return f"{prefix}包含 {amount}"
+    if label_key == "请求数" or amount.endswith("次请求"):
+        prefix = f"{period}" if period else "套餐内"
+        if amount.startswith(("约", "最多", "至少")):
+            return f"{prefix}{amount}"
+        return f"{prefix}包含 {amount}"
+
+    prefix = f"{period}" if period else "套餐内"
+    if amount.startswith(("约", "最多", "至少")):
+        return f"{prefix}{amount} {label}".strip()
+    return f"{prefix}包含 {amount} {label}".strip()
+
+
 def _plan_bar_heights(plans: list[dict]) -> list[float]:
     """按厂商内相同「额度名称 + 刷新周期」线性归一首项额度。"""
     entries = []
@@ -1069,9 +1133,11 @@ def _plans_section(providers_cfg: list, records: dict) -> str:
                 f'{models_html}{note_html}{source_html}</li>')
 
             primary = entry["quotas"][0]
+            quota_summary = _quota_explanation(primary)
             window_text = f'，{primary["window"]}' if primary["window"] else ""
             chart_label = (f'{provider}，{name}，价格 {price}，'
-                           f'{primary["label"]} {primary["value"]}{window_text}')
+                           f'{primary["label"]} {primary["value"]}{window_text}，'
+                           f'{quota_summary}')
             unscaled = _quota_magnitude(primary["value"]) is None
             fill_class = ("plan-bar-fill plan-bar-fill-unscaled" if unscaled
                           else "plan-bar-fill")
@@ -1085,7 +1151,8 @@ def _plans_section(providers_cfg: list, records: dict) -> str:
                 f'<strong class="plan-bar-name" title="{_e(name)}">{_e(name)}</strong>'
                 f'<span class="plan-bar-price" title="{_e(price)}">{_e(price)}</span>'
                 f'<span class="plan-bar-quota" title="{_e(primary["label"])}">'
-                f'{_e(primary["label"])}</span></div>')
+                f'{_e(primary["label"])}</span>'
+                f'<span class="plan-bar-summary">{_e(quota_summary)}</span></div>')
 
         offer_count += len(items)
         chart_id = f'plan-chart-{_e(cfg["id"])}'

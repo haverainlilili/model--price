@@ -87,6 +87,21 @@ def process_provider(cfg: dict) -> None:
     page = extract.extract_pricing(name, first_url, text)
     new_models = [m.model_dump() for m in page.models]
 
+    # 空结果通常意味着页面结构、人机验证或抽取暂时异常。已有真实价格时，
+    # 宁可保留上次数据并标记为陈旧，也不能把整个厂商的模型价格清空。
+    # 仍记录本次页面 hash，避免同一份无法解析的页面每小时重复调用大模型。
+    if not new_models and prev.get("models"):
+        message = f"官网页面未解析出有效价格，已保留上次 {len(prev['models'])} 个模型"
+        record.update({
+            "page_has_pricing": page.page_has_pricing,
+            "price_hash": page_hash,
+            "status_note": message,
+            "last_error": message,
+        })
+        history.save_provider(pid, record)
+        print(f"[{pid}] 抽取结果为空, 保留上次 {len(prev['models'])} 个模型")
+        return
+
     # 只有旧数据也来自真实抽取时才记变动; 种子数据 -> 首次抽取是初始化
     if prev.get("source") == "claude" and prev.get("models"):
         diffs = history.diff_models(prev["models"], new_models)

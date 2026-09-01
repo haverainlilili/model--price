@@ -3,6 +3,31 @@ import unittest
 from scraper import build_site
 
 
+class ResponsiveCssTests(unittest.TestCase):
+    def test_tablet_breakpoint_contains_wide_sticky_controls(self):
+        self.assertIn("@media(max-width:800px)", build_site.CSS)
+        self.assertIn(".controls{align-items:flex-start", build_site.CSS)
+        self.assertIn("overflow-x:auto;scrollbar-width:none", build_site.CSS)
+        self.assertIn(".controls-left,.control-groups{flex:none}", build_site.CSS)
+        self.assertIn(".seg.view-tabs button{min-height:44px", build_site.CSS)
+
+
+class ViewSwitchTests(unittest.TestCase):
+    def test_view_tabs_keep_their_larger_desktop_target(self):
+        self.assertIn(".seg.view-tabs button{min-height:38px", build_site.CSS)
+
+    def test_renders_accessible_price_and_plan_tabs(self):
+        tabs = build_site._view_tabs(has_plans=True)
+
+        self.assertIn('role="tablist"', tabs)
+        self.assertIn('data-view-btn="prices"', tabs)
+        self.assertIn('data-view-btn="plans"', tabs)
+        self.assertIn('aria-controls="price-overview"', tabs)
+        self.assertIn('aria-controls="plan-overview"', tabs)
+        self.assertIn('aria-selected="true"', tabs)
+        self.assertIn('aria-selected="false"', tabs)
+
+
 class QuickVariantTests(unittest.TestCase):
     def test_summarizes_context_tier(self):
         self.assertEqual(
@@ -180,6 +205,163 @@ class ProviderSectionTests(unittest.TestCase):
         self.assertGreater(
             section.index('官网价格页 ↗'),
             section.index('</summary>'),
+        )
+
+
+class PlansSectionTests(unittest.TestCase):
+    def test_explains_primary_quota_as_a_short_readable_sentence(self):
+        cases = [
+            (
+                {
+                    "label": "Usage Capacity",
+                    "value": "5x Pro capacity per session",
+                    "window": "per session",
+                },
+                "每次会话约为 Pro 套餐的 5 倍额度",
+            ),
+            (
+                {"label": "Usage credits", "value": "$50", "window": ""},
+                "包含 $50 使用额度",
+            ),
+            (
+                {
+                    "label": "请求数",
+                    "value": "最多约1200次请求",
+                    "window": "每5小时",
+                },
+                "每 5 小时最多约 1,200 次请求",
+            ),
+            (
+                {
+                    "label": "Agent 用量",
+                    "value": "约 30 个",
+                    "window": "每个计费周期（按月刷新）",
+                },
+                "每月约 30 个 Agent 用量",
+            ),
+            (
+                {"label": "M3 用量", "value": "约 6 亿+ token", "window": "月度"},
+                "每月约 6 亿+ M3 Tokens",
+            ),
+            (
+                {
+                    "label": "积分",
+                    "value": "4,489 积分",
+                    "window": "购买之日起 1 年内有效",
+                },
+                "1 年有效期内包含 4,489 积分",
+            ),
+            (
+                {
+                    "label": "包含输入和输出总Tokens",
+                    "value": "1,200万/1.1亿",
+                    "window": "",
+                },
+                "输入和输出合计 1,200 万 / 1.1 亿 Tokens",
+            ),
+        ]
+
+        for quota, expected in cases:
+            with self.subTest(quota=quota):
+                self.assertEqual(build_site._quota_explanation(quota), expected)
+
+    def test_parses_official_quota_magnitudes_without_cross_unit_conversion(self):
+        self.assertEqual(build_site._quota_magnitude("5x Pro capacity"), 5)
+        self.assertEqual(build_site._quota_magnitude("约 6 亿+ token"), 600_000_000)
+        self.assertEqual(
+            build_site._quota_magnitude("1,200万/1.1亿"),
+            110_000_000,
+        )
+        self.assertIsNone(build_site._quota_magnitude("百万 Tokens"))
+
+    def test_normalizes_chart_bars_only_within_the_same_official_quota(self):
+        plans = [
+            {"name": "Lite", "price": "¥10", "quotas": [
+                {"label": "请求数", "value": "最多约1200次", "window": "每5小时"},
+            ]},
+            {"name": "Pro", "price": "¥50", "quotas": [
+                {"label": "请求数", "value": "最多约6000次", "window": "每5小时"},
+            ]},
+            {"name": "Token Pack", "price": "¥20", "quotas": [
+                {"label": "Token", "value": "100万", "window": "每月"},
+            ]},
+        ]
+
+        self.assertEqual(
+            build_site._plan_bar_heights(plans),
+            [20.0, 100.0, 100.0],
+        )
+
+    def test_renders_only_plans_with_officially_stated_quotas(self):
+        providers = [{
+            "id": "demo",
+            "name": "Demo",
+            "name_cn": "示例厂商",
+            "region": "国内",
+        }]
+        records = {"demo": {
+            "source_urls": ["https://example.com/official-plans"],
+            "fetched_at": "2026-09-01T08:00:00Z",
+            "plans": [
+                {
+                    "name": "Plus",
+                    "plan_type": "Token Plan",
+                    "price": "¥49 / 月",
+                    "quotas": [{
+                        "label": "固定窗口",
+                        "value": "1,500 次请求",
+                        "window": "每 5 小时",
+                    }],
+                    "models": ["Demo-M3"],
+                    "note": "官网标注数值",
+                    "source_url": "https://example.com/official-plans#plus",
+                },
+                {
+                    "name": "Derived",
+                    "plan_type": "Community estimate",
+                    "price": "¥99 / 月",
+                    "quotas": [],
+                    "note": "按周推算月用量",
+                },
+            ],
+        }}
+
+        section = build_site._plans_section(providers, records)
+
+        self.assertIn('id="plans"', section)
+        self.assertIn("套餐与额度", section)
+        self.assertIn("示例厂商", section)
+        self.assertIn("¥49 / 月", section)
+        self.assertIn("1,500 次请求", section)
+        self.assertIn("每 5 小时", section)
+        self.assertIn("Demo-M3", section)
+        self.assertIn('href="https://example.com/official-plans#plus"', section)
+        self.assertIn('data-region="domestic"', section)
+        self.assertIn('class="plan-quota-chart"', section)
+        self.assertIn('class="plan-reference"', section)
+        self.assertIn('href="https://www.codingplan.fyi/"', section)
+        self.assertIn("具体套餐测评", section)
+        self.assertIn("本项目只展示厂商官网直接标注", section)
+        self.assertLess(
+            section.index('class="plan-reference"'),
+            section.index('class="plan-quota-chart"'),
+        )
+        self.assertIn('class="plan-bar-col"', section)
+        self.assertIn('class="plan-bar-summary"', section)
+        self.assertIn("每 5 小时包含 1,500 次请求", section)
+        self.assertIn('style="--plan-bar-height:100.0%"', section)
+        self.assertNotIn("Derived", section)
+        self.assertNotIn("按周推算月用量", section)
+
+    def test_omits_section_when_no_official_quota_is_available(self):
+        providers = [{"id": "demo", "name": "Demo", "region": "国际"}]
+
+        self.assertEqual(
+            build_site._plans_section(
+                providers,
+                {"demo": {"plans": [{"name": "Price only", "quotas": []}]}},
+            ),
+            "",
         )
 
 

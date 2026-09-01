@@ -1,0 +1,95 @@
+{
+ "plans": [
+  {
+   "name": "Max 5x",
+   "plan_type": "聊天会员",
+   "price": "$100",
+   "billing": "Monthly",
+   "quotas": [
+    {
+     "label": "Usage Capacity",
+     "value": "5x Pro capacity per session",
+     "window": "per session"
+    }
+   ],
+   "models": [],
+   "note": "官网以 Pro 套餐的每会话容量为基准，标注为 5x，不代表固定 Token 或请求数。",
+   "source_url": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan#h_cfd2904008"
+  },
+  {
+   "name": "Max 20x",
+   "plan_type": "聊天会员",
+   "price": "$200",
+   "billing": "Monthly",
+   "quotas": [
+    {
+     "label": "Usage Capacity",
+     "value": "20x Pro capacity per session",
+     "window": "per session"
+    }
+   ],
+   "models": [],
+   "note": "官网以 Pro 套餐的每会话容量为基准，标注为 20x，不代表固定 Token 或请求数。",
+   "source_url": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan#h_cfd2904008"
+  },
+  {
+   "name": "$50",
+   "plan_type": "Usage bundle",
+   "price": "$45",
+   "billing": null,
+   "quotas": [
+    {
+     "label": "Usage credits",
+     "value": "$50",
+     "window": null
+    }
+   ],
+   "models": [],
+   "note": "10% discount。Usage bundle balance applies across Claude, Claude Desktop, Claude Mobile (iOS and Android), Claude Code, Cowork, and third-party products that use your Claude account. Available on Pro, Max, and Team plans.",
+   "source_url": "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
+  },
+  {
+   "name": "$250",
+   "plan_type": "Usage bundle",
+   "price": "$200",
+   "billing": null,
+   "quotas": [
+    {
+     "label": "Usage credits",
+     "value": "$250",
+     "window": null
+    }
+   ],
+   "models": [],
+   "note": "20% discount。Usage bundle balance applies across Claude, Claude Desktop, Claude Mobile (iOS and Android), Claude Code, Cowork, and third-party products that use your Claude account. Available on Pro, Max, and Team plans.",
+   "source_url": "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
+  },
+  {
+   "name": "$1000",
+   "plan_type": "Usage bundle",
+   "price": "$700",
+   "billing": null,
+   "quotas": [
+    {
+     "label": "Usage credits",
+     "value": "$1000",
+     "window": null
+    }
+   ],
+   "models": [],
+   "note": "30% discount。Usage bundle balance applies across Claude, Claude Desktop, Claude Mobile (iOS and Android), Claude Code, Cowork, and third-party products that use your Claude account. Available on Pro, Max, and Team plans.",
+   "source_url": "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
+  }
+ ],
+ "last_error": null,
+ "last_fetch_ts": "2026-09-01T08:35:52Z",
+ "source": "official",
+ "source_urls": [
+  "https://support.claude.com/en/articles/11049762-choose-a-claude-plan",
+  "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
+ ],
+ "page_has_plans": true,
+ "plans_hash": "7733c718b888c75f6da43e5adf20015eb69095ef1d901723c47e6448ab7ff728",
+ "fetched_at": "2026-09-01T08:35:52Z",
+ "status_note": null
+}

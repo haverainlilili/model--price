@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 PROVIDERS_DIR = DATA / "providers"
 NEWS_DIR = DATA / "news"
+PLANS_DIR = DATA / "plans"
 CHANGES_FILE = DATA / "changes.json"
 META_FILE = DATA / "meta.json"
 
@@ -56,6 +57,14 @@ def load_news(pid: str) -> dict:
 
 def save_news(pid: str, record: dict) -> None:
     _atomic_write_json(NEWS_DIR / f"{pid}.json", record)
+
+
+def load_plans(pid: str) -> dict:
+    return _load_json(PLANS_DIR / f"{pid}.json", {"plans": []})
+
+
+def save_plans(pid: str, record: dict) -> None:
+    _atomic_write_json(PLANS_DIR / f"{pid}.json", record)
 
 
 def load_changes() -> list:

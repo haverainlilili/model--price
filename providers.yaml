@@ -9,6 +9,8 @@
 # news_url:      机器抓取的官网公告 / changelog 来源
 # official_news_url: 用户点击「官方公告」时打开的厂商公告主页
 # news_render:   true = 公告页也需要前端脚本渲染
+# plan_url(s):   官网公开套餐页；只抽取官网同时明示价格与额度的方案
+# plan_render:   true = 套餐页需要前端脚本渲染
 #
 # 入口选型(2026-08 实测): 优先选 .md / docs 这类对爬虫友好的文档源, 拿到的
 # 就是干净的价格表; open.bigmodel.cn 与 volcengine.com 是纯前端渲染必须走
@@ -22,6 +24,9 @@ providers:
     pricing_url: https://platform.claude.com/docs/en/about-claude/models/overview.md
     news_url: https://platform.claude.com/docs/en/release-notes/overview.md
     official_news_url: https://www.anthropic.com/news
+    plan_urls:
+      - https://support.claude.com/en/articles/11049762-choose-a-claude-plan
+      - https://support.claude.com/en/articles/14246112-buy-usage-bundles
   - id: openai
     name: OpenAI
     name_cn: OpenAI
@@ -29,6 +34,7 @@ providers:
     pricing_url: https://platform.openai.com/docs/pricing
     news_url: https://developers.openai.com/api/docs/changelog
     official_news_url: https://openai.com/news/
+    plan_url: https://openai.com/api-scale-tier/
   - id: google
     name: Google
     name_cn: Google Gemini
@@ -54,6 +60,8 @@ providers:
     news_url: https://mistral.ai/news
     official_news_url: https://mistral.ai/news
     news_render: true
+    plan_url: https://mistral.ai/pricing
+    plan_render: true
   - id: deepseek
     name: DeepSeek
     name_cn: DeepSeek
@@ -68,6 +76,7 @@ providers:
     pricing_url: https://help.aliyun.com/zh/model-studio/model-pricing.md
     news_url: https://help.aliyun.com/zh/model-studio/model-release-notes.md
     official_news_url: https://qwen.ai/blog
+    plan_url: https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package
   - id: doubao
     name: ByteDance
     name_cn: 火山方舟 (豆包)
@@ -77,6 +86,7 @@ providers:
     news_url: https://www.volcengine.com/docs/82379/2578669
     official_news_url: https://www.volcengine.com/docs/82379/2578669
     news_render: true
+    plan_url: https://developer.volcengine.com/articles/7595502342175195187
   - id: zhipu
     name: Zhipu
     name_cn: 智谱 (GLM)
@@ -99,6 +109,7 @@ providers:
     news_url: https://www.kimi.com/news
     official_news_url: https://www.kimi.com/news
     news_render: true
+    plan_url: https://www.kimi.com/help/membership/membership-pricing
   - id: minimax
     name: MiniMax
     name_cn: MiniMax
@@ -106,3 +117,5 @@ providers:
     pricing_url: https://platform.minimaxi.com/docs/guides/pricing-paygo.md
     news_url: https://platform.minimaxi.com/docs/release-notes/models.md
     official_news_url: https://www.minimaxi.com/news
+    plan_url: https://platform.minimaxi.com/subscribe/token-plan
+    plan_render: true

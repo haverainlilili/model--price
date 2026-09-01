@@ -34,6 +34,38 @@ class PricingPage(BaseModel):
         True, description="页面是否包含可解析的 API 价格表; JS 空壳/报错页为 false")
 
 
+class PlanQuota(BaseModel):
+    """官网直接标注的一项套餐额度，保留原文单位和窗口。"""
+
+    label: str = Field(..., description="额度名称，如 M3 编程调用 / 周积分")
+    value: str = Field(..., description="官网标注数值原文，如 约 12,000 次 / 60,000 积分")
+    window: Optional[str] = Field(
+        None, description="刷新或有效窗口，如 每 5 小时 / 每周 / 每月")
+
+
+class SubscriptionPlan(BaseModel):
+    """官网公开的订阅、资源包或企业容量套餐。"""
+
+    name: str = Field(..., description="套餐名称原文")
+    plan_type: Optional[str] = Field(
+        None, description="类型：聊天会员 / Coding Plan / Token Plan / API 资源包等")
+    price: str = Field(..., description="官网标注价格原文，不自行换算")
+    billing: Optional[str] = Field(None, description="计费周期或有效期")
+    quotas: List[PlanQuota] = Field(
+        default_factory=list, description="官网直接标注的额度，禁止推算")
+    models: List[str] = Field(default_factory=list, description="官网明示的支持模型")
+    note: Optional[str] = Field(None, description="适用范围、限流或官网估算口径")
+    source_url: Optional[str] = Field(None, description="套餐对应的官网链接")
+
+
+class PlansPage(BaseModel):
+    """一个厂商官网套餐页的完整抽取结果。"""
+
+    plans: List[SubscriptionPlan] = Field(default_factory=list)
+    page_has_plans: bool = Field(
+        True, description="页面是否同时公开套餐价格和可用额度")
+
+
 class NewsEntry(BaseModel):
     """一条官方公告。"""
 

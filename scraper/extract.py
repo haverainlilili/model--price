@@ -19,7 +19,7 @@ import os
 import openai
 from pydantic import BaseModel, ValidationError
 
-from .models import NewsPage, PricingPage
+from .models import NewsPage, PlansPage, PricingPage
 
 MODEL = os.environ.get("OPENAI_MODEL") or "gpt-5.6-sol"
 MAX_PAGE_CHARS = 250_000
@@ -56,6 +56,19 @@ NEWS_SYSTEM = """你从厂商官方公告 / changelog / 新闻页文本中抽取
 - summary: 不超过 60 字的一句话中文摘要
 - 只抽与该厂商模型/产品/价格相关的条目, 最多 12 条, 按页面出现顺序(新的在前)
 - 页面没有公告(空壳/报错页)则 entries 留空"""
+
+
+PLANS_SYSTEM = """你是一个严谨的大模型厂商官网套餐页解析器。
+
+规则:
+1. 只抽取页面同时明确写出「价格」和「使用额度」的套餐。
+2. 额度必须是官网原文直接标注的 Token、积分、请求数、相对倍数、TPM 或「无限」。
+3. 严禁自行换算：不把 prompt 换成请求数，不把周额度推成月额度，不把积分估算成 Token。
+4. 官网若使用「约」「最多」「5x」等表述，value 必须保留这些限定词，note 说明官网口径。
+5. 价格、币种、计费周期、有效期和额度单位保留原文，不换算汇率。
+6. 不抽取只写「更多」「更高限额」但没有任何明确额度的套餐。
+7. source_url 只能使用页面文本中给出的官网链接；没有时留 null。
+8. 如果页面没有符合上述条件的套餐，plans 留空且 page_has_plans=false。"""
 
 
 def has_api_key() -> bool:
@@ -168,3 +181,12 @@ def extract_news(provider: str, url: str, page_text: str) -> NewsPage:
     client = _client()
     user_text = _page_text_header(provider, url, page_text) + "\n请抽取公告条目。"
     return _parse(client, NEWS_SYSTEM, user_text, NewsPage)
+
+
+def extract_plans(provider: str, url: str, page_text: str) -> PlansPage:
+    """抽取官网明示价格与额度的套餐，失败抛 ExtractionError。"""
+    client = _client()
+    user_text = _page_text_header(provider, url, page_text) + "\n请抽取套餐与额度。"
+    parsed = _parse(client, PLANS_SYSTEM, user_text, PlansPage)
+    parsed.plans = [p for p in parsed.plans if p.name.strip() and p.quotas]
+    return parsed

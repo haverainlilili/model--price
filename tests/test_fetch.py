@@ -42,7 +42,7 @@ class FetchRenderedTests(unittest.TestCase):
         playwright = sync_playwright.return_value.__enter__.return_value
         browser = playwright.chromium.launch.return_value
         page = browser.new_context.return_value.new_page.return_value
-        page.locator.return_value.inner_html.return_value = (
+        page.locator.return_value.first.inner_html.return_value = (
             '<a href="/news/model">模型发布</a>'
         )
 
@@ -51,6 +51,7 @@ class FetchRenderedTests(unittest.TestCase):
 
         self.assertEqual(text, "公告正文")
         page.locator.assert_called_once_with("body")
+        page.locator.return_value.first.inner_html.assert_called_once_with()
         html_to_text.assert_called_once_with(
             '<a href="/news/model">模型发布</a>'
         )

@@ -151,7 +151,7 @@ def _render_once(url: str, wait_ms: int, preserve_links: bool = False) -> str:
                 page.wait_for_timeout(wait_ms)
                 if preserve_links:
                     # 公告抽取需要 href；inner_text 会把链接目标全部丢掉。
-                    text = html_to_text(page.locator("body").inner_html())
+                    text = html_to_text(page.locator("body").first.inner_html())
                 else:
                     # 价格页沿用可见文本，避免仅 HTML 结构变化触发大模型。
                     text = page.inner_text("body")

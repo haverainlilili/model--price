@@ -78,6 +78,12 @@ export OPENAI_API_KEY=sk-...
 
 抽取模型默认 `gpt-5.6-sol`，可用环境变量 `OPENAI_MODEL` 覆盖（如 `gpt-5.6-terra` / `gpt-5.6-luna` 降低成本）；兼容接口地址通过 `OPENAI_BASE_URL` 配置。
 
+## 自动发布抓取结果
+
+生产服务器每小时抓取并重建站点后运行 `scripts/publish_updates.sh`。脚本先执行测试，随后只提交 `data/` 与 `site/` 到 `main`；没有文件变化时不会生成空提交，`.env`、部署密钥和缓存不会进入 Git。
+
+GitHub Actions 不再重复抓取，只在 `main` 的 `site/` 更新后发布 GitHub Pages。这样从 GitHub 默认分支下载项目时，包含最近一次成功抓取的数据和对应界面。
+
 ## 数据说明
 
 - 站点上的价格均来自各厂商官网公开页面，**仅供比价参考**；限时折扣、档位计价等细节以官网为准。

@@ -1,72 +1,32 @@
-# 每小时: 抓取各厂商官网价格/公告 -> Claude 结构化抽取 -> 提交 data ->
-# 重新生成静态站点 -> 发布到 GitHub Pages
-#
-# 需要在仓库 Settings > Secrets and variables > Actions 配置:
-#   Secret OPENAI_API_KEY   OpenAI 系 API 密钥(未配置时只建站, 保留旧数据)
-#   Secret OPENAI_BASE_URL  兼容接口地址(官方 OpenAI API 留空)
-#   Variable OPENAI_MODEL   抽取模型名(留空使用代码默认值)
-name: update
+# 价格与公告由生产服务器每小时抓取并提交 data/site。
+# GitHub Actions 只发布服务器提交的静态站点，避免重复抓取和重复调用模型。
+name: publish-site
 
 on:
-  schedule:
-    - cron: '23 * * * *'  # 每小时第 23 分(避开整点高峰)
-  workflow_dispatch: {}   # 支持手动触发
   push:
     branches: [main]
-    paths-ignore:         # 机器人自己的 data/site 提交不再触发, 防死循环
-      - 'data/**'
+    paths:
       - 'site/**'
-      - 'README.md'
+  workflow_dispatch: {}
 
 permissions:
-  contents: write   # 提交 data/ 回仓库
-  pages: write      # 发布 Pages
+  contents: read
+  pages: write
   id-token: write
 
 concurrency:
-  group: update
-  cancel-in-progress: false  # 排队执行, 不打断进行中的抓取
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  run:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          cache: pip
-
-      - run: pip install -r requirements.txt
-
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ hashFiles('requirements.txt') }}
-
-      - run: playwright install --with-deps chromium
-
-      - name: Scrape, extract, build
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
-        run: python -m scraper
-
-      - name: Commit data & site
-        run: |
-          git config user.name "price-bot"
-          git config user.email "actions@github.com"
-          git add data site
-          if git diff --cached --quiet; then
-            echo "no changes to commit"
-          else
-            git commit -m "data: hourly update $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
-            git push
-          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -77,4 +37,5 @@ jobs:
           path: site
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

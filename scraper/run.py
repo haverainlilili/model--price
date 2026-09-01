@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import re
 import sys
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
@@ -61,6 +62,21 @@ def _absolute_news_url(source_url: str, candidate) -> str | None:
     if parsed.scheme in ("http", "https") and parsed.netloc:
         return absolute
     return None
+
+
+def _news_fingerprint(source_url: str, text: str) -> str:
+    """以公告链接集合生成稳定指纹，忽略动态页面的时间和推荐文案噪声。"""
+    links = set()
+    for title, target in re.findall(r"\[([^\]\n]+)\]\(([^)\n]+)\)", text):
+        absolute = _absolute_news_url(source_url, target)
+        if not absolute:
+            continue
+        normalized_title = re.sub(r"\s+", " ", title).strip()
+        if normalized_title:
+            links.add(f"{normalized_title}\t{absolute}")
+    if links:
+        return _sha("\n".join(sorted(links)))
+    return _sha(re.sub(r"\s+", " ", text).strip())
 
 
 def process_provider(cfg: dict) -> None:
@@ -151,7 +167,7 @@ def process_news(cfg: dict) -> None:
         print(f"[{pid}/news] 抓取失败: {exc}")
         return
 
-    page_hash = _sha(text)
+    page_hash = _news_fingerprint(cfg["news_url"], text)
     if prev.get("news_hash") == page_hash:
         return
     if not extract.has_api_key():

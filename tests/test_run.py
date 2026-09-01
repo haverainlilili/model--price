@@ -25,6 +25,34 @@ class FetchNewsTextTests(unittest.TestCase):
         self.assertEqual(text, "plain news")
 
 
+class NewsFingerprintTests(unittest.TestCase):
+    def test_ignores_dynamic_page_noise_and_link_order(self):
+        first = (
+            "当前时间 10:01\n"
+            "[模型 A](/news/model-a)\n"
+            "[模型 B](https://example.com/news/model-b)"
+        )
+        second = (
+            "随机推荐内容 999\n"
+            "[模型 B](https://example.com/news/model-b)\n"
+            "[模型 A](/news/model-a)"
+        )
+
+        self.assertEqual(
+            run._news_fingerprint("https://example.com/news", first),
+            run._news_fingerprint("https://example.com/news", second),
+        )
+
+    def test_changes_when_an_announcement_link_changes(self):
+        before = "[模型 A](/news/model-a)"
+        after = before + "\n[模型 B](/news/model-b)"
+
+        self.assertNotEqual(
+            run._news_fingerprint("https://example.com/news", before),
+            run._news_fingerprint("https://example.com/news", after),
+        )
+
+
 class ProviderConfigurationTests(unittest.TestCase):
     def test_every_provider_has_crawl_source_and_official_news_homepage(self):
         for provider in run.load_providers():
@@ -103,6 +131,13 @@ class ProcessNewsTests(unittest.TestCase):
         self.assertEqual(
             saved["entries"][0]["url"],
             "https://docs.example.com/news/demo-model",
+        )
+        self.assertEqual(
+            saved["news_hash"],
+            run._news_fingerprint(
+                "https://docs.example.com/changelog/index.html",
+                "changed news page",
+            ),
         )
 
 

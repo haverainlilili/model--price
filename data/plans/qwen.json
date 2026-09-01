@@ -1,0 +1,51 @@
+{
+ "plans": [
+  {
+   "name": "大语言模型推理资源包 qwen-plus",
+   "plan_type": "API 资源包",
+   "price": "11.66/114.4 元",
+   "billing": "自购买日起生效，有效期可选 3 个月、6 个月或 1 年。",
+   "quotas": [
+    {
+     "label": "包含输入和输出总Tokens",
+     "value": "1,200万/1.1亿",
+     "window": null
+    }
+   ],
+   "models": [
+    "qwen-plus",
+    "qwen-plus-latest"
+   ],
+   "note": "官网按顺序列示容量与价格档位：1,200万 Tokens 对应 11.66 元，1.1亿 Tokens 对应 114.4 元。仅支持抵扣单次请求输入在 0<Token≤128K 阶梯范围内的实时推理费用（非思考模式，包含输入和输出）；不支持 Batch 调用、上下文缓存、模型调优和模型部署等费用。",
+   "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference_dp_cn#/buy"
+  },
+  {
+   "name": "大语言模型推理资源包 qwen-max",
+   "plan_type": "API 资源包",
+   "price": "57.6/125/1250/3750/6250 元",
+   "billing": "自购买之日起有效期为 1 年。",
+   "quotas": [
+    {
+     "label": "包含输入和输出总Tokens",
+     "value": "1,800万/3,900万/3.9亿/11.7亿/19.5亿",
+     "window": null
+    }
+   ],
+   "models": [
+    "qwen-max"
+   ],
+   "note": "官网按顺序列示容量与价格档位：1,800万、3,900万、3.9亿、11.7亿、19.5亿 Tokens 分别对应 57.6、125、1250、3750、6250 元。仅支持抵扣实时推理产生的费用（非思考模式，包含输入和输出）；不支持 Batch 调用、上下文缓存、模型调优和模型部署等费用。",
+   "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference2_dp_cn#/buy"
+  }
+ ],
+ "last_error": null,
+ "last_fetch_ts": "2026-09-01T08:37:13Z",
+ "source": "official",
+ "source_urls": [
+  "https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package"
+ ],
+ "page_has_plans": true,
+ "plans_hash": "55c049b01012fe019d24f50e6364c18b6d6580b57a7a0d5dd9b656732d70405a",
+ "fetched_at": "2026-09-01T08:37:13Z",
+ "status_note": null
+}

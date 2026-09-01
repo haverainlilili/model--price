@@ -17,7 +17,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urljoin
 
-from .history import ROOT, load_changes, load_meta, load_news, load_provider
+from .history import (ROOT, load_changes, load_meta, load_news, load_plans,
+                      load_provider)
 
 SITE_DIR = ROOT / "site"
 UTC8 = timezone(timedelta(hours=8))
@@ -351,6 +352,46 @@ td.c-note{text-align:left;font-size:11.5px;color:var(--ink2);max-width:360px}
 body[data-currency=orig] .p-cny{display:none}
 body[data-currency=cny] .p-orig{display:none}
 
+/* ---- 套餐与额度 ---- */
+.plan-grid{columns:2 480px;column-gap:14px}
+.plan-channel{min-width:0;background:var(--panel);border:1px solid var(--line);
+  border-radius:15px;overflow:hidden;box-shadow:0 4px 14px rgba(36,48,42,.025);
+  break-inside:avoid;margin:0 0 14px}
+.plan-channel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
+  padding:15px 17px;border-bottom:1px solid var(--line);background:var(--panel2)}
+.plan-channel-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.plan-channel-title h3{margin:0;font-size:15.5px;line-height:1.35}
+.plan-channel-head a{flex:none;color:var(--ink3);font:700 9.5px var(--mono);
+  letter-spacing:.05em;white-space:nowrap}
+.plan-updated{display:block;margin-top:3px;color:var(--ink3);font:500 9.5px var(--mono)}
+.plan-list{list-style:none;margin:0;padding:0}
+.plan-item{padding:15px 17px;border-top:1px solid var(--line)}
+.plan-item:first-child{border-top:0}
+.plan-main{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:start}
+.plan-name-line{display:flex;align-items:center;gap:7px;min-width:0;flex-wrap:wrap}
+.plan-name{margin:0;font:750 13.5px/1.35 var(--sans)}
+.plan-type{padding:3px 6px;border:1px solid var(--line);border-radius:5px;background:#EEF0EB;
+  color:var(--ink2);font:700 8.5px/1 var(--mono);letter-spacing:.05em}
+.plan-price{grid-column:2;grid-row:1/3;color:var(--ink);font:760 13px/1.35 var(--mono);
+  text-align:right;white-space:nowrap}
+.plan-billing{margin:0;color:var(--ink3);font:500 9.5px/1.35 var(--mono)}
+.quota-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:12px 0 0}
+.quota{min-width:0;margin:0;padding:9px 10px;border-left:3px solid var(--accent);
+  background:var(--accent-bg);border-radius:2px 7px 7px 2px}
+.quota dt{margin:0 0 3px;color:var(--accent-dark);font:700 9px/1.25 var(--sans)}
+.quota dd{margin:0;color:var(--ink);font:720 11.5px/1.35 var(--mono);overflow-wrap:anywhere}
+.quota-window{display:block;margin-top:3px;color:var(--ink2);font:550 9px/1.3 var(--sans)}
+.plan-models{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin:10px 0 0}
+.plan-models-label{color:var(--ink3);font:700 8.5px/1 var(--mono);letter-spacing:.07em}
+.plan-model{padding:3px 6px;border-radius:4px;background:#EEF0EB;color:var(--ink2);
+  font:600 9px/1.2 var(--mono)}
+.plan-note{margin:9px 0 0;color:var(--ink2);font-size:10.5px;line-height:1.55}
+.plan-source{display:inline-block;margin-top:9px;font:700 9.5px var(--mono)}
+.plan-policy{display:flex;align-items:flex-start;gap:9px;margin:0 0 16px;padding:11px 13px;
+  border:1px solid #BFD7CC;border-radius:10px;background:var(--accent-bg);
+  color:var(--accent-dark);font-size:11.5px}
+.plan-policy b{flex:none;font:750 9px/1.6 var(--mono);letter-spacing:.08em}
+
 /* ---- 变动流水 ---- */
 .chg-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .chg{position:relative;display:grid;grid-template-columns:100px 128px 1fr;gap:5px 16px;
@@ -388,16 +429,18 @@ footer p{max-width:860px}footer a{color:#D8EFE6}footer .mono{font-size:10.5px}
 /* ---- 筛选 ---- */
 body[data-region=intl] .prov[data-region=domestic],
 body[data-region=intl] .news-card[data-region=domestic],
+body[data-region=intl] .plan-channel[data-region=domestic],
 body[data-region=intl] .bgroup[data-region=domestic],
 body[data-region=intl] .lowest-col[data-region=domestic]{display:none}
 body[data-region=domestic] .prov[data-region=intl],
 body[data-region=domestic] .news-card[data-region=intl],
+body[data-region=domestic] .plan-channel[data-region=intl],
 body[data-region=domestic] .bgroup[data-region=intl],
 body[data-region=domestic] .lowest-col[data-region=intl]{display:none}
 
 @media(hover:hover){
-  .prov,.news-card{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
-  .prov:hover,.news-card:hover{transform:translateY(-2px);border-color:var(--line2);
+  .prov,.news-card,.plan-channel{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .prov:hover,.news-card:hover,.plan-channel:hover{transform:translateY(-2px);border-color:var(--line2);
     box-shadow:0 12px 28px rgba(36,48,42,.07)}
 }
 @media(max-width:960px){
@@ -405,9 +448,10 @@ body[data-region=domestic] .lowest-col[data-region=intl]{display:none}
   .spec{grid-template-columns:repeat(4,minmax(0,1fr))}
   .metric-wide{grid-column:span 2}
   .chart-grid{grid-template-columns:1fr}
+  .plan-grid{columns:1}
   .news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media(max-width:760px){
+@media(max-width:800px){
   .wrap{padding:0 18px}
   .ticker-label{display:none}
   .masthead{padding-top:38px}
@@ -437,6 +481,7 @@ body[data-region=domestic] .lowest-col[data-region=intl]{display:none}
   .section-head{grid-template-columns:1fr;gap:9px;margin-bottom:16px}
   .sec-sub{text-align:left}
   .prov-head{align-items:flex-start;flex-direction:column;gap:8px}
+  .quota-list{grid-template-columns:1fr}
   table{min-width:680px}
   thead th:first-child,td.c-model{position:sticky;left:0;z-index:1;background:#FFFEFB;
     box-shadow:1px 0 0 var(--line)}
@@ -452,7 +497,7 @@ body[data-region=domestic] .lowest-col[data-region=intl]{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}.ticker-track{animation:none}.ticker-view{overflow-x:auto}
-  .bbar,.prov,.news-card,.prov-chevron{transition:none}
+  .bbar,.prov,.news-card,.plan-channel,.prov-chevron{transition:none}
 }
 """
 
@@ -791,6 +836,95 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
         '完整价格与备注见下方明细表。</p></section>')
 
 
+def _plans_section(providers_cfg: list, records: dict) -> str:
+    """套餐账本：只渲染同时有官网价格与官网明示额度的项目。"""
+    channels = []
+    offer_count = 0
+    for cfg in providers_cfg:
+        rec = records.get(cfg["id"]) or {}
+        plans = [p for p in (rec.get("plans") or []) if p.get("quotas")]
+        if not plans:
+            continue
+
+        region = cfg.get("region", "")
+        data_region = "domestic" if region == "国内" else "intl"
+        provider = cfg.get("name_cn") or cfg.get("name") or cfg["id"]
+        source_urls = rec.get("source_urls") or []
+        channel_url = _safe_url(source_urls[0] if source_urls else None)
+        channel_link = (f'<a href="{channel_url}" target="_blank" rel="noopener">'
+                        f'官网套餐页 ↗</a>' if channel_url else "")
+        updated = (_t(rec.get("fetched_at"), "%Y-%m-%d")
+                   if rec.get("fetched_at") else "")
+        updated_html = (f'<span class="plan-updated">核验于 {updated}</span>'
+                        if updated else "")
+
+        items = []
+        for plan in plans:
+            quotas = []
+            for quota in plan.get("quotas") or []:
+                label = str(quota.get("label") or "").strip()
+                value = str(quota.get("value") or "").strip()
+                if not label or not value:
+                    continue
+                window = str(quota.get("window") or "").strip()
+                window_html = (f'<span class="quota-window">{_e(window)}</span>'
+                               if window else "")
+                quotas.append(f'<div class="quota"><dt>{_e(label)}</dt>'
+                              f'<dd>{_e(value)}{window_html}</dd></div>')
+            if not quotas:
+                continue
+
+            name = str(plan.get("name") or "").strip()
+            price = str(plan.get("price") or "").strip()
+            if not name or not price:
+                continue
+            plan_type = str(plan.get("plan_type") or "").strip()
+            type_html = (f'<span class="plan-type">{_e(plan_type)}</span>'
+                         if plan_type else "")
+            billing = str(plan.get("billing") or "").strip()
+            billing_html = (f'<p class="plan-billing">{_e(billing)}</p>'
+                            if billing else "")
+            model_bits = "".join(
+                f'<span class="plan-model">{_e(model)}</span>'
+                for model in (plan.get("models") or []) if str(model).strip())
+            models_html = (f'<div class="plan-models"><span class="plan-models-label">'
+                           f'MODELS</span>{model_bits}</div>' if model_bits else "")
+            note = str(plan.get("note") or "").strip()
+            note_html = f'<p class="plan-note">{_e(note)}</p>' if note else ""
+            source_url = _safe_url(plan.get("source_url")) or channel_url
+            source_html = (f'<a class="plan-source" href="{source_url}" target="_blank" '
+                           f'rel="noopener">查看官网原文 ↗</a>' if source_url else "")
+            items.append(
+                f'<li class="plan-item"><div class="plan-main">'
+                f'<div class="plan-name-line"><h4 class="plan-name">{_e(name)}</h4>'
+                f'{type_html}</div><strong class="plan-price">{_e(price)}</strong>'
+                f'{billing_html}</div><dl class="quota-list">{"".join(quotas)}</dl>'
+                f'{models_html}{note_html}{source_html}</li>')
+
+        if not items:
+            continue
+        offer_count += len(items)
+        channels.append(
+            f'<article class="plan-channel" data-region="{data_region}">'
+            f'<header class="plan-channel-head"><div><div class="plan-channel-title">'
+            f'<h3>{_e(provider)}</h3><span class="tag tag-region">{_e(region)}</span>'
+            f'</div>{updated_html}</div>{channel_link}</header>'
+            f'<ul class="plan-list">{"".join(items)}</ul></article>')
+
+    if not channels:
+        return ""
+    return (
+        '<section class="block" id="plans" aria-labelledby="plans-title">'
+        '<div class="section-head"><div><p class="sec-eyebrow">02 / PLANS</p>'
+        '<h2 class="sec-title" id="plans-title">套餐与额度</h2></div>'
+        f'<p class="sec-sub">{offer_count} 个官网套餐 · 保留原币与原单位<br>'
+        '聊天会员、Coding Plan 与 API 资源包不互相换算</p></div>'
+        '<p class="plan-policy"><b>OFFICIAL ONLY</b><span>只收录厂商官网直接标注的额度；'
+        '不展示实测上限，不把 prompt 换算成请求，不由周额度推算月额度。'
+        '官网原文中的「约」「最多」和相对倍数会原样保留。</span></p>'
+        f'<div class="plan-grid">{"".join(channels)}</div></section>')
+
+
 def _prov_section(cfg: dict, rec: dict | None, rate: float) -> str:
     pid = cfg["id"]
     name = cfg.get("name_cn") or cfg["name"]
@@ -946,13 +1080,14 @@ def build(providers_cfg: list) -> Path:
     fx = meta.get("fx") or {}
     rate = float(fx.get("usd_cny") or 7.2)
 
-    recs, news_recs, prov_names, prov_cur = {}, {}, {}, {}
+    recs, news_recs, plan_recs, prov_names, prov_cur = {}, {}, {}, {}, {}
     total_models = 0
     for cfg in providers_cfg:
         pid = cfg["id"]
         rec = load_provider(pid)
         recs[pid] = rec
         news_recs[pid] = load_news(pid)
+        plan_recs[pid] = load_plans(pid)
         prov_names[pid] = cfg.get("name_cn") or cfg["name"]
         if rec:
             prov_cur[pid] = rec.get("currency")
@@ -990,7 +1125,7 @@ def build(providers_cfg: list) -> Path:
     controls = (
         '<nav class="controls" aria-label="页面导航与数据筛选">'
         '<div class="jump-nav"><a href="#lowest">最低价</a><a href="#quick">价格速览</a>'
-        '<a href="#prices">完整价格</a>'
+        '<a href="#plans">套餐额度</a><a href="#prices">完整价格</a>'
         '<a href="#changes">变动流水</a><a href="#news">官方公告</a></div>'
         '<div class="control-groups"><span class="control-label">FILTER</span>'
         '<div class="seg" role="group" aria-label="地区筛选">'
@@ -1004,13 +1139,14 @@ def build(providers_cfg: list) -> Path:
 
     lowest = _cheapest_chart(providers_cfg, recs, rate)
     quick = _quick_chart(providers_cfg, recs, rate)
+    plans = _plans_section(providers_cfg, plan_recs)
 
     # ---- 价格区
     prov_html = "".join(_prov_section(cfg, recs.get(cfg["id"]), rate)
                         for cfg in providers_cfg)
     prices = (
         f'<section class="block" id="prices">'
-        f'<div class="section-head"><div><p class="sec-eyebrow">02 / PRICES</p>'
+        f'<div class="section-head"><div><p class="sec-eyebrow">03 / PRICES</p>'
         f'<h2 class="sec-title">完整价格账本</h2></div>'
         f'<p class="sec-sub">按厂商分组 · 单位：每百万 tokens<br>'
         f'<span class="mono">USD 按 1 USD ≈ ¥{_fmt(rate)} 折算（标注 ≈）</span></p></div>'
@@ -1025,7 +1161,7 @@ def build(providers_cfg: list) -> Path:
                     '一旦有价格或活动变化, 会自动出现在这里。</div>')
     changes_sec = (
         f'<section class="block" id="changes">'
-        f'<div class="section-head"><div><p class="sec-eyebrow">03 / CHANGES</p>'
+        f'<div class="section-head"><div><p class="sec-eyebrow">04 / CHANGES</p>'
         f'<h2 class="sec-title">价格变动流水</h2></div>'
         f'<p class="sec-sub">官网价格页变化时自动留痕，新记录在前<br>'
         f'红 = 涨价 / 新增，绿 = 降价</p></div>{chg_html}</section>')
@@ -1035,7 +1171,7 @@ def build(providers_cfg: list) -> Path:
                          for cfg in providers_cfg if cfg.get("news_url"))
     news_sec = (
         f'<section class="block" id="news">'
-        f'<div class="section-head"><div><p class="sec-eyebrow">04 / NOTICES</p>'
+        f'<div class="section-head"><div><p class="sec-eyebrow">05 / NOTICES</p>'
         f'<h2 class="sec-title">官方公告雷达</h2></div>'
         f'<p class="sec-sub">来自各厂商官网公告 / changelog 页面<br>每小时抓取新条目</p></div>'
         f'<div class="news-grid">{news_cards}</div></section>')
@@ -1063,7 +1199,7 @@ def build(providers_cfg: list) -> Path:
         f'<body data-region="all" data-currency="cny">'
         f'<a class="skip-link" href="#main-content">跳到主要内容</a>{ticker}'
         f'<div class="wrap">{masthead}{controls}'
-        f'<main id="main-content">{lowest}{quick}{prices}{changes_sec}{news_sec}</main>{footer}</div>'
+        f'<main id="main-content">{lowest}{quick}{plans}{prices}{changes_sec}{news_sec}</main>{footer}</div>'
         f'<script>{JS}</script></body></html>')
 
     SITE_DIR.mkdir(parents=True, exist_ok=True)
@@ -1084,6 +1220,8 @@ def build(providers_cfg: list) -> Path:
         "changes": changes,
         "news": {cfg["id"]: news_recs.get(cfg["id"], {}).get("entries", [])
                  for cfg in providers_cfg},
+        "plans": {cfg["id"]: plan_recs.get(cfg["id"], {})
+                  for cfg in providers_cfg if plan_recs.get(cfg["id"], {}).get("plans")},
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
     return SITE_DIR / "index.html"

@@ -53,6 +53,19 @@ def _fetch_news_text(cfg: dict) -> str:
     return fetch(cfg["news_url"])
 
 
+def _fetch_plan_text(cfg: dict) -> tuple[str, str]:
+    """抓取套餐页；可合并官网的价格页与额度说明页。"""
+    urls = cfg.get("plan_urls") or (
+        [cfg["plan_url"]] if cfg.get("plan_url") else [])
+    if not urls:
+        raise FetchError("providers.yaml 未配置 plan_url")
+    texts = []
+    for url in urls:
+        body = fetch_rendered(url) if cfg.get("plan_render") else fetch(url)
+        texts.append(f"===== 官网套餐页: {url} =====\n{body}")
+    return urls[0], "\n\n".join(texts)
+
+
 def _absolute_news_url(source_url: str, candidate) -> str | None:
     """把公告条目的相对链接补全；拒绝非 HTTP(S) 协议。"""
     if not candidate:
@@ -62,6 +75,28 @@ def _absolute_news_url(source_url: str, candidate) -> str | None:
     if parsed.scheme in ("http", "https") and parsed.netloc:
         return absolute
     return None
+
+
+def _official_plan_url(cfg: dict, candidate) -> str | None:
+    """只允许套餐来源指向配置官网的同一主域，拒绝推广链接。"""
+    if not candidate:
+        return None
+    sources = cfg.get("plan_urls") or (
+        [cfg["plan_url"]] if cfg.get("plan_url") else [])
+    if not sources:
+        return None
+    absolute = urljoin(sources[0], str(candidate).strip())
+    parsed = urlparse(absolute)
+    if parsed.scheme not in ("http", "https") or not parsed.hostname:
+        return None
+
+    def root_domain(url: str) -> str:
+        host = (urlparse(url).hostname or "").lower().strip(".")
+        labels = host.split(".")
+        return ".".join(labels[-2:]) if len(labels) >= 2 else host
+
+    allowed_roots = {root_domain(url) for url in sources}
+    return absolute if root_domain(absolute) in allowed_roots else None
 
 
 def _news_fingerprint(source_url: str, text: str) -> str:
@@ -194,6 +229,68 @@ def process_news(cfg: dict) -> None:
     print(f"[{pid}/news] {len(entries)} 条公告")
 
 
+def process_plans(cfg: dict) -> None:
+    if not (cfg.get("plan_url") or cfg.get("plan_urls")):
+        return
+    pid = cfg["id"]
+    name = cfg.get("name_cn") or cfg["name"]
+    now = utcnow()
+    prev = history.load_plans(pid)
+    record = dict(prev)
+
+    try:
+        first_url, text = _fetch_plan_text(cfg)
+    except FetchError as exc:
+        record.update({"last_error": str(exc)[:300], "last_fetch_ts": now})
+        history.save_plans(pid, record)
+        print(f"[{pid}/plans] 抓取失败: {exc}")
+        return
+
+    record.update({"last_error": None, "last_fetch_ts": now})
+    page_hash = _sha(text)
+    if prev.get("plans_hash") == page_hash:
+        record["status_note"] = "页面无变化"
+        history.save_plans(pid, record)
+        print(f"[{pid}/plans] 页面无变化, 跳过抽取")
+        return
+    if not extract.has_api_key():
+        record["status_note"] = "等待 OPENAI_API_KEY"
+        history.save_plans(pid, record)
+        return
+
+    page = extract.extract_plans(name, first_url, text)
+    plans = []
+    for plan in page.plans:
+        if not plan.quotas:
+            continue
+        item = plan.model_dump()
+        item["source_url"] = (_official_plan_url(cfg, item.get("source_url"))
+                              or first_url)
+        plans.append(item)
+    if not plans and prev.get("plans"):
+        message = f"官网页未解析出有效套餐，已保留上次 {len(prev['plans'])} 个"
+        record.update({
+            "plans_hash": page_hash,
+            "page_has_plans": page.page_has_plans,
+            "status_note": message,
+            "last_error": message,
+        })
+        history.save_plans(pid, record)
+        return
+
+    record.update({
+        "source": "official",
+        "source_urls": cfg.get("plan_urls") or [cfg.get("plan_url")],
+        "plans": plans,
+        "page_has_plans": page.page_has_plans,
+        "plans_hash": page_hash,
+        "fetched_at": now,
+        "status_note": None,
+    })
+    history.save_plans(pid, record)
+    print(f"[{pid}/plans] 抽取到 {len(plans)} 个官网套餐")
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="抓取大模型官网价格并生成对比站点")
     ap.add_argument("--build-only", action="store_true",
@@ -216,6 +313,11 @@ def main(argv=None) -> int:
                 process_news(cfg)
             except Exception as exc:
                 print(f"[{cfg['id']}/news] 处理出错: {exc}", file=sys.stderr)
+        for cfg in providers:
+            try:
+                process_plans(cfg)
+            except Exception as exc:
+                print(f"[{cfg['id']}/plans] 处理出错: {exc}", file=sys.stderr)
 
         from .fx import update_fx
         meta = history.load_meta()

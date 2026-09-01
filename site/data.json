@@ -5981,5 +5981,523 @@
     "first_seen": "2026-08-31T10:23:22Z"
    }
   ]
+ },
+ "plans": {
+  "anthropic": {
+   "plans": [
+    {
+     "name": "Max 5x",
+     "plan_type": "聊天会员",
+     "price": "$100",
+     "billing": "Monthly",
+     "quotas": [
+      {
+       "label": "Usage Capacity",
+       "value": "5x Pro capacity per session",
+       "window": "per session"
+      }
+     ],
+     "models": [],
+     "note": "官网以 Pro 套餐的每会话容量为基准，标注为 5x，不代表固定 Token 或请求数。",
+     "source_url": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan#h_cfd2904008"
+    },
+    {
+     "name": "Max 20x",
+     "plan_type": "聊天会员",
+     "price": "$200",
+     "billing": "Monthly",
+     "quotas": [
+      {
+       "label": "Usage Capacity",
+       "value": "20x Pro capacity per session",
+       "window": "per session"
+      }
+     ],
+     "models": [],
+     "note": "官网以 Pro 套餐的每会话容量为基准，标注为 20x，不代表固定 Token 或请求数。",
+     "source_url": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan#h_cfd2904008"
+    },
+    {
+     "name": "$50",
+     "plan_type": "Usage bundle",
+     "price": "$45",
+     "billing": null,
+     "quotas": [
+      {
+       "label": "Usage credits",
+       "value": "$50",
+       "window": null
+      }
+     ],
+     "models": [],
+     "note": "10% discount。Usage bundle balance applies across Claude, Claude Desktop, Claude Mobile (iOS and Android), Claude Code, Cowork, and third-party products that use your Claude account. Available on Pro, Max, and Team plans.",
+     "source_url": "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
+    },
+    {
+     "name": "$250",
+     "plan_type": "Usage bundle",
+     "price": "$200",
+     "billing": null,
+     "quotas": [
+      {
+       "label": "Usage credits",
+       "value": "$250",
+       "window": null
+      }
+     ],
+     "models": [],
+     "note": "20% discount。Usage bundle balance applies across Claude, Claude Desktop, Claude Mobile (iOS and Android), Claude Code, Cowork, and third-party products that use your Claude account. Available on Pro, Max, and Team plans.",
+     "source_url": "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
+    },
+    {
+     "name": "$1000",
+     "plan_type": "Usage bundle",
+     "price": "$700",
+     "billing": null,
+     "quotas": [
+      {
+       "label": "Usage credits",
+       "value": "$1000",
+       "window": null
+      }
+     ],
+     "models": [],
+     "note": "30% discount。Usage bundle balance applies across Claude, Claude Desktop, Claude Mobile (iOS and Android), Claude Code, Cowork, and third-party products that use your Claude account. Available on Pro, Max, and Team plans.",
+     "source_url": "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
+    }
+   ],
+   "last_error": null,
+   "last_fetch_ts": "2026-09-01T08:35:52Z",
+   "source": "official",
+   "source_urls": [
+    "https://support.claude.com/en/articles/11049762-choose-a-claude-plan",
+    "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
+   ],
+   "page_has_plans": true,
+   "plans_hash": "7733c718b888c75f6da43e5adf20015eb69095ef1d901723c47e6448ab7ff728",
+   "fetched_at": "2026-09-01T08:35:52Z",
+   "status_note": null
+  },
+  "qwen": {
+   "plans": [
+    {
+     "name": "大语言模型推理资源包 qwen-plus",
+     "plan_type": "API 资源包",
+     "price": "11.66/114.4 元",
+     "billing": "自购买日起生效，有效期可选 3 个月、6 个月或 1 年。",
+     "quotas": [
+      {
+       "label": "包含输入和输出总Tokens",
+       "value": "1,200万/1.1亿",
+       "window": null
+      }
+     ],
+     "models": [
+      "qwen-plus",
+      "qwen-plus-latest"
+     ],
+     "note": "官网按顺序列示容量与价格档位：1,200万 Tokens 对应 11.66 元，1.1亿 Tokens 对应 114.4 元。仅支持抵扣单次请求输入在 0<Token≤128K 阶梯范围内的实时推理费用（非思考模式，包含输入和输出）；不支持 Batch 调用、上下文缓存、模型调优和模型部署等费用。",
+     "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference_dp_cn#/buy"
+    },
+    {
+     "name": "大语言模型推理资源包 qwen-max",
+     "plan_type": "API 资源包",
+     "price": "57.6/125/1250/3750/6250 元",
+     "billing": "自购买之日起有效期为 1 年。",
+     "quotas": [
+      {
+       "label": "包含输入和输出总Tokens",
+       "value": "1,800万/3,900万/3.9亿/11.7亿/19.5亿",
+       "window": null
+      }
+     ],
+     "models": [
+      "qwen-max"
+     ],
+     "note": "官网按顺序列示容量与价格档位：1,800万、3,900万、3.9亿、11.7亿、19.5亿 Tokens 分别对应 57.6、125、1250、3750、6250 元。仅支持抵扣实时推理产生的费用（非思考模式，包含输入和输出）；不支持 Batch 调用、上下文缓存、模型调优和模型部署等费用。",
+     "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference2_dp_cn#/buy"
+    }
+   ],
+   "last_error": null,
+   "last_fetch_ts": "2026-09-01T08:37:13Z",
+   "source": "official",
+   "source_urls": [
+    "https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package"
+   ],
+   "page_has_plans": true,
+   "plans_hash": "55c049b01012fe019d24f50e6364c18b6d6580b57a7a0d5dd9b656732d70405a",
+   "fetched_at": "2026-09-01T08:37:13Z",
+   "status_note": null
+  },
+  "doubao": {
+   "plans": [
+    {
+     "name": "Lite 套餐",
+     "plan_type": "Coding Plan",
+     "price": "首购优惠价仅9.9元/月；叠加推荐优惠券，首月优惠低至2.2折，8.9元",
+     "billing": "月；首月8.9元需叠加推荐优惠券；首购一次性下单三个月可享5折",
+     "quotas": [
+      {
+       "label": "请求数",
+       "value": "最多约1200次请求",
+       "window": "每5小时"
+      }
+     ],
+     "models": [
+      "Doubao-Seed-Code",
+      "GLM-4.7",
+      "DeepSeek-V3.2",
+      "Kimi-K2-Thinking"
+     ],
+     "note": "官网以“最多约”表述请求额度；8.9元为叠加推荐优惠券后的首月低至价格。页面后文另将 Kimi 模型写作 Kimi-K2。",
+     "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
+    },
+    {
+     "name": "Pro 套餐",
+     "plan_type": "Coding Plan",
+     "price": "首购优惠价49.9元/月",
+     "billing": "月；首购一次性下单三个月可享5折",
+     "quotas": [
+      {
+       "label": "请求数",
+       "value": "最多约6000次请求",
+       "window": "每5小时"
+      },
+      {
+       "label": "相对 Lite 套餐用量",
+       "value": "5倍",
+       "window": null
+      }
+     ],
+     "models": [
+      "Doubao-Seed-Code",
+      "GLM-4.7",
+      "DeepSeek-V3.2",
+      "Kimi-K2-Thinking"
+     ],
+     "note": "官网以“最多约”表述请求额度，并明确 Pro 套餐用量是 Lite 套餐的5倍。页面后文另将 Kimi 模型写作 Kimi-K2。",
+     "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
+    }
+   ],
+   "last_error": null,
+   "last_fetch_ts": "2026-09-01T08:37:42Z",
+   "source": "official",
+   "source_urls": [
+    "https://developer.volcengine.com/articles/7595502342175195187"
+   ],
+   "page_has_plans": true,
+   "plans_hash": "b7251cbb5c1d3f3ede5d5597752ffe6727b5c86197348fceb148a3a75635c2c3",
+   "fetched_at": "2026-09-01T08:37:42Z",
+   "status_note": null
+  },
+  "moonshot": {
+   "plans": [
+    {
+     "name": "Andante",
+     "plan_type": "Kimi 会员",
+     "price": "¥49/月",
+     "billing": "连续包月；额度在每个计费周期自动刷新，按月刷新",
+     "quotas": [
+      {
+       "label": "Agent 用量",
+       "value": "约 30 个",
+       "window": "每个计费周期（按月刷新）"
+      },
+      {
+       "label": "专业数据库调用",
+       "value": "1000 次调用",
+       "window": "每个计费周期（按月刷新）"
+      }
+     ],
+     "models": [
+      "K2.6",
+      "K3"
+     ],
+     "note": "Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；频次限制以页面提示为准。",
+     "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+    },
+    {
+     "name": "Moderato",
+     "plan_type": "Kimi 会员",
+     "price": "¥99/月",
+     "billing": "连续包月；额度在每个计费周期自动刷新，按月刷新",
+     "quotas": [
+      {
+       "label": "Agent 用量",
+       "value": "约 60 个",
+       "window": "每个计费周期（按月刷新）"
+      },
+      {
+       "label": "Agent 集群可用次数",
+       "value": "25 次",
+       "window": "每个计费周期（按月刷新）"
+      },
+      {
+       "label": "专业数据库调用",
+       "value": "2000 次调用",
+       "window": "每个计费周期（按月刷新）"
+      }
+     ],
+     "models": [
+      "K2.6",
+      "K3"
+     ],
+     "note": "Agent 集群额度对应 2 个子任务并行。Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；频次限制以页面提示为准。",
+     "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+    },
+    {
+     "name": "Allegretto",
+     "plan_type": "Kimi 会员",
+     "price": "¥199/月",
+     "billing": "连续包月；额度在每个计费周期自动刷新，按月刷新",
+     "quotas": [
+      {
+       "label": "Agent 用量",
+       "value": "约 150 个",
+       "window": "每个计费周期（按月刷新）"
+      },
+      {
+       "label": "Agent 集群可用次数",
+       "value": "50 次",
+       "window": "每个计费周期（按月刷新）"
+      },
+      {
+       "label": "专业数据库调用",
+       "value": "5000 次调用",
+       "window": "每个计费周期（按月刷新）"
+      }
+     ],
+     "models": [
+      "K2.6",
+      "K3"
+     ],
+     "note": "Agent 集群额度对应 4 个子任务并行。Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；频次限制以页面提示为准。",
+     "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+    },
+    {
+     "name": "Allegro",
+     "plan_type": "Kimi 会员",
+     "price": "¥699/月",
+     "billing": "连续包月；额度在每个计费周期自动刷新，按月刷新",
+     "quotas": [
+      {
+       "label": "Agent 用量",
+       "value": "约 360 个",
+       "window": "每个计费周期（按月刷新）"
+      },
+      {
+       "label": "Agent 集群可用次数",
+       "value": "120 次",
+       "window": "每个计费周期（按月刷新）"
+      },
+      {
+       "label": "超长对话容量",
+       "value": "百万 Tokens",
+       "window": null
+      },
+      {
+       "label": "专业数据库调用",
+       "value": "12000 次调用",
+       "window": "每个计费周期（按月刷新）"
+      }
+     ],
+     "models": [
+      "K2.6",
+      "K3"
+     ],
+     "note": "Agent 集群额度对应 8 个子任务并行。Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；频次限制以页面提示为准。",
+     "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+    }
+   ],
+   "last_error": null,
+   "last_fetch_ts": "2026-09-01T08:37:58Z",
+   "source": "official",
+   "source_urls": [
+    "https://www.kimi.com/help/membership/membership-pricing"
+   ],
+   "page_has_plans": true,
+   "plans_hash": "f1cc0230e81b32080caaa26e01a53a44728c5adc00f0d29b92ff9522989f74dc",
+   "fetched_at": "2026-09-01T08:37:58Z",
+   "status_note": null
+  },
+  "minimax": {
+   "plans": [
+    {
+     "name": "Plus",
+     "plan_type": "Token Plan",
+     "price": "¥49 / 月；￥490 每年（原价 ￥588）",
+     "billing": "连续包月；连续包年（每年，按年订阅）",
+     "quotas": [
+      {
+       "label": "M3 用量",
+       "value": "约 6 亿+ token",
+       "window": "月度"
+      },
+      {
+       "label": "日常编程调用",
+       "value": "约 12,000 次",
+       "window": "月度"
+      },
+      {
+       "label": "M2.7 调用（参考）",
+       "value": "1,500 次 / 5 小时",
+       "window": "5 小时窗口"
+      },
+      {
+       "label": "M2.7-highspeed 调用（参考）",
+       "value": "750 次 / 5 小时",
+       "window": "5 小时窗口"
+      }
+     ],
+     "models": [
+      "M3",
+      "M2.7",
+      "M2.7-highspeed"
+     ],
+     "note": "日常编程调用按 M3 单次 ~50K token 估算。M2.7 与 M3 共用配额，其调用次数为 5 小时窗口内仅调用对应模型时的估算量。官网称套餐额度受 5 小时固定窗口和周窗口控制，未使用额度不结转，且高峰期可能动态限流。",
+     "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
+    },
+    {
+     "name": "Max",
+     "plan_type": "Token Plan",
+     "price": "¥119 / 月；￥1,190 每年（原价 ￥1,490）",
+     "billing": "连续包月；连续包年（每年，按年订阅）",
+     "quotas": [
+      {
+       "label": "M3 用量",
+       "value": "约 18 亿+ token",
+       "window": "月度"
+      },
+      {
+       "label": "日常编程调用",
+       "value": "约 36,000 次",
+       "window": "月度"
+      },
+      {
+       "label": "M2.7 调用（参考）",
+       "value": "4,500 次 / 5 小时",
+       "window": "5 小时窗口"
+      },
+      {
+       "label": "M2.7-highspeed 调用（参考）",
+       "value": "2,250 次 / 5 小时",
+       "window": "5 小时窗口"
+      },
+      {
+       "label": "Hailuo2.3 视频生成",
+       "value": "3 条 / 日",
+       "window": "每日"
+      }
+     ],
+     "models": [
+      "M3",
+      "M2.7",
+      "M2.7-highspeed",
+      "Hailuo2.3"
+     ],
+     "note": "日常编程调用按 M3 单次 ~50K token 估算。M2.7 与 M3 共用配额，其调用次数为 5 小时窗口内仅调用对应模型时的估算量。官网称套餐额度受 5 小时固定窗口和周窗口控制，未使用额度不结转，且高峰期可能动态限流。",
+     "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
+    },
+    {
+     "name": "Ultra",
+     "plan_type": "Token Plan",
+     "price": "¥469 / 月；￥4,690 每年（原价 ￥5,628）",
+     "billing": "连续包月；连续包年（每年，按年订阅）",
+     "quotas": [
+      {
+       "label": "M3 用量",
+       "value": "约 71 亿+ token",
+       "window": "月度"
+      },
+      {
+       "label": "日常编程调用",
+       "value": "约 140,000 次",
+       "window": "月度"
+      },
+      {
+       "label": "M2.7 调用（参考）",
+       "value": "15,000 次 / 5 小时",
+       "window": "5 小时窗口"
+      },
+      {
+       "label": "M2.7-highspeed 调用（参考）",
+       "value": "7,500 次 / 5 小时",
+       "window": "5 小时窗口"
+      },
+      {
+       "label": "Hailuo2.3 视频生成",
+       "value": "5 条 / 日",
+       "window": "每日"
+      }
+     ],
+     "models": [
+      "M3",
+      "M2.7",
+      "M2.7-highspeed",
+      "Hailuo2.3"
+     ],
+     "note": "日常编程调用按 M3 单次 ~50K token 估算。M2.7 与 M3 共用配额，其调用次数为 5 小时窗口内仅调用对应模型时的估算量。官网称套餐额度受 5 小时固定窗口和周窗口控制，未使用额度不结转，且高峰期可能动态限流。",
+     "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
+    },
+    {
+     "name": "入门版",
+     "plan_type": "积分包",
+     "price": "¥30",
+     "billing": "购买之日起 1 年内有效",
+     "quotas": [
+      {
+       "label": "积分",
+       "value": "4,489 积分",
+       "window": "购买之日起 1 年内有效"
+      }
+     ],
+     "models": [],
+     "note": null,
+     "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
+    },
+    {
+     "name": "进阶版",
+     "plan_type": "积分包",
+     "price": "¥150",
+     "billing": "购买之日起 1 年内有效",
+     "quotas": [
+      {
+       "label": "积分",
+       "value": "22,460 积分",
+       "window": "购买之日起 1 年内有效"
+      }
+     ],
+     "models": [],
+     "note": null,
+     "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
+    },
+    {
+     "name": "高级版",
+     "plan_type": "积分包",
+     "price": "¥500",
+     "billing": "购买之日起 1 年内有效",
+     "quotas": [
+      {
+       "label": "积分",
+       "value": "74,900 积分",
+       "window": "购买之日起 1 年内有效"
+      }
+     ],
+     "models": [],
+     "note": null,
+     "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
+    }
+   ],
+   "last_error": null,
+   "last_fetch_ts": "2026-09-01T08:38:27Z",
+   "source": "official",
+   "source_urls": [
+    "https://platform.minimaxi.com/subscribe/token-plan"
+   ],
+   "page_has_plans": true,
+   "plans_hash": "b8a6a2b2c180571afb088f6a15a656f9d86b22f87472a53ddc8e6f15598c8dbf",
+   "fetched_at": "2026-09-01T08:38:27Z",
+   "status_note": null
+  }
  }
 }

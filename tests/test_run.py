@@ -25,6 +25,54 @@ class FetchNewsTextTests(unittest.TestCase):
         self.assertEqual(text, "plain news")
 
 
+class FetchPlanTextTests(unittest.TestCase):
+    @patch.object(run, "fetch_rendered", return_value="rendered plan")
+    @patch.object(run, "fetch", side_effect=AssertionError("plain fetch must not run"))
+    def test_uses_browser_for_rendered_plan_sources(self, _fetch, _fetch_rendered):
+        url, text = run._fetch_plan_text({
+            "plan_url": "https://example.com/plans",
+            "plan_render": True,
+        })
+
+        self.assertEqual(url, "https://example.com/plans")
+        self.assertIn("rendered plan", text)
+        _fetch_rendered.assert_called_once_with("https://example.com/plans")
+
+    @patch.object(run, "fetch", side_effect=["price page", "quota page"])
+    def test_combines_multiple_official_plan_sources(self, _fetch):
+        url, text = run._fetch_plan_text({
+            "plan_urls": [
+                "https://example.com/price",
+                "https://example.com/quota",
+            ],
+        })
+
+        self.assertEqual(url, "https://example.com/price")
+        self.assertIn("price page", text)
+        self.assertIn("quota page", text)
+
+
+class OfficialPlanUrlTests(unittest.TestCase):
+    def test_accepts_another_official_subdomain(self):
+        self.assertEqual(
+            run._official_plan_url(
+                {
+                    "plan_url": "https://help.aliyun.com/model-studio/plans",
+                },
+                "https://common-buy.aliyun.com/official-package",
+            ),
+            "https://common-buy.aliyun.com/official-package",
+        )
+
+    def test_rejects_affiliate_or_community_domains(self):
+        self.assertIsNone(
+            run._official_plan_url(
+                {"plan_url": "https://support.claude.com/plans"},
+                "https://affiliate.example/ref/claude",
+            )
+        )
+
+
 class NewsFingerprintTests(unittest.TestCase):
     def test_ignores_dynamic_page_noise_and_link_order(self):
         first = (
@@ -139,6 +187,66 @@ class ProcessNewsTests(unittest.TestCase):
                 "changed news page",
             ),
         )
+
+
+class ProcessPlansTests(unittest.TestCase):
+    @patch.object(run.history, "save_plans")
+    @patch.object(run.extract, "extract_plans")
+    @patch.object(run.extract, "has_api_key", return_value=True)
+    @patch.object(run, "_fetch_plan_text",
+                  return_value=("https://example.com/plans", "changed plans"))
+    @patch.object(run.history, "load_plans")
+    def test_empty_extraction_preserves_previous_official_plans_and_hash(
+            self, load_plans, _fetch_plan_text, _has_api_key,
+            extract_plans, save_plans):
+        previous = [{
+            "name": "Plus",
+            "price": "¥49 / 月",
+            "quotas": [{"label": "额度", "value": "1,500 次"}],
+        }]
+        load_plans.return_value = {
+            "source": "official",
+            "plans": previous,
+            "plans_hash": "old-hash",
+        }
+        extract_plans.return_value = SimpleNamespace(
+            plans=[],
+            page_has_plans=False,
+        )
+
+        run.process_plans({
+            "id": "example",
+            "name": "Example",
+            "plan_url": "https://example.com/plans",
+        })
+
+        saved = save_plans.call_args.args[1]
+        self.assertEqual(saved["plans"], previous)
+        self.assertEqual(saved["plans_hash"], run._sha("changed plans"))
+        self.assertIn("保留上次", saved["status_note"])
+
+    @patch.object(run.history, "save_plans")
+    @patch.object(run.extract, "extract_plans")
+    @patch.object(run.extract, "has_api_key", return_value=True)
+    @patch.object(run, "_fetch_plan_text",
+                  return_value=("https://example.com/plans", "same plans"))
+    @patch.object(run.history, "load_plans")
+    def test_unchanged_page_skips_plan_extraction(
+            self, load_plans, _fetch_plan_text, _has_api_key,
+            extract_plans, save_plans):
+        load_plans.return_value = {
+            "plans": [{"name": "Plus"}],
+            "plans_hash": run._sha("same plans"),
+        }
+
+        run.process_plans({
+            "id": "example",
+            "name": "Example",
+            "plan_url": "https://example.com/plans",
+        })
+
+        extract_plans.assert_not_called()
+        self.assertEqual(save_plans.call_args.args[1]["status_note"], "页面无变化")
 
 
 if __name__ == "__main__":

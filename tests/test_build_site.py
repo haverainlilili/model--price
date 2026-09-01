@@ -3,6 +3,13 @@ import unittest
 from scraper import build_site
 
 
+class ResponsiveCssTests(unittest.TestCase):
+    def test_tablet_breakpoint_contains_wide_sticky_controls(self):
+        self.assertIn("@media(max-width:800px)", build_site.CSS)
+        self.assertIn(".controls{align-items:flex-start", build_site.CSS)
+        self.assertIn("overflow-x:auto;scrollbar-width:none", build_site.CSS)
+
+
 class QuickVariantTests(unittest.TestCase):
     def test_summarizes_context_tier(self):
         self.assertEqual(
@@ -180,6 +187,67 @@ class ProviderSectionTests(unittest.TestCase):
         self.assertGreater(
             section.index('官网价格页 ↗'),
             section.index('</summary>'),
+        )
+
+
+class PlansSectionTests(unittest.TestCase):
+    def test_renders_only_plans_with_officially_stated_quotas(self):
+        providers = [{
+            "id": "demo",
+            "name": "Demo",
+            "name_cn": "示例厂商",
+            "region": "国内",
+        }]
+        records = {"demo": {
+            "source_urls": ["https://example.com/official-plans"],
+            "fetched_at": "2026-09-01T08:00:00Z",
+            "plans": [
+                {
+                    "name": "Plus",
+                    "plan_type": "Token Plan",
+                    "price": "¥49 / 月",
+                    "quotas": [{
+                        "label": "固定窗口",
+                        "value": "1,500 次请求",
+                        "window": "每 5 小时",
+                    }],
+                    "models": ["Demo-M3"],
+                    "note": "官网标注数值",
+                    "source_url": "https://example.com/official-plans#plus",
+                },
+                {
+                    "name": "Derived",
+                    "plan_type": "Community estimate",
+                    "price": "¥99 / 月",
+                    "quotas": [],
+                    "note": "按周推算月用量",
+                },
+            ],
+        }}
+
+        section = build_site._plans_section(providers, records)
+
+        self.assertIn('id="plans"', section)
+        self.assertIn("套餐与额度", section)
+        self.assertIn("示例厂商", section)
+        self.assertIn("¥49 / 月", section)
+        self.assertIn("1,500 次请求", section)
+        self.assertIn("每 5 小时", section)
+        self.assertIn("Demo-M3", section)
+        self.assertIn('href="https://example.com/official-plans#plus"', section)
+        self.assertIn('data-region="domestic"', section)
+        self.assertNotIn("Derived", section)
+        self.assertNotIn("按周推算月用量", section)
+
+    def test_omits_section_when_no_official_quota_is_available(self):
+        providers = [{"id": "demo", "name": "Demo", "region": "国际"}]
+
+        self.assertEqual(
+            build_site._plans_section(
+                providers,
+                {"demo": {"plans": [{"name": "Price only", "quotas": []}]}},
+            ),
+            "",
         )
 
 

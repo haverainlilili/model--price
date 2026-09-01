@@ -1,0 +1,130 @@
+{
+ "plans": [
+  {
+   "name": "Andante",
+   "plan_type": "Kimi 会员",
+   "price": "¥49/月",
+   "billing": "连续包月；额度在每个计费周期自动刷新，按月刷新",
+   "quotas": [
+    {
+     "label": "Agent 用量",
+     "value": "约 30 个",
+     "window": "每个计费周期（按月刷新）"
+    },
+    {
+     "label": "专业数据库调用",
+     "value": "1000 次调用",
+     "window": "每个计费周期（按月刷新）"
+    }
+   ],
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；频次限制以页面提示为准。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Moderato",
+   "plan_type": "Kimi 会员",
+   "price": "¥99/月",
+   "billing": "连续包月；额度在每个计费周期自动刷新，按月刷新",
+   "quotas": [
+    {
+     "label": "Agent 用量",
+     "value": "约 60 个",
+     "window": "每个计费周期（按月刷新）"
+    },
+    {
+     "label": "Agent 集群可用次数",
+     "value": "25 次",
+     "window": "每个计费周期（按月刷新）"
+    },
+    {
+     "label": "专业数据库调用",
+     "value": "2000 次调用",
+     "window": "每个计费周期（按月刷新）"
+    }
+   ],
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "Agent 集群额度对应 2 个子任务并行。Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；频次限制以页面提示为准。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Allegretto",
+   "plan_type": "Kimi 会员",
+   "price": "¥199/月",
+   "billing": "连续包月；额度在每个计费周期自动刷新，按月刷新",
+   "quotas": [
+    {
+     "label": "Agent 用量",
+     "value": "约 150 个",
+     "window": "每个计费周期（按月刷新）"
+    },
+    {
+     "label": "Agent 集群可用次数",
+     "value": "50 次",
+     "window": "每个计费周期（按月刷新）"
+    },
+    {
+     "label": "专业数据库调用",
+     "value": "5000 次调用",
+     "window": "每个计费周期（按月刷新）"
+    }
+   ],
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "Agent 集群额度对应 4 个子任务并行。Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；频次限制以页面提示为准。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Allegro",
+   "plan_type": "Kimi 会员",
+   "price": "¥699/月",
+   "billing": "连续包月；额度在每个计费周期自动刷新，按月刷新",
+   "quotas": [
+    {
+     "label": "Agent 用量",
+     "value": "约 360 个",
+     "window": "每个计费周期（按月刷新）"
+    },
+    {
+     "label": "Agent 集群可用次数",
+     "value": "120 次",
+     "window": "每个计费周期（按月刷新）"
+    },
+    {
+     "label": "超长对话容量",
+     "value": "百万 Tokens",
+     "window": null
+    },
+    {
+     "label": "专业数据库调用",
+     "value": "12000 次调用",
+     "window": "每个计费周期（按月刷新）"
+    }
+   ],
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "Agent 集群额度对应 8 个子任务并行。Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；频次限制以页面提示为准。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  }
+ ],
+ "last_error": null,
+ "last_fetch_ts": "2026-09-01T08:37:58Z",
+ "source": "official",
+ "source_urls": [
+  "https://www.kimi.com/help/membership/membership-pricing"
+ ],
+ "page_has_plans": true,
+ "plans_hash": "f1cc0230e81b32080caaa26e01a53a44728c5adc00f0d29b92ff9522989f74dc",
+ "fetched_at": "2026-09-01T08:37:58Z",
+ "status_note": null
+}

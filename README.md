@@ -2,7 +2,10 @@
 
 自动抓取各大模型厂商**官网公开价格页**，每小时更新一次，生成价格对比、价格变动流水与官方公告追踪的静态网站。
 
-**线上地址**: https://haverainlilili.github.io/model--price/
+**线上地址**:
+
+- 自建站点: https://model-price.minggemini3test1.online/
+- GitHub Pages: https://haverainlilili.github.io/model--price/
 
 ## 覆盖厂商
 

@@ -206,7 +206,7 @@ h1 span{color:var(--accent)}
 .lowest-desc{max-width:470px;margin:0;color:var(--ink2);font-size:11.5px;text-align:right}
 .lowest-scroll{overflow-x:auto;scrollbar-color:var(--line2) transparent}
 .lowest-plot{display:flex;align-items:stretch;gap:8px;min-width:980px;padding:22px 18px 16px}
-.lowest-col{display:grid;grid-template-rows:24px 184px 34px 26px;flex:1 0 74px;min-width:0;
+.lowest-col{display:grid;grid-template-rows:24px 184px 34px 54px;flex:1 0 74px;min-width:0;
   text-align:center}
 .lowest-amount{align-self:start;color:var(--ink);font:700 10.5px/1 var(--mono);
   font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -217,8 +217,13 @@ h1 span{color:var(--accent)}
   border-radius:6px 6px 1px 1px;box-shadow:inset 0 1px rgba(255,255,255,.2)}
 .lowest-provider{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;
   -webkit-line-clamp:2;color:var(--ink);font-size:12px;font-weight:750;line-height:1.3}
-.lowest-model{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;
-  color:var(--ink3);font:500 9px/1.35 var(--mono)}
+.lowest-model-wrap{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0;
+  padding:2px 2px 0}
+.lowest-model{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;
+  -webkit-line-clamp:2;color:var(--ink);font:700 11.5px/1.3 var(--mono);word-break:break-word}
+.lowest-variant{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap;padding:2px 5px;border-radius:4px;background:var(--accent-bg);
+  color:var(--accent-dark);font:700 9px/1.2 var(--sans)}
 .lowest-foot{margin:0;padding:11px 20px;border-top:1px solid var(--line);background:var(--panel2);
   color:var(--ink2);font-size:11.5px}
 
@@ -604,8 +609,13 @@ def _cheapest_chart(providers_cfg: list, recs: dict, rate: float) -> str:
     picks = []
     for cfg in providers_cfg:
         rec = recs.get(cfg["id"]) or {}
+        models = rec.get("models") or []
+        name_counts: dict[str, int] = {}
+        for model in models:
+            model_name = str(model.get("model") or "")
+            name_counts[model_name] = name_counts.get(model_name, 0) + 1
         choices = []
-        for model in (rec.get("models") or [])[:4]:
+        for model in models[:4]:
             cur = (model.get("currency") or rec.get("currency") or "").upper()
             if cur not in {"CNY", "USD"}:
                 continue
@@ -621,29 +631,37 @@ def _cheapest_chart(providers_cfg: list, recs: dict, rate: float) -> str:
                     prices.append(price)
             if not prices:
                 continue
-            choices.append((sum(prices), str(model.get("model") or "未命名模型"),
-                            converted[0], converted[1]))
+            model_name = str(model.get("model") or "未命名模型")
+            note = str(model.get("note") or "").strip()
+            variant = _quick_variant(note) if name_counts.get(model_name, 0) > 1 else ""
+            choices.append((sum(prices), model_name, converted[0], converted[1],
+                            variant, note))
         if choices:
-            total, model_name, input_price, output_price = min(
+            total, model_name, input_price, output_price, variant, note = min(
                 choices, key=lambda item: item[0])
-            picks.append((cfg, total, model_name, input_price, output_price))
+            picks.append((cfg, total, model_name, input_price, output_price,
+                          variant, note))
 
     if not picks:
         return ""
 
-    highest = max(total for _, total, _, _, _ in picks)
+    picks.sort(key=lambda item: item[1])
+    highest = max(item[1] for item in picks)
 
     def price_label(value) -> str:
         return f"¥{_fmt(round(value, 2))}" if value is not None else "无报价"
 
     columns = []
-    for cfg, total, model_name, input_price, output_price in picks:
+    for cfg, total, model_name, input_price, output_price, variant, note in picks:
         region = "domestic" if cfg.get("region") == "国内" else "intl"
         provider = cfg.get("name_cn") or cfg.get("name") or cfg["id"]
         height = total / highest * 100 if highest > 0 else 0
         amount = f"¥{_fmt(round(total, 2))}"
-        detail = (f"{provider}，{model_name}，输入加输出合计 {amount}；"
+        variant_detail = f"，档位 {variant}" if variant else ""
+        detail = (f"{provider}，{model_name}{variant_detail}，输入加输出合计 {amount}；"
                   f"输入 {price_label(input_price)}，输出 {price_label(output_price)}")
+        variant_html = (f'<span class="lowest-variant" title="{_e(note)}">'
+                        f'{_e(variant)}</span>' if variant else "")
         columns.append(
             f'<div class="lowest-col" data-region="{region}" role="listitem" '
             f'aria-label="{_e(detail)}">'
@@ -651,20 +669,22 @@ def _cheapest_chart(providers_cfg: list, recs: dict, rate: float) -> str:
             f'<div class="lowest-barbox" aria-hidden="true">'
             f'<div class="lowest-bar" style="--bar-height:{height:.1f}%"></div></div>'
             f'<div class="lowest-provider" title="{_e(provider)}">{_e(provider)}</div>'
-            f'<div class="lowest-model" title="{_e(model_name)}">{_e(model_name)}</div>'
+            f'<div class="lowest-model-wrap"><span class="lowest-model" '
+            f'title="{_e(model_name)}">{_e(model_name)}</span>{variant_html}</div>'
             f'</div>')
 
     return (
         '<section class="lowest" id="lowest" aria-labelledby="lowest-title">'
         '<div class="lowest-head"><div><p class="lowest-kicker">LOWEST BY PROVIDER</p>'
         '<h2 class="lowest-title" id="lowest-title">各厂商最新 4 条中的最低价</h2></div>'
-        '<p class="lowest-desc">每根柱代表一家厂商 · 输入价 + 输出价 / 百万 tokens · '
+        '<p class="lowest-desc">每根柱代表一家厂商 · 从左到右按合计价由低到高 · '
         '统一折算人民币</p></div>'
         '<div class="lowest-scroll" role="region" tabindex="0" '
         'aria-label="各厂商最低价柱状图，可横向滚动">'
         f'<div class="lowest-plot" role="list">{"".join(columns)}</div></div>'
         f'<p class="lowest-foot">横轴为厂商，柱高按合计价线性比较；每家仅在官网价格页最前的 '
-        f'4 条记录中选择。缺少输入价或输出价时，以已有单项价格参与比较 · '
+        f'4 条记录中选择；同名模型沿用价格速览中的档位摘要。缺少输入价或输出价时，'
+        f'以已有单项价格参与比较 · '
         f'USD 按 1 USD ≈ ¥{_fmt(rate)} 折算。</p></section>')
 
 

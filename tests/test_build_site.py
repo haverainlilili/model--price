@@ -112,6 +112,40 @@ class CheapestChartTests(unittest.TestCase):
         self.assertIn("¥0.5", chart)
         self.assertIn('data-region="domestic"', chart)
 
+    def test_sorts_provider_columns_by_total_price_ascending(self):
+        providers = [
+            {"id": "high", "name": "High Provider", "region": "国际"},
+            {"id": "low", "name": "Low Provider", "region": "国内"},
+        ]
+        records = {
+            "high": {"currency": "CNY", "models": [
+                {"model": "high-model", "input_per_1m": 8, "output_per_1m": 12},
+            ]},
+            "low": {"currency": "CNY", "models": [
+                {"model": "low-model", "input_per_1m": 1, "output_per_1m": 2},
+            ]},
+        }
+
+        chart = build_site._cheapest_chart(providers, records, rate=7.0)
+
+        self.assertLess(chart.index("Low Provider"), chart.index("High Provider"))
+
+    def test_shows_the_same_short_variant_as_the_quick_overview(self):
+        providers = [{"id": "demo", "name": "Demo", "region": "国际"}]
+        records = {"demo": {"currency": "USD", "models": [
+            {"model": "same", "input_per_1m": 1, "output_per_1m": 2,
+             "note": "Standard，短上下文；促销价格"},
+            {"model": "same", "input_per_1m": 2, "output_per_1m": 4,
+             "note": "Standard，长上下文"},
+        ]}}
+
+        chart = build_site._cheapest_chart(providers, records, rate=7.0)
+
+        self.assertIn(
+            '<span class="lowest-variant" title="Standard，短上下文；促销价格">标准·短</span>',
+            chart,
+        )
+
 
 class ProviderSectionTests(unittest.TestCase):
     def test_price_details_are_collapsed_by_default(self):

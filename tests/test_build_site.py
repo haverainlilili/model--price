@@ -73,5 +73,40 @@ class QuickChartTests(unittest.TestCase):
         self.assertIn('<span class="bvariant" title="Standard，长上下文">标准·长</span>', chart)
 
 
+class ProviderSectionTests(unittest.TestCase):
+    def test_price_details_are_collapsed_by_default(self):
+        section = build_site._prov_section(
+            {
+                "id": "demo",
+                "name": "Demo",
+                "region": "国际",
+                "pricing_url": "https://example.com/pricing",
+            },
+            {
+                "currency": "USD",
+                "source": "claude",
+                "fetched_at": "2026-08-31T12:00:00Z",
+                "models": [{
+                    "model": "demo-model",
+                    "input_per_1m": 1,
+                    "output_per_1m": 2,
+                    "currency": "USD",
+                }],
+            },
+            rate=7.0,
+        )
+
+        self.assertIn('<details class="prov"', section)
+        self.assertIn('<summary class="prov-head">', section)
+        self.assertIn('<span class="prov-toggle">', section)
+        self.assertNotIn('<details class="prov" open', section)
+        self.assertIn('</summary>', section)
+        self.assertIn('</details>', section)
+        self.assertGreater(
+            section.index('官网价格页 ↗'),
+            section.index('</summary>'),
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

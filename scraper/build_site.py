@@ -255,8 +255,12 @@ h2.sec-title{margin:0;font-size:clamp(25px,3vw,34px);line-height:1.15;letter-spa
 .prov{background:var(--panel);border:1px solid var(--line);border-radius:15px;
   margin:0 0 16px;overflow:hidden;box-shadow:0 4px 14px rgba(36,48,42,.025)}
 .prov-head{display:flex;justify-content:space-between;align-items:center;gap:16px;
-  min-height:64px;padding:13px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap;
-  background:var(--panel2)}
+  min-height:64px;padding:13px 18px;flex-wrap:wrap;background:var(--panel2);
+  list-style:none;cursor:pointer;user-select:none}
+.prov-head::-webkit-details-marker{display:none}
+.prov-head::marker{content:""}
+.prov[open] .prov-head{border-bottom:1px solid var(--line)}
+.prov-head:hover{background:#F4F5EF}
 .prov-title{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
 .prov-title::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent)}
 .prov-title h3{margin:0;font-size:15.5px;letter-spacing:-.01em}
@@ -268,7 +272,17 @@ h2.sec-title{margin:0;font-size:clamp(25px,3vw,34px);line-height:1.15;letter-spa
 .b-warn{background:#EEF0EB;color:var(--ink2)}
 .prov-meta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;color:var(--ink2);
   font:500 10.5px var(--mono);font-variant-numeric:tabular-nums}
-.prov-meta a{font-weight:700}
+.prov-toggle{display:inline-flex;align-items:center;gap:7px;color:var(--accent-dark);
+  font-weight:750;white-space:nowrap}
+.toggle-close{display:none}
+.prov[open] .toggle-open{display:none}
+.prov[open] .toggle-close{display:inline}
+.prov-chevron{width:7px;height:7px;border-right:1.5px solid currentColor;
+  border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform .18s ease}
+.prov[open] .prov-chevron{transform:rotate(225deg)}
+.prov-source{display:flex;justify-content:flex-end;padding:8px 18px;border-bottom:1px solid var(--line);
+  background:#FCFCF8;font-size:11.5px}
+.prov-source a{font-weight:700}
 .promo{margin:0;padding:10px 18px;background:var(--up-bg);color:#7C2E1F;
   font-size:12.5px;border-bottom:1px solid #EACFC8}
 .promo b{font:700 9.5px var(--mono);letter-spacing:.16em;color:var(--up);margin-right:8px}
@@ -390,7 +404,7 @@ body[data-region=domestic] .bgroup[data-region=intl]{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}.ticker-track{animation:none}.ticker-view{overflow-x:auto}
-  .bbar,.prov,.news-card{transition:none}
+  .bbar,.prov,.news-card,.prov-chevron{transition:none}
 }
 """
 
@@ -669,7 +683,8 @@ def _prov_section(cfg: dict, rec: dict | None, rate: float) -> str:
     updated = f'更新于 {_t(fetched)}' if fetched else ""
     link = f'<a href="{url}" target="_blank" rel="noopener">官网价格页 ↗</a>' if url else ""
     count = f"{len(models)} 模型" if models else "暂无模型数据"
-    meta_bits = [x for x in (count, updated, link) if x]
+    meta_bits = [x for x in (count, updated) if x]
+    source = f'<div class="prov-source">{link}</div>' if link else ""
     promo = ""
     if rec.get("promotions"):
         p = _e(str(rec["promotions"]).strip())
@@ -692,15 +707,18 @@ def _prov_section(cfg: dict, rec: dict | None, rate: float) -> str:
         rows.append(f'<tr class="empty-row"><td colspan="5">暂无数据:{reason}'
                     f'管线每小时自动重试, 恢复后会自动出现在这里。</td></tr>')
 
-    return (f'<section class="prov" data-region="{data_region}" id="prov-{_e(pid)}">'
-            f'<div class="prov-head"><div class="prov-title"><h3>{_e(name)}</h3>'
+    toggle = ('<span class="prov-toggle"><span class="toggle-open">展开价格</span>'
+              '<span class="toggle-close">收起价格</span>'
+              '<span class="prov-chevron" aria-hidden="true"></span></span>')
+    return (f'<details class="prov" data-region="{data_region}" id="prov-{_e(pid)}">'
+            f'<summary class="prov-head"><div class="prov-title"><h3>{_e(name)}</h3>'
             f'<span class="tag tag-region">{_e(region)}</span>{badge_html}</div>'
-            f'<div class="prov-meta">{"".join(m and f"<span>{m}</span>" or "" for m in meta_bits)}</div></div>'
-            f'{promo}<div class="table-wrap"><table>'
+            f'<div class="prov-meta">{"".join(m and f"<span>{m}</span>" or "" for m in meta_bits)}'
+            f'{toggle}</div></summary>{source}{promo}<div class="table-wrap"><table>'
             f'<thead><tr><th>模型</th><th>输入 / 百万tokens</th>'
             f'<th>输出 / 百万tokens</th><th>缓存输入</th>'
             f'<th class="c-note-h">备注</th></tr></thead>'
-            f'<tbody>{"".join(rows)}</tbody></table></div></section>')
+            f'<tbody>{"".join(rows)}</tbody></table></div></details>')
 
 
 def _chg_item(ch: dict) -> str:

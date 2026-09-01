@@ -6,7 +6,8 @@
 # pricing_url:   官网公开价格页; 价格分散在多个页面时改用 pricing_urls 列表
 #                (各页文本拼接后一起送抽取, Kimi 按模型分页就是这么处理的)
 # render:        true = 页面由前端脚本渲染, 需要无头浏览器(智谱/火山方舟)
-# news_url:      官网公开公告 / changelog 页(可选; 没有就不追踪该厂商公告)
+# news_url:      机器抓取的官网公告 / changelog 来源
+# official_news_url: 用户点击「官方公告」时打开的厂商公告主页
 # news_render:   true = 公告页也需要前端脚本渲染
 #
 # 入口选型(2026-08 实测): 优先选 .md / docs 这类对爬虫友好的文档源, 拿到的
@@ -20,24 +21,30 @@ providers:
     region: 国际
     pricing_url: https://platform.claude.com/docs/en/about-claude/models/overview.md
     news_url: https://platform.claude.com/docs/en/release-notes/overview.md
+    official_news_url: https://www.anthropic.com/news
   - id: openai
     name: OpenAI
     name_cn: OpenAI
     region: 国际
     pricing_url: https://platform.openai.com/docs/pricing
-    news_url: https://platform.openai.com/docs/changelog
+    news_url: https://developers.openai.com/api/docs/changelog
+    official_news_url: https://openai.com/news/
   - id: google
     name: Google
     name_cn: Google Gemini
     region: 国际
     pricing_url: https://ai.google.dev/gemini-api/docs/pricing
     news_url: https://ai.google.dev/gemini-api/docs/changelog
+    official_news_url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/
   - id: xai
     name: xAI
     name_cn: xAI (Grok)
     region: 国际
     pricing_url: https://docs.x.ai/docs/models
     render: true
+    news_url: https://x.ai/news
+    official_news_url: https://x.ai/news
+    news_render: true
   - id: mistral
     name: Mistral
     name_cn: Mistral
@@ -45,6 +52,7 @@ providers:
     pricing_url: https://docs.mistral.ai/inference/pricing
     render: true
     news_url: https://mistral.ai/news
+    official_news_url: https://mistral.ai/news
     news_render: true
   - id: deepseek
     name: DeepSeek
@@ -52,18 +60,23 @@ providers:
     region: 国内
     pricing_url: https://api-docs.deepseek.com/zh-cn/quick_start/pricing
     news_url: https://api-docs.deepseek.com/zh-cn/updates
+    official_news_url: https://www.deepseek.com/news
   - id: qwen
     name: Alibaba
     name_cn: 阿里云百炼 (Qwen)
     region: 国内
     pricing_url: https://help.aliyun.com/zh/model-studio/model-pricing.md
     news_url: https://help.aliyun.com/zh/model-studio/model-release-notes.md
+    official_news_url: https://qwen.ai/blog
   - id: doubao
     name: ByteDance
     name_cn: 火山方舟 (豆包)
     region: 国内
     pricing_url: https://www.volcengine.com/docs/82379/1099320
     render: true
+    news_url: https://www.volcengine.com/docs/82379/2578669
+    official_news_url: https://www.volcengine.com/docs/82379/2578669
+    news_render: true
   - id: zhipu
     name: Zhipu
     name_cn: 智谱 (GLM)
@@ -71,6 +84,7 @@ providers:
     pricing_url: https://open.bigmodel.cn/pricing
     render: true
     news_url: https://docs.bigmodel.cn/cn/update/new-releases.md
+    official_news_url: https://www.zhipuai.cn/zh/research
   - id: moonshot
     name: Moonshot
     name_cn: 月之暗面 (Kimi)
@@ -82,10 +96,13 @@ providers:
       - https://platform.kimi.com/docs/pricing/chat-k26.md
       - https://platform.kimi.com/docs/pricing/chat-k25.md
       - https://platform.kimi.com/docs/pricing/chat-v1.md
-    news_url: https://platform.kimi.com/docs/changelog/changelog/moonlight.md
+    news_url: https://www.kimi.com/news
+    official_news_url: https://www.kimi.com/news
+    news_render: true
   - id: minimax
     name: MiniMax
     name_cn: MiniMax
     region: 国内
     pricing_url: https://platform.minimaxi.com/docs/guides/pricing-paygo.md
     news_url: https://platform.minimaxi.com/docs/release-notes/models.md
+    official_news_url: https://www.minimaxi.com/news

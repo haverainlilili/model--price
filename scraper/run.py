@@ -12,6 +12,7 @@ import argparse
 import hashlib
 import sys
 from pathlib import Path
+from urllib.parse import urljoin, urlparse
 
 import yaml
 
@@ -49,6 +50,17 @@ def _fetch_news_text(cfg: dict) -> str:
     if cfg.get("news_render"):
         return fetch_rendered(cfg["news_url"])
     return fetch(cfg["news_url"])
+
+
+def _absolute_news_url(source_url: str, candidate) -> str | None:
+    """把公告条目的相对链接补全；拒绝非 HTTP(S) 协议。"""
+    if not candidate:
+        return None
+    absolute = urljoin(source_url, str(candidate).strip())
+    parsed = urlparse(absolute)
+    if parsed.scheme in ("http", "https") and parsed.netloc:
+        return absolute
+    return None
 
 
 def process_provider(cfg: dict) -> None:
@@ -155,6 +167,7 @@ def process_news(cfg: dict) -> None:
         title = (d.get("title") or "").strip()
         if not title:
             continue
+        d["url"] = _absolute_news_url(cfg["news_url"], d.get("url"))
         d["first_seen"] = known.get(title, now)
         entries.append(d)
     history.save_news(pid, {

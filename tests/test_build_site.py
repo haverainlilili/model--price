@@ -183,5 +183,28 @@ class ProviderSectionTests(unittest.TestCase):
         )
 
 
+class NewsCardTests(unittest.TestCase):
+    def test_uses_official_homepage_and_resolves_relative_entry_url(self):
+        card = build_site._news_card(
+            {
+                "id": "demo",
+                "name": "Demo",
+                "region": "国际",
+                "news_url": "https://docs.example.com/changelog/index.html",
+                "official_news_url": "https://www.example.com/news",
+            },
+            {"entries": [{
+                "date": "2026-09-01",
+                "title": "Demo Model 发布",
+                "url": "/news/demo-model",
+                "summary": "发布新模型。",
+            }]},
+        )
+
+        self.assertIn('href="https://www.example.com/news"', card)
+        self.assertIn('>官方公告 ↗</a>', card)
+        self.assertIn('href="https://docs.example.com/news/demo-model"', card)
+
+
 if __name__ == "__main__":
     unittest.main()

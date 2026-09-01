@@ -15,6 +15,7 @@ import math
 import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import urljoin
 
 from .history import ROOT, load_changes, load_meta, load_news, load_provider
 
@@ -63,9 +64,14 @@ def _t(ts: str, fmt: str = "%m-%d %H:%M") -> str:
         return _e(ts or "")
 
 
-def _safe_url(u) -> str | None:
-    if u and str(u).startswith(("http://", "https://")):
-        return _e(str(u))
+def _safe_url(u, base: str | None = None) -> str | None:
+    if not u:
+        return None
+    raw = str(u).strip()
+    if base:
+        raw = urljoin(base, raw)
+    if raw.startswith(("http://", "https://")):
+        return _e(raw)
     return None
 
 
@@ -908,8 +914,8 @@ def _news_card(cfg: dict, rec: dict) -> str:
     name = cfg.get("name_cn") or cfg["name"]
     region = cfg.get("region", "")
     data_region = "domestic" if region == "国内" else "intl"
-    url = _safe_url(cfg.get("news_url"))
-    link = (f'<a href="{url}" target="_blank" rel="noopener">公告页 ↗</a>'
+    url = _safe_url(cfg.get("official_news_url") or cfg.get("news_url"))
+    link = (f'<a href="{url}" target="_blank" rel="noopener">官方公告 ↗</a>'
             if url else "")
     items = []
     for e in (rec.get("entries") or [])[:6]:
@@ -917,7 +923,7 @@ def _news_card(cfg: dict, rec: dict) -> str:
         if not date and e.get("first_seen"):
             date = _t(e["first_seen"], "%m-%d")
         title = _e(e.get("title") or "")
-        eurl = _safe_url(e.get("url"))
+        eurl = _safe_url(e.get("url"), cfg.get("news_url"))
         if eurl:
             title = f'<a class="n-title" href="{eurl}" target="_blank" rel="noopener">{title}</a>'
         else:
@@ -1072,6 +1078,7 @@ def build(providers_cfg: list) -> Path:
             "region": cfg.get("region"),
             "pricing_url": cfg.get("pricing_url") or (cfg.get("pricing_urls") or [None])[0],
             "news_url": cfg.get("news_url"),
+            "official_news_url": cfg.get("official_news_url"),
             "record": recs.get(cfg["id"]),
         } for cfg in providers_cfg},
         "changes": changes,

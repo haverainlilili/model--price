@@ -38,10 +38,22 @@ class _TextExtractor(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.parts: list[str] = []
         self._skip_depth = 0
+        self._link_stack: list[str | None] = []
 
     def handle_starttag(self, tag, attrs):
         if tag in self._SKIP:
             self._skip_depth += 1
+            return
+        if self._skip_depth:
+            return
+        if tag == "a":
+            href = next((value for key, value in attrs if key == "href"), None)
+            href = (href or "").strip()
+            if not href or href.startswith(("#", "javascript:", "mailto:", "tel:")):
+                href = None
+            self._link_stack.append(href)
+            if href:
+                self.parts.append("[")
         elif tag in self._BLOCK:
             self.parts.append("\n")
         elif tag in ("td", "th"):
@@ -50,6 +62,13 @@ class _TextExtractor(HTMLParser):
     def handle_endtag(self, tag):
         if tag in self._SKIP:
             self._skip_depth = max(0, self._skip_depth - 1)
+            return
+        if self._skip_depth:
+            return
+        if tag == "a":
+            href = self._link_stack.pop() if self._link_stack else None
+            if href:
+                self.parts.append(f"]({href})")
         elif tag in self._BLOCK:
             self.parts.append("\n")
 
@@ -130,7 +149,8 @@ def _render_once(url: str, wait_ms: int) -> str:
                 except Exception:
                     pass  # 有些站永远有长连接, networkidle 等不到
                 page.wait_for_timeout(wait_ms)
-                text = page.inner_text("body")
+                # 保留公告条目的 href；inner_text 会把链接目标全部丢掉。
+                text = html_to_text(page.locator("body").inner_html())
             finally:
                 browser.close()
         if not text or not text.strip():

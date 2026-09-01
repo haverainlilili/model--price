@@ -8,7 +8,9 @@ from scraper.fetch import (
     FetchError,
     _chrome_launch_options,
     _find_chrome_executable,
+    _render_once,
     fetch_rendered,
+    html_to_text,
 )
 
 
@@ -33,6 +35,26 @@ class FindChromeExecutableTests(unittest.TestCase):
 
 
 class FetchRenderedTests(unittest.TestCase):
+    @patch("scraper.fetch.html_to_text", return_value="公告正文")
+    @patch("playwright.sync_api.sync_playwright")
+    def test_parses_rendered_body_html_to_keep_links(
+            self, sync_playwright, html_to_text):
+        playwright = sync_playwright.return_value.__enter__.return_value
+        browser = playwright.chromium.launch.return_value
+        page = browser.new_context.return_value.new_page.return_value
+        page.locator.return_value.inner_html.return_value = (
+            '<a href="/news/model">模型发布</a>'
+        )
+
+        text = _render_once("https://example.com/news", wait_ms=0)
+
+        self.assertEqual(text, "公告正文")
+        page.locator.assert_called_once_with("body")
+        html_to_text.assert_called_once_with(
+            '<a href="/news/model">模型发布</a>'
+        )
+        browser.close.assert_called_once()
+
     @patch("scraper.fetch.time.sleep")
     @patch("scraper.fetch._render_once")
     def test_retries_transient_navigation_failure(self, render_once, sleep):
@@ -52,6 +74,17 @@ class FetchRenderedTests(unittest.TestCase):
             fetch_rendered("https://example.com", wait_ms=0, retries=2)
         self.assertEqual(render_once.call_count, 3)
         self.assertEqual(sleep.call_count, 2)
+
+
+class HtmlToTextTests(unittest.TestCase):
+    def test_preserves_absolute_and_relative_anchor_targets(self):
+        text = html_to_text(
+            '<p><a href="https://example.com/news/one">第一条</a></p>'
+            '<p><a href="/news/two">第二条</a></p>'
+        )
+
+        self.assertIn('[第一条](https://example.com/news/one)', text)
+        self.assertIn('[第二条](/news/two)', text)
 
 
 if __name__ == "__main__":

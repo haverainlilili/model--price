@@ -23,6 +23,14 @@ class FetchNewsTextTests(unittest.TestCase):
         self.assertEqual(text, "plain news")
 
 
+class ProviderConfigurationTests(unittest.TestCase):
+    def test_every_provider_has_crawl_source_and_official_news_homepage(self):
+        for provider in run.load_providers():
+            with self.subTest(provider=provider["id"]):
+                self.assertTrue(provider.get("news_url"))
+                self.assertTrue(provider.get("official_news_url"))
+
+
 class ProcessProviderTests(unittest.TestCase):
     @patch.object(run.history, "append_changes")
     @patch.object(run.history, "save_provider")
@@ -63,6 +71,37 @@ class ProcessProviderTests(unittest.TestCase):
         self.assertIn("保留上次", saved["status_note"])
         self.assertIn("保留上次", saved["last_error"])
         append_changes.assert_not_called()
+
+
+class ProcessNewsTests(unittest.TestCase):
+    @patch.object(run.history, "save_news")
+    @patch.object(run.extract, "extract_news")
+    @patch.object(run.extract, "has_api_key", return_value=True)
+    @patch.object(run, "_fetch_news_text", return_value="changed news page")
+    @patch.object(run.history, "load_news", return_value={"entries": []})
+    def test_resolves_relative_entry_url_before_saving(
+            self, _load_news, _fetch_news_text, _has_api_key,
+            extract_news, save_news):
+        extract_news.return_value = SimpleNamespace(entries=[SimpleNamespace(
+            model_dump=lambda: {
+                "date": "2026-09-01",
+                "title": "Demo Model 发布",
+                "url": "/news/demo-model",
+                "summary": "发布新模型。",
+            }
+        )])
+
+        run.process_news({
+            "id": "demo",
+            "name": "Demo",
+            "news_url": "https://docs.example.com/changelog/index.html",
+        })
+
+        saved = save_news.call_args.args[1]
+        self.assertEqual(
+            saved["entries"][0]["url"],
+            "https://docs.example.com/news/demo-model",
+        )
 
 
 if __name__ == "__main__":

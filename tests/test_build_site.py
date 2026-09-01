@@ -73,6 +73,46 @@ class QuickChartTests(unittest.TestCase):
         self.assertIn('<span class="bvariant" title="Standard，长上下文">标准·长</span>', chart)
 
 
+class CheapestChartTests(unittest.TestCase):
+    def test_chooses_lowest_total_from_each_providers_first_four_rows(self):
+        providers = [{
+            "id": "demo",
+            "name": "Demo",
+            "name_cn": "示例厂商",
+            "region": "国际",
+        }]
+        records = {"demo": {"currency": "USD", "models": [
+            {"model": "expensive", "input_per_1m": 4, "output_per_1m": 8},
+            {"model": "cheapest", "input_per_1m": 1, "output_per_1m": 2},
+            {"model": "partial", "input_per_1m": None, "output_per_1m": 5},
+            {"model": "other", "input_per_1m": 2, "output_per_1m": 3},
+            {"model": "ignored-fifth", "input_per_1m": .1, "output_per_1m": .1},
+        ]}}
+
+        chart = build_site._cheapest_chart(providers, records, rate=7.0)
+
+        self.assertIn("各厂商最新 4 条中的最低价", chart)
+        self.assertIn("示例厂商", chart)
+        self.assertIn("cheapest", chart)
+        self.assertIn("¥21", chart)
+        self.assertNotIn("expensive", chart)
+        self.assertNotIn("ignored-fifth", chart)
+        self.assertIn('role="list"', chart)
+
+    def test_uses_a_single_available_price_component(self):
+        providers = [{"id": "demo", "name": "Demo", "region": "国内"}]
+        records = {"demo": {"currency": "CNY", "models": [
+            {"model": "input-only", "input_per_1m": .5, "output_per_1m": None},
+            {"model": "both", "input_per_1m": .2, "output_per_1m": .4},
+        ]}}
+
+        chart = build_site._cheapest_chart(providers, records, rate=7.0)
+
+        self.assertIn("input-only", chart)
+        self.assertIn("¥0.5", chart)
+        self.assertIn('data-region="domestic"', chart)
+
+
 class ProviderSectionTests(unittest.TestCase):
     def test_price_details_are_collapsed_by_default(self):
         section = build_site._prov_section(

@@ -195,6 +195,33 @@ h1 span{color:var(--accent)}
 .seg button:hover{color:var(--ink);background:var(--panel2)}
 .seg button.on{background:var(--ink);color:#fff;box-shadow:0 2px 7px rgba(23,35,30,.2)}
 
+/* ---- 各厂商最低价柱状图 ---- */
+.lowest{scroll-margin-top:76px;background:var(--panel);border:1px solid var(--line);
+  border-radius:18px;margin:0 0 18px;overflow:hidden;box-shadow:var(--shadow)}
+.lowest-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;
+  padding:20px 22px;border-bottom:1px solid var(--line);background:var(--panel2)}
+.lowest-kicker{margin:0 0 4px;color:var(--accent);font:700 9.5px/1.3 var(--mono);
+  letter-spacing:.15em;text-transform:uppercase}
+.lowest-title{margin:0;font-size:19px;line-height:1.35;letter-spacing:-.02em}
+.lowest-desc{max-width:470px;margin:0;color:var(--ink2);font-size:11.5px;text-align:right}
+.lowest-scroll{overflow-x:auto;scrollbar-color:var(--line2) transparent}
+.lowest-plot{display:flex;align-items:stretch;gap:8px;min-width:980px;padding:22px 18px 16px}
+.lowest-col{display:grid;grid-template-rows:24px 184px 34px 26px;flex:1 0 74px;min-width:0;
+  text-align:center}
+.lowest-amount{align-self:start;color:var(--ink);font:700 10.5px/1 var(--mono);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.lowest-barbox{display:flex;align-items:flex-end;justify-content:center;margin:7px 8px 9px;
+  border-bottom:1px solid var(--line2);background:repeating-linear-gradient(to top,
+  transparent 0,transparent calc(25% - 1px),rgba(221,224,217,.58) 25%)}
+.lowest-bar{width:min(52px,66%);height:max(8px,var(--bar-height));background:var(--accent);
+  border-radius:6px 6px 1px 1px;box-shadow:inset 0 1px rgba(255,255,255,.2)}
+.lowest-provider{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;
+  -webkit-line-clamp:2;color:var(--ink);font-size:12px;font-weight:750;line-height:1.3}
+.lowest-model{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;
+  color:var(--ink3);font:500 9px/1.35 var(--mono)}
+.lowest-foot{margin:0;padding:11px 20px;border-top:1px solid var(--line);background:var(--panel2);
+  color:var(--ink2);font-size:11.5px}
+
 /* ---- 价格速览图 ---- */
 .quick{scroll-margin-top:76px;background:var(--panel);border:1px solid var(--line);
   border-radius:18px;margin:0 0 76px;overflow:hidden;box-shadow:var(--shadow)}
@@ -346,10 +373,12 @@ footer p{max-width:860px}footer a{color:#D8EFE6}footer .mono{font-size:10.5px}
 /* ---- 筛选 ---- */
 body[data-region=intl] .prov[data-region=domestic],
 body[data-region=intl] .news-card[data-region=domestic],
-body[data-region=intl] .bgroup[data-region=domestic]{display:none}
+body[data-region=intl] .bgroup[data-region=domestic],
+body[data-region=intl] .lowest-col[data-region=domestic]{display:none}
 body[data-region=domestic] .prov[data-region=intl],
 body[data-region=domestic] .news-card[data-region=intl],
-body[data-region=domestic] .bgroup[data-region=intl]{display:none}
+body[data-region=domestic] .bgroup[data-region=intl],
+body[data-region=domestic] .lowest-col[data-region=intl]{display:none}
 
 @media(hover:hover){
   .prov,.news-card{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
@@ -378,6 +407,10 @@ body[data-region=domestic] .bgroup[data-region=intl]{display:none}
   .control-groups{justify-content:flex-start}
   .control-label{display:none}
   .seg button{min-height:44px;padding:0 13px}
+  .lowest{margin-left:-2px;margin-right:-2px}
+  .lowest-head{align-items:flex-start;flex-direction:column;gap:7px;padding:17px}
+  .lowest-desc{text-align:left}
+  .lowest-plot{padding-left:12px;padding-right:12px}
   .quick{margin-bottom:64px}
   .quick-head{align-items:flex-start;flex-direction:column;padding:17px}
   .blegend{justify-content:flex-start}
@@ -564,6 +597,75 @@ def _quick_variant(note: str | None) -> str:
 
     first = re.split(r"[；;]", text, maxsplit=1)[0].strip()
     return first if len(first) <= 10 else first[:9] + "…"
+
+
+def _cheapest_chart(providers_cfg: list, recs: dict, rate: float) -> str:
+    """从每家价格页最前 4 条记录中选输入价与输出价合计最低的一条。"""
+    picks = []
+    for cfg in providers_cfg:
+        rec = recs.get(cfg["id"]) or {}
+        choices = []
+        for model in (rec.get("models") or [])[:4]:
+            cur = (model.get("currency") or rec.get("currency") or "").upper()
+            if cur not in {"CNY", "USD"}:
+                continue
+            fx = rate if cur == "USD" else 1.0
+            prices = []
+            converted = []
+            for field in ("input_per_1m", "output_per_1m"):
+                value = model.get(field)
+                price = (float(value) * fx
+                         if isinstance(value, (int, float)) and value >= 0 else None)
+                converted.append(price)
+                if price is not None:
+                    prices.append(price)
+            if not prices:
+                continue
+            choices.append((sum(prices), str(model.get("model") or "未命名模型"),
+                            converted[0], converted[1]))
+        if choices:
+            total, model_name, input_price, output_price = min(
+                choices, key=lambda item: item[0])
+            picks.append((cfg, total, model_name, input_price, output_price))
+
+    if not picks:
+        return ""
+
+    highest = max(total for _, total, _, _, _ in picks)
+
+    def price_label(value) -> str:
+        return f"¥{_fmt(round(value, 2))}" if value is not None else "无报价"
+
+    columns = []
+    for cfg, total, model_name, input_price, output_price in picks:
+        region = "domestic" if cfg.get("region") == "国内" else "intl"
+        provider = cfg.get("name_cn") or cfg.get("name") or cfg["id"]
+        height = total / highest * 100 if highest > 0 else 0
+        amount = f"¥{_fmt(round(total, 2))}"
+        detail = (f"{provider}，{model_name}，输入加输出合计 {amount}；"
+                  f"输入 {price_label(input_price)}，输出 {price_label(output_price)}")
+        columns.append(
+            f'<div class="lowest-col" data-region="{region}" role="listitem" '
+            f'aria-label="{_e(detail)}">'
+            f'<div class="lowest-amount">{_e(amount)}</div>'
+            f'<div class="lowest-barbox" aria-hidden="true">'
+            f'<div class="lowest-bar" style="--bar-height:{height:.1f}%"></div></div>'
+            f'<div class="lowest-provider" title="{_e(provider)}">{_e(provider)}</div>'
+            f'<div class="lowest-model" title="{_e(model_name)}">{_e(model_name)}</div>'
+            f'</div>')
+
+    return (
+        '<section class="lowest" id="lowest" aria-labelledby="lowest-title">'
+        '<div class="lowest-head"><div><p class="lowest-kicker">LOWEST BY PROVIDER</p>'
+        '<h2 class="lowest-title" id="lowest-title">各厂商最新 4 条中的最低价</h2></div>'
+        '<p class="lowest-desc">每根柱代表一家厂商 · 输入价 + 输出价 / 百万 tokens · '
+        '统一折算人民币</p></div>'
+        '<div class="lowest-scroll" role="region" tabindex="0" '
+        'aria-label="各厂商最低价柱状图，可横向滚动">'
+        f'<div class="lowest-plot" role="list">{"".join(columns)}</div></div>'
+        f'<p class="lowest-foot">横轴为厂商，柱高按合计价线性比较；每家仅在官网价格页最前的 '
+        f'4 条记录中选择。缺少输入价或输出价时，以已有单项价格参与比较 · '
+        f'USD 按 1 USD ≈ ¥{_fmt(rate)} 折算。</p></section>')
 
 
 def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
@@ -855,7 +957,8 @@ def build(providers_cfg: list) -> Path:
 
     controls = (
         '<nav class="controls" aria-label="页面导航与数据筛选">'
-        '<div class="jump-nav"><a href="#quick">价格速览</a><a href="#prices">完整价格</a>'
+        '<div class="jump-nav"><a href="#lowest">最低价</a><a href="#quick">价格速览</a>'
+        '<a href="#prices">完整价格</a>'
         '<a href="#changes">变动流水</a><a href="#news">官方公告</a></div>'
         '<div class="control-groups"><span class="control-label">FILTER</span>'
         '<div class="seg" role="group" aria-label="地区筛选">'
@@ -867,6 +970,7 @@ def build(providers_cfg: list) -> Path:
         '<button data-cur-btn="orig" aria-pressed="false">原币</button></div>'
         '</div></nav>')
 
+    lowest = _cheapest_chart(providers_cfg, recs, rate)
     quick = _quick_chart(providers_cfg, recs, rate)
 
     # ---- 价格区
@@ -927,7 +1031,7 @@ def build(providers_cfg: list) -> Path:
         f'<body data-region="all" data-currency="cny">'
         f'<a class="skip-link" href="#main-content">跳到主要内容</a>{ticker}'
         f'<div class="wrap">{masthead}{controls}'
-        f'<main id="main-content">{quick}{prices}{changes_sec}{news_sec}</main>{footer}</div>'
+        f'<main id="main-content">{lowest}{quick}{prices}{changes_sec}{news_sec}</main>{footer}</div>'
         f'<script>{JS}</script></body></html>')
 
     SITE_DIR.mkdir(parents=True, exist_ok=True)

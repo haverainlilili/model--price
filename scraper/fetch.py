@@ -131,8 +131,8 @@ def _chrome_launch_options() -> dict:
     return options
 
 
-def _render_once(url: str, wait_ms: int) -> str:
-    """执行一次浏览器渲染；重试策略由 fetch_rendered 统一处理。"""
+def _render_once(url: str, wait_ms: int, preserve_links: bool = False) -> str:
+    """执行一次浏览器渲染；公告可选择保留链接，价格页保持纯文本。"""
     try:
         from playwright.sync_api import sync_playwright
     except ImportError as exc:
@@ -149,8 +149,12 @@ def _render_once(url: str, wait_ms: int) -> str:
                 except Exception:
                     pass  # 有些站永远有长连接, networkidle 等不到
                 page.wait_for_timeout(wait_ms)
-                # 保留公告条目的 href；inner_text 会把链接目标全部丢掉。
-                text = html_to_text(page.locator("body").inner_html())
+                if preserve_links:
+                    # 公告抽取需要 href；inner_text 会把链接目标全部丢掉。
+                    text = html_to_text(page.locator("body").inner_html())
+                else:
+                    # 价格页沿用可见文本，避免仅 HTML 结构变化触发大模型。
+                    text = page.inner_text("body")
             finally:
                 browser.close()
         if not text or not text.strip():
@@ -162,15 +166,19 @@ def _render_once(url: str, wait_ms: int) -> str:
         raise FetchError(f"渲染失败: {exc}") from exc
 
 
-def fetch_rendered(url: str, wait_ms: int = 6000, retries: int = 2) -> str:
-    """用无头浏览器渲染页面并返回可见文本，瞬时导航失败会有限重试。
+def fetch_rendered(url: str, wait_ms: int = 6000, retries: int = 2,
+                   preserve_links: bool = False) -> str:
+    """用无头浏览器渲染页面，瞬时导航失败会有限重试。
+
+    preserve_links=True 时把正文链接保留为 Markdown，供公告抽取使用；
+    默认只返回可见文本，确保价格页的变更指纹与旧逻辑一致。
 
     playwright 未安装或全部尝试失败时抛 FetchError，上层保留旧数据。
     """
     last_err: FetchError = FetchError("unknown")
     for attempt in range(retries + 1):
         try:
-            return _render_once(url, wait_ms)
+            return _render_once(url, wait_ms, preserve_links=preserve_links)
         except FetchError as exc:
             last_err = exc
         if attempt < retries:

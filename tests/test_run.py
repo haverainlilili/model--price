@@ -15,6 +15,8 @@ class FetchNewsTextTests(unittest.TestCase):
         })
 
         self.assertEqual(text, "rendered news")
+        _fetch_rendered.assert_called_once_with(
+            "https://example.com/news", preserve_links=True)
 
     @patch.object(run, "fetch", return_value="plain news")
     def test_uses_plain_fetch_by_default(self, _fetch):

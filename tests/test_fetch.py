@@ -46,7 +46,8 @@ class FetchRenderedTests(unittest.TestCase):
             '<a href="/news/model">模型发布</a>'
         )
 
-        text = _render_once("https://example.com/news", wait_ms=0)
+        text = _render_once(
+            "https://example.com/news", wait_ms=0, preserve_links=True)
 
         self.assertEqual(text, "公告正文")
         page.locator.assert_called_once_with("body")
@@ -54,6 +55,22 @@ class FetchRenderedTests(unittest.TestCase):
             '<a href="/news/model">模型发布</a>'
         )
         browser.close.assert_called_once()
+
+    @patch("scraper.fetch.html_to_text")
+    @patch("playwright.sync_api.sync_playwright")
+    def test_keeps_plain_visible_text_for_pricing_hashes(
+            self, sync_playwright, html_to_text):
+        playwright = sync_playwright.return_value.__enter__.return_value
+        browser = playwright.chromium.launch.return_value
+        page = browser.new_context.return_value.new_page.return_value
+        page.inner_text.return_value = "价格正文"
+
+        text = _render_once("https://example.com/pricing", wait_ms=0)
+
+        self.assertEqual(text, "价格正文")
+        page.inner_text.assert_called_once_with("body")
+        page.locator.assert_not_called()
+        html_to_text.assert_not_called()
 
     @patch("scraper.fetch.time.sleep")
     @patch("scraper.fetch._render_once")

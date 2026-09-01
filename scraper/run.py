@@ -48,7 +48,7 @@ def _fetch_pricing_text(cfg: dict) -> tuple[str, str]:
 def _fetch_news_text(cfg: dict) -> str:
     """抓取公告页；对声明为动态页面的来源启用浏览器渲染。"""
     if cfg.get("news_render"):
-        return fetch_rendered(cfg["news_url"])
+        return fetch_rendered(cfg["news_url"], preserve_links=True)
     return fetch(cfg["news_url"])
 
 

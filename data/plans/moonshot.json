@@ -1,130 +1,227 @@
 {
  "plans": [
   {
-   "name": "Andante",
-   "plan_type": "Kimi 会员",
-   "price": "¥49/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新，按月刷新",
-   "quotas": [
-    {
-     "label": "Agent 用量",
-     "value": "约 30 个",
-     "window": "每个计费周期（按月刷新）"
-    },
-    {
-     "label": "专业数据库调用",
-     "value": "1000 次调用",
-     "window": "每个计费周期（按月刷新）"
-    }
-   ],
-   "models": [
-    "K2.6",
-    "K3"
-   ],
-   "note": "Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；频次限制以页面提示为准。",
-   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
-  },
-  {
    "name": "Moderato",
-   "plan_type": "Kimi 会员",
-   "price": "¥99/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新，按月刷新",
+   "plan_type": "聊天会员",
+   "price": "$19/mo；$15/mo；$180/yr",
+   "billing": "Monthly；Annual (per month)；Annual Total",
    "quotas": [
     {
-     "label": "Agent 用量",
-     "value": "约 60 个",
-     "window": "每个计费周期（按月刷新）"
+     "label": "Agent credits",
+     "value": "Approximate 60",
+     "window": "每月"
     },
     {
-     "label": "Agent 集群可用次数",
-     "value": "25 次",
-     "window": "每个计费周期（按月刷新）"
+     "label": "Agent concurrent tasks",
+     "value": "2 tasks",
+     "window": "并发"
     },
     {
-     "label": "专业数据库调用",
-     "value": "2000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "label": "Agent priority queue",
+     "value": "4× speed",
+     "window": null
+    },
+    {
+     "label": "Scheduled tasks",
+     "value": "10 tasks",
+     "window": null
+    },
+    {
+     "label": "Widget tasks",
+     "value": "10 tasks",
+     "window": null
+    },
+    {
+     "label": "Agent Swarm concurrent subtasks",
+     "value": "2 subagents",
+     "window": "并发"
+    },
+    {
+     "label": "Professional database",
+     "value": "2,000 calls",
+     "window": null
     }
    ],
-   "models": [
-    "K2.6",
-    "K3"
-   ],
-   "note": "Agent 集群额度对应 2 个子任务并行。Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；频次限制以页面提示为准。",
+   "models": [],
+   "note": "Agent credits 的数值由官网标注为近似值，基于典型任务 Token 消耗；月度 credits 会换算为同一功能的等效任务数，仅供参考。所有会员功能共享同一 credit pool，并按 Token 使用量计量；Kimi Code 另有未在本页明确量化的 5-hour / weekly rate limit。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "Kimi 会员",
-   "price": "¥199/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新，按月刷新",
+   "plan_type": "聊天会员",
+   "price": "$39/mo；$31/mo；$372/yr",
+   "billing": "Monthly；Annual (per month)；Annual Total",
    "quotas": [
     {
-     "label": "Agent 用量",
-     "value": "约 150 个",
-     "window": "每个计费周期（按月刷新）"
+     "label": "Agent credits",
+     "value": "Approximate 150",
+     "window": "每月"
     },
     {
-     "label": "Agent 集群可用次数",
-     "value": "50 次",
-     "window": "每个计费周期（按月刷新）"
+     "label": "Agent concurrent tasks",
+     "value": "2 tasks",
+     "window": "并发"
     },
     {
-     "label": "专业数据库调用",
-     "value": "5000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "label": "Agent priority queue",
+     "value": "4× speed",
+     "window": null
+    },
+    {
+     "label": "Scheduled tasks",
+     "value": "15 tasks",
+     "window": null
+    },
+    {
+     "label": "Widget tasks",
+     "value": "15 tasks",
+     "window": null
+    },
+    {
+     "label": "Agent Swarm concurrent subtasks",
+     "value": "4 subagents",
+     "window": "并发"
+    },
+    {
+     "label": "Group chat with Claw",
+     "value": "10 group chats",
+     "window": null
+    },
+    {
+     "label": "Professional database",
+     "value": "5,000 calls",
+     "window": null
     }
    ],
-   "models": [
-    "K2.6",
-    "K3"
-   ],
-   "note": "Agent 集群额度对应 4 个子任务并行。Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；频次限制以页面提示为准。",
+   "models": [],
+   "note": "Agent credits 的数值由官网标注为近似值，基于典型任务 Token 消耗；月度 credits 会换算为同一功能的等效任务数，仅供参考。所有会员功能共享同一 credit pool，并按 Token 使用量计量；Kimi Code 另有未在本页明确量化的 5-hour / weekly rate limit。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "Kimi 会员",
-   "price": "¥699/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新，按月刷新",
+   "plan_type": "聊天会员",
+   "price": "$99/mo；$79/mo；$948/yr",
+   "billing": "Monthly；Annual (per month)；Annual Total",
    "quotas": [
     {
-     "label": "Agent 用量",
-     "value": "约 360 个",
-     "window": "每个计费周期（按月刷新）"
+     "label": "Agent credits",
+     "value": "Approximate 360",
+     "window": "每月"
     },
     {
-     "label": "Agent 集群可用次数",
-     "value": "120 次",
-     "window": "每个计费周期（按月刷新）"
+     "label": "Agent concurrent tasks",
+     "value": "4 tasks",
+     "window": "并发"
     },
     {
-     "label": "超长对话容量",
-     "value": "百万 Tokens",
+     "label": "Agent priority queue",
+     "value": "4× speed",
      "window": null
     },
     {
-     "label": "专业数据库调用",
-     "value": "12000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "label": "K3 extra-long chat capacity",
+     "value": "up to 1M tokens",
+     "window": null
+    },
+    {
+     "label": "Scheduled tasks",
+     "value": "20 tasks",
+     "window": null
+    },
+    {
+     "label": "Widget tasks",
+     "value": "20 tasks",
+     "window": null
+    },
+    {
+     "label": "Agent Swarm concurrent subtasks",
+     "value": "8 subagents",
+     "window": "并发"
+    },
+    {
+     "label": "Group chat with Claw",
+     "value": "10 group chats",
+     "window": null
+    },
+    {
+     "label": "Professional database",
+     "value": "12,000 calls",
+     "window": null
     }
    ],
    "models": [
-    "K2.6",
     "K3"
    ],
-   "note": "Agent 集群额度对应 8 个子任务并行。Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；频次限制以页面提示为准。",
+   "note": "K3 的 1M tokens 为官网所称“up to”容量。Agent credits 的数值由官网标注为近似值，基于典型任务 Token 消耗；月度 credits 会换算为同一功能的等效任务数，仅供参考。所有会员功能共享同一 credit pool，并按 Token 使用量计量；Kimi Code 另有未在本页明确量化的 5-hour / weekly rate limit。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Vivace",
+   "plan_type": "聊天会员",
+   "price": "$199/mo；$159/mo；$1,908/yr",
+   "billing": "Monthly；Annual (per month)；Annual Total",
+   "quotas": [
+    {
+     "label": "Agent credits",
+     "value": "Approximate 720",
+     "window": "每月"
+    },
+    {
+     "label": "Agent concurrent tasks",
+     "value": "4 tasks",
+     "window": "并发"
+    },
+    {
+     "label": "Agent priority queue",
+     "value": "4× speed",
+     "window": null
+    },
+    {
+     "label": "K3 extra-long chat capacity",
+     "value": "up to 1M tokens",
+     "window": null
+    },
+    {
+     "label": "Scheduled tasks",
+     "value": "25 tasks",
+     "window": null
+    },
+    {
+     "label": "Widget tasks",
+     "value": "25 tasks",
+     "window": null
+    },
+    {
+     "label": "Agent Swarm concurrent subtasks",
+     "value": "8 subagents",
+     "window": "并发"
+    },
+    {
+     "label": "Group chat with Claw",
+     "value": "10 group chats",
+     "window": null
+    },
+    {
+     "label": "Professional database",
+     "value": "24,000 calls",
+     "window": null
+    }
+   ],
+   "models": [
+    "K3"
+   ],
+   "note": "K3 的 1M tokens 为官网所称“up to”容量。Agent credits 的数值由官网标注为近似值，基于典型任务 Token 消耗；月度 credits 会换算为同一功能的等效任务数，仅供参考。所有会员功能共享同一 credit pool，并按 Token 使用量计量；Kimi Code 另有未在本页明确量化的 5-hour / weekly rate limit。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-01T08:37:58Z",
+ "last_fetch_ts": "2026-09-01T12:09:28Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "f1cc0230e81b32080caaa26e01a53a44728c5adc00f0d29b92ff9522989f74dc",
- "fetched_at": "2026-09-01T08:37:58Z",
+ "plans_hash": "6661dda4935477708c91fd51791735d0a331a5f75a4d5120a293e41ee1c17d97",
+ "fetched_at": "2026-09-01T12:09:28Z",
  "status_note": null
 }

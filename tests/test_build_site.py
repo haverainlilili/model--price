@@ -92,6 +92,7 @@ class CheapestChartTests(unittest.TestCase):
         chart = build_site._cheapest_chart(providers, records, rate=7.0)
 
         self.assertIn("各厂商最新 4 条中的最低价", chart)
+        self.assertIn("价格 = 输入价 + 输出价", chart)
         self.assertIn("示例厂商", chart)
         self.assertIn("cheapest", chart)
         self.assertIn("¥21", chart)

@@ -202,7 +202,11 @@ h1 span{color:var(--accent)}
   padding:20px 22px;border-bottom:1px solid var(--line);background:var(--panel2)}
 .lowest-kicker{margin:0 0 4px;color:var(--accent);font:700 9.5px/1.3 var(--mono);
   letter-spacing:.15em;text-transform:uppercase}
+.lowest-title-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .lowest-title{margin:0;font-size:19px;line-height:1.35;letter-spacing:-.02em}
+.lowest-formula{display:inline-flex;align-items:center;min-height:24px;padding:0 8px;
+  border:1px solid #BFD7CC;border-radius:6px;background:var(--accent-bg);
+  color:var(--accent-dark);font:750 10px/1 var(--mono);white-space:nowrap}
 .lowest-desc{max-width:470px;margin:0;color:var(--ink2);font-size:11.5px;text-align:right}
 .lowest-scroll{overflow-x:auto;scrollbar-color:var(--line2) transparent}
 .lowest-plot{display:flex;align-items:stretch;gap:8px;min-width:980px;padding:22px 18px 16px}
@@ -676,7 +680,9 @@ def _cheapest_chart(providers_cfg: list, recs: dict, rate: float) -> str:
     return (
         '<section class="lowest" id="lowest" aria-labelledby="lowest-title">'
         '<div class="lowest-head"><div><p class="lowest-kicker">LOWEST BY PROVIDER</p>'
-        '<h2 class="lowest-title" id="lowest-title">各厂商最新 4 条中的最低价</h2></div>'
+        '<div class="lowest-title-line"><h2 class="lowest-title" id="lowest-title">'
+        '各厂商最新 4 条中的最低价</h2>'
+        '<span class="lowest-formula">价格 = 输入价 + 输出价</span></div></div>'
         '<p class="lowest-desc">每根柱代表一家厂商 · 从左到右按合计价由低到高 · '
         '统一折算人民币</p></div>'
         '<div class="lowest-scroll" role="region" tabindex="0" '

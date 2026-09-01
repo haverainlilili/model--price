@@ -5011,5 +5011,32 @@
   "kind": "removed",
   "model": "qwen-tts-realtime-latest",
   "fields": []
+ },
+ {
+  "ts": "2026-09-01T18:05:45Z",
+  "provider": "anthropic",
+  "provider_name": "Anthropic (Claude)",
+  "kind": "new",
+  "model": "Claude Fable 5.1",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": null,
+    "new": 10.0
+   },
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 50.0
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-01T18:05:45Z",
+  "provider": "anthropic",
+  "provider_name": "Anthropic (Claude)",
+  "kind": "removed",
+  "model": "Claude Fable 5",
+  "fields": []
  }
 ]

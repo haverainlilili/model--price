@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-09-01T17:11:01Z",
+ "generated_at": "2026-09-01T18:10:59Z",
  "fx": {
   "usd_cny": 6.7223,
   "source": "frankfurter.dev",
-  "fetched_at": "2026-09-01T17:11:01Z"
+  "fetched_at": "2026-09-01T18:10:59Z"
  },
  "providers": {
   "anthropic": {
@@ -16,10 +16,10 @@
     "url": "https://platform.claude.com/docs/en/about-claude/models/overview.md",
     "source": "claude",
     "currency": "USD",
-    "promotions": "Batch API requests are 50% off; prompt cache reads cost 10% of the base input price.",
+    "promotions": null,
     "models": [
      {
-      "model": "Claude Fable 5",
+      "model": "Claude Fable 5.1",
       "input_per_1m": 10.0,
       "output_per_1m": 50.0,
       "cached_input_per_1m": 1.0,
@@ -52,11 +52,11 @@
      }
     ],
     "page_has_pricing": true,
-    "price_hash": "e3305cb1262fe172a9bf0bc901c7f29a30060bc1414fc348454d2845ca3972ab",
-    "fetched_at": "2026-09-01T04:33:00Z",
-    "status_note": "页面无变化",
+    "price_hash": "55c2a0529d0c75900bf7692161b4ac022458c4a3f0a3d29da74b94c3907e44dd",
+    "fetched_at": "2026-09-01T18:05:45Z",
+    "status_note": null,
     "last_error": null,
-    "last_fetch_ts": "2026-09-01T17:05:46Z"
+    "last_fetch_ts": "2026-09-01T18:05:45Z"
    }
   },
   "openai": {
@@ -1733,7 +1733,7 @@
     "fetched_at": "2026-08-31T10:12:43Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-01T17:05:46Z"
+    "last_fetch_ts": "2026-09-01T18:05:53Z"
    }
   },
   "google": {
@@ -2730,7 +2730,7 @@
     "fetched_at": "2026-09-01T07:07:20Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-01T17:05:47Z"
+    "last_fetch_ts": "2026-09-01T18:05:53Z"
    }
   },
   "xai": {
@@ -2759,7 +2759,7 @@
     "fetched_at": "2026-08-31T11:39:03Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-01T17:05:48Z"
+    "last_fetch_ts": "2026-09-01T18:05:55Z"
    }
   },
   "mistral": {
@@ -2868,7 +2868,7 @@
     "fetched_at": "2026-08-31T11:40:03Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-01T17:06:01Z"
+    "last_fetch_ts": "2026-09-01T18:06:06Z"
    }
   },
   "deepseek": {
@@ -2937,7 +2937,7 @@
     "fetched_at": "2026-09-01T07:09:06Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-01T17:06:10Z"
+    "last_fetch_ts": "2026-09-01T18:06:18Z"
    }
   },
   "qwen": {
@@ -4564,9 +4564,9 @@
     "page_has_pricing": true,
     "price_hash": "b8f8f26e52672d7156915c8dc5fbcca58dd61bf4f68c7a66c67c93f6d4ab206c",
     "fetched_at": "2026-09-01T17:06:10Z",
-    "status_note": null,
+    "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-01T17:06:10Z"
+    "last_fetch_ts": "2026-09-01T18:06:19Z"
    }
   },
   "doubao": {
@@ -5603,7 +5603,7 @@
     "fetched_at": "2026-09-01T09:06:17Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-01T17:07:44Z"
+    "last_fetch_ts": "2026-09-01T18:06:21Z"
    }
   },
   "zhipu": {
@@ -5920,7 +5920,7 @@
     "fetched_at": "2026-08-31T10:27:01Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-01T17:08:09Z"
+    "last_fetch_ts": "2026-09-01T18:06:45Z"
    }
   },
   "moonshot": {
@@ -5973,7 +5973,7 @@
     "fetched_at": "2026-08-31T10:21:05Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-01T17:08:26Z"
+    "last_fetch_ts": "2026-09-01T18:07:09Z"
    }
   },
   "minimax": {
@@ -6090,7 +6090,7 @@
     "fetched_at": "2026-08-31T10:21:15Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-01T17:08:34Z"
+    "last_fetch_ts": "2026-09-01T18:07:47Z"
    }
   }
  },
@@ -11107,92 +11107,119 @@
    "kind": "removed",
    "model": "qwen-tts-realtime-latest",
    "fields": []
+  },
+  {
+   "ts": "2026-09-01T18:05:45Z",
+   "provider": "anthropic",
+   "provider_name": "Anthropic (Claude)",
+   "kind": "new",
+   "model": "Claude Fable 5.1",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 10.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 50.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-01T18:05:45Z",
+   "provider": "anthropic",
+   "provider_name": "Anthropic (Claude)",
+   "kind": "removed",
+   "model": "Claude Fable 5",
+   "fields": []
   }
  ],
  "news": {
   "anthropic": [
    {
-    "date": "August 27, 2026",
-    "title": "In Python SDK 1.2.0, TypeScript SDK 0.122.0, Go SDK 1.68.0, Java SDK 2.59.0, Ruby SDK 1.67.0, and C# SDK 12.44.0, `client.beta.files` and `client.beta.skills` no longer send the `files-api-2025-04-14` and `skills-2025-10-02` beta headers and return the same shapes as `client.files` and `client.skills`.",
-    "url": "https://platform.claude.com/docs/en/build-with-claude/files#migrate-from-files-api-2025-04-14",
-    "summary": "多语言SDK统一Files与Skills正式版接口及返回结构。",
-    "first_seen": "2026-08-31T10:21:32Z"
+    "date": "September 1, 2026",
+    "title": "We've launched Claude Fable 5.1",
+    "url": "https://platform.claude.com/docs/en/models/fable-5-1/whats-new-fable-5-1",
+    "summary": "发布Fable 5.1及Mythos 5.1，支持百万上下文与12.8万输出。",
+    "first_seen": "2026-09-01T18:07:48Z"
+   },
+   {
+    "date": "September 1, 2026",
+    "title": "Prompt cache reads on Claude Fable 5.1 and Claude Mythos 5.1 cost $0.25 USD per million tokens",
+    "url": "https://platform.claude.com/docs/en/about-claude/pricing#prompt-caching",
+    "summary": "两款新模型的提示缓存读取价降至每百万Token 0.25美元。",
+    "first_seen": "2026-09-01T18:07:48Z"
+   },
+   {
+    "date": "September 1, 2026",
+    "title": "`tool_choice` types `any` and `tool` aren't supported",
+    "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use",
+    "summary": "两款新模型不支持tool_choice的any和tool类型。",
+    "first_seen": "2026-09-01T18:07:48Z"
+   },
+   {
+    "date": "September 1, 2026",
+    "title": "Thinking blocks produced by Claude Fable 5.1 and Claude Mythos 5.1 are preserved only for the model that produced them or a newer one",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/thinking#preserved-thinking",
+    "summary": "新模型的思考块仅能由原模型或更新模型继续读取。",
+    "first_seen": "2026-09-01T18:07:48Z"
+   },
+   {
+    "date": "September 1, 2026",
+    "title": "Per-message effort changes are in beta",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/effort#change-effort-mid-conversation-beta",
+    "summary": "消息级effort调整进入测试版，可保持提示缓存。",
+    "first_seen": "2026-09-01T18:07:48Z"
+   },
+   {
+    "date": "September 1, 2026",
+    "title": "Turn-scoped system messages are in beta",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages#turn-scoped-system-messages",
+    "summary": "仅当前轮次生效的系统消息功能进入测试版。",
+    "first_seen": "2026-09-01T18:07:48Z"
+   },
+   {
+    "date": "September 1, 2026",
+    "title": "`thinking.display` accepts a third value, `\"updates\"`, in beta",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/thinking#progress-updates",
+    "summary": "thinking.display新增updates测试值，可返回工具调用间进度。",
+    "first_seen": "2026-09-01T18:07:48Z"
+   },
+   {
+    "date": "September 1, 2026",
+    "title": "Text generated by Claude Fable 5.1 and Claude Mythos 5.1 carries Anthropic's text watermark",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/files",
+    "summary": "两款新模型生成文本带水印，部分媒体文件带C2PA凭证。",
+    "first_seen": "2026-09-01T18:07:48Z"
+   },
+   {
+    "date": "September 1, 2026",
+    "title": "both models require 30-day data retention",
+    "url": "https://platform.claude.com/docs/en/manage-claude/api-and-data-retention#model-specific-data-retention-requirements",
+    "summary": "两款新模型要求保留数据30天，默认不支持零数据保留。",
+    "first_seen": "2026-09-01T18:07:48Z"
    },
    {
     "date": "August 27, 2026",
-    "title": "You can now create **personal keys** and **service account keys** in the Claude Console.",
+    "title": "`client.beta.files` and `client.beta.skills` no longer send the `files-api-2025-04-14` and `skills-2025-10-02` beta headers",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/files#migrate-from-files-api-2025-04-14",
+    "summary": "多语言SDK的文件与技能客户端停止自动发送旧测试标头。",
+    "first_seen": "2026-09-01T18:07:48Z"
+   },
+   {
+    "date": "August 27, 2026",
+    "title": "You can now create personal keys and service account keys in the Claude Console.",
     "url": "https://platform.claude.com/docs/en/manage-claude/authentication#api-keys",
     "summary": "Claude Console现可创建个人密钥和服务账户密钥。",
-    "first_seen": "2026-08-31T10:21:32Z"
+    "first_seen": "2026-09-01T18:07:48Z"
    },
    {
     "date": "August 26, 2026",
     "title": "The Compliance API session endpoints are out of beta for Cowork and Claude Code sessions.",
-    "url": "https://platform.claude.com/docs/en/manage-claude/compliance-api",
-    "summary": "Cowork与Claude Code会话合规接口结束测试。",
-    "first_seen": "2026-08-31T10:21:32Z"
-   },
-   {
-    "date": "August 26, 2026",
-    "title": "The Compliance API local session endpoints now also return transcripts of Claude Science sessions (`product_surface` value `claude_science`) and Claude for Microsoft 365 sessions in Excel, PowerPoint, Word, and Outlook (`product_surface` values beginning with `office_agents`), in beta for Claude Enterprise organizations, with your existing Compliance Access Key and the `read:compliance_user_data` scope.",
-    "url": "https://platform.claude.com/docs/en/manage-claude/compliance-sessions#retrieve-local-sessions",
-    "summary": "合规接口新增Claude Science及Microsoft 365会话记录。",
-    "first_seen": "2026-09-01T04:36:03Z"
-   },
-   {
-    "date": "August 26, 2026",
-    "title": "The Admin API is now available in the `ant` CLI and the Python, TypeScript, C#, Go, Java, PHP, and Ruby SDKs under `client.beta.organization`.",
-    "url": "https://platform.claude.com/docs/en/manage-claude/admin-api",
-    "summary": "Admin API已接入ant CLI及七种语言SDK。",
-    "first_seen": "2026-08-31T10:21:32Z"
-   },
-   {
-    "date": "August 20, 2026",
-    "title": "We've released **v1.0 of the Python SDK**.",
-    "url": "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/python",
-    "summary": "Python SDK发布1.0版，升级HTTP层并移除旧接口。",
-    "first_seen": "2026-08-31T10:21:32Z"
-   },
-   {
-    "date": "August 20, 2026",
-    "title": "The computer use and browser use toolsets (`computer_toolset_20260801` and `browser_toolset_20260801`) are now available on Google Cloud for Claude Fable 5, Claude Mythos 5, Claude Opus 5, Claude Sonnet 5, and Claude Opus 4.8.",
-    "url": "https://platform.claude.com/docs/en/build-with-claude/claude-on-vertex-ai",
-    "summary": "计算机与浏览器工具集已面向多款Claude模型登陆Google Cloud。",
-    "first_seen": "2026-08-31T10:21:32Z"
-   },
-   {
-    "date": "August 19, 2026",
-    "title": "The computer use tool is out of beta on the Claude API as the `computer_toolset_20260801` toolset: no beta header, batch actions (several actions in one turn), `zoom` enabled by default, and per-member configuration through `configs`.",
-    "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool",
-    "summary": "计算机使用工具结束测试，新增批量操作与成员级配置。",
-    "first_seen": "2026-09-01T04:36:03Z"
-   },
-   {
-    "date": "August 19, 2026",
-    "title": "We've launched the browser use tool (`browser_toolset_20260801`), a client toolset for driving a browser that your application hosts.",
-    "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-tool",
-    "summary": "推出浏览器使用工具，可操控应用托管的浏览器。",
-    "first_seen": "2026-08-31T10:21:32Z"
-   },
-   {
-    "date": "August 19, 2026",
-    "title": "Both toolsets are available for Claude Fable 5, Claude Mythos 5, Claude Opus 5, Claude Sonnet 5, and Claude Opus 4.8 on the Claude API.",
-    "url": null,
-    "summary": "两款工具集支持五款Claude模型。",
-    "first_seen": "2026-08-31T10:21:32Z"
-   },
-   {
-    "date": "August 19, 2026",
-    "title": "The Files API is out of beta on the Claude API.",
-    "url": "https://platform.claude.com/docs/en/build-with-claude/files",
-    "summary": "Files API结束测试，正式版无需测试请求头。",
-    "first_seen": "2026-08-31T10:21:32Z"
-   },
-   {
-    "date": "August 19, 2026",
-    "title": "Agent Skills and the Skills API (`/v1/skills`) are out of beta on the Claude API.",
-    "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
-    "summary": "Agent Skills及Skills API结束测试并移除测试请求头。",
+    "url": "https://platform.claude.com/docs/en/manage-claude/compliance-sessions",
+    "summary": "Cowork与Claude Code会话的Compliance API端点正式发布。",
     "first_seen": "2026-08-31T10:21:32Z"
    }
   ],
@@ -11717,7 +11744,7 @@
     "date": "08.28",
     "title": "glm-5.3-flash",
     "url": "https://www.volcengine.com/docs/82379/2373738",
-    "summary": "首个原生多模态模型，以低成本实现超越GLM-5.2的智能。",
+    "summary": "首个原生多模态模型，以低成本架构实现超越GLM-5.2的智能。",
     "first_seen": "2026-09-01T07:13:14Z"
    },
    {
@@ -11731,42 +11758,42 @@
     "date": "08.14",
     "title": "glm-5.3",
     "url": "https://www.volcengine.com/docs/82379/2373738",
-    "summary": "智谱旗舰模型，强化编程与安全能力，支持1M上下文。",
+    "summary": "智谱旗舰模型，强化编程与安全能力，支持1M上下文窗口。",
     "first_seen": "2026-09-01T07:13:14Z"
    },
    {
     "date": "08.07",
     "title": "deepseek-v4-flash 正式版",
     "url": "https://www.volcengine.com/docs/82379/2373738",
-    "summary": "正式版全量上线，可通过模型名直接调用。",
+    "summary": "正式版全量上线，可通过模型名deepseek-v4-flash直接调用。",
     "first_seen": "2026-09-01T07:13:14Z"
    },
    {
     "date": "08.03",
     "title": "deepseek-v4-flash 正式版",
     "url": "https://www.volcengine.com/docs/82379/2373738",
-    "summary": "正式版上线，Agent能力增强，基准测试超过预览版。",
+    "summary": "正式版上线，Agent能力增强，基准测试超越V4-Pro-Preview。",
     "first_seen": "2026-09-01T07:13:14Z"
    },
    {
     "date": "07.23",
     "title": "doubao-seed-2.1-turbo",
     "url": "https://www.volcengine.com/docs/82379/2373738",
-    "summary": "升级Coding、Agent与多模态能力，兼顾效果和成本。",
+    "summary": "均衡效果与成本，升级编程、Agent及多模态任务能力。",
     "first_seen": "2026-09-01T07:13:14Z"
    },
    {
     "date": "07.17",
     "title": "kimi-k3",
     "url": "https://www.volcengine.com/docs/82379/2373738",
-    "summary": "支持视觉理解与百万Token上下文，面向工程和深度推理。",
+    "summary": "支持视觉理解和百万Token上下文，面向软件工程与深度推理。",
     "first_seen": "2026-09-01T07:13:14Z"
    },
    {
     "date": "07.15",
     "title": "doubao-seed-evolving",
     "url": "https://www.volcengine.com/docs/82379/2373738",
-    "summary": "面向Coding与Agent场景持续周级升级，统一模型ID。",
+    "summary": "面向编程与Agent场景周级升级，以统一模型ID提供最新能力。",
     "first_seen": "2026-09-01T07:13:14Z"
    },
    {
@@ -11787,14 +11814,14 @@
     "date": "06.17",
     "title": "kimi-k2.7-code",
     "url": "https://www.volcengine.com/docs/82379/2373738",
-    "summary": "主打长上下文编程、复杂软件工程、工具调用与多步调试。",
+    "summary": "代码模型，强化长上下文编程、工具调用与多步调试。",
     "first_seen": "2026-09-01T07:13:14Z"
    },
    {
     "date": "06.11",
     "title": "doubao-seed-tts-2.0",
     "url": "https://www.volcengine.com/docs/82379/2516286",
-    "summary": "语音合成模型上线，支持在Agent Plan个人版中调用。",
+    "summary": "语音合成模型上线，支持在Agent Plan个人版套餐中调用。",
     "first_seen": "2026-09-01T07:13:14Z"
    }
   ],
@@ -12019,12 +12046,12 @@
      "quotas": [
       {
        "label": "Usage Capacity",
-       "value": "5x Pro capacity per session",
+       "value": "5x Pro capacity",
        "window": "per session"
       }
      ],
      "models": [],
-     "note": "官网以 Pro 套餐的每会话容量为基准，标注为 5x，不代表固定 Token 或请求数。",
+     "note": "官网以 Pro 套餐每个 session 的相对容量倍数标注额度。",
      "source_url": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan#h_cfd2904008"
     },
     {
@@ -12035,16 +12062,16 @@
      "quotas": [
       {
        "label": "Usage Capacity",
-       "value": "20x Pro capacity per session",
+       "value": "20x Pro capacity",
        "window": "per session"
       }
      ],
      "models": [],
-     "note": "官网以 Pro 套餐的每会话容量为基准，标注为 20x，不代表固定 Token 或请求数。",
+     "note": "官网以 Pro 套餐每个 session 的相对容量倍数标注额度。",
      "source_url": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan#h_cfd2904008"
     },
     {
-     "name": "$50",
+     "name": "$50 Bundle",
      "plan_type": "Usage bundle",
      "price": "$45",
      "billing": null,
@@ -12056,11 +12083,11 @@
       }
      ],
      "models": [],
-     "note": "10% discount。Usage bundle balance applies across Claude, Claude Desktop, Claude Mobile (iOS and Android), Claude Code, Cowork, and third-party products that use your Claude account. Available on Pro, Max, and Team plans.",
+     "note": "10% discount. Available on Pro, Max, and Team plans. Bundle balance applies across Claude, Claude Desktop, Claude Mobile (iOS and Android), Claude Code, Cowork, and third-party products that use your Claude account.",
      "source_url": "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
     },
     {
-     "name": "$250",
+     "name": "$250 Bundle",
      "plan_type": "Usage bundle",
      "price": "$200",
      "billing": null,
@@ -12072,11 +12099,11 @@
       }
      ],
      "models": [],
-     "note": "20% discount。Usage bundle balance applies across Claude, Claude Desktop, Claude Mobile (iOS and Android), Claude Code, Cowork, and third-party products that use your Claude account. Available on Pro, Max, and Team plans.",
+     "note": "20% discount. Available on Pro, Max, and Team plans. Bundle balance applies across Claude, Claude Desktop, Claude Mobile (iOS and Android), Claude Code, Cowork, and third-party products that use your Claude account.",
      "source_url": "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
     },
     {
-     "name": "$1000",
+     "name": "$1000 Bundle",
      "plan_type": "Usage bundle",
      "price": "$700",
      "billing": null,
@@ -12088,21 +12115,21 @@
       }
      ],
      "models": [],
-     "note": "30% discount。Usage bundle balance applies across Claude, Claude Desktop, Claude Mobile (iOS and Android), Claude Code, Cowork, and third-party products that use your Claude account. Available on Pro, Max, and Team plans.",
+     "note": "30% discount. Available on Pro, Max, and Team plans. Bundle balance applies across Claude, Claude Desktop, Claude Mobile (iOS and Android), Claude Code, Cowork, and third-party products that use your Claude account.",
      "source_url": "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-01T17:09:47Z",
+   "last_fetch_ts": "2026-09-01T18:09:18Z",
    "source": "official",
    "source_urls": [
     "https://support.claude.com/en/articles/11049762-choose-a-claude-plan",
     "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
    ],
    "page_has_plans": true,
-   "plans_hash": "7733c718b888c75f6da43e5adf20015eb69095ef1d901723c47e6448ab7ff728",
-   "fetched_at": "2026-09-01T08:35:52Z",
-   "status_note": "页面无变化"
+   "plans_hash": "48fb71aa956a51b23aa08ffd1b43eb66e77c0de236d747d334ba63888092387e",
+   "fetched_at": "2026-09-01T18:09:18Z",
+   "status_note": null
   },
   "mistral": {
    "plans": [
@@ -12242,7 +12269,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-01T17:09:54Z",
+   "last_fetch_ts": "2026-09-01T18:09:45Z",
    "source": "official",
    "source_urls": [
     "https://mistral.ai/pricing"
@@ -12293,7 +12320,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-01T17:10:04Z",
+   "last_fetch_ts": "2026-09-01T18:09:55Z",
    "source": "official",
    "source_urls": [
     "https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package"
@@ -12306,13 +12333,13 @@
   "doubao": {
    "plans": [
     {
-     "name": "Lite 套餐",
+     "name": "Lite",
      "plan_type": "Coding Plan",
      "price": "首购优惠价仅9.9元/月",
-     "billing": "首购；按月",
+     "billing": "月",
      "quotas": [
       {
-       "label": "请求次数",
+       "label": "请求数",
        "value": "最多约1200次请求",
        "window": "每5小时"
       }
@@ -12323,23 +12350,23 @@
       "DeepSeek-V3.2",
       "Kimi-K2-Thinking"
      ],
-     "note": "官网表述为每5小时“最多约1200次请求”；叠加推荐优惠券后，首月优惠低至2.2折，8.9元；首购一次性下单三个月可享5折。",
+     "note": "官网使用“最多约”口径。叠加推荐优惠券后，Lite 首月优惠低至2.2折，8.9元；首购一次性下单三个月可享5折。",
      "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
     },
     {
-     "name": "Pro 套餐",
+     "name": "Pro",
      "plan_type": "Coding Plan",
      "price": "首购优惠价49.9元/月",
-     "billing": "首购；按月",
+     "billing": "月",
      "quotas": [
       {
-       "label": "请求次数",
+       "label": "请求数",
        "value": "最多约6000次请求",
        "window": "每5小时"
       },
       {
-       "label": "套餐用量",
-       "value": "Lite 套餐的5倍",
+       "label": "相对 Lite 套餐用量",
+       "value": "5倍",
        "window": null
       }
      ],
@@ -12349,57 +12376,37 @@
       "DeepSeek-V3.2",
       "Kimi-K2-Thinking"
      ],
-     "note": "官网表述为每5小时“最多约6000次请求”，且Pro套餐用量是Lite套餐的5倍；首购一次性下单三个月可享5折。",
+     "note": "官网使用“最多约”口径，并明确 Pro 套餐用量是 Lite 套餐的5倍。首购一次性下单三个月可享5折。",
      "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-01T17:10:05Z",
+   "last_fetch_ts": "2026-09-01T18:09:57Z",
    "source": "official",
    "source_urls": [
     "https://developer.volcengine.com/articles/7595502342175195187"
    ],
    "page_has_plans": true,
-   "plans_hash": "2a7f84983f7cd6cf04fbf6a9fdf6bc83054f46cb8b64ce3975c8eb7b0b544a19",
-   "fetched_at": "2026-09-01T15:08:48Z",
-   "status_note": "页面无变化"
+   "plans_hash": "b7251cbb5c1d3f3ede5d5597752ffe6727b5c86197348fceb148a3a75635c2c3",
+   "fetched_at": "2026-09-01T18:09:57Z",
+   "status_note": null
   },
   "moonshot": {
    "plans": [
     {
      "name": "Moderato",
      "plan_type": "聊天会员",
-     "price": "$19/mo; Annual: $15/mo, $180/yr",
-     "billing": "Monthly or annual",
+     "price": "$19/mo",
+     "billing": "Monthly",
      "quotas": [
       {
-       "label": "Agent credits",
-       "value": "Approximate 60 Agent credits",
+       "label": "Agent credits*",
+       "value": "60",
        "window": "each month"
-      },
-      {
-       "label": "Agent concurrent tasks",
-       "value": "2 tasks",
-       "window": null
       },
       {
        "label": "Agent priority queue",
        "value": "4× speed",
-       "window": null
-      },
-      {
-       "label": "Scheduled tasks",
-       "value": "10 tasks",
-       "window": null
-      },
-      {
-       "label": "Widget tasks",
-       "value": "10 tasks",
-       "window": null
-      },
-      {
-       "label": "Agent Swarm concurrent subtasks",
-       "value": "2 subagents",
        "window": null
       },
       {
@@ -12411,24 +12418,19 @@
      "models": [
       "K2.6"
      ],
-     "note": "Agent credit values are approximate based on typical task token consumption; monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share one credit pool metered by token usage. Kimi Code has separate 5-hour and weekly rate limits, but the page does not state their numeric values.",
+     "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric allowance.",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
-     "name": "Allegretto",
+     "name": "Moderato",
      "plan_type": "聊天会员",
-     "price": "$39/mo; Annual: $31/mo, $372/yr",
-     "billing": "Monthly or annual",
+     "price": "$180/yr",
+     "billing": "Annual; $15/mo (per month)",
      "quotas": [
       {
-       "label": "Agent credits",
-       "value": "Approximate 150 Agent credits",
+       "label": "Agent credits*",
+       "value": "60",
        "window": "each month"
-      },
-      {
-       "label": "Agent concurrent tasks",
-       "value": "2 tasks",
-       "window": null
       },
       {
        "label": "Agent priority queue",
@@ -12436,23 +12438,31 @@
        "window": null
       },
       {
-       "label": "Scheduled tasks",
-       "value": "15 tasks",
+       "label": "Professional database",
+       "value": "2,000 calls",
        "window": null
+      }
+     ],
+     "models": [
+      "K2.6"
+     ],
+     "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric allowance.",
+     "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+    },
+    {
+     "name": "Allegretto",
+     "plan_type": "聊天会员",
+     "price": "$39/mo",
+     "billing": "Monthly",
+     "quotas": [
+      {
+       "label": "Agent credits*",
+       "value": "150",
+       "window": "each month"
       },
       {
-       "label": "Widget tasks",
-       "value": "15 tasks",
-       "window": null
-      },
-      {
-       "label": "Agent Swarm concurrent subtasks",
-       "value": "4 subagents",
-       "window": null
-      },
-      {
-       "label": "Group chat with Claw",
-       "value": "10 group chats",
+       "label": "Agent priority queue",
+       "value": "4× speed",
        "window": null
       },
       {
@@ -12464,24 +12474,47 @@
      "models": [
       "K2.6"
      ],
-     "note": "Agent credit values are approximate based on typical task token consumption; monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share one credit pool metered by token usage. Kimi Code has separate 5-hour and weekly rate limits, but the page does not state their numeric values.",
+     "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric allowance.",
+     "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+    },
+    {
+     "name": "Allegretto",
+     "plan_type": "聊天会员",
+     "price": "$372/yr",
+     "billing": "Annual; $31/mo (per month)",
+     "quotas": [
+      {
+       "label": "Agent credits*",
+       "value": "150",
+       "window": "each month"
+      },
+      {
+       "label": "Agent priority queue",
+       "value": "4× speed",
+       "window": null
+      },
+      {
+       "label": "Professional database",
+       "value": "5,000 calls",
+       "window": null
+      }
+     ],
+     "models": [
+      "K2.6"
+     ],
+     "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric allowance.",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Allegro",
      "plan_type": "聊天会员",
-     "price": "$99/mo; Annual: $79/mo, $948/yr",
-     "billing": "Monthly or annual",
+     "price": "$99/mo",
+     "billing": "Monthly",
      "quotas": [
       {
-       "label": "Agent credits",
-       "value": "Approximate 360 Agent credits",
+       "label": "Agent credits*",
+       "value": "360",
        "window": "each month"
-      },
-      {
-       "label": "Agent concurrent tasks",
-       "value": "4 tasks",
-       "window": null
       },
       {
        "label": "Agent priority queue",
@@ -12491,26 +12524,6 @@
       {
        "label": "K3 extra-long chat capacity",
        "value": "up to 1M tokens",
-       "window": null
-      },
-      {
-       "label": "Scheduled tasks",
-       "value": "20 tasks",
-       "window": null
-      },
-      {
-       "label": "Widget tasks",
-       "value": "20 tasks",
-       "window": null
-      },
-      {
-       "label": "Agent Swarm concurrent subtasks",
-       "value": "8 subagents",
-       "window": null
-      },
-      {
-       "label": "Group chat with Claw",
-       "value": "10 group chats",
        "window": null
       },
       {
@@ -12520,27 +12533,22 @@
       }
      ],
      "models": [
-      "K2.6",
-      "K3"
+      "K3",
+      "K2.6"
      ],
-     "note": "Agent credit values are approximate based on typical task token consumption; monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. K3 extra-long chat capacity is stated as a maximum of up to 1M tokens. All membership features share one credit pool metered by token usage. Kimi Code has separate 5-hour and weekly rate limits, but the page does not state their numeric values.",
+     "note": "“up to 1M tokens” is the official capacity wording for K3 extra-long chat. Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric allowance.",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
-     "name": "Vivace",
+     "name": "Allegro",
      "plan_type": "聊天会员",
-     "price": "$199/mo; Annual: $159/mo, $1,908/yr",
-     "billing": "Monthly or annual",
+     "price": "$948/yr",
+     "billing": "Annual; $79/mo (per month)",
      "quotas": [
       {
-       "label": "Agent credits",
-       "value": "Approximate 720 Agent credits",
+       "label": "Agent credits*",
+       "value": "360",
        "window": "each month"
-      },
-      {
-       "label": "Agent concurrent tasks",
-       "value": "4 tasks",
-       "window": null
       },
       {
        "label": "Agent priority queue",
@@ -12553,23 +12561,37 @@
        "window": null
       },
       {
-       "label": "Scheduled tasks",
-       "value": "25 tasks",
+       "label": "Professional database",
+       "value": "12,000 calls",
+       "window": null
+      }
+     ],
+     "models": [
+      "K3",
+      "K2.6"
+     ],
+     "note": "“up to 1M tokens” is the official capacity wording for K3 extra-long chat. Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric allowance.",
+     "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+    },
+    {
+     "name": "Vivace",
+     "plan_type": "聊天会员",
+     "price": "$199/mo",
+     "billing": "Monthly",
+     "quotas": [
+      {
+       "label": "Agent credits*",
+       "value": "720",
+       "window": "each month"
+      },
+      {
+       "label": "Agent priority queue",
+       "value": "4× speed",
        "window": null
       },
       {
-       "label": "Widget tasks",
-       "value": "25 tasks",
-       "window": null
-      },
-      {
-       "label": "Agent Swarm concurrent subtasks",
-       "value": "8 subagents",
-       "window": null
-      },
-      {
-       "label": "Group chat with Claw",
-       "value": "10 group chats",
+       "label": "K3 extra-long chat capacity",
+       "value": "up to 1M tokens",
        "window": null
       },
       {
@@ -12579,22 +12601,56 @@
       }
      ],
      "models": [
-      "K2.6",
-      "K3"
+      "K3",
+      "K2.6"
      ],
-     "note": "Agent credit values are approximate based on typical task token consumption; monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. K3 extra-long chat capacity is stated as a maximum of up to 1M tokens. All membership features share one credit pool metered by token usage. Kimi Code has separate 5-hour and weekly rate limits, but the page does not state their numeric values.",
+     "note": "“up to 1M tokens” is the official capacity wording for K3 extra-long chat. Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric allowance.",
+     "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+    },
+    {
+     "name": "Vivace",
+     "plan_type": "聊天会员",
+     "price": "$1,908/yr",
+     "billing": "Annual; $159/mo (per month)",
+     "quotas": [
+      {
+       "label": "Agent credits*",
+       "value": "720",
+       "window": "each month"
+      },
+      {
+       "label": "Agent priority queue",
+       "value": "4× speed",
+       "window": null
+      },
+      {
+       "label": "K3 extra-long chat capacity",
+       "value": "up to 1M tokens",
+       "window": null
+      },
+      {
+       "label": "Professional database",
+       "value": "24,000 calls",
+       "window": null
+      }
+     ],
+     "models": [
+      "K3",
+      "K2.6"
+     ],
+     "note": "“up to 1M tokens” is the official capacity wording for K3 extra-long chat. Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric allowance.",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-01T17:10:07Z",
+   "last_fetch_ts": "2026-09-01T18:10:10Z",
    "source": "official",
    "source_urls": [
     "https://www.kimi.com/help/membership/membership-pricing"
    ],
    "page_has_plans": true,
-   "plans_hash": "c3ad44241cdc9a84112b9b76c172d13010feeaf1ca78b9b3424008e184e16b24",
-   "fetched_at": "2026-09-01T17:10:07Z",
+   "plans_hash": "7248603cc2966ad67baa9385fe1295868751c6f270104176fa544ce08f794804",
+   "fetched_at": "2026-09-01T18:10:10Z",
    "status_note": null
   },
   "minimax": {
@@ -12766,7 +12822,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-01T17:10:45Z",
+   "last_fetch_ts": "2026-09-01T18:10:44Z",
    "source": "official",
    "source_urls": [
     "https://platform.minimaxi.com/subscribe/token-plan"

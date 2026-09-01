@@ -435,6 +435,15 @@ body[data-currency=cny] .p-orig{display:none}
   font:600 9px/1.2 var(--mono)}
 .plan-note{margin:9px 0 0;color:var(--ink2);font-size:10.5px;line-height:1.55}
 .plan-source{display:inline-block;margin-top:9px;font:700 9.5px var(--mono)}
+.plan-reference{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;margin:0 0 10px;padding:12px 13px;border:1px solid var(--line2);
+  border-radius:10px;background:var(--panel);color:var(--ink2)}
+.plan-reference-copy{display:flex;align-items:baseline;gap:9px;flex:1 1 560px;font-size:11.5px}
+.plan-reference-copy b{flex:none;color:var(--ink);font:750 10px/1.5 var(--mono);
+  letter-spacing:.06em}
+.plan-reference a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;
+  border:1px solid var(--accent);border-radius:8px;color:var(--accent-dark);
+  font:750 10px var(--mono);white-space:nowrap}
 .plan-policy{display:flex;align-items:flex-start;gap:9px;margin:0 0 16px;padding:11px 13px;
   border:1px solid #BFD7CC;border-radius:10px;background:var(--accent-bg);
   color:var(--accent-dark);font-size:11.5px}
@@ -1179,6 +1188,11 @@ def _plans_section(providers_cfg: list, records: dict) -> str:
         '<h2 class="sec-title" id="plans-title">套餐与额度</h2></div>'
         f'<p class="sec-sub">{offer_count} 个官网套餐 · 保留原币与原单位<br>'
         '聊天会员、Coding Plan 与 API 资源包不互相换算</p></div>'
+        '<aside class="plan-reference" aria-label="套餐测评与本站数据口径说明">'
+        '<div class="plan-reference-copy"><b>具体套餐测评</b><span>CodingPlan 提供多平台套餐的'
+        '实测或估算用量与选型参考；本项目只展示厂商官网直接标注的价格、额度和刷新周期。'
+        '</span></div><a href="https://www.codingplan.fyi/" target="_blank" '
+        'rel="noopener noreferrer">访问 CodingPlan ↗</a></aside>'
         '<p class="plan-policy"><b>OFFICIAL ONLY</b><span>只收录厂商官网直接标注的额度；'
         '不展示实测上限，不把 prompt 换算成请求，不由周额度推算月额度。'
         '官网原文中的「约」「最多」和相对倍数会原样保留。</span></p>'

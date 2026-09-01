@@ -338,6 +338,14 @@ class PlansSectionTests(unittest.TestCase):
         self.assertIn('href="https://example.com/official-plans#plus"', section)
         self.assertIn('data-region="domestic"', section)
         self.assertIn('class="plan-quota-chart"', section)
+        self.assertIn('class="plan-reference"', section)
+        self.assertIn('href="https://www.codingplan.fyi/"', section)
+        self.assertIn("具体套餐测评", section)
+        self.assertIn("本项目只展示厂商官网直接标注", section)
+        self.assertLess(
+            section.index('class="plan-reference"'),
+            section.index('class="plan-quota-chart"'),
+        )
         self.assertIn('class="plan-bar-col"', section)
         self.assertIn('class="plan-bar-summary"', section)
         self.assertIn("每 5 小时包含 1,500 次请求", section)

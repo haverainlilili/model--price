@@ -8,6 +8,24 @@ class ResponsiveCssTests(unittest.TestCase):
         self.assertIn("@media(max-width:800px)", build_site.CSS)
         self.assertIn(".controls{align-items:flex-start", build_site.CSS)
         self.assertIn("overflow-x:auto;scrollbar-width:none", build_site.CSS)
+        self.assertIn(".controls-left,.control-groups{flex:none}", build_site.CSS)
+        self.assertIn(".seg.view-tabs button{min-height:44px", build_site.CSS)
+
+
+class ViewSwitchTests(unittest.TestCase):
+    def test_view_tabs_keep_their_larger_desktop_target(self):
+        self.assertIn(".seg.view-tabs button{min-height:38px", build_site.CSS)
+
+    def test_renders_accessible_price_and_plan_tabs(self):
+        tabs = build_site._view_tabs(has_plans=True)
+
+        self.assertIn('role="tablist"', tabs)
+        self.assertIn('data-view-btn="prices"', tabs)
+        self.assertIn('data-view-btn="plans"', tabs)
+        self.assertIn('aria-controls="price-overview"', tabs)
+        self.assertIn('aria-controls="plan-overview"', tabs)
+        self.assertIn('aria-selected="true"', tabs)
+        self.assertIn('aria-selected="false"', tabs)
 
 
 class QuickVariantTests(unittest.TestCase):
@@ -191,6 +209,33 @@ class ProviderSectionTests(unittest.TestCase):
 
 
 class PlansSectionTests(unittest.TestCase):
+    def test_parses_official_quota_magnitudes_without_cross_unit_conversion(self):
+        self.assertEqual(build_site._quota_magnitude("5x Pro capacity"), 5)
+        self.assertEqual(build_site._quota_magnitude("约 6 亿+ token"), 600_000_000)
+        self.assertEqual(
+            build_site._quota_magnitude("1,200万/1.1亿"),
+            110_000_000,
+        )
+        self.assertIsNone(build_site._quota_magnitude("百万 Tokens"))
+
+    def test_normalizes_chart_bars_only_within_the_same_official_quota(self):
+        plans = [
+            {"name": "Lite", "price": "¥10", "quotas": [
+                {"label": "请求数", "value": "最多约1200次", "window": "每5小时"},
+            ]},
+            {"name": "Pro", "price": "¥50", "quotas": [
+                {"label": "请求数", "value": "最多约6000次", "window": "每5小时"},
+            ]},
+            {"name": "Token Pack", "price": "¥20", "quotas": [
+                {"label": "Token", "value": "100万", "window": "每月"},
+            ]},
+        ]
+
+        self.assertEqual(
+            build_site._plan_bar_heights(plans),
+            [20.0, 100.0, 100.0],
+        )
+
     def test_renders_only_plans_with_officially_stated_quotas(self):
         providers = [{
             "id": "demo",
@@ -236,6 +281,9 @@ class PlansSectionTests(unittest.TestCase):
         self.assertIn("Demo-M3", section)
         self.assertIn('href="https://example.com/official-plans#plus"', section)
         self.assertIn('data-region="domestic"', section)
+        self.assertIn('class="plan-quota-chart"', section)
+        self.assertIn('class="plan-bar-col"', section)
+        self.assertIn('style="--plan-bar-height:100.0%"', section)
         self.assertNotIn("Derived", section)
         self.assertNotIn("按周推算月用量", section)
 

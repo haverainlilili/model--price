@@ -114,6 +114,7 @@ CSS = """
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 var(--sans)}
 a{color:var(--accent-dark);text-decoration-thickness:1px;text-underline-offset:3px}
@@ -188,10 +189,16 @@ h1 span{color:var(--accent)}
   justify-content:space-between;gap:18px;margin:0 0 24px;padding:11px 0;
   background:rgba(243,242,236,.92);backdrop-filter:blur(14px);
   border-bottom:1px solid rgba(200,206,197,.7)}
+.controls-left{display:flex;align-items:center;gap:10px;min-width:0}
+.view-tabs{flex:none;border-color:#AAB5AD;background:#E9EBE6}
+.seg.view-tabs button{min-height:38px;padding:0 15px;font-weight:720}
+.view-tabs button.on{background:var(--accent-dark)}
 .jump-nav{display:flex;align-items:center;gap:4px}
 .jump-nav a{padding:8px 10px;border-radius:7px;color:var(--ink2);font-size:12.5px;
   font-weight:650;text-decoration:none;white-space:nowrap}
 .jump-nav a:hover{background:var(--panel);color:var(--ink);text-decoration:none}
+body[data-view=plans] .jump-price{display:none}
+body[data-view=prices] .jump-plans{display:none}
 .control-groups{display:flex;align-items:center;justify-content:flex-end;gap:8px;min-width:max-content}
 .control-label{margin-right:3px;color:var(--ink3);font:700 10px var(--mono);
   letter-spacing:.1em;text-transform:uppercase}
@@ -353,6 +360,44 @@ body[data-currency=orig] .p-cny{display:none}
 body[data-currency=cny] .p-orig{display:none}
 
 /* ---- 套餐与额度 ---- */
+.plan-quota-chart{margin:0 0 18px;background:var(--panel);border:1px solid var(--line);
+  border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.plan-chart-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;
+  padding:18px 20px;border-bottom:1px solid var(--line);background:var(--panel2)}
+.plan-chart-kicker{margin:0 0 4px;color:var(--accent);font:700 9.5px/1.3 var(--mono);
+  letter-spacing:.15em;text-transform:uppercase}
+.plan-chart-title{margin:0;font-size:18px;line-height:1.35;letter-spacing:-.02em}
+.plan-chart-desc{max-width:520px;margin:0;color:var(--ink2);font-size:11.5px;text-align:right}
+.plan-chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:14px}
+.plan-chart-channel{min-width:0;border:1px solid var(--line);border-radius:12px;
+  overflow:hidden;background:#FFF}
+.plan-chart-channel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  min-height:46px;padding:9px 12px;border-bottom:1px solid var(--line);background:var(--panel2)}
+.plan-chart-channel-head h4{margin:0;font-size:13px;line-height:1.35}
+.plan-chart-channel-head span{color:var(--ink3);font:650 9px var(--mono);letter-spacing:.06em}
+.plan-bars-scroll{overflow-x:auto;scrollbar-color:var(--line2) transparent}
+.plan-bars{display:flex;align-items:stretch;gap:8px;
+  min-width:max(460px,calc(var(--plan-count) * 104px));padding:14px 12px 11px}
+.plan-bar-col{display:grid;grid-template-rows:32px 152px 38px 31px 27px;flex:1 0 88px;
+  min-width:0;text-align:center}
+.plan-bar-value{align-self:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  color:var(--ink);font:720 9.5px/1.2 var(--mono)}
+.plan-bar-box{display:flex;align-items:flex-end;justify-content:center;margin:6px 7px 8px;
+  border-bottom:1px solid var(--line2);background:repeating-linear-gradient(to top,
+  transparent 0,transparent calc(25% - 1px),rgba(221,224,217,.58) 25%)}
+.plan-bar-fill{width:min(48px,72%);height:max(9px,var(--plan-bar-height));
+  border-radius:6px 6px 1px 1px;background:var(--accent);
+  box-shadow:inset 0 1px rgba(255,255,255,.2)}
+.plan-bar-fill-unscaled{background:repeating-linear-gradient(135deg,var(--line2) 0,
+  var(--line2) 5px,#EEF0EB 5px,#EEF0EB 10px)}
+.plan-bar-name{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;
+  -webkit-line-clamp:2;color:var(--ink);font:720 10.5px/1.3 var(--sans)}
+.plan-bar-price{align-self:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  color:var(--accent-dark);font:720 9.5px/1.2 var(--mono)}
+.plan-bar-quota{align-self:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  color:var(--ink3);font:650 8.5px/1.2 var(--sans)}
+.plan-chart-foot{margin:0;padding:11px 18px;border-top:1px solid var(--line);
+  background:var(--panel2);color:var(--ink2);font-size:11.5px}
 .plan-grid{columns:2 480px;column-gap:14px}
 .plan-channel{min-width:0;background:var(--panel);border:1px solid var(--line);
   border-radius:15px;overflow:hidden;box-shadow:0 4px 14px rgba(36,48,42,.025);
@@ -430,17 +475,19 @@ footer p{max-width:860px}footer a{color:#D8EFE6}footer .mono{font-size:10.5px}
 body[data-region=intl] .prov[data-region=domestic],
 body[data-region=intl] .news-card[data-region=domestic],
 body[data-region=intl] .plan-channel[data-region=domestic],
+body[data-region=intl] .plan-chart-channel[data-region=domestic],
 body[data-region=intl] .bgroup[data-region=domestic],
 body[data-region=intl] .lowest-col[data-region=domestic]{display:none}
 body[data-region=domestic] .prov[data-region=intl],
 body[data-region=domestic] .news-card[data-region=intl],
 body[data-region=domestic] .plan-channel[data-region=intl],
+body[data-region=domestic] .plan-chart-channel[data-region=intl],
 body[data-region=domestic] .bgroup[data-region=intl],
 body[data-region=domestic] .lowest-col[data-region=intl]{display:none}
 
 @media(hover:hover){
-  .prov,.news-card,.plan-channel{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
-  .prov:hover,.news-card:hover,.plan-channel:hover{transform:translateY(-2px);border-color:var(--line2);
+  .prov,.news-card,.plan-channel,.plan-chart-channel{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .prov:hover,.news-card:hover,.plan-channel:hover,.plan-chart-channel:hover{transform:translateY(-2px);border-color:var(--line2);
     box-shadow:0 12px 28px rgba(36,48,42,.07)}
 }
 @media(max-width:960px){
@@ -448,6 +495,7 @@ body[data-region=domestic] .lowest-col[data-region=intl]{display:none}
   .spec{grid-template-columns:repeat(4,minmax(0,1fr))}
   .metric-wide{grid-column:span 2}
   .chart-grid{grid-template-columns:1fr}
+  .plan-chart-grid{grid-template-columns:1fr}
   .plan-grid{columns:1}
   .news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
@@ -459,19 +507,24 @@ body[data-region=domestic] .lowest-col[data-region=intl]{display:none}
   .sub{margin-top:18px;font-size:14px}
   .spec{grid-template-columns:repeat(2,minmax(0,1fr))}
   .metric-wide{grid-column:1/-1}
-  .controls{align-items:flex-start;margin-left:-18px;margin-right:-18px;padding:10px 18px;
+  .controls{align-items:flex-start;justify-content:flex-start;margin-left:-18px;margin-right:-18px;padding:10px 18px;
     overflow-x:auto;scrollbar-width:none}
   .controls::-webkit-scrollbar{display:none}
+  .controls-left,.control-groups{flex:none}
   .jump-nav{display:none}
   .control-groups{justify-content:flex-start}
   .control-label{display:none}
   .seg button{min-height:44px;padding:0 13px}
+  .seg.view-tabs button{min-height:44px}
   .lowest{margin-left:-2px;margin-right:-2px}
   .lowest-head{align-items:flex-start;flex-direction:column;gap:7px;padding:17px}
   .lowest-desc{text-align:left}
   .lowest-plot{padding-left:12px;padding-right:12px}
   .quick{margin-bottom:64px}
   .quick-head{align-items:flex-start;flex-direction:column;padding:17px}
+  .plan-chart-head{align-items:flex-start;flex-direction:column;gap:7px;padding:17px}
+  .plan-chart-desc{text-align:left}
+  .plan-chart-grid{padding:10px}
   .blegend{justify-content:flex-start}
   .chart-grid{padding:10px}
   .brow{grid-template-columns:minmax(90px,116px) minmax(0,1fr);gap:8px}
@@ -497,13 +550,32 @@ body[data-region=domestic] .lowest-col[data-region=intl]{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}.ticker-track{animation:none}.ticker-view{overflow-x:auto}
-  .bbar,.prov,.news-card,.plan-channel,.prov-chevron{transition:none}
+  .bbar,.prov,.news-card,.plan-channel,.plan-chart-channel,.prov-chevron{transition:none}
 }
 """
 
 JS = """
 (function(){
   var b=document.body;
+  function setView(v,syncHash,scrollToPanel){
+    if(!document.querySelector('[data-view-btn="'+v+'"]'))v='prices';
+    b.dataset.view=v;
+    document.querySelectorAll('[data-view-panel]').forEach(function(x){
+      x.hidden=x.dataset.viewPanel!==v;
+    });
+    document.querySelectorAll('[data-view-btn]').forEach(function(x){
+      var on=x.dataset.viewBtn===v;
+      x.classList.toggle('on',on);x.setAttribute('aria-selected',on);
+      x.tabIndex=on?0:-1;
+    });
+    if(syncHash){
+      try{history.replaceState(null,'',v==='plans'?'#plans':'#lowest')}catch(e){}
+    }
+    if(scrollToPanel){
+      var target=document.getElementById(v==='plans'?'plans':'lowest');
+      if(target)target.scrollIntoView({block:'start'});
+    }
+  }
   function setRegion(r){
     b.dataset.region=r;
     document.querySelectorAll('[data-region-btn]').forEach(function(x){
@@ -522,6 +594,17 @@ JS = """
   document.querySelectorAll('[data-region-btn]').forEach(function(x){
     x.addEventListener('click',function(){setRegion(x.dataset.regionBtn)});
   });
+  document.querySelectorAll('[data-view-btn]').forEach(function(x){
+    x.addEventListener('click',function(){setView(x.dataset.viewBtn,true,true)});
+    x.addEventListener('keydown',function(e){
+      if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+      e.preventDefault();
+      var tabs=Array.prototype.slice.call(document.querySelectorAll('[data-view-btn]'));
+      var step=e.key==='ArrowRight'?1:-1;
+      var next=tabs[(tabs.indexOf(x)+step+tabs.length)%tabs.length];
+      next.focus();setView(next.dataset.viewBtn,true,true);
+    });
+  });
   document.querySelectorAll('[data-cur-btn]').forEach(function(x){
     x.addEventListener('click',function(){setCur(x.dataset.curBtn)});
   });
@@ -538,11 +621,30 @@ JS = """
   });
   try{var c=localStorage.getItem('lpw-cur');if(c==='orig'||c==='cny')setCur(c)}catch(e){}
   try{var s=localStorage.getItem('lpw-scale');if(s==='lin')setScale(s)}catch(e){}
+  var initialView=location.hash==='#plans'?'plans':'prices';
+  setView(initialView,false,initialView==='plans');
+  window.addEventListener('hashchange',function(){
+    setView(location.hash==='#plans'?'plans':'prices',false,false);
+  });
 })();
 """
 
 
 # ---------------------------------------------------------------- 渲染
+
+def _view_tabs(has_plans: bool) -> str:
+    """顶部概览模式切换；完整价格、变动和公告始终保留。"""
+    plan_tab = (
+        '<button id="view-tab-plans" role="tab" data-view-btn="plans" '
+        'aria-controls="plan-overview" aria-selected="false" tabindex="-1">'
+        '套餐与额度</button>' if has_plans else "")
+    return (
+        '<div class="seg view-tabs" role="tablist" aria-label="概览模式">'
+        '<button id="view-tab-prices" role="tab" data-view-btn="prices" '
+        'aria-controls="price-overview" aria-selected="true" class="on">'
+        'API 价格</button>'
+        f'{plan_tab}</div>')
+
 
 def _ticker_chips(changes: list, prov_names: dict, prov_cur: dict) -> str:
     chips = []
@@ -657,6 +759,58 @@ def _quick_variant(note: str | None) -> str:
 
     first = re.split(r"[；;]", text, maxsplit=1)[0].strip()
     return first if len(first) <= 10 else first[:9] + "…"
+
+
+def _quota_magnitude(value: str | None) -> float | None:
+    """读取官网额度原文中的最大明确数值，仅用于同口径柱高。"""
+    text = str(value or "").strip()
+    if not text:
+        return None
+    factors = {
+        "": 1.0,
+        "万": 10_000.0,
+        "亿": 100_000_000.0,
+        "k": 1_000.0,
+        "m": 1_000_000.0,
+        "b": 1_000_000_000.0,
+    }
+    values = []
+    for match in re.finditer(
+            r"(?<![\d.])(\d[\d,]*(?:\.\d+)?)\s*([万亿kKmMbB]?)", text):
+        try:
+            number = float(match.group(1).replace(",", ""))
+        except ValueError:
+            continue
+        values.append(number * factors[match.group(2).lower()])
+    if not values:
+        return None
+    maximum = round(max(values), 6)
+    return int(maximum) if maximum.is_integer() else maximum
+
+
+def _plan_bar_heights(plans: list[dict]) -> list[float]:
+    """按厂商内相同「额度名称 + 刷新周期」线性归一首项额度。"""
+    entries = []
+    maxima: dict[tuple[str, str], float] = {}
+    for plan in plans:
+        quotas = plan.get("quotas") or []
+        primary = quotas[0] if quotas else {}
+        label = str(primary.get("label") or "").strip().casefold()
+        window = str(primary.get("window") or "").strip().casefold()
+        magnitude = _quota_magnitude(primary.get("value"))
+        key = (label, window)
+        entries.append((key, magnitude))
+        if magnitude is not None:
+            maxima[key] = max(maxima.get(key, 0.0), magnitude)
+
+    heights = []
+    for key, magnitude in entries:
+        maximum = maxima.get(key)
+        if magnitude is None or not maximum:
+            heights.append(18.0)
+        else:
+            heights.append(round(max(8.0, magnitude / maximum * 100), 1))
+    return heights
 
 
 def _cheapest_chart(providers_cfg: list, recs: dict, rate: float) -> str:
@@ -839,11 +993,32 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
 def _plans_section(providers_cfg: list, records: dict) -> str:
     """套餐账本：只渲染同时有官网价格与官网明示额度的项目。"""
     channels = []
+    chart_channels = []
     offer_count = 0
     for cfg in providers_cfg:
         rec = records.get(cfg["id"]) or {}
-        plans = [p for p in (rec.get("plans") or []) if p.get("quotas")]
-        if not plans:
+        prepared = []
+        for plan in rec.get("plans") or []:
+            name = str(plan.get("name") or "").strip()
+            price = str(plan.get("price") or "").strip()
+            quotas = []
+            for quota in plan.get("quotas") or []:
+                label = str(quota.get("label") or "").strip()
+                value = str(quota.get("value") or "").strip()
+                if label and value:
+                    quotas.append({
+                        "label": label,
+                        "value": value,
+                        "window": str(quota.get("window") or "").strip(),
+                    })
+            if name and price and quotas:
+                prepared.append({
+                    "raw": plan,
+                    "name": name,
+                    "price": price,
+                    "quotas": quotas,
+                })
+        if not prepared:
             continue
 
         region = cfg.get("region", "")
@@ -858,26 +1033,18 @@ def _plans_section(providers_cfg: list, records: dict) -> str:
         updated_html = (f'<span class="plan-updated">核验于 {updated}</span>'
                         if updated else "")
 
-        items = []
-        for plan in plans:
-            quotas = []
-            for quota in plan.get("quotas") or []:
-                label = str(quota.get("label") or "").strip()
-                value = str(quota.get("value") or "").strip()
-                if not label or not value:
-                    continue
-                window = str(quota.get("window") or "").strip()
+        items, chart_columns = [], []
+        heights = _plan_bar_heights(prepared)
+        for entry, height in zip(prepared, heights):
+            plan = entry["raw"]
+            name, price = entry["name"], entry["price"]
+            quota_html = []
+            for quota in entry["quotas"]:
+                window = quota["window"]
                 window_html = (f'<span class="quota-window">{_e(window)}</span>'
                                if window else "")
-                quotas.append(f'<div class="quota"><dt>{_e(label)}</dt>'
-                              f'<dd>{_e(value)}{window_html}</dd></div>')
-            if not quotas:
-                continue
-
-            name = str(plan.get("name") or "").strip()
-            price = str(plan.get("price") or "").strip()
-            if not name or not price:
-                continue
+                quota_html.append(f'<div class="quota"><dt>{_e(quota["label"])}</dt>'
+                                  f'<dd>{_e(quota["value"])}{window_html}</dd></div>')
             plan_type = str(plan.get("plan_type") or "").strip()
             type_html = (f'<span class="plan-type">{_e(plan_type)}</span>'
                          if plan_type else "")
@@ -898,12 +1065,38 @@ def _plans_section(providers_cfg: list, records: dict) -> str:
                 f'<li class="plan-item"><div class="plan-main">'
                 f'<div class="plan-name-line"><h4 class="plan-name">{_e(name)}</h4>'
                 f'{type_html}</div><strong class="plan-price">{_e(price)}</strong>'
-                f'{billing_html}</div><dl class="quota-list">{"".join(quotas)}</dl>'
+                f'{billing_html}</div><dl class="quota-list">{"".join(quota_html)}</dl>'
                 f'{models_html}{note_html}{source_html}</li>')
 
-        if not items:
-            continue
+            primary = entry["quotas"][0]
+            window_text = f'，{primary["window"]}' if primary["window"] else ""
+            chart_label = (f'{provider}，{name}，价格 {price}，'
+                           f'{primary["label"]} {primary["value"]}{window_text}')
+            unscaled = _quota_magnitude(primary["value"]) is None
+            fill_class = ("plan-bar-fill plan-bar-fill-unscaled" if unscaled
+                          else "plan-bar-fill")
+            chart_columns.append(
+                f'<div class="plan-bar-col" role="listitem" '
+                f'aria-label="{_e(chart_label)}">'
+                f'<span class="plan-bar-value" title="{_e(primary["value"])}">'
+                f'{_e(primary["value"])}</span>'
+                f'<div class="plan-bar-box" aria-hidden="true"><div class="{fill_class}" '
+                f'style="--plan-bar-height:{height:.1f}%"></div></div>'
+                f'<strong class="plan-bar-name" title="{_e(name)}">{_e(name)}</strong>'
+                f'<span class="plan-bar-price" title="{_e(price)}">{_e(price)}</span>'
+                f'<span class="plan-bar-quota" title="{_e(primary["label"])}">'
+                f'{_e(primary["label"])}</span></div>')
+
         offer_count += len(items)
+        chart_id = f'plan-chart-{_e(cfg["id"])}'
+        chart_channels.append(
+            f'<article class="plan-chart-channel" data-region="{data_region}" '
+            f'aria-labelledby="{chart_id}"><header class="plan-chart-channel-head">'
+            f'<h4 id="{chart_id}">{_e(provider)}</h4><span>{len(items)} 个套餐</span>'
+            f'</header><div class="plan-bars-scroll" role="region" tabindex="0" '
+            f'aria-label="{_e(provider)}套餐额度柱状图，可横向滚动">'
+            f'<div class="plan-bars" role="list" style="--plan-count:{len(items)}">'
+            f'{"".join(chart_columns)}</div></div></article>')
         channels.append(
             f'<article class="plan-channel" data-region="{data_region}">'
             f'<header class="plan-channel-head"><div><div class="plan-channel-title">'
@@ -922,7 +1115,18 @@ def _plans_section(providers_cfg: list, records: dict) -> str:
         '<p class="plan-policy"><b>OFFICIAL ONLY</b><span>只收录厂商官网直接标注的额度；'
         '不展示实测上限，不把 prompt 换算成请求，不由周额度推算月额度。'
         '官网原文中的「约」「最多」和相对倍数会原样保留。</span></p>'
-        f'<div class="plan-grid">{"".join(channels)}</div></section>')
+        '<div class="plan-quota-chart" id="plan-chart">'
+        '<div class="plan-chart-head"><div><p class="plan-chart-kicker">QUOTA BY PLAN</p>'
+        '<h3 class="plan-chart-title">官网套餐额度柱状图</h3></div>'
+        '<p class="plan-chart-desc">每根柱代表一个套餐 · 柱顶保留官网额度原文 · '
+        '不同厂商、单位或刷新周期不横向比较</p></div>'
+        f'<div class="plan-chart-grid">{"".join(chart_channels)}</div>'
+        '<p class="plan-chart-foot">柱高只在同一厂商、相同额度名称与刷新周期内线性比较；'
+        '套餐包含多项额度时，柱图使用官网列出的第一项，完整额度见下方明细。'
+        '同一套餐系列含多档额度时，以官网原文中的最大档设置柱高，但原始额度序列完整展示。'
+        '某一口径只有一个套餐时以满高展示，不与其他口径比较。'
+        '</p></div>'
+        f'<div class="plan-grid" id="plan-details">{"".join(channels)}</div></section>')
 
 
 def _prov_section(cfg: dict, rec: dict | None, rate: float) -> str:
@@ -1115,18 +1319,26 @@ def build(providers_cfg: list) -> Path:
         f'<p class="eyebrow">LLM PRICE WATCH</p>'
         f'<span class="live-pill"><i aria-hidden="true"></i>每小时更新</span></div>'
         f'<h1>大模型 API<br><span>价格看板</span></h1>'
-        f'<p class="sub">把 {len(providers_cfg)} 家主流厂商的公开价格、变动与公告放进同一张可比较的账本。'
+        f'<p class="sub">把 {len(providers_cfg)} 家主流厂商的公开价格、套餐额度、变动与公告放进同一张可比较的账本。'
         f'支持人民币折算，时间统一为北京时间；实际价格以各厂商官网为准。</p>'
         f'<div class="header-actions"><a class="primary-action" href="#prices">查看完整价格 ↓</a>'
         f'<a class="secondary-action" href="{REPO_URL}" target="_blank" rel="noopener">'
         f'查看开源管线 ↗</a></div>'
         f'</div>{spec}</header>')
 
+    lowest = _cheapest_chart(providers_cfg, recs, rate)
+    quick = _quick_chart(providers_cfg, recs, rate)
+    plans = _plans_section(providers_cfg, plan_recs)
+    view_tabs = _view_tabs(bool(plans))
     controls = (
         '<nav class="controls" aria-label="页面导航与数据筛选">'
-        '<div class="jump-nav"><a href="#lowest">最低价</a><a href="#quick">价格速览</a>'
-        '<a href="#plans">套餐额度</a><a href="#prices">完整价格</a>'
+        f'<div class="controls-left">{view_tabs}'
+        '<div class="jump-nav jump-price"><a href="#lowest">最低价</a>'
+        '<a href="#quick">价格速览</a><a href="#prices">完整价格</a>'
         '<a href="#changes">变动流水</a><a href="#news">官方公告</a></div>'
+        '<div class="jump-nav jump-plans"><a href="#plan-chart">套餐柱状图</a>'
+        '<a href="#plan-details">套餐明细</a><a href="#prices">完整价格</a>'
+        '<a href="#changes">变动流水</a><a href="#news">官方公告</a></div></div>'
         '<div class="control-groups"><span class="control-label">FILTER</span>'
         '<div class="seg" role="group" aria-label="地区筛选">'
         '<button data-region-btn="all" class="on" aria-pressed="true">全部</button>'
@@ -1136,10 +1348,9 @@ def build(providers_cfg: list) -> Path:
         '<button data-cur-btn="cny" class="on" aria-pressed="true">折算 ¥</button>'
         '<button data-cur-btn="orig" aria-pressed="false">原币</button></div>'
         '</div></nav>')
-
-    lowest = _cheapest_chart(providers_cfg, recs, rate)
-    quick = _quick_chart(providers_cfg, recs, rate)
-    plans = _plans_section(providers_cfg, plan_recs)
+    plan_overview = (
+        f'<div id="plan-overview" data-view-panel="plans" role="tabpanel" '
+        f'aria-labelledby="view-tab-plans" hidden>{plans}</div>' if plans else "")
 
     # ---- 价格区
     prov_html = "".join(_prov_section(cfg, recs.get(cfg["id"]), rate)
@@ -1194,12 +1405,15 @@ def build(providers_cfg: list) -> Path:
         '<title>大模型 API 价格看板 · LLM Price Watch</title>'
         '<meta name="description" content="自动抓取 OpenAI / Anthropic / Google / '
         'DeepSeek / Qwen / 豆包 / 智谱 / Kimi 等官网价格页, 每小时更新的大模型 '
-        'API 价格对比、变动流水与官方公告。">'
+        'API 价格对比、官网套餐额度、变动流水与官方公告。">'
         f'<style>{CSS}</style></head>'
-        f'<body data-region="all" data-currency="cny">'
+        f'<body data-region="all" data-currency="cny" data-view="prices">'
         f'<a class="skip-link" href="#main-content">跳到主要内容</a>{ticker}'
         f'<div class="wrap">{masthead}{controls}'
-        f'<main id="main-content">{lowest}{quick}{plans}{prices}{changes_sec}{news_sec}</main>{footer}</div>'
+        f'<main id="main-content"><div id="price-overview" data-view-panel="prices" '
+        f'role="tabpanel" aria-labelledby="view-tab-prices">{lowest}{quick}</div>'
+        f'{plan_overview}'
+        f'{prices}{changes_sec}{news_sec}</main>{footer}</div>'
         f'<script>{JS}</script></body></html>')
 
     SITE_DIR.mkdir(parents=True, exist_ok=True)

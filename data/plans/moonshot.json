@@ -1,15 +1,20 @@
 {
  "plans": [
   {
-   "name": "Moderato (Monthly)",
-   "plan_type": "Membership",
-   "price": "$19/mo",
-   "billing": "Monthly",
+   "name": "Moderato",
+   "plan_type": "聊天会员",
+   "price": "$19/mo (Monthly); $15/mo (Annual per month); $180/yr (Annual Total)",
+   "billing": "Monthly or annual",
    "quotas": [
     {
      "label": "Agent credits",
-     "value": "Approximate 60",
+     "value": "Approximate 60 credits",
      "window": "Monthly"
+    },
+    {
+     "label": "Agent priority queue",
+     "value": "4× speed",
+     "window": null
     },
     {
      "label": "Professional database",
@@ -18,40 +23,24 @@
     }
    ],
    "models": [],
-   "note": "Agent credit values are approximate and based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage.",
+   "note": "Agent credit values are approximate, based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. The page does not state a usage window for Professional database calls.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
-   "name": "Moderato (Annual)",
-   "plan_type": "Membership",
-   "price": "$15/mo; $180/yr",
-   "billing": "Annual",
+   "name": "Allegretto",
+   "plan_type": "聊天会员",
+   "price": "$39/mo (Monthly); $31/mo (Annual per month); $372/yr (Annual Total)",
+   "billing": "Monthly or annual",
    "quotas": [
     {
      "label": "Agent credits",
-     "value": "Approximate 60",
+     "value": "Approximate 150 credits",
      "window": "Monthly"
     },
     {
-     "label": "Professional database",
-     "value": "2,000 calls",
+     "label": "Agent priority queue",
+     "value": "4× speed",
      "window": null
-    }
-   ],
-   "models": [],
-   "note": "Annual price is shown both per month and as the annual total. Agent credit values are approximate and based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage.",
-   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
-  },
-  {
-   "name": "Allegretto (Monthly)",
-   "plan_type": "Membership",
-   "price": "$39/mo",
-   "billing": "Monthly",
-   "quotas": [
-    {
-     "label": "Agent credits",
-     "value": "Approximate 150",
-     "window": "Monthly"
     },
     {
      "label": "Professional database",
@@ -60,40 +49,24 @@
     }
    ],
    "models": [],
-   "note": "Agent credit values are approximate and based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage.",
+   "note": "Agent credit values are approximate, based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. The page does not state a usage window for Professional database calls.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
-   "name": "Allegretto (Annual)",
-   "plan_type": "Membership",
-   "price": "$31/mo; $372/yr",
-   "billing": "Annual",
+   "name": "Allegro",
+   "plan_type": "聊天会员",
+   "price": "$99/mo (Monthly); $79/mo (Annual per month); $948/yr (Annual Total)",
+   "billing": "Monthly or annual",
    "quotas": [
     {
      "label": "Agent credits",
-     "value": "Approximate 150",
+     "value": "Approximate 360 credits",
      "window": "Monthly"
     },
     {
-     "label": "Professional database",
-     "value": "5,000 calls",
+     "label": "Agent priority queue",
+     "value": "4× speed",
      "window": null
-    }
-   ],
-   "models": [],
-   "note": "Annual price is shown both per month and as the annual total. Agent credit values are approximate and based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage.",
-   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
-  },
-  {
-   "name": "Allegro (Monthly)",
-   "plan_type": "Membership",
-   "price": "$99/mo",
-   "billing": "Monthly",
-   "quotas": [
-    {
-     "label": "Agent credits",
-     "value": "Approximate 360",
-     "window": "Monthly"
     },
     {
      "label": "K3 extra-long chat capacity",
@@ -109,47 +82,24 @@
    "models": [
     "K3"
    ],
-   "note": "Agent credit values are approximate and based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage.",
+   "note": "Agent credit values are approximate, based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. The page does not state a usage window for Professional database calls. “up to 1M tokens” is the website's stated upper limit.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
-   "name": "Allegro (Annual)",
-   "plan_type": "Membership",
-   "price": "$79/mo; $948/yr",
-   "billing": "Annual",
+   "name": "Vivace",
+   "plan_type": "聊天会员",
+   "price": "$199/mo (Monthly); $159/mo (Annual per month); $1,908/yr (Annual Total)",
+   "billing": "Monthly or annual",
    "quotas": [
     {
      "label": "Agent credits",
-     "value": "Approximate 360",
+     "value": "Approximate 720 credits",
      "window": "Monthly"
     },
     {
-     "label": "K3 extra-long chat capacity",
-     "value": "up to 1M tokens",
+     "label": "Agent priority queue",
+     "value": "4× speed",
      "window": null
-    },
-    {
-     "label": "Professional database",
-     "value": "12,000 calls",
-     "window": null
-    }
-   ],
-   "models": [
-    "K3"
-   ],
-   "note": "Annual price is shown both per month and as the annual total. Agent credit values are approximate and based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage.",
-   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
-  },
-  {
-   "name": "Vivace (Monthly)",
-   "plan_type": "Membership",
-   "price": "$199/mo",
-   "billing": "Monthly",
-   "quotas": [
-    {
-     "label": "Agent credits",
-     "value": "Approximate 720",
-     "window": "Monthly"
     },
     {
      "label": "K3 extra-long chat capacity",
@@ -165,46 +115,18 @@
    "models": [
     "K3"
    ],
-   "note": "Agent credit values are approximate and based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage.",
-   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
-  },
-  {
-   "name": "Vivace (Annual)",
-   "plan_type": "Membership",
-   "price": "$159/mo; $1,908/yr",
-   "billing": "Annual",
-   "quotas": [
-    {
-     "label": "Agent credits",
-     "value": "Approximate 720",
-     "window": "Monthly"
-    },
-    {
-     "label": "K3 extra-long chat capacity",
-     "value": "up to 1M tokens",
-     "window": null
-    },
-    {
-     "label": "Professional database",
-     "value": "24,000 calls",
-     "window": null
-    }
-   ],
-   "models": [
-    "K3"
-   ],
-   "note": "Annual price is shown both per month and as the annual total. Agent credit values are approximate and based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage.",
+   "note": "Agent credit values are approximate, based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. The page does not state a usage window for Professional database calls. “up to 1M tokens” is the website's stated upper limit.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-02T10:08:57Z",
+ "last_fetch_ts": "2026-09-02T11:09:55Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "2f425dd7a48350aaa799691e0cf71d2145d6846fd1b47f72646a20853195c6d5",
- "fetched_at": "2026-09-02T10:08:57Z",
+ "plans_hash": "b1abd2ed54fa455aed43354ecd9a568de1f1d14f8d667c49cf5518155acdb76f",
+ "fetched_at": "2026-09-02T11:09:55Z",
  "status_note": null
 }

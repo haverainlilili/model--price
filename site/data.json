@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-09-02T11:10:39Z",
+ "generated_at": "2026-09-02T12:12:50Z",
  "fx": {
   "usd_cny": 6.7223,
   "source": "frankfurter.dev",
-  "fetched_at": "2026-09-02T11:10:39Z"
+  "fetched_at": "2026-09-02T12:12:50Z"
  },
  "providers": {
   "anthropic": {
@@ -56,7 +56,7 @@
     "fetched_at": "2026-09-01T18:05:45Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T11:05:45Z"
+    "last_fetch_ts": "2026-09-02T12:05:45Z"
    }
   },
   "openai": {
@@ -1733,7 +1733,7 @@
     "fetched_at": "2026-08-31T10:12:43Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T11:05:46Z"
+    "last_fetch_ts": "2026-09-02T12:05:46Z"
    }
   },
   "google": {
@@ -2730,7 +2730,7 @@
     "fetched_at": "2026-09-01T07:07:20Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T11:05:46Z"
+    "last_fetch_ts": "2026-09-02T12:05:46Z"
    }
   },
   "xai": {
@@ -2759,7 +2759,7 @@
     "fetched_at": "2026-08-31T11:39:03Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T11:05:48Z"
+    "last_fetch_ts": "2026-09-02T12:05:48Z"
    }
   },
   "mistral": {
@@ -2868,7 +2868,7 @@
     "fetched_at": "2026-08-31T11:40:03Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T11:06:08Z"
+    "last_fetch_ts": "2026-09-02T12:06:04Z"
    }
   },
   "deepseek": {
@@ -2937,7 +2937,7 @@
     "fetched_at": "2026-09-01T07:09:06Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T11:06:20Z"
+    "last_fetch_ts": "2026-09-02T12:06:16Z"
    }
   },
   "qwen": {
@@ -2950,7 +2950,7 @@
     "url": "https://help.aliyun.com/zh/model-studio/model-pricing.md",
     "source": "claude",
     "currency": "CNY",
-    "promotions": "本文仅展示模型调用原价，请前往百炼控制台查看活动优惠。\nqwen3.7-plus 价格表标注“限时8折”。\nZHIPU/GLM-5.3-Flash 价格表标注“限时5折”。\ndeepseek-r1-distill-qwen-1.5b：限时免费。\nqwen-audio-turbo、qwen-audio-turbo-latest：目前仅供免费体验。免费额度用完后不可调用，推荐使用全模态（Qwen-Omni）作为替代模型。\ndeepseek-r1-distill-llama-70b：目前仅供免费体验。免费额度用完后不可调用，推荐使用深度思考、DeepSeek-阿里云、Kimi-阿里云作为替代模型。",
+    "promotions": "本文仅展示模型调用原价，请前往百炼控制台查看活动优惠。\nqwen3.7-plus：输入单价原价2元（限时8折）、输出单价原价8元（限时8折）；256K<Token≤1M档输入单价原价6元（限时8折）、输出单价原价24元（限时8折）。\nZHIPU/GLM-5.3-Flash：输入单价原价0.8元（限时5折），输出单价原价2.8元（限时5折）。\ndeepseek-r1-distill-qwen-1.5b：限时免费。\nqwen-audio-turbo、qwen-audio-turbo-latest：目前仅供免费体验。免费额度用完后不可调用，推荐使用全模态（Qwen-Omni）作为替代模型。\ndeepseek-r1-distill-llama-70b：目前仅供免费体验。免费额度用完后不可调用，推荐使用深度思考、DeepSeek-阿里云、Kimi-阿里云作为替代模型。",
     "models": [
      {
       "model": "qwen3.8-max-prime",
@@ -2966,15 +2966,15 @@
       "output_per_1m": 36.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）/美国（弗吉尼亚，全球）/德国（法兰克福，全球）/日本（东京，全球）；0<Token≤1M；上下文缓存价格未在本文列出"
+      "note": "华北2（北京）；0<Token≤1M；非思考和思考模式；Batch调用半价；上下文缓存价格未在本页列出"
      },
      {
-      "model": "qwen3.8-max",
-      "input_per_1m": 14.988,
-      "output_per_1m": 44.965,
+      "model": "qwen3.8-max-0902",
+      "input_per_1m": 12.0,
+      "output_per_1m": 36.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "新加坡；国际；0<Token≤1M；上下文缓存价格未在本文列出"
+      "note": "华北2（北京）；0<Token≤1M；非思考和思考模式；上下文缓存价格未在本页列出"
      },
      {
       "model": "qwen3.7-max",
@@ -2982,23 +2982,39 @@
       "output_per_1m": 36.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤1M；非思考和思考模式"
+      "note": "华北2（北京）；0<Token≤1M；非思考和思考模式；当前能力等同于qwen3.7-max-2026-05-20；Batch调用半价"
      },
      {
-      "model": "qwen3.7-max",
-      "input_per_1m": 18.736,
-      "output_per_1m": 56.207,
+      "model": "qwen3.7-max-2026-06-08",
+      "input_per_1m": 12.0,
+      "output_per_1m": 36.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "新加坡；国际；0<Token≤1M"
+      "note": "华北2（北京）；0<Token≤1M；非思考和思考模式"
      },
      {
-      "model": "qwen3.7-max-us",
-      "input_per_1m": 18.736,
-      "output_per_1m": 56.207,
+      "model": "qwen3.7-max-2026-05-20",
+      "input_per_1m": 12.0,
+      "output_per_1m": 36.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "美国（弗吉尼亚）；美国部署；0<Token≤1M"
+      "note": "华北2（北京）；0<Token≤1M；非思考和思考模式"
+     },
+     {
+      "model": "qwen3.7-max-preview",
+      "input_per_1m": 12.0,
+      "output_per_1m": 36.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；0<Token≤1M；仅思考模式；当前能力等同于qwen3.7-max-2026-05-17"
+     },
+     {
+      "model": "qwen3.7-max-2026-05-17",
+      "input_per_1m": 12.0,
+      "output_per_1m": 36.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；0<Token≤1M；仅思考模式"
      },
      {
       "model": "qwen3.6-max-preview",
@@ -3006,7 +3022,7 @@
       "output_per_1m": 54.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；0<Token≤128K"
+      "note": "华北2（北京）；0<Token≤128K；非思考和思考模式"
      },
      {
       "model": "qwen3.6-max-preview",
@@ -3014,7 +3030,7 @@
       "output_per_1m": 90.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；128K<Token≤256K"
+      "note": "华北2（北京）；128K<Token≤256K；非思考和思考模式"
      },
      {
       "model": "qwen3-max",
@@ -3022,7 +3038,7 @@
       "output_per_1m": 10.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤32K"
+      "note": "华北2（北京）；0<Token≤32K；非思考和思考模式；Batch调用半价"
      },
      {
       "model": "qwen3-max",
@@ -3030,7 +3046,7 @@
       "output_per_1m": 16.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；32K<Token≤128K"
+      "note": "华北2（北京）；32K<Token≤128K；非思考和思考模式；Batch调用半价"
      },
      {
       "model": "qwen3-max",
@@ -3038,55 +3054,55 @@
       "output_per_1m": 28.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K"
+      "note": "华北2（北京）；128K<Token≤256K；非思考和思考模式；Batch调用半价"
      },
      {
-      "model": "qwen3-max",
-      "input_per_1m": 8.807,
-      "output_per_1m": 44.035,
+      "model": "qwen3-max-2026-01-23",
+      "input_per_1m": 2.5,
+      "output_per_1m": 10.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "新加坡；国际；0<Token≤32K"
+      "note": "华北2（北京）；0<Token≤32K；非思考和思考模式"
      },
      {
-      "model": "qwen3-max",
-      "input_per_1m": 17.614,
-      "output_per_1m": 88.071,
+      "model": "qwen3-max-2026-01-23",
+      "input_per_1m": 4.0,
+      "output_per_1m": 16.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "新加坡；国际；32K<Token≤128K"
+      "note": "华北2（北京）；32K<Token≤128K；非思考和思考模式"
      },
      {
-      "model": "qwen3-max",
-      "input_per_1m": 22.018,
-      "output_per_1m": 110.089,
+      "model": "qwen3-max-2026-01-23",
+      "input_per_1m": 7.0,
+      "output_per_1m": 28.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "新加坡；国际；128K<Token≤256K"
+      "note": "华北2（北京）；128K<Token≤256K；非思考和思考模式"
      },
      {
-      "model": "qwen3-max",
-      "input_per_1m": 8.993,
-      "output_per_1m": 44.965,
+      "model": "qwen3-max-2025-09-23",
+      "input_per_1m": 6.0,
+      "output_per_1m": 24.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "德国（法兰克福）；欧盟部署；0<Token≤32K"
+      "note": "华北2（北京）；0<Token≤32K；仅非思考模式"
      },
      {
-      "model": "qwen3-max",
-      "input_per_1m": 17.986,
-      "output_per_1m": 89.93,
+      "model": "qwen3-max-2025-09-23",
+      "input_per_1m": 10.0,
+      "output_per_1m": 40.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "德国（法兰克福）；欧盟部署；32K<Token≤128K"
+      "note": "华北2（北京）；32K<Token≤128K；仅非思考模式"
      },
      {
-      "model": "qwen3-max",
-      "input_per_1m": 22.483,
-      "output_per_1m": 112.413,
+      "model": "qwen3-max-2025-09-23",
+      "input_per_1m": 15.0,
+      "output_per_1m": 60.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "德国（法兰克福）；欧盟部署；128K<Token≤256K"
+      "note": "华北2（北京）；128K<Token≤256K；仅非思考模式"
      },
      {
       "model": "qwen-max",
@@ -3097,20 +3113,12 @@
       "note": "华北2（北京）；无阶梯计价；仅非思考模式"
      },
      {
-      "model": "qwen-max",
-      "input_per_1m": 11.743,
-      "output_per_1m": 46.971,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "新加坡；国际；无阶梯计价"
-     },
-     {
       "model": "qwen3.7-plus",
       "input_per_1m": 1.6,
       "output_per_1m": 6.4,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "全球部署；0<Token≤256K；限时8折，原输入价 ¥2/百万、原输出价 ¥8/百万"
+      "note": "华北2（北京）；0<Token≤256K；限时8折，原输入价2元/百万、原输出价8元/百万；非思考与思考模式输出同价"
      },
      {
       "model": "qwen3.7-plus",
@@ -3118,39 +3126,23 @@
       "output_per_1m": 19.2,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "全球部署；256K<Token≤1M；限时8折，原输入价 ¥6/百万、原输出价 ¥24/百万"
+      "note": "华北2（北京）；256K<Token≤1M；限时8折，原输入价6元/百万、原输出价24元/百万；非思考与思考模式输出同价"
      },
      {
-      "model": "qwen3.7-plus",
-      "input_per_1m": 2.3984,
-      "output_per_1m": 9.5928,
+      "model": "qwen3.7-plus-2026-05-26",
+      "input_per_1m": 2.0,
+      "output_per_1m": 8.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "新加坡；国际；0<Token≤256K；限时8折，原输入价 ¥2.998/百万、原输出价 ¥11.991/百万"
+      "note": "华北2（北京）；0<Token≤256K；非思考与思考模式输出同价"
      },
      {
-      "model": "qwen3.7-plus",
-      "input_per_1m": 7.1944,
-      "output_per_1m": 28.7776,
+      "model": "qwen3.7-plus-2026-05-26",
+      "input_per_1m": 6.0,
+      "output_per_1m": 24.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "新加坡；国际；256K<Token≤1M；限时8折，原输入价 ¥8.993/百万、原输出价 ¥35.972/百万"
-     },
-     {
-      "model": "qwen3.7-plus-us",
-      "input_per_1m": 2.3984,
-      "output_per_1m": 9.5928,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "美国部署；0<Token≤256K；限时8折，原输入价 ¥2.998/百万、原输出价 ¥11.991/百万"
-     },
-     {
-      "model": "qwen3.7-plus-us",
-      "input_per_1m": 7.1944,
-      "output_per_1m": 28.7776,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "美国部署；256K<Token≤1M；限时8折，原输入价 ¥8.993/百万、原输出价 ¥35.972/百万"
+      "note": "华北2（北京）；256K<Token≤1M；非思考与思考模式输出同价"
      },
      {
       "model": "qwen3.6-plus",
@@ -3158,7 +3150,7 @@
       "output_per_1m": 12.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤256K"
+      "note": "华北2（北京）；0<Token≤256K"
      },
      {
       "model": "qwen3.6-plus",
@@ -3166,7 +3158,7 @@
       "output_per_1m": 48.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；256K<Token≤1M"
+      "note": "华北2（北京）；256K<Token≤1M"
      },
      {
       "model": "qwen3.5-plus",
@@ -3174,7 +3166,7 @@
       "output_per_1m": 4.8,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤128K"
+      "note": "华北2（北京）；0<Token≤128K"
      },
      {
       "model": "qwen3.5-plus",
@@ -3182,7 +3174,7 @@
       "output_per_1m": 12.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K"
+      "note": "华北2（北京）；128K<Token≤256K"
      },
      {
       "model": "qwen3.5-plus",
@@ -3190,7 +3182,7 @@
       "output_per_1m": 24.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；256K<Token≤1M"
+      "note": "华北2（北京）；256K<Token≤1M"
      },
      {
       "model": "qwen-plus",
@@ -3198,7 +3190,7 @@
       "output_per_1m": 2.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤128K；非思考模式"
+      "note": "华北2（北京）；0<Token≤128K；仅非思考模式输出；Batch调用半价"
      },
      {
       "model": "qwen-plus",
@@ -3206,7 +3198,7 @@
       "output_per_1m": 8.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤128K；思考模式"
+      "note": "华北2（北京）；0<Token≤128K；思考模式输出；Batch调用半价"
      },
      {
       "model": "qwen-plus",
@@ -3214,7 +3206,7 @@
       "output_per_1m": 20.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K；非思考模式"
+      "note": "华北2（北京）；128K<Token≤256K；仅非思考模式输出"
      },
      {
       "model": "qwen-plus",
@@ -3222,7 +3214,7 @@
       "output_per_1m": 24.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K；思考模式"
+      "note": "华北2（北京）；128K<Token≤256K；思考模式输出"
      },
      {
       "model": "qwen-plus",
@@ -3230,7 +3222,7 @@
       "output_per_1m": 48.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；256K<Token≤1M；非思考模式"
+      "note": "华北2（北京）；256K<Token≤1M；仅非思考模式输出"
      },
      {
       "model": "qwen-plus",
@@ -3238,39 +3230,7 @@
       "output_per_1m": 64.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；256K<Token≤1M；思考模式"
-     },
-     {
-      "model": "qwen-plus",
-      "input_per_1m": 2.936,
-      "output_per_1m": 8.807,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "新加坡；国际；0<Token≤256K；非思考模式"
-     },
-     {
-      "model": "qwen-plus",
-      "input_per_1m": 2.936,
-      "output_per_1m": 29.357,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "新加坡；国际；0<Token≤256K；思考模式"
-     },
-     {
-      "model": "qwen-plus",
-      "input_per_1m": 8.807,
-      "output_per_1m": 26.421,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "新加坡；国际；256K<Token≤1M；非思考模式"
-     },
-     {
-      "model": "qwen-plus",
-      "input_per_1m": 8.807,
-      "output_per_1m": 88.071,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "新加坡；国际；256K<Token≤1M；思考模式"
+      "note": "华北2（北京）；256K<Token≤1M；思考模式输出"
      },
      {
       "model": "qwen3.8-flash",
@@ -3278,15 +3238,7 @@
       "output_per_1m": 2.7,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤1M"
-     },
-     {
-      "model": "qwen3.8-flash",
-      "input_per_1m": 1.094,
-      "output_per_1m": 3.427,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "新加坡；国际；0<Token≤1M"
+      "note": "华北2（北京）；0<Token≤1M；非思考和思考模式"
      },
      {
       "model": "qwen3.7-flash",
@@ -3294,7 +3246,7 @@
       "output_per_1m": 0.8,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤32K"
+      "note": "华北2（北京）；0<Token≤32K；Batch调用半价"
      },
      {
       "model": "qwen3.7-flash",
@@ -3302,7 +3254,7 @@
       "output_per_1m": 2.4,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；32K<Token≤256K"
+      "note": "华北2（北京）；32K<Token≤256K；Batch调用半价"
      },
      {
       "model": "qwen3.7-flash",
@@ -3310,7 +3262,7 @@
       "output_per_1m": 4.8,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；256K<Token≤1M"
+      "note": "华北2（北京）；256K<Token≤1M；Batch调用半价"
      },
      {
       "model": "qwen3.6-flash",
@@ -3318,7 +3270,7 @@
       "output_per_1m": 7.2,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤256K"
+      "note": "华北2（北京）；0<Token≤256K；Batch调用半价"
      },
      {
       "model": "qwen3.6-flash",
@@ -3326,7 +3278,7 @@
       "output_per_1m": 28.8,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；256K<Token≤1M"
+      "note": "华北2（北京）；256K<Token≤1M；Batch调用半价"
      },
      {
       "model": "qwen3.5-flash",
@@ -3334,7 +3286,7 @@
       "output_per_1m": 2.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤128K"
+      "note": "华北2（北京）；0<Token≤128K；Batch调用半价"
      },
      {
       "model": "qwen3.5-flash",
@@ -3342,7 +3294,7 @@
       "output_per_1m": 8.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K"
+      "note": "华北2（北京）；128K<Token≤256K；Batch调用半价"
      },
      {
       "model": "qwen3.5-flash",
@@ -3350,7 +3302,7 @@
       "output_per_1m": 12.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；256K<Token≤1M"
+      "note": "华北2（北京）；256K<Token≤1M；Batch调用半价"
      },
      {
       "model": "qwen-flash",
@@ -3358,7 +3310,7 @@
       "output_per_1m": 1.5,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤128K"
+      "note": "华北2（北京）；0<Token≤128K；Batch调用半价"
      },
      {
       "model": "qwen-flash",
@@ -3366,7 +3318,7 @@
       "output_per_1m": 6.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K"
+      "note": "华北2（北京）；128K<Token≤256K；Batch调用半价"
      },
      {
       "model": "qwen-flash",
@@ -3374,7 +3326,7 @@
       "output_per_1m": 12.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；256K<Token≤1M"
+      "note": "华北2（北京）；256K<Token≤1M；Batch调用半价"
      },
      {
       "model": "qwen-turbo",
@@ -3382,7 +3334,7 @@
       "output_per_1m": 0.6,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；非思考模式"
+      "note": "华北2（北京）；非思考模式输出"
      },
      {
       "model": "qwen-turbo",
@@ -3390,23 +3342,7 @@
       "output_per_1m": 3.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；思考模式"
-     },
-     {
-      "model": "qwen-turbo",
-      "input_per_1m": 0.367,
-      "output_per_1m": 1.468,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "新加坡；国际；非思考模式"
-     },
-     {
-      "model": "qwen-turbo",
-      "input_per_1m": 0.367,
-      "output_per_1m": 3.67,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "新加坡；国际；思考模式"
+      "note": "华北2（北京）；思考模式输出"
      },
      {
       "model": "qwq-plus",
@@ -3417,20 +3353,12 @@
       "note": "华北2（北京）；仅思考模式"
      },
      {
-      "model": "qwq-plus",
-      "input_per_1m": 5.871,
-      "output_per_1m": 17.614,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "新加坡；国际；仅思考模式"
-     },
-     {
       "model": "qwen-long",
       "input_per_1m": 0.5,
       "output_per_1m": 2.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）"
+      "note": "华北2（北京）；Batch调用半价"
      },
      {
       "model": "qwen-long-latest",
@@ -3441,20 +3369,76 @@
       "note": "华北2（北京）"
      },
      {
+      "model": "qwen3.5-omni-plus",
+      "input_per_1m": 7.0,
+      "output_per_1m": 40.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；多模态模型；文本/图片/视频输入，文本输出"
+     },
+     {
+      "model": "qwen3.5-omni-plus",
+      "input_per_1m": 53.0,
+      "output_per_1m": 213.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；多模态模型；音频输入，文本+音频输出（仅音频计费）"
+     },
+     {
+      "model": "qwen3.5-omni-flash",
+      "input_per_1m": 2.2,
+      "output_per_1m": 13.3,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；多模态模型；文本/图片/视频输入，文本输出"
+     },
+     {
+      "model": "qwen3.5-omni-flash",
+      "input_per_1m": 18.0,
+      "output_per_1m": 72.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；多模态模型；音频输入，文本+音频输出（仅音频计费）"
+     },
+     {
+      "model": "qwen3.5-omni-plus-realtime",
+      "input_per_1m": 10.0,
+      "output_per_1m": 60.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；实时多模态；文本/图片输入，文本输出"
+     },
+     {
+      "model": "qwen3.5-omni-plus-realtime",
+      "input_per_1m": 80.0,
+      "output_per_1m": 300.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；实时多模态；音频输入，文本+音频输出（仅音频计费）"
+     },
+     {
+      "model": "qwen3.5-omni-flash-realtime",
+      "input_per_1m": 3.3,
+      "output_per_1m": 20.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；实时多模态；文本/图片输入，文本输出"
+     },
+     {
+      "model": "qwen3.5-omni-flash-realtime",
+      "input_per_1m": 27.0,
+      "output_per_1m": 107.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；实时多模态；音频输入，文本+音频输出（仅音频计费）"
+     },
+     {
       "model": "qvq-max",
       "input_per_1m": 8.0,
       "output_per_1m": 32.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
       "note": "华北2（北京）；视觉推理模型"
-     },
-     {
-      "model": "qvq-max",
-      "input_per_1m": 8.807,
-      "output_per_1m": 35.228,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "新加坡；国际；视觉推理模型"
      },
      {
       "model": "qvq-plus",
@@ -3470,7 +3454,7 @@
       "output_per_1m": 10.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤32K；多模态文本模型"
+      "note": "华北2（北京）；视觉语言模型；0<Token≤32K"
      },
      {
       "model": "qwen3-vl-plus",
@@ -3478,7 +3462,7 @@
       "output_per_1m": 15.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；32K<Token≤128K；多模态文本模型"
+      "note": "华北2（北京）；视觉语言模型；32K<Token≤128K"
      },
      {
       "model": "qwen3-vl-plus",
@@ -3486,7 +3470,7 @@
       "output_per_1m": 30.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K；多模态文本模型"
+      "note": "华北2（北京）；视觉语言模型；128K<Token≤256K"
      },
      {
       "model": "qwen3-vl-flash",
@@ -3494,7 +3478,7 @@
       "output_per_1m": 1.5,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤32K；多模态文本模型"
+      "note": "华北2（北京）；视觉语言模型；0<Token≤32K"
      },
      {
       "model": "qwen3-vl-flash",
@@ -3502,7 +3486,7 @@
       "output_per_1m": 3.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；32K<Token≤128K；多模态文本模型"
+      "note": "华北2（北京）；视觉语言模型；32K<Token≤128K"
      },
      {
       "model": "qwen3-vl-flash",
@@ -3510,7 +3494,7 @@
       "output_per_1m": 6.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K；多模态文本模型"
+      "note": "华北2（北京）；视觉语言模型；128K<Token≤256K"
      },
      {
       "model": "qwen-vl-max",
@@ -3518,7 +3502,7 @@
       "output_per_1m": 4.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；多模态文本模型；无阶梯计价"
+      "note": "华北2（北京）；视觉语言模型；无阶梯计价"
      },
      {
       "model": "qwen-vl-plus",
@@ -3526,7 +3510,7 @@
       "output_per_1m": 2.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；多模态文本模型；无阶梯计价"
+      "note": "华北2（北京）；视觉语言模型；无阶梯计价"
      },
      {
       "model": "qwen3.5-ocr",
@@ -3542,15 +3526,7 @@
       "output_per_1m": 0.5,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；OCR模型"
-     },
-     {
-      "model": "qwen-vl-ocr",
-      "input_per_1m": 0.514,
-      "output_per_1m": 1.174,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "新加坡；国际；OCR模型"
+      "note": "华北2（北京）；OCR模型；Batch调用半价"
      },
      {
       "model": "qwen-audio-turbo",
@@ -3558,7 +3534,7 @@
       "output_per_1m": 0.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；音频模型；目前仅供免费体验，免费额度用完后不可调用；限时免费"
+      "note": "华北2（北京）；音频模型；限时免费；仅供免费体验，免费额度用完后不可调用"
      },
      {
       "model": "qwen-audio-turbo-latest",
@@ -3566,7 +3542,7 @@
       "output_per_1m": 0.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；音频模型；目前仅供免费体验，免费额度用完后不可调用；限时免费"
+      "note": "华北2（北京）；音频模型；限时免费；仅供免费体验，免费额度用完后不可调用"
      },
      {
       "model": "qwen-math-plus",
@@ -3590,7 +3566,7 @@
       "output_per_1m": 16.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤32K；代码模型"
+      "note": "华北2（北京）；代码模型；0<Token≤32K"
      },
      {
       "model": "qwen3-coder-plus",
@@ -3598,7 +3574,7 @@
       "output_per_1m": 24.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；32K<Token≤128K；代码模型"
+      "note": "华北2（北京）；代码模型；32K<Token≤128K"
      },
      {
       "model": "qwen3-coder-plus",
@@ -3606,7 +3582,7 @@
       "output_per_1m": 40.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K；代码模型"
+      "note": "华北2（北京）；代码模型；128K<Token≤256K"
      },
      {
       "model": "qwen3-coder-plus",
@@ -3614,7 +3590,7 @@
       "output_per_1m": 200.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；256K<Token≤1M；代码模型"
+      "note": "华北2（北京）；代码模型；256K<Token≤1M"
      },
      {
       "model": "qwen3-coder-flash",
@@ -3622,7 +3598,7 @@
       "output_per_1m": 4.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤32K；代码模型"
+      "note": "华北2（北京）；代码模型；0<Token≤32K"
      },
      {
       "model": "qwen3-coder-flash",
@@ -3630,7 +3606,7 @@
       "output_per_1m": 6.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；32K<Token≤128K；代码模型"
+      "note": "华北2（北京）；代码模型；32K<Token≤128K"
      },
      {
       "model": "qwen3-coder-flash",
@@ -3638,7 +3614,7 @@
       "output_per_1m": 10.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K；代码模型"
+      "note": "华北2（北京）；代码模型；128K<Token≤256K"
      },
      {
       "model": "qwen3-coder-flash",
@@ -3646,7 +3622,7 @@
       "output_per_1m": 25.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；256K<Token≤1M；代码模型"
+      "note": "华北2（北京）；代码模型；256K<Token≤1M"
      },
      {
       "model": "qwen-coder-plus",
@@ -3670,7 +3646,7 @@
       "output_per_1m": 5.4,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；翻译模型"
+      "note": "华北2（北京）；翻译模型"
      },
      {
       "model": "qwen-mt-flash",
@@ -3678,7 +3654,7 @@
       "output_per_1m": 1.95,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；翻译模型"
+      "note": "华北2（北京）；翻译模型"
      },
      {
       "model": "qwen-mt-lite",
@@ -3686,7 +3662,7 @@
       "output_per_1m": 1.6,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；翻译模型"
+      "note": "华北2（北京）；翻译模型"
      },
      {
       "model": "qwen-mt-turbo",
@@ -3726,7 +3702,7 @@
       "output_per_1m": 0.4,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；对话分析模型；上下文缓存价格未在本文列出"
+      "note": "华北2（北京）；对话分析模型"
      },
      {
       "model": "tongyi-xiaomi-analysis-pro",
@@ -3734,7 +3710,7 @@
       "output_per_1m": 2.7,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；对话分析模型；上下文缓存价格未在本文列出"
+      "note": "华北2（北京）；对话分析模型"
      },
      {
       "model": "qwen3.8-2.4t-a95b",
@@ -3758,7 +3734,7 @@
       "output_per_1m": 10.8,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；开源版；0<Token≤256K"
+      "note": "华北2（北京）；开源版；0<Token≤256K"
      },
      {
       "model": "qwen3.6-27b",
@@ -3774,7 +3750,7 @@
       "output_per_1m": 7.2,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤128K"
+      "note": "华北2（北京）；开源版；0<Token≤128K"
      },
      {
       "model": "qwen3.5-397b-a17b",
@@ -3782,7 +3758,7 @@
       "output_per_1m": 18.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K"
+      "note": "华北2（北京）；开源版；128K<Token≤256K"
      },
      {
       "model": "qwen3.5-122b-a10b",
@@ -3790,7 +3766,7 @@
       "output_per_1m": 6.4,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤128K"
+      "note": "华北2（北京）；开源版；0<Token≤128K"
      },
      {
       "model": "qwen3.5-122b-a10b",
@@ -3798,7 +3774,7 @@
       "output_per_1m": 16.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K"
+      "note": "华北2（北京）；开源版；128K<Token≤256K"
      },
      {
       "model": "qwen3.5-27b",
@@ -3806,7 +3782,7 @@
       "output_per_1m": 4.8,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤128K"
+      "note": "华北2（北京）；开源版；0<Token≤128K"
      },
      {
       "model": "qwen3.5-27b",
@@ -3814,7 +3790,7 @@
       "output_per_1m": 14.4,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K"
+      "note": "华北2（北京）；开源版；128K<Token≤256K"
      },
      {
       "model": "qwen3.5-35b-a3b",
@@ -3822,7 +3798,7 @@
       "output_per_1m": 3.2,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤128K"
+      "note": "华北2（北京）；开源版；0<Token≤128K"
      },
      {
       "model": "qwen3.5-35b-a3b",
@@ -3830,7 +3806,7 @@
       "output_per_1m": 12.8,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤256K"
+      "note": "华北2（北京）；开源版；128K<Token≤256K"
      },
      {
       "model": "qwen3-next-80b-a3b-thinking",
@@ -3838,7 +3814,7 @@
       "output_per_1m": 10.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；仅思考模式；开源版"
+      "note": "华北2（北京）；开源版；仅思考模式"
      },
      {
       "model": "qwen3-next-80b-a3b-instruct",
@@ -3846,7 +3822,7 @@
       "output_per_1m": 4.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；仅非思考模式；开源版"
+      "note": "华北2（北京）；开源版；仅非思考模式"
      },
      {
       "model": "qwen3-235b-a22b-thinking-2507",
@@ -3854,7 +3830,7 @@
       "output_per_1m": 20.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；仅思考模式；开源版"
+      "note": "华北2（北京）；开源版；仅思考模式"
      },
      {
       "model": "qwen3-235b-a22b-instruct-2507",
@@ -3862,7 +3838,7 @@
       "output_per_1m": 8.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；仅非思考模式；开源版"
+      "note": "华北2（北京）；开源版；仅非思考模式"
      },
      {
       "model": "qwen3-30b-a3b-thinking-2507",
@@ -3870,7 +3846,7 @@
       "output_per_1m": 7.5,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；仅思考模式；开源版"
+      "note": "华北2（北京）；开源版；仅思考模式"
      },
      {
       "model": "qwen3-30b-a3b-instruct-2507",
@@ -3878,7 +3854,23 @@
       "output_per_1m": 3.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；仅非思考模式；开源版"
+      "note": "华北2（北京）；开源版；仅非思考模式"
+     },
+     {
+      "model": "qwen3-235b-a22b",
+      "input_per_1m": 2.0,
+      "output_per_1m": 8.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；开源版；非思考模式输出"
+     },
+     {
+      "model": "qwen3-235b-a22b",
+      "input_per_1m": 2.0,
+      "output_per_1m": 20.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；开源版；思考模式输出"
      },
      {
       "model": "qwen3-32b",
@@ -3886,7 +3878,7 @@
       "output_per_1m": 8.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；非思考模式；开源版"
+      "note": "华北2（北京）；开源版；非思考模式输出"
      },
      {
       "model": "qwen3-32b",
@@ -3894,7 +3886,7 @@
       "output_per_1m": 20.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；思考模式；开源版"
+      "note": "华北2（北京）；开源版；思考模式输出"
      },
      {
       "model": "qwen3-30b-a3b",
@@ -3902,7 +3894,7 @@
       "output_per_1m": 3.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；非思考模式；开源版"
+      "note": "华北2（北京）；开源版；非思考模式输出"
      },
      {
       "model": "qwen3-30b-a3b",
@@ -3910,7 +3902,7 @@
       "output_per_1m": 7.5,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；思考模式；开源版"
+      "note": "华北2（北京）；开源版；思考模式输出"
      },
      {
       "model": "qwen3-14b",
@@ -3918,7 +3910,7 @@
       "output_per_1m": 4.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；非思考模式；开源版"
+      "note": "华北2（北京）；开源版；非思考模式输出"
      },
      {
       "model": "qwen3-14b",
@@ -3926,7 +3918,7 @@
       "output_per_1m": 10.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；思考模式；开源版"
+      "note": "华北2（北京）；开源版；思考模式输出"
      },
      {
       "model": "qwen3-8b",
@@ -3934,7 +3926,7 @@
       "output_per_1m": 2.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；非思考模式；开源版"
+      "note": "华北2（北京）；开源版；非思考模式输出"
      },
      {
       "model": "qwen3-8b",
@@ -3942,7 +3934,7 @@
       "output_per_1m": 5.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；思考模式；开源版"
+      "note": "华北2（北京）；开源版；思考模式输出"
      },
      {
       "model": "qwen3-coder-next",
@@ -3950,7 +3942,7 @@
       "output_per_1m": 4.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；0<Token≤32K；开源代码模型"
+      "note": "华北2（北京）；开源代码模型；0<Token≤32K"
      },
      {
       "model": "qwen3-coder-next",
@@ -3958,7 +3950,7 @@
       "output_per_1m": 6.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；32K<Token≤128K；开源代码模型"
+      "note": "华北2（北京）；开源代码模型；32K<Token≤128K"
      },
      {
       "model": "qwen3-coder-next",
@@ -3966,55 +3958,7 @@
       "output_per_1m": 10.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；128K<Token≤256K；开源代码模型"
-     },
-     {
-      "model": "qwen3-coder-480b-a35b-instruct",
-      "input_per_1m": 6.0,
-      "output_per_1m": 24.0,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤32K；开源代码模型"
-     },
-     {
-      "model": "qwen3-coder-480b-a35b-instruct",
-      "input_per_1m": 9.0,
-      "output_per_1m": 36.0,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "华北2（北京）及全球部署；32K<Token≤128K；开源代码模型"
-     },
-     {
-      "model": "qwen3-coder-480b-a35b-instruct",
-      "input_per_1m": 15.0,
-      "output_per_1m": 60.0,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤200K；开源代码模型"
-     },
-     {
-      "model": "qwen3-coder-30b-a3b-instruct",
-      "input_per_1m": 1.5,
-      "output_per_1m": 6.0,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤32K；开源代码模型"
-     },
-     {
-      "model": "qwen3-coder-30b-a3b-instruct",
-      "input_per_1m": 2.25,
-      "output_per_1m": 9.0,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "华北2（北京）及全球部署；32K<Token≤128K；开源代码模型"
-     },
-     {
-      "model": "qwen3-coder-30b-a3b-instruct",
-      "input_per_1m": 3.75,
-      "output_per_1m": 15.0,
-      "cached_input_per_1m": null,
-      "currency": "CNY",
-      "note": "华北2（北京）及全球部署；128K<Token≤200K；开源代码模型"
+      "note": "华北2（北京）；开源代码模型；128K<Token≤256K"
      },
      {
       "model": "deepseek-v4-pro",
@@ -4022,7 +3966,7 @@
       "output_per_1m": 24.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；第三方模型；上下文缓存价格未在本文列出"
+      "note": "华北2（北京）；第三方模型"
      },
      {
       "model": "deepseek-v4-pro-0813",
@@ -4030,7 +3974,7 @@
       "output_per_1m": 27.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；忙时"
+      "note": "华北2（北京）；忙时峰谷档"
      },
      {
       "model": "deepseek-v4-pro-0813",
@@ -4038,7 +3982,7 @@
       "output_per_1m": 13.5,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；闲时"
+      "note": "华北2（北京）；闲时峰谷档"
      },
      {
       "model": "deepseek-v4-flash-0731",
@@ -4046,7 +3990,7 @@
       "output_per_1m": 9.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；忙时；峰谷定价"
+      "note": "华北2（北京）；忙时峰谷档；自2026-08-17 00:00起调整为峰谷定价模式"
      },
      {
       "model": "deepseek-v4-flash-0731",
@@ -4054,7 +3998,7 @@
       "output_per_1m": 4.5,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；闲时；峰谷定价"
+      "note": "华北2（北京）；闲时峰谷档；自2026-08-17 00:00起调整为峰谷定价模式"
      },
      {
       "model": "deepseek-v4-flash",
@@ -4062,10 +4006,18 @@
       "output_per_1m": 2.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署"
+      "note": "华北2（北京）"
      },
      {
       "model": "deepseek-v3.2",
+      "input_per_1m": 2.0,
+      "output_per_1m": 3.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）"
+     },
+     {
+      "model": "deepseek-v3.2-exp",
       "input_per_1m": 2.0,
       "output_per_1m": 3.0,
       "cached_input_per_1m": null,
@@ -4086,6 +4038,14 @@
       "output_per_1m": 16.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
+      "note": "华北2（北京）；Batch调用半价"
+     },
+     {
+      "model": "deepseek-r1-0528",
+      "input_per_1m": 4.0,
+      "output_per_1m": 16.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
       "note": "华北2（北京）"
      },
      {
@@ -4094,7 +4054,7 @@
       "output_per_1m": 8.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）"
+      "note": "华北2（北京）；Batch调用半价"
      },
      {
       "model": "deepseek-r1-distill-qwen-1.5b",
@@ -4134,7 +4094,7 @@
       "output_per_1m": 0.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；目前仅供免费体验，免费额度用完后不可调用；限时免费"
+      "note": "华北2（北京）；限时免费；目前仅供免费体验，免费额度用完后不可调用"
      },
      {
       "model": "kimi-k3",
@@ -4142,7 +4102,7 @@
       "output_per_1m": 100.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；仅思考模式"
+      "note": "华北2（北京）；仅思考模式"
      },
      {
       "model": "kimi-k2.7-code",
@@ -4150,7 +4110,7 @@
       "output_per_1m": 27.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；仅思考模式"
+      "note": "华北2（北京）；仅思考模式；代码模型"
      },
      {
       "model": "kimi-k2.6",
@@ -4166,7 +4126,7 @@
       "output_per_1m": 21.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；非思考和思考模式"
+      "note": "华北2（北京）；非思考和思考模式"
      },
      {
       "model": "kimi-k2-thinking",
@@ -4182,7 +4142,7 @@
       "output_per_1m": 16.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；仅非思考模式"
+      "note": "华北2（北京）；非思考模式"
      },
      {
       "model": "glm-5.2",
@@ -4190,7 +4150,7 @@
       "output_per_1m": 28.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；不区分阶梯"
+      "note": "华北2（北京）；不区分阶梯；非思考和思考模式"
      },
      {
       "model": "glm-5.2-fast-preview",
@@ -4198,7 +4158,7 @@
       "output_per_1m": 56.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；不区分阶梯"
+      "note": "华北2（北京）；不区分阶梯；非思考和思考模式"
      },
      {
       "model": "glm-5.1",
@@ -4206,7 +4166,7 @@
       "output_per_1m": 24.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；0<Token≤32K"
+      "note": "华北2（北京）；0<Token≤32K"
      },
      {
       "model": "glm-5.1",
@@ -4214,7 +4174,7 @@
       "output_per_1m": 28.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）及全球部署；32K<Token≤200K"
+      "note": "华北2（北京）；32K<Token≤200K"
      },
      {
       "model": "glm-5",
@@ -4278,7 +4238,15 @@
       "output_per_1m": 1.4,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；仅思考模式；限时5折，原输入价 ¥0.8/百万、原输出价 ¥2.8/百万"
+      "note": "华北2（北京）；仅思考模式；限时5折，原输入价0.8元/百万、原输出价2.8元/百万"
+     },
+     {
+      "model": "ZHIPU/GLM-5.2",
+      "input_per_1m": 8.0,
+      "output_per_1m": 28.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；非思考和思考模式"
      },
      {
       "model": "MiniMax-M2.5",
@@ -4290,6 +4258,22 @@
      },
      {
       "model": "MiniMax-M2.1",
+      "input_per_1m": 2.1,
+      "output_per_1m": 8.4,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；仅思考模式"
+     },
+     {
+      "model": "MiniMax/MiniMax-M3",
+      "input_per_1m": 4.2,
+      "output_per_1m": 16.8,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "华北2（北京）；非思考和思考模式"
+     },
+     {
+      "model": "MiniMax/MiniMax-M2.7",
       "input_per_1m": 2.1,
       "output_per_1m": 8.4,
       "cached_input_per_1m": null,
@@ -4318,7 +4302,7 @@
       "output_per_1m": 8.1,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）"
+      "note": "华北2（北京）；第三方模型"
      },
      {
       "model": "unisound/unisound-u2",
@@ -4326,7 +4310,7 @@
       "output_per_1m": 2.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）"
+      "note": "华北2（北京）；第三方模型"
      },
      {
       "model": "qwen-tts-flash",
@@ -4334,7 +4318,7 @@
       "output_per_1m": 10.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；TTS模型，按Token计费"
+      "note": "华北2（北京）；TTS模型；按Token计费"
      },
      {
       "model": "qwen-tts-latest",
@@ -4342,7 +4326,7 @@
       "output_per_1m": 10.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；TTS模型，按Token计费"
+      "note": "华北2（北京）；TTS模型；按Token计费"
      },
      {
       "model": "qwen-tts-2025-05-22",
@@ -4350,7 +4334,7 @@
       "output_per_1m": 10.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；TTS模型，按Token计费"
+      "note": "华北2（北京）；TTS模型；按Token计费"
      },
      {
       "model": "qwen-tts-2025-04-10",
@@ -4358,7 +4342,7 @@
       "output_per_1m": 10.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；TTS模型，按Token计费"
+      "note": "华北2（北京）；TTS模型；按Token计费"
      },
      {
       "model": "qwen-tts-realtime",
@@ -4366,7 +4350,7 @@
       "output_per_1m": 12.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；实时TTS模型，按Token计费"
+      "note": "华北2（北京）；实时TTS模型；按Token计费"
      },
      {
       "model": "qwen-tts-realtime-latest",
@@ -4374,7 +4358,7 @@
       "output_per_1m": 12.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；实时TTS模型，按Token计费"
+      "note": "华北2（北京）；实时TTS模型；按Token计费"
      },
      {
       "model": "qwen-tts-realtime-2025-07-15",
@@ -4382,15 +4366,15 @@
       "output_per_1m": 12.0,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "华北2（北京）；实时TTS模型，按Token计费"
+      "note": "华北2（北京）；实时TTS模型；按Token计费"
      }
     ],
     "page_has_pricing": true,
-    "price_hash": "1f338d3eb512cdb52bdbb3fc8fb52e46de64bd20dc86dc9b51d6c7314362039d",
-    "fetched_at": "2026-09-02T07:06:20Z",
-    "status_note": "页面无变化",
+    "price_hash": "b2bce8ae1a18e5616b42fbf31881859ffabbea1da0b9e7bdc32ab78a296ec262",
+    "fetched_at": "2026-09-02T12:06:17Z",
+    "status_note": null,
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T11:06:21Z"
+    "last_fetch_ts": "2026-09-02T12:06:17Z"
    }
   },
   "doubao": {
@@ -5427,7 +5411,7 @@
     "fetched_at": "2026-09-01T09:06:17Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T11:06:23Z"
+    "last_fetch_ts": "2026-09-02T12:09:32Z"
    }
   },
   "zhipu": {
@@ -5744,7 +5728,7 @@
     "fetched_at": "2026-08-31T10:27:01Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T11:06:47Z"
+    "last_fetch_ts": "2026-09-02T12:09:56Z"
    }
   },
   "moonshot": {
@@ -5797,7 +5781,7 @@
     "fetched_at": "2026-08-31T10:21:05Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T11:07:02Z"
+    "last_fetch_ts": "2026-09-02T12:10:23Z"
    }
   },
   "minimax": {
@@ -5914,1290 +5898,11 @@
     "fetched_at": "2026-08-31T10:21:15Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T11:08:13Z"
+    "last_fetch_ts": "2026-09-02T12:10:31Z"
    }
   }
  },
  "changes": [
-  {
-   "ts": "2026-09-01T04:33:51Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "removed",
-   "model": "qwen-long-2025-01-25",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T04:33:51Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "removed",
-   "model": "qwen3.5-omni-plus",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T04:33:51Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "removed",
-   "model": "qwen3.5-omni-flash",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T04:33:51Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "removed",
-   "model": "qwen3.5-omni-plus-realtime",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T04:33:51Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "removed",
-   "model": "qwen3.5-omni-flash-realtime",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T04:33:51Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "removed",
-   "model": "qwen2-audio-instruct",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T04:33:51Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "removed",
-   "model": "qwen-audio-chat",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-3.5-live-translate-preview",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 3.5
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 21.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "change",
-   "model": "gemini-3.5-flash-lite",
-   "fields": [
-    {
-     "field": "note",
-     "old": "优先级；文本/图片/视频/音频输入；输出价格包括思考 token",
-     "new": "优先级；输入适用于文本/图片/视频/音频；输出价格包括思考 token"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-omni-flash-preview",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 1.5
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 17.5
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-3.1-pro-preview 和 gemini-3.1-pro-preview-customtools",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 7.2
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 32.4
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-3.1-flash-live-preview",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 1.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-3.1-flash-image",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 0.25
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 30.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-3.1-flash-lite-image",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 0.125
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 15.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-3.1-flash-tts-preview",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 0.5
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 10.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-3-flash-preview",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 1.8
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 5.4
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-3-pro-image",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 3.6
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 216.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "change",
-   "model": "gemini-2.5-pro",
-   "fields": [
-    {
-     "field": "note",
-     "old": "优先级；提示 > 20 万个 token；输出价格包括思考 token",
-     "new": "优先级；提示 > 20 万个 token；输出包括思考 token"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "change",
-   "model": "gemini-2.5-flash",
-   "fields": [
-    {
-     "field": "note",
-     "old": "优先级；音频输入；输出价格包括思考 token",
-     "new": "优先级；音频输入；输出包括思考 token"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "change",
-   "model": "gemini-2.5-flash-lite",
-   "fields": [
-    {
-     "field": "note",
-     "old": "优先级；音频输入；输出价格包括思考 token",
-     "new": "优先级；音频输入；输出包括思考 token"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-2.5-flash-lite-preview-09-2025",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 0.15
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 0.2
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-2.5-flash-native-audio-preview-12-2025",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 3.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-2.5-flash-image",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 0.54
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-2.5-flash-preview-tts",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 0.25
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 5.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-2.5-pro-preview-tts",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 0.5
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 10.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-embedding-001",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 0.075
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-robotics-er-2-preview",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 1.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 5.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-robotics-er-2-streaming-preview",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 2.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 10.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-robotics-er-1.6-preview",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 1.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 2.5
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "new",
-   "model": "gemini-2.5-computer-use-preview-10-2025",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 2.5
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 15.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 3.5 实时翻译",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini Omni Flash 预览版",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 3 Pro 预览版",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 3.1 Flash Live 预览版",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 3.1 Flash Image (Nano Banana 2) 🍌",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite) 🍌",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 3.1 Flash TTS 预览版",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 3 Flash 预览版",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 3 Pro Image (Nano Banana Pro) 🍌",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 2.5 Flash-Lite 预览版",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 2.5 Flash Native Audio (Live API)",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 2.5 Flash Image (Nano Banana) 🍌",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 2.5 Flash 预览版 TTS",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 2.5 Pro 预览版 TTS",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini Embedding",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini Robotics ER 2 预览版",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini Robotics ER 2 流式预览版",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini Robotics ER 1.6 预览版",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemini 2.5 Computer Use 预览版",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:07:20Z",
-   "provider": "google",
-   "provider_name": "Google Gemini",
-   "kind": "removed",
-   "model": "Gemma 4",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:09:06Z",
-   "provider": "deepseek",
-   "provider_name": "DeepSeek",
-   "kind": "change",
-   "model": "deepseek-v4-flash",
-   "fields": [
-    {
-     "field": "note",
-     "old": "高峰时段：北京时间周一至周五 9:00-12:00、14:00-18:00",
-     "new": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:06Z",
-   "provider": "deepseek",
-   "provider_name": "DeepSeek",
-   "kind": "change",
-   "model": "deepseek-v4-pro",
-   "fields": [
-    {
-     "field": "note",
-     "old": "高峰时段：北京时间周一至周五 9:00-12:00、14:00-18:00",
-     "new": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:06Z",
-   "provider": "deepseek",
-   "provider_name": "DeepSeek",
-   "kind": "change",
-   "model": "deepseek-v4-flash-vision-exp",
-   "fields": [
-    {
-     "field": "note",
-     "old": "高峰时段：北京时间周一至周五 9:00-12:00、14:00-18:00。多模态视觉模型，图片按尺寸换算成 token，与文本 token 一并计费",
-     "new": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）；多模态视觉模型，图片按尺寸换算成 token，与文本 token 一并计费"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "qwen3.8-max",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；0<Token≤1M；非思考和思考模式；上下文缓存价格未在本页列出",
-     "new": "华北2（北京）；0<Token≤1M；非思考和思考模式"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "qwen3.7-max",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": 6.0,
-     "new": 12.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": 18.0,
-     "new": 36.0
-    },
-    {
-     "field": "note",
-     "old": "华北2（北京）；0<Token≤1M；限时5折，输入原价12元/百万、输出原价36元/百万",
-     "new": "华北2（北京）；0<Token≤1M；非思考和思考模式"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "qwen3.6-max-preview",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；128K<Token≤256K",
-     "new": "华北2（北京）；128K<Token≤256K；非思考和思考模式"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "qwen3-max",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；128K<Token≤256K",
-     "new": "华北2（北京）；128K<Token≤256K；非思考和思考模式"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "qwen3.7-plus",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；256K<Token≤1M；限时8折，输入原价6元/百万、输出原价24元/百万；非思考和思考输出同价",
-     "new": "华北2（北京）；256K<Token≤1M；限时8折，原输入价 ¥6/百万、原输出价 ¥24/百万"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "qwen3.5-omni-plus",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 53.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 213.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "qwen3.5-omni-flash",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 18.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 72.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "qwen3.5-omni-plus-realtime",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 80.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 300.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "qwen3.5-omni-flash-realtime",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 27.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 107.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "qwen3.5-ocr",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；OCR模型",
-     "new": "华北2（北京）；OCR"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "qwen-vl-ocr",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；OCR模型",
-     "new": "华北2（北京）；OCR"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "qwen-audio-turbo",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；音频模型；目前仅供免费体验，免费额度用完后不可调用",
-     "new": "华北2（北京）；音频模型；限时免费；目前仅供免费体验，免费额度用完后不可调用"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "qwen-audio-turbo-latest",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；音频模型；目前仅供免费体验，免费额度用完后不可调用",
-     "new": "华北2（北京）；音频模型；限时免费；目前仅供免费体验，免费额度用完后不可调用"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "qwen2.5-omni-7b",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 38.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 76.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "qwen3-omni-30b-a3b-captioner",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 15.8
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 12.7
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "deepseek-v4-pro",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；第三方模型",
-     "new": "华北2（北京）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "deepseek-v4-flash-0731",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；闲时；自2026-08-17 00:00起为峰谷定价",
-     "new": "华北2（北京）；闲时；峰谷定价"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "deepseek-v4-flash",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；第三方模型",
-     "new": "华北2（北京）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "deepseek-v3.2",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；第三方模型",
-     "new": "华北2（北京）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "deepseek-v3.1",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；第三方模型",
-     "new": "华北2（北京）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "deepseek-r1",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；推理模型",
-     "new": "华北2（北京）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "deepseek-v3",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；第三方模型",
-     "new": "华北2（北京）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "deepseek-r1-distill-qwen-7b",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；蒸馏推理模型",
-     "new": "华北2（北京）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "deepseek-r1-distill-qwen-14b",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；蒸馏推理模型",
-     "new": "华北2（北京）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "deepseek-r1-distill-qwen-32b",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；蒸馏推理模型",
-     "new": "华北2（北京）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "deepseek-r1-distill-llama-70b",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 0.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 0.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "kimi-k2.7-code",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；仅思考模式；代码模型",
-     "new": "华北2（北京）；仅思考模式"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "kimi-k2-thinking",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 4.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 16.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "Moonshot-Kimi-K2-Instruct",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 4.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 16.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "ZHIPU/GLM-5.3",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 8.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 28.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "ZHIPU/GLM-5.3-Flash",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 0.4
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 1.4
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "ZHIPU/GLM-5.2",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 8.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 28.0
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "MiniMax/MiniMax-M3",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 4.2
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 16.8
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "new",
-   "model": "MiniMax/MiniMax-M2.7",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": null,
-     "new": 2.1
-    },
-    {
-     "field": "output_per_1m",
-     "old": null,
-     "new": 8.4
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "stepfun/step-3.7-flash",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；第三方模型",
-     "new": "华北2（北京）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "change",
-   "model": "unisound/unisound-u2",
-   "fields": [
-    {
-     "field": "note",
-     "old": "华北2（北京）；第三方模型",
-     "new": "华北2（北京）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "removed",
-   "model": "qwen3.7-max-2026-06-08",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "removed",
-   "model": "qwen3.7-max-2026-05-20",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "removed",
-   "model": "qwen3.7-max-preview",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "removed",
-   "model": "qwen3.7-max-2026-05-17",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-01T07:09:16Z",
-   "provider": "qwen",
-   "provider_name": "阿里云百炼 (Qwen)",
-   "kind": "removed",
-   "model": "qwen3-max-2026-01-23",
-   "fields": []
-  },
   {
    "ts": "2026-09-01T07:09:16Z",
    "provider": "qwen",
@@ -11542,6 +10247,1498 @@
    "kind": "removed",
    "model": "ZHIPU/GLM-5.2",
    "fields": []
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.8-max",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 14.988,
+     "new": 12.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": 44.965,
+     "new": 36.0
+    },
+    {
+     "field": "note",
+     "old": "新加坡；国际；0<Token≤1M；上下文缓存价格未在本文列出",
+     "new": "华北2（北京）；0<Token≤1M；非思考和思考模式；Batch调用半价；上下文缓存价格未在本页列出"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3.8-max-0902",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 12.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 36.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.7-max",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 18.736,
+     "new": 12.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": 56.207,
+     "new": 36.0
+    },
+    {
+     "field": "note",
+     "old": "新加坡；国际；0<Token≤1M",
+     "new": "华北2（北京）；0<Token≤1M；非思考和思考模式；当前能力等同于qwen3.7-max-2026-05-20；Batch调用半价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3.7-max-2026-06-08",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 12.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 36.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3.7-max-2026-05-20",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 12.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 36.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3.7-max-preview",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 12.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 36.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3.7-max-2026-05-17",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 12.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 36.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.6-max-preview",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；128K<Token≤256K",
+     "new": "华北2（北京）；128K<Token≤256K；非思考和思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-max",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 22.483,
+     "new": 7.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": 112.413,
+     "new": 28.0
+    },
+    {
+     "field": "note",
+     "old": "德国（法兰克福）；欧盟部署；128K<Token≤256K",
+     "new": "华北2（北京）；128K<Token≤256K；非思考和思考模式；Batch调用半价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3-max-2026-01-23",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 7.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 28.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3-max-2025-09-23",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 15.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 60.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-max",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 11.743,
+     "new": 2.4
+    },
+    {
+     "field": "output_per_1m",
+     "old": 46.971,
+     "new": 9.6
+    },
+    {
+     "field": "note",
+     "old": "新加坡；国际；无阶梯计价",
+     "new": "华北2（北京）；无阶梯计价；仅非思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.7-plus",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 7.1944,
+     "new": 4.8
+    },
+    {
+     "field": "output_per_1m",
+     "old": 28.7776,
+     "new": 19.2
+    },
+    {
+     "field": "note",
+     "old": "新加坡；国际；256K<Token≤1M；限时8折，原输入价 ¥8.993/百万、原输出价 ¥35.972/百万",
+     "new": "华北2（北京）；256K<Token≤1M；限时8折，原输入价6元/百万、原输出价24元/百万；非思考与思考模式输出同价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3.7-plus-2026-05-26",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 6.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 24.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.6-plus",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；256K<Token≤1M",
+     "new": "华北2（北京）；256K<Token≤1M"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.5-plus",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；256K<Token≤1M",
+     "new": "华北2（北京）；256K<Token≤1M"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-plus",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 8.807,
+     "new": 4.8
+    },
+    {
+     "field": "output_per_1m",
+     "old": 88.071,
+     "new": 64.0
+    },
+    {
+     "field": "note",
+     "old": "新加坡；国际；256K<Token≤1M；思考模式",
+     "new": "华北2（北京）；256K<Token≤1M；思考模式输出"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.8-flash",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 1.094,
+     "new": 0.8
+    },
+    {
+     "field": "output_per_1m",
+     "old": 3.427,
+     "new": 2.7
+    },
+    {
+     "field": "note",
+     "old": "新加坡；国际；0<Token≤1M",
+     "new": "华北2（北京）；0<Token≤1M；非思考和思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.7-flash",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；256K<Token≤1M",
+     "new": "华北2（北京）；256K<Token≤1M；Batch调用半价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.6-flash",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；256K<Token≤1M",
+     "new": "华北2（北京）；256K<Token≤1M；Batch调用半价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.5-flash",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；256K<Token≤1M",
+     "new": "华北2（北京）；256K<Token≤1M；Batch调用半价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-flash",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；256K<Token≤1M",
+     "new": "华北2（北京）；256K<Token≤1M；Batch调用半价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-turbo",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 0.367,
+     "new": 0.3
+    },
+    {
+     "field": "output_per_1m",
+     "old": 3.67,
+     "new": 3.0
+    },
+    {
+     "field": "note",
+     "old": "新加坡；国际；思考模式",
+     "new": "华北2（北京）；思考模式输出"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwq-plus",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 5.871,
+     "new": 1.6
+    },
+    {
+     "field": "output_per_1m",
+     "old": 17.614,
+     "new": 4.0
+    },
+    {
+     "field": "note",
+     "old": "新加坡；国际；仅思考模式",
+     "new": "华北2（北京）；仅思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-long",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）",
+     "new": "华北2（北京）；Batch调用半价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3.5-omni-plus",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 53.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 213.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3.5-omni-flash",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 18.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 72.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3.5-omni-plus-realtime",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 80.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 300.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3.5-omni-flash-realtime",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 27.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 107.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qvq-max",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 8.807,
+     "new": 8.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": 35.228,
+     "new": 32.0
+    },
+    {
+     "field": "note",
+     "old": "新加坡；国际；视觉推理模型",
+     "new": "华北2（北京）；视觉推理模型"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-vl-plus",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；128K<Token≤256K；多模态文本模型",
+     "new": "华北2（北京）；视觉语言模型；128K<Token≤256K"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-vl-flash",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；128K<Token≤256K；多模态文本模型",
+     "new": "华北2（北京）；视觉语言模型；128K<Token≤256K"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-vl-max",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；多模态文本模型；无阶梯计价",
+     "new": "华北2（北京）；视觉语言模型；无阶梯计价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-vl-plus",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；多模态文本模型；无阶梯计价",
+     "new": "华北2（北京）；视觉语言模型；无阶梯计价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-vl-ocr",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 0.514,
+     "new": 0.3
+    },
+    {
+     "field": "output_per_1m",
+     "old": 1.174,
+     "new": 0.5
+    },
+    {
+     "field": "note",
+     "old": "新加坡；国际；OCR模型",
+     "new": "华北2（北京）；OCR模型；Batch调用半价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-audio-turbo",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；音频模型；目前仅供免费体验，免费额度用完后不可调用；限时免费",
+     "new": "华北2（北京）；音频模型；限时免费；仅供免费体验，免费额度用完后不可调用"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-audio-turbo-latest",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；音频模型；目前仅供免费体验，免费额度用完后不可调用；限时免费",
+     "new": "华北2（北京）；音频模型；限时免费；仅供免费体验，免费额度用完后不可调用"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-coder-plus",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；256K<Token≤1M；代码模型",
+     "new": "华北2（北京）；代码模型；256K<Token≤1M"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-coder-flash",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；256K<Token≤1M；代码模型",
+     "new": "华北2（北京）；代码模型；256K<Token≤1M"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-mt-plus",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；翻译模型",
+     "new": "华北2（北京）；翻译模型"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-mt-flash",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；翻译模型",
+     "new": "华北2（北京）；翻译模型"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-mt-lite",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；翻译模型",
+     "new": "华北2（北京）；翻译模型"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "tongyi-xiaomi-analysis-flash",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；对话分析模型；上下文缓存价格未在本文列出",
+     "new": "华北2（北京）；对话分析模型"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "tongyi-xiaomi-analysis-pro",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；对话分析模型；上下文缓存价格未在本文列出",
+     "new": "华北2（北京）；对话分析模型"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.6-35b-a3b",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；开源版；0<Token≤256K",
+     "new": "华北2（北京）；开源版；0<Token≤256K"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.5-397b-a17b",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；128K<Token≤256K",
+     "new": "华北2（北京）；开源版；128K<Token≤256K"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.5-122b-a10b",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；128K<Token≤256K",
+     "new": "华北2（北京）；开源版；128K<Token≤256K"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.5-27b",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；128K<Token≤256K",
+     "new": "华北2（北京）；开源版；128K<Token≤256K"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3.5-35b-a3b",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；128K<Token≤256K",
+     "new": "华北2（北京）；开源版；128K<Token≤256K"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-next-80b-a3b-thinking",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；仅思考模式；开源版",
+     "new": "华北2（北京）；开源版；仅思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-next-80b-a3b-instruct",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；仅非思考模式；开源版",
+     "new": "华北2（北京）；开源版；仅非思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-235b-a22b-thinking-2507",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；仅思考模式；开源版",
+     "new": "华北2（北京）；开源版；仅思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-235b-a22b-instruct-2507",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；仅非思考模式；开源版",
+     "new": "华北2（北京）；开源版；仅非思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-30b-a3b-thinking-2507",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；仅思考模式；开源版",
+     "new": "华北2（北京）；开源版；仅思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-30b-a3b-instruct-2507",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；仅非思考模式；开源版",
+     "new": "华北2（北京）；开源版；仅非思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "qwen3-235b-a22b",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 2.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 20.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-32b",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；思考模式；开源版",
+     "new": "华北2（北京）；开源版；思考模式输出"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-30b-a3b",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；思考模式；开源版",
+     "new": "华北2（北京）；开源版；思考模式输出"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-14b",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；思考模式；开源版",
+     "new": "华北2（北京）；开源版；思考模式输出"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-8b",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；思考模式；开源版",
+     "new": "华北2（北京）；开源版；思考模式输出"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen3-coder-next",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；128K<Token≤256K；开源代码模型",
+     "new": "华北2（北京）；开源代码模型；128K<Token≤256K"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "deepseek-v4-pro",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；第三方模型；上下文缓存价格未在本文列出",
+     "new": "华北2（北京）；第三方模型"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "deepseek-v4-pro-0813",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；闲时",
+     "new": "华北2（北京）；闲时峰谷档"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "deepseek-v4-flash-0731",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；闲时；峰谷定价",
+     "new": "华北2（北京）；闲时峰谷档；自2026-08-17 00:00起调整为峰谷定价模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "deepseek-v4-flash",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署",
+     "new": "华北2（北京）"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "deepseek-v3.2-exp",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 2.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 3.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "deepseek-r1",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）",
+     "new": "华北2（北京）；Batch调用半价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "deepseek-r1-0528",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 4.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 16.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "deepseek-v3",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）",
+     "new": "华北2（北京）；Batch调用半价"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "deepseek-r1-distill-llama-70b",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；目前仅供免费体验，免费额度用完后不可调用；限时免费",
+     "new": "华北2（北京）；限时免费；目前仅供免费体验，免费额度用完后不可调用"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "kimi-k3",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；仅思考模式",
+     "new": "华北2（北京）；仅思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "kimi-k2.7-code",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；仅思考模式",
+     "new": "华北2（北京）；仅思考模式；代码模型"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "kimi-k2.5",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；非思考和思考模式",
+     "new": "华北2（北京）；非思考和思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "Moonshot-Kimi-K2-Instruct",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；仅非思考模式",
+     "new": "华北2（北京）；非思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "glm-5.2",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；不区分阶梯",
+     "new": "华北2（北京）；不区分阶梯；非思考和思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "glm-5.2-fast-preview",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；不区分阶梯",
+     "new": "华北2（北京）；不区分阶梯；非思考和思考模式"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "glm-5.1",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）及全球部署；32K<Token≤200K",
+     "new": "华北2（北京）；32K<Token≤200K"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "ZHIPU/GLM-5.3-Flash",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；仅思考模式；限时5折，原输入价 ¥0.8/百万、原输出价 ¥2.8/百万",
+     "new": "华北2（北京）；仅思考模式；限时5折，原输入价0.8元/百万、原输出价2.8元/百万"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "ZHIPU/GLM-5.2",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 8.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 28.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "MiniMax/MiniMax-M3",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 4.2
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 16.8
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "new",
+   "model": "MiniMax/MiniMax-M2.7",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": null,
+     "new": 2.1
+    },
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 8.4
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "stepfun/step-3.7-flash",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）",
+     "new": "华北2（北京）；第三方模型"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "unisound/unisound-u2",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）",
+     "new": "华北2（北京）；第三方模型"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-tts-flash",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；TTS模型，按Token计费",
+     "new": "华北2（北京）；TTS模型；按Token计费"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-tts-latest",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；TTS模型，按Token计费",
+     "new": "华北2（北京）；TTS模型；按Token计费"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-tts-2025-05-22",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；TTS模型，按Token计费",
+     "new": "华北2（北京）；TTS模型；按Token计费"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-tts-2025-04-10",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；TTS模型，按Token计费",
+     "new": "华北2（北京）；TTS模型；按Token计费"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-tts-realtime",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；实时TTS模型，按Token计费",
+     "new": "华北2（北京）；实时TTS模型；按Token计费"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-tts-realtime-latest",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；实时TTS模型，按Token计费",
+     "new": "华北2（北京）；实时TTS模型；按Token计费"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "change",
+   "model": "qwen-tts-realtime-2025-07-15",
+   "fields": [
+    {
+     "field": "note",
+     "old": "华北2（北京）；实时TTS模型，按Token计费",
+     "new": "华北2（北京）；实时TTS模型；按Token计费"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "removed",
+   "model": "qwen3.7-max-us",
+   "fields": []
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "removed",
+   "model": "qwen3.7-plus-us",
+   "fields": []
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "removed",
+   "model": "qwen3-coder-480b-a35b-instruct",
+   "fields": []
+  },
+  {
+   "ts": "2026-09-02T12:06:17Z",
+   "provider": "qwen",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "kind": "removed",
+   "model": "qwen3-coder-30b-a3b-instruct",
+   "fields": []
   }
  ],
  "news": {
@@ -12528,7 +12725,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-02T11:09:15Z",
+   "last_fetch_ts": "2026-09-02T12:11:30Z",
    "source": "official",
    "source_urls": [
     "https://support.claude.com/en/articles/11049762-choose-a-claude-plan",
@@ -12677,7 +12874,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-02T11:09:24Z",
+   "last_fetch_ts": "2026-09-02T12:11:37Z",
    "source": "official",
    "source_urls": [
     "https://mistral.ai/pricing"
@@ -12728,7 +12925,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-02T11:09:34Z",
+   "last_fetch_ts": "2026-09-02T12:11:47Z",
    "source": "official",
    "source_urls": [
     "https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package"
@@ -12744,7 +12941,7 @@
      "name": "Lite 套餐",
      "plan_type": "Coding Plan",
      "price": "首购优惠价仅9.9元/月",
-     "billing": "月",
+     "billing": "首购；每月",
      "quotas": [
       {
        "label": "请求数",
@@ -12758,14 +12955,14 @@
       "DeepSeek-V3.2",
       "Kimi-K2-Thinking"
      ],
-     "note": "官网以“最多约”表述请求额度；叠加推荐优惠券后，首月优惠低至2.2折，8.9元；首购一次性下单三个月可享5折。",
+     "note": "官网口径为每5小时“最多约”1200次请求。",
      "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
     },
     {
      "name": "Pro 套餐",
      "plan_type": "Coding Plan",
      "price": "首购优惠价49.9元/月",
-     "billing": "月",
+     "billing": "首购；每月",
      "quotas": [
       {
        "label": "请求数",
@@ -12773,8 +12970,8 @@
        "window": "每5小时"
       },
       {
-       "label": "相对用量",
-       "value": "Lite 套餐的5倍",
+       "label": "相对 Lite 套餐用量",
+       "value": "5倍",
        "window": null
       }
      ],
@@ -12784,19 +12981,19 @@
       "DeepSeek-V3.2",
       "Kimi-K2-Thinking"
      ],
-     "note": "官网以“最多约”表述请求额度，并称 Pro 套餐用量是 Lite 套餐的5倍；首购一次性下单三个月可享5折。",
+     "note": "官网口径为每5小时“最多约”6000次请求，并称 Pro 套餐用量是 Lite 套餐的5倍。",
      "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-02T11:09:36Z",
+   "last_fetch_ts": "2026-09-02T12:11:49Z",
    "source": "official",
    "source_urls": [
     "https://developer.volcengine.com/articles/7595502342175195187"
    ],
    "page_has_plans": true,
-   "plans_hash": "748882e3be6f80bfd07f65206b60b754511960c2e392b64b5148ebc44201b8ee",
-   "fetched_at": "2026-09-02T11:09:36Z",
+   "plans_hash": "b7251cbb5c1d3f3ede5d5597752ffe6727b5c86197348fceb148a3a75635c2c3",
+   "fetched_at": "2026-09-02T12:11:49Z",
    "status_note": null
   },
   "moonshot": {
@@ -12804,17 +13001,37 @@
     {
      "name": "Moderato",
      "plan_type": "聊天会员",
-     "price": "$19/mo (Monthly); $15/mo (Annual per month); $180/yr (Annual Total)",
-     "billing": "Monthly or annual",
+     "price": "Monthly: $19/mo; Annual (per month): $15/mo; Annual Total: $180/yr",
+     "billing": "monthly or annual subscription",
      "quotas": [
       {
        "label": "Agent credits",
-       "value": "Approximate 60 credits",
-       "window": "Monthly"
+       "value": "Approximate 60",
+       "window": "每月"
+      },
+      {
+       "label": "Agent concurrent tasks",
+       "value": "2 tasks",
+       "window": null
       },
       {
        "label": "Agent priority queue",
        "value": "4× speed",
+       "window": null
+      },
+      {
+       "label": "Scheduled tasks",
+       "value": "10 tasks",
+       "window": null
+      },
+      {
+       "label": "Widget tasks",
+       "value": "10 tasks",
+       "window": null
+      },
+      {
+       "label": "Agent Swarm concurrent subtasks",
+       "value": "2 subagents",
        "window": null
       },
       {
@@ -12823,24 +13040,51 @@
        "window": null
       }
      ],
-     "models": [],
-     "note": "Agent credit values are approximate, based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. The page does not state a usage window for Professional database calls.",
+     "models": [
+      "K2.6"
+     ],
+     "note": "Agent credits are approximate values based on typical task token consumption; monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numerical allowance.",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Allegretto",
      "plan_type": "聊天会员",
-     "price": "$39/mo (Monthly); $31/mo (Annual per month); $372/yr (Annual Total)",
-     "billing": "Monthly or annual",
+     "price": "Monthly: $39/mo; Annual (per month): $31/mo; Annual Total: $372/yr",
+     "billing": "monthly or annual subscription",
      "quotas": [
       {
        "label": "Agent credits",
-       "value": "Approximate 150 credits",
-       "window": "Monthly"
+       "value": "Approximate 150",
+       "window": "每月"
+      },
+      {
+       "label": "Agent concurrent tasks",
+       "value": "2 tasks",
+       "window": null
       },
       {
        "label": "Agent priority queue",
        "value": "4× speed",
+       "window": null
+      },
+      {
+       "label": "Scheduled tasks",
+       "value": "15 tasks",
+       "window": null
+      },
+      {
+       "label": "Widget tasks",
+       "value": "15 tasks",
+       "window": null
+      },
+      {
+       "label": "Agent Swarm concurrent subtasks",
+       "value": "4 subagents",
+       "window": null
+      },
+      {
+       "label": "Group chat with Claw",
+       "value": "10 group chats",
        "window": null
       },
       {
@@ -12849,20 +13093,27 @@
        "window": null
       }
      ],
-     "models": [],
-     "note": "Agent credit values are approximate, based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. The page does not state a usage window for Professional database calls.",
+     "models": [
+      "K2.6"
+     ],
+     "note": "Agent credits are approximate values based on typical task token consumption; monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numerical allowance.",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Allegro",
      "plan_type": "聊天会员",
-     "price": "$99/mo (Monthly); $79/mo (Annual per month); $948/yr (Annual Total)",
-     "billing": "Monthly or annual",
+     "price": "Monthly: $99/mo; Annual (per month): $79/mo; Annual Total: $948/yr",
+     "billing": "monthly or annual subscription",
      "quotas": [
       {
        "label": "Agent credits",
-       "value": "Approximate 360 credits",
-       "window": "Monthly"
+       "value": "Approximate 360",
+       "window": "每月"
+      },
+      {
+       "label": "Agent concurrent tasks",
+       "value": "4 tasks",
+       "window": null
       },
       {
        "label": "Agent priority queue",
@@ -12872,6 +13123,26 @@
       {
        "label": "K3 extra-long chat capacity",
        "value": "up to 1M tokens",
+       "window": null
+      },
+      {
+       "label": "Scheduled tasks",
+       "value": "20 tasks",
+       "window": null
+      },
+      {
+       "label": "Widget tasks",
+       "value": "20 tasks",
+       "window": null
+      },
+      {
+       "label": "Agent Swarm concurrent subtasks",
+       "value": "8 subagents",
+       "window": null
+      },
+      {
+       "label": "Group chat with Claw",
+       "value": "10 group chats",
        "window": null
       },
       {
@@ -12881,21 +13152,27 @@
       }
      ],
      "models": [
-      "K3"
+      "K3",
+      "K2.6"
      ],
-     "note": "Agent credit values are approximate, based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. The page does not state a usage window for Professional database calls. “up to 1M tokens” is the website's stated upper limit.",
+     "note": "K3 extra-long chat capacity is stated as up to 1M tokens. Agent credits are approximate values based on typical task token consumption; monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numerical allowance.",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Vivace",
      "plan_type": "聊天会员",
-     "price": "$199/mo (Monthly); $159/mo (Annual per month); $1,908/yr (Annual Total)",
-     "billing": "Monthly or annual",
+     "price": "Monthly: $199/mo; Annual (per month): $159/mo; Annual Total: $1,908/yr",
+     "billing": "monthly or annual subscription",
      "quotas": [
       {
        "label": "Agent credits",
-       "value": "Approximate 720 credits",
-       "window": "Monthly"
+       "value": "Approximate 720",
+       "window": "每月"
+      },
+      {
+       "label": "Agent concurrent tasks",
+       "value": "4 tasks",
+       "window": null
       },
       {
        "label": "Agent priority queue",
@@ -12908,27 +13185,48 @@
        "window": null
       },
       {
+       "label": "Scheduled tasks",
+       "value": "25 tasks",
+       "window": null
+      },
+      {
+       "label": "Widget tasks",
+       "value": "25 tasks",
+       "window": null
+      },
+      {
+       "label": "Agent Swarm concurrent subtasks",
+       "value": "8 subagents",
+       "window": null
+      },
+      {
+       "label": "Group chat with Claw",
+       "value": "10 group chats",
+       "window": null
+      },
+      {
        "label": "Professional database",
        "value": "24,000 calls",
        "window": null
       }
      ],
      "models": [
-      "K3"
+      "K3",
+      "K2.6"
      ],
-     "note": "Agent credit values are approximate, based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. The page does not state a usage window for Professional database calls. “up to 1M tokens” is the website's stated upper limit.",
+     "note": "K3 extra-long chat capacity is stated as up to 1M tokens. Agent credits are approximate values based on typical task token consumption; monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numerical allowance.",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-02T11:09:55Z",
+   "last_fetch_ts": "2026-09-02T12:12:01Z",
    "source": "official",
    "source_urls": [
     "https://www.kimi.com/help/membership/membership-pricing"
    ],
    "page_has_plans": true,
-   "plans_hash": "b1abd2ed54fa455aed43354ecd9a568de1f1d14f8d667c49cf5518155acdb76f",
-   "fetched_at": "2026-09-02T11:09:55Z",
+   "plans_hash": "be2d7a6cb1fd9fe1634d77b0ecf8b45a892a501e5dafda67232fe84f8b43cafa",
+   "fetched_at": "2026-09-02T12:12:01Z",
    "status_note": null
   },
   "minimax": {
@@ -13100,7 +13398,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-02T11:10:24Z",
+   "last_fetch_ts": "2026-09-02T12:12:36Z",
    "source": "official",
    "source_urls": [
     "https://platform.minimaxi.com/subscribe/token-plan"

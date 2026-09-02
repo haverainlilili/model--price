@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-09-02T16:13:37Z",
+ "generated_at": "2026-09-02T17:13:01Z",
  "fx": {
   "usd_cny": 6.7215,
   "source": "frankfurter.dev",
-  "fetched_at": "2026-09-02T16:13:37Z"
+  "fetched_at": "2026-09-02T17:13:01Z"
  },
  "providers": {
   "anthropic": {
@@ -22,9 +22,9 @@
       "model": "Claude Fable 5.1",
       "input_per_1m": 10.0,
       "output_per_1m": 50.0,
-      "cached_input_per_1m": 1.0,
+      "cached_input_per_1m": 0.25,
       "currency": "USD",
-      "note": null
+      "note": "Prompt cache reads cost 2.5% of the base input price; Batch API requests are 50% off."
      },
      {
       "model": "Claude Opus 5",
@@ -32,7 +32,7 @@
       "output_per_1m": 25.0,
       "cached_input_per_1m": 0.5,
       "currency": "USD",
-      "note": null
+      "note": "Prompt cache reads cost 10% of the base input price; Batch API requests are 50% off."
      },
      {
       "model": "Claude Sonnet 5",
@@ -40,7 +40,7 @@
       "output_per_1m": 10.0,
       "cached_input_per_1m": 0.2,
       "currency": "USD",
-      "note": null
+      "note": "Prompt cache reads cost 10% of the base input price; Batch API requests are 50% off."
      },
      {
       "model": "Claude Haiku 4.5",
@@ -48,15 +48,15 @@
       "output_per_1m": 5.0,
       "cached_input_per_1m": 0.1,
       "currency": "USD",
-      "note": null
+      "note": "Prompt cache reads cost 10% of the base input price; Batch API requests are 50% off."
      }
     ],
     "page_has_pricing": true,
-    "price_hash": "55c2a0529d0c75900bf7692161b4ac022458c4a3f0a3d29da74b94c3907e44dd",
-    "fetched_at": "2026-09-01T18:05:45Z",
-    "status_note": "页面无变化",
+    "price_hash": "454739b820bf763a656ab940b29fdddea280df4bcdcefa807bda53c97b0408b6",
+    "fetched_at": "2026-09-02T17:05:45Z",
+    "status_note": null,
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T16:05:45Z"
+    "last_fetch_ts": "2026-09-02T17:05:45Z"
    }
   },
   "openai": {
@@ -1733,7 +1733,7 @@
     "fetched_at": "2026-08-31T10:12:43Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T16:05:46Z"
+    "last_fetch_ts": "2026-09-02T17:05:55Z"
    }
   },
   "google": {
@@ -2730,7 +2730,7 @@
     "fetched_at": "2026-09-01T07:07:20Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T16:05:46Z"
+    "last_fetch_ts": "2026-09-02T17:05:55Z"
    }
   },
   "xai": {
@@ -2759,7 +2759,7 @@
     "fetched_at": "2026-08-31T11:39:03Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T16:05:47Z"
+    "last_fetch_ts": "2026-09-02T17:05:57Z"
    }
   },
   "mistral": {
@@ -2868,7 +2868,7 @@
     "fetched_at": "2026-08-31T11:40:03Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T16:06:10Z"
+    "last_fetch_ts": "2026-09-02T17:06:17Z"
    }
   },
   "deepseek": {
@@ -2937,7 +2937,7 @@
     "fetched_at": "2026-09-01T07:09:06Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T16:06:19Z"
+    "last_fetch_ts": "2026-09-02T17:06:29Z"
    }
   },
   "qwen": {
@@ -4374,7 +4374,7 @@
     "fetched_at": "2026-09-02T12:06:17Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T16:06:20Z"
+    "last_fetch_ts": "2026-09-02T17:06:30Z"
    }
   },
   "doubao": {
@@ -5554,8 +5554,8 @@
     "price_hash": "1f0c71ca21a38512dbaa672ad0db3aef6efa79b181556386be170f596d331758",
     "fetched_at": "2026-09-02T16:06:22Z",
     "status_note": null,
-    "last_error": null,
-    "last_fetch_ts": "2026-09-02T16:06:22Z"
+    "last_error": "渲染失败: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.volcengine.com/docs/82379/1099320\", waiting until \"domcontentloaded\"\n",
+    "last_fetch_ts": "2026-09-02T17:06:32Z"
    }
   },
   "zhipu": {
@@ -5872,7 +5872,7 @@
     "fetched_at": "2026-08-31T10:27:01Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T16:09:37Z"
+    "last_fetch_ts": "2026-09-02T17:08:45Z"
    }
   },
   "moonshot": {
@@ -5925,7 +5925,7 @@
     "fetched_at": "2026-08-31T10:21:05Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T16:10:03Z"
+    "last_fetch_ts": "2026-09-02T17:09:10Z"
    }
   },
   "minimax": {
@@ -6042,67 +6042,11 @@
     "fetched_at": "2026-08-31T10:21:15Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-02T16:10:10Z"
+    "last_fetch_ts": "2026-09-02T17:09:16Z"
    }
   }
  },
  "changes": [
-  {
-   "ts": "2026-09-01T09:06:17Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-seed-character",
-   "fields": [
-    {
-     "field": "note",
-     "old": "在线推理（常规）；输入长度 (32, 128] 千 token",
-     "new": "在线推理（常规）；输入长度 (32, 128] 千 tokens"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T09:06:17Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-seed-code",
-   "fields": [
-    {
-     "field": "note",
-     "old": "在线推理（常规）；输入长度 (128, 256] 千 token",
-     "new": "在线推理（常规）；输入长度 (128, 256] 千 tokens"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T09:06:17Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-seed-1.6",
-   "fields": [
-    {
-     "field": "note",
-     "old": "批量推理；输入长度 (128, 256] 千 token",
-     "new": "批量推理；输入长度 (128, 256] 千 tokens"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-01T09:06:17Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-seed-1.6-lite",
-   "fields": [
-    {
-     "field": "note",
-     "old": "批量推理；输入长度 (128, 256] 千 token",
-     "new": "批量推理；输入长度 (128, 256] 千 tokens"
-    }
-   ]
-  },
   {
    "ts": "2026-09-01T09:06:17Z",
    "provider": "doubao",
@@ -11889,6 +11833,67 @@
      "new": "embedding；图片输入"
     }
    ]
+  },
+  {
+   "ts": "2026-09-02T17:05:45Z",
+   "provider": "anthropic",
+   "provider_name": "Anthropic (Claude)",
+   "kind": "change",
+   "model": "Claude Fable 5.1",
+   "fields": [
+    {
+     "field": "cached_input_per_1m",
+     "old": 1.0,
+     "new": 0.25
+    },
+    {
+     "field": "note",
+     "old": null,
+     "new": "Prompt cache reads cost 2.5% of the base input price; Batch API requests are 50% off."
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T17:05:45Z",
+   "provider": "anthropic",
+   "provider_name": "Anthropic (Claude)",
+   "kind": "change",
+   "model": "Claude Opus 5",
+   "fields": [
+    {
+     "field": "note",
+     "old": null,
+     "new": "Prompt cache reads cost 10% of the base input price; Batch API requests are 50% off."
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T17:05:45Z",
+   "provider": "anthropic",
+   "provider_name": "Anthropic (Claude)",
+   "kind": "change",
+   "model": "Claude Sonnet 5",
+   "fields": [
+    {
+     "field": "note",
+     "old": null,
+     "new": "Prompt cache reads cost 10% of the base input price; Batch API requests are 50% off."
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-02T17:05:45Z",
+   "provider": "anthropic",
+   "provider_name": "Anthropic (Claude)",
+   "kind": "change",
+   "model": "Claude Haiku 4.5",
+   "fields": [
+    {
+     "field": "note",
+     "old": null,
+     "new": "Prompt cache reads cost 10% of the base input price; Batch API requests are 50% off."
+    }
+   ]
   }
  ],
  "news": {
@@ -12875,7 +12880,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-02T16:12:01Z",
+   "last_fetch_ts": "2026-09-02T17:11:45Z",
    "source": "official",
    "source_urls": [
     "https://support.claude.com/en/articles/11049762-choose-a-claude-plan",
@@ -13024,7 +13029,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-02T16:12:08Z",
+   "last_fetch_ts": "2026-09-02T17:11:53Z",
    "source": "official",
    "source_urls": [
     "https://mistral.ai/pricing"
@@ -13075,7 +13080,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-02T16:12:18Z",
+   "last_fetch_ts": "2026-09-02T17:12:03Z",
    "source": "official",
    "source_urls": [
     "https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package"
@@ -13103,9 +13108,10 @@
       "Doubao-Seed-Code",
       "GLM-4.7",
       "DeepSeek-V3.2",
-      "Kimi-K2-Thinking"
+      "Kimi-K2-Thinking",
+      "Kimi-K2"
      ],
-     "note": "官网使用“最多约”表述，额度为每5小时最多约1200次请求。叠加推荐优惠券时，官网称首月优惠低至2.2折、8.9元；首购一次性下单三个月可享5折。",
+     "note": "官网表述为每5小时“最多约”1200次请求；套餐支持在所列模型间切换，也可使用 Auto 模式。",
      "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
     },
     {
@@ -13120,8 +13126,8 @@
        "window": "每5小时"
       },
       {
-       "label": "相对用量",
-       "value": "Lite 套餐的5倍",
+       "label": "相对 Lite 套餐用量",
+       "value": "5倍",
        "window": null
       }
      ],
@@ -13129,29 +13135,30 @@
       "Doubao-Seed-Code",
       "GLM-4.7",
       "DeepSeek-V3.2",
-      "Kimi-K2-Thinking"
+      "Kimi-K2-Thinking",
+      "Kimi-K2"
      ],
-     "note": "官网使用“最多约”表述，额度为每5小时最多约6000次请求，并称Pro套餐用量是Lite套餐的5倍。首购一次性下单三个月可享5折。",
+     "note": "官网表述为每5小时“最多约”6000次请求，且 Pro 套餐用量是 Lite 套餐的5倍；套餐支持在所列模型间切换，也可使用 Auto 模式。",
      "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-02T16:12:19Z",
+   "last_fetch_ts": "2026-09-02T17:12:04Z",
    "source": "official",
    "source_urls": [
     "https://developer.volcengine.com/articles/7595502342175195187"
    ],
    "page_has_plans": true,
-   "plans_hash": "3accecc41c159202a173d1b0e7debcb2dc1d7d19c443daf5360eb434b377fa2b",
-   "fetched_at": "2026-09-02T16:12:19Z",
+   "plans_hash": "2a7f84983f7cd6cf04fbf6a9fdf6bc83054f46cb8b64ce3975c8eb7b0b544a19",
+   "fetched_at": "2026-09-02T17:12:04Z",
    "status_note": null
   },
   "moonshot": {
    "plans": [
     {
      "name": "Moderato",
-     "plan_type": "Kimi membership",
-     "price": "Monthly: $19/mo; Annual (per month): $15/mo; Annual Total: $180/yr",
+     "plan_type": "聊天会员",
+     "price": "$19/mo (Monthly); $15/mo, $180/yr (Annual)",
      "billing": "Monthly or annual subscription",
      "quotas": [
       {
@@ -13160,8 +13167,28 @@
        "window": "Monthly"
       },
       {
+       "label": "Agent concurrent tasks",
+       "value": "2 tasks",
+       "window": null
+      },
+      {
        "label": "Agent priority queue",
        "value": "4× speed",
+       "window": null
+      },
+      {
+       "label": "Scheduled tasks",
+       "value": "10 tasks",
+       "window": null
+      },
+      {
+       "label": "Widget tasks",
+       "value": "10 tasks",
+       "window": null
+      },
+      {
+       "label": "Agent Swarm concurrent subtasks",
+       "value": "2 subagents",
        "window": null
       },
       {
@@ -13171,13 +13198,13 @@
       }
      ],
      "models": [],
-     "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature, for reference only. All Kimi membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but this page does not state its numeric allowance.",
+     "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage; Kimi Code has a separate 5-hour / weekly rate limit, but this page does not state its numeric allowance.",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Allegretto",
-     "plan_type": "Kimi membership",
-     "price": "Monthly: $39/mo; Annual (per month): $31/mo; Annual Total: $372/yr",
+     "plan_type": "聊天会员",
+     "price": "$39/mo (Monthly); $31/mo, $372/yr (Annual)",
      "billing": "Monthly or annual subscription",
      "quotas": [
       {
@@ -13186,8 +13213,33 @@
        "window": "Monthly"
       },
       {
+       "label": "Agent concurrent tasks",
+       "value": "2 tasks",
+       "window": null
+      },
+      {
        "label": "Agent priority queue",
        "value": "4× speed",
+       "window": null
+      },
+      {
+       "label": "Scheduled tasks",
+       "value": "15 tasks",
+       "window": null
+      },
+      {
+       "label": "Widget tasks",
+       "value": "15 tasks",
+       "window": null
+      },
+      {
+       "label": "Agent Swarm concurrent subtasks",
+       "value": "4 subagents",
+       "window": null
+      },
+      {
+       "label": "Group chat with Claw",
+       "value": "10 group chats",
        "window": null
       },
       {
@@ -13197,19 +13249,24 @@
       }
      ],
      "models": [],
-     "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature, for reference only. All Kimi membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but this page does not state its numeric allowance.",
+     "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage; Kimi Code has a separate 5-hour / weekly rate limit, but this page does not state its numeric allowance.",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Allegro",
-     "plan_type": "Kimi membership",
-     "price": "Monthly: $99/mo; Annual (per month): $79/mo; Annual Total: $948/yr",
+     "plan_type": "聊天会员",
+     "price": "$99/mo (Monthly); $79/mo, $948/yr (Annual)",
      "billing": "Monthly or annual subscription",
      "quotas": [
       {
        "label": "Agent credits",
        "value": "Approximate 360",
        "window": "Monthly"
+      },
+      {
+       "label": "Agent concurrent tasks",
+       "value": "4 tasks",
+       "window": null
       },
       {
        "label": "Agent priority queue",
@@ -13219,6 +13276,26 @@
       {
        "label": "K3 extra-long chat capacity",
        "value": "up to 1M tokens",
+       "window": null
+      },
+      {
+       "label": "Scheduled tasks",
+       "value": "20 tasks",
+       "window": null
+      },
+      {
+       "label": "Widget tasks",
+       "value": "20 tasks",
+       "window": null
+      },
+      {
+       "label": "Agent Swarm concurrent subtasks",
+       "value": "8 subagents",
+       "window": null
+      },
+      {
+       "label": "Group chat with Claw",
+       "value": "10 group chats",
        "window": null
       },
       {
@@ -13230,19 +13307,24 @@
      "models": [
       "K3"
      ],
-     "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature, for reference only. The K3 capacity is stated as “up to 1M tokens.” All Kimi membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but this page does not state its numeric allowance.",
+     "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. The K3 capacity is stated as “up to 1M tokens.” All membership features share a single credit pool metered by token usage; Kimi Code has a separate 5-hour / weekly rate limit, but this page does not state its numeric allowance.",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Vivace",
-     "plan_type": "Kimi membership",
-     "price": "Monthly: $199/mo; Annual (per month): $159/mo; Annual Total: $1,908/yr",
+     "plan_type": "聊天会员",
+     "price": "$199/mo (Monthly); $159/mo, $1,908/yr (Annual)",
      "billing": "Monthly or annual subscription",
      "quotas": [
       {
        "label": "Agent credits",
        "value": "Approximate 720",
        "window": "Monthly"
+      },
+      {
+       "label": "Agent concurrent tasks",
+       "value": "4 tasks",
+       "window": null
       },
       {
        "label": "Agent priority queue",
@@ -13255,6 +13337,26 @@
        "window": null
       },
       {
+       "label": "Scheduled tasks",
+       "value": "25 tasks",
+       "window": null
+      },
+      {
+       "label": "Widget tasks",
+       "value": "25 tasks",
+       "window": null
+      },
+      {
+       "label": "Agent Swarm concurrent subtasks",
+       "value": "8 subagents",
+       "window": null
+      },
+      {
+       "label": "Group chat with Claw",
+       "value": "10 group chats",
+       "window": null
+      },
+      {
        "label": "Professional database",
        "value": "24,000 calls",
        "window": null
@@ -13263,19 +13365,19 @@
      "models": [
       "K3"
      ],
-     "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature, for reference only. The K3 capacity is stated as “up to 1M tokens.” All Kimi membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but this page does not state its numeric allowance.",
+     "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. The K3 capacity is stated as “up to 1M tokens.” All membership features share a single credit pool metered by token usage; Kimi Code has a separate 5-hour / weekly rate limit, but this page does not state its numeric allowance.",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-02T16:12:40Z",
+   "last_fetch_ts": "2026-09-02T17:12:18Z",
    "source": "official",
    "source_urls": [
     "https://www.kimi.com/help/membership/membership-pricing"
    ],
    "page_has_plans": true,
-   "plans_hash": "eff96b94f0d1e0f527602f0113381bd07a0ef80d93b7b1d0bb854a5b1b0ccd05",
-   "fetched_at": "2026-09-02T16:12:40Z",
+   "plans_hash": "279081e2a05b49714cba22187bd337e1b33830254c570da7d6ecd45f18e15232",
+   "fetched_at": "2026-09-02T17:12:18Z",
    "status_note": null
   },
   "minimax": {
@@ -13447,7 +13549,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-02T16:13:21Z",
+   "last_fetch_ts": "2026-09-02T17:12:47Z",
    "source": "official",
    "source_urls": [
     "https://platform.minimaxi.com/subscribe/token-plan"

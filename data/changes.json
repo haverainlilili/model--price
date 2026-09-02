@@ -4,62 +4,6 @@
   "provider": "doubao",
   "provider_name": "火山方舟 (豆包)",
   "kind": "change",
-  "model": "doubao-seed-character",
-  "fields": [
-   {
-    "field": "note",
-    "old": "在线推理（常规）；输入长度 (32, 128] 千 token",
-    "new": "在线推理（常规）；输入长度 (32, 128] 千 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-01T09:06:17Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-code",
-  "fields": [
-   {
-    "field": "note",
-    "old": "在线推理（常规）；输入长度 (128, 256] 千 token",
-    "new": "在线推理（常规）；输入长度 (128, 256] 千 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-01T09:06:17Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-1.6",
-  "fields": [
-   {
-    "field": "note",
-    "old": "批量推理；输入长度 (128, 256] 千 token",
-    "new": "批量推理；输入长度 (128, 256] 千 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-01T09:06:17Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-1.6-lite",
-  "fields": [
-   {
-    "field": "note",
-    "old": "批量推理；输入长度 (128, 256] 千 token",
-    "new": "批量推理；输入长度 (128, 256] 千 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-01T09:06:17Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
   "model": "doubao-seed-1.6-flash",
   "fields": [
    {
@@ -5839,6 +5783,67 @@
     "field": "note",
     "old": "embedding 多模态向量模型；文本输入价格；图片输入 1.80 元/百万 token",
     "new": "embedding；图片输入"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-02T17:05:45Z",
+  "provider": "anthropic",
+  "provider_name": "Anthropic (Claude)",
+  "kind": "change",
+  "model": "Claude Fable 5.1",
+  "fields": [
+   {
+    "field": "cached_input_per_1m",
+    "old": 1.0,
+    "new": 0.25
+   },
+   {
+    "field": "note",
+    "old": null,
+    "new": "Prompt cache reads cost 2.5% of the base input price; Batch API requests are 50% off."
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-02T17:05:45Z",
+  "provider": "anthropic",
+  "provider_name": "Anthropic (Claude)",
+  "kind": "change",
+  "model": "Claude Opus 5",
+  "fields": [
+   {
+    "field": "note",
+    "old": null,
+    "new": "Prompt cache reads cost 10% of the base input price; Batch API requests are 50% off."
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-02T17:05:45Z",
+  "provider": "anthropic",
+  "provider_name": "Anthropic (Claude)",
+  "kind": "change",
+  "model": "Claude Sonnet 5",
+  "fields": [
+   {
+    "field": "note",
+    "old": null,
+    "new": "Prompt cache reads cost 10% of the base input price; Batch API requests are 50% off."
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-02T17:05:45Z",
+  "provider": "anthropic",
+  "provider_name": "Anthropic (Claude)",
+  "kind": "change",
+  "model": "Claude Haiku 4.5",
+  "fields": [
+   {
+    "field": "note",
+    "old": null,
+    "new": "Prompt cache reads cost 10% of the base input price; Batch API requests are 50% off."
    }
   ]
  }

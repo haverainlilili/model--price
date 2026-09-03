@@ -1,990 +1,998 @@
 {
- "url": "https://ai.google.dev/gemini-api/docs/pricing",
+ "url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en",
  "source": "claude",
  "currency": "USD",
- "promotions": null,
+ "promotions": "Gemini 3.8 Flash is now available. Try it out.\nBatch API (50% cost reduction)",
  "models": [
   {
-   "model": "gemini-3.6-flash",
-   "input_per_1m": 1.5,
-   "output_per_1m": 7.5,
-   "cached_input_per_1m": 0.15,
-   "currency": "USD",
-   "note": "标准；输出价格包括思考 token"
-  },
-  {
-   "model": "gemini-3.6-flash",
+   "model": "Gemini 3.8 Flash",
    "input_per_1m": 0.75,
    "output_per_1m": 3.75,
    "cached_input_per_1m": 0.075,
    "currency": "USD",
-   "note": "批量；输出价格包括思考 token"
+   "note": "Standard；限时价格至2026-12-31，原价自2027-01-01起为输入$1.50/百万、输出$7.50/百万、缓存输入$0.15/百万"
   },
   {
-   "model": "gemini-3.6-flash",
+   "model": "Gemini 3.8 Flash",
+   "input_per_1m": 0.375,
+   "output_per_1m": 1.875,
+   "cached_input_per_1m": 0.0375,
+   "currency": "USD",
+   "note": "Batch；限时价格至2026-12-31，原价自2027-01-01起为输入$0.75/百万、输出$3.75/百万、缓存输入$0.075/百万"
+  },
+  {
+   "model": "Gemini 3.8 Flash",
+   "input_per_1m": 0.375,
+   "output_per_1m": 1.875,
+   "cached_input_per_1m": 0.0375,
+   "currency": "USD",
+   "note": "Flex；限时价格至2026-12-31，原价自2027-01-01起为输入$0.75/百万、输出$3.75/百万、缓存输入$0.075/百万"
+  },
+  {
+   "model": "Gemini 3.8 Flash",
+   "input_per_1m": 1.35,
+   "output_per_1m": 6.75,
+   "cached_input_per_1m": 0.135,
+   "currency": "USD",
+   "note": "Priority；限时价格至2026-12-31，原价自2027-01-01起为输入$2.70/百万、输出$13.50/百万、缓存输入$0.27/百万"
+  },
+  {
+   "model": "Gemini 3.7 Flash",
    "input_per_1m": 0.75,
    "output_per_1m": 3.75,
    "cached_input_per_1m": 0.075,
    "currency": "USD",
-   "note": "Flex；输出价格包括思考 token"
+   "note": "Standard；限时价格至2026-12-31，原价自2027-01-01起为输入$1.50/百万、输出$7.50/百万、缓存输入$0.15/百万"
   },
   {
-   "model": "gemini-3.6-flash",
-   "input_per_1m": 2.7,
-   "output_per_1m": 13.5,
-   "cached_input_per_1m": 0.27,
+   "model": "Gemini 3.7 Flash",
+   "input_per_1m": 0.375,
+   "output_per_1m": 1.875,
+   "cached_input_per_1m": 0.0375,
    "currency": "USD",
-   "note": "优先级；输出价格包括思考 token"
+   "note": "Batch；限时价格至2026-12-31，原价自2027-01-01起为输入$0.75/百万、输出$3.75/百万、缓存输入$0.075/百万"
   },
   {
-   "model": "gemini-3.5-flash",
+   "model": "Gemini 3.7 Flash",
+   "input_per_1m": 0.375,
+   "output_per_1m": 1.875,
+   "cached_input_per_1m": 0.0375,
+   "currency": "USD",
+   "note": "Flex；限时价格至2026-12-31，原价自2027-01-01起为输入$0.75/百万、输出$3.75/百万、缓存输入$0.075/百万"
+  },
+  {
+   "model": "Gemini 3.7 Flash",
+   "input_per_1m": 1.35,
+   "output_per_1m": 6.75,
+   "cached_input_per_1m": 0.135,
+   "currency": "USD",
+   "note": "Priority；限时价格至2026-12-31，原价自2027-01-01起为输入$2.70/百万、输出$13.50/百万、缓存输入$0.27/百万"
+  },
+  {
+   "model": "Gemini 3.6 Flash",
+   "input_per_1m": 0.75,
+   "output_per_1m": 3.75,
+   "cached_input_per_1m": 0.075,
+   "currency": "USD",
+   "note": "Standard；限时价格至2026-12-31，原价自2027-01-01起为输入$1.50/百万、输出$7.50/百万、缓存输入$0.15/百万"
+  },
+  {
+   "model": "Gemini 3.6 Flash",
+   "input_per_1m": 0.375,
+   "output_per_1m": 1.875,
+   "cached_input_per_1m": 0.0375,
+   "currency": "USD",
+   "note": "Batch；限时价格至2026-12-31，原价自2027-01-01起为输入$0.75/百万、输出$3.75/百万、缓存输入$0.075/百万"
+  },
+  {
+   "model": "Gemini 3.6 Flash",
+   "input_per_1m": 0.375,
+   "output_per_1m": 1.875,
+   "cached_input_per_1m": 0.0375,
+   "currency": "USD",
+   "note": "Flex；限时价格至2026-12-31，原价自2027-01-01起为输入$0.75/百万、输出$3.75/百万、缓存输入$0.075/百万"
+  },
+  {
+   "model": "Gemini 3.6 Flash",
+   "input_per_1m": 1.35,
+   "output_per_1m": 6.75,
+   "cached_input_per_1m": 0.135,
+   "currency": "USD",
+   "note": "Priority；限时价格至2026-12-31，原价自2027-01-01起为输入$2.70/百万、输出$13.50/百万、缓存输入$0.27/百万"
+  },
+  {
+   "model": "Gemini 3.5 Flash",
    "input_per_1m": 1.5,
    "output_per_1m": 9.0,
    "cached_input_per_1m": 0.15,
    "currency": "USD",
-   "note": "标准；输出价格包括思考 token"
+   "note": "Standard"
   },
   {
-   "model": "gemini-3.5-flash",
+   "model": "Gemini 3.5 Flash",
    "input_per_1m": 0.75,
    "output_per_1m": 4.5,
    "cached_input_per_1m": 0.075,
    "currency": "USD",
-   "note": "批量；输出价格包括思考 token"
+   "note": "Batch"
   },
   {
-   "model": "gemini-3.5-flash",
+   "model": "Gemini 3.5 Flash",
    "input_per_1m": 0.75,
    "output_per_1m": 4.5,
    "cached_input_per_1m": 0.08,
    "currency": "USD",
-   "note": "Flex；输出价格包括思考 token"
+   "note": "Flex"
   },
   {
-   "model": "gemini-3.5-flash",
+   "model": "Gemini 3.5 Flash",
    "input_per_1m": 2.7,
    "output_per_1m": 16.2,
    "cached_input_per_1m": 0.27,
    "currency": "USD",
-   "note": "优先级；输出价格包括思考 token"
+   "note": "Priority"
   },
   {
-   "model": "gemini-3.5-live-translate-preview",
+   "model": "Gemini 3.5 Live Translate",
    "input_per_1m": 3.5,
    "output_per_1m": 21.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；音频输入和音频输出；另列有按分钟价格"
+   "note": "Standard；实时语音翻译，输入和输出均为audio token"
   },
   {
-   "model": "gemini-3.5-flash-lite",
+   "model": "Gemini 3.5 Transcribe Live",
+   "input_per_1m": 3.5,
+   "output_per_1m": 21.0,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "Standard；实时语音转文字，输入为audio token，输出为text token"
+  },
+  {
+   "model": "Gemini 3.5 Transcribe",
+   "input_per_1m": 2.0,
+   "output_per_1m": 12.0,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "Standard；语音转文字，输入为audio token，输出为text token"
+  },
+  {
+   "model": "Gemini 3.5 Flash-Lite",
    "input_per_1m": 0.3,
    "output_per_1m": 2.5,
    "cached_input_per_1m": 0.03,
    "currency": "USD",
-   "note": "标准；输入适用于文本/图片/视频/音频；输出价格包括思考 token"
+   "note": "Standard；输入适用于text/image/video/audio"
   },
   {
-   "model": "gemini-3.5-flash-lite",
+   "model": "Gemini 3.5 Flash-Lite",
    "input_per_1m": 0.15,
    "output_per_1m": 1.25,
    "cached_input_per_1m": 0.02,
    "currency": "USD",
-   "note": "批量；输入适用于文本/图片/视频/音频；输出价格包括思考 token"
+   "note": "Batch；输入适用于text/image/video/audio"
   },
   {
-   "model": "gemini-3.5-flash-lite",
+   "model": "Gemini 3.5 Flash-Lite",
    "input_per_1m": 0.15,
    "output_per_1m": 1.25,
    "cached_input_per_1m": 0.02,
    "currency": "USD",
-   "note": "Flex；输入适用于文本/图片/视频/音频；输出价格包括思考 token"
+   "note": "Flex；输入适用于text/image/video/audio"
   },
   {
-   "model": "gemini-3.5-flash-lite",
+   "model": "Gemini 3.5 Flash-Lite",
    "input_per_1m": 0.54,
    "output_per_1m": 4.5,
    "cached_input_per_1m": 0.05,
    "currency": "USD",
-   "note": "优先级；输入适用于文本/图片/视频/音频；输出价格包括思考 token"
+   "note": "Priority；输入适用于text/image/video/audio"
   },
   {
-   "model": "gemini-3.1-flash-lite",
+   "model": "Gemini 3.1 Flash-Lite",
    "input_per_1m": 0.25,
    "output_per_1m": 1.5,
    "cached_input_per_1m": 0.025,
    "currency": "USD",
-   "note": "标准；文本/图片/视频输入；输出价格包括思考 token"
+   "note": "Standard；text/image/video输入"
   },
   {
-   "model": "gemini-3.1-flash-lite",
+   "model": "Gemini 3.1 Flash-Lite",
    "input_per_1m": 0.5,
    "output_per_1m": 1.5,
    "cached_input_per_1m": 0.05,
    "currency": "USD",
-   "note": "标准；音频输入；输出价格包括思考 token"
+   "note": "Standard；audio输入"
   },
   {
-   "model": "gemini-3.1-flash-lite",
+   "model": "Gemini 3.1 Flash-Lite",
    "input_per_1m": 0.125,
    "output_per_1m": 0.75,
    "cached_input_per_1m": 0.0125,
    "currency": "USD",
-   "note": "批量；文本/图片/视频输入；输出价格包括思考 token"
+   "note": "Batch；text/image/video输入"
   },
   {
-   "model": "gemini-3.1-flash-lite",
+   "model": "Gemini 3.1 Flash-Lite",
    "input_per_1m": 0.25,
    "output_per_1m": 0.75,
    "cached_input_per_1m": 0.025,
    "currency": "USD",
-   "note": "批量；音频输入；输出价格包括思考 token"
+   "note": "Batch；audio输入"
   },
   {
-   "model": "gemini-3.1-flash-lite",
+   "model": "Gemini 3.1 Flash-Lite",
    "input_per_1m": 0.125,
    "output_per_1m": 0.75,
    "cached_input_per_1m": 0.0125,
    "currency": "USD",
-   "note": "Flex；文本/图片/视频输入；输出价格包括思考 token"
+   "note": "Flex；text/image/video输入"
   },
   {
-   "model": "gemini-3.1-flash-lite",
+   "model": "Gemini 3.1 Flash-Lite",
    "input_per_1m": 0.25,
    "output_per_1m": 0.75,
    "cached_input_per_1m": 0.025,
    "currency": "USD",
-   "note": "Flex；音频输入；输出价格包括思考 token"
+   "note": "Flex；audio输入"
   },
   {
-   "model": "gemini-3.1-flash-lite",
+   "model": "Gemini 3.1 Flash-Lite",
    "input_per_1m": 0.45,
    "output_per_1m": 2.7,
    "cached_input_per_1m": 0.045,
    "currency": "USD",
-   "note": "优先级；文本/图片/视频输入；输出价格包括思考 token"
+   "note": "Priority；text/image/video输入"
   },
   {
-   "model": "gemini-3.1-flash-lite",
+   "model": "Gemini 3.1 Flash-Lite",
    "input_per_1m": 0.9,
    "output_per_1m": 2.7,
    "cached_input_per_1m": 0.09,
    "currency": "USD",
-   "note": "优先级；音频输入；输出价格包括思考 token"
+   "note": "Priority；audio输入"
   },
   {
-   "model": "gemini-omni-flash-preview",
+   "model": "Gemini Omni Flash",
    "input_per_1m": 1.5,
    "output_per_1m": 9.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本/图片/视频/音频输入，文本输出；输出包括思考 token"
+   "note": "Standard；text/image/video/audio输入，text输出"
   },
   {
-   "model": "gemini-omni-flash-preview",
+   "model": "Gemini Omni Flash",
    "input_per_1m": 1.5,
    "output_per_1m": 17.5,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本/图片/视频/音频输入，视频输出；输出包括思考 token"
+   "note": "Standard；text/image/video/audio输入，video输出"
   },
   {
-   "model": "gemini-3.1-pro-preview 和 gemini-3.1-pro-preview-customtools",
+   "model": "Gemini Omni Flash Preview",
+   "input_per_1m": 1.5,
+   "output_per_1m": 9.0,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "Standard；text/image/video/audio输入，text输出"
+  },
+  {
+   "model": "Gemini Omni Flash Preview",
+   "input_per_1m": 1.5,
+   "output_per_1m": 17.5,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "Standard；text/image/video/audio输入，video输出"
+  },
+  {
+   "model": "Gemini 3.1 Pro Preview",
    "input_per_1m": 2.0,
    "output_per_1m": 12.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "标准；提示 <= 20 万个 token；输出包括思考 token"
+   "note": "Standard；prompts <= 200k tokens；同表适用于gemini-3.1-pro-preview-customtools"
   },
   {
-   "model": "gemini-3.1-pro-preview 和 gemini-3.1-pro-preview-customtools",
+   "model": "Gemini 3.1 Pro Preview",
    "input_per_1m": 4.0,
    "output_per_1m": 18.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "标准；提示 > 20 万个 token；输出包括思考 token"
+   "note": "Standard；prompts > 200k tokens；同表适用于gemini-3.1-pro-preview-customtools"
   },
   {
-   "model": "gemini-3.1-pro-preview 和 gemini-3.1-pro-preview-customtools",
+   "model": "Gemini 3.1 Pro Preview",
    "input_per_1m": 1.0,
    "output_per_1m": 6.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "批量；提示 <= 20 万个 token；缓存价格与标准层级相同；输出包括思考 token"
+   "note": "Batch；prompts <= 200k tokens"
   },
   {
-   "model": "gemini-3.1-pro-preview 和 gemini-3.1-pro-preview-customtools",
+   "model": "Gemini 3.1 Pro Preview",
    "input_per_1m": 2.0,
    "output_per_1m": 9.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "批量；提示 > 20 万个 token；缓存价格与标准层级相同；输出包括思考 token"
+   "note": "Batch；prompts > 200k tokens"
   },
   {
-   "model": "gemini-3.1-pro-preview 和 gemini-3.1-pro-preview-customtools",
+   "model": "Gemini 3.1 Pro Preview",
    "input_per_1m": 1.0,
    "output_per_1m": 6.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "Flex；提示 <= 20 万个 token；缓存价格与标准层级相同；输出包括思考 token"
+   "note": "Flex；prompts <= 200k tokens"
   },
   {
-   "model": "gemini-3.1-pro-preview 和 gemini-3.1-pro-preview-customtools",
+   "model": "Gemini 3.1 Pro Preview",
    "input_per_1m": 2.0,
    "output_per_1m": 9.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Flex；提示 > 20 万个 token；缓存价格与标准层级相同；输出包括思考 token"
+   "note": "Flex；prompts > 200k tokens"
   },
   {
-   "model": "gemini-3.1-pro-preview 和 gemini-3.1-pro-preview-customtools",
+   "model": "Gemini 3.1 Pro Preview",
    "input_per_1m": 3.6,
    "output_per_1m": 21.6,
    "cached_input_per_1m": 0.36,
    "currency": "USD",
-   "note": "优先级；提示 <= 20 万个 token；输出包括思考 token"
+   "note": "Priority；prompts <= 200k tokens"
   },
   {
-   "model": "gemini-3.1-pro-preview 和 gemini-3.1-pro-preview-customtools",
+   "model": "Gemini 3.1 Pro Preview",
    "input_per_1m": 7.2,
    "output_per_1m": 32.4,
    "cached_input_per_1m": 0.72,
    "currency": "USD",
-   "note": "优先级；提示 > 20 万个 token；输出包括思考 token"
+   "note": "Priority；prompts > 200k tokens"
   },
   {
-   "model": "gemini-3.1-flash-live-preview",
+   "model": "Gemini 3.1 Flash Live Preview",
    "input_per_1m": 0.75,
    "output_per_1m": 4.5,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "文本输入/文本输出；输出包括思考 token"
+   "note": "text输入、text输出"
   },
   {
-   "model": "gemini-3.1-flash-live-preview",
+   "model": "Gemini 3.1 Flash Live Preview",
    "input_per_1m": 3.0,
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "音频输入/音频输出；另列有按分钟价格；输出包括思考 token"
+   "note": "audio输入、audio输出"
   },
   {
-   "model": "gemini-3.1-flash-live-preview",
+   "model": "Gemini 3.1 Flash Live Preview",
    "input_per_1m": 1.0,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "图片/视频输入；另列有按分钟价格"
+   "note": "image/video输入"
   },
   {
-   "model": "gemini-3.1-flash-image",
+   "model": "Gemini 3.1 Flash Image (Nano Banana 2) 🍌",
    "input_per_1m": 0.5,
    "output_per_1m": 3.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本/图片输入，文本和思考输出；图片生成模型"
+   "note": "Standard；text/image输入，text and thinking输出"
   },
   {
-   "model": "gemini-3.1-flash-image",
+   "model": "Gemini 3.1 Flash Image (Nano Banana 2) 🍌",
    "input_per_1m": 0.5,
    "output_per_1m": 60.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本/图片输入，图片输出；图片生成模型"
+   "note": "Standard；text/image输入，image输出"
   },
   {
-   "model": "gemini-3.1-flash-image",
+   "model": "Gemini 3.1 Flash Image (Nano Banana 2) 🍌",
    "input_per_1m": 0.25,
    "output_per_1m": 1.5,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；文本/图片输入，文本和思考输出；图片生成模型"
+   "note": "Batch；text/image输入，text and thinking输出"
   },
   {
-   "model": "gemini-3.1-flash-image",
+   "model": "Gemini 3.1 Flash Image (Nano Banana 2) 🍌",
    "input_per_1m": 0.25,
    "output_per_1m": 30.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；文本/图片输入，图片输出；图片生成模型"
+   "note": "Batch；text/image输入，image输出"
   },
   {
-   "model": "gemini-3.1-flash-lite-image",
+   "model": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite) 🍌",
    "input_per_1m": 0.25,
    "output_per_1m": 1.5,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本/图片/视频输入，文本和思考输出；图片生成模型"
+   "note": "Standard；text/image/video输入，text and thinking输出"
   },
   {
-   "model": "gemini-3.1-flash-lite-image",
+   "model": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite) 🍌",
    "input_per_1m": 0.25,
    "output_per_1m": 30.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本/图片/视频输入，图片输出；图片生成模型"
+   "note": "Standard；text/image/video输入，image输出"
   },
   {
-   "model": "gemini-3.1-flash-lite-image",
+   "model": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite) 🍌",
    "input_per_1m": 0.125,
    "output_per_1m": 0.75,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；文本/图片/视频输入，文本和思考输出；图片生成模型"
+   "note": "Batch；text/image/video输入，text and thinking输出"
   },
   {
-   "model": "gemini-3.1-flash-lite-image",
+   "model": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite) 🍌",
    "input_per_1m": 0.125,
    "output_per_1m": 15.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；文本/图片/视频输入，图片输出；图片生成模型"
+   "note": "Batch；text/image/video输入，image输出"
   },
   {
-   "model": "gemini-3.1-flash-tts-preview",
+   "model": "Gemini 3.1 Flash TTS Preview",
    "input_per_1m": 1.0,
    "output_per_1m": 20.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本输入、音频输出；TTS"
+   "note": "Standard；TTS，text输入、audio输出"
   },
   {
-   "model": "gemini-3.1-flash-tts-preview",
+   "model": "Gemini 3.1 Flash TTS Preview",
    "input_per_1m": 0.5,
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；文本输入、音频输出；TTS"
+   "note": "Batch；TTS，text输入、audio输出"
   },
   {
-   "model": "gemini-3-flash-preview",
+   "model": "Gemini 3 Flash Preview",
    "input_per_1m": 0.5,
    "output_per_1m": 3.0,
    "cached_input_per_1m": 0.05,
    "currency": "USD",
-   "note": "标准；文本/图片/视频输入；输出包括思考 token"
+   "note": "Standard；text/image/video输入"
   },
   {
-   "model": "gemini-3-flash-preview",
+   "model": "Gemini 3 Flash Preview",
    "input_per_1m": 1.0,
    "output_per_1m": 3.0,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "标准；音频输入；输出包括思考 token"
+   "note": "Standard；audio输入"
   },
   {
-   "model": "gemini-3-flash-preview",
+   "model": "Gemini 3 Flash Preview",
    "input_per_1m": 0.25,
    "output_per_1m": 1.5,
    "cached_input_per_1m": 0.05,
    "currency": "USD",
-   "note": "批量；文本/图片/视频输入；缓存价格与标准层级相同；输出包括思考 token"
+   "note": "Batch；text/image/video输入"
   },
   {
-   "model": "gemini-3-flash-preview",
+   "model": "Gemini 3 Flash Preview",
    "input_per_1m": 0.5,
    "output_per_1m": 1.5,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "批量；音频输入；缓存价格与标准层级相同；输出包括思考 token"
+   "note": "Batch；audio输入"
   },
   {
-   "model": "gemini-3-flash-preview",
+   "model": "Gemini 3 Flash Preview",
    "input_per_1m": 0.25,
    "output_per_1m": 1.5,
    "cached_input_per_1m": 0.05,
    "currency": "USD",
-   "note": "Flex；文本/图片/视频输入；缓存价格与标准层级相同；输出包括思考 token"
+   "note": "Flex；text/image/video输入"
   },
   {
-   "model": "gemini-3-flash-preview",
+   "model": "Gemini 3 Flash Preview",
    "input_per_1m": 0.5,
    "output_per_1m": 1.5,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "Flex；音频输入；缓存价格与标准层级相同；输出包括思考 token"
+   "note": "Flex；audio输入"
   },
   {
-   "model": "gemini-3-flash-preview",
+   "model": "Gemini 3 Flash Preview",
    "input_per_1m": 0.9,
    "output_per_1m": 5.4,
    "cached_input_per_1m": 0.09,
    "currency": "USD",
-   "note": "优先级；文本/图片/视频输入；输出包括思考 token"
+   "note": "Priority；text/image/video输入"
   },
   {
-   "model": "gemini-3-flash-preview",
+   "model": "Gemini 3 Flash Preview",
    "input_per_1m": 1.8,
    "output_per_1m": 5.4,
    "cached_input_per_1m": 0.18,
    "currency": "USD",
-   "note": "优先级；音频输入；输出包括思考 token"
+   "note": "Priority；audio输入"
   },
   {
-   "model": "gemini-3-pro-image",
+   "model": "Gemini 3 Pro Image (Nano Banana Pro) 🍌",
    "input_per_1m": 2.0,
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本/图片输入，文本和思考输出；图片生成模型"
+   "note": "Standard；text/image输入，text and thinking输出"
   },
   {
-   "model": "gemini-3-pro-image",
+   "model": "Gemini 3 Pro Image (Nano Banana Pro) 🍌",
    "input_per_1m": 2.0,
    "output_per_1m": 120.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本/图片输入，图片输出；图片生成模型"
+   "note": "Standard；text/image输入，image输出"
   },
   {
-   "model": "gemini-3-pro-image",
+   "model": "Gemini 3 Pro Image (Nano Banana Pro) 🍌",
    "input_per_1m": 1.0,
    "output_per_1m": 6.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；文本输入，文本和思考输出；图片生成模型；图片输入另按张计费"
+   "note": "Batch；text输入，text and thinking输出；image输入和输出仅列按图片价格，未填入token价格"
   },
   {
-   "model": "gemini-3-pro-image",
+   "model": "Gemini 3 Pro Image (Nano Banana Pro) 🍌",
    "input_per_1m": 1.0,
    "output_per_1m": 6.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Flex；文本输入，文本和思考输出；图片生成模型；图片输入另按张计费"
+   "note": "Flex；text输入，text and thinking输出；image输入和输出仅列按图片价格，未填入token价格"
   },
   {
-   "model": "gemini-3-pro-image",
+   "model": "Gemini 3 Pro Image (Nano Banana Pro) 🍌",
    "input_per_1m": 3.6,
    "output_per_1m": 21.6,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "优先级；文本/图片输入，文本和思考输出；图片生成模型"
+   "note": "Priority；text/image输入，text and thinking输出"
   },
   {
-   "model": "gemini-3-pro-image",
+   "model": "Gemini 3 Pro Image (Nano Banana Pro) 🍌",
    "input_per_1m": 3.6,
    "output_per_1m": 216.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "优先级；文本/图片输入，图片输出；图片生成模型"
+   "note": "Priority；text/image输入，image输出"
   },
   {
-   "model": "gemini-2.5-pro",
+   "model": "Gemini 2.5 Pro",
    "input_per_1m": 1.25,
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.125,
    "currency": "USD",
-   "note": "标准；提示 <= 20 万个 token；输出包括思考 token"
+   "note": "Standard；prompts <= 200k tokens"
   },
   {
-   "model": "gemini-2.5-pro",
+   "model": "Gemini 2.5 Pro",
    "input_per_1m": 2.5,
    "output_per_1m": 15.0,
    "cached_input_per_1m": 0.25,
    "currency": "USD",
-   "note": "标准；提示 > 20 万个 token；输出包括思考 token"
+   "note": "Standard；prompts > 200k tokens"
   },
   {
-   "model": "gemini-2.5-pro",
+   "model": "Gemini 2.5 Pro",
    "input_per_1m": 0.625,
    "output_per_1m": 5.0,
    "cached_input_per_1m": 0.125,
    "currency": "USD",
-   "note": "批量；提示 <= 20 万个 token；输出包括思考 token"
+   "note": "Batch；prompts <= 200k tokens"
   },
   {
-   "model": "gemini-2.5-pro",
+   "model": "Gemini 2.5 Pro",
    "input_per_1m": 1.25,
    "output_per_1m": 7.5,
    "cached_input_per_1m": 0.25,
    "currency": "USD",
-   "note": "批量；提示 > 20 万个 token；输出包括思考 token"
+   "note": "Batch；prompts > 200k tokens"
   },
   {
-   "model": "gemini-2.5-pro",
+   "model": "Gemini 2.5 Pro",
    "input_per_1m": 0.625,
    "output_per_1m": 5.0,
    "cached_input_per_1m": 0.125,
    "currency": "USD",
-   "note": "Flex；提示 <= 20 万个 token；输出包括思考 token"
+   "note": "Flex；prompts <= 200k tokens"
   },
   {
-   "model": "gemini-2.5-pro",
+   "model": "Gemini 2.5 Pro",
    "input_per_1m": 1.25,
    "output_per_1m": 7.5,
    "cached_input_per_1m": 0.25,
    "currency": "USD",
-   "note": "Flex；提示 > 20 万个 token；输出包括思考 token"
+   "note": "Flex；prompts > 200k tokens"
   },
   {
-   "model": "gemini-2.5-pro",
+   "model": "Gemini 2.5 Pro",
    "input_per_1m": 2.25,
    "output_per_1m": 18.0,
    "cached_input_per_1m": 0.225,
    "currency": "USD",
-   "note": "优先级；提示 <= 20 万个 token；输出包括思考 token"
+   "note": "Priority；prompts <= 200k tokens"
   },
   {
-   "model": "gemini-2.5-pro",
+   "model": "Gemini 2.5 Pro",
    "input_per_1m": 4.5,
    "output_per_1m": 27.0,
    "cached_input_per_1m": 0.45,
    "currency": "USD",
-   "note": "优先级；提示 > 20 万个 token；输出包括思考 token"
+   "note": "Priority；prompts > 200k tokens"
   },
   {
-   "model": "gemini-2.5-flash",
+   "model": "Gemini 2.5 Flash",
    "input_per_1m": 0.3,
    "output_per_1m": 2.5,
    "cached_input_per_1m": 0.03,
    "currency": "USD",
-   "note": "标准；文本/图片/视频输入；输出包括思考 token"
+   "note": "Standard；text/image/video输入"
   },
   {
-   "model": "gemini-2.5-flash",
+   "model": "Gemini 2.5 Flash",
    "input_per_1m": 1.0,
    "output_per_1m": 2.5,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "标准；音频输入；输出包括思考 token"
+   "note": "Standard；audio输入"
   },
   {
-   "model": "gemini-2.5-flash",
+   "model": "Gemini 2.5 Flash",
    "input_per_1m": 0.15,
    "output_per_1m": 1.25,
    "cached_input_per_1m": 0.03,
    "currency": "USD",
-   "note": "批量；文本/图片/视频输入；输出包括思考 token"
+   "note": "Batch；text/image/video输入"
   },
   {
-   "model": "gemini-2.5-flash",
+   "model": "Gemini 2.5 Flash",
    "input_per_1m": 0.5,
    "output_per_1m": 1.25,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "批量；音频输入；输出包括思考 token"
+   "note": "Batch；audio输入"
   },
   {
-   "model": "gemini-2.5-flash",
+   "model": "Gemini 2.5 Flash",
    "input_per_1m": 0.15,
    "output_per_1m": 1.25,
    "cached_input_per_1m": 0.03,
    "currency": "USD",
-   "note": "Flex；文本/图片/视频输入；输出包括思考 token"
+   "note": "Flex；text/image/video输入"
   },
   {
-   "model": "gemini-2.5-flash",
+   "model": "Gemini 2.5 Flash",
    "input_per_1m": 0.5,
    "output_per_1m": 1.25,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "Flex；音频输入；输出包括思考 token"
+   "note": "Flex；audio输入"
   },
   {
-   "model": "gemini-2.5-flash",
+   "model": "Gemini 2.5 Flash",
    "input_per_1m": 0.54,
    "output_per_1m": 4.5,
    "cached_input_per_1m": 0.054,
    "currency": "USD",
-   "note": "优先级；文本/图片/视频输入；输出包括思考 token"
+   "note": "Priority；text/image/video输入"
   },
   {
-   "model": "gemini-2.5-flash",
+   "model": "Gemini 2.5 Flash",
    "input_per_1m": 1.8,
    "output_per_1m": 4.5,
    "cached_input_per_1m": 0.18,
    "currency": "USD",
-   "note": "优先级；音频输入；输出包括思考 token"
+   "note": "Priority；audio输入"
   },
   {
-   "model": "gemini-2.5-flash-lite",
+   "model": "Gemini 2.5 Flash-Lite",
    "input_per_1m": 0.1,
    "output_per_1m": 0.4,
    "cached_input_per_1m": 0.01,
    "currency": "USD",
-   "note": "标准；文本/图片/视频输入；输出包括思考 token"
+   "note": "Standard；text/image/video输入"
   },
   {
-   "model": "gemini-2.5-flash-lite",
+   "model": "Gemini 2.5 Flash-Lite",
    "input_per_1m": 0.3,
    "output_per_1m": 0.4,
    "cached_input_per_1m": 0.03,
    "currency": "USD",
-   "note": "标准；音频输入；输出包括思考 token"
+   "note": "Standard；audio输入"
   },
   {
-   "model": "gemini-2.5-flash-lite",
+   "model": "Gemini 2.5 Flash-Lite",
    "input_per_1m": 0.05,
    "output_per_1m": 0.2,
    "cached_input_per_1m": 0.01,
    "currency": "USD",
-   "note": "批量；文本/图片/视频输入；输出包括思考 token"
+   "note": "Batch；text/image/video输入"
   },
   {
-   "model": "gemini-2.5-flash-lite",
+   "model": "Gemini 2.5 Flash-Lite",
    "input_per_1m": 0.15,
    "output_per_1m": 0.2,
    "cached_input_per_1m": 0.03,
    "currency": "USD",
-   "note": "批量；音频输入；输出包括思考 token"
+   "note": "Batch；audio输入"
   },
   {
-   "model": "gemini-2.5-flash-lite",
+   "model": "Gemini 2.5 Flash-Lite",
    "input_per_1m": 0.05,
    "output_per_1m": 0.2,
    "cached_input_per_1m": 0.01,
    "currency": "USD",
-   "note": "Flex；文本/图片/视频输入；输出包括思考 token"
+   "note": "Flex；text/image/video输入"
   },
   {
-   "model": "gemini-2.5-flash-lite",
+   "model": "Gemini 2.5 Flash-Lite",
    "input_per_1m": 0.15,
    "output_per_1m": 0.2,
    "cached_input_per_1m": 0.03,
    "currency": "USD",
-   "note": "Flex；音频输入；输出包括思考 token"
+   "note": "Flex；audio输入"
   },
   {
-   "model": "gemini-2.5-flash-lite",
+   "model": "Gemini 2.5 Flash-Lite",
    "input_per_1m": 0.18,
    "output_per_1m": 0.72,
    "cached_input_per_1m": 0.018,
    "currency": "USD",
-   "note": "优先级；文本/图片/视频输入；输出包括思考 token"
+   "note": "Priority；text/image/video输入"
   },
   {
-   "model": "gemini-2.5-flash-lite",
+   "model": "Gemini 2.5 Flash-Lite",
    "input_per_1m": 0.54,
    "output_per_1m": 0.72,
    "cached_input_per_1m": 0.054,
    "currency": "USD",
-   "note": "优先级；音频输入；输出包括思考 token"
+   "note": "Priority；audio输入"
   },
   {
-   "model": "gemini-2.5-flash-lite-preview-09-2025",
-   "input_per_1m": 0.1,
-   "output_per_1m": 0.4,
-   "cached_input_per_1m": 0.01,
-   "currency": "USD",
-   "note": "标准；文本/图片/视频输入；输出包括思考 token"
-  },
-  {
-   "model": "gemini-2.5-flash-lite-preview-09-2025",
-   "input_per_1m": 0.3,
-   "output_per_1m": 0.4,
-   "cached_input_per_1m": 0.03,
-   "currency": "USD",
-   "note": "标准；音频输入；输出包括思考 token"
-  },
-  {
-   "model": "gemini-2.5-flash-lite-preview-09-2025",
-   "input_per_1m": 0.05,
-   "output_per_1m": 0.2,
-   "cached_input_per_1m": 0.01,
-   "currency": "USD",
-   "note": "批量；文本/图片/视频输入；输出包括思考 token"
-  },
-  {
-   "model": "gemini-2.5-flash-lite-preview-09-2025",
-   "input_per_1m": 0.15,
-   "output_per_1m": 0.2,
-   "cached_input_per_1m": 0.03,
-   "currency": "USD",
-   "note": "批量；音频输入；输出包括思考 token"
-  },
-  {
-   "model": "gemini-2.5-flash-native-audio-preview-12-2025",
+   "model": "Gemini 2.5 Flash Native Audio (Live API)",
    "input_per_1m": 0.5,
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Live API；文本输入/文本输出；输出包括思考 token"
+   "note": "text输入、text输出"
   },
   {
-   "model": "gemini-2.5-flash-native-audio-preview-12-2025",
+   "model": "Gemini 2.5 Flash Native Audio (Live API)",
    "input_per_1m": 3.0,
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Live API；音频输入/音频输出；输出包括思考 token"
+   "note": "audio输入、audio输出；video输入价格同audio输入"
   },
   {
-   "model": "gemini-2.5-flash-native-audio-preview-12-2025",
-   "input_per_1m": 3.0,
-   "output_per_1m": null,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Live API；视频输入"
-  },
-  {
-   "model": "gemini-2.5-flash-image",
+   "model": "Gemini 2.5 Flash Image (Nano Banana) 🍌",
    "input_per_1m": 0.3,
    "output_per_1m": 30.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本/图片输入，图片输出；图片生成模型；页面脚注明确图片输出为 30 美元/100 万 token"
+   "note": "Standard；text/image输入，image输出；页面脚注明确image output为$30/百万tokens"
   },
   {
-   "model": "gemini-2.5-flash-image",
+   "model": "Gemini 2.5 Flash Image (Nano Banana) 🍌",
    "input_per_1m": 0.15,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；文本/图片输入；图片输出仅列按张价格，未填写 token 单价"
+   "note": "Batch；text/image输入；输出仅列$0.0195 per image，未填写token价格"
   },
   {
-   "model": "gemini-2.5-flash-image",
+   "model": "Gemini 2.5 Flash Image (Nano Banana) 🍌",
    "input_per_1m": 0.15,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Flex；文本/图片输入；图片输出仅列按张价格，未填写 token 单价"
+   "note": "Flex；text/image输入；输出仅列$0.0195 per image，未填写token价格"
   },
   {
-   "model": "gemini-2.5-flash-image",
+   "model": "Gemini 2.5 Flash Image (Nano Banana) 🍌",
    "input_per_1m": 0.54,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "优先级；文本/图片输入；图片输出仅列按张价格，未填写 token 单价"
+   "note": "Priority；text/image输入；输出仅列$0.0702 per image，未填写token价格"
   },
   {
-   "model": "gemini-2.5-flash-preview-tts",
+   "model": "Gemini 2.5 Flash Preview TTS",
    "input_per_1m": 0.5,
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本输入、音频输出；TTS"
+   "note": "Standard；TTS，text输入、audio输出"
   },
   {
-   "model": "gemini-2.5-flash-preview-tts",
+   "model": "Gemini 2.5 Flash Preview TTS",
    "input_per_1m": 0.25,
    "output_per_1m": 5.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；文本输入、音频输出；TTS"
+   "note": "Batch；TTS，text输入、audio输出"
   },
   {
-   "model": "gemini-2.5-pro-preview-tts",
+   "model": "Gemini 2.5 Pro Preview TTS",
    "input_per_1m": 1.0,
    "output_per_1m": 20.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本输入、音频输出；TTS"
+   "note": "Standard；TTS，text输入、audio输出"
   },
   {
-   "model": "gemini-2.5-pro-preview-tts",
+   "model": "Gemini 2.5 Pro Preview TTS",
    "input_per_1m": 0.5,
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；文本输入、音频输出；TTS"
+   "note": "Batch；TTS，text输入、audio输出"
   },
   {
-   "model": "gemini-2.0-flash",
-   "input_per_1m": 0.1,
-   "output_per_1m": 0.4,
-   "cached_input_per_1m": 0.025,
-   "currency": "USD",
-   "note": "标准；文本/图片/视频输入；已弃用并于 2026 年 6 月 1 日关停"
-  },
-  {
-   "model": "gemini-2.0-flash",
-   "input_per_1m": 0.7,
-   "output_per_1m": 0.4,
-   "cached_input_per_1m": 0.175,
-   "currency": "USD",
-   "note": "标准；音频输入；已弃用并于 2026 年 6 月 1 日关停"
-  },
-  {
-   "model": "gemini-2.0-flash",
-   "input_per_1m": 0.05,
-   "output_per_1m": 0.2,
-   "cached_input_per_1m": 0.025,
-   "currency": "USD",
-   "note": "批量；文本/图片/视频输入；已弃用并于 2026 年 6 月 1 日关停"
-  },
-  {
-   "model": "gemini-2.0-flash",
-   "input_per_1m": 0.35,
-   "output_per_1m": 0.2,
-   "cached_input_per_1m": 0.175,
-   "currency": "USD",
-   "note": "批量；音频输入；已弃用并于 2026 年 6 月 1 日关停"
-  },
-  {
-   "model": "gemini-2.0-flash-lite",
-   "input_per_1m": 0.075,
-   "output_per_1m": 0.3,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "标准；已弃用并于 2026 年 6 月 1 日关停"
-  },
-  {
-   "model": "gemini-2.0-flash-lite",
-   "input_per_1m": 0.0375,
-   "output_per_1m": 0.15,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "批量；已弃用并于 2026 年 6 月 1 日关停"
-  },
-  {
-   "model": "gemini-embedding-2",
+   "model": "Gemini Embedding 2",
    "input_per_1m": 0.2,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本输入；embedding"
+   "note": "Standard；embedding；text输入"
   },
   {
-   "model": "gemini-embedding-2",
+   "model": "Gemini Embedding 2",
    "input_per_1m": 0.45,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；图片输入；embedding"
+   "note": "Standard；embedding；image输入"
   },
   {
-   "model": "gemini-embedding-2",
+   "model": "Gemini Embedding 2",
    "input_per_1m": 6.5,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；音频输入；embedding"
+   "note": "Standard；embedding；audio输入"
   },
   {
-   "model": "gemini-embedding-2",
+   "model": "Gemini Embedding 2",
    "input_per_1m": 12.0,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；视频输入；embedding"
+   "note": "Standard；embedding；video输入"
   },
   {
-   "model": "gemini-embedding-2",
+   "model": "Gemini Embedding 2",
    "input_per_1m": 0.1,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；文本输入；embedding"
+   "note": "Batch；embedding；text输入"
   },
   {
-   "model": "gemini-embedding-2",
+   "model": "Gemini Embedding 2",
    "input_per_1m": 0.225,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；图片输入；embedding"
+   "note": "Batch；embedding；image输入"
   },
   {
-   "model": "gemini-embedding-2",
+   "model": "Gemini Embedding 2",
    "input_per_1m": 3.25,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；音频输入；embedding"
+   "note": "Batch；embedding；audio输入"
   },
   {
-   "model": "gemini-embedding-2",
+   "model": "Gemini Embedding 2",
    "input_per_1m": 6.0,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；视频输入；embedding"
+   "note": "Batch；embedding；video输入"
   },
   {
-   "model": "gemini-embedding-001",
+   "model": "Gemini Embedding",
    "input_per_1m": 0.15,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；纯文本 embedding"
+   "note": "Standard；embedding；text-only"
   },
   {
-   "model": "gemini-embedding-001",
+   "model": "Gemini Embedding",
    "input_per_1m": 0.075,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；纯文本 embedding"
+   "note": "Batch；embedding；text-only"
   },
   {
-   "model": "gemini-robotics-er-2-preview",
+   "model": "Gemini Robotics ER 2 Preview",
    "input_per_1m": 2.0,
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "标准；文本/图片/视频/音频输入；机器人视觉语言模型；输出包括思考 token"
+   "note": "Standard；robotics vision-language model；text/image/video/audio输入"
   },
   {
-   "model": "gemini-robotics-er-2-preview",
+   "model": "Gemini Robotics ER 2 Preview",
    "input_per_1m": 1.0,
    "output_per_1m": 5.0,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "批量；文本/图片/视频/音频输入；机器人视觉语言模型；输出包括思考 token"
+   "note": "Batch；robotics vision-language model；text/image/video/audio输入"
   },
   {
-   "model": "gemini-robotics-er-2-streaming-preview",
+   "model": "Gemini Robotics ER 2 Streaming Preview",
    "input_per_1m": 2.0,
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本/图片/视频/音频输入；机器人流式视觉语言模型"
+   "note": "Standard；robotics streaming vision-language model；text/image/video/audio输入"
   },
   {
-   "model": "gemini-robotics-er-1.6-preview",
+   "model": "Gemini Robotics ER 1.6 Preview",
    "input_per_1m": 1.0,
    "output_per_1m": 5.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；文本/图片/视频输入；机器人思考模型；输出包括思考 token"
+   "note": "Standard；robotics；text/image/video输入"
   },
   {
-   "model": "gemini-robotics-er-1.6-preview",
+   "model": "Gemini Robotics ER 1.6 Preview",
    "input_per_1m": 2.0,
    "output_per_1m": 5.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "标准；音频输入；机器人思考模型；输出包括思考 token"
+   "note": "Standard；robotics；audio输入"
   },
   {
-   "model": "gemini-robotics-er-1.6-preview",
+   "model": "Gemini Robotics ER 1.6 Preview",
    "input_per_1m": 0.5,
    "output_per_1m": 2.5,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；文本/图片/视频输入；机器人思考模型；输出包括思考 token"
+   "note": "Batch；robotics；text/image/video输入"
   },
   {
-   "model": "gemini-robotics-er-1.6-preview",
+   "model": "Gemini Robotics ER 1.6 Preview",
    "input_per_1m": 1.0,
    "output_per_1m": 2.5,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "批量；音频输入；机器人思考模型；输出包括思考 token"
+   "note": "Batch；robotics；audio输入"
   },
   {
-   "model": "gemini-2.5-computer-use-preview-10-2025",
+   "model": "Gemini 2.5 Computer Use Preview",
    "input_per_1m": 1.25,
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "提示 <= 20 万个 token；Computer Use 模型"
+   "note": "prompts <= 200k tokens；Computer Use模型"
   },
   {
-   "model": "gemini-2.5-computer-use-preview-10-2025",
+   "model": "Gemini 2.5 Computer Use Preview",
    "input_per_1m": 2.5,
    "output_per_1m": 15.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "提示 > 20 万个 token；Computer Use 模型"
+   "note": "prompts > 200k tokens；Computer Use模型"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "743ba97161a5c9dd3519c1af237874084eb22978f646e64906f7b4cf27e7b82b",
- "fetched_at": "2026-09-01T07:07:20Z",
- "status_note": "页面无变化",
+ "price_hash": "a607acb8e56b5cce2cc707cecc1cce7d4e90c2671ad380dc2a88deef1d0c8bbd",
+ "fetched_at": "2026-09-03T02:01:00Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-03T01:05:46Z"
+ "last_fetch_ts": "2026-09-03T02:01:00Z"
 }

@@ -1,90 +1,90 @@
 {
  "entries": [
   {
+   "date": "Sep 3",
+   "title": "Released GPT-6 Astra",
+   "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+   "summary": "发布面向复杂端到端任务的旗舰模型GPT-6 Astra。",
+   "first_seen": "2026-09-03T20:11:07Z"
+  },
+  {
+   "date": "Sep 3",
+   "title": "Added new controls for long-running work with GPT-6 Astra in the Responses API",
+   "url": "https://developers.openai.com/api/docs/guides/async-tool-calling",
+   "summary": "Responses API新增异步工具调用、中途引导及推理强度调整。",
+   "first_seen": "2026-09-03T20:11:07Z"
+  },
+  {
    "date": "Sep 2",
    "title": "Updated API errors so applications can distinguish traffic that increases too quickly from temporary model overload.",
    "url": "https://developers.openai.com/api/docs/guides/error-codes",
-   "summary": "API新增错误码，区分流量增长过快与临时模型过载。",
+   "summary": "更新API错误码，以区分流量增长过快与模型临时过载。",
    "first_seen": "2026-09-02T18:09:13Z"
   },
   {
    "date": "Aug 29",
    "title": "Mutual TLS (mTLS) and X.509 workload identity federation are now generally available for the OpenAI API.",
    "url": "https://developers.openai.com/api/docs/guides/mutual-tls",
-   "summary": "OpenAI API正式支持mTLS及X.509工作负载身份联合。",
+   "summary": "OpenAI API正式支持mTLS和X.509工作负载身份联合。",
    "first_seen": "2026-09-02T18:09:13Z"
   },
   {
    "date": "Aug 26",
    "title": "Announced the deprecation of `whisper-1`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, and `gpt-4o-transcribe-diarize`.",
    "url": "https://developers.openai.com/api/docs/deprecations",
-   "summary": "多款转录模型宣布弃用，Assistants API同日关闭。",
+   "summary": "多款转录模型将于2027年2月26日停用，Assistants API亦已关闭。",
    "first_seen": "2026-08-31T10:21:49Z"
   },
   {
    "date": "Aug 21",
    "title": "API customers can now select regional processing for an individual request by using a prefixed domain with an API key from a project having Global geography.",
    "url": "https://developers.openai.com/api/docs/guides/your-data#select-a-processing-region-per-request",
-   "summary": "全球地域项目现可为单次API请求选择区域处理。",
+   "summary": "API客户现可按单个请求选择区域处理。",
    "first_seen": "2026-09-02T18:09:13Z"
   },
   {
    "date": "Aug 21",
-   "title": "GPT-5.6 Sol now costs $4 per million input tokens and $20 per million output tokens, representing 20% lower input pricing and 33% lower output pricing.",
+   "title": "GPT-5.6 Sol now costs $4 per million input tokens and $20 per million output tokens",
    "url": "https://developers.openai.com/api/docs/pricing",
-   "summary": "GPT-5.6 Sol输入与输出价格分别下调20%和33%。",
-   "first_seen": "2026-09-02T18:09:13Z"
+   "summary": "GPT-5.6 Sol输入价降20%，输出价降33%。",
+   "first_seen": "2026-09-03T20:11:07Z"
   },
   {
    "date": "Aug 20",
    "title": "Released the Prompt Caching dashboard on the OpenAI API platform.",
    "url": "https://platform.openai.com/usage?usage_section=prompt-caching",
-   "summary": "API平台推出提示缓存仪表板，可跟踪命中率和令牌构成。",
+   "summary": "上线提示缓存仪表板，可分析命中率及缓存令牌使用情况。",
    "first_seen": "2026-09-02T18:09:13Z"
   },
   {
    "date": "Aug 20",
    "title": "Transparent backgrounds are now available in preview for `gpt-image-2` and `gpt-image-2-2026-04-21` in the Images API and the Responses API image generation tool.",
    "url": "https://developers.openai.com/api/docs/guides/image-generation#customize-image-output",
-   "summary": "GPT Image 2在Images与Responses API中预览透明背景。",
+   "summary": "GPT Image 2在图像及Responses API中预览支持透明背景。",
    "first_seen": "2026-09-02T18:09:13Z"
   },
   {
    "date": "Aug 13",
-   "title": "Announced Ultrafast mode, a new API service tier for GPT-5.6 Sol that runs up to 14x faster than Standard processing.",
+   "title": "Announced Ultrafast mode",
    "url": "https://openai.com/form/ultrafast/",
-   "summary": "GPT-5.6 Sol推出最高快14倍的Ultrafast限量预览。",
-   "first_seen": "2026-09-02T18:09:13Z"
+   "summary": "公布GPT-5.6 Sol超高速模式，速度最高为标准处理的14倍。",
+   "first_seen": "2026-09-03T20:11:07Z"
   },
   {
    "date": "Aug 7",
    "title": "Daybreak now offers two access tiers for approved defenders: Daybreak Blue and Daybreak Red.",
    "url": "https://developers.openai.com/api/docs/models/gpt-daybreak-blue-latest",
-   "summary": "Daybreak为获批防御者推出Blue与Red两个访问层级。",
+   "summary": "Daybreak面向获批防御人员推出Blue和Red两级访问方案。",
    "first_seen": "2026-08-31T10:21:49Z"
   },
   {
    "date": "Aug 6",
-   "title": "Updated the **chat-latest** snapshot, which points to the latest model available in ChatGPT for Plus and Pro users.",
+   "title": "Updated the chat-latest snapshot",
    "url": "https://developers.openai.com/api/docs/models/chat-latest",
-   "summary": "chat-latest快照更新，指向Plus和Pro用户可用的最新模型。",
-   "first_seen": "2026-09-02T18:09:13Z"
-  },
-  {
-   "date": "Aug 5",
-   "title": "Fast mode now supports long-context requests for GPT-5.6 Sol, GPT-5.6 Terra, and GPT-5.6 Luna.",
-   "url": "https://developers.openai.com/api/docs/guides/fast-mode",
-   "summary": "GPT-5.6三款模型的Fast模式现支持超过272K令牌的长上下文。",
-   "first_seen": "2026-08-31T10:21:49Z"
-  },
-  {
-   "date": "Aug 4",
-   "title": "Customers can now filter and group data by API key in the Usage and Costs dashboards.",
-   "url": "https://platform.openai.com/settings/organization/usage",
-   "summary": "用量与成本仪表板及相关API新增按API密钥筛选和分组。",
-   "first_seen": "2026-09-02T18:09:13Z"
+   "summary": "更新chat-latest快照，指向ChatGPT Plus和Pro最新模型。",
+   "first_seen": "2026-09-03T20:11:07Z"
   }
  ],
- "news_hash": "21b297d6e9f888de130b0adec440b016677f18589db16d48946cf6a4fce2677b",
- "fetched_at": "2026-09-02T18:09:13Z"
+ "news_hash": "b991520c2b9cbb93776cad59ee6ac4124f5d3b4b5f254a32fb51db90c2d32d1b",
+ "fetched_at": "2026-09-03T20:11:07Z"
 }

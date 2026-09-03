@@ -13,14 +13,14 @@
     }
    ],
    "models": [],
-   "note": "消息、网页搜索和编程会话仅标注为 Limited，未给出明确数值，因此未抽取。",
+   "note": "Limited messages, web searches, and coding sessions are mentioned without explicit numeric quotas and are not extracted.",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Pro",
    "plan_type": "聊天会员",
-   "price": "$14.99",
-   "billing": "/mo, Excluding taxes",
+   "price": "$14.99 /mo",
+   "billing": "Excluding taxes",
    "quotas": [
     {
      "label": "API credits",
@@ -43,66 +43,36 @@
      "window": null
     },
     {
-     "label": "Task scheduling",
-     "value": "Unlimited",
-     "window": null
-    },
-    {
      "label": "Flash answers",
      "value": "150 / day",
      "window": "/ day"
     }
    ],
    "models": [],
-   "note": "“Up to”及相对倍数均为官网口径；Flash answers 的额度来自官网 FAQ 示例。",
+   "note": "“Up to” and relative-to-Free multipliers are retained as stated. The FAQ gives Flash answers as an example allowance.",
    "source_url": "https://mistral.ai/pricing"
   },
   {
-   "name": "Pro Education plan",
-   "plan_type": "教育优惠聊天会员",
+   "name": "Education plan",
+   "plan_type": "聊天会员",
    "price": "$5.99 / month",
-   "billing": "/ month",
+   "billing": "Verified students",
    "quotas": [
     {
      "label": "API credits",
      "value": "$15 /mo in API credits",
      "window": "/mo"
-    },
-    {
-     "label": "Messages",
-     "value": "Up to 6x free",
-     "window": null
-    },
-    {
-     "label": "Web searches",
-     "value": "Up to 5x free",
-     "window": null
-    },
-    {
-     "label": "Image generation",
-     "value": "Up to 40x free",
-     "window": null
-    },
-    {
-     "label": "Task scheduling",
-     "value": "Unlimited",
-     "window": null
-    },
-    {
-     "label": "Flash answers",
-     "value": "150 / day",
-     "window": "/ day"
     }
    ],
    "models": [],
-   "note": "官网 FAQ 明示经验证的学生可按 $5.99 / month 获得 Mistral Pro；“Up to”及相对倍数均保留官网口径。",
+   "note": "The FAQ states that verified students can get Mistral Pro for $5.99 / month, normally $14.99.",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Team",
    "plan_type": "团队会员",
-   "price": "$24.99",
-   "billing": "/user/mo, Excluding taxes",
+   "price": "$24.99 /user/mo",
+   "billing": "Excluding taxes",
    "quotas": [
     {
      "label": "Messages",
@@ -131,18 +101,18 @@
     }
    ],
    "models": [],
-   "note": "“Up to”及相对倍数均为官网口径；Flash answers 的额度来自官网 FAQ 示例。存储空间未按所给额度类型抽取。",
+   "note": "“Up to” and relative-to-Free multipliers are retained as stated. The FAQ gives Flash answers as an example allowance.",
    "source_url": "https://mistral.ai/pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-03T07:09:44Z",
+ "last_fetch_ts": "2026-09-03T08:08:37Z",
  "source": "official",
  "source_urls": [
   "https://mistral.ai/pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "d91e510189a533c2981272f376d53d9957513409c0e7c183ac448797758bffc7",
- "fetched_at": "2026-09-01T12:08:28Z",
- "status_note": "页面无变化"
+ "plans_hash": "4aff080ee6fbd5ef3eee73cd7a169b7c565bd752b2819fe982a5fac5c2d492a9",
+ "fetched_at": "2026-09-03T08:08:37Z",
+ "status_note": null
 }

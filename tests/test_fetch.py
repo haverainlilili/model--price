@@ -2,13 +2,15 @@ import os
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
+from types import SimpleNamespace
+from unittest.mock import ANY, patch
 
 from scraper.fetch import (
     FetchError,
     _chrome_launch_options,
     _find_chrome_executable,
     _render_once,
+    fetch,
     fetch_rendered,
     html_to_text,
 )
@@ -57,6 +59,19 @@ class FetchRenderedTests(unittest.TestCase):
         )
         browser.close.assert_called_once()
 
+    @patch("playwright.sync_api.sync_playwright")
+    def test_uses_requested_browser_language(self, sync_playwright):
+        playwright = sync_playwright.return_value.__enter__.return_value
+        browser = playwright.chromium.launch.return_value
+        page = browser.new_context.return_value.new_page.return_value
+        page.inner_text.return_value = "English pricing"
+
+        _render_once(
+            "https://example.com/pricing", wait_ms=0, language="en-US")
+
+        browser.new_context.assert_called_once_with(
+            user_agent=ANY, locale="en-US")
+
     @patch("scraper.fetch.html_to_text")
     @patch("playwright.sync_api.sync_playwright")
     def test_keeps_plain_visible_text_for_pricing_hashes(
@@ -92,6 +107,24 @@ class FetchRenderedTests(unittest.TestCase):
             fetch_rendered("https://example.com", wait_ms=0, retries=2)
         self.assertEqual(render_once.call_count, 3)
         self.assertEqual(sleep.call_count, 2)
+
+
+class FetchLanguageTests(unittest.TestCase):
+    @patch("scraper.fetch.requests.get")
+    def test_plain_fetch_prefers_requested_english_language(self, get):
+        get.return_value = SimpleNamespace(
+            status_code=200,
+            encoding="utf-8",
+            apparent_encoding="utf-8",
+            text="English pricing",
+            headers={"content-type": "text/plain"},
+        )
+
+        text = fetch("https://example.com/pricing", language="en-US")
+
+        self.assertEqual(text, "English pricing")
+        headers = get.call_args.kwargs["headers"]
+        self.assertEqual(headers["Accept-Language"], "en-US,en;q=0.9")
 
 
 class HtmlToTextTests(unittest.TestCase):

@@ -23,6 +23,17 @@ TIMEOUT = 30
 MAX_TEXT_CHARS = 250_000
 
 
+def _accept_language(language: str) -> str:
+    """把浏览器 locale 转成 HTTP Accept-Language，保留中英文兜底。"""
+    normalized = (language or "zh-CN").strip()
+    if normalized.lower().startswith("en"):
+        return f"{normalized},en;q=0.9"
+    if normalized.lower().startswith("zh"):
+        return f"{normalized},zh;q=0.9,en;q=0.8"
+    primary = normalized.split("-", 1)[0]
+    return f"{normalized},{primary};q=0.9,en;q=0.8"
+
+
 class FetchError(RuntimeError):
     """抓取最终失败(网络/HTTP 状态码), 调用方保留旧数据即可。"""
 
@@ -131,7 +142,8 @@ def _chrome_launch_options() -> dict:
     return options
 
 
-def _render_once(url: str, wait_ms: int, preserve_links: bool = False) -> str:
+def _render_once(url: str, wait_ms: int, preserve_links: bool = False,
+                 language: str = "zh-CN") -> str:
     """执行一次浏览器渲染；公告可选择保留链接，价格页保持纯文本。"""
     try:
         from playwright.sync_api import sync_playwright
@@ -141,7 +153,10 @@ def _render_once(url: str, wait_ms: int, preserve_links: bool = False) -> str:
         with sync_playwright() as p:
             browser = p.chromium.launch(**_chrome_launch_options())
             try:
-                ctx = browser.new_context(user_agent=DEFAULT_UA, locale="zh-CN")
+                ctx = browser.new_context(
+                    user_agent=DEFAULT_UA,
+                    locale=language,
+                )
                 page = ctx.new_page()
                 page.goto(url, wait_until="domcontentloaded", timeout=45000)
                 try:
@@ -167,7 +182,8 @@ def _render_once(url: str, wait_ms: int, preserve_links: bool = False) -> str:
 
 
 def fetch_rendered(url: str, wait_ms: int = 6000, retries: int = 2,
-                   preserve_links: bool = False) -> str:
+                   preserve_links: bool = False,
+                   language: str = "zh-CN") -> str:
     """用无头浏览器渲染页面，瞬时导航失败会有限重试。
 
     preserve_links=True 时把正文链接保留为 Markdown，供公告抽取使用；
@@ -178,7 +194,12 @@ def fetch_rendered(url: str, wait_ms: int = 6000, retries: int = 2,
     last_err: FetchError = FetchError("unknown")
     for attempt in range(retries + 1):
         try:
-            return _render_once(url, wait_ms, preserve_links=preserve_links)
+            return _render_once(
+                url,
+                wait_ms,
+                preserve_links=preserve_links,
+                language=language,
+            )
         except FetchError as exc:
             last_err = exc
         if attempt < retries:
@@ -186,12 +207,12 @@ def fetch_rendered(url: str, wait_ms: int = 6000, retries: int = 2,
     raise last_err
 
 
-def fetch(url: str, retries: int = 2) -> str:
+def fetch(url: str, retries: int = 2, language: str = "zh-CN") -> str:
     """抓取 url 并返回纯文本。失败重试, 最终失败抛 FetchError。"""
     headers = {
         "User-Agent": DEFAULT_UA,
         "Accept": "text/html,application/xhtml+xml,text/markdown,text/plain,*/*",
-        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+        "Accept-Language": _accept_language(language),
     }
     last_err: Exception = FetchError("unknown")
     for attempt in range(retries + 1):

@@ -16,13 +16,16 @@ class FetchNewsTextTests(unittest.TestCase):
 
         self.assertEqual(text, "rendered news")
         _fetch_rendered.assert_called_once_with(
-            "https://example.com/news", preserve_links=True)
+            "https://example.com/news", preserve_links=True,
+            language="zh-CN")
 
     @patch.object(run, "fetch", return_value="plain news")
     def test_uses_plain_fetch_by_default(self, _fetch):
         text = run._fetch_news_text({"news_url": "https://example.com/news"})
 
         self.assertEqual(text, "plain news")
+        _fetch.assert_called_once_with(
+            "https://example.com/news", language="zh-CN")
 
 
 class FetchPlanTextTests(unittest.TestCase):
@@ -36,7 +39,8 @@ class FetchPlanTextTests(unittest.TestCase):
 
         self.assertEqual(url, "https://example.com/plans")
         self.assertIn("rendered plan", text)
-        _fetch_rendered.assert_called_once_with("https://example.com/plans")
+        _fetch_rendered.assert_called_once_with(
+            "https://example.com/plans", language="zh-CN")
 
     @patch.object(run, "fetch", side_effect=["price page", "quota page"])
     def test_combines_multiple_official_plan_sources(self, _fetch):
@@ -50,6 +54,37 @@ class FetchPlanTextTests(unittest.TestCase):
         self.assertEqual(url, "https://example.com/price")
         self.assertIn("price page", text)
         self.assertIn("quota page", text)
+        self.assertEqual(
+            _fetch.call_args_list,
+            [
+                unittest.mock.call(
+                    "https://example.com/price", language="zh-CN"),
+                unittest.mock.call(
+                    "https://example.com/quota", language="zh-CN"),
+            ],
+        )
+
+
+class FetchLanguageSelectionTests(unittest.TestCase):
+    @patch.object(run, "fetch", return_value="English pricing")
+    def test_international_provider_uses_english(self, _fetch):
+        run._fetch_pricing_text({
+            "pricing_url": "https://example.com/pricing",
+            "region": "国际",
+        })
+
+        _fetch.assert_called_once_with(
+            "https://example.com/pricing", language="en-US")
+
+    @patch.object(run, "fetch", return_value="中文价格")
+    def test_domestic_provider_uses_chinese(self, _fetch):
+        run._fetch_pricing_text({
+            "pricing_url": "https://example.cn/pricing",
+            "region": "国内",
+        })
+
+        _fetch.assert_called_once_with(
+            "https://example.cn/pricing", language="zh-CN")
 
 
 class OfficialPlanUrlTests(unittest.TestCase):
@@ -107,6 +142,26 @@ class ProviderConfigurationTests(unittest.TestCase):
             with self.subTest(provider=provider["id"]):
                 self.assertTrue(provider.get("news_url"))
                 self.assertTrue(provider.get("official_news_url"))
+
+    def test_international_providers_explicitly_use_english(self):
+        international = [
+            provider for provider in run.load_providers()
+            if provider.get("region") == "国际"
+        ]
+
+        self.assertTrue(international)
+        for provider in international:
+            with self.subTest(provider=provider["id"]):
+                self.assertEqual(provider.get("language"), "en-US")
+
+    def test_google_sources_pin_the_english_locale(self):
+        google = next(
+            provider for provider in run.load_providers()
+            if provider["id"] == "google"
+        )
+
+        self.assertIn("hl=en", google["pricing_url"])
+        self.assertIn("hl=en", google["news_url"])
 
 
 class ProcessProviderTests(unittest.TestCase):

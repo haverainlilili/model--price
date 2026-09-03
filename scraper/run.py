@@ -33,24 +33,36 @@ def _sha(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def _fetch_language(cfg: dict) -> str:
+    """国际厂商固定抓英文官网，国内厂商默认抓中文官网。"""
+    configured = str(cfg.get("language") or "").strip()
+    if configured:
+        return configured
+    return "en-US" if cfg.get("region") == "国际" else "zh-CN"
+
+
 def _fetch_pricing_text(cfg: dict) -> tuple[str, str]:
     """抓取价格页文本。支持单 url / pricing_urls 多页拼接 / JS 渲染。"""
     urls = cfg.get("pricing_urls") or (
         [cfg["pricing_url"]] if cfg.get("pricing_url") else [])
     if not urls:
         raise FetchError("providers.yaml 未配置 pricing_url")
+    language = _fetch_language(cfg)
     texts = []
     for u in urls:
-        body = fetch_rendered(u) if cfg.get("render") else fetch(u)
+        body = (fetch_rendered(u, language=language)
+                if cfg.get("render") else fetch(u, language=language))
         texts.append(f"===== 页面: {u} =====\n{body}")
     return urls[0], "\n\n".join(texts)
 
 
 def _fetch_news_text(cfg: dict) -> str:
     """抓取公告页；对声明为动态页面的来源启用浏览器渲染。"""
+    language = _fetch_language(cfg)
     if cfg.get("news_render"):
-        return fetch_rendered(cfg["news_url"], preserve_links=True)
-    return fetch(cfg["news_url"])
+        return fetch_rendered(
+            cfg["news_url"], preserve_links=True, language=language)
+    return fetch(cfg["news_url"], language=language)
 
 
 def _fetch_plan_text(cfg: dict) -> tuple[str, str]:
@@ -59,9 +71,11 @@ def _fetch_plan_text(cfg: dict) -> tuple[str, str]:
         [cfg["plan_url"]] if cfg.get("plan_url") else [])
     if not urls:
         raise FetchError("providers.yaml 未配置 plan_url")
+    language = _fetch_language(cfg)
     texts = []
     for url in urls:
-        body = fetch_rendered(url) if cfg.get("plan_render") else fetch(url)
+        body = (fetch_rendered(url, language=language)
+                if cfg.get("plan_render") else fetch(url, language=language))
         texts.append(f"===== 官网套餐页: {url} =====\n{body}")
     return urls[0], "\n\n".join(texts)
 

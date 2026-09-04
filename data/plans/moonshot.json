@@ -2,39 +2,14 @@
  "plans": [
   {
    "name": "Moderato",
-   "plan_type": "Membership",
-   "price": "$19/mo; $15/mo; $180/yr",
-   "billing": "Monthly; Annual (per month); Annual Total",
+   "plan_type": "聊天会员",
+   "price": "$19/mo",
+   "billing": "Monthly",
    "quotas": [
     {
      "label": "Agent credits",
-     "value": "60",
-     "window": "Monthly"
-    },
-    {
-     "label": "Agent concurrent tasks",
-     "value": "2 tasks",
-     "window": null
-    },
-    {
-     "label": "Agent priority queue",
-     "value": "4× speed",
-     "window": null
-    },
-    {
-     "label": "Scheduled tasks",
-     "value": "10 tasks",
-     "window": null
-    },
-    {
-     "label": "Widget tasks",
-     "value": "10 tasks",
-     "window": null
-    },
-    {
-     "label": "Agent Swarm concurrent subtasks",
-     "value": "2 subagents",
-     "window": null
+     "value": "Approximately 60 credits",
+     "window": "每月"
     },
     {
      "label": "Professional database",
@@ -43,44 +18,40 @@
     }
    ],
    "models": [],
-   "note": "Agent credits are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric amount.",
+   "note": "Agent credits 为官网近似值，基于典型任务的 Token 消耗；月度 credits 会换算为同一功能的等效任务数，仅供参考。所有会员功能共享一个按 Token 使用量计量的 credit pool。Kimi Code 另有独立的 5-hour / weekly rate limit，但页面未公布具体数值。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Moderato",
+   "plan_type": "聊天会员",
+   "price": "$180/yr",
+   "billing": "Annual (per month: $15/mo)",
+   "quotas": [
+    {
+     "label": "Agent credits",
+     "value": "Approximately 60 credits",
+     "window": "每月"
+    },
+    {
+     "label": "Professional database",
+     "value": "2,000 calls",
+     "window": null
+    }
+   ],
+   "models": [],
+   "note": "Agent credits 为官网近似值，基于典型任务的 Token 消耗；月度 credits 会换算为同一功能的等效任务数，仅供参考。所有会员功能共享一个按 Token 使用量计量的 credit pool。Kimi Code 另有独立的 5-hour / weekly rate limit，但页面未公布具体数值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "Membership",
-   "price": "$39/mo; $31/mo; $372/yr",
-   "billing": "Monthly; Annual (per month); Annual Total",
+   "plan_type": "聊天会员",
+   "price": "$39/mo",
+   "billing": "Monthly",
    "quotas": [
     {
      "label": "Agent credits",
-     "value": "150",
-     "window": "Monthly"
-    },
-    {
-     "label": "Agent concurrent tasks",
-     "value": "2 tasks",
-     "window": null
-    },
-    {
-     "label": "Agent priority queue",
-     "value": "4× speed",
-     "window": null
-    },
-    {
-     "label": "Scheduled tasks",
-     "value": "15 tasks",
-     "window": null
-    },
-    {
-     "label": "Widget tasks",
-     "value": "15 tasks",
-     "window": null
-    },
-    {
-     "label": "Agent Swarm concurrent subtasks",
-     "value": "4 subagents",
-     "window": null
+     "value": "Approximately 150 credits",
+     "window": "每月"
     },
     {
      "label": "Professional database",
@@ -89,48 +60,44 @@
     }
    ],
    "models": [],
-   "note": "Agent credits are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric amount.",
+   "note": "Agent credits 为官网近似值，基于典型任务的 Token 消耗；月度 credits 会换算为同一功能的等效任务数，仅供参考。所有会员功能共享一个按 Token 使用量计量的 credit pool。Kimi Code 另有独立的 5-hour / weekly rate limit，但页面未公布具体数值。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Allegretto",
+   "plan_type": "聊天会员",
+   "price": "$372/yr",
+   "billing": "Annual (per month: $31/mo)",
+   "quotas": [
+    {
+     "label": "Agent credits",
+     "value": "Approximately 150 credits",
+     "window": "每月"
+    },
+    {
+     "label": "Professional database",
+     "value": "5,000 calls",
+     "window": null
+    }
+   ],
+   "models": [],
+   "note": "Agent credits 为官网近似值，基于典型任务的 Token 消耗；月度 credits 会换算为同一功能的等效任务数，仅供参考。所有会员功能共享一个按 Token 使用量计量的 credit pool。Kimi Code 另有独立的 5-hour / weekly rate limit，但页面未公布具体数值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "Membership",
-   "price": "$99/mo; $79/mo; $948/yr",
-   "billing": "Monthly; Annual (per month); Annual Total",
+   "plan_type": "聊天会员",
+   "price": "$99/mo",
+   "billing": "Monthly",
    "quotas": [
     {
      "label": "Agent credits",
-     "value": "360",
-     "window": "Monthly"
-    },
-    {
-     "label": "Agent concurrent tasks",
-     "value": "4 tasks",
-     "window": null
-    },
-    {
-     "label": "Agent priority queue",
-     "value": "4× speed",
-     "window": null
+     "value": "Approximately 360 credits",
+     "window": "每月"
     },
     {
      "label": "K3 extra-long chat capacity",
      "value": "up to 1M tokens",
-     "window": null
-    },
-    {
-     "label": "Scheduled tasks",
-     "value": "20 tasks",
-     "window": null
-    },
-    {
-     "label": "Widget tasks",
-     "value": "20 tasks",
-     "window": null
-    },
-    {
-     "label": "Agent Swarm concurrent subtasks",
-     "value": "8 subagents",
      "window": null
     },
     {
@@ -142,29 +109,19 @@
    "models": [
     "K3"
    ],
-   "note": "“up to 1M tokens” is the official capacity wording. Agent credits are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric amount.",
+   "note": "Agent credits 为官网近似值，基于典型任务的 Token 消耗；月度 credits 会换算为同一功能的等效任务数，仅供参考。K3 的 Token 数值为单次超长对话容量上限。所有会员功能共享一个按 Token 使用量计量的 credit pool。Kimi Code 另有独立的 5-hour / weekly rate limit，但页面未公布具体数值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
-   "name": "Vivace",
-   "plan_type": "Membership",
-   "price": "$199/mo; $159/mo; $1,908/yr",
-   "billing": "Monthly; Annual (per month); Annual Total",
+   "name": "Allegro",
+   "plan_type": "聊天会员",
+   "price": "$948/yr",
+   "billing": "Annual (per month: $79/mo)",
    "quotas": [
     {
      "label": "Agent credits",
-     "value": "720",
-     "window": "Monthly"
-    },
-    {
-     "label": "Agent concurrent tasks",
-     "value": "4 tasks",
-     "window": null
-    },
-    {
-     "label": "Agent priority queue",
-     "value": "4× speed",
-     "window": null
+     "value": "Approximately 360 credits",
+     "window": "每月"
     },
     {
      "label": "K3 extra-long chat capacity",
@@ -172,18 +129,31 @@
      "window": null
     },
     {
-     "label": "Scheduled tasks",
-     "value": "25 tasks",
+     "label": "Professional database",
+     "value": "12,000 calls",
      "window": null
+    }
+   ],
+   "models": [
+    "K3"
+   ],
+   "note": "Agent credits 为官网近似值，基于典型任务的 Token 消耗；月度 credits 会换算为同一功能的等效任务数，仅供参考。K3 的 Token 数值为单次超长对话容量上限。所有会员功能共享一个按 Token 使用量计量的 credit pool。Kimi Code 另有独立的 5-hour / weekly rate limit，但页面未公布具体数值。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Vivace",
+   "plan_type": "聊天会员",
+   "price": "$199/mo",
+   "billing": "Monthly",
+   "quotas": [
+    {
+     "label": "Agent credits",
+     "value": "Approximately 720 credits",
+     "window": "每月"
     },
     {
-     "label": "Widget tasks",
-     "value": "25 tasks",
-     "window": null
-    },
-    {
-     "label": "Agent Swarm concurrent subtasks",
-     "value": "8 subagents",
+     "label": "K3 extra-long chat capacity",
+     "value": "up to 1M tokens",
      "window": null
     },
     {
@@ -195,18 +165,46 @@
    "models": [
     "K3"
    ],
-   "note": "“up to 1M tokens” is the official capacity wording. Agent credits are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric amount.",
+   "note": "Agent credits 为官网近似值，基于典型任务的 Token 消耗；月度 credits 会换算为同一功能的等效任务数，仅供参考。K3 的 Token 数值为单次超长对话容量上限。所有会员功能共享一个按 Token 使用量计量的 credit pool。Kimi Code 另有独立的 5-hour / weekly rate limit，但页面未公布具体数值。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Vivace",
+   "plan_type": "聊天会员",
+   "price": "$1,908/yr",
+   "billing": "Annual (per month: $159/mo)",
+   "quotas": [
+    {
+     "label": "Agent credits",
+     "value": "Approximately 720 credits",
+     "window": "每月"
+    },
+    {
+     "label": "K3 extra-long chat capacity",
+     "value": "up to 1M tokens",
+     "window": null
+    },
+    {
+     "label": "Professional database",
+     "value": "24,000 calls",
+     "window": null
+    }
+   ],
+   "models": [
+    "K3"
+   ],
+   "note": "Agent credits 为官网近似值，基于典型任务的 Token 消耗；月度 credits 会换算为同一功能的等效任务数，仅供参考。K3 的 Token 数值为单次超长对话容量上限。所有会员功能共享一个按 Token 使用量计量的 credit pool。Kimi Code 另有独立的 5-hour / weekly rate limit，但页面未公布具体数值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-04T01:08:48Z",
+ "last_fetch_ts": "2026-09-04T02:08:54Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "45422901cf6fca3620d16d4ec8ca69636f20da048680da1230c9e9a1a2ef901e",
- "fetched_at": "2026-09-04T01:08:48Z",
+ "plans_hash": "8d90d12cfa1d71945e6c1cc9e54efc3df59e021c33f3cd7474c707a49de502a0",
+ "fetched_at": "2026-09-04T02:08:54Z",
  "status_note": null
 }

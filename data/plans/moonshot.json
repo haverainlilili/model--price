@@ -3,12 +3,12 @@
   {
    "name": "Moderato",
    "plan_type": "Membership",
-   "price": "$19/mo (Monthly); $15/mo (Annual, $180/yr)",
-   "billing": "Monthly or annual",
+   "price": "Monthly: $19/mo; Annual (per month): $15/mo; Annual Total: $180/yr",
+   "billing": "Monthly or annual subscription",
    "quotas": [
     {
      "label": "Agent credits",
-     "value": "Approximate 60",
+     "value": "60",
      "window": "Monthly"
     },
     {
@@ -29,6 +29,11 @@
     {
      "label": "Widget tasks",
      "value": "10 tasks",
+     "window": null
+    },
+    {
+     "label": "Agent Swarm concurrent subtasks",
+     "value": "2 subagents",
      "window": null
     },
     {
@@ -38,18 +43,18 @@
     }
    ],
    "models": [],
-   "note": "Agent credit values are approximate, based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage.",
+   "note": "Agent credit values are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
    "plan_type": "Membership",
-   "price": "$39/mo (Monthly); $31/mo (Annual, $372/yr)",
-   "billing": "Monthly or annual",
+   "price": "Monthly: $39/mo; Annual (per month): $31/mo; Annual Total: $372/yr",
+   "billing": "Monthly or annual subscription",
    "quotas": [
     {
      "label": "Agent credits",
-     "value": "Approximate 150",
+     "value": "150",
      "window": "Monthly"
     },
     {
@@ -73,24 +78,29 @@
      "window": null
     },
     {
+     "label": "Agent Swarm concurrent subtasks",
+     "value": "4 subagents",
+     "window": null
+    },
+    {
      "label": "Professional database",
      "value": "5,000 calls",
      "window": null
     }
    ],
    "models": [],
-   "note": "Agent credit values are approximate, based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage.",
+   "note": "Agent credit values are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
    "plan_type": "Membership",
-   "price": "$99/mo (Monthly); $79/mo (Annual, $948/yr)",
-   "billing": "Monthly or annual",
+   "price": "Monthly: $99/mo; Annual (per month): $79/mo; Annual Total: $948/yr",
+   "billing": "Monthly or annual subscription",
    "quotas": [
     {
      "label": "Agent credits",
-     "value": "Approximate 360",
+     "value": "360",
      "window": "Monthly"
     },
     {
@@ -116,6 +126,11 @@
     {
      "label": "Widget tasks",
      "value": "20 tasks",
+     "window": null
+    },
+    {
+     "label": "Agent Swarm concurrent subtasks",
+     "value": "8 subagents",
      "window": null
     },
     {
@@ -127,18 +142,18 @@
    "models": [
     "K3"
    ],
-   "note": "Agent credit values are approximate, based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. K3 extra-long chat capacity is stated as up to 1M tokens. All membership features share a single credit pool metered by token usage.",
+   "note": "Agent credit values are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. K3 extra-long chat capacity is stated as up to 1M tokens.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Vivace",
    "plan_type": "Membership",
-   "price": "$199/mo (Monthly); $159/mo (Annual, $1,908/yr)",
-   "billing": "Monthly or annual",
+   "price": "Monthly: $199/mo; Annual (per month): $159/mo; Annual Total: $1,908/yr",
+   "billing": "Monthly or annual subscription",
    "quotas": [
     {
      "label": "Agent credits",
-     "value": "Approximate 720",
+     "value": "720",
      "window": "Monthly"
     },
     {
@@ -167,6 +182,11 @@
      "window": null
     },
     {
+     "label": "Agent Swarm concurrent subtasks",
+     "value": "8 subagents",
+     "window": null
+    },
+    {
      "label": "Professional database",
      "value": "24,000 calls",
      "window": null
@@ -175,18 +195,18 @@
    "models": [
     "K3"
    ],
-   "note": "Agent credit values are approximate, based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. K3 extra-long chat capacity is stated as up to 1M tokens. All membership features share a single credit pool metered by token usage.",
+   "note": "Agent credit values are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. K3 extra-long chat capacity is stated as up to 1M tokens.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-04T04:11:45Z",
+ "last_fetch_ts": "2026-09-04T05:11:25Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "8bc59c1503fb42f15ad26d32d4fa4f4881b534d5a11b01428f6253d16721c59b",
- "fetched_at": "2026-09-04T04:11:45Z",
+ "plans_hash": "8c7f1adde5553831e0c6ace1d13bf9bc9e09067aed704f3bb7f1a3329701d4f4",
+ "fetched_at": "2026-09-04T05:11:25Z",
  "status_note": null
 }

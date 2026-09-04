@@ -93,7 +93,7 @@ export OPENAI_API_KEY=sk-...
 
 GitHub Actions 不再重复抓取，只在 `main` 的 `site/` 更新后发布 GitHub Pages。这样从 GitHub 默认分支下载项目时，包含最近一次成功抓取的数据和对应界面。
 
-生产服务器需要优先保障其他网络服务时，可使用 `deploy/systemd/` 下的独立网络命名空间配置。它只限制 `model-price.service`：默认下载 2 Mbit/s、上传 256 Kbit/s，不修改主网卡上的其他服务。部署前请确认隔离网段 `10.203.0.0/30` 未被占用；通过环境变量 `MODEL_PRICE_DOWNLOAD_RATE` 和 `MODEL_PRICE_UPLOAD_RATE` 可以覆盖默认值。
+生产服务器需要优先保障其他网络服务时，可使用 `deploy/systemd/` 下的独立网络命名空间配置。它只限制 `model-price.service`：默认下载 2 Mbit/s、上传 256 Kbit/s，不修改主网卡上的其他服务。部署前请确认隔离网段 `10.203.0.0/30` 未被占用。需要调整时，在 `model-price-network-limit.service` 的 systemd override 中设置 `MODEL_PRICE_DOWNLOAD_RATE` 和 `MODEL_PRICE_UPLOAD_RATE`；这两个变量不属于项目 `.env`。
 
 ## 数据说明
 

@@ -13,14 +13,14 @@
     }
    ],
    "models": [],
-   "note": "Limited messages, web searches, and coding sessions are mentioned without explicit numeric quotas and are not extracted.",
+   "note": "其他消息、网页搜索和编程会话额度仅标注为 Limited，未给出明确数值，未抽取。",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Pro",
    "plan_type": "聊天会员",
-   "price": "$14.99 /mo",
-   "billing": "Excluding taxes",
+   "price": "$14.99",
+   "billing": "/mo；Excluding taxes",
    "quotas": [
     {
      "label": "API credits",
@@ -49,14 +49,14 @@
     }
    ],
    "models": [],
-   "note": "“Up to” and relative-to-Free multipliers are retained as stated. The FAQ gives Flash answers as an example allowance.",
+   "note": "“Up to 6x free”“Up to 5x free”和“Up to 40x free”均为官网相对于 Free 套餐的上限口径；Flash answers 为 FAQ 中的示例额度。",
    "source_url": "https://mistral.ai/pricing"
   },
   {
-   "name": "Education plan",
-   "plan_type": "聊天会员",
-   "price": "$5.99 / month",
-   "billing": "Verified students",
+   "name": "Mistral Pro",
+   "plan_type": "Education plan",
+   "price": "$5.99",
+   "billing": "/ month",
    "quotas": [
     {
      "label": "API credits",
@@ -65,14 +65,14 @@
     }
    ],
    "models": [],
-   "note": "The FAQ states that verified students can get Mistral Pro for $5.99 / month, normally $14.99.",
+   "note": "官网 FAQ 表述为：Verified students can get Mistral Pro for $5.99 / month (normally $14.99).",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Team",
    "plan_type": "团队会员",
-   "price": "$24.99 /user/mo",
-   "billing": "Excluding taxes",
+   "price": "$24.99",
+   "billing": "/user/mo；Excluding taxes",
    "quotas": [
     {
      "label": "Messages",
@@ -85,13 +85,13 @@
      "window": null
     },
     {
-     "label": "Image generation",
-     "value": "Up to 40x free",
+     "label": "Task scheduling",
+     "value": "Unlimited",
      "window": null
     },
     {
-     "label": "Task scheduling",
-     "value": "Unlimited",
+     "label": "Image generation",
+     "value": "Up to 40x free",
      "window": null
     },
     {
@@ -101,18 +101,18 @@
     }
    ],
    "models": [],
-   "note": "“Up to” and relative-to-Free multipliers are retained as stated. The FAQ gives Flash answers as an example allowance.",
+   "note": "相对倍数均以 Free 套餐为基准并保留官网的“Up to”口径；Flash answers 为 FAQ 中的示例额度。",
    "source_url": "https://mistral.ai/pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-04T09:13:26Z",
+ "last_fetch_ts": "2026-09-04T10:12:40Z",
  "source": "official",
  "source_urls": [
   "https://mistral.ai/pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "4aff080ee6fbd5ef3eee73cd7a169b7c565bd752b2819fe982a5fac5c2d492a9",
- "fetched_at": "2026-09-03T08:08:37Z",
- "status_note": "页面无变化"
+ "plans_hash": "6ac02b8212b897fdd25aec57bcd5b93ffe5a7d9ec87bf33e4cdf664a87c62124",
+ "fetched_at": "2026-09-04T10:12:40Z",
+ "status_note": null
 }

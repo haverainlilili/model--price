@@ -1,0 +1,14 @@
+[Unit]
+Description=Rate-limited network namespace for LLM Price Watch
+Wants=network-online.target
+After=network-online.target
+Before=model-price.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/sbin/model-price-network-limit setup
+ExecStop=/usr/local/sbin/model-price-network-limit cleanup
+
+[Install]
+WantedBy=multi-user.target

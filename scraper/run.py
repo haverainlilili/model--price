@@ -235,10 +235,25 @@ def process_news(cfg: dict) -> None:
         d["url"] = _absolute_news_url(cfg["news_url"], d.get("url"))
         d["first_seen"] = known.get(title, now)
         entries.append(d)
+    if not entries and prev.get("entries"):
+        message = f"公告页未解析出有效条目，已保留上次 {len(prev['entries'])} 条"
+        record = dict(prev)
+        record.update({
+            "entries": prev["entries"],
+            "news_hash": page_hash,
+            "fetched_at": now,
+            "status_note": message,
+            "last_error": message,
+        })
+        history.save_news(pid, record)
+        print(f"[{pid}/news] {message}")
+        return
     history.save_news(pid, {
         "entries": entries[:history.MAX_NEWS_PER_PROVIDER],
         "news_hash": page_hash,
         "fetched_at": now,
+        "status_note": None,
+        "last_error": None,
     })
     print(f"[{pid}/news] {len(entries)} 条公告")
 

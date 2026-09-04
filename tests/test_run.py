@@ -211,6 +211,42 @@ class ProcessNewsTests(unittest.TestCase):
     @patch.object(run.extract, "extract_news")
     @patch.object(run.extract, "has_api_key", return_value=True)
     @patch.object(run, "_fetch_news_text", return_value="changed news page")
+    @patch.object(run.history, "load_news")
+    def test_empty_extraction_preserves_previous_announcements_and_hash(
+            self, load_news, _fetch_news_text, _has_api_key,
+            extract_news, save_news):
+        previous_entries = [{
+            "date": "2026-09-01",
+            "title": "Existing announcement",
+            "url": "https://example.com/news/existing",
+            "summary": "Existing summary.",
+        }]
+        load_news.return_value = {
+            "entries": previous_entries,
+            "news_hash": "old-hash",
+        }
+        extract_news.return_value = SimpleNamespace(entries=[])
+
+        run.process_news({
+            "id": "example",
+            "name": "Example",
+            "news_url": "https://example.com/news",
+        })
+
+        saved = save_news.call_args.args[1]
+        self.assertEqual(saved["entries"], previous_entries)
+        self.assertEqual(
+            saved["news_hash"],
+            run._news_fingerprint(
+                "https://example.com/news", "changed news page"),
+        )
+        self.assertIn("保留上次", saved["status_note"])
+        self.assertIn("保留上次", saved["last_error"])
+
+    @patch.object(run.history, "save_news")
+    @patch.object(run.extract, "extract_news")
+    @patch.object(run.extract, "has_api_key", return_value=True)
+    @patch.object(run, "_fetch_news_text", return_value="changed news page")
     @patch.object(run.history, "load_news", return_value={"entries": []})
     def test_resolves_relative_entry_url_before_saving(
             self, _load_news, _fetch_news_text, _has_api_key,

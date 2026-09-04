@@ -2,14 +2,14 @@
  "plans": [
   {
    "name": "Moderato",
-   "plan_type": "Kimi membership",
-   "price": "Monthly: $19/mo; Annual (per month): $15/mo; Annual Total: $180/yr",
-   "billing": "Monthly or annual subscription",
+   "plan_type": "聊天会员",
+   "price": "$19/mo",
+   "billing": "Monthly",
    "quotas": [
     {
-     "label": "Agent credits",
-     "value": "Approximate 60 credits",
-     "window": "Each month"
+     "label": "Agent credits*",
+     "value": "60",
+     "window": "每月"
     },
     {
      "label": "Agent priority queue",
@@ -22,22 +22,46 @@
      "window": null
     }
    ],
-   "models": [
-    "K2.6"
+   "models": [],
+   "note": "Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 被换算为同一功能的等效任务数，仅供参考。所有会员功能共享一个按 Token 使用量计量的 credit pool。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Moderato",
+   "plan_type": "聊天会员",
+   "price": "$15/mo ($180/yr)",
+   "billing": "Annual",
+   "quotas": [
+    {
+     "label": "Agent credits*",
+     "value": "60",
+     "window": "每月"
+    },
+    {
+     "label": "Agent priority queue",
+     "value": "4× speed",
+     "window": null
+    },
+    {
+     "label": "Professional database",
+     "value": "2,000 calls",
+     "window": null
+    }
    ],
-   "note": "Agent credit values are approximate values based on typical task token consumption and are for reference only. All Kimi membership features share a single credit pool metered by token usage. Kimi Code has separate 5-hour and weekly rate limits, but the page does not state their numeric values.",
+   "models": [],
+   "note": "Annual (per month) 为 $15/mo，Annual Total 为 $180/yr。Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 被换算为同一功能的等效任务数，仅供参考。所有会员功能共享一个按 Token 使用量计量的 credit pool。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "Kimi membership",
-   "price": "Monthly: $39/mo; Annual (per month): $31/mo; Annual Total: $372/yr",
-   "billing": "Monthly or annual subscription",
+   "plan_type": "聊天会员",
+   "price": "$39/mo",
+   "billing": "Monthly",
    "quotas": [
     {
-     "label": "Agent credits",
-     "value": "Approximate 150 credits",
-     "window": "Each month"
+     "label": "Agent credits*",
+     "value": "150",
+     "window": "每月"
     },
     {
      "label": "Agent priority queue",
@@ -50,22 +74,46 @@
      "window": null
     }
    ],
-   "models": [
-    "K2.6"
+   "models": [],
+   "note": "Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 被换算为同一功能的等效任务数，仅供参考。所有会员功能共享一个按 Token 使用量计量的 credit pool。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Allegretto",
+   "plan_type": "聊天会员",
+   "price": "$31/mo ($372/yr)",
+   "billing": "Annual",
+   "quotas": [
+    {
+     "label": "Agent credits*",
+     "value": "150",
+     "window": "每月"
+    },
+    {
+     "label": "Agent priority queue",
+     "value": "4× speed",
+     "window": null
+    },
+    {
+     "label": "Professional database",
+     "value": "5,000 calls",
+     "window": null
+    }
    ],
-   "note": "Agent credit values are approximate values based on typical task token consumption and are for reference only. All Kimi membership features share a single credit pool metered by token usage. Kimi Code has separate 5-hour and weekly rate limits, but the page does not state their numeric values.",
+   "models": [],
+   "note": "Annual (per month) 为 $31/mo，Annual Total 为 $372/yr。Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 被换算为同一功能的等效任务数，仅供参考。所有会员功能共享一个按 Token 使用量计量的 credit pool。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "Kimi membership",
-   "price": "Monthly: $99/mo; Annual (per month): $79/mo; Annual Total: $948/yr",
-   "billing": "Monthly or annual subscription",
+   "plan_type": "聊天会员",
+   "price": "$99/mo",
+   "billing": "Monthly",
    "quotas": [
     {
-     "label": "Agent credits",
-     "value": "Approximate 360 credits",
-     "window": "Each month"
+     "label": "Agent credits*",
+     "value": "360",
+     "window": "每月"
     },
     {
      "label": "Agent priority queue",
@@ -84,22 +132,54 @@
     }
    ],
    "models": [
-    "K3",
-    "K2.6"
+    "K3"
    ],
-   "note": "Agent credit values are approximate values based on typical task token consumption and are for reference only. “up to 1M tokens” is the stated K3 extra-long chat capacity. All Kimi membership features share a single credit pool metered by token usage. Kimi Code has separate 5-hour and weekly rate limits, but the page does not state their numeric values.",
+   "note": "K3 额度为官网所称 extra-long chat capacity，并保留“up to”口径。Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 被换算为同一功能的等效任务数，仅供参考。所有会员功能共享一个按 Token 使用量计量的 credit pool。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Allegro",
+   "plan_type": "聊天会员",
+   "price": "$79/mo ($948/yr)",
+   "billing": "Annual",
+   "quotas": [
+    {
+     "label": "Agent credits*",
+     "value": "360",
+     "window": "每月"
+    },
+    {
+     "label": "Agent priority queue",
+     "value": "4× speed",
+     "window": null
+    },
+    {
+     "label": "K3 extra-long chat capacity",
+     "value": "up to 1M tokens",
+     "window": null
+    },
+    {
+     "label": "Professional database",
+     "value": "12,000 calls",
+     "window": null
+    }
+   ],
+   "models": [
+    "K3"
+   ],
+   "note": "Annual (per month) 为 $79/mo，Annual Total 为 $948/yr。K3 额度为官网所称 extra-long chat capacity，并保留“up to”口径。Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 被换算为同一功能的等效任务数，仅供参考。所有会员功能共享一个按 Token 使用量计量的 credit pool。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Vivace",
-   "plan_type": "Kimi membership",
-   "price": "Monthly: $199/mo; Annual (per month): $159/mo; Annual Total: $1,908/yr",
-   "billing": "Monthly or annual subscription",
+   "plan_type": "聊天会员",
+   "price": "$199/mo",
+   "billing": "Monthly",
    "quotas": [
     {
-     "label": "Agent credits",
-     "value": "Approximate 720 credits",
-     "window": "Each month"
+     "label": "Agent credits*",
+     "value": "720",
+     "window": "每月"
     },
     {
      "label": "Agent priority queue",
@@ -118,21 +198,53 @@
     }
    ],
    "models": [
-    "K3",
-    "K2.6"
+    "K3"
    ],
-   "note": "Agent credit values are approximate values based on typical task token consumption and are for reference only. “up to 1M tokens” is the stated K3 extra-long chat capacity. All Kimi membership features share a single credit pool metered by token usage. Kimi Code has separate 5-hour and weekly rate limits, but the page does not state their numeric values.",
+   "note": "K3 额度为官网所称 extra-long chat capacity，并保留“up to”口径。Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 被换算为同一功能的等效任务数，仅供参考。所有会员功能共享一个按 Token 使用量计量的 credit pool。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Vivace",
+   "plan_type": "聊天会员",
+   "price": "$159/mo ($1,908/yr)",
+   "billing": "Annual",
+   "quotas": [
+    {
+     "label": "Agent credits*",
+     "value": "720",
+     "window": "每月"
+    },
+    {
+     "label": "Agent priority queue",
+     "value": "4× speed",
+     "window": null
+    },
+    {
+     "label": "K3 extra-long chat capacity",
+     "value": "up to 1M tokens",
+     "window": null
+    },
+    {
+     "label": "Professional database",
+     "value": "24,000 calls",
+     "window": null
+    }
+   ],
+   "models": [
+    "K3"
+   ],
+   "note": "Annual (per month) 为 $159/mo，Annual Total 为 $1,908/yr。K3 额度为官网所称 extra-long chat capacity，并保留“up to”口径。Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 被换算为同一功能的等效任务数，仅供参考。所有会员功能共享一个按 Token 使用量计量的 credit pool。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-04T11:11:39Z",
+ "last_fetch_ts": "2026-09-04T12:10:22Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "3795b38e88448302e3e8191b51607a3afe9de4303210416524ffa4fd1b15822a",
- "fetched_at": "2026-09-04T11:11:39Z",
+ "plans_hash": "0d83030f36c3be42681ea98b1b2629cd377fa47aff74a4de8012a0f2520b8d3a",
+ "fetched_at": "2026-09-04T12:10:22Z",
  "status_note": null
 }

@@ -13859,233 +13859,742 @@
  },
  "websearch": {
   "anthropic": {
-   "source": "official",
+   "provider_name": "Anthropic (Claude)",
+   "category": "model",
+   "source": "seed",
+   "seed_verified": true,
    "source_url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool",
+   "source_urls": [
+    "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool"
+   ],
    "has_search": true,
    "offerings": [
     {
-     "name": "Web search tool",
-     "pricing": "$10 per 1,000 searches, plus standard token costs for search-generated content",
+     "name": "Claude API Web search tool",
+     "pricing": "$10 / 1,000 searches，另加标准 token 费用",
+     "price_per_1k_usd": 10,
+     "price_basis": "Web search tool call",
+     "free_quota": null,
+     "output_type": "模型内置工具；带引用答案",
      "cites_sources": true,
      "default_on": false,
-     "note": "需在API请求中添加工具；单次请求可多次搜索，支持域名控制和动态过滤。"
+     "note": "搜索结果内容计入输入 token；Messages Batches API 同价"
     }
    ],
-   "fetched_at": "2026-09-05T10:12:37Z",
-   "status_note": "页面无变化",
+   "fetched_at": null,
+   "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-05T11:12:36Z",
-   "websearch_hash": "03a6077294385df80b9c37a2164e2f9ff23401620df0bdb2be0deb237ae607f0"
+   "name": "Anthropic (Claude)",
+   "region": "国际"
   },
   "openai": {
+   "provider_name": "OpenAI",
+   "category": "model",
    "source": "seed",
-   "source_url": "https://developers.openai.com/api/docs/guides/web-search",
+   "seed_verified": true,
+   "source_url": "https://developers.openai.com/api/docs/guides/tools-web-search",
+   "source_urls": [
+    "https://developers.openai.com/api/docs/guides/tools-web-search",
+    "https://developers.openai.com/api/docs/pricing"
+   ],
    "has_search": true,
    "offerings": [
     {
-     "name": "Search API / web_search 工具",
-     "pricing": "gpt-5-search-api 按 token 计价($1.25/$10 每百万)",
+     "name": "OpenAI Web search tool",
+     "pricing": "$10 / 1,000 calls，搜索内容 token 按模型费率计费",
+     "price_per_1k_usd": 10,
+     "price_basis": "Web search（all models）",
+     "free_quota": null,
+     "output_type": "模型内置工具；带引用答案",
      "cites_sources": true,
      "default_on": false,
-     "note": "Search API 独立计费; ChatGPT 内置搜索另计"
+     "note": "非推理模型的 preview 档为 $25/1k；正式 web search 为 $10/1k"
     }
    ],
    "fetched_at": null,
    "status_note": null,
    "last_error": "HTTP 404",
-   "last_fetch_ts": "2026-09-05T11:12:36Z"
+   "last_fetch_ts": "2026-09-05T11:12:36Z",
+   "name": "OpenAI",
+   "region": "国际"
   },
   "google": {
-   "source": "official",
+   "provider_name": "Google Gemini",
+   "category": "model",
+   "source": "seed",
+   "seed_verified": true,
    "source_url": "https://ai.google.dev/gemini-api/docs/google-search",
+   "source_urls": [
+    "https://ai.google.dev/gemini-api/docs/google-search",
+    "https://ai.google.dev/gemini-api/docs/pricing?hl=en"
+   ],
    "has_search": true,
    "offerings": [
     {
      "name": "Grounding with Google Search",
-     "pricing": "Gemini 3 按模型执行的每个搜索查询计费；Gemini 2.5 或更早模型按 prompt 计费",
+     "pricing": "每月 5,000 次免费，之后 $14 / 1,000 search requests",
+     "price_per_1k_usd": 14,
+     "price_basis": "Gemini 3.x，超出免费额度",
+     "free_quota": "5,000 search requests/月（Gemini 3.x 共享）",
+     "output_type": "模型内置 Grounding；返回来源引用",
      "cites_sources": true,
      "default_on": false,
-     "note": "支持所有可用语言；模型按需自动生成一个或多个查询，并返回内联 url_citation。"
+     "note": "按模型实际执行的每个 Google Search query 计费"
     }
    ],
-   "fetched_at": "2026-09-05T10:12:50Z",
-   "status_note": "页面无变化",
+   "fetched_at": null,
+   "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-05T11:12:43Z",
-   "websearch_hash": "d6b58a588d1566c8b3352828ea3d4818f7ec4756ef20ef3581b019afe1614329"
+   "name": "Google Gemini",
+   "region": "国际"
   },
   "xai": {
+   "provider_name": "xAI (Grok)",
+   "category": "model",
    "source": "seed",
+   "seed_verified": false,
    "source_url": "https://docs.x.ai/docs/tools",
-   "has_search": false,
+   "source_urls": [
+    "https://docs.x.ai/docs/tools"
+   ],
+   "has_search": true,
    "offerings": [
     {
-     "name": "Grok 联网搜索 / API web search",
+     "name": "Grok 联网搜索 / Search tools",
      "pricing": null,
+     "price_per_1k_usd": null,
+     "price_basis": null,
+     "free_quota": null,
+     "output_type": "模型内置搜索工具",
      "cites_sources": null,
      "default_on": null,
-     "note": "待官网首次抓取校准"
+     "note": "等待官网自动抓取补全价格与来源字段"
     }
    ],
    "fetched_at": null,
-   "status_note": "页面无变化",
+   "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-05T11:12:44Z",
-   "websearch_hash": "dca768a35de15baa7b78aec55891418e7332de5fcdf7552d610c06a1ba5bc0b2"
+   "name": "xAI (Grok)",
+   "region": "国际"
   },
   "mistral": {
+   "provider_name": "Mistral",
+   "category": "model",
    "source": "seed",
+   "seed_verified": false,
    "source_url": "https://docs.mistral.ai/capabilities/web-search/",
-   "has_search": false,
+   "source_urls": [
+    "https://docs.mistral.ai/capabilities/web-search/"
+   ],
+   "has_search": true,
    "offerings": [
     {
-     "name": "Web search (Le Chat / API)",
+     "name": "Mistral Web search",
      "pricing": null,
+     "price_per_1k_usd": null,
+     "price_basis": null,
+     "free_quota": null,
+     "output_type": "模型内置搜索工具",
      "cites_sources": null,
      "default_on": null,
-     "note": "待官网首次抓取校准"
+     "note": "等待官网自动抓取补全价格与来源字段"
     }
    ],
    "fetched_at": null,
-   "status_note": "页面无变化",
+   "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-05T11:13:03Z",
-   "websearch_hash": "119912d44c922be6cd6573f54b936dcbb1748071d7f2c1a7fb826344f103af04"
+   "name": "Mistral",
+   "region": "国际"
   },
   "deepseek": {
+   "provider_name": "DeepSeek",
+   "category": "model",
    "source": "seed",
+   "seed_verified": false,
    "source_url": "https://api-docs.deepseek.com/zh-cn/guides/web_search",
-   "has_search": false,
+   "source_urls": [
+    "https://api-docs.deepseek.com/zh-cn/guides/web_search"
+   ],
+   "has_search": true,
    "offerings": [
     {
-     "name": "联网搜索 (API)",
+     "name": "DeepSeek 联网搜索",
      "pricing": null,
+     "price_per_1k_usd": null,
+     "price_basis": null,
+     "free_quota": null,
+     "output_type": "模型工具（待官网确认）",
      "cites_sources": null,
-     "default_on": false,
-     "note": "待官网首次抓取校准"
+     "default_on": null,
+     "note": "官网公开 API 信息待自动抓取确认"
     }
    ],
    "fetched_at": null,
-   "status_note": "页面无变化",
+   "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-05T11:13:23Z",
-   "websearch_hash": "5ac42eda3f09e236cc9b9c41bb98edfc51aecdf7b7d4167dd66f699d98242503"
+   "name": "DeepSeek",
+   "region": "国内"
   },
   "qwen": {
-   "source": "official",
+   "provider_name": "阿里云百炼 (Qwen)",
+   "category": "model",
+   "source": "seed",
+   "seed_verified": false,
    "source_url": "https://help.aliyun.com/zh/model-studio/web-search",
+   "source_urls": [
+    "https://help.aliyun.com/zh/model-studio/web-search"
+   ],
    "has_search": true,
    "offerings": [
     {
-     "name": "联网搜索",
-     "pricing": "无免费调用额度；网页内容增加的输入 Token 按模型标准价格计费。turbo 3元/千次，max 4元/千次；agent 北京等地域4元/千次，新加坡73.392381元/千次。",
-     "cites_sources": true,
-     "default_on": false,
-     "note": "支持DashScope、OpenAI兼容及Anthropic兼容；限流15 RPS。"
-    },
-    {
-     "name": "联网搜索 MCP",
-     "pricing": "全部用户前 2000 次调用免费，免费额度用尽后按 29 元/千次计费",
+     "name": "百炼联网搜索",
+     "pricing": null,
+     "price_per_1k_usd": null,
+     "price_basis": null,
+     "free_quota": null,
+     "output_type": "模型内置搜索增强",
      "cites_sources": null,
-     "default_on": false,
-     "note": "与模型内置联网搜索相互独立，计费也相互独立。"
+     "default_on": null,
+     "note": "官网价格与引用字段待自动抓取补全"
     }
    ],
-   "fetched_at": "2026-09-05T10:13:44Z",
-   "status_note": "页面无变化",
+   "fetched_at": null,
+   "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-05T11:13:25Z",
-   "websearch_hash": "b459d095fad828784403c578570639a4cd0bb4d64eea5c730edfd137dfb9fd4e"
+   "name": "阿里云百炼 (Qwen)",
+   "region": "国内"
   },
   "doubao": {
-   "source": "official",
+   "provider_name": "火山方舟 (豆包)",
+   "category": "model",
+   "source": "seed",
+   "seed_verified": false,
    "source_url": "https://www.volcengine.com/docs/82379/1500601",
+   "source_urls": [
+    "https://www.volcengine.com/docs/82379/1500601"
+   ],
    "has_search": true,
    "offerings": [
     {
-     "name": "联网搜索",
+     "name": "火山方舟联网搜索",
      "pricing": null,
+     "price_per_1k_usd": null,
+     "price_basis": null,
+     "free_quota": null,
+     "output_type": "模型内置搜索增强",
      "cites_sources": null,
      "default_on": null,
-     "note": "联网获取实时知识"
+     "note": "官网价格与引用字段待自动抓取补全"
     }
    ],
-   "fetched_at": "2026-09-05T10:14:02Z",
-   "status_note": "页面无变化",
+   "fetched_at": null,
+   "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-05T11:13:27Z",
-   "websearch_hash": "c6875c3a3dd4feb4d49f4085d84b9fcfee7fe90f0c12a3c2db48e2615c63e782"
+   "name": "火山方舟 (豆包)",
+   "region": "国内"
   },
   "zhipu": {
-   "source": "official",
+   "provider_name": "智谱 (GLM)",
+   "category": "model",
+   "source": "seed",
+   "seed_verified": false,
    "source_url": "https://docs.bigmodel.cn/cn/guide/tools/web-search",
+   "source_urls": [
+    "https://docs.bigmodel.cn/cn/guide/tools/web-search"
+   ],
    "has_search": true,
    "offerings": [
     {
-     "name": "Web Search API",
-     "pricing": "search_std：0.01 元/次；search_pro：0.03 元/次；search_pro_sogou：0.05 元/次；search_pro_quark：0.05 元/次",
-     "cites_sources": null,
-     "default_on": null,
-     "note": "返回网页标题、网页 URL、摘要、网站名称等，支持自研、搜狗和夸克引擎"
-    },
-    {
-     "name": "Web Search in Chat",
+     "name": "GLM web_search",
      "pricing": null,
+     "price_per_1k_usd": null,
+     "price_basis": null,
+     "free_quota": null,
+     "output_type": "模型内置搜索工具",
      "cites_sources": null,
      "default_on": null,
-     "note": "将实时网络检索结果与 GLM 生成能力结合，并标注网页结果来源"
-    },
-    {
-     "name": "Search Agent",
-     "pricing": null,
-     "cites_sources": null,
-     "default_on": null,
-     "note": "根据搜索意图拆解多个查询，管理对话状态并综合网页内容生成回答"
+     "note": "官网价格与引用字段待自动抓取补全"
     }
    ],
-   "fetched_at": "2026-09-05T10:14:36Z",
-   "status_note": "页面无变化",
+   "fetched_at": null,
+   "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-05T11:13:58Z",
-   "websearch_hash": "511eb4f3277d489e4d6e3ff4dfcee0b6991d3e28df733589b172785df1c2364a"
+   "name": "智谱 (GLM)",
+   "region": "国内"
   },
   "moonshot": {
-   "source": "official",
+   "provider_name": "月之暗面 (Kimi)",
+   "category": "model",
+   "source": "seed",
+   "seed_verified": false,
    "source_url": "https://platform.kimi.com/docs/guide/web-search",
+   "source_urls": [
+    "https://platform.kimi.com/docs/guide/web-search"
+   ],
    "has_search": true,
    "offerings": [
     {
-     "name": "联网搜索",
+     "name": "Kimi 联网搜索",
      "pricing": null,
+     "price_per_1k_usd": null,
+     "price_basis": null,
+     "free_quota": null,
+     "output_type": "模型内置搜索工具",
      "cites_sources": null,
      "default_on": null,
-     "note": "让模型调用外部函数或 API，实现 Agent 任务、联网搜索和复杂工作流。"
+     "note": "官网价格与引用字段待自动抓取补全"
     }
    ],
-   "fetched_at": "2026-09-05T10:14:59Z",
-   "status_note": "页面无变化",
+   "fetched_at": null,
+   "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-05T11:14:12Z",
-   "websearch_hash": "8583bdb5d5a1760ae3b8150101a9143dcb5ddecd72b2bb417b048a7feee53e77"
+   "name": "月之暗面 (Kimi)",
+   "region": "国内"
   },
   "minimax": {
+   "provider_name": "MiniMax",
+   "category": "model",
    "source": "seed",
+   "seed_verified": false,
    "source_url": "https://platform.minimaxi.com/docs/guides/chat",
-   "has_search": false,
+   "source_urls": [
+    "https://platform.minimaxi.com/docs/guides/chat"
+   ],
+   "has_search": true,
    "offerings": [
     {
      "name": "MiniMax 联网搜索",
      "pricing": null,
+     "price_per_1k_usd": null,
+     "price_basis": null,
+     "free_quota": null,
+     "output_type": "模型工具（待官网确认）",
      "cites_sources": null,
      "default_on": null,
-     "note": "待官网首次抓取校准"
+     "note": "官网公开 API 信息待自动抓取确认"
     }
    ],
    "fetched_at": null,
-   "status_note": "页面无变化",
+   "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-05T11:14:15Z",
-   "websearch_hash": "dad639ad20c0973dc922b3522960512b1c687e9ec0f100c3be42c5d4aed89c2b"
+   "name": "MiniMax",
+   "region": "国内"
+  },
+  "tavily": {
+   "provider_name": "Tavily",
+   "category": "ai-search",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://docs.tavily.com/documentation/api-credits",
+   "source_urls": [
+    "https://docs.tavily.com/documentation/api-credits",
+    "https://docs.tavily.com/documentation/api-reference/endpoint/search"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Tavily Search API",
+     "pricing": "免费 1,000 credits/月；PAYG $0.008/credit；Basic 1 credit/次",
+     "price_per_1k_usd": 8,
+     "price_basis": "PAYG Basic（1 credit/request）",
+     "free_quota": "1,000 credits/月",
+     "output_type": "结构化搜索结果，可选正文/答案",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "Advanced 每次 2 credits；月付档为 $0.005–$0.0075/credit"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "Tavily",
+   "region": "国际"
+  },
+  "exa": {
+   "provider_name": "Exa",
+   "category": "ai-search",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://exa.ai/docs/reference/pricing",
+   "source_urls": [
+    "https://exa.ai/docs/reference/pricing",
+    "https://exa.ai/products/search"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Exa Search API",
+     "pricing": "/search $7 / 1,000 requests（含最多 10 个结果）",
+     "price_per_1k_usd": 7,
+     "price_basis": "/search 基础价（≤10 results）",
+     "free_quota": "$20 注册额度；每月 $10 free credits",
+     "output_type": "语义/实时结构化结果；另有 Answer API",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "超过 10 个结果另收 $1/1k results；页面摘要 $1/1k pages"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "Exa",
+   "region": "国际"
+  },
+  "brave": {
+   "provider_name": "Brave Search API",
+   "category": "serp",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://brave.com/search/api/",
+   "source_urls": [
+    "https://brave.com/search/api/",
+    "https://api-dashboard.search.brave.com/documentation/pricing"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Brave Search API",
+     "pricing": "$5 / 1,000 requests",
+     "price_per_1k_usd": 5,
+     "price_basis": "Web Search API",
+     "free_quota": "$5 每月免费 credits",
+     "output_type": "独立索引的 Web/News/Image 结构化结果",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "官网同时提供面向 LLM 的 Context endpoint"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "Brave Search API",
+   "region": "国际"
+  },
+  "perplexity": {
+   "provider_name": "Perplexity",
+   "category": "serp",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://docs.perplexity.ai/docs/getting-started/pricing",
+   "source_urls": [
+    "https://docs.perplexity.ai/docs/getting-started/pricing",
+    "https://docs.perplexity.ai/docs/search/quickstart"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Perplexity Search API",
+     "pricing": "$5 / 1,000 successful requests；无额外 token 费",
+     "price_per_1k_usd": 5,
+     "price_basis": "Search API",
+     "free_quota": null,
+     "output_type": "结构化 results[]（title/url/snippet）",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "一次成功请求最多可含 5 个 query，仍按一个 billing unit 计费"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "Perplexity",
+   "region": "国际"
+  },
+  "you": {
+   "provider_name": "You.com",
+   "category": "ai-search",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://you.com/pricing",
+   "source_urls": [
+    "https://you.com/pricing",
+    "https://you.com/docs/guides/search"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "You.com Web Search API",
+     "pricing": "$5 / 1,000 calls；每次可返回 1–100 个结果",
+     "price_per_1k_usd": 5,
+     "price_basis": "Web Search API",
+     "free_quota": "$100 启动 credits",
+     "output_type": "结构化搜索结果；另有带引用 Research API",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "启用 livecrawl 时另加 $0.001/结果"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "You.com",
+   "region": "国际"
+  },
+  "linkup": {
+   "provider_name": "Linkup",
+   "category": "ai-search",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://www.linkup.so/pricing",
+   "source_urls": [
+    "https://www.linkup.so/pricing",
+    "https://docs.linkup.so/pages/documentation/platform/pricing",
+    "https://docs.linkup.so/pages/documentation/endpoints/search/overview"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Linkup Search API",
+     "pricing": "Standard $0.005–$0.006/request",
+     "price_per_1k_usd": 5,
+     "price_basis": "Standard raw results（$0.005/request）",
+     "free_quota": "4,000 queries free",
+     "output_type": "结构化结果或带来源答案",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "sourced/structured 为 $6/1k；Deep 为 $50–$55/1k"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "Linkup",
+   "region": "国际"
+  },
+  "jina": {
+   "provider_name": "Jina AI Search",
+   "category": "ai-search",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://jina.ai/reader/",
+   "source_urls": [
+    "https://jina.ai/reader/",
+    "https://jina.ai/api-dashboard/pricing"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Jina Search API (s.jina.ai)",
+     "pricing": "$0.050 / 1M tokens；每次搜索固定从 10,000 tokens 起",
+     "price_per_1k_usd": null,
+     "price_basis": "按 token 计费，不进入千次请求柱图",
+     "free_quota": "新 API key 含 10M tokens（最多约 1,000 次最低用量搜索）",
+     "output_type": "5 条结构化结果并转为 LLM-friendly text",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "实际成本随 token budget 变化，不能与固定请求价直接比较"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "Jina AI Search",
+   "region": "国际"
+  },
+  "firecrawl": {
+   "provider_name": "Firecrawl Search",
+   "category": "ai-search",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://www.firecrawl.dev/pricing",
+   "source_urls": [
+    "https://www.firecrawl.dev/pricing",
+    "https://docs.firecrawl.dev/features/search",
+    "https://docs.firecrawl.dev/billing"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Firecrawl Search",
+     "pricing": "Search 2 credits/10 results；Hobby PAYG $5/1,000 credits",
+     "price_per_1k_usd": 10,
+     "price_basis": "Hobby PAYG，10 results（2 credits）",
+     "free_quota": "1,000 credits/月（约 500 次 1–10 结果搜索）",
+     "output_type": "搜索结果，可选抓取正文",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "不同付费档每 credit 单价不同；抓取结果正文另耗 credits"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "Firecrawl Search",
+   "region": "国际"
+  },
+  "bocha": {
+   "provider_name": "博查 AI Search API",
+   "category": "ai-search",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://open.bochaai.com/",
+   "source_urls": [
+    "https://open.bochaai.com/"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "博查 Web Search API",
+     "pricing": null,
+     "price_per_1k_usd": null,
+     "price_basis": null,
+     "free_quota": null,
+     "output_type": "结构化 Web 搜索结果（URL/snippet/summary）",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "支持自然语言、多模态混合搜索与可选 summary；公开价格页需登录"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "博查 AI Search API",
+   "region": "国内"
+  },
+  "serper": {
+   "provider_name": "Serper",
+   "category": "serp",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://serper.dev/",
+   "source_urls": [
+    "https://serper.dev/"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Serper Google Search API",
+     "pricing": "$50 / 50,000 queries（$1 / 1,000）",
+     "price_per_1k_usd": 1,
+     "price_basis": "$50 top-up / 50k queries",
+     "free_quota": "2,500 queries",
+     "output_type": "Google SERP JSON",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "更大充值包最低可到 $0.30/1k queries"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "Serper",
+   "region": "国际"
+  },
+  "serpapi": {
+   "provider_name": "SerpApi",
+   "category": "serp",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://serpapi.com/pricing.md",
+   "source_urls": [
+    "https://serpapi.com/pricing.md"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "SerpApi",
+     "pricing": "Starter $25/月，含 1,000 searches",
+     "price_per_1k_usd": 25,
+     "price_basis": "Starter（1,000 searches/月）",
+     "free_quota": "250 searches/月",
+     "output_type": "多搜索引擎 SERP JSON",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "高用量套餐的有效千次单价更低"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "SerpApi",
+   "region": "国际"
+  },
+  "google-cse": {
+   "provider_name": "Google Custom Search JSON API",
+   "category": "serp",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://developers.google.com/custom-search/v1/overview",
+   "source_urls": [
+    "https://developers.google.com/custom-search/v1/overview"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Google Custom Search JSON API",
+     "pricing": "100 queries/日免费；额外 $5 / 1,000 queries",
+     "price_per_1k_usd": 5,
+     "price_basis": "额外查询（仅存量客户）",
+     "free_quota": "100 queries/日",
+     "output_type": "Google Web/Image Search JSON",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "不再向新客户开放；计划于 2027-01-01 停服"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "Google Custom Search JSON API",
+   "region": "国际"
+  },
+  "dataforseo": {
+   "provider_name": "DataForSEO SERP API",
+   "category": "serp",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://dataforseo.com/apis/serp-api/pricing",
+   "source_urls": [
+    "https://dataforseo.com/apis/serp-api/pricing"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "DataForSEO SERP API",
+     "pricing": "Standard queue $0.6/1k；高优先级 $1.2/1k；Live $2/1k",
+     "price_per_1k_usd": 0.6,
+     "price_basis": "Standard queue normal（10 results/SERP）",
+     "free_quota": "$1 注册试用 credit",
+     "output_type": "多搜索引擎 SERP 结构化结果",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "最低充值 $50；深度和部分高级参数会增加费用"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "DataForSEO SERP API",
+   "region": "国际"
+  },
+  "brightdata": {
+   "provider_name": "Bright Data SERP API",
+   "category": "serp",
+   "source": "seed",
+   "seed_verified": true,
+   "source_url": "https://brightdata.com/pricing/serp",
+   "source_urls": [
+    "https://brightdata.com/pricing/serp"
+   ],
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Bright Data SERP API",
+     "pricing": "PAYG $1.5 / 1,000 successful requests",
+     "price_per_1k_usd": 1.5,
+     "price_basis": "Pay as you go（成功请求）",
+     "free_quota": "5,000 records/月",
+     "output_type": "SERP JSON / HTML / Markdown",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "默认失败请求不收费；Scale 额外请求为 $1.3/1k"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null,
+   "name": "Bright Data SERP API",
+   "region": "国际"
   }
  }
 }

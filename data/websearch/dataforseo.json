@@ -1,7 +1,7 @@
 {
  "provider_name": "DataForSEO SERP API",
  "category": "serp",
- "source": "seed",
+ "source": "official",
  "seed_verified": true,
  "source_url": "https://dataforseo.com/apis/serp-api/pricing",
  "source_urls": [
@@ -10,18 +10,42 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "DataForSEO SERP API",
-   "pricing": "Standard queue $0.6/1k；高优先级 $1.2/1k；Live $2/1k",
+   "name": "SERP API — Standard Queue",
+   "pricing": "Price per 1 SERP (10 search results): $0.0006; Price per 1K SERPs: $0.6.",
    "price_per_1k_usd": 0.6,
-   "price_basis": "Standard queue normal（10 results/SERP）",
-   "free_quota": "$1 注册试用 credit",
-   "output_type": "多搜索引擎 SERP 结构化结果",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "最低充值 $50；深度和部分高级参数会增加费用"
+   "price_basis": "Standard Queue，1 SERP 含 10 条搜索结果",
+   "free_quota": "Unlimited trial period with a free $1 credit; Sandbox feature for free.",
+   "output_type": "JSON、HTML 格式的实时 SERP 数据",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "队列式 POST/GET；平均周转约5分钟，目标周转时间45分钟；额外参数可能增加费用。"
+  },
+  {
+   "name": "SERP API — Priority Queue",
+   "pricing": "Price per 1 SERP (10 search results): $0.0012; Price per 1K SERPs: $1.2.",
+   "price_per_1k_usd": 1.2,
+   "price_basis": "Priority Queue，1 SERP 含 10 条搜索结果",
+   "free_quota": "Unlimited trial period with a free $1 credit; Sandbox feature for free.",
+   "output_type": "JSON、HTML 格式的实时 SERP 数据",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "队列式 POST/GET；平均周转时间最长约1分钟；额外参数可能增加费用。"
+  },
+  {
+   "name": "SERP API — Live Mode",
+   "pricing": "Price per 1 SERP (10 search results): $0.002; Price per 1K SERPs: $2.",
+   "price_per_1k_usd": 2.0,
+   "price_basis": "Live Mode，1 SERP 含 10 条搜索结果",
+   "free_quota": "Unlimited trial period with a free $1 credit; Sandbox feature for free.",
+   "output_type": "JSON、HTML 格式的实时 SERP 数据",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "单次 POST 请求实时返回，平均最长约6秒；额外参数可能增加费用。"
   }
  ],
- "fetched_at": null,
+ "fetched_at": "2026-09-05T12:18:45Z",
  "status_note": null,
- "last_error": null
+ "last_error": null,
+ "last_fetch_ts": "2026-09-05T12:18:45Z",
+ "websearch_hash": "83f1f9f967a24d40481c9c2dd56746100916d602f20a49c90669c4f559efc066"
 }

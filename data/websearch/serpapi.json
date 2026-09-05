@@ -1,7 +1,7 @@
 {
  "provider_name": "SerpApi",
  "category": "serp",
- "source": "seed",
+ "source": "official",
  "seed_verified": true,
  "source_url": "https://serpapi.com/pricing.md",
  "source_urls": [
@@ -10,18 +10,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "SerpApi",
-   "pricing": "Starter $25/月，含 1,000 searches",
-   "price_per_1k_usd": 25,
-   "price_basis": "Starter（1,000 searches/月）",
-   "free_quota": "250 searches/月",
-   "output_type": "多搜索引擎 SERP JSON",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "高用量套餐的有效千次单价更低"
+   "name": "SerpApi – Real-time search engine results API",
+   "pricing": "Starter: $25/mo for 1,000 searches; higher-volume plans offer lower per-search pricing. Best Effort is 1× base price; Ludicrous Speed 2×; Ludicrous Speed Max 4×.",
+   "price_per_1k_usd": 25.0,
+   "price_basis": "Starter（1,000 searches/mo，Best Effort）",
+   "free_quota": "Free: $0, 250 searches/mo",
+   "output_type": "搜索引擎结果 API",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "仅成功搜索计费；缓存、错误及失败搜索不计。返回结果数量不影响用量，每个响应计1次搜索。"
   }
  ],
- "fetched_at": null,
+ "fetched_at": "2026-09-05T12:18:32Z",
  "status_note": null,
- "last_error": null
+ "last_error": null,
+ "last_fetch_ts": "2026-09-05T12:18:32Z",
+ "websearch_hash": "a9e52ac3c1d629f5f3701c626dec8fa7a3a9c3ec68af4e325a2be7ffad67f624"
 }

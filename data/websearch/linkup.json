@@ -1,7 +1,7 @@
 {
  "provider_name": "Linkup",
  "category": "ai-search",
- "source": "seed",
+ "source": "official",
  "seed_verified": true,
  "source_url": "https://www.linkup.so/pricing",
  "source_urls": [
@@ -12,18 +12,53 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Linkup Search API",
-   "pricing": "Standard $0.005–$0.006/request",
-   "price_per_1k_usd": 5,
-   "price_basis": "Standard raw results（$0.005/request）",
-   "free_quota": "4,000 queries free",
-   "output_type": "结构化结果或带来源答案",
+   "name": "Search — fast / standard — searchResults",
+   "pricing": "$0.005 per call",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "fast / standard depth，searchResults outputType",
+   "free_quota": "Run 4,000 queries for free. Eligible accounts are topped up to $20 each month.",
+   "output_type": "Array of {name, url, content}; ranked URLs and content snippets for grounding.",
    "cites_sources": true,
-   "default_on": false,
-   "note": "sourced/structured 为 $6/1k；Deep 为 $50–$55/1k"
+   "default_on": null,
+   "note": "fast 延迟 <1s；standard 延迟 1–3s。可限制日期、域名和最大来源数。"
+  },
+  {
+   "name": "Search — fast / standard — sourcedAnswer / structured",
+   "pricing": "$0.006 per call",
+   "price_per_1k_usd": 6.0,
+   "price_basis": "fast / standard depth，sourcedAnswer / structured outputType",
+   "free_quota": "Run 4,000 queries for free. Eligible accounts are topped up to $20 each month.",
+   "output_type": "搜索结果加带行内引用的自然语言答案，或搜索结果加符合调用方 JSON Schema 的 JSON。",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "sourcedAnswer 和 structured 会调用 LLM；fast 延迟 <1s，standard 延迟 1–3s。"
+  },
+  {
+   "name": "Search — deep — searchResults",
+   "pricing": "$0.05 per call",
+   "price_per_1k_usd": 50.0,
+   "price_basis": "deep depth，searchResults outputType",
+   "free_quota": "Run 4,000 queries for free. Eligible accounts are topped up to $20 each month.",
+   "output_type": "Array of {name, url, content}; ranked URLs and content snippets for grounding.",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "多轮 agentic search-and-scrape chaining with evaluation；延迟 5–30s。"
+  },
+  {
+   "name": "Search — deep — sourcedAnswer / structured",
+   "pricing": "$0.055 per call",
+   "price_per_1k_usd": 55.0,
+   "price_basis": "deep depth，sourcedAnswer / structured outputType",
+   "free_quota": "Run 4,000 queries for free. Eligible accounts are topped up to $20 each month.",
+   "output_type": "搜索结果加带行内引用的自然语言答案，或搜索结果加符合调用方 JSON Schema 的 JSON。",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "多轮搜索与抓取；sourcedAnswer 和 structured 会调用 LLM；延迟 5–30s。"
   }
  ],
- "fetched_at": null,
+ "fetched_at": "2026-09-05T12:16:35Z",
  "status_note": null,
- "last_error": null
+ "last_error": null,
+ "last_fetch_ts": "2026-09-05T12:16:35Z",
+ "websearch_hash": "2b9a6d0ea661e6024bc2c6c627d5b575774fb29137b2379a469a51bcd57e343a"
 }

@@ -1,7 +1,7 @@
 {
  "provider_name": "You.com",
  "category": "ai-search",
- "source": "seed",
+ "source": "official",
  "seed_verified": true,
  "source_url": "https://you.com/pricing",
  "source_urls": [
@@ -11,18 +11,64 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "You.com Web Search API",
-   "pricing": "$5 / 1,000 calls；每次可返回 1–100 个结果",
-   "price_per_1k_usd": 5,
-   "price_basis": "Web Search API",
-   "free_quota": "$100 启动 credits",
-   "output_type": "结构化搜索结果；另有带引用 Research API",
+   "name": "Web Search API — Free",
+   "pricing": "Free",
+   "price_per_1k_usd": 0.0,
+   "price_basis": "Free（100 queries/day）",
+   "free_quota": "100 queries per day",
+   "output_type": "结构化 Web 和 News 搜索结果，含 snippets 与 rich metadata",
    "cites_sources": true,
-   "default_on": false,
-   "note": "启用 livecrawl 时另加 $0.001/结果"
+   "default_on": null,
+   "note": "No api key required；Web and news results in one query"
+  },
+  {
+   "name": "Web Search API",
+   "pricing": "$5.00 /1k calls",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "Pay-as-you-go；每次调用最多 100 个结果",
+   "free_quota": "$100 free credit",
+   "output_type": "结构化 JSON 搜索结果，含 URL、标题、描述、snippets/highlights 及元数据",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "1-100 results per call；全文提取另收 $1.00/1k pages；News endpoint 免费包含"
+  },
+  {
+   "name": "Answer API",
+   "pricing": "$5.00 /1k calls",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "Pay-as-you-go Answer API calls",
+   "free_quota": "$100 free credit",
+   "output_type": "实时、citation-grounded 的搜索与综合答案",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "单次调用完成 web search 和 synthesis；答案仅依据检索到的 passages 生成"
+  },
+  {
+   "name": "Research API — Lite",
+   "pricing": "$12.00 /1k calls",
+   "price_per_1k_usd": 12.0,
+   "price_basis": "Lite",
+   "free_quota": "$100 free credit",
+   "output_type": "开放网络多步搜索与综合生成的 source-backed answers，带 inline references",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "Fast retrieval for simple factual lookups；页面另列 Standard、Deep、Exhaustive、Frontier"
+  },
+  {
+   "name": "Finance Research API — Deep",
+   "pricing": "$110.00 /1k calls",
+   "price_per_1k_usd": 110.0,
+   "price_basis": "Deep",
+   "free_quota": null,
+   "output_type": "多来源金融研究与综合答案，带可追溯 [[n]] 来源引用",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "覆盖 filings、macro data、markets 和 derived calculations；页面另列 Exhaustive"
   }
  ],
- "fetched_at": null,
+ "fetched_at": "2026-09-05T12:16:22Z",
  "status_note": null,
- "last_error": null
+ "last_error": null,
+ "last_fetch_ts": "2026-09-05T12:16:22Z",
+ "websearch_hash": "1207d8414b385f00da17e447e420b4a1f6b3a1bf22ea21b0c0b519affe568de4"
 }

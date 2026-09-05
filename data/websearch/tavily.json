@@ -1,7 +1,7 @@
 {
  "provider_name": "Tavily",
  "category": "ai-search",
- "source": "seed",
+ "source": "official",
  "seed_verified": true,
  "source_url": "https://docs.tavily.com/documentation/api-credits",
  "source_urls": [
@@ -11,18 +11,31 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Tavily Search API",
-   "pricing": "免费 1,000 credits/月；PAYG $0.008/credit；Basic 1 credit/次",
-   "price_per_1k_usd": 8,
-   "price_basis": "PAYG Basic（1 credit/request）",
-   "free_quota": "1,000 credits/月",
-   "output_type": "结构化搜索结果，可选正文/答案",
+   "name": "Tavily Search (basic, fast, ultra-fast)",
+   "pricing": "basic, fast, ultra-fast: 1 API Credit; Pay-as-you-go: $0.008 per credit",
+   "price_per_1k_usd": 8.0,
+   "price_basis": "Pay-as-you-go；basic、fast、ultra-fast（1 credit/次）",
+   "free_quota": "You get 1,000 free API Credits every month. No credit card required.",
+   "output_type": "按相关性排序的结构化搜索结果，含标题、来源 URL、内容；可选 LLM 生成答案和图片",
    "cites_sources": true,
-   "default_on": false,
-   "note": "Advanced 每次 2 credits；月付档为 $0.005–$0.0075/credit"
+   "default_on": null,
+   "note": "默认 search_depth=basic；最多返回20条结果；月付计划每credit为$0.0075-$0.005。"
+  },
+  {
+   "name": "Tavily Search (advanced)",
+   "pricing": "advanced: 2 API Credits; Pay-as-you-go: $0.008 per credit",
+   "price_per_1k_usd": 16.0,
+   "price_basis": "Pay-as-you-go；advanced（2 credits/次）",
+   "free_quota": "You get 1,000 free API Credits every month. No credit card required.",
+   "output_type": "按相关性排序的结构化搜索结果，含标题、来源 URL、多个相关片段；可选详细 LLM 答案",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "advanced为最高相关性、较高延迟；每来源可配置1至3个片段；最多返回20条结果。"
   }
  ],
- "fetched_at": null,
+ "fetched_at": "2026-09-05T12:14:57Z",
  "status_note": null,
- "last_error": null
+ "last_error": null,
+ "last_fetch_ts": "2026-09-05T12:14:57Z",
+ "websearch_hash": "6f87d9d2ed612b396d2e9b4530d2520a359c1346ebe008460979fbb9fc9e9bf2"
 }

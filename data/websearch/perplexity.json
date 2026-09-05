@@ -1,7 +1,7 @@
 {
  "provider_name": "Perplexity",
  "category": "serp",
- "source": "seed",
+ "source": "official",
  "seed_verified": true,
  "source_url": "https://docs.perplexity.ai/docs/getting-started/pricing",
  "source_urls": [
@@ -11,18 +11,97 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Perplexity Search API",
-   "pricing": "$5 / 1,000 successful requests；无额外 token 费",
-   "price_per_1k_usd": 5,
-   "price_basis": "Search API",
+   "name": "Search API",
+   "pricing": "$5.00 per 1K requests; there are no additional token-based charges.",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "每个成功的 POST /search 请求；最多包含 5 个查询仍计为一个计费单位",
    "free_quota": null,
-   "output_type": "结构化 results[]（title/url/snippet）",
+   "output_type": "实时、排序后的结构化原始网页搜索结果",
    "cites_sources": true,
+   "default_on": null,
+   "note": "结果含 title、url、snippet 等；max_results 为 1–20，默认 10。"
+  },
+  {
+   "name": "web_search",
+   "pricing": "$0.0025 per invocation",
+   "price_per_1k_usd": 2.5,
+   "price_basis": "Agent API web_search 工具，每次调用",
+   "free_quota": null,
+   "output_type": "模型工具；检索当前网页信息并生成带引用答案",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "工具费用与模型 token 费用分开计算。"
+  },
+  {
+   "name": "Sonar",
+   "pricing": "Input $1/1M tokens; output $1/1M tokens; request fee $5 / $8 / $12 per 1K for Low / Medium / High context.",
+   "price_per_1k_usd": null,
+   "price_basis": "Low / Medium / High search context；另收输入和输出 token 费",
+   "free_quota": null,
+   "output_type": "检索网页信息的模型生成响应",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "Low context 为默认；更高 context 检索更全面。"
+  },
+  {
+   "name": "Sonar Pro",
+   "pricing": "Input $3/1M tokens; output $15/1M tokens; request fee $6 / $10 / $14 per 1K for Low / Medium / High context.",
+   "price_per_1k_usd": null,
+   "price_basis": "Low / Medium / High search context；另收输入和输出 token 费",
+   "free_quota": null,
+   "output_type": "检索网页信息的模型生成响应",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "Low context 为默认；Pro Search 的 fast 类型采用此请求费。"
+  },
+  {
+   "name": "Sonar Reasoning Pro",
+   "pricing": "Input $2/1M tokens; output $8/1M tokens; request fee $6 / $10 / $14 per 1K for Low / Medium / High context.",
+   "price_per_1k_usd": null,
+   "price_basis": "Low / Medium / High search context；另收输入和输出 token 费",
+   "free_quota": null,
+   "output_type": "带推理能力、检索网页信息的模型生成响应",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "Low context 为默认；更高 context 检索更全面。"
+  },
+  {
+   "name": "Sonar Deep Research",
+   "pricing": "Input $2/1M tokens; output $8/1M; citation $2/1M; reasoning $3/1M; search queries $5/1K.",
+   "price_per_1k_usd": null,
+   "price_basis": "按 token 及模型自动执行的搜索查询数计费",
+   "free_quota": null,
+   "output_type": "深度研究模型响应，包含搜索结果和参考资料",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "搜索次数由模型自动决定，无法精确控制；reasoning_effort 会影响搜索次数。"
+  },
+  {
+   "name": "Pro Search for Sonar Pro — pro",
+   "pricing": "Request fee $14 / $18 / $22 per 1K for Low / Medium / High context; token pricing remains $3/1M input and $15/1M output.",
+   "price_per_1k_usd": null,
+   "price_basis": "search_type=pro；Low / Medium / High context，另收 token 费",
+   "free_quota": null,
+   "output_type": "多步骤工具调用、网页搜索和 URL 内容抓取生成的模型响应",
+   "cites_sources": null,
    "default_on": false,
-   "note": "一次成功请求最多可含 5 个 query，仍按一个 billing unit 计费"
+   "note": "要求 stream:true，并通过 web_search_options 中的 search_type 参数启用。"
+  },
+  {
+   "name": "Pro Search for Sonar Pro — auto",
+   "pricing": "Varies by classification; token pricing remains $3/1M input and $15/1M output.",
+   "price_per_1k_usd": null,
+   "price_basis": "search_type=auto；根据查询复杂度自动分类",
+   "free_quota": null,
+   "output_type": "按查询复杂度自动选择搜索方式的模型响应",
+   "cites_sources": null,
+   "default_on": false,
+   "note": "要求 stream:true，并通过 web_search_options 中的 search_type 参数启用。"
   }
  ],
- "fetched_at": null,
+ "fetched_at": "2026-09-05T12:15:51Z",
  "status_note": null,
- "last_error": null
+ "last_error": null,
+ "last_fetch_ts": "2026-09-05T12:15:51Z",
+ "websearch_hash": "177b119d5e37366a474226870b047405dbdb1ef3aae9baf7cf96bf03efa41a28"
 }

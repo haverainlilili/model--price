@@ -1,7 +1,7 @@
 {
  "provider_name": "博查 AI Search API",
  "category": "ai-search",
- "source": "seed",
+ "source": "official",
  "seed_verified": true,
  "source_url": "https://open.bochaai.com/",
  "source_urls": [
@@ -10,18 +10,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "博查 Web Search API",
+   "name": "Web Search API",
    "pricing": null,
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "结构化 Web 搜索结果（URL/snippet/summary）",
+   "output_type": "结构化搜索结果，支持流式/非流式输出，并可生成摘要",
    "cites_sources": true,
-   "default_on": false,
-   "note": "支持自然语言、多模态混合搜索与可选 summary；公开价格页需登录"
+   "default_on": null,
+   "note": "支持自然语言搜索、关键字与向量混合搜索，可自定义过滤条件并通过API或大模型工具调用。"
   }
  ],
- "fetched_at": null,
+ "fetched_at": "2026-09-05T12:18:10Z",
  "status_note": null,
- "last_error": null
+ "last_error": null,
+ "last_fetch_ts": "2026-09-05T12:18:10Z",
+ "websearch_hash": "32b595bd27cdd7f9f75f9f8268815ccfa7015a647ae79eb788fcf72040d65d62"
 }

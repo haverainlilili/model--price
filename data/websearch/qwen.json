@@ -1,7 +1,7 @@
 {
  "provider_name": "阿里云百炼 (Qwen)",
  "category": "model",
- "source": "seed",
+ "source": "official",
  "seed_verified": false,
  "source_url": "https://help.aliyun.com/zh/model-studio/web-search",
  "source_urls": [
@@ -10,18 +10,86 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "百炼联网搜索",
-   "pricing": null,
+   "name": "联网搜索（turbo 策略）",
+   "pricing": "模型调用按标准 Token 价格计费；2026年2月27日 00:00起，turbo 策略每调用1000次3元。",
    "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "模型内置搜索增强",
+   "price_basis": "华北2（北京），turbo 策略，1000次调用",
+   "free_quota": "本身不提供免费调用额度",
+   "output_type": "模型生成回答；DashScope可返回搜索结果URL并在回答中标注角标引用",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "turbo为默认策略；仅该计费标准适用于华北2（北京）。联网搜索限流15 RPS。"
+  },
+  {
+   "name": "联网搜索（max 策略）",
+   "pricing": "模型调用按标准 Token 价格计费；2026年2月27日 00:00起，max 策略每调用1000次4元。",
+   "price_per_1k_usd": null,
+   "price_basis": "华北2（北京），max 策略，1000次调用",
+   "free_quota": "本身不提供免费调用额度",
+   "output_type": "模型生成回答；DashScope可返回搜索结果URL并在回答中标注角标引用",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "max采用更全面的搜索策略，可调用多源搜索引擎；响应时间可能更长。"
+  },
+  {
+   "name": "联网搜索（agent 策略）",
+   "pricing": "每调用1000次4元；模型调用另按标准 Token 价格计费。",
+   "price_per_1k_usd": null,
+   "price_basis": "华北2（北京）、美国（弗吉尼亚）、中国香港、日本（东京）、德国（法兰克福），1000次调用",
+   "free_quota": "本身不提供免费调用额度",
+   "output_type": "模型多次调用联网搜索工具并整合信息，可返回搜索来源",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "启用时仅支持enable_source；Responses API联网搜索工具按agent策略计费。"
+  },
+  {
+   "name": "联网搜索（agent 策略）",
+   "pricing": "每调用1000次73.392381元；模型调用另按标准 Token 价格计费。",
+   "price_per_1k_usd": null,
+   "price_basis": "新加坡地域，1000次调用",
+   "free_quota": "本身不提供免费调用额度",
+   "output_type": "模型多次调用联网搜索工具并整合信息，可返回搜索来源",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "启用时仅支持enable_source；Responses API联网搜索工具按agent策略计费。"
+  },
+  {
+   "name": "联网搜索（agent_max 策略）",
+   "pricing": "联网搜索工具每1000次调用4元；网页抓取工具限时免费；模型调用另按标准 Token 价格计费。",
+   "price_per_1k_usd": null,
+   "price_basis": "华北2（北京）、美国（弗吉尼亚）、中国香港、日本（东京）、德国（法兰克福），1000次调用",
+   "free_quota": "网页抓取工具限时免费",
+   "output_type": "联网搜索与网页抓取后由模型生成回答，可返回搜索来源",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "限时优惠；仅适用于qwen3-max、qwen3-max-2026-01-23的思考模式。"
+  },
+  {
+   "name": "联网搜索（agent_max 策略）",
+   "pricing": "联网搜索工具每1000次调用73.392381元；网页抓取工具限时免费；模型调用另按标准 Token 价格计费。",
+   "price_per_1k_usd": null,
+   "price_basis": "新加坡地域，1000次调用",
+   "free_quota": "网页抓取工具限时免费",
+   "output_type": "联网搜索与网页抓取后由模型生成回答，可返回搜索来源",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "限时优惠；仅适用于qwen3-max、qwen3-max-2026-01-23的思考模式。"
+  },
+  {
+   "name": "联网搜索 MCP",
+   "pricing": "全部用户前2000次调用免费，免费额度用尽后按29元/千次计费。",
+   "price_per_1k_usd": null,
+   "price_basis": "免费额度用尽后，1000次调用",
+   "free_quota": "全部用户前2000次调用免费",
+   "output_type": "MCP联网搜索工具",
    "cites_sources": null,
    "default_on": null,
-   "note": "官网价格与引用字段待自动抓取补全"
+   "note": "与模型内置联网搜索相互独立，计费也相互独立。"
   }
  ],
- "fetched_at": null,
+ "fetched_at": "2026-09-05T12:12:58Z",
  "status_note": null,
- "last_error": null
+ "last_error": null,
+ "last_fetch_ts": "2026-09-05T12:12:58Z",
+ "websearch_hash": "c280b3724d635de9826db6d26b4c41a93f54550ec860e872ed63ed6320ee4878"
 }

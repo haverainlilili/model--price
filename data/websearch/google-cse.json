@@ -1,7 +1,7 @@
 {
  "provider_name": "Google Custom Search JSON API",
  "category": "serp",
- "source": "seed",
+ "source": "official",
  "seed_verified": true,
  "source_url": "https://developers.google.com/custom-search/v1/overview",
  "source_urls": [
@@ -10,18 +10,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Google Custom Search JSON API",
-   "pricing": "100 queries/日免费；额外 $5 / 1,000 queries",
-   "price_per_1k_usd": 5,
-   "price_basis": "额外查询（仅存量客户）",
-   "free_quota": "100 queries/日",
-   "output_type": "Google Web/Image Search JSON",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "不再向新客户开放；计划于 2027-01-01 停服"
+   "name": "Custom Search JSON API",
+   "pricing": "Additional requests cost $5 per 1000 queries, up to 10k queries per day.",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "现有客户的额外查询请求",
+   "free_quota": "100 search queries per day for free",
+   "output_type": "Web or image search results in JSON format",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "不向新客户开放；现有客户须在2027年1月1日前迁移，付费查询上限为每日10,000次。"
   }
  ],
- "fetched_at": null,
+ "fetched_at": "2026-09-05T12:18:40Z",
  "status_note": null,
- "last_error": null
+ "last_error": null,
+ "last_fetch_ts": "2026-09-05T12:18:40Z",
+ "websearch_hash": "a154e899032153ed36e0025ebaa7b31cc7b5fb1f11c9cc12df975a6681190df8"
 }

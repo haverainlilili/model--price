@@ -12,75 +12,97 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search",
-   "pricing": "Free Plan: 1,000 credits / month; $0/month; 500 searches or 1,000 pages scraped",
+   "name": "Search — Free Plan",
+   "pricing": "$0/month；1,000 credits / month；500 searches or 1,000 pages scraped",
    "price_per_1k_usd": 0.0,
-   "price_basis": "Free Plan（500 searches/月；按$0等比例换算）",
+   "price_basis": "Free Plan（500 searches/月；按额度折算）",
    "free_quota": "1,000 credits / month；500 searches or 1,000 pages scraped",
-   "output_type": "结构化web/news/images结果，含标题、描述或摘要及URL；可选返回全文Markdown、HTML、链接或截图",
+   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可选抓取全文",
    "cites_sources": true,
-   "default_on": null,
-   "note": "Search costs 2 credits per 10 results，按每10条向上取整。"
+   "default_on": false,
+   "note": "Search按每10个结果2 credits计费并向上取整；抓取结果另收标准抓取credits。"
   },
   {
-   "name": "Search",
-   "pricing": "Hobby: 5,000 credits / month; $16/month, billed yearly; 2,500 searches; 1,000 extra credits per $5",
+   "name": "Search — Hobby",
+   "pricing": "$16/month, billed yearly；5,000 credits / month；2,500 searches；1,000 extra credits per $5",
    "price_per_1k_usd": 6.4,
-   "price_basis": "Hobby年付档（月含2,500次搜索）",
+   "price_basis": "Hobby年付月均（2,500 searches/月）",
    "free_quota": null,
-   "output_type": "结构化web/news/images结果，含标题、描述或摘要及URL；可选返回全文Markdown、HTML、链接或截图",
+   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可选抓取全文",
    "cites_sources": true,
-   "default_on": null,
-   "note": "Search为2 credits/10 results；Hobby PAYG为$5/1,000 credits。"
+   "default_on": false,
+   "note": "PAYG为$5/1,000 credits；Search按每10个结果2 credits计费并向上取整。"
   },
   {
-   "name": "Search",
-   "pricing": "Standard: 100,000 credits / month; $83/month, billed yearly; 50,000 searches; 2,000 extra credits per $5",
+   "name": "Search — Standard",
+   "pricing": "$83/month, billed yearly；100,000 credits / month；50,000 searches；2,000 extra credits per $5",
    "price_per_1k_usd": 1.66,
-   "price_basis": "Standard年付档（月含50,000次搜索）",
+   "price_basis": "Standard年付月均（50,000 searches/月）",
    "free_quota": null,
-   "output_type": "结构化web/news/images结果，含标题、描述或摘要及URL；可选返回全文Markdown、HTML、链接或截图",
+   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可选抓取全文",
    "cites_sources": true,
-   "default_on": null,
-   "note": "Search为2 credits/10 results；Standard PAYG为$5/2,000 credits。"
+   "default_on": false,
+   "note": "PAYG为$5/2,000 credits；Search按每10个结果2 credits计费并向上取整。"
   },
   {
-   "name": "Search",
-   "pricing": "Growth: 500,000 credits / month; $333/month, billed yearly; 250,000 searches; 2,500 extra credits per $5",
+   "name": "Search — Growth",
+   "pricing": "$333/month, billed yearly；500,000 credits / month；250,000 searches；2,500 extra credits per $5",
    "price_per_1k_usd": 1.332,
-   "price_basis": "Growth年付档（月含250,000次搜索）",
+   "price_basis": "Growth年付月均（250,000 searches/月）",
    "free_quota": null,
-   "output_type": "结构化web/news/images结果，含标题、描述或摘要及URL；可选返回全文Markdown、HTML、链接或截图",
+   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可选抓取全文",
    "cites_sources": true,
-   "default_on": null,
-   "note": "Search为2 credits/10 results；Growth PAYG为$5/2,500 credits。"
+   "default_on": false,
+   "note": "PAYG为$5/2,500 credits；Search按每10个结果2 credits计费并向上取整。"
   },
   {
-   "name": "Search",
-   "pricing": "Scale: 1,000,000 credits / month; $599/monthly, billed yearly; 500,000 searches; 5,000 extra credits per $5",
+   "name": "Search — Scale",
+   "pricing": "$599/monthly, billed yearly；1,000,000 credits / month；500,000 searches；5,000 extra credits per $5",
    "price_per_1k_usd": 1.198,
-   "price_basis": "Scale年付档（月含500,000次搜索）",
+   "price_basis": "Scale年付月均（500,000 searches/月）",
    "free_quota": null,
-   "output_type": "结构化web/news/images结果，含标题、描述或摘要及URL；可选返回全文Markdown、HTML、链接或截图",
+   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可选抓取全文",
    "cites_sources": true,
-   "default_on": null,
-   "note": "Search为2 credits/10 results；Scale PAYG为$5/5,000 credits。"
+   "default_on": false,
+   "note": "PAYG为$5/5,000 credits；Search按每10个结果2 credits计费并向上取整。"
   },
   {
-   "name": "Search",
-   "pricing": "Enterprise: Custom credits; Custom; Bulk discounts",
+   "name": "Search — Enterprise",
+   "pricing": "Custom credits；Custom；Bulk discounts",
    "price_per_1k_usd": null,
-   "price_basis": "Enterprise定制档",
+   "price_basis": "Enterprise自定义方案",
    "free_quota": null,
-   "output_type": "结构化web/news/images结果，含标题、描述或摘要及URL；可选返回全文Markdown、HTML、链接或截图",
+   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可选抓取全文",
    "cites_sources": true,
-   "default_on": null,
-   "note": "Enterprise ZDR：端到端10 credits/10结果；匿名化ZDR为2 credits/10结果。"
+   "default_on": false,
+   "note": "含自定义并发、专属支持与SLA、零数据保留及高级安全功能。"
+  },
+  {
+   "name": "End-to-End ZDR Search",
+   "pricing": "Cost: 10 credits per 10 results",
+   "price_per_1k_usd": null,
+   "price_basis": "Enterprise ZDR search",
+   "free_quota": null,
+   "output_type": "结构化搜索结果；Firecrawl及上游搜索提供商均不存储查询或结果数据",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "仅Enterprise可用；参数enterprise:[\"zdr\"]；美元价格因Enterprise为自定义定价而无法换算。"
+  },
+  {
+   "name": "Anonymized ZDR Search",
+   "pricing": "Cost: 2 credits per 10 results",
+   "price_per_1k_usd": null,
+   "price_basis": "Enterprise anonymized ZDR search",
+   "free_quota": null,
+   "output_type": "结构化搜索结果；Firecrawl侧零保留，上游可能缓存完全匿名化的查询",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "仅Enterprise可用；参数enterprise:[\"anon\"]；美元价格因Enterprise为自定义定价而无法换算。"
   }
  ],
- "fetched_at": "2026-09-05T12:17:40Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-05T15:14:50Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-05T14:15:52Z",
- "websearch_hash": "0ac923a78762a65ef70088231b0ca5dd6b5da01513adc175f261b53f40bc575f"
+ "last_fetch_ts": "2026-09-05T15:14:50Z",
+ "websearch_hash": "646f7e04b9100a11bde61e208b6f6789b22066b40b029abc5c878b71f6c9e9aa"
 }

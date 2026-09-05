@@ -12,97 +12,31 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search — Free Plan",
-   "pricing": "$0/month；1,000 credits / month；500 searches or 1,000 pages scraped",
-   "price_per_1k_usd": 0.0,
-   "price_basis": "Free Plan（500 searches/月；按额度折算）",
-   "free_quota": "1,000 credits / month；500 searches or 1,000 pages scraped",
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可选抓取全文",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "Search按每10个结果2 credits计费并向上取整；抓取结果另收标准抓取credits。"
-  },
-  {
-   "name": "Search — Hobby",
-   "pricing": "$16/month, billed yearly；5,000 credits / month；2,500 searches；1,000 extra credits per $5",
-   "price_per_1k_usd": 6.4,
-   "price_basis": "Hobby年付月均（2,500 searches/月）",
-   "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可选抓取全文",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "PAYG为$5/1,000 credits；Search按每10个结果2 credits计费并向上取整。"
-  },
-  {
-   "name": "Search — Standard",
-   "pricing": "$83/month, billed yearly；100,000 credits / month；50,000 searches；2,000 extra credits per $5",
-   "price_per_1k_usd": 1.66,
-   "price_basis": "Standard年付月均（50,000 searches/月）",
-   "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可选抓取全文",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "PAYG为$5/2,000 credits；Search按每10个结果2 credits计费并向上取整。"
-  },
-  {
-   "name": "Search — Growth",
-   "pricing": "$333/month, billed yearly；500,000 credits / month；250,000 searches；2,500 extra credits per $5",
-   "price_per_1k_usd": 1.332,
-   "price_basis": "Growth年付月均（250,000 searches/月）",
-   "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可选抓取全文",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "PAYG为$5/2,500 credits；Search按每10个结果2 credits计费并向上取整。"
-  },
-  {
-   "name": "Search — Scale",
-   "pricing": "$599/monthly, billed yearly；1,000,000 credits / month；500,000 searches；5,000 extra credits per $5",
-   "price_per_1k_usd": 1.198,
-   "price_basis": "Scale年付月均（500,000 searches/月）",
-   "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可选抓取全文",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "PAYG为$5/5,000 credits；Search按每10个结果2 credits计费并向上取整。"
-  },
-  {
-   "name": "Search — Enterprise",
-   "pricing": "Custom credits；Custom；Bulk discounts",
+   "name": "Web Search API",
+   "pricing": "Search costs 2 credits per 10 results. Hobby: $16/month billed yearly, including 2,500 searches or 5,000 pages scraped.",
    "price_per_1k_usd": null,
-   "price_basis": "Enterprise自定义方案",
-   "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可选抓取全文",
+   "price_basis": "Hobby annual plan；search按每10个结果计费并向上取整",
+   "free_quota": "1,000 credits / month；500 searches or 1,000 pages scraped",
+   "output_type": "结构化网页、新闻和图片搜索结果，含URL、标题与描述；可选返回Markdown、HTML、链接或截图",
    "cites_sources": true,
    "default_on": false,
-   "note": "含自定义并发、专属支持与SLA、零数据保留及高级安全功能。"
+   "note": "1–10个结果2 credits，11–20个4 credits；抓取结果时另收每页抓取费用。"
   },
   {
-   "name": "End-to-End ZDR Search",
+   "name": "End-to-End ZDR",
    "pricing": "Cost: 10 credits per 10 results",
    "price_per_1k_usd": null,
-   "price_basis": "Enterprise ZDR search",
+   "price_basis": "Enterprise ZDR search；10 credits per 10 results",
    "free_quota": null,
-   "output_type": "结构化搜索结果；Firecrawl及上游搜索提供商均不存储查询或结果数据",
+   "output_type": "零数据保留的结构化搜索结果",
    "cites_sources": true,
    "default_on": false,
-   "note": "仅Enterprise可用；参数enterprise:[\"zdr\"]；美元价格因Enterprise为自定义定价而无法换算。"
-  },
-  {
-   "name": "Anonymized ZDR Search",
-   "pricing": "Cost: 2 credits per 10 results",
-   "price_per_1k_usd": null,
-   "price_basis": "Enterprise anonymized ZDR search",
-   "free_quota": null,
-   "output_type": "结构化搜索结果；Firecrawl侧零保留，上游可能缓存完全匿名化的查询",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "仅Enterprise可用；参数enterprise:[\"anon\"]；美元价格因Enterprise为自定义定价而无法换算。"
+   "note": "仅Enterprise可用；Firecrawl及上游搜索提供商均不存储查询或结果数据。"
   }
  ],
- "fetched_at": "2026-09-05T15:14:50Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-05T21:14:13Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-05T20:14:13Z",
- "websearch_hash": "646f7e04b9100a11bde61e208b6f6789b22066b40b029abc5c878b71f6c9e9aa"
+ "last_fetch_ts": "2026-09-05T21:14:13Z",
+ "websearch_hash": "889bc05f0a0f649be3b9230901d756cacb5f7240de810ef73df62607b87c4179"
 }

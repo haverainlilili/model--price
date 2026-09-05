@@ -13962,5 +13962,194 @@
    "fetched_at": "2026-09-05T04:10:29Z",
    "status_note": "页面无变化"
   }
+ },
+ "websearch": {
+  "anthropic": {
+   "source": "seed",
+   "source_url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool",
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Web search tool",
+     "pricing": "按搜索次数额外计费(独立于 token 价)",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "返回带引用的来源; 支持多轮搜索与动态过滤(web_search_20260209+)"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null
+  },
+  "openai": {
+   "source": "seed",
+   "source_url": "https://developers.openai.com/api/docs/guides/web-search",
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Search API / web_search 工具",
+     "pricing": "gpt-5-search-api 按 token 计价($1.25/$10 每百万)",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "Search API 独立计费; ChatGPT 内置搜索另计"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null
+  },
+  "google": {
+   "source": "seed",
+   "source_url": "https://ai.google.dev/gemini-api/docs/google-search",
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Grounding with Google Search",
+     "pricing": "按 grounded 查询次数额外计费",
+     "cites_sources": true,
+     "default_on": false,
+     "note": "自动生成搜索查询并返回内联引用(annotations)"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null
+  },
+  "xai": {
+   "source": "seed",
+   "source_url": "https://docs.x.ai/docs/tools",
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Grok 联网搜索 / API web search",
+     "pricing": null,
+     "cites_sources": null,
+     "default_on": null,
+     "note": "待官网首次抓取校准"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null
+  },
+  "mistral": {
+   "source": "seed",
+   "source_url": "https://docs.mistral.ai/capabilities/web-search/",
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Web search (Le Chat / API)",
+     "pricing": null,
+     "cites_sources": null,
+     "default_on": null,
+     "note": "待官网首次抓取校准"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null
+  },
+  "deepseek": {
+   "source": "seed",
+   "source_url": "https://api-docs.deepseek.com/zh-cn/guides/web_search",
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "联网搜索 (API)",
+     "pricing": null,
+     "cites_sources": null,
+     "default_on": false,
+     "note": "待官网首次抓取校准"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null
+  },
+  "qwen": {
+   "source": "seed",
+   "source_url": "https://help.aliyun.com/zh/model-studio/web-search",
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "百炼 联网搜索",
+     "pricing": null,
+     "cites_sources": null,
+     "default_on": null,
+     "note": "待官网首次抓取校准"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null
+  },
+  "doubao": {
+   "source": "seed",
+   "source_url": "https://www.volcengine.com/docs/82379/1500601",
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "火山方舟 联网搜索",
+     "pricing": null,
+     "cites_sources": null,
+     "default_on": null,
+     "note": "待官网首次抓取校准"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null
+  },
+  "zhipu": {
+   "source": "seed",
+   "source_url": "https://docs.bigmodel.cn/cn/guide/tools/web-search",
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "GLM 联网搜索 (web_search)",
+     "pricing": null,
+     "cites_sources": null,
+     "default_on": null,
+     "note": "待官网首次抓取校准"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null
+  },
+  "moonshot": {
+   "source": "seed",
+   "source_url": "https://platform.kimi.com/docs/guide/web-search",
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "Kimi 联网搜索",
+     "pricing": null,
+     "cites_sources": null,
+     "default_on": null,
+     "note": "待官网首次抓取校准"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null
+  },
+  "minimax": {
+   "source": "seed",
+   "source_url": "https://platform.minimaxi.com/docs/guides/chat",
+   "has_search": true,
+   "offerings": [
+    {
+     "name": "MiniMax 联网搜索",
+     "pricing": null,
+     "cites_sources": null,
+     "default_on": null,
+     "note": "待官网首次抓取校准"
+    }
+   ],
+   "fetched_at": null,
+   "status_note": null,
+   "last_error": null
+  }
  }
 }

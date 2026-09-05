@@ -4,7 +4,7 @@
    "name": "Lite 套餐",
    "plan_type": "Coding Plan",
    "price": "首购优惠价仅9.9元/月",
-   "billing": "每月",
+   "billing": "首购；按月",
    "quotas": [
     {
      "label": "请求数",
@@ -18,14 +18,14 @@
     "DeepSeek-V3.2",
     "Kimi-K2-Thinking"
    ],
-   "note": "官网以“最多约”表述请求额度；当前可自由选择所列模型，也可使用 Auto 模式智能匹配模型。",
+   "note": "官网使用“最多约”表述，请求数为每5小时窗口内的官网近似上限。",
    "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
   },
   {
    "name": "Pro 套餐",
    "plan_type": "Coding Plan",
    "price": "首购优惠价49.9元/月",
-   "billing": "每月",
+   "billing": "首购；按月",
    "quotas": [
     {
      "label": "请求数",
@@ -33,7 +33,7 @@
      "window": "每5小时"
     },
     {
-     "label": "套餐用量（相对 Lite 套餐）",
+     "label": "相对用量",
      "value": "Lite 套餐的5倍",
      "window": null
     }
@@ -44,18 +44,18 @@
     "DeepSeek-V3.2",
     "Kimi-K2-Thinking"
    ],
-   "note": "官网以“最多约”表述请求额度，并称 Pro 套餐用量是 Lite 套餐的5倍；当前可自由选择所列模型，也可使用 Auto 模式智能匹配模型。",
+   "note": "官网使用“最多约”表述，请求数为每5小时窗口内的官网近似上限；同时明确称 Pro 套餐用量是 Lite 套餐的5倍。",
    "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-05T16:10:43Z",
+ "last_fetch_ts": "2026-09-05T17:11:27Z",
  "source": "official",
  "source_urls": [
   "https://developer.volcengine.com/articles/7595502342175195187"
  ],
  "page_has_plans": true,
- "plans_hash": "748882e3be6f80bfd07f65206b60b754511960c2e392b64b5148ebc44201b8ee",
- "fetched_at": "2026-09-05T16:10:43Z",
+ "plans_hash": "2a7f84983f7cd6cf04fbf6a9fdf6bc83054f46cb8b64ce3975c8eb7b0b544a19",
+ "fetched_at": "2026-09-05T17:11:27Z",
  "status_note": null
 }

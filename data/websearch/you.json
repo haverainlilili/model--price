@@ -1,0 +1,28 @@
+{
+ "provider_name": "You.com",
+ "category": "ai-search",
+ "source": "seed",
+ "seed_verified": true,
+ "source_url": "https://you.com/pricing",
+ "source_urls": [
+  "https://you.com/pricing",
+  "https://you.com/docs/guides/search"
+ ],
+ "has_search": true,
+ "offerings": [
+  {
+   "name": "You.com Web Search API",
+   "pricing": "$5 / 1,000 calls；每次可返回 1–100 个结果",
+   "price_per_1k_usd": 5,
+   "price_basis": "Web Search API",
+   "free_quota": "$100 启动 credits",
+   "output_type": "结构化搜索结果；另有带引用 Research API",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "启用 livecrawl 时另加 $0.001/结果"
+  }
+ ],
+ "fetched_at": null,
+ "status_note": null,
+ "last_error": null
+}

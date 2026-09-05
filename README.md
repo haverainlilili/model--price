@@ -10,10 +10,18 @@
 |---|---|
 | Anthropic (Claude)、OpenAI、Google (Gemini)、xAI (Grok)、Mistral | DeepSeek、阿里云百炼 (Qwen)、火山方舟 (豆包)、智谱 (GLM)、月之暗面 (Kimi)、MiniMax |
 
+### 联网搜索覆盖（25 家）
+
+- **模型内置搜索（11）**：Anthropic、OpenAI、Google Gemini、xAI、Mistral、DeepSeek、Qwen、豆包、GLM、Kimi、MiniMax。
+- **AI / RAG 搜索 API（7）**：Tavily、Exa、You.com、Linkup、Jina AI Search、Firecrawl Search、博查 AI Search。
+- **SERP / 搜索引擎结果 API（7）**：Brave Search API、Perplexity Search API、Serper、SerpApi、Google Custom Search JSON API、DataForSEO、Bright Data。
+
+只在官网能直接或机械换算成 USD/千次请求时进入价格柱状图；token、搜索深度、额外结果、正文抓取和企业询价不会混入柱高。Google Custom Search JSON API 仅对存量客户开放，并将在 2027-01-01 停服，页面会明确标注。
+
 ## 工作原理
 
 ```
-providers.yaml 配置各厂商入口
+providers.yaml + websearch.yaml 配置各厂商入口
         │
         ▼
 生产服务器 systemd timer 每小时触发
@@ -56,7 +64,8 @@ OpenAI 兼容接口结构化抽取 (JSON Schema + Pydantic 校验)
 ## 目录结构
 
 ```
-providers.yaml        # 厂商入口配置 —— 增删厂商只改这个文件
+providers.yaml        # API 价格 / 套餐 / 公告厂商配置
+websearch.yaml        # 联网搜索独立目录（模型工具 / AI Search / SERP）
 scraper/
   fetch.py            # 抓取层: requests + 无头浏览器(渲染 JS 页面)
   models.py           # Pydantic 抽取 schema (价格 / 套餐 / 联网搜索 / 公告)
@@ -103,7 +112,7 @@ GitHub Actions 不再重复抓取，只在 `main` 的 `site/` 更新后发布 Gi
 ## 数据说明
 
 - 站点上的价格均来自各厂商官网公开页面，**仅供比价参考**；限时折扣、档位计价等细节以官网为准。
-- 首次成功抽取前，部分厂商展示「种子数据 · 待校准」(2026-08-27 手工录入)，首次抓取成功后自动替换。
+- 首次成功抽取前，已人工核对官网的联网搜索记录显示「官网事实种子 · 待自动校准」；尚未核实的模型工具显示「待官网自动确认」，空缺字段不会猜测。自动抓取成功后均由最新官网抽取结果替换。
 - 原始数据随站点发布在 `site/data.json`,可直接复用。
 
 ## License

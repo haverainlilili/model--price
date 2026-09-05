@@ -1,19 +1,28 @@
 {
- "source": "official",
+ "provider_name": "Google Gemini",
+ "category": "model",
+ "source": "seed",
+ "seed_verified": true,
  "source_url": "https://ai.google.dev/gemini-api/docs/google-search",
+ "source_urls": [
+  "https://ai.google.dev/gemini-api/docs/google-search",
+  "https://ai.google.dev/gemini-api/docs/pricing?hl=en"
+ ],
  "has_search": true,
  "offerings": [
   {
    "name": "Grounding with Google Search",
-   "pricing": "Gemini 3 按模型执行的每个搜索查询计费；Gemini 2.5 或更早模型按 prompt 计费",
+   "pricing": "每月 5,000 次免费，之后 $14 / 1,000 search requests",
+   "price_per_1k_usd": 14,
+   "price_basis": "Gemini 3.x，超出免费额度",
+   "free_quota": "5,000 search requests/月（Gemini 3.x 共享）",
+   "output_type": "模型内置 Grounding；返回来源引用",
    "cites_sources": true,
    "default_on": false,
-   "note": "支持所有可用语言；模型按需自动生成一个或多个查询，并返回内联 url_citation。"
+   "note": "按模型实际执行的每个 Google Search query 计费"
   }
  ],
- "fetched_at": "2026-09-05T10:12:50Z",
- "status_note": "页面无变化",
- "last_error": null,
- "last_fetch_ts": "2026-09-05T11:12:43Z",
- "websearch_hash": "d6b58a588d1566c8b3352828ea3d4818f7ec4756ef20ef3581b019afe1614329"
+ "fetched_at": null,
+ "status_note": null,
+ "last_error": null
 }

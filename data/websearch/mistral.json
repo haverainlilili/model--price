@@ -1,19 +1,27 @@
 {
+ "provider_name": "Mistral",
+ "category": "model",
  "source": "seed",
+ "seed_verified": false,
  "source_url": "https://docs.mistral.ai/capabilities/web-search/",
- "has_search": false,
+ "source_urls": [
+  "https://docs.mistral.ai/capabilities/web-search/"
+ ],
+ "has_search": true,
  "offerings": [
   {
-   "name": "Web search (Le Chat / API)",
+   "name": "Mistral Web search",
    "pricing": null,
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": null,
+   "output_type": "模型内置搜索工具",
    "cites_sources": null,
    "default_on": null,
-   "note": "待官网首次抓取校准"
+   "note": "等待官网自动抓取补全价格与来源字段"
   }
  ],
  "fetched_at": null,
- "status_note": "页面无变化",
- "last_error": null,
- "last_fetch_ts": "2026-09-05T11:13:03Z",
- "websearch_hash": "119912d44c922be6cd6573f54b936dcbb1748071d7f2c1a7fb826344f103af04"
+ "status_note": null,
+ "last_error": null
 }

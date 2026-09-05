@@ -1,19 +1,27 @@
 {
+ "provider_name": "xAI (Grok)",
+ "category": "model",
  "source": "seed",
+ "seed_verified": false,
  "source_url": "https://docs.x.ai/docs/tools",
- "has_search": false,
+ "source_urls": [
+  "https://docs.x.ai/docs/tools"
+ ],
+ "has_search": true,
  "offerings": [
   {
-   "name": "Grok 联网搜索 / API web search",
+   "name": "Grok 联网搜索 / Search tools",
    "pricing": null,
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": null,
+   "output_type": "模型内置搜索工具",
    "cites_sources": null,
    "default_on": null,
-   "note": "待官网首次抓取校准"
+   "note": "等待官网自动抓取补全价格与来源字段"
   }
  ],
  "fetched_at": null,
- "status_note": "页面无变化",
- "last_error": null,
- "last_fetch_ts": "2026-09-05T11:12:44Z",
- "websearch_hash": "dca768a35de15baa7b78aec55891418e7332de5fcdf7552d610c06a1ba5bc0b2"
+ "status_note": null,
+ "last_error": null
 }

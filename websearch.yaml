@@ -1,0 +1,181 @@
+# 联网搜索对比独立配置。
+# category: model=模型内置搜索；ai-search=面向 AI/RAG 的独立搜索 API；serp=原始搜索引擎结果 API。
+# websearch_urls 可同时抓取能力页与价格页；页面 hash 无变化时不会调用结构化抽取模型。
+providers:
+  # 模型内置联网搜索
+  - id: anthropic
+    name: Anthropic (Claude)
+    region: 国际
+    category: model
+    language: en-US
+    websearch_url: https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool
+  - id: openai
+    name: OpenAI
+    region: 国际
+    category: model
+    language: en-US
+    websearch_urls:
+      - https://developers.openai.com/api/docs/guides/tools-web-search
+      - https://developers.openai.com/api/docs/pricing
+  - id: google
+    name: Google Gemini
+    region: 国际
+    category: model
+    language: en-US
+    websearch_urls:
+      - https://ai.google.dev/gemini-api/docs/google-search
+      - https://ai.google.dev/gemini-api/docs/pricing?hl=en
+  - id: xai
+    name: xAI (Grok)
+    region: 国际
+    category: model
+    language: en-US
+    websearch_url: https://docs.x.ai/docs/tools
+    websearch_render: true
+  - id: mistral
+    name: Mistral
+    region: 国际
+    category: model
+    language: en-US
+    websearch_url: https://docs.mistral.ai/capabilities/web-search/
+    websearch_render: true
+  - id: deepseek
+    name: DeepSeek
+    region: 国内
+    category: model
+    websearch_url: https://api-docs.deepseek.com/zh-cn/guides/web_search
+  - id: qwen
+    name: 阿里云百炼 (Qwen)
+    region: 国内
+    category: model
+    websearch_url: https://help.aliyun.com/zh/model-studio/web-search
+  - id: doubao
+    name: 火山方舟 (豆包)
+    region: 国内
+    category: model
+    websearch_url: https://www.volcengine.com/docs/82379/1500601
+    websearch_render: true
+  - id: zhipu
+    name: 智谱 (GLM)
+    region: 国内
+    category: model
+    websearch_url: https://docs.bigmodel.cn/cn/guide/tools/web-search
+    websearch_render: true
+  - id: moonshot
+    name: 月之暗面 (Kimi)
+    region: 国内
+    category: model
+    websearch_url: https://platform.kimi.com/docs/guide/web-search
+  - id: minimax
+    name: MiniMax
+    region: 国内
+    category: model
+    websearch_url: https://platform.minimaxi.com/docs/guides/chat
+    websearch_render: true
+
+  # AI / RAG 常用独立搜索 API
+  - id: tavily
+    name: Tavily
+    region: 国际
+    category: ai-search
+    language: en-US
+    websearch_urls:
+      - https://docs.tavily.com/documentation/api-credits
+      - https://docs.tavily.com/documentation/api-reference/endpoint/search
+  - id: exa
+    name: Exa
+    region: 国际
+    category: ai-search
+    language: en-US
+    websearch_urls:
+      - https://exa.ai/docs/reference/pricing
+      - https://exa.ai/products/search
+  - id: brave
+    name: Brave Search API
+    region: 国际
+    category: serp
+    language: en-US
+    websearch_urls:
+      - https://brave.com/search/api/
+      - https://api-dashboard.search.brave.com/documentation/pricing
+  - id: perplexity
+    name: Perplexity
+    region: 国际
+    category: serp
+    language: en-US
+    websearch_urls:
+      - https://docs.perplexity.ai/docs/getting-started/pricing
+      - https://docs.perplexity.ai/docs/search/quickstart
+  - id: you
+    name: You.com
+    region: 国际
+    category: ai-search
+    language: en-US
+    websearch_urls:
+      - https://you.com/pricing
+      - https://you.com/docs/guides/search
+  - id: linkup
+    name: Linkup
+    region: 国际
+    category: ai-search
+    language: en-US
+    websearch_urls:
+      - https://www.linkup.so/pricing
+      - https://docs.linkup.so/pages/documentation/platform/pricing
+      - https://docs.linkup.so/pages/documentation/endpoints/search/overview
+  - id: jina
+    name: Jina AI Search
+    region: 国际
+    category: ai-search
+    language: en-US
+    websearch_urls:
+      - https://jina.ai/reader/
+      - https://jina.ai/api-dashboard/pricing
+    websearch_render: true
+  - id: firecrawl
+    name: Firecrawl Search
+    region: 国际
+    category: ai-search
+    language: en-US
+    websearch_urls:
+      - https://www.firecrawl.dev/pricing
+      - https://docs.firecrawl.dev/features/search
+      - https://docs.firecrawl.dev/billing
+
+  - id: bocha
+    name: 博查 AI Search API
+    region: 国内
+    category: ai-search
+    websearch_url: https://open.bochaai.com/
+
+  # SERP / 搜索引擎结果 API
+  - id: serper
+    name: Serper
+    region: 国际
+    category: serp
+    language: en-US
+    websearch_url: https://serper.dev/
+  - id: serpapi
+    name: SerpApi
+    region: 国际
+    category: serp
+    language: en-US
+    websearch_url: https://serpapi.com/pricing.md
+  - id: google-cse
+    name: Google Custom Search JSON API
+    region: 国际
+    category: serp
+    language: en-US
+    websearch_url: https://developers.google.com/custom-search/v1/overview
+  - id: dataforseo
+    name: DataForSEO SERP API
+    region: 国际
+    category: serp
+    language: en-US
+    websearch_url: https://dataforseo.com/apis/serp-api/pricing
+  - id: brightdata
+    name: Bright Data SERP API
+    region: 国际
+    category: serp
+    language: en-US
+    websearch_url: https://brightdata.com/pricing/serp

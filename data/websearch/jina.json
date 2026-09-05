@@ -1,0 +1,28 @@
+{
+ "provider_name": "Jina AI Search",
+ "category": "ai-search",
+ "source": "seed",
+ "seed_verified": true,
+ "source_url": "https://jina.ai/reader/",
+ "source_urls": [
+  "https://jina.ai/reader/",
+  "https://jina.ai/api-dashboard/pricing"
+ ],
+ "has_search": true,
+ "offerings": [
+  {
+   "name": "Jina Search API (s.jina.ai)",
+   "pricing": "$0.050 / 1M tokens；每次搜索固定从 10,000 tokens 起",
+   "price_per_1k_usd": null,
+   "price_basis": "按 token 计费，不进入千次请求柱图",
+   "free_quota": "新 API key 含 10M tokens（最多约 1,000 次最低用量搜索）",
+   "output_type": "5 条结构化结果并转为 LLM-friendly text",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "实际成本随 token budget 变化，不能与固定请求价直接比较"
+  }
+ ],
+ "fetched_at": null,
+ "status_note": null,
+ "last_error": null
+}

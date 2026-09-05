@@ -1,10 +1,10 @@
-"""主流程: 抓取官网页面 -> 内容有变化时用 Claude 抽取 -> 记录价格变动
+"""主流程: 抓取官网页面 -> 内容有变化时用兼容 OpenAI 的模型抽取 -> 记录价格变动
 与新增公告 -> 更新汇率 -> 重新生成静态站点。
 
 设计原则:
 - 任何单厂商失败都不中断整体(保留旧数据, 把错误写进状态)
 - 没有 OPENAI_API_KEY 时跳过抽取, 仅用已有数据建站
-- 页面内容 hash 没变就完全不调 Claude —— 绝大多数小时级运行是零成本的
+- 页面内容 hash 没变就完全不调用抽取模型 —— 绝大多数小时级运行是零成本的
 """
 from __future__ import annotations
 
@@ -22,11 +22,28 @@ from .fetch import FetchError, fetch, fetch_rendered
 from .history import utcnow
 
 PROVIDERS_YAML = Path(__file__).resolve().parent.parent / "providers.yaml"
+WEBSEARCH_YAML = Path(__file__).resolve().parent.parent / "websearch.yaml"
 
 
 def load_providers() -> list:
     cfg = yaml.safe_load(PROVIDERS_YAML.read_text(encoding="utf-8"))
     return cfg["providers"]
+
+
+def load_websearch_providers() -> list:
+    """加载独立的联网搜索目录，避免搜索 API 混入模型价格厂商。"""
+    cfg = yaml.safe_load(WEBSEARCH_YAML.read_text(encoding="utf-8"))
+    providers = cfg.get("providers") or []
+    ids = [item.get("id") for item in providers]
+    categories = {"model", "ai-search", "serp"}
+    invalid = [item.get("id") for item in providers
+               if item.get("category") not in categories
+               or not (item.get("websearch_url") or item.get("websearch_urls"))]
+    if (not providers or any(not pid for pid in ids)
+            or len(ids) != len(set(ids)) or invalid):
+        raise ValueError(
+            "websearch.yaml 必须包含唯一 id、有效 category 和官网 URL")
+    return providers
 
 
 def _sha(text: str) -> str:
@@ -80,12 +97,19 @@ def _fetch_plan_text(cfg: dict) -> tuple[str, str]:
     return urls[0], "\n\n".join(texts)
 
 
-def _fetch_websearch_text(cfg: dict) -> str:
-    """抓取联网搜索能力/定价页；对声明为动态页面的来源启用浏览器渲染。"""
+def _fetch_websearch_text(cfg: dict) -> tuple[str, str]:
+    """抓取并合并联网搜索能力/定价页；支持一个厂商多个官网来源。"""
+    urls = cfg.get("websearch_urls") or (
+        [cfg["websearch_url"]] if cfg.get("websearch_url") else [])
+    if not urls:
+        raise FetchError("websearch.yaml 未配置 websearch_url")
     language = _fetch_language(cfg)
-    if cfg.get("websearch_render"):
-        return fetch_rendered(cfg["websearch_url"], language=language)
-    return fetch(cfg["websearch_url"], language=language)
+    texts = []
+    for url in urls:
+        body = (fetch_rendered(url, language=language)
+                if cfg.get("websearch_render") else fetch(url, language=language))
+        texts.append(f"===== 官网联网搜索页: {url} =====\n{body}")
+    return urls[0], "\n\n".join(texts)
 
 
 def _absolute_news_url(source_url: str, candidate) -> str | None:
@@ -329,7 +353,7 @@ def process_plans(cfg: dict) -> None:
 
 
 def process_websearch(cfg: dict) -> None:
-    if not cfg.get("websearch_url"):
+    if not (cfg.get("websearch_url") or cfg.get("websearch_urls")):
         return
     pid = cfg["id"]
     name = cfg.get("name_cn") or cfg["name"]
@@ -338,7 +362,7 @@ def process_websearch(cfg: dict) -> None:
     record = dict(prev)
 
     try:
-        text = _fetch_websearch_text(cfg)
+        source_url, text = _fetch_websearch_text(cfg)
     except FetchError as exc:
         record.update({"last_error": str(exc)[:300], "last_fetch_ts": now})
         history.save_websearch(pid, record)
@@ -347,7 +371,8 @@ def process_websearch(cfg: dict) -> None:
 
     record.update({"last_error": None, "last_fetch_ts": now})
     page_hash = _sha(text)
-    if prev.get("websearch_hash") == page_hash:
+    if (prev.get("websearch_hash") == page_hash
+            and not prev.get("last_error")):
         record["status_note"] = "页面无变化"
         history.save_websearch(pid, record)
         print(f"[{pid}/websearch] 页面无变化, 跳过抽取")
@@ -357,7 +382,7 @@ def process_websearch(cfg: dict) -> None:
         history.save_websearch(pid, record)
         return
 
-    page = extract.extract_websearch(name, cfg["websearch_url"], text)
+    page = extract.extract_websearch(name, source_url, text)
     offerings = [o.model_dump() for o in page.offerings]
     if not offerings and prev.get("offerings"):
         message = f"官网页未解析出联网搜索信息，已保留上次 {len(prev['offerings'])} 条"
@@ -373,7 +398,8 @@ def process_websearch(cfg: dict) -> None:
 
     record.update({
         "source": "official",
-        "source_url": cfg["websearch_url"],
+        "source_url": source_url,
+        "source_urls": cfg.get("websearch_urls") or [source_url],
         "has_search": page.has_search,
         "offerings": offerings,
         "websearch_hash": page_hash,
@@ -392,8 +418,11 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
 
     providers = load_providers()
+    websearch_providers = load_websearch_providers()
     if args.only:
         providers = [p for p in providers if p["id"] == args.only]
+        websearch_providers = [
+            p for p in websearch_providers if p["id"] == args.only]
 
     if not args.build_only:
         for cfg in providers:
@@ -411,7 +440,7 @@ def main(argv=None) -> int:
                 process_plans(cfg)
             except Exception as exc:
                 print(f"[{cfg['id']}/plans] 处理出错: {exc}", file=sys.stderr)
-        for cfg in providers:
+        for cfg in websearch_providers:
             try:
                 process_websearch(cfg)
             except Exception as exc:
@@ -424,7 +453,7 @@ def main(argv=None) -> int:
         history.save_meta(meta)
 
     from . import build_site
-    out = build_site.build(providers)
+    out = build_site.build(providers, websearch_providers)
     print(f"站点已生成: {out}")
     return 0
 

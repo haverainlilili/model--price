@@ -1,0 +1,28 @@
+{
+ "provider_name": "Tavily",
+ "category": "ai-search",
+ "source": "seed",
+ "seed_verified": true,
+ "source_url": "https://docs.tavily.com/documentation/api-credits",
+ "source_urls": [
+  "https://docs.tavily.com/documentation/api-credits",
+  "https://docs.tavily.com/documentation/api-reference/endpoint/search"
+ ],
+ "has_search": true,
+ "offerings": [
+  {
+   "name": "Tavily Search API",
+   "pricing": "免费 1,000 credits/月；PAYG $0.008/credit；Basic 1 credit/次",
+   "price_per_1k_usd": 8,
+   "price_basis": "PAYG Basic（1 credit/request）",
+   "free_quota": "1,000 credits/月",
+   "output_type": "结构化搜索结果，可选正文/答案",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "Advanced 每次 2 credits；月付档为 $0.005–$0.0075/credit"
+  }
+ ],
+ "fetched_at": null,
+ "status_note": null,
+ "last_error": null
+}

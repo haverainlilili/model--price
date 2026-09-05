@@ -1,14 +1,25 @@
 {
+ "provider_name": "OpenAI",
+ "category": "model",
  "source": "seed",
- "source_url": "https://developers.openai.com/api/docs/guides/web-search",
+ "seed_verified": true,
+ "source_url": "https://developers.openai.com/api/docs/guides/tools-web-search",
+ "source_urls": [
+  "https://developers.openai.com/api/docs/guides/tools-web-search",
+  "https://developers.openai.com/api/docs/pricing"
+ ],
  "has_search": true,
  "offerings": [
   {
-   "name": "Search API / web_search 工具",
-   "pricing": "gpt-5-search-api 按 token 计价($1.25/$10 每百万)",
+   "name": "OpenAI Web search tool",
+   "pricing": "$10 / 1,000 calls，搜索内容 token 按模型费率计费",
+   "price_per_1k_usd": 10,
+   "price_basis": "Web search（all models）",
+   "free_quota": null,
+   "output_type": "模型内置工具；带引用答案",
    "cites_sources": true,
    "default_on": false,
-   "note": "Search API 独立计费; ChatGPT 内置搜索另计"
+   "note": "非推理模型的 preview 档为 $25/1k；正式 web search 为 $10/1k"
   }
  ],
  "fetched_at": null,

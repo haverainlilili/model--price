@@ -2,8 +2,8 @@
  "plans": [
   {
    "name": "Moderato",
-   "plan_type": "Kimi membership",
-   "price": "Monthly: $19/mo; Annual (per month): $15/mo; Annual Total: $180/yr",
+   "plan_type": "Membership tier",
+   "price": "$19/mo (Monthly); $15/mo (Annual, per month); $180/yr (Annual Total)",
    "billing": "Monthly or annual subscription",
    "quotas": [
     {
@@ -12,23 +12,8 @@
      "window": "Monthly"
     },
     {
-     "label": "Agent concurrent tasks",
-     "value": "2 tasks",
-     "window": null
-    },
-    {
      "label": "Agent priority queue",
      "value": "4× speed",
-     "window": null
-    },
-    {
-     "label": "Scheduled tasks",
-     "value": "10 tasks",
-     "window": null
-    },
-    {
-     "label": "Widget tasks",
-     "value": "10 tasks",
      "window": null
     },
     {
@@ -37,14 +22,16 @@
      "window": null
     }
    ],
-   "models": [],
-   "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has separate 5-hour and weekly rate limits, but the page does not state their numeric values.",
+   "models": [
+    "K2.6"
+   ],
+   "note": "Agent credit values are approximate, based on typical task token consumption; monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric allowance.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "Kimi membership",
-   "price": "Monthly: $39/mo; Annual (per month): $31/mo; Annual Total: $372/yr",
+   "plan_type": "Membership tier",
+   "price": "$39/mo (Monthly); $31/mo (Annual, per month); $372/yr (Annual Total)",
    "billing": "Monthly or annual subscription",
    "quotas": [
     {
@@ -53,23 +40,8 @@
      "window": "Monthly"
     },
     {
-     "label": "Agent concurrent tasks",
-     "value": "2 tasks",
-     "window": null
-    },
-    {
      "label": "Agent priority queue",
      "value": "4× speed",
-     "window": null
-    },
-    {
-     "label": "Scheduled tasks",
-     "value": "15 tasks",
-     "window": null
-    },
-    {
-     "label": "Widget tasks",
-     "value": "15 tasks",
      "window": null
     },
     {
@@ -78,25 +50,22 @@
      "window": null
     }
    ],
-   "models": [],
-   "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has separate 5-hour and weekly rate limits, but the page does not state their numeric values.",
+   "models": [
+    "K2.6"
+   ],
+   "note": "Agent credit values are approximate, based on typical task token consumption; monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric allowance.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "Kimi membership",
-   "price": "Monthly: $99/mo; Annual (per month): $79/mo; Annual Total: $948/yr",
+   "plan_type": "Membership tier",
+   "price": "$99/mo (Monthly); $79/mo (Annual, per month); $948/yr (Annual Total)",
    "billing": "Monthly or annual subscription",
    "quotas": [
     {
      "label": "Agent credits",
      "value": "Approximate 360",
      "window": "Monthly"
-    },
-    {
-     "label": "Agent concurrent tasks",
-     "value": "4 tasks",
-     "window": null
     },
     {
      "label": "Agent priority queue",
@@ -106,16 +75,6 @@
     {
      "label": "K3 extra-long chat capacity",
      "value": "up to 1M tokens",
-     "window": null
-    },
-    {
-     "label": "Scheduled tasks",
-     "value": "20 tasks",
-     "window": null
-    },
-    {
-     "label": "Widget tasks",
-     "value": "20 tasks",
      "window": null
     },
     {
@@ -125,26 +84,22 @@
     }
    ],
    "models": [
-    "K3"
+    "K3",
+    "K2.6"
    ],
-   "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. “up to 1M tokens” is the official maximum-capacity wording. All membership features share a single credit pool metered by token usage. Kimi Code has separate 5-hour and weekly rate limits, but the page does not state their numeric values.",
+   "note": "Agent credit values are approximate, based on typical task token consumption; monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric allowance.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Vivace",
-   "plan_type": "Kimi membership",
-   "price": "Monthly: $199/mo; Annual (per month): $159/mo; Annual Total: $1,908/yr",
+   "plan_type": "Membership tier",
+   "price": "$199/mo (Monthly); $159/mo (Annual, per month); $1,908/yr (Annual Total)",
    "billing": "Monthly or annual subscription",
    "quotas": [
     {
      "label": "Agent credits",
      "value": "Approximate 720",
      "window": "Monthly"
-    },
-    {
-     "label": "Agent concurrent tasks",
-     "value": "4 tasks",
-     "window": null
     },
     {
      "label": "Agent priority queue",
@@ -157,36 +112,27 @@
      "window": null
     },
     {
-     "label": "Scheduled tasks",
-     "value": "25 tasks",
-     "window": null
-    },
-    {
-     "label": "Widget tasks",
-     "value": "25 tasks",
-     "window": null
-    },
-    {
      "label": "Professional database",
      "value": "24,000 calls",
      "window": null
     }
    ],
    "models": [
-    "K3"
+    "K3",
+    "K2.6"
    ],
-   "note": "Agent credit values are approximate based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. “up to 1M tokens” is the official maximum-capacity wording. All membership features share a single credit pool metered by token usage. Kimi Code has separate 5-hour and weekly rate limits, but the page does not state their numeric values.",
+   "note": "Agent credit values are approximate, based on typical task token consumption; monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but the page does not state its numeric allowance.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-05T00:10:11Z",
+ "last_fetch_ts": "2026-09-05T01:10:24Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "58bbdf3a9ebdb2dc5961600758c9446aec8475b17fd619196953604beed2cbdf",
- "fetched_at": "2026-09-05T00:10:11Z",
+ "plans_hash": "44eb65676dfb3bf66ca4cf5f22a965e10af189c42ff860f94a26d4c60bd16d10",
+ "fetched_at": "2026-09-05T01:10:24Z",
  "status_note": null
 }

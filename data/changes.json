@@ -1,388 +1,5 @@
 [
  {
-  "ts": "2026-09-04T09:08:30Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "new",
-  "model": "多模态向量模型（Doubao-embedding-vision-text）-知识库【通用】",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 0.7
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T09:08:30Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "new",
-  "model": "多模态向量模型（Doubao-embedding-vision-image）-知识库【通用】",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 1.8
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T09:08:30Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "new",
-  "model": "重排模型-知识库【通用】",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 0.5
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3.8 Flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Priority；限时价格截至2026-12-31，2027-01-01起输入$2.70、输出$13.50、缓存输入$0.27/百万tokens",
-    "new": "Priority；价格有效至 2026-12-31；自 2027-01-01 起输入 $2.70、输出 $13.50、缓存输入 $0.27/百万 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3.7 Flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Priority；限时价格截至2026-12-31，2027-01-01起输入$2.70、输出$13.50、缓存输入$0.27/百万tokens",
-    "new": "Priority；价格有效至 2026-12-31；自 2027-01-01 起输入 $2.70、输出 $13.50、缓存输入 $0.27/百万 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3.6 Flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Priority；限时价格截至2026-12-31，2027-01-01起输入$2.70、输出$13.50、缓存输入$0.27/百万tokens",
-    "new": "Priority；价格有效至 2026-12-31；自 2027-01-01 起输入 $2.70、输出 $13.50、缓存输入 $0.27/百万 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3.5 Live Translate",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Standard；实时语音翻译，输入和输出均为audio tokens",
-    "new": "Standard；实时语音翻译，audio tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3.5 Transcribe Live",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Standard；实时语音转文字，输入为audio tokens，输出为text tokens",
-    "new": "Standard；实时语音转文本，输入为 audio tokens，输出为 text tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3.5 Transcribe",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Standard；语音转文字，输入为audio tokens，输出为text tokens",
-    "new": "Standard；语音转文本，输入为 audio tokens，输出为 text tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3.5 Flash-Lite",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Priority；输入支持text/image/video/audio",
-    "new": "Priority；输入适用于 text/image/video/audio"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3.1 Flash-Lite",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Priority；audio输入",
-    "new": "Priority；audio 输入"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini Omni Flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Standard；video输出；输入支持text/image/video/audio",
-    "new": "Standard；video 输出；输入适用于 text/image/video/audio"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini Omni Flash Preview",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Standard；video输出；输入支持text/image/video/audio",
-    "new": "Standard；video 输出；输入适用于 text/image/video/audio"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3.1 Flash Live Preview",
-  "fields": [
-   {
-    "field": "note",
-    "old": "image/video输入",
-    "new": "image/video 输入 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3.1 Flash Image (Nano Banana 2) 🍌",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Batch；图像生成输出tokens",
-    "new": "Batch；image 输出 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite) 🍌",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Batch；图像生成输出tokens",
-    "new": "Batch；image 输出 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3.1 Flash TTS Preview",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Batch；TTS，text输入、audio输出",
-    "new": "Batch；TTS，text 输入、audio 输出"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3 Flash Preview",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Priority；audio输入",
-    "new": "Priority；audio 输入"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 3 Pro Image (Nano Banana Pro) 🍌",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Priority；图像生成输出tokens",
-    "new": "Priority；image 输出 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 2.5 Flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Priority；audio输入",
-    "new": "Priority；audio 输入"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 2.5 Flash-Lite",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Priority；audio输入",
-    "new": "Priority；audio 输入"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 2.5 Flash Native Audio (Live API)",
-  "fields": [
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 12.0
-   },
-   {
-    "field": "note",
-    "old": "video输入",
-    "new": "audio 输入与 audio 输出 tokens；video 输入同价"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 2.5 Flash Image (Nano Banana) 🍌",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Priority；text/image输入；表中输出仅按张计费，未填token价格",
-    "new": "Priority；text/image 输入；输出仅列按张价格，未给出该档 token 价"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 2.5 Flash Preview TTS",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Batch；TTS，text输入、audio输出",
-    "new": "Batch；TTS，text 输入、audio 输出"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini 2.5 Pro Preview TTS",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Batch；TTS，text输入、audio输出",
-    "new": "Batch；TTS，text 输入、audio 输出"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini Embedding 2",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Batch；embedding；video输入",
-    "new": "Batch；embedding；video 输入"
-   }
-  ]
- },
- {
-  "ts": "2026-09-04T10:05:36Z",
-  "provider": "google",
-  "provider_name": "Google Gemini",
-  "kind": "change",
-  "model": "Gemini Robotics ER 2 Preview",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Batch；机器人视觉语言模型；text/image/video/audio输入",
-    "new": "Batch；text/image/video/audio 输入"
-   }
-  ]
- },
- {
   "ts": "2026-09-04T10:05:36Z",
   "provider": "google",
   "provider_name": "Google Gemini",
@@ -5642,6 +5259,342 @@
   "provider_name": "火山方舟 (豆包)",
   "kind": "removed",
   "model": "doubao-seedance-1.0-pro-fast",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-evolving",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 [0, 1024] 千 token",
+    "new": "在线推理（常规）；输入长度 [0, 1024] 千 token；非音频输入"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.1-pro",
+  "fields": [
+   {
+    "field": "note",
+    "old": "批量推理；输入长度 [0, 256] 千 token",
+    "new": "批量推理；输入长度 [0, 256] 千 token；非音频输入"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.1-turbo",
+  "fields": [
+   {
+    "field": "note",
+    "old": "批量推理；输入长度 [0, 256] 千 token",
+    "new": "批量推理；输入长度 [0, 256] 千 token；非音频输入"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-pro",
+  "fields": [
+   {
+    "field": "note",
+    "old": "批量推理；输入长度 (128, 256] 千 token",
+    "new": "批量推理；输入长度 (128, 256] 千 token；非音频输入"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-lite",
+  "fields": [
+   {
+    "field": "note",
+    "old": "批量推理；音频输入；输入长度 (128, 256] 千 token",
+    "new": "批量推理；输入长度 (128, 256] 千 token；音频输入"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-mini",
+  "fields": [
+   {
+    "field": "note",
+    "old": "批量推理；音频输入；输入长度 (128, 256] 千 token",
+    "new": "批量推理；输入长度 (128, 256] 千 token；音频输入"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-1.6-vision",
+  "fields": [
+   {
+    "field": "note",
+    "old": "批量推理；输入长度 (128, 256] 千 token",
+    "new": "批量推理；输入长度 (128, 256] 千 token；多模态视觉模型"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-translation",
+  "fields": [
+   {
+    "field": "note",
+    "old": "批量推理",
+    "new": "批量推理；翻译模型"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-1.5-vision-pro",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）",
+    "new": "在线推理（常规）；多模态视觉模型"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "deepseek-v4-flash正式版",
+  "fields": [
+   {
+    "field": "note",
+    "old": "批量推理；模型计费标准已于 2026 年 8 月 21 日完成全面上调",
+    "new": "批量推理"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "deepseek-v4-pro预览版",
+  "fields": [
+   {
+    "field": "note",
+    "old": "批量推理；模型计费标准已于 2026 年 8 月 28 日完成全面上调",
+    "new": "批量推理；页面说明价格已于 2026 年 8 月 28 日全面上调"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "deepseek-v4-flash预览版",
+  "fields": [
+   {
+    "field": "note",
+    "old": "批量推理；模型计费标准已于 2026 年 8 月 28 日完成全面上调",
+    "new": "批量推理；页面说明价格已于 2026 年 8 月 28 日全面上调"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-2.5",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 33.12
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-2.0",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 16.0
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-2.0-fast",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 16.5
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-2.0-mini",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 5.6
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-1.5-pro",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 4.0
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-1.0-pro",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 7.5
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-1.0-pro-fast",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 2.1
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-embedding-vision",
+  "fields": [
+   {
+    "field": "note",
+    "old": "向量模型（embedding）；图片输入",
+    "new": "embedding 多模态向量模型；图片输入"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "removed",
+  "model": "文本向量模型-知识库【通用】",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "removed",
+  "model": "文本向量模型（多功能版）-知识库【通用】",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "removed",
+  "model": "文本向量模型（Doubao-embedding）-知识库【通用】",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "removed",
+  "model": "文本向量模型（Doubao-embedding-large）-知识库【通用】",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "removed",
+  "model": "多模态向量模型（Doubao-embedding-vision-text）-知识库【通用】",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "removed",
+  "model": "多模态向量模型（Doubao-embedding-vision-image）-知识库【通用】",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-05T11:06:38Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "removed",
+  "model": "重排模型-知识库【通用】",
   "fields": []
  }
 ]

@@ -1,17 +1,26 @@
 {
- "source": "seed",
+ "source": "official",
  "source_url": "https://help.aliyun.com/zh/model-studio/web-search",
  "has_search": true,
  "offerings": [
   {
-   "name": "百炼 联网搜索",
-   "pricing": null,
+   "name": "联网搜索",
+   "pricing": "无免费调用额度；网页内容增加的输入 Token 按模型标准价格计费。turbo 3元/千次，max 4元/千次；agent 北京等地域4元/千次，新加坡73.392381元/千次。",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "支持DashScope、OpenAI兼容及Anthropic兼容；限流15 RPS。"
+  },
+  {
+   "name": "联网搜索 MCP",
+   "pricing": "全部用户前 2000 次调用免费，免费额度用尽后按 29 元/千次计费",
    "cites_sources": null,
-   "default_on": null,
-   "note": "待官网首次抓取校准"
+   "default_on": false,
+   "note": "与模型内置联网搜索相互独立，计费也相互独立。"
   }
  ],
- "fetched_at": null,
+ "fetched_at": "2026-09-05T10:13:44Z",
  "status_note": null,
- "last_error": null
+ "last_error": null,
+ "last_fetch_ts": "2026-09-05T10:13:44Z",
+ "websearch_hash": "b459d095fad828784403c578570639a4cd0bb4d64eea5c730edfd137dfb9fd4e"
 }

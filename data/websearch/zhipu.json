@@ -1,17 +1,33 @@
 {
- "source": "seed",
+ "source": "official",
  "source_url": "https://docs.bigmodel.cn/cn/guide/tools/web-search",
  "has_search": true,
  "offerings": [
   {
-   "name": "GLM 联网搜索 (web_search)",
+   "name": "Web Search API",
+   "pricing": "search_std：0.01 元/次；search_pro：0.03 元/次；search_pro_sogou：0.05 元/次；search_pro_quark：0.05 元/次",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "返回网页标题、网页 URL、摘要、网站名称等，支持自研、搜狗和夸克引擎"
+  },
+  {
+   "name": "Web Search in Chat",
    "pricing": null,
    "cites_sources": null,
    "default_on": null,
-   "note": "待官网首次抓取校准"
+   "note": "将实时网络检索结果与 GLM 生成能力结合，并标注网页结果来源"
+  },
+  {
+   "name": "Search Agent",
+   "pricing": null,
+   "cites_sources": null,
+   "default_on": null,
+   "note": "根据搜索意图拆解多个查询，管理对话状态并综合网页内容生成回答"
   }
  ],
- "fetched_at": null,
+ "fetched_at": "2026-09-05T10:14:36Z",
  "status_note": null,
- "last_error": null
+ "last_error": null,
+ "last_fetch_ts": "2026-09-05T10:14:36Z",
+ "websearch_hash": "511eb4f3277d489e4d6e3ff4dfcee0b6991d3e28df733589b172785df1c2364a"
 }

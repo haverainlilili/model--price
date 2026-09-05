@@ -1,17 +1,19 @@
 {
- "source": "seed",
+ "source": "official",
  "source_url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool",
  "has_search": true,
  "offerings": [
   {
    "name": "Web search tool",
-   "pricing": "按搜索次数额外计费(独立于 token 价)",
+   "pricing": "$10 per 1,000 searches, plus standard token costs for search-generated content",
    "cites_sources": true,
    "default_on": false,
-   "note": "返回带引用的来源; 支持多轮搜索与动态过滤(web_search_20260209+)"
+   "note": "需在API请求中添加工具；单次请求可多次搜索，支持域名控制和动态过滤。"
   }
  ],
- "fetched_at": null,
+ "fetched_at": "2026-09-05T10:12:37Z",
  "status_note": null,
- "last_error": null
+ "last_error": null,
+ "last_fetch_ts": "2026-09-05T10:12:37Z",
+ "websearch_hash": "03a6077294385df80b9c37a2164e2f9ff23401620df0bdb2be0deb237ae607f0"
 }

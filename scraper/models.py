@@ -66,6 +66,28 @@ class PlansPage(BaseModel):
         True, description="页面是否同时公开套餐价格和可用额度")
 
 
+class WebSearchOffering(BaseModel):
+    """厂商联网搜索能力的一条客观事实记录。"""
+
+    name: str = Field(..., description="搜索能力/产品名原文, 如 Search API / Grounding with Google Search / 联网搜索")
+    pricing: Optional[str] = Field(
+        None, description="定价或计费方式原文, 如 免费 / 按 token 计费 / $35 per 1000 grounded queries")
+    cites_sources: Optional[bool] = Field(
+        None, description="返回结果是否标注可点击引用来源; 页面明确说明才填 true/false, 没提则 null")
+    default_on: Optional[bool] = Field(
+        None, description="是否默认开启(无需手动启用); 页面明确说明才填 true/false, 没提则 null")
+    note: Optional[str] = Field(
+        None, description="补充的客观说明原文(多轮追问、覆盖源、可用区域、限制等)")
+
+
+class WebSearchPage(BaseModel):
+    """一个厂商官网联网搜索能力/定价页的完整抽取结果。"""
+
+    has_search: bool = Field(..., description="该厂商是否提供联网/网络搜索能力")
+    offerings: List[WebSearchOffering] = Field(
+        default_factory=list, description="搜索能力条目(通常 1 条; 有多个产品时多条)")
+
+
 class NewsEntry(BaseModel):
     """一条官方公告。"""
 

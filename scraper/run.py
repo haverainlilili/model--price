@@ -80,6 +80,14 @@ def _fetch_plan_text(cfg: dict) -> tuple[str, str]:
     return urls[0], "\n\n".join(texts)
 
 
+def _fetch_websearch_text(cfg: dict) -> str:
+    """抓取联网搜索能力/定价页；对声明为动态页面的来源启用浏览器渲染。"""
+    language = _fetch_language(cfg)
+    if cfg.get("websearch_render"):
+        return fetch_rendered(cfg["websearch_url"], language=language)
+    return fetch(cfg["websearch_url"], language=language)
+
+
 def _absolute_news_url(source_url: str, candidate) -> str | None:
     """把公告条目的相对链接补全；拒绝非 HTTP(S) 协议。"""
     if not candidate:
@@ -320,6 +328,62 @@ def process_plans(cfg: dict) -> None:
     print(f"[{pid}/plans] 抽取到 {len(plans)} 个官网套餐")
 
 
+def process_websearch(cfg: dict) -> None:
+    if not cfg.get("websearch_url"):
+        return
+    pid = cfg["id"]
+    name = cfg.get("name_cn") or cfg["name"]
+    now = utcnow()
+    prev = history.load_websearch(pid)
+    record = dict(prev)
+
+    try:
+        text = _fetch_websearch_text(cfg)
+    except FetchError as exc:
+        record.update({"last_error": str(exc)[:300], "last_fetch_ts": now})
+        history.save_websearch(pid, record)
+        print(f"[{pid}/websearch] 抓取失败: {exc}")
+        return
+
+    record.update({"last_error": None, "last_fetch_ts": now})
+    page_hash = _sha(text)
+    if prev.get("websearch_hash") == page_hash:
+        record["status_note"] = "页面无变化"
+        history.save_websearch(pid, record)
+        print(f"[{pid}/websearch] 页面无变化, 跳过抽取")
+        return
+    if not extract.has_api_key():
+        record["status_note"] = "等待 OPENAI_API_KEY"
+        history.save_websearch(pid, record)
+        return
+
+    page = extract.extract_websearch(name, cfg["websearch_url"], text)
+    offerings = [o.model_dump() for o in page.offerings]
+    if not offerings and prev.get("offerings"):
+        message = f"官网页未解析出联网搜索信息，已保留上次 {len(prev['offerings'])} 条"
+        record.update({
+            "websearch_hash": page_hash,
+            "has_search": page.has_search,
+            "status_note": message,
+            "last_error": message,
+        })
+        history.save_websearch(pid, record)
+        print(f"[{pid}/websearch] {message}")
+        return
+
+    record.update({
+        "source": "official",
+        "source_url": cfg["websearch_url"],
+        "has_search": page.has_search,
+        "offerings": offerings,
+        "websearch_hash": page_hash,
+        "fetched_at": now,
+        "status_note": None,
+    })
+    history.save_websearch(pid, record)
+    print(f"[{pid}/websearch] 抽取到 {len(offerings)} 条")
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="抓取大模型官网价格并生成对比站点")
     ap.add_argument("--build-only", action="store_true",
@@ -347,6 +411,11 @@ def main(argv=None) -> int:
                 process_plans(cfg)
             except Exception as exc:
                 print(f"[{cfg['id']}/plans] 处理出错: {exc}", file=sys.stderr)
+        for cfg in providers:
+            try:
+                process_websearch(cfg)
+            except Exception as exc:
+                print(f"[{cfg['id']}/websearch] 处理出错: {exc}", file=sys.stderr)
 
         from .fx import update_fx
         meta = history.load_meta()

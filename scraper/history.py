@@ -16,6 +16,7 @@ DATA = ROOT / "data"
 PROVIDERS_DIR = DATA / "providers"
 NEWS_DIR = DATA / "news"
 PLANS_DIR = DATA / "plans"
+WEBSEARCH_DIR = DATA / "websearch"
 CHANGES_FILE = DATA / "changes.json"
 META_FILE = DATA / "meta.json"
 
@@ -65,6 +66,14 @@ def load_plans(pid: str) -> dict:
 
 def save_plans(pid: str, record: dict) -> None:
     _atomic_write_json(PLANS_DIR / f"{pid}.json", record)
+
+
+def load_websearch(pid: str) -> dict:
+    return _load_json(WEBSEARCH_DIR / f"{pid}.json", {"offerings": []})
+
+
+def save_websearch(pid: str, record: dict) -> None:
+    _atomic_write_json(WEBSEARCH_DIR / f"{pid}.json", record)
 
 
 def load_changes() -> list:

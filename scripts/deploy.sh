@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# 一键部署到服务器: 克隆仓库、装依赖、配置 cron、生成 nginx 配置
+# 一键自部署: 克隆仓库、装依赖、配置 cron、生成 Caddy 配置示例。
+# 生产环境使用 /opt/model-price + systemd timer；本脚本保留为普通用户自部署入口。
 set -euo pipefail
 
 REPO="https://github.com/haverainlilili/model--price.git"
-DEPLOY_DIR="$HOME/model-price"
+DEPLOY_DIR="${MODEL_PRICE_DEPLOY_DIR:-$HOME/model-price}"
+DOMAIN="${MODEL_PRICE_DOMAIN:-model-price.minggemini3test1.online}"
 VENV="$DEPLOY_DIR/.venv"
 
 echo "=== 大模型价格看板 - 服务器部署 ==="
@@ -57,7 +59,7 @@ if [ ! -f "$DEPLOY_DIR/.env" ]; then
     echo "  OPENAI_BASE_URL=              # 用中转填地址，官方 API 留空"
     echo "  OPENAI_MODEL=                 # 留空默认 gpt-5.6-sol"
     echo
-    read -p "按回车继续配置 cron（填好 .env 后再启用定时任务）..." _
+    read -p "按回车继续配置定时任务（填好 .env 后再启用）..." _
 fi
 
 # 6. 手动运行一次验证
@@ -85,28 +87,17 @@ else
     echo "✓ cron 已配置，日志: $DEPLOY_DIR/cron.log"
 fi
 
-# 8. 生成 nginx 配置示例
-NGINX_CONF="$DEPLOY_DIR/nginx-site.conf"
-cat > "$NGINX_CONF" <<EOF
-# 将此配置放到 /etc/nginx/sites-available/model-price
-# 然后: sudo ln -s /etc/nginx/sites-available/model-price /etc/nginx/sites-enabled/
-# 最后: sudo nginx -t && sudo systemctl reload nginx
+# 8. 生成 Caddy 配置示例（生产环境使用 Caddy，不再使用旧 nginx/IP 配置）
+CADDY_CONF="$DEPLOY_DIR/Caddyfile.example"
+cat > "$CADDY_CONF" <<EOF
+# 将此站点块合并到 /etc/caddy/Caddyfile，然后执行：
+# sudo caddy validate --config /etc/caddy/Caddyfile && sudo systemctl reload caddy
 
-server {
-    listen 80;
-    server_name 43.138.131.101;  # 改成你的域名或保持 IP
-
-    root $DEPLOY_DIR/site;
-    index index.html;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-        add_header Cache-Control "public, max-age=600";  # 缓存 10 分钟
-    }
-
-    # Gzip 压缩
-    gzip on;
-    gzip_types text/html text/css application/javascript application/json;
+$DOMAIN {
+    root * $DEPLOY_DIR/site
+    encode zstd gzip
+    header Cache-Control "public, max-age=300"
+    file_server
 }
 EOF
 
@@ -116,7 +107,9 @@ echo
 echo "站点目录: $DEPLOY_DIR/site/"
 echo "配置文件: $DEPLOY_DIR/.env"
 echo "cron 日志: $DEPLOY_DIR/cron.log"
+echo "Caddy 示例: $CADDY_CONF"
 echo
+echo "生产服务器当前配置: root@176.122.165.19:/opt/model-price (systemd timer + Caddy)"
 echo "下一步："
 echo "1. 编辑 .env 填入 OPENAI_API_KEY:"
 echo "   nano $DEPLOY_DIR/.env"
@@ -124,9 +117,8 @@ echo
 echo "2. 手动触发一次更新验证配置:"
 echo "   cd $DEPLOY_DIR && $VENV/bin/python -m scraper"
 echo
-echo "3. （可选）配置 nginx 对外提供服务:"
-echo "   sudo cp $NGINX_CONF /etc/nginx/sites-available/model-price"
-echo "   sudo ln -s /etc/nginx/sites-available/model-price /etc/nginx/sites-enabled/"
-echo "   sudo nginx -t && sudo systemctl reload nginx"
-echo "   访问: http://43.138.131.101"
+echo "3. （可选）配置 Caddy 对外提供服务:"
+echo "   将 $CADDY_CONF 中的站点块合并到 /etc/caddy/Caddyfile"
+echo "   sudo caddy validate --config /etc/caddy/Caddyfile && sudo systemctl reload caddy"
+echo "   访问: https://$DOMAIN"
 echo

@@ -19,7 +19,7 @@ import os
 import openai
 from pydantic import BaseModel, ValidationError
 
-from .models import NewsPage, PlansPage, PricingPage
+from .models import NewsPage, PlansPage, PricingPage, WebSearchPage
 
 MODEL = os.environ.get("OPENAI_MODEL") or "gpt-5.6-sol"
 MAX_PAGE_CHARS = 250_000
@@ -56,6 +56,20 @@ NEWS_SYSTEM = """你从厂商官方公告 / changelog / 新闻页文本中抽取
 - summary: 不超过 60 字的一句话中文摘要
 - 只抽与该厂商模型/产品/价格相关的条目, 最多 12 条, 按页面出现顺序(新的在前)
 - 页面没有公告(空壳/报错页)则 entries 留空"""
+
+
+WEBSEARCH_SYSTEM = """你从大模型厂商官网的联网搜索能力说明页(web search / grounding / 联网搜索)文本中抽取客观事实。
+
+规则:
+1. has_search: 该厂商是否提供联网/网络搜索能力, 填 true/false。
+2. offerings 每项:
+   - name: 搜索能力/产品名原文, 如 Search API / Grounding with Google Search / 联网搜索。
+   - pricing: 定价或计费方式原文。没有独立定价时写「已包含在按量 token 价内」或「免费」并注明; 页面没写就 null。
+   - cites_sources: 返回结果是否标注可点击的引用来源。只有页面明确说明时才填 true/false, 没提到就 null。
+   - default_on: 是否默认开启(无需手动启用)。只有页面明确说明时才填 true/false, 没提到就 null。
+   - note: 补充的客观说明原文(多轮追问、覆盖源、可用区域、限制等), 不超过 80 字。
+3. 只抽客观事实, 严禁主观打分、严禁编造。页面没提到的字段一律填 null。
+4. 页面文本不含联网搜索能力说明(空壳/报错/人机验证页)时 has_search=false 且 offerings 留空。"""
 
 
 PLANS_SYSTEM = """你是一个严谨的大模型厂商官网套餐页解析器。
@@ -189,4 +203,13 @@ def extract_plans(provider: str, url: str, page_text: str) -> PlansPage:
     user_text = _page_text_header(provider, url, page_text) + "\n请抽取套餐与额度。"
     parsed = _parse(client, PLANS_SYSTEM, user_text, PlansPage)
     parsed.plans = [p for p in parsed.plans if p.name.strip() and p.quotas]
+    return parsed
+
+
+def extract_websearch(provider: str, url: str, page_text: str) -> WebSearchPage:
+    """抽取官网联网搜索能力与定价的客观事实，失败抛 ExtractionError。"""
+    client = _client()
+    user_text = _page_text_header(provider, url, page_text) + "\n请抽取联网搜索能力与定价。"
+    parsed = _parse(client, WEBSEARCH_SYSTEM, user_text, WebSearchPage)
+    parsed.offerings = [o for o in parsed.offerings if o.name and o.name.strip()]
     return parsed

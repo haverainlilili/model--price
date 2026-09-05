@@ -17,7 +17,7 @@ class ViewSwitchTests(unittest.TestCase):
         self.assertIn(".seg.view-tabs button{min-height:38px", build_site.CSS)
 
     def test_renders_accessible_price_and_plan_tabs(self):
-        tabs = build_site._view_tabs(has_plans=True)
+        tabs = build_site._view_tabs(has_plans=True, has_websearch=False)
 
         self.assertIn('role="tablist"', tabs)
         self.assertIn('data-view-btn="prices"', tabs)
@@ -27,12 +27,39 @@ class ViewSwitchTests(unittest.TestCase):
         self.assertIn('aria-selected="true"', tabs)
         self.assertIn('aria-selected="false"', tabs)
 
+    def test_renders_websearch_tab_when_present(self):
+        tabs = build_site._view_tabs(has_plans=True, has_websearch=True)
+
+        self.assertIn('data-view-btn="websearch"', tabs)
+        self.assertIn('aria-controls="websearch-overview"', tabs)
+        self.assertIn('联网搜索</button>', tabs)
+
 
 class QuickVariantTests(unittest.TestCase):
     def test_summarizes_context_tier(self):
         self.assertEqual(
             build_site._quick_variant("Standard，短上下文；促销价格"),
             "标准·短",
+        )
+
+    def test_recognizes_english_short_and_long_context(self):
+        self.assertEqual(
+            build_site._quick_variant("Standard；Short context"),
+            "标准·短",
+        )
+        self.assertEqual(
+            build_site._quick_variant("Standard；Long context"),
+            "标准·长",
+        )
+
+    def test_combines_english_context_with_batch_and_fast_tiers(self):
+        self.assertEqual(
+            build_site._quick_variant("Batch；Long context"),
+            "批量·长",
+        )
+        self.assertEqual(
+            build_site._quick_variant("Fast mode；Short context"),
+            "极速·短",
         )
 
     def test_summarizes_input_length_band(self):
@@ -361,6 +388,34 @@ class PlansSectionTests(unittest.TestCase):
                 providers,
                 {"demo": {"plans": [{"name": "Price only", "quotas": []}]}},
             ),
+            "",
+        )
+
+
+class WebSearchSectionTests(unittest.TestCase):
+    def _cfg(self):
+        return [
+            {"id": "a", "name": "A", "region": "国际"},
+            {"id": "b", "name": "B", "region": "国内"},
+        ]
+
+    def test_renders_objective_facts_and_seed_badge(self):
+        section = build_site._websearch_section(self._cfg(), {
+            "a": {"source": "seed", "has_search": True, "offerings": [{
+                "name": "Search API", "pricing": "$35 / 1000 queries",
+                "cites_sources": True, "default_on": False, "note": "返回引用"}]},
+        })
+
+        self.assertIn("联网搜索 · 价格与效果", section)
+        self.assertIn("Search API", section)
+        self.assertIn('class="ws-yes"', section)
+        self.assertIn('class="ws-no"', section)
+        self.assertIn("种子数据 · 待校准", section)
+        self.assertIn("1</b> 家提供联网搜索", section)
+
+    def test_omits_section_when_no_offerings(self):
+        self.assertEqual(
+            build_site._websearch_section(self._cfg(), {}),
             "",
         )
 

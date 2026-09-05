@@ -1,6 +1,6 @@
 # 大模型 API 价格看板 · LLM Price Watch
 
-自动抓取各大模型厂商**官网公开页面**，每小时更新一次，生成 API 价格对比、官网套餐与额度、价格变动流水与官方公告追踪的静态网站。
+自动抓取各大模型厂商**官网公开页面**，每小时更新一次，生成 API 价格对比、官网套餐与额度、联网搜索价格与客观能力、价格变动流水及官方公告追踪的静态网站。
 
 **线上地址**: https://model-price.minggemini3test1.online/
 
@@ -16,29 +16,33 @@
 providers.yaml 配置各厂商入口
         │
         ▼
-每小时 GitHub Actions 触发 (cron: 23 * * * *)
+生产服务器 systemd timer 每小时触发
         │
         ▼
 抓取官网页面 ── 页面 hash 无变化? ──是──> 跳过抽取 (零 API 成本)
         │ 否
         ▼
-Claude 结构化抽取 (官方 SDK messages.parse + Pydantic schema)
+OpenAI 兼容接口结构化抽取 (JSON Schema + Pydantic 校验)
   · 价格页 → 模型 / 输入价 / 输出价 / 缓存价 / 币种 / 活动备注
   · 套餐页 → 套餐价格 / 官网明示额度 / 刷新窗口 / 支持模型
+  · 联网搜索页 → 计费方式 / 引用来源 / 是否默认开启 / 客观限制
   · 公告页 → 日期 / 标题 / 链接 / 摘要
         │
         ▼
 与上次数据 diff → 价格变动自动记入流水 (红涨绿跌)
         │
         ▼
-重新生成静态站点 (零依赖单 HTML) → 提交 data/ → 发布 GitHub Pages
+重新生成静态站点 (零依赖单 HTML) → Caddy 立即提供访问
+        │
+        └── 提交 data/ + site/ → GitHub Pages 镜像
 ```
 
 要点:
 
 - **页面无变化不调 API**: 内容 hash 相同就直接跳过，绝大多数小时级运行是零成本的；只有页面真的变了才花一次抽取费用。
 - **套餐额度只保留官网口径**: 不导入社区实测值，不把 prompt 换算成请求，不由周额度推算月额度；官网使用「约」「最多」或相对倍数时保留原文。
-- **价格与套餐独立切换**: 顶部可在 API 价格概览和套餐额度柱状图之间切换；套餐柱高只在同厂商、相同额度名称和刷新周期内比较。
+- **三类数据独立切换**: 顶部可在 API 价格、套餐与额度、联网搜索三个视图之间切换；套餐柱高只在同厂商、相同额度名称和刷新周期内比较。
+- **联网搜索只比客观事实**: 自动抓取官网公开说明中的计费方式、是否返回引用来源、是否默认开启等字段；官网没明确说明的显示「—」，不做主观效果打分。
 - **单厂商失败不影响整体**: 任何一家抓取/解析失败都保留旧数据并在站点上标注，下一小时自动重试。
 - **活动追踪两条线**: 价格页快照 diff(最可靠)+ 官网公告/changelog 新条目。登录后才能看的站内信、邮件/公众号推送不在覆盖范围。
 - **币种换算**: 站点支持「原币 / 折算人民币」切换，汇率每小时从 frankfurter.dev 更新(失败自动回退缓存与备用源)。
@@ -55,15 +59,16 @@ Claude 结构化抽取 (官方 SDK messages.parse + Pydantic schema)
 providers.yaml        # 厂商入口配置 —— 增删厂商只改这个文件
 scraper/
   fetch.py            # 抓取层: requests + 无头浏览器(渲染 JS 页面)
-  models.py           # Pydantic 抽取 schema (价格页 / 公告页)
+  models.py           # Pydantic 抽取 schema (价格 / 套餐 / 联网搜索 / 公告)
   extract.py          # OpenAI 结构化抽取 (openai SDK)
   history.py          # 数据持久化 + 价格 diff
   fx.py               # 汇率
   run.py              # 主流程
   build_site.py       # 静态站点生成
-data/                 # 各厂商价格 / 官网套餐 / 变动流水 / 公告 (每小时提交)
+data/                 # 各厂商价格 / 官网套餐 / 联网搜索 / 变动流水 / 公告 (每小时提交)
 site/                 # 生成的站点 (发布到 Pages)
-scripts/make_seed.py  # 一次性种子数据(首次抽取前的初始展示)
+scripts/make_seed.py       # API 价格一次性种子数据
+scripts/make_websearch.py  # 联网搜索客观事实种子数据
 .github/workflows/update.yml
 ```
 
@@ -89,7 +94,7 @@ export OPENAI_API_KEY=sk-...
 
 ## 自动发布抓取结果
 
-生产服务器每小时抓取并重建站点后运行 `scripts/publish_updates.sh`。脚本先执行测试，随后只提交 `data/` 与 `site/` 到 `main`；没有文件变化时不会生成空提交，`.env`、部署密钥和缓存不会进入 Git。
+生产服务器（`176.122.165.19`，目录 `/opt/model-price`）由 `model-price.timer` 每小时触发抓取并重建站点，Caddy 从 `/opt/model-price/site` 提供线上访问。抓取结束后运行 `scripts/publish_updates.sh`：脚本先执行测试，随后只提交 `data/` 与 `site/` 到 `main`；没有文件变化时不会生成空提交，`.env`、部署密钥和缓存不会进入 Git。
 
 GitHub Actions 不再重复抓取，只在 `main` 的 `site/` 更新后发布 GitHub Pages。这样从 GitHub 默认分支下载项目时，包含最近一次成功抓取的数据和对应界面。
 

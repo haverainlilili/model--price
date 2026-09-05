@@ -1,0 +1,29 @@
+{
+ "provider_name": "Firecrawl Search",
+ "category": "ai-search",
+ "source": "seed",
+ "seed_verified": true,
+ "source_url": "https://www.firecrawl.dev/pricing",
+ "source_urls": [
+  "https://www.firecrawl.dev/pricing",
+  "https://docs.firecrawl.dev/features/search",
+  "https://docs.firecrawl.dev/billing"
+ ],
+ "has_search": true,
+ "offerings": [
+  {
+   "name": "Firecrawl Search",
+   "pricing": "Search 2 credits/10 results；Hobby PAYG $5/1,000 credits",
+   "price_per_1k_usd": 10,
+   "price_basis": "Hobby PAYG，10 results（2 credits）",
+   "free_quota": "1,000 credits/月（约 500 次 1–10 结果搜索）",
+   "output_type": "搜索结果，可选抓取正文",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "不同付费档每 credit 单价不同；抓取结果正文另耗 credits"
+  }
+ ],
+ "fetched_at": null,
+ "status_note": null,
+ "last_error": null
+}

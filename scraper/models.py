@@ -1,4 +1,4 @@
-"""Claude 抽取结果的 Pydantic 模型(同时也是 messages.parse 的 JSON schema)。"""
+"""结构化抽取结果的 Pydantic 模型（同时生成提示词中的 JSON Schema）。"""
 from __future__ import annotations
 
 from typing import List, Optional
@@ -71,13 +71,21 @@ class WebSearchOffering(BaseModel):
 
     name: str = Field(..., description="搜索能力/产品名原文, 如 Search API / Grounding with Google Search / 联网搜索")
     pricing: Optional[str] = Field(
-        None, description="定价或计费方式原文, 如 免费 / 按 token 计费 / $35 per 1000 grounded queries")
+        None, description="定价或计费方式原文, 如 免费 / 按 token 计费 / $5 per 1000 requests")
+    price_per_1k_usd: Optional[float] = Field(
+        None, ge=0, description="可直接比较的美元基础价/千次请求；官网不能精确换算则 null")
+    price_basis: Optional[str] = Field(
+        None, description="该千次价格对应档位与口径，如 PAYG basic / Starter / queue normal")
+    free_quota: Optional[str] = Field(
+        None, description="官网明确标注的免费额度原文；没有或未说明则 null")
+    output_type: Optional[str] = Field(
+        None, description="官网描述的输出形态，如结构化搜索结果 / 带引用答案 / 模型工具")
     cites_sources: Optional[bool] = Field(
-        None, description="返回结果是否标注可点击引用来源; 页面明确说明才填 true/false, 没提则 null")
+        None, description="响应是否含来源 URL 或可点击引用; 页面明确说明才填 true/false, 没提则 null")
     default_on: Optional[bool] = Field(
-        None, description="是否默认开启(无需手动启用); 页面明确说明才填 true/false, 没提则 null")
+        None, description="是否默认开启(无需手动启用或调用); 页面明确说明才填 true/false, 没提则 null")
     note: Optional[str] = Field(
-        None, description="补充的客观说明原文(多轮追问、覆盖源、可用区域、限制等)")
+        None, description="补充的客观说明原文(搜索深度、结果数量、可用区域、限制等)")
 
 
 class WebSearchPage(BaseModel):

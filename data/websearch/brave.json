@@ -1,0 +1,28 @@
+{
+ "provider_name": "Brave Search API",
+ "category": "serp",
+ "source": "seed",
+ "seed_verified": true,
+ "source_url": "https://brave.com/search/api/",
+ "source_urls": [
+  "https://brave.com/search/api/",
+  "https://api-dashboard.search.brave.com/documentation/pricing"
+ ],
+ "has_search": true,
+ "offerings": [
+  {
+   "name": "Brave Search API",
+   "pricing": "$5 / 1,000 requests",
+   "price_per_1k_usd": 5,
+   "price_basis": "Web Search API",
+   "free_quota": "$5 每月免费 credits",
+   "output_type": "独立索引的 Web/News/Image 结构化结果",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "官网同时提供面向 LLM 的 Context endpoint"
+  }
+ ],
+ "fetched_at": null,
+ "status_note": null,
+ "last_error": null
+}

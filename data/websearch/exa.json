@@ -1,0 +1,28 @@
+{
+ "provider_name": "Exa",
+ "category": "ai-search",
+ "source": "seed",
+ "seed_verified": true,
+ "source_url": "https://exa.ai/docs/reference/pricing",
+ "source_urls": [
+  "https://exa.ai/docs/reference/pricing",
+  "https://exa.ai/products/search"
+ ],
+ "has_search": true,
+ "offerings": [
+  {
+   "name": "Exa Search API",
+   "pricing": "/search $7 / 1,000 requests（含最多 10 个结果）",
+   "price_per_1k_usd": 7,
+   "price_basis": "/search 基础价（≤10 results）",
+   "free_quota": "$20 注册额度；每月 $10 free credits",
+   "output_type": "语义/实时结构化结果；另有 Answer API",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "超过 10 个结果另收 $1/1k results；页面摘要 $1/1k pages"
+  }
+ ],
+ "fetched_at": null,
+ "status_note": null,
+ "last_error": null
+}

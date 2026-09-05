@@ -1,0 +1,27 @@
+{
+ "provider_name": "Bright Data SERP API",
+ "category": "serp",
+ "source": "seed",
+ "seed_verified": true,
+ "source_url": "https://brightdata.com/pricing/serp",
+ "source_urls": [
+  "https://brightdata.com/pricing/serp"
+ ],
+ "has_search": true,
+ "offerings": [
+  {
+   "name": "Bright Data SERP API",
+   "pricing": "PAYG $1.5 / 1,000 successful requests",
+   "price_per_1k_usd": 1.5,
+   "price_basis": "Pay as you go（成功请求）",
+   "free_quota": "5,000 records/月",
+   "output_type": "SERP JSON / HTML / Markdown",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "默认失败请求不收费；Scale 额外请求为 $1.3/1k"
+  }
+ ],
+ "fetched_at": null,
+ "status_note": null,
+ "last_error": null
+}

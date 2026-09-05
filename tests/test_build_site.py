@@ -395,23 +395,52 @@ class PlansSectionTests(unittest.TestCase):
 class WebSearchSectionTests(unittest.TestCase):
     def _cfg(self):
         return [
-            {"id": "a", "name": "A", "region": "国际"},
-            {"id": "b", "name": "B", "region": "国内"},
+            {"id": "a", "name": "A", "region": "国际", "category": "ai-search"},
+            {"id": "b", "name": "B", "region": "国内", "category": "serp"},
         ]
 
-    def test_renders_objective_facts_and_seed_badge(self):
+    def test_renders_objective_facts_seed_badge_and_price_chart(self):
         section = build_site._websearch_section(self._cfg(), {
-            "a": {"source": "seed", "has_search": True, "offerings": [{
-                "name": "Search API", "pricing": "$35 / 1000 queries",
+            "a": {"source": "seed", "seed_verified": True, "has_search": True, "offerings": [{
+                "name": "Search API", "pricing": "$5 / 1000 queries",
+                "price_per_1k_usd": 5, "price_basis": "PAYG basic",
+                "free_quota": "1000/月", "output_type": "结构化搜索结果",
                 "cites_sources": True, "default_on": False, "note": "返回引用"}]},
         })
 
         self.assertIn("联网搜索 · 价格与效果", section)
         self.assertIn("Search API", section)
+        self.assertIn("搜索 API 基础价柱状图", section)
+        self.assertIn("$5 / 1k", section)
+        self.assertIn("PAYG basic", section)
+        self.assertIn("结构化搜索结果", section)
         self.assertIn('class="ws-yes"', section)
         self.assertIn('class="ws-no"', section)
-        self.assertIn("种子数据 · 待校准", section)
-        self.assertIn("1</b> 家提供联网搜索", section)
+        self.assertIn("官网事实种子 · 待自动校准", section)
+        self.assertIn("1</b> 家联网搜索厂商", section)
+        self.assertIn("1</b> 家独立搜索 API", section)
+        self.assertIn("1</b> 项可按千次比较", section)
+
+    def test_chart_scales_linearly_within_category(self):
+        records = {
+            "a": {"offerings": [
+                {"name": "Basic", "price_per_1k_usd": 5, "price_basis": "basic"},
+                {"name": "Deep", "price_per_1k_usd": 10, "price_basis": "deep"},
+            ]},
+        }
+
+        chart = build_site._websearch_price_chart(self._cfg(), records)
+
+        self.assertIn('style="--ws-bar-height:50.0%"', chart)
+        self.assertIn('style="--ws-bar-height:100.0%"', chart)
+        self.assertIn("每种产品类型独立缩放", chart)
+
+    def test_chart_omits_incomparable_token_only_price(self):
+        chart = build_site._websearch_price_chart(self._cfg(), {
+            "a": {"offerings": [{"name": "Token only", "pricing": "按 token"}]},
+        })
+
+        self.assertEqual(chart, "")
 
     def test_omits_section_when_no_offerings(self):
         self.assertEqual(

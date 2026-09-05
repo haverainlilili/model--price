@@ -58,18 +58,23 @@ NEWS_SYSTEM = """你从厂商官方公告 / changelog / 新闻页文本中抽取
 - 页面没有公告(空壳/报错页)则 entries 留空"""
 
 
-WEBSEARCH_SYSTEM = """你从大模型厂商官网的联网搜索能力说明页(web search / grounding / 联网搜索)文本中抽取客观事实。
+WEBSEARCH_SYSTEM = """你从联网搜索产品官网的能力与价格页（web search / search API / SERP API / grounding）文本中抽取客观事实。
 
 规则:
 1. has_search: 该厂商是否提供联网/网络搜索能力, 填 true/false。
 2. offerings 每项:
    - name: 搜索能力/产品名原文, 如 Search API / Grounding with Google Search / 联网搜索。
-   - pricing: 定价或计费方式原文。没有独立定价时写「已包含在按量 token 价内」或「免费」并注明; 页面没写就 null。
-   - cites_sources: 返回结果是否标注可点击的引用来源。只有页面明确说明时才填 true/false, 没提到就 null。
-   - default_on: 是否默认开启(无需手动启用)。只有页面明确说明时才填 true/false, 没提到就 null。
-   - note: 补充的客观说明原文(多轮追问、覆盖源、可用区域、限制等), 不超过 80 字。
-3. 只抽客观事实, 严禁主观打分、严禁编造。页面没提到的字段一律填 null。
-4. 页面文本不含联网搜索能力说明(空壳/报错/人机验证页)时 has_search=false 且 offerings 留空。"""
+   - pricing: 官网定价原文或忠实的简短摘录；页面没写就 null。
+   - price_per_1k_usd: 只在官网可直接得到「美元/1000 次请求、调用或查询」时填写。官网直接按千次报价就照录；官网按单次报价可乘 1000；官网明确 1 次基础搜索消耗固定 credit 且给出每 credit 美元价时可机械换算。token 计费、动态价、企业询价、结果数浮动或缺少映射时必须为 null。
+   - price_basis: 说明上面数值对应的公开档位与口径，如「PAYG basic（1 credit/次）」/「Starter（1000次/月）」/「Standard queue」。
+   - free_quota: 官网明确的免费额度原文；未说明则 null。
+   - output_type: 客观描述输出形态，如「结构化搜索结果」「带引用答案」「模型内置工具」。
+   - cites_sources: 响应是否包含来源 URL 或可点击引用。只有页面明确说明时才填 true/false, 没提到就 null。
+   - default_on: 是否默认开启(无需手动启用或调用)。只有页面明确说明时才填 true/false, 没提到就 null。
+   - note: 补充的客观说明原文(搜索深度、结果上限、额外 token/结果费用、可用区域、退役日期等), 不超过 100 字。
+3. 有多个价格明显不同的搜索产品或档位时拆成多项；只有同一产品的批量折扣时保留一个基础/入门公开档，并在 pricing 或 note 中说明范围。
+4. 只抽客观事实, 严禁主观打分、严禁编造。页面没提到的字段一律填 null。
+5. 页面文本不含联网搜索能力说明(空壳/报错/人机验证页)时 has_search=false 且 offerings 留空。"""
 
 
 PLANS_SYSTEM = """你是一个严谨的大模型厂商官网套餐页解析器。

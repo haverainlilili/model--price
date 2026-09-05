@@ -65,6 +65,36 @@ class FetchPlanTextTests(unittest.TestCase):
         )
 
 
+class FetchWebSearchTextTests(unittest.TestCase):
+    @patch.object(run, "fetch", side_effect=["feature page", "pricing page"])
+    def test_combines_multiple_official_websearch_sources(self, _fetch):
+        url, text = run._fetch_websearch_text({
+            "websearch_urls": [
+                "https://example.com/search",
+                "https://example.com/pricing",
+            ],
+            "region": "国际",
+        })
+
+        self.assertEqual(url, "https://example.com/search")
+        self.assertIn("feature page", text)
+        self.assertIn("pricing page", text)
+        self.assertEqual(_fetch.call_count, 2)
+
+    @patch.object(run, "fetch_rendered", return_value="rendered search")
+    @patch.object(run, "fetch", side_effect=AssertionError("plain fetch must not run"))
+    def test_uses_browser_for_rendered_websearch_source(self, _fetch, rendered):
+        url, text = run._fetch_websearch_text({
+            "websearch_url": "https://example.com/search",
+            "websearch_render": True,
+        })
+
+        self.assertEqual(url, "https://example.com/search")
+        self.assertIn("rendered search", text)
+        rendered.assert_called_once_with(
+            "https://example.com/search", language="zh-CN")
+
+
 class FetchLanguageSelectionTests(unittest.TestCase):
     @patch.object(run, "fetch", return_value="English pricing")
     def test_international_provider_uses_english(self, _fetch):
@@ -153,6 +183,22 @@ class ProviderConfigurationTests(unittest.TestCase):
         for provider in international:
             with self.subTest(provider=provider["id"]):
                 self.assertEqual(provider.get("language"), "en-US")
+
+    def test_websearch_catalog_is_large_unique_and_separate(self):
+        catalog = run.load_websearch_providers()
+        ids = [provider["id"] for provider in catalog]
+
+        self.assertGreaterEqual(len(catalog), 20)
+        self.assertEqual(len(ids), len(set(ids)))
+        self.assertTrue({"model", "ai-search", "serp"}.issubset(
+            {provider.get("category") for provider in catalog}))
+        self.assertIn("tavily", ids)
+        self.assertIn("serper", ids)
+        self.assertIn("brightdata", ids)
+        for provider in catalog:
+            with self.subTest(provider=provider["id"]):
+                self.assertTrue(
+                    provider.get("websearch_url") or provider.get("websearch_urls"))
 
     def test_google_sources_pin_the_english_locale(self):
         google = next(
@@ -338,6 +384,74 @@ class ProcessPlansTests(unittest.TestCase):
 
         extract_plans.assert_not_called()
         self.assertEqual(save_plans.call_args.args[1]["status_note"], "页面无变化")
+
+
+class ProcessWebSearchTests(unittest.TestCase):
+    @patch.object(run.history, "save_websearch")
+    @patch.object(run.extract, "extract_websearch")
+    @patch.object(run.extract, "has_api_key", return_value=True)
+    @patch.object(run, "_fetch_websearch_text",
+                  return_value=("https://example.com/search", "same search"))
+    @patch.object(run.history, "load_websearch")
+    def test_retries_previous_failed_extraction_even_when_hash_is_unchanged(
+            self, load_websearch, _fetch, _has_key,
+            extract_websearch, _save_websearch):
+        load_websearch.return_value = {
+            "offerings": [{"name": "seed"}],
+            "websearch_hash": run._sha("same search"),
+            "last_error": "previous extraction was empty",
+        }
+        extract_websearch.return_value = SimpleNamespace(
+            has_search=True,
+            offerings=[SimpleNamespace(model_dump=lambda: {"name": "Search API"})],
+        )
+
+        run.process_websearch({
+            "id": "example",
+            "name": "Example",
+            "websearch_url": "https://example.com/search",
+        })
+
+        extract_websearch.assert_called_once()
+
+    @patch.object(run.history, "save_websearch")
+    @patch.object(run.extract, "extract_websearch")
+    @patch.object(run.extract, "has_api_key", return_value=True)
+    @patch.object(run, "_fetch_websearch_text",
+                  return_value=("https://example.com/search", "changed search"))
+    @patch.object(run.history, "load_websearch", return_value={})
+    def test_saves_comparable_official_search_price(
+            self, _load, _fetch, _has_key, extract_websearch, save_websearch):
+        extracted = {
+            "name": "Search API",
+            "pricing": "$5 / 1k requests",
+            "price_per_1k_usd": 5,
+            "price_basis": "PAYG",
+            "free_quota": "1000/month",
+            "output_type": "structured results",
+            "cites_sources": True,
+            "default_on": False,
+            "note": None,
+        }
+        extract_websearch.return_value = SimpleNamespace(
+            has_search=True,
+            offerings=[SimpleNamespace(model_dump=lambda: extracted)],
+        )
+
+        run.process_websearch({
+            "id": "example",
+            "name": "Example",
+            "websearch_urls": [
+                "https://example.com/search",
+                "https://example.com/pricing",
+            ],
+        })
+
+        saved = save_websearch.call_args.args[1]
+        self.assertEqual(saved["source_url"], "https://example.com/search")
+        self.assertEqual(len(saved["source_urls"]), 2)
+        self.assertEqual(saved["offerings"][0]["price_per_1k_usd"], 5)
+
 
 
 if __name__ == "__main__":

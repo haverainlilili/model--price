@@ -456,15 +456,47 @@ body[data-currency=cny] .p-orig{display:none}
 .ws-stat{display:inline-flex;align-items:baseline;gap:6px;padding:9px 12px;background:var(--panel);
   border:1px solid var(--line);border-radius:10px;font-size:12px;color:var(--ink2)}
 .ws-stat b{color:var(--ink);font:760 15px/1 var(--mono)}
+.ws-price-chart{margin:0 0 18px;background:var(--panel);border:1px solid var(--line);
+  border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.ws-chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:14px}
+.ws-chart-group{min-width:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#FFF}
+.ws-chart-group:last-child:nth-child(odd){grid-column:1/-1}
+.ws-chart-group-head{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  min-height:46px;padding:9px 12px;border-bottom:1px solid var(--line);background:var(--panel2)}
+.ws-chart-group-head h4{margin:0;font-size:13px}.ws-chart-group-head span{color:var(--ink3);
+  font:650 9px var(--mono);letter-spacing:.05em}
+.ws-bars-scroll{overflow-x:auto;scrollbar-color:var(--line2) transparent}
+.ws-bars{display:flex;align-items:stretch;gap:8px;min-width:max(500px,calc(var(--ws-count) * 112px));
+  padding:14px 12px 13px}
+.ws-bar-col{display:grid;grid-template-rows:30px 150px 36px 28px 42px;flex:1 0 96px;min-width:0;text-align:center}
+.ws-bar-value{align-self:center;color:var(--ink);font:760 10px/1.2 var(--mono)}
+.ws-bar-box{display:flex;align-items:flex-end;justify-content:center;margin:6px 8px 8px;
+  border-bottom:1px solid var(--line2);background:repeating-linear-gradient(to top,transparent 0,
+  transparent calc(25% - 1px),rgba(221,224,217,.58) 25%)}
+.ws-bar-fill{width:min(50px,74%);height:max(8px,var(--ws-bar-height));border-radius:6px 6px 1px 1px;
+  background:var(--accent);box-shadow:inset 0 1px rgba(255,255,255,.22)}
+.ws-bar-col[data-category=serp] .ws-bar-fill{background:#48716B}
+.ws-bar-col[data-category=model] .ws-bar-fill{background:#8A6743}
+.ws-bar-name{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+  color:var(--ink);font:720 10.5px/1.3 var(--sans)}
+.ws-bar-product{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink3);
+  font:600 8.5px/1.2 var(--mono)}
+.ws-bar-basis{align-self:start;padding-top:6px;border-top:1px solid var(--line);color:var(--ink2);
+  font:600 9px/1.35 var(--sans);overflow:hidden}
+.ws-chart-foot{margin:0;padding:11px 18px;border-top:1px solid var(--line);background:var(--panel2);
+  color:var(--ink2);font-size:11.5px}
 .ws-table{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.ws-table table{min-width:760px}
-.ws-name{font-weight:720}
-.ws-prov{font-weight:760;font-size:13px}
-.ws-prov .tag{margin-left:7px}
-.ws-yes{color:var(--down);font-weight:750}
-.ws-no{color:var(--up);font-weight:750}
-.ws-unk{color:var(--ink3);font-weight:650}
-.ws-note{max-width:420px;color:var(--ink2);font-size:11.5px;text-align:left}
+.ws-table table{min-width:1120px}
+.ws-name{font-weight:720;text-align:left}.ws-output{text-align:left;color:var(--ink2)}
+.ws-prov{font-weight:760;font-size:13px;text-align:left}.ws-prov .tag{margin-left:7px}
+.ws-category{display:inline-flex;margin-left:7px;padding:3px 6px;border-radius:5px;background:#EEF0EB;
+  color:var(--ink2);font:700 8px/1 var(--mono);white-space:nowrap}
+.ws-group-row th{padding:9px 14px;background:#EEF2ED;color:var(--accent-dark);text-align:left;
+  border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);font:750 10px var(--mono);
+  letter-spacing:.08em}.ws-group-row:first-child th{border-top:0}
+.ws-yes{color:var(--down);font-weight:750}.ws-no{color:var(--up);font-weight:750}
+.ws-unk{color:var(--ink3);font-weight:650}.ws-free{color:var(--accent-dark);font-weight:650;text-align:left}
+.ws-pricing{text-align:left;min-width:170px}.ws-note{max-width:390px;color:var(--ink2);font-size:11.5px;text-align:left}
 .ws-source{display:inline-block;margin-left:8px;font:700 9.5px var(--mono)}
 
 /* ---- 变动流水 ---- */
@@ -508,18 +540,20 @@ body[data-region=intl] .plan-channel[data-region=domestic],
 body[data-region=intl] .plan-chart-channel[data-region=domestic],
 body[data-region=intl] .bgroup[data-region=domestic],
 body[data-region=intl] .lowest-col[data-region=domestic],
-body[data-region=intl] .ws-row[data-region=domestic]{display:none}
+body[data-region=intl] .ws-row[data-region=domestic],
+body[data-region=intl] .ws-bar-col[data-region=domestic]{display:none}
 body[data-region=domestic] .prov[data-region=intl],
 body[data-region=domestic] .news-card[data-region=intl],
 body[data-region=domestic] .plan-channel[data-region=intl],
 body[data-region=domestic] .plan-chart-channel[data-region=intl],
 body[data-region=domestic] .bgroup[data-region=intl],
 body[data-region=domestic] .lowest-col[data-region=intl],
-body[data-region=domestic] .ws-row[data-region=intl]{display:none}
+body[data-region=domestic] .ws-row[data-region=intl],
+body[data-region=domestic] .ws-bar-col[data-region=intl]{display:none}
 
 @media(hover:hover){
-  .prov,.news-card,.plan-channel,.plan-chart-channel{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
-  .prov:hover,.news-card:hover,.plan-channel:hover,.plan-chart-channel:hover{transform:translateY(-2px);border-color:var(--line2);
+  .prov,.news-card,.plan-channel,.plan-chart-channel,.ws-chart-group{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .prov:hover,.news-card:hover,.plan-channel:hover,.plan-chart-channel:hover,.ws-chart-group:hover{transform:translateY(-2px);border-color:var(--line2);
     box-shadow:0 12px 28px rgba(36,48,42,.07)}
 }
 @media(max-width:960px){
@@ -527,7 +561,8 @@ body[data-region=domestic] .ws-row[data-region=intl]{display:none}
   .spec{grid-template-columns:repeat(4,minmax(0,1fr))}
   .metric-wide{grid-column:span 2}
   .chart-grid{grid-template-columns:1fr}
-  .plan-chart-grid{grid-template-columns:1fr}
+  .plan-chart-grid,.ws-chart-grid{grid-template-columns:1fr}
+  .ws-chart-group:last-child:nth-child(odd){grid-column:auto}
   .plan-grid{columns:1}
   .news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
@@ -556,7 +591,7 @@ body[data-region=domestic] .ws-row[data-region=intl]{display:none}
   .quick-head{align-items:flex-start;flex-direction:column;padding:17px}
   .plan-chart-head{align-items:flex-start;flex-direction:column;gap:7px;padding:17px}
   .plan-chart-desc{text-align:left}
-  .plan-chart-grid{padding:10px}
+  .plan-chart-grid,.ws-chart-grid{padding:10px}
   .blegend{justify-content:flex-start}
   .chart-grid{padding:10px}
   .brow{grid-template-columns:minmax(90px,116px) minmax(0,1fr);gap:8px}
@@ -582,7 +617,7 @@ body[data-region=domestic] .ws-row[data-region=intl]{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}.ticker-track{animation:none}.ticker-view{overflow-x:auto}
-  .bbar,.prov,.news-card,.plan-channel,.plan-chart-channel,.prov-chevron{transition:none}
+  .bbar,.prov,.news-card,.plan-channel,.plan-chart-channel,.ws-chart-group,.prov-chevron{transition:none}
 }
 """
 
@@ -1250,69 +1285,203 @@ def _bool_badge(value) -> str:
     return '<span class="ws-unk" aria-label="官网未说明">—</span>'
 
 
+WS_CATEGORIES = {
+    "ai-search": ("独立 AI 搜索 API", "面向 Agent / RAG 的检索接口"),
+    "serp": ("SERP / 搜索引擎结果 API", "返回 Google、Bing 等原始搜索结果"),
+    "model": ("模型内置联网搜索", "由大模型工具调用或 Grounding 完成"),
+}
+WS_CATEGORY_ORDER = ("ai-search", "serp", "model")
+
+
+def _ws_numeric_price(value):
+    """只接受有限的非负数，避免异常抽取破坏柱状图。"""
+    try:
+        result = float(value)
+    except (TypeError, ValueError):
+        return None
+    return result if math.isfinite(result) and result >= 0 else None
+
+
+def _websearch_price_chart(providers_cfg: list, records: dict) -> str:
+    """按相同产品类型分组，展示官网可换算成 USD/千次的基础价。"""
+    grouped = {key: [] for key in WS_CATEGORY_ORDER}
+    for cfg in providers_cfg:
+        rec = records.get(cfg["id"]) or {}
+        category = cfg.get("category") or "model"
+        if category not in grouped:
+            grouped[category] = []
+        region = cfg.get("region", "")
+        data_region = "domestic" if region == "国内" else "intl"
+        provider = cfg.get("name_cn") or cfg.get("name") or cfg["id"]
+        for off in rec.get("offerings") or []:
+            price = _ws_numeric_price(off.get("price_per_1k_usd"))
+            if price is None:
+                continue
+            grouped[category].append({
+                "provider": provider,
+                "product": str(off.get("name") or "Search API").strip(),
+                "price": price,
+                "basis": str(off.get("price_basis") or "官网基础档").strip(),
+                "region": data_region,
+            })
+
+    channels = []
+    total = 0
+    for category in WS_CATEGORY_ORDER:
+        items = sorted(grouped.get(category) or [], key=lambda x: (x["price"], x["provider"]))
+        if not items:
+            continue
+        total += len(items)
+        max_price = max(item["price"] for item in items) or 1
+        bars = []
+        for item in items:
+            height = item["price"] / max_price * 100
+            value = f'${_fmt(item["price"])}'
+            aria = (f'{item["provider"]} {item["product"]}，'
+                    f'基础价 {value} 每千次；口径 {item["basis"]}')
+            bars.append(
+                f'<div class="ws-bar-col" role="listitem" data-category="{_e(category)}" '
+                f'data-region="{item["region"]}" aria-label="{_e(aria)}">'
+                f'<span class="ws-bar-value">{_e(value)} / 1k</span>'
+                f'<div class="ws-bar-box" aria-hidden="true"><div class="ws-bar-fill" '
+                f'style="--ws-bar-height:{height:.1f}%"></div></div>'
+                f'<strong class="ws-bar-name" title="{_e(item["provider"])}">'
+                f'{_e(item["provider"])}</strong>'
+                f'<span class="ws-bar-product" title="{_e(item["product"])}">'
+                f'{_e(item["product"])}</span>'
+                f'<span class="ws-bar-basis" title="{_e(item["basis"])}">'
+                f'{_e(item["basis"])}</span></div>')
+        label, desc = WS_CATEGORIES.get(category, (category, ""))
+        group_id = f'ws-chart-{category}'
+        channels.append(
+            f'<article class="ws-chart-group" aria-labelledby="{group_id}">'
+            f'<header class="ws-chart-group-head"><h4 id="{group_id}">{_e(label)}</h4>'
+            f'<span>{len(items)} 项可比价格 · {_e(desc)}</span></header>'
+            f'<div class="ws-bars-scroll" role="region" tabindex="0" '
+            f'aria-label="{_e(label)}基础价格柱状图，可横向滚动">'
+            f'<div class="ws-bars" role="list" style="--ws-count:{len(items)}">'
+            f'{"".join(bars)}</div></div></article>')
+
+    if not channels:
+        return ""
+    return (
+        '<div class="ws-price-chart" id="ws-price-chart">'
+        '<div class="plan-chart-head"><div><p class="plan-chart-kicker">BASE PRICE / 1K</p>'
+        '<h3 class="plan-chart-title">搜索 API 基础价柱状图</h3></div>'
+        f'<p class="plan-chart-desc">{total} 项官网价格可直接按千次比较<br>'
+        '每种产品类型独立缩放，不混算 token、结果数和深度附加费</p></div>'
+        f'<div class="ws-chart-grid">{"".join(channels)}</div>'
+        '<p class="ws-chart-foot">柱高在同一分类内按官网基础档美元价格线性比较；'
+        '柱顶数字才是精确值。套餐折扣、超额结果、正文抓取、模型 token 和企业定价不计入柱高；'
+        '具体口径写在每根柱下方。</p></div>')
+
+
 def _websearch_section(providers_cfg: list, records: dict) -> str:
-    """联网搜索对比：只展示官网可自动确认的客观事实。"""
-    rows = []
-    n_search = n_cites = n_default = 0
+    """联网搜索对比：扩展独立 API，并只展示官网可确认的客观事实。"""
+    grouped_rows = {key: [] for key in WS_CATEGORY_ORDER}
+    n_search = n_cites = n_priced = n_independent = 0
     for cfg in providers_cfg:
         rec = records.get(cfg["id"]) or {}
         offerings = rec.get("offerings") or []
         if not offerings:
             continue
-        name = cfg.get("name_cn") or cfg["name"]
+        category = cfg.get("category") or "model"
+        if category not in grouped_rows:
+            grouped_rows[category] = []
+        name = cfg.get("name_cn") or cfg.get("name") or cfg["id"]
         region = cfg.get("region", "")
         data_region = "domestic" if region == "国内" else "intl"
         source_url = _safe_url(rec.get("source_url"))
-        badge = ('<span class="badge b-seed" '
-                 'title="首次抓取解析官网后自动替换">种子数据 · 待校准</span>'
-                 if rec.get("source") != "official" else "")
+        cat_label = WS_CATEGORIES.get(category, (category, ""))[0]
+        badges = []
+        if rec.get("source") != "official":
+            if rec.get("seed_verified"):
+                seed_text = "官网事实种子 · 待自动校准"
+                seed_title = "已按官网初始化；首次自动抽取后替换"
+            else:
+                seed_text = "待官网自动确认"
+                seed_title = "尚未完成官网自动抽取；空缺字段不作推断"
+            badges.append('<span class="badge b-seed" title="%s">%s</span>'
+                          % (_e(seed_title), _e(seed_text)))
+        if rec.get("last_error"):
+            badges.append('<span class="badge b-err" title="%s">抓取失败 · 保留旧数据</span>'
+                          % _e(str(rec["last_error"])[:160]))
+        badge = "".join(badges)
         n_search += 1
+        if category != "model":
+            n_independent += 1
         for off in offerings:
             oname = str(off.get("name") or "").strip()
             pricing = str(off.get("pricing") or "").strip()
+            basis = str(off.get("price_basis") or "").strip()
+            free = str(off.get("free_quota") or "").strip()
+            output = str(off.get("output_type") or "").strip()
             note = str(off.get("note") or "").strip()
             cites = off.get("cites_sources")
             default_on = off.get("default_on")
+            numeric = _ws_numeric_price(off.get("price_per_1k_usd"))
             if cites is True:
                 n_cites += 1
-            if default_on is True:
-                n_default += 1
+            if numeric is not None:
+                n_priced += 1
+                compact = f'${_fmt(numeric)} / 1k'
+                pricing_html = (f'<strong class="price">{_e(compact)}</strong>'
+                                f'<br><span>{_e(pricing) if pricing else "—"}</span>')
+            else:
+                pricing_html = _e(pricing) if pricing else "—"
+            if basis:
+                pricing_html += f'<br><small>{_e(basis)}</small>'
             src = (f'<a class="ws-source" href="{source_url}" target="_blank" '
                    f'rel="noopener">官网 ↗</a>' if source_url else "")
-            rows.append(
+            grouped_rows[category].append(
                 f'<tr class="ws-row" data-region="{data_region}">'
-                f'<td class="ws-prov">{_e(name)}{badge}</td>'
+                f'<td class="ws-prov">{_e(name)}{badge}'
+                f'<span class="ws-category">{_e(cat_label)}</span></td>'
                 f'<td class="ws-name">{_e(oname)}</td>'
+                f'<td class="ws-output">{_e(output) if output else "—"}</td>'
                 f'<td>{_bool_badge(cites)}</td>'
                 f'<td>{_bool_badge(default_on)}</td>'
-                f'<td>{_e(pricing) if pricing else "—"}</td>'
-                f'<td class="ws-note">{_e(note)}{src}</td></tr>')
+                f'<td class="ws-free">{_e(free) if free else "—"}</td>'
+                f'<td class="ws-pricing">{pricing_html}</td>'
+                f'<td class="ws-note">{_e(note) if note else "—"}{src}</td></tr>')
 
-    if not rows:
+    if not any(grouped_rows.values()):
         return ""
 
+    table_rows = []
+    for category in WS_CATEGORY_ORDER:
+        rows = grouped_rows.get(category) or []
+        if not rows:
+            continue
+        label, desc = WS_CATEGORIES.get(category, (category, ""))
+        table_rows.append(
+            f'<tr class="ws-group-row"><th colspan="8">{_e(label)} · '
+            f'{len(rows)} 项 <span>{_e(desc)}</span></th></tr>')
+        table_rows.extend(rows)
+
     stats = (
-        f'<span class="ws-stat"><b>{n_search}</b> 家提供联网搜索</span>'
-        f'<span class="ws-stat"><b>{n_cites}</b> 家标注引用来源</span>'
-        f'<span class="ws-stat"><b>{n_default}</b> 家默认开启</span>')
+        f'<span class="ws-stat"><b>{n_search}</b> 家联网搜索厂商</span>'
+        f'<span class="ws-stat"><b>{n_independent}</b> 家独立搜索 API</span>'
+        f'<span class="ws-stat"><b>{n_priced}</b> 项可按千次比较</span>'
+        f'<span class="ws-stat"><b>{n_cites}</b> 项返回来源或引用</span>')
+    chart = _websearch_price_chart(providers_cfg, records)
 
     return (
         '<section class="block" id="websearch" aria-labelledby="websearch-title">'
-        '<div class="section-head"><div><p class="sec-eyebrow">WEB SEARCH · EFFECT</p>'
+        '<div class="section-head"><div><p class="sec-eyebrow">WEB SEARCH · PRICE & OUTPUT</p>'
         '<h2 class="sec-title" id="websearch-title">联网搜索 · 价格与效果</h2></div>'
-        '<p class="sec-sub">只收录官网可自动确认的客观事实<br>'
-        '效果以「是否标注引用来源」为准，不做主观质量打分</p></div>'
-        f'<div class="ws-summary">{stats}</div>'
-        '<div class="ws-table"><div class="table-wrap"><table>'
-        '<thead><tr><th>厂商</th><th>联网搜索</th><th>引用来源</th>'
-        '<th>默认开启</th><th>定价 / 计费</th><th class="c-note-h">说明</th>'
-        '</tr></thead>'
-        f'<tbody>{"".join(rows)}</tbody></table></div></div>'
+        '<p class="sec-sub">覆盖模型内置搜索、AI 搜索 API 与 SERP API<br>'
+        '效果只展示输出形态和来源链接，不做主观质量打分</p></div>'
+        f'<div class="ws-summary">{stats}</div>{chart}'
+        '<div class="ws-table" id="ws-details"><div class="table-wrap"><table>'
+        '<thead><tr><th>厂商</th><th>产品 / 接口</th><th>输出形态</th>'
+        '<th>来源 / 引用</th><th>默认开启</th><th>免费额度</th>'
+        '<th>定价 / 计费</th><th class="c-note-h">说明</th></tr></thead>'
+        f'<tbody>{"".join(table_rows)}</tbody></table></div></div>'
         '<p class="plan-policy" style="margin-top:14px"><b>OFFICIAL ONLY</b>'
-        '<span>能力与定价均来自各厂商官网公开页，每小时抓取；'
-        '「引用来源」仅表示官网明确说明会返回可点击引用，不代表搜索质量评级。</span></p>'
+        '<span>只收录官网公开事实。千次柱价仅做机械单位换算，并按 AI 搜索、SERP、模型工具分组；'
+        '「来源 / 引用」表示响应含 URL 或引用元数据，不代表搜索准确率或答案质量。</span></p>'
         '</section>')
-
 
 def _prov_section(cfg: dict, rec: dict | None, rate: float) -> str:
     pid = cfg["id"]
@@ -1463,7 +1632,10 @@ def _news_card(cfg: dict, rec: dict) -> str:
 
 # ---------------------------------------------------------------- 主入口
 
-def build(providers_cfg: list) -> Path:
+def build(providers_cfg: list, websearch_cfg: list | None = None) -> Path:
+    websearch_cfg = websearch_cfg or [
+        cfg for cfg in providers_cfg
+        if cfg.get("websearch_url") or cfg.get("websearch_urls")]
     meta = load_meta()
     changes = load_changes()
     fx = meta.get("fx") or {}
@@ -1477,11 +1649,12 @@ def build(providers_cfg: list) -> Path:
         recs[pid] = rec
         news_recs[pid] = load_news(pid)
         plan_recs[pid] = load_plans(pid)
-        ws_recs[pid] = load_websearch(pid)
         prov_names[pid] = cfg.get("name_cn") or cfg["name"]
         if rec:
             prov_cur[pid] = rec.get("currency")
             total_models += len(rec.get("models") or [])
+    for cfg in websearch_cfg:
+        ws_recs[cfg["id"]] = load_websearch(cfg["id"])
 
     # ---- 报头
     gen = _t(meta.get("generated_at"), "%Y-%m-%d %H:%M")
@@ -1515,7 +1688,7 @@ def build(providers_cfg: list) -> Path:
     lowest = _cheapest_chart(providers_cfg, recs, rate)
     quick = _quick_chart(providers_cfg, recs, rate)
     plans = _plans_section(providers_cfg, plan_recs)
-    websearch = _websearch_section(providers_cfg, ws_recs)
+    websearch = _websearch_section(websearch_cfg, ws_recs)
     view_tabs = _view_tabs(bool(plans), bool(websearch))
     controls = (
         '<nav class="controls" aria-label="页面导航与数据筛选">'
@@ -1526,8 +1699,8 @@ def build(providers_cfg: list) -> Path:
         '<div class="jump-nav jump-plans"><a href="#plan-chart">套餐柱状图</a>'
         '<a href="#plan-details">套餐明细</a><a href="#prices">完整价格</a>'
         '<a href="#changes">变动流水</a><a href="#news">官方公告</a></div>'
-        '<div class="jump-nav jump-websearch"><a href="#websearch">搜索对比</a>'
-        '<a href="#prices">完整价格</a><a href="#changes">变动流水</a>'
+        '<div class="jump-nav jump-websearch"><a href="#ws-price-chart">价格柱状图</a>'
+        '<a href="#ws-details">厂商明细</a><a href="#prices">完整价格</a>'
         '<a href="#news">官方公告</a></div></div>'
         '<div class="control-groups"><span class="control-label">FILTER</span>'
         '<div class="seg" role="group" aria-label="地区筛选">'
@@ -1583,7 +1756,7 @@ def build(providers_cfg: list) -> Path:
 
     footer = (
         f'<footer><div>'
-        f'<p style="margin:0 0 6px">数据由各厂商公开官网页面自动抓取, 经 Claude '
+        f'<p style="margin:0 0 6px">数据由各厂商公开官网页面自动抓取, 经兼容 OpenAI 的模型 '
         f'结构化抽取生成, 每小时运行一次; 仅供比价参考, 实际价格与活动以'
         f'各厂商官网为准。开源管线: '
         f'<a href="{REPO_URL}" target="_blank" rel="noopener">{REPO_URL}</a></p>'
@@ -1599,7 +1772,7 @@ def build(providers_cfg: list) -> Path:
         '<title>大模型 API 价格看板 · LLM Price Watch</title>'
         '<meta name="description" content="自动抓取 OpenAI / Anthropic / Google / '
         'DeepSeek / Qwen / 豆包 / 智谱 / Kimi 等官网价格页, 每小时更新的大模型 '
-        'API 价格对比、官网套餐额度、变动流水与官方公告。">'
+        'API 价格对比、官网套餐额度、联网搜索价格、变动流水与官方公告。">'
         f'<style>{CSS}</style></head>'
         f'<body data-region="all" data-currency="cny" data-view="prices">'
         f'<a class="skip-link" href="#main-content">跳到主要内容</a>{ticker}'
@@ -1630,8 +1803,13 @@ def build(providers_cfg: list) -> Path:
                  for cfg in providers_cfg},
         "plans": {cfg["id"]: plan_recs.get(cfg["id"], {})
                   for cfg in providers_cfg if plan_recs.get(cfg["id"], {}).get("plans")},
-        "websearch": {cfg["id"]: ws_recs.get(cfg["id"], {})
-                      for cfg in providers_cfg if ws_recs.get(cfg["id"], {}).get("offerings")},
+        "websearch": {cfg["id"]: {
+            **ws_recs.get(cfg["id"], {}),
+            "name": cfg.get("name_cn") or cfg.get("name") or cfg["id"],
+            "region": cfg.get("region"),
+            "category": cfg.get("category"),
+        } for cfg in websearch_cfg
+            if ws_recs.get(cfg["id"], {}).get("offerings")},
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
     return SITE_DIR / "index.html"

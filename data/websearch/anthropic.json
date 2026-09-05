@@ -1,14 +1,24 @@
 {
+ "provider_name": "Anthropic (Claude)",
+ "category": "model",
  "source": "seed",
+ "seed_verified": true,
  "source_url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool",
+ "source_urls": [
+  "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool"
+ ],
  "has_search": true,
  "offerings": [
   {
-   "name": "Web search tool",
-   "pricing": "按搜索次数额外计费(独立于 token 价)",
+   "name": "Claude API Web search tool",
+   "pricing": "$10 / 1,000 searches，另加标准 token 费用",
+   "price_per_1k_usd": 10,
+   "price_basis": "Web search tool call",
+   "free_quota": null,
+   "output_type": "模型内置工具；带引用答案",
    "cites_sources": true,
    "default_on": false,
-   "note": "返回带引用的来源; 支持多轮搜索与动态过滤(web_search_20260209+)"
+   "note": "搜索结果内容计入输入 token；Messages Batches API 同价"
   }
  ],
  "fetched_at": null,

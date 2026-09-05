@@ -1,0 +1,28 @@
+{
+ "provider_name": "Perplexity",
+ "category": "serp",
+ "source": "seed",
+ "seed_verified": true,
+ "source_url": "https://docs.perplexity.ai/docs/getting-started/pricing",
+ "source_urls": [
+  "https://docs.perplexity.ai/docs/getting-started/pricing",
+  "https://docs.perplexity.ai/docs/search/quickstart"
+ ],
+ "has_search": true,
+ "offerings": [
+  {
+   "name": "Perplexity Search API",
+   "pricing": "$5 / 1,000 successful requests；无额外 token 费",
+   "price_per_1k_usd": 5,
+   "price_basis": "Search API",
+   "free_quota": null,
+   "output_type": "结构化 results[]（title/url/snippet）",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "一次成功请求最多可含 5 个 query，仍按一个 billing unit 计费"
+  }
+ ],
+ "fetched_at": null,
+ "status_note": null,
+ "last_error": null
+}

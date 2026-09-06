@@ -2,18 +2,33 @@
  "plans": [
   {
    "name": "Moderato",
-   "plan_type": "聊天会员",
-   "price": "$19/mo",
-   "billing": "Monthly",
+   "plan_type": "Kimi membership",
+   "price": "$19/mo (Monthly); $15/mo (Annual per month); $180/yr (Annual Total)",
+   "billing": "Monthly or annual",
    "quotas": [
     {
-     "label": "Agent credits",
-     "value": "60",
+     "label": "Agent credits*",
+     "value": "60 (Approximate value)",
      "window": "each month"
+    },
+    {
+     "label": "Agent concurrent tasks",
+     "value": "2 tasks",
+     "window": null
     },
     {
      "label": "Agent priority queue",
      "value": "4× speed",
+     "window": null
+    },
+    {
+     "label": "Scheduled tasks",
+     "value": "10 tasks",
+     "window": null
+    },
+    {
+     "label": "Widget tasks",
+     "value": "10 tasks",
      "window": null
     },
     {
@@ -23,49 +38,43 @@
     }
    ],
    "models": [],
-   "note": "Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 会换算为同一功能的等效任务数量，仅供参考。4× speed 为官网标注的优先队列相对速度。",
-   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
-  },
-  {
-   "name": "Moderato",
-   "plan_type": "聊天会员",
-   "price": "$15/mo; $180/yr",
-   "billing": "Annual",
-   "quotas": [
-    {
-     "label": "Agent credits",
-     "value": "60",
-     "window": "each month"
-    },
-    {
-     "label": "Agent priority queue",
-     "value": "4× speed",
-     "window": null
-    },
-    {
-     "label": "Professional database",
-     "value": "2,000 calls",
-     "window": null
-    }
-   ],
-   "models": [],
-   "note": "年付价格官网同时标注为 $15/mo 和 $180/yr。Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 会换算为同一功能的等效任务数量，仅供参考。4× speed 为官网标注的优先队列相对速度。",
+   "note": "Agent credit values are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All Kimi membership features share a single credit pool metered by token usage.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "聊天会员",
-   "price": "$39/mo",
-   "billing": "Monthly",
+   "plan_type": "Kimi membership",
+   "price": "$39/mo (Monthly); $31/mo (Annual per month); $372/yr (Annual Total)",
+   "billing": "Monthly or annual",
    "quotas": [
     {
-     "label": "Agent credits",
-     "value": "150",
+     "label": "Agent credits*",
+     "value": "150 (Approximate value)",
      "window": "each month"
+    },
+    {
+     "label": "Agent concurrent tasks",
+     "value": "2 tasks",
+     "window": null
     },
     {
      "label": "Agent priority queue",
      "value": "4× speed",
+     "window": null
+    },
+    {
+     "label": "Scheduled tasks",
+     "value": "15 tasks",
+     "window": null
+    },
+    {
+     "label": "Widget tasks",
+     "value": "15 tasks",
+     "window": null
+    },
+    {
+     "label": "Group chat with Claw",
+     "value": "10 group chats",
      "window": null
     },
     {
@@ -75,45 +84,24 @@
     }
    ],
    "models": [],
-   "note": "Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 会换算为同一功能的等效任务数量，仅供参考。4× speed 为官网标注的优先队列相对速度。",
-   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
-  },
-  {
-   "name": "Allegretto",
-   "plan_type": "聊天会员",
-   "price": "$31/mo; $372/yr",
-   "billing": "Annual",
-   "quotas": [
-    {
-     "label": "Agent credits",
-     "value": "150",
-     "window": "each month"
-    },
-    {
-     "label": "Agent priority queue",
-     "value": "4× speed",
-     "window": null
-    },
-    {
-     "label": "Professional database",
-     "value": "5,000 calls",
-     "window": null
-    }
-   ],
-   "models": [],
-   "note": "年付价格官网同时标注为 $31/mo 和 $372/yr。Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 会换算为同一功能的等效任务数量，仅供参考。4× speed 为官网标注的优先队列相对速度。",
+   "note": "Agent credit values are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All Kimi membership features share a single credit pool metered by token usage.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "聊天会员",
-   "price": "$99/mo",
-   "billing": "Monthly",
+   "plan_type": "Kimi membership",
+   "price": "$99/mo (Monthly); $79/mo (Annual per month); $948/yr (Annual Total)",
+   "billing": "Monthly or annual",
    "quotas": [
     {
-     "label": "Agent credits",
-     "value": "360",
+     "label": "Agent credits*",
+     "value": "360 (Approximate value)",
      "window": "each month"
+    },
+    {
+     "label": "Agent concurrent tasks",
+     "value": "4 tasks",
+     "window": null
     },
     {
      "label": "Agent priority queue",
@@ -123,6 +111,21 @@
     {
      "label": "K3 extra-long chat capacity",
      "value": "up to 1M tokens",
+     "window": null
+    },
+    {
+     "label": "Scheduled tasks",
+     "value": "20 tasks",
+     "window": null
+    },
+    {
+     "label": "Widget tasks",
+     "value": "20 tasks",
+     "window": null
+    },
+    {
+     "label": "Group chat with Claw",
+     "value": "10 group chats",
      "window": null
     },
     {
@@ -134,52 +137,24 @@
    "models": [
     "K3"
    ],
-   "note": "Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 会换算为同一功能的等效任务数量，仅供参考。4× speed 为官网标注的优先队列相对速度；K3 超长聊天容量按官网口径为 up to 1M tokens。",
-   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
-  },
-  {
-   "name": "Allegro",
-   "plan_type": "聊天会员",
-   "price": "$79/mo; $948/yr",
-   "billing": "Annual",
-   "quotas": [
-    {
-     "label": "Agent credits",
-     "value": "360",
-     "window": "each month"
-    },
-    {
-     "label": "Agent priority queue",
-     "value": "4× speed",
-     "window": null
-    },
-    {
-     "label": "K3 extra-long chat capacity",
-     "value": "up to 1M tokens",
-     "window": null
-    },
-    {
-     "label": "Professional database",
-     "value": "12,000 calls",
-     "window": null
-    }
-   ],
-   "models": [
-    "K3"
-   ],
-   "note": "年付价格官网同时标注为 $79/mo 和 $948/yr。Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 会换算为同一功能的等效任务数量，仅供参考。4× speed 为官网标注的优先队列相对速度；K3 超长聊天容量按官网口径为 up to 1M tokens。",
+   "note": "Agent credit values are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All Kimi membership features share a single credit pool metered by token usage.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Vivace",
-   "plan_type": "聊天会员",
-   "price": "$199/mo",
-   "billing": "Monthly",
+   "plan_type": "Kimi membership",
+   "price": "$199/mo (Monthly); $159/mo (Annual per month); $1,908/yr (Annual Total)",
+   "billing": "Monthly or annual",
    "quotas": [
     {
-     "label": "Agent credits",
-     "value": "720",
+     "label": "Agent credits*",
+     "value": "720 (Approximate value)",
      "window": "each month"
+    },
+    {
+     "label": "Agent concurrent tasks",
+     "value": "4 tasks",
+     "window": null
     },
     {
      "label": "Agent priority queue",
@@ -189,6 +164,21 @@
     {
      "label": "K3 extra-long chat capacity",
      "value": "up to 1M tokens",
+     "window": null
+    },
+    {
+     "label": "Scheduled tasks",
+     "value": "25 tasks",
+     "window": null
+    },
+    {
+     "label": "Widget tasks",
+     "value": "25 tasks",
+     "window": null
+    },
+    {
+     "label": "Group chat with Claw",
+     "value": "10 group chats",
      "window": null
     },
     {
@@ -200,51 +190,18 @@
    "models": [
     "K3"
    ],
-   "note": "Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 会换算为同一功能的等效任务数量，仅供参考。4× speed 为官网标注的优先队列相对速度；K3 超长聊天容量按官网口径为 up to 1M tokens。",
-   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
-  },
-  {
-   "name": "Vivace",
-   "plan_type": "聊天会员",
-   "price": "$159/mo; $1,908/yr",
-   "billing": "Annual",
-   "quotas": [
-    {
-     "label": "Agent credits",
-     "value": "720",
-     "window": "each month"
-    },
-    {
-     "label": "Agent priority queue",
-     "value": "4× speed",
-     "window": null
-    },
-    {
-     "label": "K3 extra-long chat capacity",
-     "value": "up to 1M tokens",
-     "window": null
-    },
-    {
-     "label": "Professional database",
-     "value": "24,000 calls",
-     "window": null
-    }
-   ],
-   "models": [
-    "K3"
-   ],
-   "note": "年付价格官网同时标注为 $159/mo 和 $1,908/yr。Agent credits 为官网基于典型任务 Token 消耗给出的近似值；月度 credits 会换算为同一功能的等效任务数量，仅供参考。4× speed 为官网标注的优先队列相对速度；K3 超长聊天容量按官网口径为 up to 1M tokens。",
+   "note": "Agent credit values are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature and are for reference only. All Kimi membership features share a single credit pool metered by token usage.",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-06T04:11:49Z",
+ "last_fetch_ts": "2026-09-06T05:10:34Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "fa201fdcbd4ca6719f85f3946c4ff5ab52e7691bb66e036b66fd18a78c1790c4",
- "fetched_at": "2026-09-06T04:11:49Z",
+ "plans_hash": "518fa3f340c63c041952af34d37d97dddd4275038a7695fb7d3b3bc97dbd3d0f",
+ "fetched_at": "2026-09-06T05:10:34Z",
  "status_note": null
 }

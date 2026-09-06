@@ -4,7 +4,7 @@
    "name": "Lite 套餐",
    "plan_type": "Coding Plan",
    "price": "首购优惠价仅9.9元/月",
-   "billing": "首购；按月",
+   "billing": "月",
    "quotas": [
     {
      "label": "请求数",
@@ -16,16 +16,17 @@
     "Doubao-Seed-Code",
     "GLM-4.7",
     "DeepSeek-V3.2",
-    "Kimi-K2-Thinking"
+    "Kimi-K2-Thinking",
+    "Kimi-K2"
    ],
-   "note": "官网以“最多约”表述请求额度。",
+   "note": "官网口径为每5小时最多约1200次请求；页面对 Kimi 模型分别使用了“Kimi-K2-Thinking”和“Kimi-K2”两种名称。",
    "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
   },
   {
    "name": "Pro 套餐",
    "plan_type": "Coding Plan",
    "price": "首购优惠价49.9元/月",
-   "billing": "首购；按月",
+   "billing": "月",
    "quotas": [
     {
      "label": "请求数",
@@ -33,8 +34,8 @@
      "window": "每5小时"
     },
     {
-     "label": "相对用量",
-     "value": "Lite 套餐的5倍",
+     "label": "相对 Lite 套餐用量",
+     "value": "5倍",
      "window": null
     }
    ],
@@ -42,20 +43,21 @@
     "Doubao-Seed-Code",
     "GLM-4.7",
     "DeepSeek-V3.2",
-    "Kimi-K2-Thinking"
+    "Kimi-K2-Thinking",
+    "Kimi-K2"
    ],
-   "note": "官网以“最多约”表述请求额度，并称 Pro 套餐用量是 Lite 套餐的5倍。",
+   "note": "官网口径为每5小时最多约6000次请求，且 Pro 套餐用量是 Lite 套餐的5倍；页面对 Kimi 模型分别使用了“Kimi-K2-Thinking”和“Kimi-K2”两种名称。",
    "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-06T00:12:11Z",
+ "last_fetch_ts": "2026-09-06T01:10:11Z",
  "source": "official",
  "source_urls": [
   "https://developer.volcengine.com/articles/7595502342175195187"
  ],
  "page_has_plans": true,
- "plans_hash": "9e6c4490640e8c62a9d1b7140f21a588b53f4f1247f408d5788bb980e9064ab2",
- "fetched_at": "2026-09-06T00:12:11Z",
+ "plans_hash": "79ee025dbe2b3370f2552191b074260a5bd226c2d368af2d2602d4a97a17b1ce",
+ "fetched_at": "2026-09-06T01:10:11Z",
  "status_note": null
 }

@@ -11,52 +11,52 @@
  "offerings": [
   {
    "name": "SERP API — Free Tier",
-   "pricing": "Free Tier; 5K requests",
+   "pricing": "Free Tier",
    "price_per_1k_usd": 0.0,
-   "price_basis": "Free Tier",
-   "free_quota": "5K records per month; No credit card required",
+   "price_basis": "Free Tier（5K requests）",
+   "free_quota": "5K requests; 5K records per month; No credit card required",
    "output_type": "搜索结果以 JSON 或 HTML 输出",
    "cites_sources": null,
-   "default_on": null,
-   "note": "支持主要搜索引擎及195个国家；仅成功请求计费。"
+   "default_on": false,
+   "note": "支持主要搜索引擎及195个国家，可按城市定位；仅成功请求计费。"
   },
   {
    "name": "SERP API — Pay as you go",
    "pricing": "$1.5/1K requests",
    "price_per_1k_usd": 1.5,
-   "price_basis": "Pay as you go；每千次成功请求",
+   "price_basis": "Pay as you go；仅成功请求计费",
    "free_quota": null,
    "output_type": "搜索结果以 JSON 或 HTML 输出",
    "cites_sources": null,
-   "default_on": null,
-   "note": "Pay only for success；无限并发；每次执行API计为一次请求。"
+   "default_on": false,
+   "note": "无限并发；每次执行API计为一次请求，异步模式收取响应不计请求。"
   },
   {
    "name": "SERP API — Scale",
    "pricing": "$499/month; 380K requests included; $1.3/1K additional requests",
    "price_per_1k_usd": 1.3,
-   "price_basis": "Scale；超出所含380K请求后的附加请求",
+   "price_basis": "Scale 额外请求",
    "free_quota": null,
    "output_type": "搜索结果以 JSON 或 HTML 输出",
    "cites_sources": null,
-   "default_on": null,
-   "note": "无限并发，可随时取消；异步模式仅发送请求计数，收集响应不计数。"
+   "default_on": false,
+   "note": "月费含380K请求；额外请求$1.3/千次；无限并发，可随时取消。"
   },
   {
    "name": "SERP API — Enterprise",
    "pricing": "Custom; Volume discounts",
    "price_per_1k_usd": null,
-   "price_basis": "Enterprise；定制报价",
+   "price_basis": "Enterprise 定制价格",
    "free_quota": null,
    "output_type": "搜索结果以 JSON 或 HTML 输出",
    "cites_sources": null,
-   "default_on": null,
-   "note": "提供客户经理、Premium SLA、优先支持和SSO。"
+   "default_on": false,
+   "note": "含客户经理、Premium SLA、优先支持及SSO。"
   }
  ],
- "fetched_at": "2026-09-07T14:19:07Z",
+ "fetched_at": "2026-09-07T15:18:07Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-07T14:19:07Z",
- "websearch_hash": "21b08528b03c0e9f53e906812318fb4c96d40c76ec7a25151fdde7fb053bfc8f"
+ "last_fetch_ts": "2026-09-07T15:18:07Z",
+ "websearch_hash": "21f688e1dc334bdb327697317b39414abfa344a2f929e1351bd5cdd62972998d"
 }

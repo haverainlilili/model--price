@@ -1,138 +1,130 @@
 {
  "plans": [
   {
-   "name": "Moderato",
-   "plan_type": "Membership",
-   "price": "Monthly: $19/mo; Annual (per month): $15/mo; Annual Total: $180/yr",
-   "billing": "Monthly or annual subscription",
+   "name": "Andante",
+   "plan_type": "会员计划",
+   "price": "¥49/月",
+   "billing": "连续包月",
    "quotas": [
     {
-     "label": "Agent credits",
-     "value": "60",
-     "window": "Monthly"
+     "label": "Agent 用量",
+     "value": "约 30 个",
+     "window": "月额度"
     },
     {
-     "label": "Agent priority queue",
-     "value": "4× speed",
-     "window": null
-    },
-    {
-     "label": "Professional database",
-     "value": "2,000 calls",
-     "window": null
+     "label": "专业数据库",
+     "value": "1000 次调用",
+     "window": "每个计费周期"
     }
    ],
    "models": [
-    "K2.6"
+    "K2.6",
+    "K3"
    ],
-   "note": "Agent credits are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature, for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but this page does not state its numeric value. “4× speed” refers to Agent priority queue speed.",
+   "note": "Agent 用量基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。连续包年仅标注“年付更优惠”，未公布具体价格。",
+   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  {
+   "name": "Moderato",
+   "plan_type": "会员计划",
+   "price": "¥99/月",
+   "billing": "连续包月",
+   "quotas": [
+    {
+     "label": "Agent 用量",
+     "value": "约 60 个",
+     "window": "月额度"
+    },
+    {
+     "label": "Agent 集群可用",
+     "value": "25 次",
+     "window": "每个计费周期"
+    },
+    {
+     "label": "专业数据库",
+     "value": "2000 次调用",
+     "window": "每个计费周期"
+    }
+   ],
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "Agent 用量基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。Agent 集群支持 2 个子任务并行。所有会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。连续包年仅标注“年付更优惠”，未公布具体价格。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "Membership",
-   "price": "Monthly: $39/mo; Annual (per month): $31/mo; Annual Total: $372/yr",
-   "billing": "Monthly or annual subscription",
+   "plan_type": "会员计划",
+   "price": "¥199/月",
+   "billing": "连续包月",
    "quotas": [
     {
-     "label": "Agent credits",
-     "value": "150",
-     "window": "Monthly"
+     "label": "Agent 用量",
+     "value": "约 150 个",
+     "window": "月额度"
     },
     {
-     "label": "Agent priority queue",
-     "value": "4× speed",
-     "window": null
+     "label": "Agent 集群可用",
+     "value": "50 次",
+     "window": "每个计费周期"
     },
     {
-     "label": "Professional database",
-     "value": "5,000 calls",
-     "window": null
+     "label": "专业数据库",
+     "value": "5000 次调用",
+     "window": "每个计费周期"
     }
    ],
    "models": [
-    "K2.6"
+    "K2.6",
+    "K3"
    ],
-   "note": "Agent credits are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature, for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but this page does not state its numeric value. “4× speed” refers to Agent priority queue speed.",
+   "note": "Agent 用量基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。Agent 集群支持 4 个子任务并行。所有会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。连续包年仅标注“年付更优惠”，未公布具体价格。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "Membership",
-   "price": "Monthly: $99/mo; Annual (per month): $79/mo; Annual Total: $948/yr",
-   "billing": "Monthly or annual subscription",
+   "plan_type": "会员计划",
+   "price": "¥699/月",
+   "billing": "连续包月",
    "quotas": [
     {
-     "label": "Agent credits",
-     "value": "360",
-     "window": "Monthly"
+     "label": "Agent 用量",
+     "value": "约 360 个",
+     "window": "月额度"
     },
     {
-     "label": "Agent priority queue",
-     "value": "4× speed",
+     "label": "Agent 集群可用",
+     "value": "120 次",
+     "window": "每个计费周期"
+    },
+    {
+     "label": "超长对话容量",
+     "value": "百万 Tokens",
      "window": null
     },
     {
-     "label": "K3 extra-long chat capacity",
-     "value": "up to 1M tokens",
-     "window": null
-    },
-    {
-     "label": "Professional database",
-     "value": "12,000 calls",
-     "window": null
+     "label": "专业数据库",
+     "value": "12000 次调用",
+     "window": "每个计费周期"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "Agent credits are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature, for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but this page does not state its numeric value. “4× speed” refers to Agent priority queue speed. The K3 capacity is stated as “up to 1M tokens.”",
-   "source_url": "https://www.kimi.com/help/membership/membership-pricing"
-  },
-  {
-   "name": "Vivace",
-   "plan_type": "Membership",
-   "price": "Monthly: $199/mo; Annual (per month): $159/mo; Annual Total: $1,908/yr",
-   "billing": "Monthly or annual subscription",
-   "quotas": [
-    {
-     "label": "Agent credits",
-     "value": "720",
-     "window": "Monthly"
-    },
-    {
-     "label": "Agent priority queue",
-     "value": "4× speed",
-     "window": null
-    },
-    {
-     "label": "K3 extra-long chat capacity",
-     "value": "up to 1M tokens",
-     "window": null
-    },
-    {
-     "label": "Professional database",
-     "value": "24,000 calls",
-     "window": null
-    }
-   ],
-   "models": [
-    "K2.6",
-    "K3"
-   ],
-   "note": "Agent credits are approximate values based on typical task token consumption. Monthly credits are converted to the equivalent number of tasks for the same feature, for reference only. All membership features share a single credit pool metered by token usage. Kimi Code has a separate 5-hour / weekly rate limit, but this page does not state its numeric value. “4× speed” refers to Agent priority queue speed. The K3 capacity is stated as “up to 1M tokens.”",
+   "note": "Agent 用量基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。Agent 集群支持 8 个子任务并行。所有会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。连续包年仅标注“年付更优惠”，未公布具体价格。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-07T10:12:29Z",
+ "last_fetch_ts": "2026-09-07T11:12:40Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "95e93d68d9e6c9c48976b22f1d26d87fea8b27190823ac3014cff694d5700817",
- "fetched_at": "2026-09-07T10:12:29Z",
+ "plans_hash": "33abf0ca649f1cf46c36927874344d68b10ad422420b585ca68afa2c0126a323",
+ "fetched_at": "2026-09-07T11:12:40Z",
  "status_note": null
 }

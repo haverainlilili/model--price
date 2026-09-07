@@ -10,20 +10,53 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Google Search API",
-   "pricing": "Starter: $50 for 50k credits ($1.00/1k); Standard: $375 for 500k ($0.75/1k); Scale: $1250 for 2.5M ($0.50/1k); Ultimate: $3750 for 12.5M ($0.30/1k). Excluding sales tax/VAT/GST.",
+   "name": "Google Search API — Starter",
+   "pricing": "$50*; 50k credits ($1.00/1k); Submit 50,000 queries. * Excluding sales tax/VAT/GST",
    "price_per_1k_usd": 1.0,
    "price_basis": "Starter（50k credits / 50,000 queries）",
-   "free_quota": "Get 2,500 free queries. No credit card required.",
-   "output_type": "结构化实时 Google SERP 搜索结果",
+   "free_quota": "Get 2,500 free queries; No credit card required",
+   "output_type": "结构化 JSON Google 搜索结果，支持 Search、Images、News、Maps、Places、Videos、Shopping、Scholar、Patents、Autocomplete",
    "cites_sources": true,
    "default_on": null,
-   "note": "支持搜索、图片、新闻、地图、地点、视频、购物、学术、专利和自动补全；结果通常1–2秒返回。"
+   "note": "50 queries/second；实时结果；可自定义位置；credits 有效期 6 个月"
+  },
+  {
+   "name": "Google Search API — Standard",
+   "pricing": "$375*; 500k credits ($0.75/1k); Submit 500,000 queries. * Excluding sales tax/VAT/GST",
+   "price_per_1k_usd": 0.75,
+   "price_basis": "Standard（500k credits / 500,000 queries）",
+   "free_quota": "Get 2,500 free queries; No credit card required",
+   "output_type": "结构化 JSON Google 搜索结果，支持 Search、Images、News、Maps、Places、Videos、Shopping、Scholar、Patents、Autocomplete",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "100 queries/second；实时结果；可自定义位置；credits 有效期 6 个月"
+  },
+  {
+   "name": "Google Search API — Scale",
+   "pricing": "$1250*; 2.5M credits ($0.50/1k); Submit 2,500,000 queries. * Excluding sales tax/VAT/GST",
+   "price_per_1k_usd": 0.5,
+   "price_basis": "Scale（2.5M credits / 2,500,000 queries）",
+   "free_quota": "Get 2,500 free queries; No credit card required",
+   "output_type": "结构化 JSON Google 搜索结果，支持 Search、Images、News、Maps、Places、Videos、Shopping、Scholar、Patents、Autocomplete",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "200 queries/second；实时结果；可自定义位置；credits 有效期 6 个月"
+  },
+  {
+   "name": "Google Search API — Ultimate",
+   "pricing": "$3750*; 12.5M credits ($0.30/1k); Submit 12,500,000 queries. * Excluding sales tax/VAT/GST",
+   "price_per_1k_usd": 0.3,
+   "price_basis": "Ultimate（12.5M credits / 12,500,000 queries）",
+   "free_quota": "Get 2,500 free queries; No credit card required",
+   "output_type": "结构化 JSON Google 搜索结果，支持 Search、Images、News、Maps、Places、Videos、Shopping、Scholar、Patents、Autocomplete",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "300 queries/second；实时结果；可自定义位置；credits 有效期 6 个月"
   }
  ],
- "fetched_at": "2026-09-07T07:14:21Z",
+ "fetched_at": "2026-09-07T08:14:55Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-07T07:14:21Z",
- "websearch_hash": "67e0ad9fbe7da9adb6b1311fb3dac1391906f6a381bc5a7f6ec805ee184631f7"
+ "last_fetch_ts": "2026-09-07T08:14:55Z",
+ "websearch_hash": "edfe2581820a61098ba0ab9905714976e723659db51c3078128a34b8f367ec6b"
 }

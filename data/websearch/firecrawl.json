@@ -12,42 +12,86 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search",
-   "pricing": "Search costs 2 credits per 10 results. Hobby pay-as-you-go provides 1,000 extra credits per $5; higher plans provide 2,000–5,000 credits per $5.",
-   "price_per_1k_usd": 10.0,
-   "price_basis": "Hobby PAYG（$5/1,000 credits；2 credits/次、最多10条结果）",
-   "free_quota": "1,000 credits / month；500 searches；$0/month",
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可附带页面Markdown、HTML、链接或截图",
+   "name": "Search — Free Plan",
+   "pricing": "$0/month; 1,000 credits/month; 500 searches",
+   "price_per_1k_usd": null,
+   "price_basis": "Free Plan；Search 2 credits / 10 results，按每10条结果向上取整",
+   "free_quota": "1,000 credits per month; 500 searches",
+   "output_type": "结构化网页、新闻和图片搜索结果，包含标题、描述或摘要及URL；可选抓取完整内容",
    "cites_sources": true,
-   "default_on": null,
-   "note": "按每10条结果向上取整；抓取结果另收每页费用；PAYG仅限付费计划。"
+   "default_on": false,
+   "note": "每月额度重置；/search限速10次/分钟；无需API key也有按IP每日限制的免费层。"
+  },
+  {
+   "name": "Search — Hobby",
+   "pricing": "$16/month billed yearly; 5,000 credits/month; 2,500 searches; 1,000 extra credits per $5",
+   "price_per_1k_usd": null,
+   "price_basis": "Hobby；Search 2 credits / 10 results，结果数量影响每次请求成本",
+   "free_quota": null,
+   "output_type": "结构化网页、新闻和图片搜索结果，包含标题、描述或摘要及URL；可选抓取完整内容",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "搜索按每10条结果向上取整；启用scrapeOptions后另收逐页抓取及高级选项credits。"
+  },
+  {
+   "name": "Search — Standard",
+   "pricing": "$83/month billed yearly; 100,000 credits/month; 50,000 searches; 2,000 extra credits per $5",
+   "price_per_1k_usd": null,
+   "price_basis": "Standard；Search 2 credits / 10 results，结果数量影响每次请求成本",
+   "free_quota": null,
+   "output_type": "结构化网页、新闻和图片搜索结果，包含标题、描述或摘要及URL；可选抓取完整内容",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "搜索按每10条结果向上取整；启用scrapeOptions后另收逐页抓取及高级选项credits。"
+  },
+  {
+   "name": "Search — Growth",
+   "pricing": "$333/month billed yearly; 500,000 credits/month; 250,000 searches; 2,500 extra credits per $5",
+   "price_per_1k_usd": null,
+   "price_basis": "Growth；Search 2 credits / 10 results，结果数量影响每次请求成本",
+   "free_quota": null,
+   "output_type": "结构化网页、新闻和图片搜索结果，包含标题、描述或摘要及URL；可选抓取完整内容",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "搜索按每10条结果向上取整；启用scrapeOptions后另收逐页抓取及高级选项credits。"
+  },
+  {
+   "name": "Search — Scale",
+   "pricing": "$599/monthly billed yearly; 1,000,000 credits/month; 500,000 searches; 5,000 extra credits per $5",
+   "price_per_1k_usd": null,
+   "price_basis": "Scale；Search 2 credits / 10 results，结果数量影响每次请求成本",
+   "free_quota": null,
+   "output_type": "结构化网页、新闻和图片搜索结果，包含标题、描述或摘要及URL；可选抓取完整内容",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "搜索按每10条结果向上取整；年度Scale未用额度可结转1个月。"
   },
   {
    "name": "End-to-End ZDR",
    "pricing": "Cost: 10 credits per 10 results",
    "price_per_1k_usd": null,
-   "price_basis": "Enterprise ZDR search",
+   "price_basis": "Enterprise ZDR search；美元价格取决于Enterprise合同",
    "free_quota": null,
-   "output_type": "零数据保留的结构化搜索结果，含来源URL",
+   "output_type": "零数据保留的结构化搜索结果，包含来源URL",
    "cites_sources": true,
    "default_on": false,
-   "note": "需设置 enterprise: [\"zdr\"]；Firecrawl及上游搜索提供商均不存储查询或结果。"
+   "note": "仅Enterprise；Firecrawl及上游搜索提供商均不存储查询或结果数据。"
   },
   {
    "name": "Anonymized ZDR",
    "pricing": "Cost: 2 credits per 10 results",
    "price_per_1k_usd": null,
-   "price_basis": "Enterprise anonymized ZDR search",
+   "price_basis": "Enterprise anonymized ZDR search；美元价格取决于Enterprise合同",
    "free_quota": null,
-   "output_type": "匿名化零数据保留的结构化搜索结果，含来源URL",
+   "output_type": "匿名化零数据保留的结构化搜索结果，包含来源URL",
    "cites_sources": true,
    "default_on": false,
-   "note": "需设置 enterprise: [\"anon\"]；Firecrawl不保留数据，上游可能缓存匿名查询。"
+   "note": "Firecrawl端完整零保留；上游可能缓存匿名查询，但不附带识别信息。"
   }
  ],
- "fetched_at": "2026-09-07T15:17:08Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-07T17:15:57Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-07T16:14:47Z",
- "websearch_hash": "a14defa2acf07a05cff4d921340bd678607118413c472597c0ac4055bb7be07d"
+ "last_fetch_ts": "2026-09-07T17:15:57Z",
+ "websearch_hash": "2273f2c3f77313c669ff397cba762b703babb63bd0eeddd6199cae12388647bb"
 }

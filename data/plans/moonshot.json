@@ -2,14 +2,14 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "聊天会员",
+   "plan_type": "会员计划",
    "price": "¥49/月",
-   "billing": "连续包月",
+   "billing": "连续包月；连续包年（年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "每月"
+     "window": "按月"
     },
     {
      "label": "Agent 优先生成队列",
@@ -17,28 +17,28 @@
      "window": null
     },
     {
-     "label": "专业数据库调用",
-     "value": "1000 次",
-     "window": "每个计费周期"
+     "label": "专业数据库",
+     "value": "1000 次调用",
+     "window": "按月"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "Agent 用量是官网基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有会员功能共享额度池并按实际 token 消耗扣除，额度按月刷新。页面称连续包年“年付更优惠”，但未给出明确年价。",
+   "note": "所有会员功能共享一个额度池，按实际 token 消耗扣除并按月刷新。Agent 用量是基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "聊天会员",
+   "plan_type": "会员计划",
    "price": "¥99/月",
-   "billing": "连续包月",
+   "billing": "连续包月；连续包年（年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "每月"
+     "window": "按月"
     },
     {
      "label": "Agent 优先生成队列",
@@ -47,32 +47,32 @@
     },
     {
      "label": "Agent 集群可用",
-     "value": "25 次（2 个子任务并行）",
-     "window": "每个计费周期"
+     "value": "25 次",
+     "window": "按月"
     },
     {
-     "label": "专业数据库调用",
-     "value": "2000 次",
-     "window": "每个计费周期"
+     "label": "专业数据库",
+     "value": "2000 次调用",
+     "window": "按月"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "该套餐在 Andante 基础上提供权益。Agent 用量是官网基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有会员功能共享额度池并按实际 token 消耗扣除，额度按月刷新。页面称连续包年“年付更优惠”，但未给出明确年价。",
+   "note": "该套餐在 Andante 基础上提供权益。所有会员功能共享一个额度池，按实际 token 消耗扣除并按月刷新。Agent 用量是基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "聊天会员",
+   "plan_type": "会员计划",
    "price": "¥199/月",
-   "billing": "连续包月",
+   "billing": "连续包月；连续包年（年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "每月"
+     "window": "按月"
     },
     {
      "label": "Agent 优先生成队列",
@@ -81,32 +81,32 @@
     },
     {
      "label": "Agent 集群可用",
-     "value": "50 次（4 个子任务并行）",
-     "window": "每个计费周期"
+     "value": "50 次",
+     "window": "按月"
     },
     {
-     "label": "专业数据库调用",
-     "value": "5000 次",
-     "window": "每个计费周期"
+     "label": "专业数据库",
+     "value": "5000 次调用",
+     "window": "按月"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "该套餐在 Andante 基础上提供权益。Agent 用量是官网基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有会员功能共享额度池并按实际 token 消耗扣除，额度按月刷新。页面称连续包年“年付更优惠”，但未给出明确年价。",
+   "note": "该套餐在 Andante 基础上提供权益。所有会员功能共享一个额度池，按实际 token 消耗扣除并按月刷新。Agent 用量是基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "聊天会员",
+   "plan_type": "会员计划",
    "price": "¥699/月",
-   "billing": "连续包月",
+   "billing": "连续包月；连续包年（年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "每月"
+     "window": "按月"
     },
     {
      "label": "Agent 优先生成队列",
@@ -115,8 +115,8 @@
     },
     {
      "label": "Agent 集群可用",
-     "value": "120 次（8 个子任务并行）",
-     "window": "每个计费周期"
+     "value": "120 次",
+     "window": "按月"
     },
     {
      "label": "超长对话容量",
@@ -124,27 +124,27 @@
      "window": null
     },
     {
-     "label": "专业数据库调用",
-     "value": "12000 次",
-     "window": "每个计费周期"
+     "label": "专业数据库",
+     "value": "12000 次调用",
+     "window": "按月"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "该套餐在 Andante 基础上提供权益。Agent 用量是官网基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有会员功能共享额度池并按实际 token 消耗扣除，额度按月刷新。页面称连续包年“年付更优惠”，但未给出明确年价。",
+   "note": "该套餐在 Andante 基础上提供权益。所有会员功能共享一个额度池，按实际 token 消耗扣除并按月刷新。Agent 用量是基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-07T16:10:29Z",
+ "last_fetch_ts": "2026-09-07T17:11:48Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "da8b5e7954162fce555898547b5708d047131e15abbd2a41af47e1abeb59fde9",
- "fetched_at": "2026-09-07T16:10:29Z",
+ "plans_hash": "64a7324533c0eff4a27c21e4de352617779214c497aa5a175158d502efdccb35",
+ "fetched_at": "2026-09-07T17:11:48Z",
  "status_note": null
 }

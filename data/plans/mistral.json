@@ -2,7 +2,7 @@
  "plans": [
   {
    "name": "Free",
-   "plan_type": "Vibe plan",
+   "plan_type": "聊天会员",
    "price": "Free",
    "billing": null,
    "quotas": [
@@ -13,12 +13,12 @@
     }
    ],
    "models": [],
-   "note": "Messages, web searches, and coding sessions are described only as “Limited,” without a numeric quota.",
+   "note": null,
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Pro",
-   "plan_type": "Vibe plan",
+   "plan_type": "聊天会员",
    "price": "$14.99",
    "billing": "/mo; Excluding taxes",
    "quotas": [
@@ -38,8 +38,18 @@
      "window": null
     },
     {
+     "label": "Libraries and document upload",
+     "value": "Up to 15GB",
+     "window": null
+    },
+    {
      "label": "Task scheduling",
      "value": "Up to 5",
+     "window": null
+    },
+    {
+     "label": "Project folders",
+     "value": "Up to 1,000",
      "window": null
     },
     {
@@ -54,13 +64,13 @@
     }
    ],
    "models": [],
-   "note": "Relative quotas retain the official “Up to” and “x free” wording. The FAQ states that Pro allows 150 Flash answers per day.",
+   "note": "“Up to 6x free”“Up to 5x free”和“Up to 40x free”均为官网相对于 Free 套餐的口径；Flash answers 额度来自官网 FAQ 示例。",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Education plan",
-   "plan_type": "Mistral Pro student plan",
-   "price": "$5.99",
+   "plan_type": "聊天会员",
+   "price": "$5.99 / month",
    "billing": "/ month",
    "quotas": [
     {
@@ -70,15 +80,20 @@
     }
    ],
    "models": [],
-   "note": "For verified students; the FAQ says the normal price is $14.99.",
+   "note": "官网 FAQ 表述为：Verified students can get Mistral Pro for $5.99 / month (normally $14.99).",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Team",
-   "plan_type": "Vibe team plan",
+   "plan_type": "团队会员",
    "price": "$24.99",
    "billing": "/user/mo; Excluding taxes",
    "quotas": [
+    {
+     "label": "Storage",
+     "value": "Up to 30GB of storage /user",
+     "window": null
+    },
     {
      "label": "Messages",
      "value": "Up to 6x free",
@@ -90,8 +105,18 @@
      "window": null
     },
     {
+     "label": "Libraries and document upload",
+     "value": "Up to 30GB / user",
+     "window": null
+    },
+    {
      "label": "Task scheduling",
      "value": "Unlimited",
+     "window": null
+    },
+    {
+     "label": "Project folders",
+     "value": "Up to 1,000",
      "window": null
     },
     {
@@ -106,18 +131,18 @@
     }
    ],
    "models": [],
-   "note": "Relative quotas retain the official “Up to” and “x free” wording. The FAQ explicitly compares 200 Flash answers per day on Team with 150 per day on Pro.",
+   "note": "“Up to 6x free”“Up to 5x free”和“Up to 40x free”均为官网相对于 Free 套餐的口径；Flash answers 额度来自官网 FAQ 示例。",
    "source_url": "https://mistral.ai/pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-08T05:10:57Z",
+ "last_fetch_ts": "2026-09-08T06:09:52Z",
  "source": "official",
  "source_urls": [
   "https://mistral.ai/pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "0b1df9ac15677683b8347ab77c3cabe1d55b1236734eab518d6a856afc6314d7",
- "fetched_at": "2026-09-08T05:10:57Z",
+ "plans_hash": "636dbb47af1aa4c2684c00757481bf7a98e67782e87d2d15a30c5e2776fe2f72",
+ "fetched_at": "2026-09-08T06:09:52Z",
  "status_note": null
 }

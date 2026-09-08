@@ -9,7 +9,7 @@
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "每月"
+     "window": "月额度"
     },
     {
      "label": "Agent 优先生成队列",
@@ -17,16 +17,16 @@
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "1000 次调用",
-     "window": "每月"
+     "window": null
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新；Kimi Code 另有 5 小时 / 周使用限额。",
+   "note": "Agent 用量基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -38,7 +38,7 @@
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "每月"
+     "window": "月额度"
     },
     {
      "label": "Agent 优先生成队列",
@@ -46,21 +46,21 @@
      "window": null
     },
     {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群可用",
      "value": "25 次",
-     "window": "每月"
+     "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "2000 次调用",
-     "window": "每月"
+     "window": null
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "官网注明本套餐在 Andante 基础上提供权益。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新；Kimi Code 另有 5 小时 / 周使用限额。",
+   "note": "套餐在 Andante 基础上提供所列权益。Agent 用量基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -72,7 +72,7 @@
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "每月"
+     "window": "月额度"
     },
     {
      "label": "Agent 优先生成队列",
@@ -80,21 +80,21 @@
      "window": null
     },
     {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群可用",
      "value": "50 次",
-     "window": "每月"
+     "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "5000 次调用",
-     "window": "每月"
+     "window": null
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "官网注明本套餐在 Andante 基础上提供权益。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新；Kimi Code 另有 5 小时 / 周使用限额。",
+   "note": "套餐在 Andante 基础上提供所列权益。Agent 用量基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -106,7 +106,7 @@
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "每月"
+     "window": "月额度"
     },
     {
      "label": "Agent 优先生成队列",
@@ -114,9 +114,9 @@
      "window": null
     },
     {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群可用",
      "value": "120 次",
-     "window": "每月"
+     "window": null
     },
     {
      "label": "超长对话容量",
@@ -124,27 +124,27 @@
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "12000 次调用",
-     "window": "每月"
+     "window": null
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "官网注明本套餐在 Andante 基础上提供权益。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；“百万 Tokens”为官网对超长对话容量的原文口径。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新；Kimi Code 另有 5 小时 / 周使用限额。",
+   "note": "套餐在 Andante 基础上提供所列权益。Agent 用量基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。“百万 Tokens”为官网标注的超长对话容量。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-08T11:11:54Z",
+ "last_fetch_ts": "2026-09-08T12:11:56Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "8de77cdc238757052e93ffebab7857f7dc2680616d49e0364a72d1f3f00b0faa",
- "fetched_at": "2026-09-08T11:11:54Z",
+ "plans_hash": "d8c39e946d05192efb28588c1ff6b5248dc9ff1a8d1990836a645118e765a353",
+ "fetched_at": "2026-09-08T12:11:56Z",
  "status_note": null
 }

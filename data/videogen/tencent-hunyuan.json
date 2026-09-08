@@ -1,58 +1,67 @@
 {
-  "provider_name": "腾讯混元生视频",
-  "category": "api",
-  "source": "official_seed",
-  "seed_verified": true,
-  "verified_at": "2026-09-08",
-  "verification_hash": "6cb8f15de577da7275445fac4925f839f6a9c3eb086e38bb12ba15ce34cf7d0a",
-  "page_has_relevant_content": null,
-  "product_status": "active",
-  "product_status_date": null,
-  "product_status_note": null,
-  "seed_cutoff": "latest official snapshot · 2026-09-08",
-  "source_url": "https://cloud.tencent.com/document/product/1616/118994",
-  "source_urls": [
-    "https://cloud.tencent.com/document/product/1616/118994",
-    "https://cloud.tencent.com/document/product/1616/126160"
-  ],
-  "official_examples": [
-    {
-      "title": "腾讯混元生视频官方入口",
-      "url": "https://hunyuan.tencent.com/",
-      "note": "腾讯混元官方产品页"
-    }
-  ],
-  "service_regions": [
-    "domestic"
-  ],
-  "offerings": [
-    {
-      "name": "HY-Video 1.5",
-      "variant_key": "HY-Video 1.5",
-      "api_available": true,
-      "modes": [
-        "text-to-video",
-        "image-to-video"
-      ],
-      "pricing": "预付 1.5 credits/5s；¥1/credit = ¥0.30/秒（720p）",
-      "currency": "CNY",
-      "price_per_second": 0.3,
-      "comparison_group": "cny-720p-silent",
-      "price_basis": "HY-Video 1.5 · 720p · 5s · 预付 · 无原生音频",
-      "resolution": "720p（1080p 文档存在接口支持冲突，未进柱图）",
-      "duration": "固定 5s",
-      "frame_rate": null,
-      "aspect_ratios": null,
-      "native_audio": false,
-      "comparison_resolution": "720p",
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "domestic",
-      "free_quota": "一次性 50 credits，手动领取，有效 1 年",
-      "note": "后付费 ¥1.2/credit，对应 ¥0.36/秒；无原生音频参数。"
-    }
-  ],
-  "fetched_at": null,
-  "seeded_at": "2026-09-08T09:00:46+00:00",
-  "has_video_generation": true
+ "provider_name": "腾讯混元生视频",
+ "category": "api",
+ "source": "official_seed",
+ "seed_verified": true,
+ "verified_at": "2026-09-08",
+ "verification_hash": "6cb8f15de577da7275445fac4925f839f6a9c3eb086e38bb12ba15ce34cf7d0a",
+ "page_has_relevant_content": null,
+ "product_status": "active",
+ "product_status_date": null,
+ "product_status_note": null,
+ "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source_url": "https://cloud.tencent.com/document/product/1616/118994",
+ "source_urls": [
+  "https://cloud.tencent.com/document/product/1616/118994",
+  "https://cloud.tencent.com/document/product/1616/126160"
+ ],
+ "official_examples": [
+  {
+   "title": "腾讯混元生视频官方入口",
+   "url": "https://hunyuan.tencent.com/",
+   "note": "腾讯混元官方产品页"
+  }
+ ],
+ "service_regions": [
+  "domestic"
+ ],
+ "offerings": [
+  {
+   "name": "HY-Video 1.5",
+   "variant_key": "HY-Video 1.5",
+   "api_available": true,
+   "modes": [
+    "text-to-video",
+    "image-to-video"
+   ],
+   "pricing": "预付 1.5 credits/5s；¥1/credit = ¥0.30/秒（720p）",
+   "currency": "CNY",
+   "price_per_second": 0.3,
+   "comparison_group": "cny-720p-silent",
+   "price_basis": "HY-Video 1.5 · 720p · 5s · 预付 · 无原生音频",
+   "resolution": "720p（1080p 文档存在接口支持冲突，未进柱图）",
+   "duration": "固定 5s",
+   "frame_rate": null,
+   "aspect_ratios": null,
+   "native_audio": false,
+   "comparison_resolution": "720p",
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "domestic",
+   "free_quota": "一次性 50 credits，手动领取，有效 1 年",
+   "note": "后付费 ¥1.2/credit，对应 ¥0.36/秒；无原生音频参数。"
+  }
+ ],
+ "fetched_at": null,
+ "seeded_at": "2026-09-08T09:00:46+00:00",
+ "has_video_generation": true,
+ "configured_source_urls": [
+  "https://cloud.tencent.com/document/product/1616/118994",
+  "https://cloud.tencent.com/document/product/1616/126160"
+ ],
+ "last_fetch_ts": "2026-09-08T12:30:33Z",
+ "source_warnings": [],
+ "videogen_hash": "50f49d4c2bd716fb58ae27f8a863f6a81399891fd7dc21aa2db573bf1afe8cdf",
+ "status_note": "官网生视频页面无效: 页面是空白/报错/登录/验证壳；保留上次数据",
+ "last_error": "官网生视频页面无效: 页面是空白/报错/登录/验证壳；保留上次数据"
 }

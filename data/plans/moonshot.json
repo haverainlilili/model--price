@@ -4,15 +4,15 @@
    "name": "Andante",
    "plan_type": "会员计划",
    "price": "¥49/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新",
+   "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "每月"
+     "window": "每个计费周期"
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "1000 次调用",
      "window": "每个计费周期"
     }
@@ -21,27 +21,27 @@
     "K2.6",
     "K3"
    ],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额。",
+   "note": "官网称所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算并在每个计费周期自动刷新。Agent 用量是基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值。连续包年仅标注“年付更优惠”，未公开明确年付价格。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
    "plan_type": "会员计划",
    "price": "¥99/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新",
+   "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "每月"
+     "window": "每个计费周期"
     },
     {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群可用",
      "value": "25 次",
      "window": "每个计费周期"
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "2000 次调用",
      "window": "每个计费周期"
     }
@@ -50,27 +50,27 @@
     "K2.6",
     "K3"
    ],
-   "note": "在 Andante 基础上。Agent 集群为 2 个子任务并行。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额。",
+   "note": "Agent 集群每次支持 2 个子任务并行。官网称所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算并在每个计费周期自动刷新。Agent 用量是基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值。连续包年仅标注“年付更优惠”，未公开明确年付价格。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
    "plan_type": "会员计划",
    "price": "¥199/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新",
+   "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "每月"
+     "window": "每个计费周期"
     },
     {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群可用",
      "value": "50 次",
      "window": "每个计费周期"
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "5000 次调用",
      "window": "每个计费周期"
     }
@@ -79,22 +79,22 @@
     "K2.6",
     "K3"
    ],
-   "note": "在 Andante 基础上。Agent 集群为 4 个子任务并行。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额。",
+   "note": "Agent 集群每次支持 4 个子任务并行。官网称所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算并在每个计费周期自动刷新。Agent 用量是基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值。连续包年仅标注“年付更优惠”，未公开明确年付价格。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
    "plan_type": "会员计划",
    "price": "¥699/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新",
+   "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "每月"
+     "window": "每个计费周期"
     },
     {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群可用",
      "value": "120 次",
      "window": "每个计费周期"
     },
@@ -104,7 +104,7 @@
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "12000 次调用",
      "window": "每个计费周期"
     }
@@ -113,18 +113,18 @@
     "K2.6",
     "K3"
    ],
-   "note": "在 Andante 基础上。Agent 集群为 8 个子任务并行。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额。",
+   "note": "Agent 集群每次支持 8 个子任务并行。官网称所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算并在每个计费周期自动刷新。Agent 用量是基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值。连续包年仅标注“年付更优惠”，未公开明确年付价格。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-08T06:11:00Z",
+ "last_fetch_ts": "2026-09-08T07:12:14Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "1438309a964868a2455c82015407773aa7fbd89afe5e8fa3e0399172d203d379",
- "fetched_at": "2026-09-08T06:11:00Z",
+ "plans_hash": "f5259736c7c6232360547e8548ae1c52a3b4ed4e6a1a7ebced04ea9b3059866c",
+ "fetched_at": "2026-09-08T07:12:14Z",
  "status_note": null
 }

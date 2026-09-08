@@ -1,59 +1,70 @@
 {
-  "provider_name": "Black Forest Labs",
-  "category": "api",
-  "source": "official_seed",
-  "seed_verified": true,
-  "verified_at": "2026-09-08",
-  "verification_hash": "785d2822520d8cc3711e2e5a79bd1dc5d72d12d28b4d202e4473f3de7220dec3",
-  "page_has_relevant_content": null,
-  "product_status": "active",
-  "product_status_date": null,
-  "product_status_note": null,
-  "seed_cutoff": "latest official snapshot · 2026-09-08",
-  "source_url": "https://docs.bfl.ai/quick_start/pricing",
-  "source_urls": [
-    "https://docs.bfl.ai/quick_start/pricing",
-    "https://docs.bfl.ai/flux_2"
-  ],
-  "official_examples": [
-    {
-      "title": "FLUX.2 官方模型样例",
-      "url": "https://bfl.ai/models/flux-2",
-      "note": "BFL 官方模型展示页"
-    }
-  ],
-  "service_regions": [
-    "intl"
-  ],
-  "offerings": [
-    {
-      "name": "FLUX.2 Klein / Pro / Max",
-      "variant_key": "FLUX.2 Klein / Pro / Max",
-      "api_available": true,
-      "modes": [
-        "text-to-image",
-        "image-edit",
-        "reference"
-      ],
-      "pricing": "Klein 4B from $0.014；Pro from $0.03；Max from $0.07/张",
-      "currency": "USD",
-      "price_per_image": null,
-      "comparison_group": null,
-      "price_basis": "官网标注 from / MP，无法锁定统一 1024²总价",
-      "resolution": "最高 4MP，边长为 16 的倍数",
-      "aspect_ratios": null,
-      "output_formats": "JPEG / PNG / WebP",
-      "comparison_width": null,
-      "comparison_height": null,
-      "quality_tier": null,
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": null,
-      "note": "官网示例确认 Klein 4B 2MP=$0.015；因按像素且使用“from”，不进入严格柱图。"
-    }
-  ],
-  "fetched_at": null,
-  "seeded_at": "2026-09-08T09:00:46+00:00",
-  "has_image_generation": true
+ "provider_name": "Black Forest Labs",
+ "category": "api",
+ "source": "official_seed",
+ "seed_verified": true,
+ "verified_at": "2026-09-08",
+ "verification_hash": "785d2822520d8cc3711e2e5a79bd1dc5d72d12d28b4d202e4473f3de7220dec3",
+ "page_has_relevant_content": null,
+ "product_status": "active",
+ "product_status_date": null,
+ "product_status_note": null,
+ "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source_url": "https://docs.bfl.ai/quick_start/pricing",
+ "source_urls": [
+  "https://docs.bfl.ai/quick_start/pricing",
+  "https://docs.bfl.ai/flux_2"
+ ],
+ "official_examples": [
+  {
+   "title": "FLUX.2 官方模型样例",
+   "url": "https://bfl.ai/models/flux-2",
+   "note": "BFL 官方模型展示页"
+  }
+ ],
+ "service_regions": [
+  "intl"
+ ],
+ "offerings": [
+  {
+   "name": "FLUX.2 Klein / Pro / Max",
+   "variant_key": "FLUX.2 Klein / Pro / Max",
+   "api_available": true,
+   "modes": [
+    "text-to-image",
+    "image-edit",
+    "reference"
+   ],
+   "pricing": "Klein 4B from $0.014；Pro from $0.03；Max from $0.07/张",
+   "currency": "USD",
+   "price_per_image": null,
+   "comparison_group": null,
+   "price_basis": "官网标注 from / MP，无法锁定统一 1024²总价",
+   "resolution": "最高 4MP，边长为 16 的倍数",
+   "aspect_ratios": null,
+   "output_formats": "JPEG / PNG / WebP",
+   "comparison_width": null,
+   "comparison_height": null,
+   "quality_tier": null,
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": null,
+   "note": "官网示例确认 Klein 4B 2MP=$0.015；因按像素且使用“from”，不进入严格柱图。"
+  }
+ ],
+ "fetched_at": null,
+ "seeded_at": "2026-09-08T09:00:46+00:00",
+ "has_image_generation": true,
+ "configured_source_urls": [
+  "https://docs.bfl.ai/quick_start/pricing",
+  "https://docs.bfl.ai/flux_2"
+ ],
+ "last_fetch_ts": "2026-09-08T15:19:39Z",
+ "source_warnings": [],
+ "imagegen_hash": "df9c0adbd6263b6993806f1477b22c05b5cb3f37731ff2e54ef75b9f880901ed",
+ "imagegen_pending_shrink_hash": "ed26d0c6d80de72922c2ee239bacf14288c688b884bc01c1927396503dacb115",
+ "imagegen_pending_shrink_count": 14,
+ "status_note": "官网生图抽取覆盖项由 1 变为 14，等待下轮同语义结果确认",
+ "last_error": "官网生图抽取覆盖项由 1 变为 14，等待下轮同语义结果确认"
 }

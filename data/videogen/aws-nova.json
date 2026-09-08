@@ -1,59 +1,71 @@
 {
-  "provider_name": "AWS Nova Reel",
-  "category": "sunsetting",
-  "source": "official_seed",
-  "seed_verified": true,
-  "verified_at": "2026-09-08",
-  "verification_hash": "f224782d33433f699fc97125c273b2321a1e13d0d694a61604c010e45c06860b",
-  "page_has_relevant_content": null,
-  "product_status": "active",
-  "product_status_date": null,
-  "product_status_note": null,
-  "seed_cutoff": "latest official snapshot · 2026-09-08",
-  "source_url": "https://aws.amazon.com/nova/pricing/",
-  "source_urls": [
-    "https://aws.amazon.com/nova/pricing/",
-    "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
-    "https://docs.aws.amazon.com/nova/latest/userguide/video-generation.html"
-  ],
-  "official_examples": [
-    {
-      "title": "Nova Reel 1.1 官方多镜头样片",
-      "url": "https://aws.amazon.com/blogs/aws/amazon-nova-reel-1-1-featuring-up-to-2-minutes-multi-shot-videos/",
-      "note": "AWS 官方样片；模型已列为 Legacy，计划 2026-09-30 停用"
-    }
-  ],
-  "service_regions": [
-    "intl"
-  ],
-  "offerings": [
-    {
-      "name": "Amazon Nova Reel 1.1",
-      "variant_key": "Amazon Nova Reel 1.1",
-      "api_available": true,
-      "modes": [
-        "text-to-video",
-        "image-to-video"
-      ],
-      "pricing": "$0.08/秒",
-      "currency": "USD",
-      "price_per_second": 0.08,
-      "comparison_group": "usd-720p-silent",
-      "price_basis": "Nova Reel 1.1 · 1280×720 · 无音频 · LEGACY/EOL 2026-09-30",
-      "resolution": "1280×720",
-      "duration": "6s 增量，最长 120s",
-      "frame_rate": "24fps",
-      "aspect_ratios": null,
-      "native_audio": false,
-      "comparison_resolution": "720p",
-      "lifecycle_status": "legacy-existing-only",
-      "sunset_at": "2026-09-30",
-      "region": "intl",
-      "free_quota": "无 Nova Reel 免费额度",
-      "note": "2026-03-30 起 Legacy，仅存量客户；连续 15 天无成功调用可能失去访问；2026-09-30 EOL。"
-    }
-  ],
-  "fetched_at": null,
-  "seeded_at": "2026-09-08T09:00:46+00:00",
-  "has_video_generation": true
+ "provider_name": "AWS Nova Reel",
+ "category": "sunsetting",
+ "source": "official_seed",
+ "seed_verified": true,
+ "verified_at": "2026-09-08",
+ "verification_hash": "f224782d33433f699fc97125c273b2321a1e13d0d694a61604c010e45c06860b",
+ "page_has_relevant_content": null,
+ "product_status": "active",
+ "product_status_date": null,
+ "product_status_note": null,
+ "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source_url": "https://aws.amazon.com/nova/pricing/",
+ "source_urls": [
+  "https://aws.amazon.com/nova/pricing/",
+  "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
+  "https://docs.aws.amazon.com/nova/latest/userguide/video-generation.html"
+ ],
+ "official_examples": [
+  {
+   "title": "Nova Reel 1.1 官方多镜头样片",
+   "url": "https://aws.amazon.com/blogs/aws/amazon-nova-reel-1-1-featuring-up-to-2-minutes-multi-shot-videos/",
+   "note": "AWS 官方样片；模型已列为 Legacy，计划 2026-09-30 停用"
+  }
+ ],
+ "service_regions": [
+  "intl"
+ ],
+ "offerings": [
+  {
+   "name": "Amazon Nova Reel 1.1",
+   "variant_key": "Amazon Nova Reel 1.1",
+   "api_available": true,
+   "modes": [
+    "text-to-video",
+    "image-to-video"
+   ],
+   "pricing": "$0.08/秒",
+   "currency": "USD",
+   "price_per_second": 0.08,
+   "comparison_group": "usd-720p-silent",
+   "price_basis": "Nova Reel 1.1 · 1280×720 · 无音频 · LEGACY/EOL 2026-09-30",
+   "resolution": "1280×720",
+   "duration": "6s 增量，最长 120s",
+   "frame_rate": "24fps",
+   "aspect_ratios": null,
+   "native_audio": false,
+   "comparison_resolution": "720p",
+   "lifecycle_status": "legacy-existing-only",
+   "sunset_at": "2026-09-30",
+   "region": "intl",
+   "free_quota": "无 Nova Reel 免费额度",
+   "note": "2026-03-30 起 Legacy，仅存量客户；连续 15 天无成功调用可能失去访问；2026-09-30 EOL。"
+  }
+ ],
+ "fetched_at": null,
+ "seeded_at": "2026-09-08T09:00:46+00:00",
+ "has_video_generation": true,
+ "configured_source_urls": [
+  "https://aws.amazon.com/nova/pricing/",
+  "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
+  "https://docs.aws.amazon.com/nova/latest/userguide/video-generation.html"
+ ],
+ "last_fetch_ts": "2026-09-08T15:22:42Z",
+ "source_warnings": [],
+ "videogen_hash": "f7f449414cb9560e69078490cfda1769da9cb710477712151371d2d4419fede5",
+ "videogen_pending_shrink_hash": "aeef121123a7852227c890c13f45e06f7b60ba3ee673eb7ab87380eb4efcde19",
+ "videogen_pending_shrink_count": 2,
+ "status_note": "官网生视频抽取覆盖项由 1 变为 2，等待下轮同语义结果确认",
+ "last_error": "官网生视频抽取覆盖项由 1 变为 2，等待下轮同语义结果确认"
 }

@@ -1,60 +1,71 @@
 {
-  "provider_name": "MiniMax Hailuo",
-  "category": "api",
-  "source": "official_seed",
-  "seed_verified": true,
-  "verified_at": "2026-09-08",
-  "verification_hash": "e8c9c794240235cce2545ee22a6832dbf157e6ba51e42df45f099fb7989f92aa",
-  "page_has_relevant_content": null,
-  "product_status": "active",
-  "product_status_date": null,
-  "product_status_note": null,
-  "seed_cutoff": "latest official snapshot · 2026-09-08",
-  "source_url": "https://platform.minimax.io/docs/guides/pricing-paygo",
-  "source_urls": [
-    "https://platform.minimax.io/docs/guides/pricing-paygo",
-    "https://platform.minimax.io/docs/api-reference/video-generation-v2-create"
-  ],
-  "official_examples": [
-    {
-      "title": "Hailuo 官方视频生成样例",
-      "url": "https://platform.minimax.io/docs/api-reference/video-generation-v2-create",
-      "note": "MiniMax 官方视频 API 文档"
-    }
-  ],
-  "service_regions": [
-    "intl"
-  ],
-  "offerings": [
-    {
-      "name": "MiniMax H3",
-      "variant_key": "MiniMax H3",
-      "api_available": true,
-      "modes": [
-        "text-to-video",
-        "image-to-video",
-        "first-last-frame",
-        "reference"
-      ],
-      "pricing": "$0.08/秒（768p）；$0.13/秒（2K）",
-      "currency": "USD",
-      "price_per_second": 0.08,
-      "comparison_group": null,
-      "price_basis": "768p 与 720p 不同组，故不进柱图",
-      "resolution": "768p / 2K",
-      "duration": "4–15s",
-      "frame_rate": "24fps",
-      "aspect_ratios": null,
-      "native_audio": true,
-      "comparison_resolution": null,
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": null,
-      "note": "原生 32kHz 立体声音频；参考视频输入另按同档每秒计费。"
-    }
-  ],
-  "fetched_at": null,
-  "seeded_at": "2026-09-08T09:00:46+00:00",
-  "has_video_generation": true
+ "provider_name": "MiniMax Hailuo",
+ "category": "api",
+ "source": "official_seed",
+ "seed_verified": true,
+ "verified_at": "2026-09-08",
+ "verification_hash": "e8c9c794240235cce2545ee22a6832dbf157e6ba51e42df45f099fb7989f92aa",
+ "page_has_relevant_content": null,
+ "product_status": "active",
+ "product_status_date": null,
+ "product_status_note": null,
+ "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source_url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+ "source_urls": [
+  "https://platform.minimax.io/docs/guides/pricing-paygo",
+  "https://platform.minimax.io/docs/api-reference/video-generation-v2-create"
+ ],
+ "official_examples": [
+  {
+   "title": "Hailuo 官方视频生成样例",
+   "url": "https://platform.minimax.io/docs/api-reference/video-generation-v2-create",
+   "note": "MiniMax 官方视频 API 文档"
+  }
+ ],
+ "service_regions": [
+  "intl"
+ ],
+ "offerings": [
+  {
+   "name": "MiniMax H3",
+   "variant_key": "MiniMax H3",
+   "api_available": true,
+   "modes": [
+    "text-to-video",
+    "image-to-video",
+    "first-last-frame",
+    "reference"
+   ],
+   "pricing": "$0.08/秒（768p）；$0.13/秒（2K）",
+   "currency": "USD",
+   "price_per_second": 0.08,
+   "comparison_group": null,
+   "price_basis": "768p 与 720p 不同组，故不进柱图",
+   "resolution": "768p / 2K",
+   "duration": "4–15s",
+   "frame_rate": "24fps",
+   "aspect_ratios": null,
+   "native_audio": true,
+   "comparison_resolution": null,
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": null,
+   "note": "原生 32kHz 立体声音频；参考视频输入另按同档每秒计费。"
+  }
+ ],
+ "fetched_at": null,
+ "seeded_at": "2026-09-08T09:00:46+00:00",
+ "has_video_generation": true,
+ "configured_source_urls": [
+  "https://platform.minimax.io/docs/guides/pricing-paygo",
+  "https://platform.minimax.io/docs/api-reference/video-generation-v2-create"
+ ],
+ "last_fetch_ts": "2026-09-08T10:19:46Z",
+ "source_warnings": [],
+ "videogen_hash": "4084778aaf6e87d8d49e02edb1dc80a115ac24b3f52e9ac7eb9c9171c0e8cbb2",
+ "videogen_pending_shrink_hash": "e3f3513b7039f4524a3dd42f1545409707eeef94b60224a063c101526080a98f",
+ "videogen_pending_shrink_count": 16,
+ "status_note": "官网生视频抽取覆盖项由 1 变为 16，等待下轮同语义结果确认",
+ "last_error": "官网生视频抽取覆盖项由 1 变为 16，等待下轮同语义结果确认"
 }

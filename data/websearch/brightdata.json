@@ -11,42 +11,42 @@
  "offerings": [
   {
    "name": "SERP API — Free Tier",
-   "pricing": "Free Tier: 5K requests",
+   "pricing": "Free Tier; 5K requests",
    "price_per_1k_usd": 0.0,
    "price_basis": "Free Tier（5K requests）",
-   "free_quota": "5K requests; 5K records per month; No credit card required",
+   "free_quota": "5K records per month; No credit card required",
    "output_type": "搜索结果以 JSON 或 HTML 输出",
    "cites_sources": null,
    "default_on": null,
-   "note": "支持主要搜索引擎；仅成功请求计费；每次执行 API 计为一次请求。"
+   "note": "支持主要搜索引擎；每次执行 API 计为一次请求，异步模式仅计发送请求。"
   },
   {
    "name": "SERP API — Pay as you go",
    "pricing": "$1.5/1K requests",
    "price_per_1k_usd": 1.5,
-   "price_basis": "Pay as you go（成功请求）",
+   "price_basis": "Pay as you go；按成功请求计费",
    "free_quota": null,
    "output_type": "搜索结果以 JSON 或 HTML 输出",
    "cites_sources": null,
    "default_on": null,
-   "note": "Pay only for success；可设月度支出上限；无限并发。"
+   "note": "Pay only for success；无限并发，可设置月度支出上限。"
   },
   {
    "name": "SERP API — Scale",
    "pricing": "$499/month; 380K requests included; $1.3/1K additional requests",
    "price_per_1k_usd": 1.3,
-   "price_basis": "Scale（超出380K included后的 additional requests）",
+   "price_basis": "Scale；超出所含380K请求后的 additional requests",
    "free_quota": null,
    "output_type": "搜索结果以 JSON 或 HTML 输出",
    "cites_sources": null,
    "default_on": null,
-   "note": "380K requests included；无限并发；可随时取消。"
+   "note": "含380K请求；无限并发，可随时取消。"
   },
   {
    "name": "SERP API — Enterprise",
    "pricing": "Custom; Volume discounts",
    "price_per_1k_usd": null,
-   "price_basis": "Enterprise（定制报价）",
+   "price_basis": "Enterprise；定制报价",
    "free_quota": null,
    "output_type": "搜索结果以 JSON 或 HTML 输出",
    "cites_sources": null,
@@ -54,9 +54,9 @@
    "note": "含客户经理、Premium SLA、优先支持和 SSO。"
   }
  ],
- "fetched_at": "2026-09-08T08:16:40Z",
+ "fetched_at": "2026-09-08T10:16:54Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-08T08:16:40Z",
- "websearch_hash": "944c016f1d509354c7d66cbe20718f7dddcb478429d447c88adae6e6c53ef255"
+ "last_fetch_ts": "2026-09-08T10:16:54Z",
+ "websearch_hash": "f58301c871b473ed6abc46889c85cbe4c19c3cf964bec5ccca2f4604c92e5da3"
 }

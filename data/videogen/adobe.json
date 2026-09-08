@@ -1,59 +1,70 @@
 {
-  "provider_name": "Adobe Firefly Video",
-  "category": "api",
-  "source": "official_seed",
-  "seed_verified": true,
-  "verified_at": "2026-09-08",
-  "verification_hash": "8bef91e10939141ead5292ce7dbdf12933e1e4a924bff759d943de291a335bcd",
-  "page_has_relevant_content": null,
-  "product_status": "active",
-  "product_status_date": null,
-  "product_status_note": null,
-  "seed_cutoff": "latest official snapshot · 2026-09-08",
-  "source_url": "https://developer.adobe.com/firefly-services/docs/firefly-api/",
-  "source_urls": [
-    "https://developer.adobe.com/firefly-services/docs/firefly-api/",
-    "https://developer.adobe.com/firefly-services/docs/firefly-api/getting-started/usage-notes/"
-  ],
-  "official_examples": [
-    {
-      "title": "Adobe Firefly AI Video 官方展示",
-      "url": "https://www.adobe.com/products/firefly/features/ai-video-generator.html",
-      "note": "Adobe 官方功能展示；不宣称该片由当前 API 模型生成"
-    }
-  ],
-  "service_regions": [
-    "intl"
-  ],
-  "offerings": [
-    {
-      "name": "Firefly Video Model 1",
-      "variant_key": "Firefly Video Model 1",
-      "api_available": true,
-      "modes": [
-        "text-to-video",
-        "image-to-video",
-        "first-last-frame"
-      ],
-      "pricing": "540p 0.4 Operations/秒；720p 1 Op/秒；1080p 2 Ops/秒；USD/Op 未公开",
-      "currency": null,
-      "price_per_second": null,
-      "comparison_group": null,
-      "price_basis": "企业自定义 Operation 单价",
-      "resolution": "540p / 720p / 1080p",
-      "duration": "固定 5s",
-      "frame_rate": null,
-      "aspect_ratios": "16:9 / 9:16 / 1:1",
-      "native_audio": null,
-      "comparison_resolution": null,
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": null,
-      "note": "需要 Firefly Services entitlement 与 OAuth S2S。"
-    }
-  ],
-  "fetched_at": null,
-  "seeded_at": "2026-09-08T09:00:46+00:00",
-  "has_video_generation": true
+ "provider_name": "Adobe Firefly Video",
+ "category": "api",
+ "source": "official_seed",
+ "seed_verified": true,
+ "verified_at": "2026-09-08",
+ "verification_hash": "8bef91e10939141ead5292ce7dbdf12933e1e4a924bff759d943de291a335bcd",
+ "page_has_relevant_content": null,
+ "product_status": "active",
+ "product_status_date": null,
+ "product_status_note": null,
+ "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source_url": "https://developer.adobe.com/firefly-services/docs/firefly-api/",
+ "source_urls": [
+  "https://developer.adobe.com/firefly-services/docs/firefly-api/",
+  "https://developer.adobe.com/firefly-services/docs/firefly-api/getting-started/usage-notes/"
+ ],
+ "official_examples": [
+  {
+   "title": "Adobe Firefly AI Video 官方展示",
+   "url": "https://www.adobe.com/products/firefly/features/ai-video-generator.html",
+   "note": "Adobe 官方功能展示；不宣称该片由当前 API 模型生成"
+  }
+ ],
+ "service_regions": [
+  "intl"
+ ],
+ "offerings": [
+  {
+   "name": "Firefly Video Model 1",
+   "variant_key": "Firefly Video Model 1",
+   "api_available": true,
+   "modes": [
+    "text-to-video",
+    "image-to-video",
+    "first-last-frame"
+   ],
+   "pricing": "540p 0.4 Operations/秒；720p 1 Op/秒；1080p 2 Ops/秒；USD/Op 未公开",
+   "currency": null,
+   "price_per_second": null,
+   "comparison_group": null,
+   "price_basis": "企业自定义 Operation 单价",
+   "resolution": "540p / 720p / 1080p",
+   "duration": "固定 5s",
+   "frame_rate": null,
+   "aspect_ratios": "16:9 / 9:16 / 1:1",
+   "native_audio": null,
+   "comparison_resolution": null,
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": null,
+   "note": "需要 Firefly Services entitlement 与 OAuth S2S。"
+  }
+ ],
+ "fetched_at": null,
+ "seeded_at": "2026-09-08T09:00:46+00:00",
+ "has_video_generation": true,
+ "configured_source_urls": [
+  "https://developer.adobe.com/firefly-services/docs/firefly-api/",
+  "https://developer.adobe.com/firefly-services/docs/firefly-api/getting-started/usage-notes/"
+ ],
+ "last_fetch_ts": "2026-09-08T20:24:28Z",
+ "source_warnings": [],
+ "videogen_hash": "e512ce6f89cf6ea202cc7d638a68a1053acac8cf80534000e7d4f4ebf58a2c01",
+ "videogen_pending_shrink_hash": "c6243ea7e3f32cb880b93f25aa891165c9246f52172044f8306344c83cd83f01",
+ "videogen_pending_shrink_count": 1,
+ "status_note": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
+ "last_error": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认"
 }

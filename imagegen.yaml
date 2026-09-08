@@ -1,0 +1,240 @@
+# 生图模型/API 独立目录。只抓厂商第一方页面；第三方托管价不作为官方价格。
+providers:
+  - id: openai
+    name: OpenAI
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [cdn.openai.com, developers.openai.com, openai.com]
+    imagegen_urls:
+      - https://developers.openai.com/api/docs/pricing
+      - https://developers.openai.com/api/docs/guides/image-generation
+    examples:
+      - title: GPT Image 2 官方生成与编辑案例
+        url: https://openai.com/index/introducing-chatgpt-images-2-0/
+        media_url: https://cdn.openai.com/API/docs/images/images-gallery-2/sci-fi-hangar.png
+        note: OpenAI 官方发布页与稳定官方样图
+
+  - id: google
+    name: Google Imagen / Gemini Image
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [ai.google.dev, cloud.google.com, storage.googleapis.com]
+    imagegen_urls:
+      - https://cloud.google.com/vertex-ai/generative-ai/pricing
+      - https://ai.google.dev/gemini-api/docs/image-generation?hl=en
+      - https://ai.google.dev/gemini-api/docs/deprecations
+    examples:
+      - title: Gemini 3.1 Flash Image（Nano Banana 2）官方样例
+        url: https://ai.google.dev/gemini-api/docs/image-generation
+        media_url: https://storage.googleapis.com/generativeai-downloads/images/isometric-pool.jpg
+        note: Google 官方文档样图属于 Flash Image（非 Flash-Lite）；Imagen 4 已于 2026-08-17 停用
+
+  - id: xai
+    name: xAI Grok Imagine
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [docs.x.ai, x.ai]
+    imagegen_urls:
+      - https://docs.x.ai/developers/pricing
+      - https://docs.x.ai/developers/model-capabilities/images/generation
+    examples:
+      - title: Grok Imagine Image 2.0 官方样例
+        url: https://x.ai/news/grok-imagine-image-2
+        media_url: https://docs.x.ai/images/generation/style-oil-painting.webp
+        note: xAI 官方模型发布页与官方文档样图
+
+  - id: bfl
+    name: Black Forest Labs
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [bfl.ai, docs.bfl.ai]
+    imagegen_urls:
+      - https://docs.bfl.ai/quick_start/pricing
+      - https://docs.bfl.ai/flux_2
+    examples:
+      - title: FLUX.2 官方模型样例
+        url: https://bfl.ai/models/flux-2
+        note: BFL 官方模型展示页
+
+  - id: stability
+    name: Stability AI
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [platform.stability.ai, stability.ai]
+    imagegen_urls:
+      - https://platform.stability.ai/pricing
+      - https://stability.ai/stable-image
+    examples:
+      - title: Stable Diffusion 3.5 官方样例（非 Stable Image Ultra）
+        url: https://stability.ai/news-updates/introducing-stable-diffusion-3-5
+        note: Stability AI 官方模型发布页；展示 SD3.5，不作为 Ultra 档位样图
+
+  - id: adobe
+    name: Adobe Firefly
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [developer.adobe.com, www.adobe.com]
+    imagegen_urls:
+      - https://developer.adobe.com/firefly-services/docs/firefly-api/
+      - https://developer.adobe.com/firefly-services/docs/firefly-api/guides/concepts/credits/
+      - https://developer.adobe.com/firefly-services/docs/firefly-api/guides/how-tos/cm-generate-image/feature-guide
+    examples:
+      - title: Adobe Firefly 文生图官方样例
+        url: https://www.adobe.com/products/firefly/features/text-to-image.html
+        note: Adobe 官方功能与生成示例页
+
+  - id: ideogram
+    name: Ideogram
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [developer.ideogram.ai, ideogram.ai]
+    imagegen_urls:
+      - https://ideogram.ai/api-pricing/
+      - https://developer.ideogram.ai/
+    examples:
+      - title: Ideogram 4.0 官方图片展示
+        url: https://ideogram.ai/models/4.0/
+        note: Ideogram 官方模型页
+
+  - id: recraft
+    name: Recraft
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [www.recraft.ai]
+    imagegen_urls:
+      - https://www.recraft.ai/docs/api-reference/pricing
+      - https://www.recraft.ai/docs/api-reference/getting-started
+    examples:
+      - title: Recraft V4.1 官方生图与矢量样例
+        url: https://www.recraft.ai/docs/recraft-models/recraft-v4-1
+        note: Recraft 官方模型与样例页
+
+  - id: leonardo
+    name: Leonardo.Ai
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [app.leonardo.ai, leonardo.ai]
+    imagegen_url: https://leonardo.ai/api
+    examples:
+      - title: Leonardo 官方托管社区作品
+        url: https://app.leonardo.ai/generation/image/highly-detailed-4k-resolution-image-vibrant-colors-b5e2a4e0-09e3-4253-91ef-4d8fab74c47e
+        provenance: official-community
+        note: Leonardo 第一方平台托管的社区作品，不代表厂商自制样图
+
+  - id: midjourney
+    name: Midjourney
+    region: 国际
+    category: platform-only
+    language: en-US
+    official_domains: [docs.midjourney.com, www.midjourney.com]
+    imagegen_urls:
+      - https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans
+      - https://docs.midjourney.com/hc/en-us/articles/32013696484109-Community-Guidelines
+    examples:
+      - title: Midjourney Explore 官方社区作品
+        url: https://www.midjourney.com/explore
+        provenance: official-community
+        note: Midjourney 第一方平台托管的会员作品；不代表厂商自制样图，且无公开 API
+
+  - id: seedream
+    name: 火山方舟 Seedream
+    official_domains: [arkdocs-en.tos-ap-southeast-1.volces.com, docs.byteplus.com, docs.volcengine.com]
+    region: 国内
+    category: api
+    imagegen_urls:
+      - https://docs.volcengine.com/docs/82379/1544106?lang=zh
+      - https://docs.byteplus.com/en/docs/ModelArk/1544106
+      - https://docs.byteplus.com/en/docs/ModelArk/1541523
+    examples:
+      - title: Seedream 5.0 Pro 官方样例
+        url: https://docs.byteplus.com/en/docs/ModelArk/1541523
+        media_url: https://arkdocs-en.tos-ap-southeast-1.volces.com/images/image-generation/seedream_50_pro_output2.png
+        note: ByteDance/BytePlus 官方文档与稳定官方样图
+
+  - id: alibaba-wan
+    name: 阿里云百炼 Wan Image
+    official_domains: [help-static-aliyun-doc.aliyuncs.com, help.aliyun.com, www.alibabacloud.com]
+    region: 国内
+    category: api
+    imagegen_urls:
+      - https://help.aliyun.com/zh/model-studio/wan2-7-image-pro
+      - https://www.alibabacloud.com/help/en/model-studio/model-pricing
+      - https://www.alibabacloud.com/help/en/model-studio/new-free-quota
+    examples:
+      - title: Wan 2.7 Image Pro 官方样例
+        url: https://help.aliyun.com/zh/model-studio/wan-image-generation-and-editing-api-reference
+        media_url: https://help-static-aliyun-doc.aliyuncs.com/assets/img/en-US/9163205771/p1063463.webp
+        note: 阿里云官方文档与稳定官方样图
+
+  - id: zhipu
+    name: 智谱 CogView
+    official_domains: [cdn.bigmodel.cn, docs.bigmodel.cn, docs.z.ai]
+    region: 国内
+    category: api
+    imagegen_urls:
+      - https://docs.bigmodel.cn/cn/guide/models/image-generation/cogview-4
+      - https://docs.bigmodel.cn/cn/guide/models/free/cogview-3-flash
+      - https://docs.z.ai/guides/overview/pricing
+      - https://docs.z.ai/api-reference/image/generate-image
+    examples:
+      - title: CogView-4 官方应用示例
+        url: https://docs.bigmodel.cn/cn/guide/models/image-generation/cogview-4
+        media_url: https://cdn.bigmodel.cn/markdown/176832067703920260113-235926.jpeg
+        note: 智谱官方文档与稳定官方样图
+
+  - id: tencent-hunyuan
+    name: 腾讯混元生图
+    official_domains: [cloud.tencent.com, github.com, intl.cloud.tencent.com, raw.githubusercontent.com]
+    official_url_prefixes: [https://github.com/Tencent-Hunyuan/, https://raw.githubusercontent.com/Tencent-Hunyuan/]
+    region: 国内
+    category: api
+    imagegen_urls:
+      - https://cloud.tencent.com/document/product/1823/130055
+      - https://cloud.tencent.com/document/product/1823/135745
+      - https://intl.cloud.tencent.com/document/product/1300/78937
+    examples:
+      - title: Hunyuan Image 3.0 官方样例
+        url: https://github.com/Tencent-Hunyuan/HunyuanImage-3.0
+        media_url: https://raw.githubusercontent.com/Tencent-Hunyuan/HunyuanImage-3.0/bc855383e05838e5a5bfa47314eef55545a85423/assets/banner_all.jpg
+        note: 腾讯混元官方仓库与固定版本样图
+
+  - id: minimax
+    name: MiniMax Image
+    region: 国内
+    category: api
+    language: en-US
+    official_domains: [filecdn.minimax.chat, platform.minimax.io, platform.minimaxi.com]
+    imagegen_urls:
+      - https://platform.minimaxi.com/docs/guides/pricing-paygo
+      - https://platform.minimaxi.com/docs/api-reference/image-generation-t2i
+      - https://platform.minimax.io/docs/guides/pricing-paygo
+    examples:
+      - title: MiniMax image-01 官方样例
+        url: https://platform.minimax.io/docs/guides/image-generation
+        media_url: https://filecdn.minimax.chat/public/b2c8d2e7-e0bf-4f00-8e91-6b7b18c17bda.jpeg
+        note: MiniMax 官方文档与官方 CDN 样图
+
+  - id: kling
+    name: 可灵 Kling Image
+    region: 国内
+    category: api
+    language: en-US
+    official_domains: [klingai.com, static-73.klingai-cdn-aws.com]
+    imagegen_urls:
+      - https://klingai.com/document-api/pricing/base/image
+      - https://klingai.com/document-api/guides/capability-map/image
+      - https://klingai.com/document-api/api/image/3-0-omni/image-generation
+    examples:
+      - title: Kling Image 3 Omni 官方样例
+        url: https://klingai.com/quickstart/klingai-image-3-omni-user-guide
+        media_url: https://static-73.klingai-cdn-aws.com/kling-blog/file/1e8b5a2d0b62b47794b370d69cd798a9d5a4a55e93538bcdace0bee5a9830359.png
+        note: 可灵官方指南与官方 CDN 样图

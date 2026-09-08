@@ -1,0 +1,233 @@
+{
+  "provider_name": "PixVerse API",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "0a9780a1664d68d4069b6792529eaf27bf55b249954a9d920c0fc1c0d6b51e87",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://docs.platform.pixverse.ai/pricing-796039m0",
+  "source_urls": [
+    "https://docs.platform.pixverse.ai/pricing-796039m0"
+  ],
+  "official_examples": [
+    {
+      "title": "PixVerse V6 官方视频样片",
+      "url": "https://pixverse.ai/en/model/pixverse-v6",
+      "media_url": "https://media.pixverse.ai/asset/media/v6-hero-12-16.mp4",
+      "note": "PixVerse 官方模型页与官方 CDN 样片"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "PixVerse V6 720p Audio",
+      "variant_key": "PixVerse V6 720p Audio",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "12 credits/秒；一次性充值 1 credit=$0.01",
+      "currency": "USD",
+      "price_per_second": 0.12,
+      "comparison_group": "usd-720p-audio",
+      "price_basis": "V6 · 720p · audio on · one-off PAYG pack",
+      "resolution": "720p",
+      "duration": "1–15s",
+      "frame_rate": null,
+      "aspect_ratios": null,
+      "native_audio": true,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": "订阅包折算不进入本价格。"
+    },
+    {
+      "name": "PixVerse V6 720p Silent",
+      "variant_key": "PixVerse V6 720p Silent",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "9 credits/秒；一次性充值 1 credit=$0.01",
+      "currency": "USD",
+      "price_per_second": 0.09,
+      "comparison_group": "usd-720p-silent",
+      "price_basis": "V6 · 720p · audio off · one-off PAYG pack",
+      "resolution": "720p",
+      "duration": "1–15s",
+      "frame_rate": null,
+      "aspect_ratios": null,
+      "native_audio": false,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": null
+    },
+    {
+      "name": "PixVerse V6 1080p Audio",
+      "variant_key": "PixVerse V6 1080p Audio",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "23 credits/秒；一次性充值 1 credit=$0.01",
+      "currency": "USD",
+      "price_per_second": 0.23,
+      "comparison_group": "usd-1080p-audio",
+      "price_basis": "V6 · 1080p · audio on · one-off PAYG pack",
+      "resolution": "1080p",
+      "duration": "1–15s",
+      "frame_rate": null,
+      "aspect_ratios": null,
+      "native_audio": true,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": null
+    },
+    {
+      "name": "PixVerse V6 1080p Silent",
+      "variant_key": "PixVerse V6 1080p Silent",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "18 credits/秒；一次性充值 1 credit=$0.01",
+      "currency": "USD",
+      "price_per_second": 0.18,
+      "comparison_group": "usd-1080p-silent",
+      "price_basis": "V6 · 1080p · audio off · one-off PAYG pack",
+      "resolution": "1080p",
+      "duration": "1–15s",
+      "frame_rate": null,
+      "aspect_ratios": null,
+      "native_audio": false,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": null
+    },
+    {
+      "name": "PixVerse V6 Fusion Reference 720p Audio",
+      "variant_key": "PixVerse V6 Fusion Reference 720p Audio",
+      "api_available": true,
+      "modes": [
+        "reference-to-video"
+      ],
+      "pricing": "video_references: 24 credits/秒；1 credit=$0.01",
+      "currency": "USD",
+      "price_per_second": 0.24,
+      "comparison_group": "usd-720p-audio",
+      "price_basis": "V6 Fusion · video_references · 720p · audio on · one-off PAYG",
+      "resolution": "720p",
+      "duration": null,
+      "frame_rate": null,
+      "aspect_ratios": null,
+      "native_audio": true,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": null
+    },
+    {
+      "name": "PixVerse V6 Fusion Reference 720p Silent",
+      "variant_key": "PixVerse V6 Fusion Reference 720p Silent",
+      "api_available": true,
+      "modes": [
+        "reference-to-video"
+      ],
+      "pricing": "video_references: 18 credits/秒；1 credit=$0.01",
+      "currency": "USD",
+      "price_per_second": 0.18,
+      "comparison_group": "usd-720p-silent",
+      "price_basis": "V6 Fusion · video_references · 720p · audio off · one-off PAYG",
+      "resolution": "720p",
+      "duration": null,
+      "frame_rate": null,
+      "aspect_ratios": null,
+      "native_audio": false,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": null
+    },
+    {
+      "name": "PixVerse V6 Fusion Reference 1080p Audio",
+      "variant_key": "PixVerse V6 Fusion Reference 1080p Audio",
+      "api_available": true,
+      "modes": [
+        "reference-to-video"
+      ],
+      "pricing": "video_references: 46 credits/秒；1 credit=$0.01",
+      "currency": "USD",
+      "price_per_second": 0.46,
+      "comparison_group": "usd-1080p-audio",
+      "price_basis": "V6 Fusion · video_references · 1080p · audio on · one-off PAYG",
+      "resolution": "1080p",
+      "duration": null,
+      "frame_rate": null,
+      "aspect_ratios": null,
+      "native_audio": true,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": null
+    },
+    {
+      "name": "PixVerse V6 Fusion Reference 1080p Silent",
+      "variant_key": "PixVerse V6 Fusion Reference 1080p Silent",
+      "api_available": true,
+      "modes": [
+        "reference-to-video"
+      ],
+      "pricing": "video_references: 36 credits/秒；1 credit=$0.01",
+      "currency": "USD",
+      "price_per_second": 0.36,
+      "comparison_group": "usd-1080p-silent",
+      "price_basis": "V6 Fusion · video_references · 1080p · audio off · one-off PAYG",
+      "resolution": "1080p",
+      "duration": null,
+      "frame_rate": null,
+      "aspect_ratios": null,
+      "native_audio": false,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": null
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_video_generation": true
+}

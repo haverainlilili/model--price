@@ -1,0 +1,85 @@
+{
+  "provider_name": "Luma Ray",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "21b89fa82ba83b11bd98b60290b09d198ecb6107b97af87e633f2af7ad668c28",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://docs.agents.lumalabs.ai/guides/pricing/",
+  "source_urls": [
+    "https://docs.agents.lumalabs.ai/guides/pricing/",
+    "https://docs.agents.lumalabs.ai/guides/videos/generation/"
+  ],
+  "official_examples": [
+    {
+      "title": "Luma Ray 官方样片",
+      "url": "https://lumalabs.ai/ray",
+      "note": "Luma 官方 Ray 模型展示"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Ray 3.2 SDR 5s 720p",
+      "variant_key": "Ray 3.2 SDR 5s 720p",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "$0.30/5s = $0.06/秒",
+      "currency": "USD",
+      "price_per_second": 0.06,
+      "comparison_group": "usd-720p-silent",
+      "price_basis": "Ray 3.2 · SDR · 720p · 5s · 无原生音频",
+      "resolution": "720p",
+      "duration": "5s",
+      "frame_rate": "24fps",
+      "aspect_ratios": "9:16、3:4、1:1、4:3、16:9、21:9",
+      "native_audio": false,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "0",
+      "note": "10s 总价 $0.90，费率非线性；柱图只比较 5s 档。"
+    },
+    {
+      "name": "Ray 3.2 SDR 5s 1080p",
+      "variant_key": "Ray 3.2 SDR 5s 1080p",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "$1.20/5s = $0.24/秒",
+      "currency": "USD",
+      "price_per_second": 0.24,
+      "comparison_group": "usd-1080p-silent",
+      "price_basis": "Ray 3.2 · SDR · 1080p · 5s · 无原生音频",
+      "resolution": "1080p",
+      "duration": "5s",
+      "frame_rate": "24fps",
+      "aspect_ratios": "9:16、3:4、1:1、4:3、16:9、21:9",
+      "native_audio": false,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "0",
+      "note": "旧 Dream Machine/Ray2 API 名称已弃用；当前为 Agents API。"
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_video_generation": true
+}

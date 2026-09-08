@@ -88,6 +88,32 @@ class FetchRenderedTests(unittest.TestCase):
         page.locator.assert_not_called()
         html_to_text.assert_not_called()
 
+    @patch("playwright.sync_api.sync_playwright")
+    def test_rejects_delayed_rendered_cross_origin_redirect(self, sync_playwright):
+        playwright = sync_playwright.return_value.__enter__.return_value
+        browser = playwright.chromium.launch.return_value
+        page = browser.new_context.return_value.new_page.return_value
+        page.url = "https://official.example/pricing"
+        page.wait_for_timeout.side_effect = lambda _ms: setattr(
+            page, "url", "https://third-party.example/late")
+        with self.assertRaisesRegex(FetchError, "延迟重定向"):
+            _render_once(
+                "https://official.example/pricing", wait_ms=1,
+                final_url_validator=lambda url: url.startswith("https://official.example/"))
+        browser.close.assert_called_once()
+
+    @patch("playwright.sync_api.sync_playwright")
+    def test_rejects_rendered_cross_origin_redirect(self, sync_playwright):
+        playwright = sync_playwright.return_value.__enter__.return_value
+        browser = playwright.chromium.launch.return_value
+        page = browser.new_context.return_value.new_page.return_value
+        page.url = "https://third-party.example/login"
+        with self.assertRaisesRegex(FetchError, "非允许官网"):
+            _render_once(
+                "https://official.example/pricing", wait_ms=0,
+                final_url_validator=lambda url: url.startswith("https://official.example/"))
+        browser.close.assert_called_once()
+
     @patch("scraper.fetch.time.sleep")
     @patch("scraper.fetch._render_once")
     def test_retries_transient_navigation_failure(self, render_once, sleep):
@@ -125,6 +151,32 @@ class FetchLanguageTests(unittest.TestCase):
         self.assertEqual(text, "English pricing")
         headers = get.call_args.kwargs["headers"]
         self.assertEqual(headers["Accept-Language"], "en-US,en;q=0.9")
+
+
+    @patch("scraper.fetch.requests.get")
+    def test_plain_fetch_does_not_follow_disallowed_location(self, get):
+        get.return_value = SimpleNamespace(
+            status_code=302, url="https://official.example/start",
+            headers={"location": "http://127.0.0.1/private"},
+        )
+        with self.assertRaisesRegex(FetchError, "非允许官网"):
+            fetch(
+                "https://official.example/start", retries=0,
+                final_url_validator=lambda url: url.startswith("https://official.example/"))
+        get.assert_called_once()
+
+    @patch("scraper.fetch.time.sleep")
+    @patch("scraper.fetch.requests.get")
+    def test_plain_fetch_rejects_cross_origin_redirect(self, get, _sleep):
+        get.return_value = SimpleNamespace(
+            status_code=200, url="https://third-party.example/pricing",
+            encoding="utf-8", apparent_encoding="utf-8", text="fake",
+            headers={"content-type": "text/plain"},
+        )
+        with self.assertRaisesRegex(FetchError, "非允许官网"):
+            fetch(
+                "https://official.example/pricing", retries=0,
+                final_url_validator=lambda url: url.startswith("https://official.example/"))
 
 
 class HtmlToTextTests(unittest.TestCase):

@@ -7,6 +7,8 @@ from __future__ import annotations
 import json
 import os
 import re
+import stat
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -17,6 +19,8 @@ PROVIDERS_DIR = DATA / "providers"
 NEWS_DIR = DATA / "news"
 PLANS_DIR = DATA / "plans"
 WEBSEARCH_DIR = DATA / "websearch"
+IMAGEGEN_DIR = DATA / "imagegen"
+VIDEOGEN_DIR = DATA / "videogen"
 CHANGES_FILE = DATA / "changes.json"
 META_FILE = DATA / "meta.json"
 
@@ -31,10 +35,26 @@ def utcnow() -> str:
 
 
 def _atomic_write_json(path: Path, obj) -> None:
+    serialized = json.dumps(obj, ensure_ascii=False, indent=1, allow_nan=False)
     path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(obj, ensure_ascii=False, indent=1), encoding="utf-8")
-    os.replace(tmp, path)
+    fd, temporary = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp",
+                                     dir=path.parent)
+    try:
+        try:
+            mode = stat.S_IMODE(path.stat().st_mode)
+        except FileNotFoundError:
+            mode = 0o644
+        os.fchmod(fd, mode)
+        with os.fdopen(fd, "w", encoding="utf-8") as handle:
+            handle.write(serialized)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    finally:
+        try:
+            os.unlink(temporary)
+        except FileNotFoundError:
+            pass
 
 
 def _load_json(path: Path, default):
@@ -74,6 +94,22 @@ def load_websearch(pid: str) -> dict:
 
 def save_websearch(pid: str, record: dict) -> None:
     _atomic_write_json(WEBSEARCH_DIR / f"{pid}.json", record)
+
+
+def load_imagegen(pid: str) -> dict:
+    return _load_json(IMAGEGEN_DIR / f"{pid}.json", {"offerings": []})
+
+
+def save_imagegen(pid: str, record: dict) -> None:
+    _atomic_write_json(IMAGEGEN_DIR / f"{pid}.json", record)
+
+
+def load_videogen(pid: str) -> dict:
+    return _load_json(VIDEOGEN_DIR / f"{pid}.json", {"offerings": []})
+
+
+def save_videogen(pid: str, record: dict) -> None:
+    _atomic_write_json(VIDEOGEN_DIR / f"{pid}.json", record)
 
 
 def load_changes() -> list:

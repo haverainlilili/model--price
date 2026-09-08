@@ -1,0 +1,86 @@
+{
+  "provider_name": "Recraft",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "cc8d4dede8e3a8980d324f46211ed863c69c025bef879516c08df571d587bdd5",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://www.recraft.ai/docs/api-reference/pricing",
+  "source_urls": [
+    "https://www.recraft.ai/docs/api-reference/pricing",
+    "https://www.recraft.ai/docs/api-reference/getting-started"
+  ],
+  "official_examples": [
+    {
+      "title": "Recraft V4.1 官方生图与矢量样例",
+      "url": "https://www.recraft.ai/docs/recraft-models/recraft-v4-1",
+      "note": "Recraft 官方模型与样例页"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Recraft V4.1 Raster",
+      "variant_key": "Recraft V4.1 Raster",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "image-to-image",
+        "inpainting",
+        "outpainting",
+        "reference"
+      ],
+      "pricing": "35 units=$0.035/张",
+      "currency": "USD",
+      "price_per_image": 0.035,
+      "comparison_group": "usd-standard-1mp",
+      "price_basis": "V4.1 raster · 1024×1024",
+      "resolution": "1024×1024",
+      "aspect_ratios": null,
+      "output_formats": "PNG / WebP / JPEG",
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "standard",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": "$1=1000 units；矢量输出另有独立价格。"
+    },
+    {
+      "name": "Recraft V4.1 Pro",
+      "variant_key": "Recraft V4.1 Pro",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "reference"
+      ],
+      "pricing": "$0.21/张",
+      "currency": "USD",
+      "price_per_image": 0.21,
+      "comparison_group": null,
+      "price_basis": "Pro · 2048×2048（非 1MP，不进柱图）",
+      "resolution": "2048×2048",
+      "aspect_ratios": null,
+      "output_formats": null,
+      "comparison_width": null,
+      "comparison_height": null,
+      "quality_tier": null,
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": null
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_image_generation": true
+}

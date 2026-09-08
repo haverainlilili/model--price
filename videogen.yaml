@@ -1,0 +1,258 @@
+# 生视频模型/API 独立目录。每秒柱价严格按币种、分辨率与原生音频分组。
+providers:
+  - id: openai
+    name: OpenAI Sora
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [developers.openai.com, openai.com]
+    videogen_urls:
+      - https://developers.openai.com/api/docs/pricing
+      - https://developers.openai.com/api/docs/guides/video-generation
+      - https://developers.openai.com/api/docs/deprecations
+    examples:
+      - title: Sora 2 官方样片
+        url: https://openai.com/index/sora-2/
+        note: OpenAI 官方发布页与生成样片
+
+  - id: google
+    name: Google Veo
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [ai.google.dev, deepmind.google, storage.googleapis.com]
+    videogen_urls:
+      - https://ai.google.dev/gemini-api/docs/pricing
+      - https://ai.google.dev/gemini-api/docs/video
+    examples:
+      - title: Veo 3.1 官方视频样片
+        url: https://deepmind.google/models/veo/
+        media_url: https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/veo__page-cover-1_hcTy7l3.mp4
+        note: Google DeepMind 官方模型页与稳定官方样片
+
+  - id: xai
+    name: xAI Grok Imagine Video
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [docs.x.ai, x.ai]
+    videogen_urls:
+      - https://docs.x.ai/developers/pricing
+      - https://docs.x.ai/developers/model-capabilities/video/generation
+    examples:
+      - title: Grok Imagine Video 1.5 官方样片
+        url: https://x.ai/news/grok-imagine-video-1-5
+        note: xAI 官方发布页与视频样例
+
+  - id: runway
+    name: Runway
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [docs.dev.runwayml.com, runwayml.com]
+    videogen_urls:
+      - https://docs.dev.runwayml.com/guides/pricing/
+      - https://docs.dev.runwayml.com/guides/using-models/
+    examples:
+      - title: Runway 官方模型展示
+        url: https://runwayml.com/research/introducing-runway-gen-4.5
+        note: Runway 官方研究与模型样片入口
+
+  - id: adobe
+    name: Adobe Firefly Video
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [developer.adobe.com, www.adobe.com]
+    videogen_urls:
+      - https://developer.adobe.com/firefly-services/docs/firefly-api/
+      - https://developer.adobe.com/firefly-services/docs/firefly-api/getting-started/usage-notes/
+    examples:
+      - title: Adobe Firefly AI Video 官方展示
+        url: https://www.adobe.com/products/firefly/features/ai-video-generator.html
+        note: Adobe 官方功能展示；不宣称该片由当前 API 模型生成
+
+  - id: luma
+    name: Luma Ray
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [docs.agents.lumalabs.ai, lumalabs.ai]
+    videogen_urls:
+      - https://docs.agents.lumalabs.ai/guides/pricing/
+      - https://docs.agents.lumalabs.ai/guides/videos/generation/
+    examples:
+      - title: Luma Ray 官方样片
+        url: https://lumalabs.ai/ray
+        note: Luma 官方 Ray 模型展示
+
+  - id: kling
+    name: 可灵 Kling Video
+    region: 国内
+    category: api
+    language: en-US
+    official_domains: [klingai.com]
+    videogen_urls:
+      - https://klingai.com/dev/pricing
+      - https://klingai.com/document-api/guides/capability-map/video
+      - https://klingai.com/document-api/api/video/video-generation
+    examples:
+      - title: Kling AI 官方视频样片
+        url: https://klingai.com/
+        note: 可灵官方创作平台
+
+  - id: minimax
+    name: MiniMax Hailuo
+    region: 国内
+    category: api
+    language: en-US
+    official_domains: [platform.minimax.io]
+    videogen_urls:
+      - https://platform.minimax.io/docs/guides/pricing-paygo
+      - https://platform.minimax.io/docs/api-reference/video-generation-v2-create
+    examples:
+      - title: Hailuo 官方视频生成样例
+        url: https://platform.minimax.io/docs/api-reference/video-generation-v2-create
+        note: MiniMax 官方视频 API 文档
+
+  - id: seedance
+    name: 火山方舟 Seedance
+    official_domains: [docs.volcengine.com, seed.bytedance.com]
+    region: 国内
+    category: api
+    videogen_urls:
+      - https://docs.volcengine.com/docs/82379/1544106?lang=zh
+      - https://docs.volcengine.com/docs/82379/1520757
+    examples:
+      - title: Seedance 2.5 官方视频样片
+        url: https://seed.bytedance.com/en/seedance2_5
+        note: 字节跳动官方模型展示页
+
+  - id: alibaba-wan
+    name: 阿里云百炼 Wan Video
+    official_domains: [help.aliyun.com, www.alibabacloud.com]
+    region: 国内
+    category: api
+    videogen_urls:
+      - https://help.aliyun.com/zh/model-studio/wan3-video-generation-guide
+      - https://help.aliyun.com/zh/model-studio/wan3-0-video
+      - https://www.alibabacloud.com/help/en/model-studio/model-pricing
+    examples:
+      - title: Wan 3.0 官方模型样例
+        url: https://help.aliyun.com/zh/model-studio/wan3-video-generation-guide
+        note: 阿里云百炼官方模型与生成指南
+
+  - id: vidu
+    name: Vidu API
+    region: 国内
+    category: api
+    language: en-US
+    official_domains: [platform.vidu.com, www.vidu.com]
+    videogen_urls:
+      - https://platform.vidu.com/docs/pricing
+      - https://platform.vidu.com/docs/model-map
+    examples:
+      - title: Vidu Q3 原生音视频样片
+        url: https://www.vidu.com/vidu-q3
+        note: Vidu 官方 Q3 模型展示
+
+  - id: pixverse
+    name: PixVerse API
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [docs.platform.pixverse.ai, media.pixverse.ai, pixverse.ai]
+    videogen_url: https://docs.platform.pixverse.ai/pricing-796039m0
+    examples:
+      - title: PixVerse V6 官方视频样片
+        url: https://pixverse.ai/en/model/pixverse-v6
+        media_url: https://media.pixverse.ai/asset/media/v6-hero-12-16.mp4
+        note: PixVerse 官方模型页与官方 CDN 样片
+
+  - id: pika
+    name: Pika API
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [dev.pika.art]
+    videogen_urls:
+      - https://dev.pika.art/pricing
+      - https://dev.pika.art/models/pika/pika-2.5
+    examples:
+      - title: Pika 2.5 官方 API 样例
+        url: https://dev.pika.art/models/pika/pika-2.5/image-to-video/examples
+        note: Pika 第一方开发者平台与官方 CDN 样片
+
+  - id: tencent-hunyuan
+    name: 腾讯混元生视频
+    official_domains: [cloud.tencent.com, hunyuan.tencent.com]
+    region: 国内
+    category: api
+    videogen_urls:
+      - https://cloud.tencent.com/document/product/1616/118994
+      - https://cloud.tencent.com/document/product/1616/126160
+    examples:
+      - title: 腾讯混元生视频官方入口
+        url: https://hunyuan.tencent.com/
+        note: 腾讯混元官方产品页
+
+  - id: stability
+    name: Stability AI Video
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [kb.stability.ai, platform.stability.ai, raw.githubusercontent.com, stability.ai]
+    official_url_prefixes: [https://raw.githubusercontent.com/Stability-AI/]
+    videogen_urls:
+      - https://kb.stability.ai/knowledge-base/how-to-access-stable-video-diffusion
+      - https://platform.stability.ai/docs/release-notes
+    examples:
+      - title: Stable Video Diffusion 官方样片
+        url: https://stability.ai/news-updates/stable-video-diffusion-open-ai-video-model
+        media_url: https://raw.githubusercontent.com/Stability-AI/generative-models/e8cd6576/assets/tile.gif
+        media_type: image
+        note: 官方开源模型样片；托管视频 API 已于 2025-07-24 停用
+
+
+  - id: ltx
+    name: LTX Video API
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [docs.ltx.video, ltx.io]
+    videogen_urls:
+      - https://docs.ltx.video/pricing
+      - https://docs.ltx.video/models
+    examples:
+      - title: LTX 2.5 官方视频模型样例
+        url: https://ltx.io/model/api
+        note: LTX 官方模型与 API 展示
+
+  - id: haiper
+    name: Haiper Video
+    region: 国际
+    category: api
+    language: en-US
+    official_domains: [docs.haiper.ai]
+    videogen_urls:
+      - https://docs.haiper.ai/api-reference/api-pricing
+      - https://docs.haiper.ai/api-reference/overview
+    examples:
+      - title: Haiper 2.0 官方调用样例
+        url: https://docs.haiper.ai/api-reference/endpoint/2-0-text-to-video
+        note: Haiper 官方 API 文档
+
+  - id: aws-nova
+    name: AWS Nova Reel
+    region: 国际
+    category: sunsetting
+    language: en-US
+    official_domains: [aws.amazon.com, docs.aws.amazon.com]
+    videogen_urls:
+      - https://aws.amazon.com/nova/pricing/
+      - https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html
+      - https://docs.aws.amazon.com/nova/latest/userguide/video-generation.html
+    examples:
+      - title: Nova Reel 1.1 官方多镜头样片
+        url: https://aws.amazon.com/blogs/aws/amazon-nova-reel-1-1-featuring-up-to-2-minutes-multi-shot-videos/
+        note: AWS 官方样片；模型已列为 Legacy，计划 2026-09-30 停用

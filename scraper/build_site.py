@@ -12,13 +12,17 @@ from __future__ import annotations
 import html
 import json
 import math
+import os
 import re
-from datetime import datetime, timedelta, timezone
+import stat
+import tempfile
+from datetime import date, datetime, timedelta, timezone
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from urllib.parse import urljoin
 
-from .history import (ROOT, load_changes, load_meta, load_news, load_plans,
-                      load_provider, load_websearch)
+from .history import (ROOT, load_changes, load_imagegen, load_meta, load_news,
+                      load_plans, load_provider, load_videogen, load_websearch)
 
 SITE_DIR = ROOT / "site"
 UTC8 = timezone(timedelta(hours=8))
@@ -34,21 +38,48 @@ FIELD_LABEL = {
 CUR_SYMBOL = {"USD": "$", "CNY": "¥", "EUR": "€"}
 
 
+def _atomic_write_text(path: Path, content: str) -> None:
+    """Write a complete artifact beside its target, then atomically replace it."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp",
+                                     dir=path.parent)
+    try:
+        try:
+            mode = stat.S_IMODE(path.stat().st_mode)
+        except FileNotFoundError:
+            mode = 0o644
+        # Site artifacts must remain readable by a separately running Caddy user.
+        os.fchmod(fd, mode | 0o044)
+        with os.fdopen(fd, "w", encoding="utf-8") as handle:
+            handle.write(content)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    finally:
+        try:
+            os.unlink(temporary)
+        except FileNotFoundError:
+            pass
+
+
 def _e(s) -> str:
     return html.escape("" if s is None else str(s), quote=True)
 
 
 def _fmt(v) -> str:
-    """数字格式化: 去掉多余的 0 (2.0 -> 2, 0.50 -> 0.5)。"""
+    """Preserve the official decimal value without lossy fixed-place rounding."""
     if v is None:
         return "—"
     try:
-        f = float(v)
-    except (TypeError, ValueError):
+        value = Decimal(str(v))
+    except (InvalidOperation, TypeError, ValueError):
         return _e(v)
-    if f == int(f) and abs(f) < 1_000_000:
-        return str(int(f))
-    return f"{f:.3f}".rstrip("0").rstrip(".")
+    if not value.is_finite():
+        return "—"
+    rendered = format(value, "f")
+    if "." in rendered:
+        rendered = rendered.rstrip("0").rstrip(".")
+    return rendered or "0"
 
 
 def _sym(cur: str | None) -> str:
@@ -197,10 +228,12 @@ h1 span{color:var(--accent)}
 .jump-nav a{padding:8px 10px;border-radius:7px;color:var(--ink2);font-size:12.5px;
   font-weight:650;text-decoration:none;white-space:nowrap}
 .jump-nav a:hover{background:var(--panel);color:var(--ink);text-decoration:none}
-.jump-price,.jump-plans,.jump-websearch{display:none}
+.jump-price,.jump-plans,.jump-websearch,.jump-imagegen,.jump-videogen{display:none}
 body[data-view=prices] .jump-price{display:flex}
 body[data-view=plans] .jump-plans{display:flex}
 body[data-view=websearch] .jump-websearch{display:flex}
+body[data-view=imagegen] .jump-imagegen{display:flex}
+body[data-view=videogen] .jump-videogen{display:flex}
 .control-groups{display:flex;align-items:center;justify-content:flex-end;gap:8px;min-width:max-content}
 .control-label{margin-right:3px;color:var(--ink3);font:700 10px var(--mono);
   letter-spacing:.1em;text-transform:uppercase}
@@ -360,6 +393,7 @@ td.c-note{text-align:left;font-size:11.5px;color:var(--ink2);max-width:360px}
 .empty-row td{text-align:left;padding:18px;color:var(--ink2);font-size:12px}
 body[data-currency=orig] .p-cny{display:none}
 body[data-currency=cny] .p-orig{display:none}
+body[data-view=imagegen] .currency-switch,body[data-view=videogen] .currency-switch{display:none}
 
 /* ---- 套餐与额度 ---- */
 .plan-quota-chart{margin:0 0 18px;background:var(--panel);border:1px solid var(--line);
@@ -499,6 +533,54 @@ body[data-currency=cny] .p-orig{display:none}
 .ws-pricing{text-align:left;min-width:170px}.ws-note{max-width:390px;color:var(--ink2);font-size:11.5px;text-align:left}
 .ws-source{display:inline-block;margin-left:8px;font:700 9.5px var(--mono)}
 
+/* ---- 生图 / 生视频对比 ---- */
+.gen-image-chart .ws-bar-fill{background:var(--chart-in)}
+.gen-video-chart .ws-bar-fill{background:#8A6743}
+.gen-bar-col.is-transitional .ws-bar-fill{background:repeating-linear-gradient(
+  135deg,#6F7771 0,#6F7771 6px,#AEB6B0 6px,#AEB6B0 11px)}
+.gen-bar-col.is-transitional .ws-bar-name::after{content:" · " attr(data-life);color:#7B4438;font-size:8px}
+.gen-samples{margin:0 0 18px;background:var(--panel);border:1px solid var(--line);
+  border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.gen-samples-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;
+  padding:17px 20px;border-bottom:1px solid var(--line);background:var(--panel2)}
+.gen-samples-head h3{margin:0;font-size:17px}.gen-samples-head p{max-width:520px;margin:0;
+  color:var(--ink2);font-size:11.5px;text-align:right}
+.gen-sample-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;padding:13px}
+.gen-sample-card{display:flex;min-width:0;flex-direction:column;border:1px solid var(--line);
+  border-radius:12px;overflow:hidden;background:#fff;text-decoration:none;color:var(--ink)}
+.gen-sample-card:hover{text-decoration:none;border-color:var(--line2)}
+.gen-sample-visual{position:relative;display:grid;place-items:center;aspect-ratio:16/9;overflow:hidden;
+  background:linear-gradient(145deg,var(--accent-bg),#EDF0EA 58%,#E1E7E2)}
+.gen-sample-visual img,.gen-sample-visual video{width:100%;height:100%}
+.gen-sample-visual img{object-fit:contain}.gen-sample-visual video{object-fit:cover}
+.gen-sample-placeholder{display:flex;flex-direction:column;align-items:center;gap:7px;padding:14px;text-align:center}
+.gen-sample-placeholder i{font:760 9px/1 var(--mono);font-style:normal;letter-spacing:.14em;color:var(--accent)}
+.gen-sample-placeholder b{font-size:15px;line-height:1.25}.gen-video .gen-sample-visual{
+  background:linear-gradient(145deg,#EEEAE3,#E5E9E4 58%,#DDE5DF)}
+.gen-video .gen-sample-placeholder i{color:#8A6743}
+.gen-sample-body{display:flex;flex:1;flex-direction:column;padding:11px 12px 12px}
+.gen-sample-provider{font:760 9px/1 var(--mono);letter-spacing:.08em;color:var(--ink3)}
+.gen-sample-title{margin:6px 0 0;font-size:12.5px;line-height:1.45}
+.gen-sample-note{margin:5px 0 0;color:var(--ink2);font-size:10.5px;line-height:1.5}
+.gen-sample-link{margin-top:auto;padding-top:9px;color:var(--accent-dark);font:740 9.5px/1 var(--mono)}
+.gen-table{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.gen-table table{min-width:1180px}.gen-provider{font-weight:760;font-size:13px;text-align:left}
+.gen-name{font-weight:720;text-align:left;min-width:145px}.gen-modes{text-align:left;min-width:150px}
+.gen-mode{display:inline-flex;margin:0 4px 4px 0;padding:3px 6px;border-radius:5px;
+  background:#EEF0EB;color:var(--ink2);font:650 8.5px/1.2 var(--mono)}
+.gen-spec{text-align:left;color:var(--ink2);min-width:150px}.gen-spec strong{display:block;color:var(--ink);font:700 10.5px var(--mono)}
+.gen-api-yes{color:var(--down);font-weight:750}.gen-api-no{color:var(--up);font-weight:750}
+.gen-api-unk{color:var(--ink3);font-weight:650}.gen-price{text-align:left;min-width:185px}
+.gen-life{display:inline-flex;margin-top:5px;padding:3px 6px;border-radius:5px;background:#F4E9E4;
+  color:#7B4438;font:700 8px/1.2 var(--mono)}.gen-life.inactive{background:#ECEDE9;color:var(--ink2)}
+.gen-tombstone td{background:#F6F5F1}.gen-tombstone-note{text-align:left;color:var(--ink2)}
+.gen-community{display:inline-flex;margin-left:6px;padding:2px 5px;border-radius:4px;background:#EEEAE3;
+  color:#755D45;font:700 8px/1 var(--mono)}
+.gen-price strong{color:var(--ink);font:760 12px/1.3 var(--mono)}.gen-price small{color:var(--ink2)}
+.gen-note{text-align:left;max-width:380px;color:var(--ink2);font-size:11.5px}
+.gen-links{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.gen-links a{font:720 9px/1 var(--mono)}
+
 /* ---- 变动流水 ---- */
 .chg-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .chg{position:relative;display:grid;grid-template-columns:100px 128px 1fr;gap:5px 16px;
@@ -541,7 +623,9 @@ body[data-region=intl] .plan-chart-channel[data-region=domestic],
 body[data-region=intl] .bgroup[data-region=domestic],
 body[data-region=intl] .lowest-col[data-region=domestic],
 body[data-region=intl] .ws-row[data-region=domestic],
-body[data-region=intl] .ws-bar-col[data-region=domestic]{display:none}
+body[data-region=intl] .ws-bar-col[data-region=domestic],
+body[data-region=intl] .gen-sample-card[data-region=domestic],
+body[data-region=intl] .gen-row[data-region=domestic]{display:none}
 body[data-region=domestic] .prov[data-region=intl],
 body[data-region=domestic] .news-card[data-region=intl],
 body[data-region=domestic] .plan-channel[data-region=intl],
@@ -549,11 +633,13 @@ body[data-region=domestic] .plan-chart-channel[data-region=intl],
 body[data-region=domestic] .bgroup[data-region=intl],
 body[data-region=domestic] .lowest-col[data-region=intl],
 body[data-region=domestic] .ws-row[data-region=intl],
-body[data-region=domestic] .ws-bar-col[data-region=intl]{display:none}
+body[data-region=domestic] .ws-bar-col[data-region=intl],
+body[data-region=domestic] .gen-sample-card[data-region=intl],
+body[data-region=domestic] .gen-row[data-region=intl]{display:none}
 
 @media(hover:hover){
-  .prov,.news-card,.plan-channel,.plan-chart-channel,.ws-chart-group{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
-  .prov:hover,.news-card:hover,.plan-channel:hover,.plan-chart-channel:hover,.ws-chart-group:hover{transform:translateY(-2px);border-color:var(--line2);
+  .prov,.news-card,.plan-channel,.plan-chart-channel,.ws-chart-group,.gen-sample-card{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .prov:hover,.news-card:hover,.plan-channel:hover,.plan-chart-channel:hover,.ws-chart-group:hover,.gen-sample-card:hover{transform:translateY(-2px);border-color:var(--line2);
     box-shadow:0 12px 28px rgba(36,48,42,.07)}
 }
 @media(max-width:960px){
@@ -565,6 +651,7 @@ body[data-region=domestic] .ws-bar-col[data-region=intl]{display:none}
   .ws-chart-group:last-child:nth-child(odd){grid-column:auto}
   .plan-grid{columns:1}
   .news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gen-sample-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:800px){
   .wrap{padding:0 18px}
@@ -579,6 +666,9 @@ body[data-region=domestic] .ws-bar-col[data-region=intl]{display:none}
   .controls::-webkit-scrollbar{display:none}
   .controls-left,.control-groups{flex:none}
   .jump-nav{display:none}
+  body[data-view=imagegen] .jump-imagegen,body[data-view=videogen] .jump-videogen{
+    display:flex;max-width:76vw;overflow-x:auto;scroll-snap-type:x proximity}
+  .jump-imagegen a,.jump-videogen a{flex:none;scroll-snap-align:center}
   .control-groups{justify-content:flex-start}
   .control-label{display:none}
   .seg button{min-height:44px;padding:0 13px}
@@ -603,11 +693,15 @@ body[data-region=domestic] .ws-bar-col[data-region=intl]{display:none}
   .prov-head{align-items:flex-start;flex-direction:column;gap:8px}
   .quota-list{grid-template-columns:1fr}
   table{min-width:680px}
-  thead th:first-child,td.c-model{position:sticky;left:0;z-index:1;background:#FFFEFB;
+  thead th:first-child,td.c-model,.gen-table td.gen-provider{position:sticky;left:0;z-index:1;background:#FFFEFB;
     box-shadow:1px 0 0 var(--line)}
   tbody tr:nth-child(even) td.c-model{background:#FAFAF6}
   .chg{grid-template-columns:1fr;gap:2px;padding:12px 14px}
   .news-grid{grid-template-columns:1fr}
+  .gen-sample-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
+  .gen-sample-card{flex:0 0 min(82vw,320px);scroll-snap-align:start}
+  .gen-samples-head{align-items:flex-start;flex-direction:column;gap:7px}
+  .gen-samples-head p{text-align:left}
   footer{margin-left:-4px;margin-right:-4px;padding:22px}
 }
 @media(max-width:380px){
@@ -617,7 +711,7 @@ body[data-region=domestic] .ws-bar-col[data-region=intl]{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}.ticker-track{animation:none}.ticker-view{overflow-x:auto}
-  .bbar,.prov,.news-card,.plan-channel,.plan-chart-channel,.ws-chart-group,.prov-chevron{transition:none}
+  .bbar,.prov,.news-card,.plan-channel,.plan-chart-channel,.ws-chart-group,.gen-sample-card,.prov-chevron{transition:none}
 }
 """
 
@@ -625,7 +719,14 @@ JS = """
 (function(){
   var b=document.body;
   function hashForView(v){return v==='prices'?'#lowest':('#'+v);}
-  function viewForHash(h){return h==='#plans'?'plans':(h==='#websearch'?'websearch':'prices');}
+  function viewForHash(h){
+    var v=(h||'').replace(/^#/,'');
+    if(v==='plans'||v.indexOf('plan-')===0)return 'plans';
+    if(v==='websearch'||v.indexOf('ws-')===0)return 'websearch';
+    if(v==='imagegen'||v.indexOf('imagegen-')===0)return 'imagegen';
+    if(v==='videogen'||v.indexOf('videogen-')===0)return 'videogen';
+    return 'prices';
+  }
   function panelForView(v){return v==='prices'?'lowest':v;}
   function setView(v,syncHash,scrollToPanel){
     if(!document.querySelector('[data-view-btn="'+v+'"]'))v='prices';
@@ -637,6 +738,10 @@ JS = """
       var on=x.dataset.viewBtn===v;
       x.classList.toggle('on',on);x.setAttribute('aria-selected',on);
       x.tabIndex=on?0:-1;
+      if(on&&window.innerWidth<=800){
+        var scroller=x.closest('.controls');
+        if(scroller)scroller.scrollLeft=Math.max(0,x.offsetLeft-(scroller.clientWidth-x.offsetWidth)/2);
+      }
     });
     if(syncHash){
       try{history.replaceState(null,'',hashForView(v))}catch(e){}
@@ -651,6 +756,18 @@ JS = """
     document.querySelectorAll('[data-region-btn]').forEach(function(x){
       var on=x.dataset.regionBtn===r;
       x.classList.toggle('on',on);x.setAttribute('aria-pressed',on);
+    });
+    document.querySelectorAll('[data-region-count]').forEach(function(x){
+      var n=r==='all'?x.dataset.total:x.dataset[r];
+      x.textContent=n+' 项'+(x.dataset.suffix||'');
+    });
+    document.querySelectorAll('[data-region-number]').forEach(function(x){
+      x.textContent=r==='all'?x.dataset.total:x.dataset[r];
+    });
+    document.querySelectorAll('[data-region-bars]').forEach(function(x){
+      var n=Number(r==='all'?x.dataset.total:x.dataset[r]);
+      x.style.setProperty('--ws-count',Math.max(1,n));
+      var group=x.closest('.ws-chart-group');if(group)group.hidden=n===0;
     });
   }
   function setCur(c){
@@ -691,10 +808,17 @@ JS = """
   });
   try{var c=localStorage.getItem('lpw-cur');if(c==='orig'||c==='cny')setCur(c)}catch(e){}
   try{var s=localStorage.getItem('lpw-scale');if(s==='lin')setScale(s)}catch(e){}
+  function scrollToCurrentHash(){
+    var id=(location.hash||'').replace(/^#/,'');
+    var target=document.getElementById(id);
+    if(target)target.scrollIntoView({block:'start',behavior:'instant'});
+  }
   var initialView=viewForHash(location.hash);
-  setView(initialView,false,initialView!=='prices');
+  setView(initialView,false,false);
+  if(location.hash&&initialView!=='prices')requestAnimationFrame(scrollToCurrentHash);
   window.addEventListener('hashchange',function(){
     setView(viewForHash(location.hash),false,false);
+    requestAnimationFrame(scrollToCurrentHash);
   });
 })();
 """
@@ -702,22 +826,25 @@ JS = """
 
 # ---------------------------------------------------------------- 渲染
 
-def _view_tabs(has_plans: bool, has_websearch: bool) -> str:
-    """顶部概览模式切换；完整价格、变动和公告始终保留。"""
-    plan_tab = (
-        '<button id="view-tab-plans" role="tab" data-view-btn="plans" '
-        'aria-controls="plan-overview" aria-selected="false" tabindex="-1">'
-        '套餐与额度</button>' if has_plans else "")
-    search_tab = (
-        '<button id="view-tab-websearch" role="tab" data-view-btn="websearch" '
-        'aria-controls="websearch-overview" aria-selected="false" tabindex="-1">'
-        '联网搜索</button>' if has_websearch else "")
+def _view_tabs(has_plans: bool, has_websearch: bool,
+               has_imagegen: bool = False, has_videogen: bool = False) -> str:
+    """顶部一级模块切换；键盘左右键与 URL hash 由通用 JS 处理。"""
+    optional = []
+    for view, control, label, enabled in (
+            ("plans", "plan-overview", "套餐与额度", has_plans),
+            ("websearch", "websearch-overview", "联网搜索", has_websearch),
+            ("imagegen", "imagegen-overview", "AI 生图", has_imagegen),
+            ("videogen", "videogen-overview", "AI 生视频", has_videogen)):
+        if enabled:
+            optional.append(
+                f'<button id="view-tab-{view}" role="tab" data-view-btn="{view}" '
+                f'aria-controls="{control}" aria-selected="false" tabindex="-1">'
+                f'{label}</button>')
     return (
-        '<div class="seg view-tabs" role="tablist" aria-label="概览模式">'
+        '<div class="seg view-tabs" role="tablist" aria-label="一级模块">'
         '<button id="view-tab-prices" role="tab" data-view-btn="prices" '
         'aria-controls="price-overview" aria-selected="true" class="on">'
-        'API 价格</button>'
-        f'{plan_tab}{search_tab}</div>')
+        'API 价格</button>' + "".join(optional) + '</div>')
 
 
 def _ticker_chips(changes: list, prov_names: dict, prov_cur: dict) -> str:
@@ -1295,6 +1422,8 @@ WS_CATEGORY_ORDER = ("ai-search", "serp", "model")
 
 def _ws_numeric_price(value):
     """只接受有限的非负数，避免异常抽取破坏柱状图。"""
+    if isinstance(value, bool):
+        return None
     try:
         result = float(value)
     except (TypeError, ValueError):
@@ -1441,7 +1570,7 @@ def _websearch_section(providers_cfg: list, records: dict) -> str:
                 f'<td class="ws-output">{_e(output) if output else "—"}</td>'
                 f'<td>{_bool_badge(cites)}</td>'
                 f'<td>{_bool_badge(default_on)}</td>'
-                f'<td class="ws-free">{_e(free) if free else "—"}</td>'
+                f'<td class="ws-free">{_e(free) if free else "官网未说明"}</td>'
                 f'<td class="ws-pricing">{pricing_html}</td>'
                 f'<td class="ws-note">{_e(note) if note else "—"}{src}</td></tr>')
 
@@ -1482,6 +1611,469 @@ def _websearch_section(providers_cfg: list, records: dict) -> str:
         '<span>只收录官网公开事实。千次柱价仅做机械单位换算，并按 AI 搜索、SERP、模型工具分组；'
         '「来源 / 引用」表示响应含 URL 或引用元数据，不代表搜索准确率或答案质量。</span></p>'
         '</section>')
+
+
+IMAGE_PRICE_GROUPS = {
+    "usd-standard-1mp": ("USD · 标准约 1MP", "$ / 张", "约 0.8–1.5MP 正方形 · 普通/默认质量"),
+    "cny-standard-1mp": ("人民币 · 标准约 1MP", "¥ / 张", "约 0.8–1.5MP 正方形 · 普通/默认质量"),
+    "usd-premium-1mp": ("USD · 高质量约 1MP", "$ / 张", "约 0.8–1.5MP 正方形 · High/Ultra/Premium"),
+    "cny-premium-1mp": ("人民币 · 高质量约 1MP", "¥ / 张", "约 0.8–1.5MP 正方形 · High/Ultra/Premium"),
+}
+VIDEO_PRICE_GROUPS = {
+    "usd-480p-silent": ("USD · 480p · 无原生音频", "$ / 秒", "视频画面，不含模型原生同步音频"),
+    "usd-480p-audio": ("USD · 480p · 原生音频", "$ / 秒", "模型同时生成同步语音/音效"),
+    "usd-720p-silent": ("USD · 720p · 无原生音频", "$ / 秒", "视频画面，不含模型原生同步音频"),
+    "usd-720p-audio": ("USD · 720p · 原生音频", "$ / 秒", "模型同时生成同步语音/音效"),
+    "usd-1080p-silent": ("USD · 1080p · 无原生音频", "$ / 秒", "视频画面，不含模型原生同步音频"),
+    "usd-1080p-audio": ("USD · 1080p · 原生音频", "$ / 秒", "模型同时生成同步语音/音效"),
+    "cny-480p-silent": ("人民币 · 480p · 无原生音频", "¥ / 秒", "视频画面，不含模型原生同步音频"),
+    "cny-480p-audio": ("人民币 · 480p · 原生音频", "¥ / 秒", "模型同时生成同步语音/音效"),
+    "cny-720p-silent": ("人民币 · 720p · 无原生音频", "¥ / 秒", "视频画面，不含模型原生同步音频"),
+    "cny-720p-audio": ("人民币 · 720p · 原生音频", "¥ / 秒", "模型同时生成同步语音/音效"),
+    "cny-1080p-silent": ("人民币 · 1080p · 无原生音频", "¥ / 秒", "视频画面，不含模型原生同步音频"),
+    "cny-1080p-audio": ("人民币 · 1080p · 原生音频", "¥ / 秒", "模型同时生成同步语音/音效"),
+}
+MODE_LABELS = {
+    "text-to-image": "文生图", "image-edit": "图片编辑", "image-to-image": "图生图",
+    "reference": "参考图", "inpainting": "局部重绘", "outpainting": "扩图",
+    "text-to-video": "文生视频", "image-to-video": "图生视频",
+    "first-last-frame": "首尾帧", "reference-to-video": "参考视频驱动",
+    "video-edit": "视频编辑", "video-to-video": "视频编辑（旧字段）",
+}
+
+
+def _generation_lifecycle(offering: dict, today: date | None = None) -> dict:
+    today = today or datetime.now(UTC8).date()
+    status = str(offering.get("lifecycle_status") or "unknown")
+    sunset_raw = str(offering.get("sunset_at") or "")
+    sunset = None
+    if sunset_raw:
+        try:
+            sunset = date.fromisoformat(sunset_raw)
+        except ValueError:
+            pass
+    if sunset and today > sunset:
+        return {"status": "discontinued", "active": False, "transitional": False,
+                "label": f"已于 {sunset_raw} 停用"}
+    if status == "discontinued":
+        return {"status": status, "active": False, "transitional": False,
+                "label": "已停用"}
+    if status == "self-host-only":
+        return {"status": status, "active": False, "transitional": False,
+                "label": "仅自托管"}
+    if status in ("sunsetting", "deprecated", "legacy-existing-only") or sunset:
+        if status == "legacy-existing-only":
+            label = (f"Legacy · 仅存量客户 · {sunset_raw} EOL" if sunset
+                     else "Legacy · 仅存量客户")
+        else:
+            label = f"计划 {sunset_raw} 停用" if sunset else "已弃用（仍可调用）"
+        return {"status": status, "active": True, "transitional": True,
+                "label": label}
+    text = (str(offering.get("price_basis") or "") + " "
+            + str(offering.get("note") or "")).upper()
+    fallback = any(mark in text for mark in ("DEPRECATED", "EOL", "LEGACY"))
+    return {"status": status, "active": True, "transitional": fallback,
+            "label": "过渡状态" if fallback else ""}
+
+
+def _generation_offering_region(offering: dict, provider_region: str = "both") -> str:
+    region = offering.get("region")
+    if region in ("intl", "domestic"):
+        return region
+    currency = str(offering.get("currency") or "").upper()
+    if currency == "CNY":
+        return "domestic"
+    if currency:
+        return "intl"
+    return "both"
+
+
+def _region_metric(regions_by_key: dict) -> tuple[int, int, int]:
+    values = list(regions_by_key.values())
+    return (
+        len(values),
+        sum(value in ("intl", "both") for value in values),
+        sum(value in ("domestic", "both") for value in values),
+    )
+
+
+def _generation_price_entries(kind: str, providers_cfg: list, records: dict,
+                              today: date | None = None) -> dict:
+    groups = IMAGE_PRICE_GROUPS if kind == "imagegen" else VIDEO_PRICE_GROUPS
+    price_field = "price_per_image" if kind == "imagegen" else "price_per_second"
+    result = {group: [] for group in groups}
+    for cfg in providers_cfg:
+        rec = records.get(cfg["id"]) or {}
+        provider = cfg.get("name_cn") or cfg.get("name") or cfg["id"]
+        provider_region = "domestic" if cfg.get("region") == "国内" else "intl"
+        for off in rec.get("offerings") or []:
+            group = str(off.get("comparison_group") or "")
+            price = _ws_numeric_price(off.get(price_field))
+            if group not in result or price is None:
+                continue
+            currency = str(off.get("currency") or "").lower()
+            if currency != group.split("-", 1)[0] or off.get("api_available") is not True:
+                continue
+            lifecycle = _generation_lifecycle(off, today)
+            if not lifecycle["active"]:
+                continue
+            if kind == "videogen":
+                audio = off.get("native_audio")
+                if group.endswith("-audio") and audio is not True:
+                    continue
+                if group.endswith("-silent") and audio is not False:
+                    continue
+                expected_resolution = group.split("-")[1]
+                if off.get("comparison_resolution") != expected_resolution:
+                    continue
+            else:
+                width, height = off.get("comparison_width"), off.get("comparison_height")
+                if type(width) is not int or type(height) is not int or width != height:
+                    continue
+                pixels = width * height
+                if not 800_000 <= pixels <= 1_500_000:
+                    continue
+                expected_tier = "premium" if "-premium-" in group else "standard"
+                if off.get("quality_tier") != expected_tier:
+                    continue
+            region = _generation_offering_region(off, provider_region)
+            result[group].append({
+                "provider": provider,
+                "product": str(off.get("name") or "").strip(),
+                "price": price,
+                "basis": str(off.get("price_basis") or "官网公开档").strip(),
+                "region": region,
+                "transitional": lifecycle["transitional"],
+                "lifecycle_label": lifecycle["label"],
+            })
+    for items in result.values():
+        items.sort(key=lambda item: (item["price"], item["provider"], item["product"]))
+    return result
+
+
+def _generation_price_chart(kind: str, providers_cfg: list, records: dict) -> str:
+    groups = IMAGE_PRICE_GROUPS if kind == "imagegen" else VIDEO_PRICE_GROUPS
+    entries = _generation_price_entries(kind, providers_cfg, records)
+    articles = []
+    total = 0
+    for group, (label, unit, desc) in groups.items():
+        items = entries[group]
+        if not items:
+            continue
+        total += len(items)
+        max_price = max(item["price"] for item in items) or 1
+        bars = []
+        for item in items:
+            height = item["price"] / max_price * 100
+            symbol = "$" if group.startswith("usd-") else "¥"
+            value = f'{symbol}{_fmt(item["price"])}'
+            aria = (f'{item["provider"]} {item["product"]}，{value}{unit[1:]}；'
+                    f'口径 {item["basis"]}'
+                    + (f'；{item["lifecycle_label"]}' if item["lifecycle_label"] else ""))
+            transition_cls = " is-transitional" if item["transitional"] else ""
+            bars.append(
+                f'<div class="ws-bar-col gen-bar-col{transition_cls}" role="listitem" '
+                f'data-region="{item["region"]}" aria-label="{_e(aria)}">'
+                f'<span class="ws-bar-value">{_e(value)}{_e(unit[1:])}</span>'
+                f'<div class="ws-bar-box" aria-hidden="true"><div class="ws-bar-fill" '
+                f'style="--ws-bar-height:{height:.1f}%"></div></div>'
+                f'<strong class="ws-bar-name" title="{_e(item["provider"])}" '
+                f'data-life="{_e(item["lifecycle_label"])}">'
+                f'{_e(item["provider"])}</strong>'
+                f'<span class="ws-bar-product" title="{_e(item["product"])}">'
+                f'{_e(item["product"])}</span>'
+                f'<span class="ws-bar-basis" title="{_e(item["basis"])}">'
+                f'{_e(item["basis"])}</span></div>')
+        group_id = f'{kind}-chart-{group}'
+        intl_count = sum(item["region"] == "intl" for item in items)
+        domestic_count = sum(item["region"] == "domestic" for item in items)
+        articles.append(
+            f'<article class="ws-chart-group" aria-labelledby="{group_id}">'
+            f'<header class="ws-chart-group-head"><h4 id="{group_id}">{_e(label)}</h4>'
+            f'<span data-region-count data-total="{len(items)}" data-intl="{intl_count}" '
+            f'data-domestic="{domestic_count}" data-suffix=" · {_e(desc)}">'
+            f'{len(items)} 项 · {_e(desc)}</span></header>'
+            f'<div class="ws-bars-scroll" role="region" tabindex="0" '
+            f'aria-label="{_e(label)}价格柱状图，可横向滚动">'
+            f'<div class="ws-bars" data-region-bars data-total="{len(items)}" '
+            f'data-intl="{intl_count}" data-domestic="{domestic_count}" role="list" '
+            f'style="--ws-count:{len(items)}">'
+            f'{"".join(bars)}</div></div></article>')
+    if not articles:
+        return ""
+    is_image = kind == "imagegen"
+    title = "生图 API 单张价格柱状图" if is_image else "生视频 API 每秒价格柱状图"
+    kicker = "PRICE / IMAGE" if is_image else "PRICE / GENERATED SECOND"
+    method = ("只在同币种、同质量和约 1MP 分辨率组内线性比较"
+              if is_image else "只在同币种、同分辨率和同原生音频口径组内线性比较")
+    excluded = ("订阅折算、动态 token/积分、非约 1MP 输出和企业询价"
+                if is_image else "订阅折算、动态 token/像素、无法并入总价的参考素材附加费和企业询价")
+    cls = "gen-image-chart" if is_image else "gen-video-chart"
+    return (
+        f'<div class="ws-price-chart {cls}" id="{kind}-price-chart">'
+        '<div class="plan-chart-head"><div>'
+        f'<p class="plan-chart-kicker">{kicker}</p><h3 class="plan-chart-title">{title}</h3></div>'
+        f'<p class="plan-chart-desc"><span data-region-count data-total="{total}" '
+        f'data-intl="{sum(len([x for x in items if x["region"] == "intl"]) for items in entries.values())}" '
+        f'data-domestic="{sum(len([x for x in items if x["region"] == "domestic"]) for items in entries.values())}" '
+        f'data-suffix=" · 官网价格满足严格比较条件">{total} 项 · 官网价格满足严格比较条件</span>'
+        f'<br>{method}</p></div>'
+        f'<div class="ws-chart-grid">{"".join(articles)}</div>'
+        f'<p class="ws-chart-foot">柱顶数字为精确官网价，柱高只在本组内线性缩放；{excluded}不进入柱图。'
+        '不同组的柱高不可横向比较；帧率、时长、队列、促销与模式差异见柱下口径，不视为完全等价；'
+        '斜纹柱表示厂商已公告弃用或停用日期。</p></div>')
+
+
+def _generation_examples(kind: str, providers_cfg: list, records: dict) -> str:
+    cards = []
+    is_image = kind == "imagegen"
+    for cfg in providers_cfg:
+        rec = records.get(cfg["id"]) or {}
+        examples = cfg.get("examples") or rec.get("official_examples") or []
+        provider = cfg.get("name_cn") or cfg.get("name") or cfg["id"]
+        provider_region = "domestic" if cfg.get("region") == "国内" else "intl"
+        offering_regions = {
+            _generation_offering_region(off, provider_region)
+            for off in (rec.get("offerings") or [])}
+        if not offering_regions:
+            offering_regions = {value for value in (rec.get("service_regions") or [])
+                                if value in ("intl", "domestic")}
+        region = ("both" if len(offering_regions) > 1 else
+                  next(iter(offering_regions)) if offering_regions else provider_region)
+        for example in examples[:1]:
+            page_url = _safe_url(example.get("url"))
+            if not page_url:
+                continue
+            title = str(example.get("title") or f"{provider} 官方样例").strip()
+            note = str(example.get("note") or "打开厂商官网查看原始提示词与输出").strip()
+            provenance = str(example.get("provenance") or "vendor-authored")
+            community_badge = ('<span class="gen-community">官方托管社区作品</span>'
+                               if provenance == "official-community" else "")
+            media_url = _safe_url(example.get("media_url"))
+            media_type = str(example.get("media_type") or "").lower()
+            if media_url and (is_image or media_type == "image"):
+                visual = (f'<img src="{media_url}" alt="{_e(title)}" loading="lazy" '
+                          'decoding="async" referrerpolicy="no-referrer">')
+            elif media_url and not is_image:
+                poster = _safe_url(example.get("poster_url"))
+                poster_attr = f' poster="{poster}"' if poster else ""
+                visual = (f'<video controls muted playsinline preload="metadata"{poster_attr} '
+                          f'aria-label="{_e(title)}"><source src="{media_url}"></video>')
+            else:
+                noun = "IMAGE" if is_image else "VIDEO"
+                visual = (f'<span class="gen-sample-placeholder"><i>OFFICIAL {noun} SAMPLE / SOURCE PAGE</i>'
+                          f'<b>{_e(provider)}</b></span>')
+            cards.append(
+                f'<article class="gen-sample-card" data-region="{region}">'
+                f'<div class="gen-sample-visual">{visual}</div>'
+                f'<div class="gen-sample-body"><span class="gen-sample-provider">{_e(provider)}{community_badge}</span>'
+                f'<h4 class="gen-sample-title">{_e(title)}</h4>'
+                f'<p class="gen-sample-note">{_e(note)}</p>'
+                f'<a class="gen-sample-link" href="{page_url}" target="_blank" rel="noopener">'
+                f'{"查看官方社区作品 ↗" if provenance == "official-community" else "查看厂商官方样例 ↗"}</a></div></article>')
+    if not cards:
+        return ""
+    title = "官方生图样例入口" if is_image else "官方生视频样片入口"
+    note = ("只链接厂商第一方发布或托管的样例；官方社区作品会明确标注，不做主观排名"
+            if is_image else "视频不自动播放；第一方托管社区作品会明确标注，打开原页核对")
+    return (
+        f'<div class="gen-samples gen-{"image" if is_image else "video"}" id="{kind}-examples">'
+        f'<div class="gen-samples-head"><h3>{title}</h3><p>{note}</p></div>'
+        f'<div class="gen-sample-grid">{"".join(cards)}</div></div>')
+
+
+def _generation_api_badge(value, lifecycle_status: str | None = None) -> str:
+    if lifecycle_status == "discontinued":
+        return '<span class="gen-api-no" aria-label="API 已停用">✗ API 已停用</span>'
+    if lifecycle_status == "self-host-only":
+        return '<span class="gen-api-no" aria-label="仅自托管">✗ 无托管 API</span>'
+    if lifecycle_status == "legacy-existing-only":
+        return '<span class="gen-api-unk" aria-label="Legacy，仅存量客户">△ Legacy · 仅存量客户</span>'
+    if value is True:
+        return '<span class="gen-api-yes" aria-label="已提供公开 API">✓ 公开 API</span>'
+    if value is False:
+        return '<span class="gen-api-no" aria-label="无公开 API">✗ 无公开 API</span>'
+    return '<span class="gen-api-unk" aria-label="官网未确认 API 状态">— 待确认</span>'
+
+
+def _generation_modes(modes) -> str:
+    clean = [str(mode).strip() for mode in (modes or []) if str(mode).strip()]
+    if not clean:
+        return "—"
+    return "".join(
+        f'<span class="gen-mode">{_e(MODE_LABELS.get(mode, mode))}</span>'
+        for mode in clean)
+
+
+def _generation_section(kind: str, providers_cfg: list, records: dict) -> str:
+    is_image = kind == "imagegen"
+    rows = []
+    provider_regions = {}
+    api_regions = {}
+    example_regions = {}
+    entries = _generation_price_entries(kind, providers_cfg, records)
+    comparable = sum(len(items) for items in entries.values())
+    for cfg in providers_cfg:
+        rec = records.get(cfg["id"]) or {}
+        offerings = rec.get("offerings") or []
+        if not rec:
+            continue
+        provider = cfg.get("name_cn") or cfg.get("name") or cfg["id"]
+        provider_region = "domestic" if cfg.get("region") == "国内" else "intl"
+        row_regions = {_generation_offering_region(off, provider_region)
+                       for off in offerings}
+        if not row_regions:
+            row_regions = {value for value in (rec.get("service_regions") or [])
+                           if value in ("intl", "domestic")}
+        aggregate_region = ("both" if len(row_regions) > 1 else
+                            next(iter(row_regions)) if row_regions else provider_region)
+        provider_regions[cfg["id"]] = aggregate_region
+        active_api_regions = {
+            _generation_offering_region(off, provider_region) for off in offerings
+            if off.get("api_available") is True
+            and _generation_lifecycle(off)["active"]}
+        if active_api_regions:
+            api_regions[cfg["id"]] = ("both" if len(active_api_regions) > 1
+                                      else next(iter(active_api_regions)))
+        if cfg.get("examples") or rec.get("official_examples"):
+            example_regions[cfg["id"]] = aggregate_region
+        source_urls = []
+        for raw_url in (rec.get("source_urls") or [rec.get("source_url")]):
+            safe = _safe_url(raw_url)
+            if safe and safe not in source_urls:
+                source_urls.append(safe)
+        sample = (cfg.get("examples") or rec.get("official_examples") or [{}])[0]
+        sample_url = _safe_url(sample.get("url"))
+        badges = []
+        if rec.get("source") != "official":
+            if rec.get("seed_verified"):
+                text, tip = "官网事实种子 · 待自动校准", "已按官网初始化；首次自动抽取后替换"
+            else:
+                text, tip = "待官网自动确认", "空缺字段不会推断；等待自动抽取"
+            badges.append(f'<span class="badge b-seed" title="{_e(tip)}">{_e(text)}</span>')
+        if rec.get("source_warnings"):
+            warning_text = "；".join(str(item) for item in rec["source_warnings"])
+            badges.append('<span class="badge b-warn" title="%s">次要来源部分失败</span>'
+                          % _e(warning_text[:200]))
+        if rec.get("last_error"):
+            badges.append('<span class="badge b-err" title="%s">抓取失败 · 保留旧数据</span>'
+                          % _e(str(rec["last_error"])[:160]))
+        badge_html = "".join(badges)
+        if not offerings:
+            has_field = "has_image_generation" if is_image else "has_video_generation"
+            if rec.get("product_status") == "discontinued" or rec.get(has_field) is False:
+                status_date = str(rec.get("product_status_date") or "")
+                status_note = str(rec.get("product_status_note") or "官网已确认该产品停止提供")
+                source_links = "".join(
+                    f'<a href="{url}" target="_blank" rel="noopener">停用来源 {idx} ↗</a>'
+                    for idx, url in enumerate(source_urls, 1))
+                links_html = f'<span class="gen-links">{source_links}</span>' if source_links else ""
+                label = f"已于 {status_date} 停止" if status_date else "已停止提供"
+                colspan = 7 if is_image else 8
+                rows.append(
+                    f'<tr class="gen-row gen-tombstone" data-region="{aggregate_region}">'
+                    f'<td class="gen-provider">{_e(provider)}{badge_html}</td>'
+                    f'<td class="gen-tombstone-note" colspan="{colspan}">'
+                    f'<span class="gen-life inactive">{_e(label)}</span> '
+                    f'{_e(status_note)}{links_html}</td></tr>')
+            continue
+        for off in offerings:
+            name = str(off.get("name") or "").strip()
+            region = _generation_offering_region(off, provider_region)
+            lifecycle = _generation_lifecycle(off)
+            life_badge = (f'<br><span class="gen-life{"" if lifecycle["active"] else " inactive"}">'
+                          f'{_e(lifecycle["label"])}</span>' if lifecycle["label"] else "")
+            modes = _generation_modes(off.get("modes"))
+            if is_image:
+                spec = "<strong>%s</strong>%s%s" % (
+                    _e(off.get("resolution") or "分辨率待官网确认"),
+                    f'<br>{_e(off.get("aspect_ratios"))}' if off.get("aspect_ratios") else "",
+                    f'<br>{_e(off.get("output_formats"))}' if off.get("output_formats") else "")
+                extra_cell = ""
+            else:
+                spec = "<strong>%s</strong>%s%s" % (
+                    _e(off.get("resolution") or "分辨率待官网确认"),
+                    f'<br>{_e(off.get("duration"))}' if off.get("duration") else "",
+                    f'<br>{_e(off.get("frame_rate"))}' if off.get("frame_rate") else "")
+                extra_cell = f'<td>{_bool_badge(off.get("native_audio"))}</td>'
+            price_field = "price_per_image" if is_image else "price_per_second"
+            price = _ws_numeric_price(off.get(price_field))
+            currency = str(off.get("currency") or "")
+            symbol = _sym(currency)
+            unit = "张" if is_image else "秒"
+            pricing = str(off.get("pricing") or "").strip()
+            basis = str(off.get("price_basis") or "").strip()
+            price_html = (f'<strong>{_e(symbol)}{_fmt(price)} / {unit}</strong><br>'
+                          if price is not None else "")
+            price_html += _e(pricing) if pricing else "—"
+            if basis:
+                price_html += f'<br><small>{_e(basis)}</small>'
+            links = []
+            for source_index, source_url in enumerate(source_urls, 1):
+                label = "官网事实" if source_index == 1 else f"来源 {source_index}"
+                links.append(f'<a href="{source_url}" target="_blank" rel="noopener">{label} ↗</a>')
+            links_html = f'<span class="gen-links">{"".join(links)}</span>' if links else ""
+            note = str(off.get("note") or "").strip()
+            free = str(off.get("free_quota") or "").strip()
+            rows.append(
+                f'<tr class="gen-row" data-region="{region}">'
+                f'<td class="gen-provider">{_e(provider)}{badge_html}</td>'
+                f'<td class="gen-name">{_e(name)}</td>'
+                f'<td>{_generation_api_badge(off.get("api_available"), lifecycle["status"])}{life_badge}</td>'
+                f'<td class="gen-modes">{modes}</td>'
+                f'<td class="gen-spec">{spec}</td>{extra_cell}'
+                f'<td class="ws-free">{_e(free) if free else "官网未说明"}</td>'
+                f'<td class="gen-price">{price_html}</td>'
+                f'<td class="gen-note">{_e(note) if note else "—"}{links_html}</td></tr>')
+    if not rows:
+        return ""
+    title = "AI 生图 · 价格与能力" if is_image else "AI 生视频 · 价格与能力"
+    eyebrow = "IMAGE GENERATION · PRICE & CAPABILITY" if is_image else "VIDEO GENERATION · PRICE & CAPABILITY"
+    subtitle = ("单张价格、分辨率、编辑与参考图能力"
+                if is_image else "每秒价格、分辨率、时长、输入方式与原生音频")
+    provider_total, provider_intl, provider_domestic = _region_metric(provider_regions)
+    api_total, api_intl, api_domestic = _region_metric(api_regions)
+    example_total, example_intl, example_domestic = _region_metric(example_regions)
+    comparable_intl = sum(item["region"] in ("intl", "both")
+                          for items in entries.values() for item in items)
+    comparable_domestic = sum(item["region"] in ("domestic", "both")
+                              for items in entries.values() for item in items)
+    def metric(value, intl, domestic):
+        return (f'<b data-region-number data-total="{value}" data-intl="{intl}" '
+                f'data-domestic="{domestic}">{value}</b>')
+    stats = (
+        f'<span class="ws-stat">{metric(provider_total, provider_intl, provider_domestic)} 家厂商</span>'
+        f'<span class="ws-stat">{metric(api_total, api_intl, api_domestic)} 家仍有官方 API（含过渡状态）</span>'
+        f'<span class="ws-stat">{metric(comparable, comparable_intl, comparable_domestic)} 项分组可比价格</span>'
+        f'<span class="ws-stat">{metric(example_total, example_intl, example_domestic)} 个官方样例入口</span>')
+    if is_image:
+        columns = ('<th>厂商</th><th>模型 / 产品</th><th>API 状态</th><th>生成模式</th>'
+                   '<th>分辨率 / 输出</th><th>免费额度</th><th>定价 / 口径</th><th>说明 / 来源</th>')
+    else:
+        columns = ('<th>厂商</th><th>模型 / 产品</th><th>API 状态</th><th>生成模式</th>'
+                   '<th>分辨率 / 时长</th><th>原生音频</th><th>免费额度</th>'
+                   '<th>定价 / 口径</th><th>说明 / 来源</th>')
+    chart = _generation_price_chart(kind, providers_cfg, records)
+    gallery = _generation_examples(kind, providers_cfg, records)
+    return (
+        f'<section class="block" id="{kind}" aria-labelledby="{kind}-title">'
+        '<div class="section-head"><div>'
+        f'<p class="sec-eyebrow">{eyebrow}</p><h2 class="sec-title" id="{kind}-title">{title}</h2></div>'
+        f'<p class="sec-sub">{subtitle}<br>只记录厂商官网事实，不做主观画质评分</p></div>'
+        f'<div class="ws-summary">{stats}</div>{chart}{gallery}'
+        f'<div class="gen-table" id="{kind}-details"><div class="table-wrap"><table>'
+        f'<thead><tr>{columns}</tr></thead><tbody>{"".join(rows)}</tbody></table></div></div>'
+        '<p class="plan-policy" style="margin-top:14px"><b>OFFICIAL ONLY</b><span>'
+        '效果部分只提供厂商第一方发布或托管的样例及原始链接，社区作品明确标注；价格柱只纳入单位、币种、分辨率和质量/音频口径均可核对的项目。'
+        '“公开 API”不代表无需申请、充值、地区权限或内容审核。</span></p></section>')
+
+
+def _imagegen_section(providers_cfg: list, records: dict) -> str:
+    return _generation_section("imagegen", providers_cfg, records)
+
+
+def _videogen_section(providers_cfg: list, records: dict) -> str:
+    return _generation_section("videogen", providers_cfg, records)
 
 def _prov_section(cfg: dict, rec: dict | None, rate: float) -> str:
     pid = cfg["id"]
@@ -1632,16 +2224,21 @@ def _news_card(cfg: dict, rec: dict) -> str:
 
 # ---------------------------------------------------------------- 主入口
 
-def build(providers_cfg: list, websearch_cfg: list | None = None) -> Path:
+def build(providers_cfg: list, websearch_cfg: list | None = None,
+          imagegen_cfg: list | None = None,
+          videogen_cfg: list | None = None) -> Path:
     websearch_cfg = websearch_cfg or [
         cfg for cfg in providers_cfg
         if cfg.get("websearch_url") or cfg.get("websearch_urls")]
+    imagegen_cfg = imagegen_cfg or []
+    videogen_cfg = videogen_cfg or []
     meta = load_meta()
     changes = load_changes()
     fx = meta.get("fx") or {}
     rate = float(fx.get("usd_cny") or 7.2)
 
-    recs, news_recs, plan_recs, ws_recs, prov_names, prov_cur = {}, {}, {}, {}, {}, {}
+    recs, news_recs, plan_recs, ws_recs = {}, {}, {}, {}
+    image_recs, video_recs, prov_names, prov_cur = {}, {}, {}, {}
     total_models = 0
     for cfg in providers_cfg:
         pid = cfg["id"]
@@ -1655,6 +2252,10 @@ def build(providers_cfg: list, websearch_cfg: list | None = None) -> Path:
             total_models += len(rec.get("models") or [])
     for cfg in websearch_cfg:
         ws_recs[cfg["id"]] = load_websearch(cfg["id"])
+    for cfg in imagegen_cfg:
+        image_recs[cfg["id"]] = load_imagegen(cfg["id"])
+    for cfg in videogen_cfg:
+        video_recs[cfg["id"]] = load_videogen(cfg["id"])
 
     # ---- 报头
     gen = _t(meta.get("generated_at"), "%Y-%m-%d %H:%M")
@@ -1665,7 +2266,10 @@ def build(providers_cfg: list, websearch_cfg: list | None = None) -> Path:
 
     spec = (f'<dl class="spec" aria-label="数据概览">'
             f'<div class="metric metric-wide"><dt>最近更新 · 北京时间</dt><dd>{gen}</dd></div>'
-            f'<div class="metric"><dt>覆盖厂商</dt><dd>{len(providers_cfg)} 家</dd></div>'
+            f'<div class="metric"><dt>API 价格厂商</dt><dd>{len(providers_cfg)} 家</dd></div>'
+            f'<div class="metric"><dt>联网搜索</dt><dd>{len(websearch_cfg)} 家</dd></div>'
+            f'<div class="metric"><dt>AI 生图</dt><dd>{len(imagegen_cfg)} 家</dd></div>'
+            f'<div class="metric"><dt>AI 生视频</dt><dd>{len(videogen_cfg)} 家</dd></div>'
             f'<div class="metric"><dt>在列模型</dt><dd>{total_models} 个</dd></div>'
             f'<div class="metric"><dt>变动记录</dt><dd>{len(changes)} 条</dd></div>'
             f'<div class="metric"><dt>实时汇率</dt><dd>{_e(fx_line)}{fx_stale}</dd></div>'
@@ -1675,11 +2279,12 @@ def build(providers_cfg: list, websearch_cfg: list | None = None) -> Path:
     masthead = (
         f'<header class="masthead"><div class="intro">'
         f'<div class="brand-line"><span class="brand-mark" aria-hidden="true">↗</span>'
-        f'<p class="eyebrow">LLM PRICE WATCH</p>'
+        f'<p class="eyebrow">AI PRICE WATCH · OFFICIAL FACTS</p>'
         f'<span class="live-pill"><i aria-hidden="true"></i>每小时更新</span></div>'
-        f'<h1>大模型 API<br><span>价格看板</span></h1>'
-        f'<p class="sub">把 {len(providers_cfg)} 家主流厂商的公开价格、套餐额度、变动与公告放进同一张可比较的账本。'
-        f'支持人民币折算，时间统一为北京时间；实际价格以各厂商官网为准。</p>'
+        f'<h1>AI 模型<br><span>价格与生成看板</span></h1>'
+        f'<p class="sub">把大模型 API、套餐、{len(websearch_cfg)} 家联网搜索、'
+        f'{len(imagegen_cfg)} 家生图与 {len(videogen_cfg)} 家生视频服务放进同一张官网事实账本。'
+        f'支持严格分组比价，时间统一为北京时间；实际价格以各厂商官网为准。</p>'
         f'<div class="header-actions"><a class="primary-action" href="#prices">查看完整价格 ↓</a>'
         f'<a class="secondary-action" href="{REPO_URL}" target="_blank" rel="noopener">'
         f'查看开源管线 ↗</a></div>'
@@ -1689,7 +2294,10 @@ def build(providers_cfg: list, websearch_cfg: list | None = None) -> Path:
     quick = _quick_chart(providers_cfg, recs, rate)
     plans = _plans_section(providers_cfg, plan_recs)
     websearch = _websearch_section(websearch_cfg, ws_recs)
-    view_tabs = _view_tabs(bool(plans), bool(websearch))
+    imagegen = _imagegen_section(imagegen_cfg, image_recs)
+    videogen = _videogen_section(videogen_cfg, video_recs)
+    view_tabs = _view_tabs(
+        bool(plans), bool(websearch), bool(imagegen), bool(videogen))
     controls = (
         '<nav class="controls" aria-label="页面导航与数据筛选">'
         f'<div class="controls-left">{view_tabs}'
@@ -1701,13 +2309,18 @@ def build(providers_cfg: list, websearch_cfg: list | None = None) -> Path:
         '<a href="#changes">变动流水</a><a href="#news">官方公告</a></div>'
         '<div class="jump-nav jump-websearch"><a href="#ws-price-chart">价格柱状图</a>'
         '<a href="#ws-details">厂商明细</a><a href="#prices">完整价格</a>'
-        '<a href="#news">官方公告</a></div></div>'
+        '<a href="#news">官方公告</a></div>'
+        '<div class="jump-nav jump-imagegen"><a href="#imagegen-price-chart">单张价格柱图</a>'
+        '<a href="#imagegen-examples">官方样例</a><a href="#imagegen-details">模型明细</a></div>'
+        '<div class="jump-nav jump-videogen"><a href="#videogen-price-chart">每秒价格柱图</a>'
+        '<a href="#videogen-examples">官方样片</a><a href="#videogen-details">模型明细</a></div>'
+        '</div>'
         '<div class="control-groups"><span class="control-label">FILTER</span>'
-        '<div class="seg" role="group" aria-label="地区筛选">'
-        '<button data-region-btn="all" class="on" aria-pressed="true">全部</button>'
-        '<button data-region-btn="intl" aria-pressed="false">国际</button>'
-        '<button data-region-btn="domestic" aria-pressed="false">国内</button></div>'
-        '<div class="seg" role="group" aria-label="币种显示">'
+        '<div class="seg" role="group" aria-label="服务与价格区域筛选">'
+        '<button data-region-btn="all" class="on" aria-pressed="true">全部价区</button>'
+        '<button data-region-btn="intl" aria-pressed="false">国际价区</button>'
+        '<button data-region-btn="domestic" aria-pressed="false">中国价区</button></div>'
+        '<div class="seg currency-switch" role="group" aria-label="币种显示">'
         '<button data-cur-btn="cny" class="on" aria-pressed="true">折算 ¥</button>'
         '<button data-cur-btn="orig" aria-pressed="false">原币</button></div>'
         '</div></nav>')
@@ -1718,6 +2331,14 @@ def build(providers_cfg: list, websearch_cfg: list | None = None) -> Path:
         f'<div id="websearch-overview" data-view-panel="websearch" role="tabpanel" '
         f'aria-labelledby="view-tab-websearch" hidden>{websearch}</div>'
         if websearch else "")
+    imagegen_overview = (
+        f'<div id="imagegen-overview" data-view-panel="imagegen" role="tabpanel" '
+        f'aria-labelledby="view-tab-imagegen" hidden>{imagegen}</div>'
+        if imagegen else "")
+    videogen_overview = (
+        f'<div id="videogen-overview" data-view-panel="videogen" role="tabpanel" '
+        f'aria-labelledby="view-tab-videogen" hidden>{videogen}</div>'
+        if videogen else "")
 
     # ---- 价格区
     prov_html = "".join(_prov_section(cfg, recs.get(cfg["id"]), rate)
@@ -1769,25 +2390,23 @@ def build(providers_cfg: list, websearch_cfg: list | None = None) -> Path:
         '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width, initial-scale=1">'
         '<link rel="icon" href="data:,">'
-        '<title>大模型 API 价格看板 · LLM Price Watch</title>'
+        '<title>AI 模型 API、生图与生视频价格看板</title>'
         '<meta name="description" content="自动抓取 OpenAI / Anthropic / Google / '
         'DeepSeek / Qwen / 豆包 / 智谱 / Kimi 等官网价格页, 每小时更新的大模型 '
-        'API 价格对比、官网套餐额度、联网搜索价格、变动流水与官方公告。">'
+        'API 价格、套餐、联网搜索、生图与生视频价格和官方样例、变动流水与公告。">'
         f'<style>{CSS}</style></head>'
         f'<body data-region="all" data-currency="cny" data-view="prices">'
         f'<a class="skip-link" href="#main-content">跳到主要内容</a>{ticker}'
         f'<div class="wrap">{masthead}{controls}'
         f'<main id="main-content"><div id="price-overview" data-view-panel="prices" '
         f'role="tabpanel" aria-labelledby="view-tab-prices">{lowest}{quick}</div>'
-        f'{plan_overview}{websearch_overview}'
+        f'{plan_overview}{websearch_overview}{imagegen_overview}{videogen_overview}'
         f'{prices}{changes_sec}{news_sec}</main>{footer}</div>'
         f'<script>{JS}</script></body></html>')
 
-    SITE_DIR.mkdir(parents=True, exist_ok=True)
-    (SITE_DIR / "index.html").write_text(page, encoding="utf-8")
-
-    # 原始数据一并发布, 方便他人复用
-    (SITE_DIR / "data.json").write_text(json.dumps({
+    # Serialize both outputs before replacing either live file. A strict JSON
+    # failure therefore cannot publish new HTML paired with stale data.
+    published_data = json.dumps({
         "generated_at": meta.get("generated_at"),
         "fx": fx,
         "providers": {cfg["id"]: {
@@ -1810,6 +2429,23 @@ def build(providers_cfg: list, websearch_cfg: list | None = None) -> Path:
             "category": cfg.get("category"),
         } for cfg in websearch_cfg
             if ws_recs.get(cfg["id"], {}).get("offerings")},
-    }, ensure_ascii=False, indent=1), encoding="utf-8")
+        "imagegen": {cfg["id"]: {
+            **image_recs.get(cfg["id"], {}),
+            "name": cfg.get("name_cn") or cfg.get("name") or cfg["id"],
+            "region": cfg.get("region"),
+            "category": cfg.get("category"),
+        } for cfg in imagegen_cfg
+            if image_recs.get(cfg["id"])},
+        "videogen": {cfg["id"]: {
+            **video_recs.get(cfg["id"], {}),
+            "name": cfg.get("name_cn") or cfg.get("name") or cfg["id"],
+            "region": cfg.get("region"),
+            "category": cfg.get("category"),
+        } for cfg in videogen_cfg
+            if video_recs.get(cfg["id"])},
+    }, ensure_ascii=False, indent=1, allow_nan=False)
+    SITE_DIR.mkdir(parents=True, exist_ok=True)
+    _atomic_write_text(SITE_DIR / "data.json", published_data)
+    _atomic_write_text(SITE_DIR / "index.html", page)
 
     return SITE_DIR / "index.html"

@@ -1,0 +1,109 @@
+{
+  "provider_name": "Vidu API",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "357c04e03f0b26c9c9560d56389e0d6679788dd947209126e79bc6569ed209c7",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://platform.vidu.com/docs/pricing",
+  "source_urls": [
+    "https://platform.vidu.com/docs/pricing",
+    "https://platform.vidu.com/docs/model-map"
+  ],
+  "official_examples": [
+    {
+      "title": "Vidu Q3 原生音视频样片",
+      "url": "https://www.vidu.com/vidu-q3",
+      "note": "Vidu 官方 Q3 模型展示"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Vidu Q3 Turbo 720p",
+      "variant_key": "Vidu Q3 Turbo 720p",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "$0.055/秒（常规队列）",
+      "currency": "USD",
+      "price_per_second": 0.055,
+      "comparison_group": "usd-720p-audio",
+      "price_basis": "Q3 Turbo · 720p · native audio · regular",
+      "resolution": "720p",
+      "duration": "1–16s",
+      "frame_rate": "24fps",
+      "aspect_ratios": null,
+      "native_audio": true,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "无；最低充值 $10",
+      "note": "off-peak ≤48h 队列为 $0.03/秒。"
+    },
+    {
+      "name": "Vidu Q3 Turbo 1080p",
+      "variant_key": "Vidu Q3 Turbo 1080p",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "$0.065/秒（常规队列）",
+      "currency": "USD",
+      "price_per_second": 0.065,
+      "comparison_group": "usd-1080p-audio",
+      "price_basis": "Q3 Turbo · 1080p · native audio · regular",
+      "resolution": "1080p",
+      "duration": "1–16s",
+      "frame_rate": "24fps",
+      "aspect_ratios": null,
+      "native_audio": true,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "无；最低充值 $10",
+      "note": null
+    },
+    {
+      "name": "Vidu Q3 Turbo Reference 720p",
+      "variant_key": "Vidu Q3 Turbo Reference 720p",
+      "api_available": true,
+      "modes": [
+        "reference-to-video"
+      ],
+      "pricing": "$0.05/秒（reference2video 常规队列）",
+      "currency": "USD",
+      "price_per_second": 0.05,
+      "comparison_group": "usd-720p-audio",
+      "price_basis": "Q3 Turbo · reference2video · 720p · native audio · regular",
+      "resolution": "720p",
+      "duration": "3–16s",
+      "frame_rate": "24fps",
+      "aspect_ratios": null,
+      "native_audio": true,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "无；最低充值 $10",
+      "note": "与普通 T2V/I2V 的 $0.055/秒和 1–16s 口径分开。"
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_video_generation": true
+}

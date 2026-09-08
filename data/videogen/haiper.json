@@ -1,0 +1,58 @@
+{
+  "provider_name": "Haiper Video",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "78d51d7a4d46214373c533165b6dfce16130744dc18a003670535391a585f697",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://docs.haiper.ai/api-reference/api-pricing",
+  "source_urls": [
+    "https://docs.haiper.ai/api-reference/api-pricing",
+    "https://docs.haiper.ai/api-reference/overview"
+  ],
+  "official_examples": [
+    {
+      "title": "Haiper 2.0 官方调用样例",
+      "url": "https://docs.haiper.ai/api-reference/endpoint/2-0-text-to-video",
+      "note": "Haiper 官方 API 文档"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Haiper Video 2.x",
+      "variant_key": "Haiper Video 2.x",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video"
+      ],
+      "pricing": "$0.05/秒（720p）；$0.033/秒（540p）",
+      "currency": "USD",
+      "price_per_second": 0.05,
+      "comparison_group": "usd-720p-silent",
+      "price_basis": "Haiper 2.x · 720p · 无原生音频",
+      "resolution": "540p / 720p",
+      "duration": "4/6s",
+      "frame_rate": "24fps",
+      "aspect_ratios": null,
+      "native_audio": false,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "无",
+      "note": null
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_video_generation": true
+}

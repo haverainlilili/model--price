@@ -19,7 +19,8 @@ import os
 import openai
 from pydantic import BaseModel, ValidationError
 
-from .models import NewsPage, PlansPage, PricingPage, WebSearchPage
+from .models import (ImageGenerationPage, NewsPage, PlansPage, PricingPage,
+                     VideoGenerationPage, WebSearchPage)
 
 MODEL = os.environ.get("OPENAI_MODEL") or "gpt-5.6-sol"
 MAX_PAGE_CHARS = 250_000
@@ -75,6 +76,48 @@ WEBSEARCH_SYSTEM = """你从联网搜索产品官网的能力与价格页（web 
 3. 有多个价格明显不同的搜索产品或档位时拆成多项；只有同一产品的批量折扣时保留一个基础/入门公开档，并在 pricing 或 note 中说明范围。
 4. 只抽客观事实, 严禁主观打分、严禁编造。页面没提到的字段一律填 null。
 5. 页面文本不含联网搜索能力说明(空壳/报错/人机验证页)时 has_search=false 且 offerings 留空。"""
+
+
+IMAGEGEN_SYSTEM = """你从生图产品官网的价格页和 API 文档中抽取客观事实。
+
+规则:
+1. page_has_relevant_content：产品/价格/正式停用说明页面为 true；空白、报错、登录墙、人机验证或无关导航壳为 false。它与产品是否仍提供是两个字段。
+2. product_status 填 active / discontinued / unknown；正式停用时同时填写 product_status_date 与 product_status_note。has_image_generation 表示官网是否仍提供图片生成或编辑产品；正式停用说明页应 page_has_relevant_content=true、product_status=discontinued 且本字段=false。
+3. offerings 按模型或价格明显不同的公开档位拆分，每项填写：
+   - name：模型/产品名原文。variant_key：同一模型按区域/质量/计费模式拆分时填写稳定简短档位键（如 global-medium / cn-premium），不可用易变说明文字；没有拆分档位可填 null。
+   - api_available：官网明确提供开发者 API 才为 true；明确只有网页/应用且无官方 API 才为 false；没说则 null。
+   - modes：只收录官网明确能力，使用 text-to-image / image-edit / reference / inpainting 等简短值。
+   - pricing、currency：保留官网价格口径和原币种，不换汇。存在中国区/全球区/新加坡等独立价时，region 按端点填 domestic 或 intl；无独立区域含义填 null。
+   - price_per_image：官网直接给出完整单张生成费，或给出固定 credits/张且公开固定 PAYG credit 单价时可机械换算。输入/提示词另收费、仅输出 token 估价、订阅额度折算、动态像素/算力、from 起价、企业询价或未固定输出数量时必须为 null，只在 pricing 里说明。
+   - comparison_group：只有完整单张费、约 0.8–1.5MP 的正方形输出才可进入柱图。普通/默认质量按币种填 usd-standard-1mp 或 cny-standard-1mp；明确 high/ultra/premium 档填 usd-premium-1mp 或 cny-premium-1mp；其它一律 null。
+   - comparison_width / comparison_height / quality_tier：进入柱图时必须填该价格对应的精确正方形像素宽高与 standard/premium，并与 comparison_group 一致；不进柱图全部填 null。
+   - lifecycle_status / sunset_at：按官网填写 active/deprecated/sunsetting/legacy-existing-only/discontinued/self-host-only；官网未说明生命周期时填 unknown；有正式停用日必须填 YYYY-MM-DD。
+   - price_basis：必须写清模型、质量、分辨率和计费档。
+   - resolution、aspect_ratios、output_formats、free_quota：仅按官网原文。
+   - note：限制、附加费用、订阅或 API 状态等客观说明，不超过 120 字。
+4. 不把第三方托管价格当作厂商官方 API 价；不依据排行榜或体验做质量评分。
+5. 有效页面明确没有/已停用生图产品时 has_image_generation=false 且 offerings 留空。无效壳页同样留空，但必须 page_has_relevant_content=false。页面没写的字段填 null/空数组，严禁猜测。"""
+
+
+VIDEOGEN_SYSTEM = """你从生视频产品官网的价格页和 API 文档中抽取客观事实。
+
+规则:
+1. page_has_relevant_content：产品/价格/正式停用说明页面为 true；空白、报错、登录墙、人机验证或无关导航壳为 false。它与产品是否仍提供是两个字段。
+2. product_status 填 active / discontinued / unknown；正式停用时同时填写 product_status_date 与 product_status_note。has_video_generation 表示官网是否仍提供生成式视频产品；正式停用说明页应 page_has_relevant_content=true、product_status=discontinued 且本字段=false。
+3. offerings 按模型、分辨率、是否原生音频或价格明显不同的公开档位拆分，每项填写：
+   - name：模型/产品名原文。variant_key：同一模型按区域/分辨率/音频/队列/模式拆分时填写稳定简短档位键，不可用易变说明文字；没有拆分档位可填 null。
+   - api_available：官网明确提供开发者 API 才为 true；明确只有网页/应用且无官方 API 才为 false；没说则 null。
+   - modes：只收录官网明确能力，使用 text-to-video / image-to-video / first-last-frame / reference-to-video / video-edit 等简短值；参考视频驱动不等于视频编辑。
+   - pricing、currency：保留官网原币种，不换汇。存在中国区/全球区/新加坡等独立价时，region 按端点填 domestic 或 intl；无独立区域含义填 null。
+   - price_per_second：官网直接按生成秒报价；或固定 credits/秒且公开固定 PAYG credit 单价；或固定价格对应固定片段秒数时才可机械换算。token/像素动态计费、订阅额度折算、强制月费下的边际价、企业询价或时长不固定必须为 null。
+   - comparison_group：只有无需订阅折算/强制月费，且明确分辨率和音频口径才能进入柱图，编码为 {usd|cny}-{480p|720p|1080p}-{silent|audio}。原生同步音频明确包含才用 audio；视频本身不生成音频用 silent；不清楚则 null。已公告弃用/EOL 仍可按当前有效价格分组，但必须在 price_basis 和 note 写明日期。
+   - comparison_resolution：进入柱图时必须填 480p/720p/1080p 并与 comparison_group 一致；不进柱图填 null。
+   - lifecycle_status / sunset_at：按官网填写 active/deprecated/sunsetting/legacy-existing-only/discontinued/self-host-only；官网未说明生命周期时填 unknown；有正式停用日必须填 YYYY-MM-DD。
+   - price_basis：必须写清模型、模式、分辨率、原生音频口径与计费档。
+   - resolution、duration、frame_rate、aspect_ratios、native_audio、free_quota：仅按官网原文。
+   - note：限制、附加音频/高清费用、排队方式或 API 状态等客观说明，不超过 120 字。
+4. 不把第三方托管价格当作厂商官方 API 价；不同分辨率、音频能力和币种绝不混组；不做主观质量评分。
+5. 有效页面明确没有/已停用生视频产品时 has_video_generation=false 且 offerings 留空。无效壳页同样留空，但必须 page_has_relevant_content=false。页面没写的字段填 null/空数组，严禁猜测。"""
 
 
 PLANS_SYSTEM = """你是一个严谨的大模型厂商官网套餐页解析器。
@@ -216,5 +259,23 @@ def extract_websearch(provider: str, url: str, page_text: str) -> WebSearchPage:
     client = _client()
     user_text = _page_text_header(provider, url, page_text) + "\n请抽取联网搜索能力与定价。"
     parsed = _parse(client, WEBSEARCH_SYSTEM, user_text, WebSearchPage)
+    parsed.offerings = [o for o in parsed.offerings if o.name and o.name.strip()]
+    return parsed
+
+
+def extract_imagegen(provider: str, url: str, page_text: str) -> ImageGenerationPage:
+    """抽取官网生图能力、规格与可比价格，失败抛 ExtractionError。"""
+    client = _client()
+    user_text = _page_text_header(provider, url, page_text) + "\n请抽取生图 API 事实。"
+    parsed = _parse(client, IMAGEGEN_SYSTEM, user_text, ImageGenerationPage)
+    parsed.offerings = [o for o in parsed.offerings if o.name and o.name.strip()]
+    return parsed
+
+
+def extract_videogen(provider: str, url: str, page_text: str) -> VideoGenerationPage:
+    """抽取官网生视频能力、规格与可比价格，失败抛 ExtractionError。"""
+    client = _client()
+    user_text = _page_text_header(provider, url, page_text) + "\n请抽取生视频 API 事实。"
+    parsed = _parse(client, VIDEOGEN_SYSTEM, user_text, VideoGenerationPage)
     parsed.offerings = [o for o in parsed.offerings if o.name and o.name.strip()]
     return parsed

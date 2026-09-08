@@ -1,0 +1,141 @@
+{
+  "provider_name": "阿里云百炼 Wan Video",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "f7829eee0690bb68e29e407ab262452ac333d10acfd13d60b65f5b1cf121313b",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://help.aliyun.com/zh/model-studio/wan3-video-generation-guide",
+  "source_urls": [
+    "https://help.aliyun.com/zh/model-studio/wan3-video-generation-guide",
+    "https://help.aliyun.com/zh/model-studio/wan3-0-video",
+    "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
+  ],
+  "official_examples": [
+    {
+      "title": "Wan 3.0 官方模型样例",
+      "url": "https://help.aliyun.com/zh/model-studio/wan3-video-generation-guide",
+      "note": "阿里云百炼官方模型与生成指南"
+    }
+  ],
+  "service_regions": [
+    "domestic",
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Wan 3.0（新加坡）",
+      "variant_key": "Wan 3.0（新加坡）",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame",
+        "reference"
+      ],
+      "pricing": "$0.10/秒（720p 当前优惠）；$0.20/秒（1080p）",
+      "currency": "USD",
+      "price_per_second": 0.1,
+      "comparison_group": "usd-720p-audio",
+      "price_basis": "Wan 3.0 · 新加坡 · 720p · 原生音频 · 当前 30% 优惠",
+      "resolution": "480p / 720p / 1080p",
+      "duration": "2–30s",
+      "frame_rate": "30fps",
+      "aspect_ratios": null,
+      "native_audio": true,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "新加坡 30 秒合并输入+输出额度，90 天",
+      "note": "区域与促销价不可同中国人民币价混用。"
+    },
+    {
+      "name": "Wan 3.0（中国北京）",
+      "variant_key": "Wan 3.0（中国北京）",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame",
+        "reference"
+      ],
+      "pricing": "¥0.60/秒（720p）；¥1.20/秒（1080p）",
+      "currency": "CNY",
+      "price_per_second": 0.6,
+      "comparison_group": "cny-720p-audio",
+      "price_basis": "Wan 3.0 · 中国北京 · 720p · 原生音频",
+      "resolution": "480p / 720p / 1080p",
+      "duration": "2–30s",
+      "frame_rate": "30fps",
+      "aspect_ratios": null,
+      "native_audio": true,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "domestic",
+      "free_quota": null,
+      "note": "Prime 中国区 720p 为 ¥0.90/秒。"
+    },
+    {
+      "name": "Wan 3.0 1080p（中国北京）",
+      "variant_key": "Wan 3.0 1080p（中国北京）",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "¥1.20/秒",
+      "currency": "CNY",
+      "price_per_second": 1.2,
+      "comparison_group": "cny-1080p-audio",
+      "price_basis": "Wan 3.0 · 中国北京 · 1080p · 原生音频",
+      "resolution": "1080p",
+      "duration": "2–30s",
+      "frame_rate": "30fps",
+      "aspect_ratios": null,
+      "native_audio": true,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "domestic",
+      "free_quota": null,
+      "note": null
+    },
+    {
+      "name": "Wan 3.0 1080p（新加坡）",
+      "variant_key": "Wan 3.0 1080p（新加坡）",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "$0.20/秒（当前优惠）",
+      "currency": "USD",
+      "price_per_second": 0.2,
+      "comparison_group": "usd-1080p-audio",
+      "price_basis": "Wan 3.0 · 新加坡 · 1080p · 原生音频 · 当前 30% 优惠",
+      "resolution": "1080p",
+      "duration": "2–30s",
+      "frame_rate": "30fps",
+      "aspect_ratios": null,
+      "native_audio": true,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": null
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_video_generation": true
+}

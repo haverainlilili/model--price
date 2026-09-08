@@ -1,0 +1,114 @@
+{
+  "provider_name": "火山方舟 Seedream",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "77723ed963ac917f4595776445ec29032e17d349c969eb29247dde45f55d5508",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://docs.volcengine.com/docs/82379/1544106?lang=zh",
+  "source_urls": [
+    "https://docs.volcengine.com/docs/82379/1544106?lang=zh",
+    "https://docs.byteplus.com/en/docs/ModelArk/1544106",
+    "https://docs.byteplus.com/en/docs/ModelArk/1541523"
+  ],
+  "official_examples": [
+    {
+      "title": "Seedream 5.0 Pro 官方样例",
+      "url": "https://docs.byteplus.com/en/docs/ModelArk/1541523",
+      "media_url": "https://arkdocs-en.tos-ap-southeast-1.volces.com/images/image-generation/seedream_50_pro_output2.png",
+      "note": "ByteDance/BytePlus 官方文档与稳定官方样图"
+    }
+  ],
+  "service_regions": [
+    "domestic",
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Seedream 5.0 Lite",
+      "variant_key": "Seedream 5.0 Lite",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "image-edit",
+        "reference"
+      ],
+      "pricing": "¥0.22/张",
+      "currency": "CNY",
+      "price_per_image": 0.22,
+      "comparison_group": null,
+      "price_basis": "Lite · 原生 2K/3K/4K（非 1MP，不进柱图）",
+      "resolution": "2K / 3K / 4K",
+      "aspect_ratios": null,
+      "output_formats": "PNG / JPEG",
+      "comparison_width": null,
+      "comparison_height": null,
+      "quality_tier": null,
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "domestic",
+      "free_quota": null,
+      "note": "可选联网搜索；最多 14 张参考图。"
+    },
+    {
+      "name": "Seedream 5.0 Pro（中国区）",
+      "variant_key": "Seedream 5.0 Pro（中国区）",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "image-edit",
+        "reference"
+      ],
+      "pricing": "≤2.61MP ¥0.30/输出图；后续参考图 ¥0.02/张",
+      "currency": "CNY",
+      "price_per_image": 0.3,
+      "comparison_group": "cny-premium-1mp",
+      "price_basis": "Pro · 中国区 · 1K · 文生图无参考图",
+      "resolution": "1K / 1.5K / 2K",
+      "aspect_ratios": "1:16–16:1",
+      "output_formats": null,
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "premium",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "domestic",
+      "free_quota": null,
+      "note": null
+    },
+    {
+      "name": "Seedream 5.0 Pro（BytePlus）",
+      "variant_key": "Seedream 5.0 Pro（BytePlus）",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "image-edit",
+        "reference"
+      ],
+      "pricing": "≤2.61MP $0.045/输出图；后续参考图 $0.003/张",
+      "currency": "USD",
+      "price_per_image": 0.045,
+      "comparison_group": "usd-premium-1mp",
+      "price_basis": "Pro · BytePlus · 1K · 文生图无参考图",
+      "resolution": "1K / 1.5K / 2K",
+      "aspect_ratios": "1:16–16:1",
+      "output_formats": null,
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "premium",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": null
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_image_generation": true
+}

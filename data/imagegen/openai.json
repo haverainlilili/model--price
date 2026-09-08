@@ -1,0 +1,60 @@
+{
+  "provider_name": "OpenAI",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "7ae33a7486f4099fa6f5329fb885b5109917777bbdbc7fbcc5d61f5ab3cc5bfe",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://developers.openai.com/api/docs/pricing",
+  "source_urls": [
+    "https://developers.openai.com/api/docs/pricing",
+    "https://developers.openai.com/api/docs/guides/image-generation"
+  ],
+  "official_examples": [
+    {
+      "title": "GPT Image 2 官方生成与编辑案例",
+      "url": "https://openai.com/index/introducing-chatgpt-images-2-0/",
+      "media_url": "https://cdn.openai.com/API/docs/images/images-gallery-2/sci-fi-hangar.png",
+      "note": "OpenAI 官方发布页与稳定官方样图"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "gpt-image-2",
+      "variant_key": "gpt-image-2",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "image-edit",
+        "reference"
+      ],
+      "pricing": "图片输入 $8/百万 tokens、缓存输入 $2；图片输出 $30/百万 tokens；1024² medium 输出约 $0.053/张，另计输入",
+      "currency": "USD",
+      "price_per_image": null,
+      "comparison_group": null,
+      "price_basis": "输出 token 价，不是完整单次请求价",
+      "resolution": "边长≤3840 且为 16 的倍数；总像素 655,360–8,294,400",
+      "aspect_ratios": "最长边:最短边 ≤ 3:1",
+      "output_formats": "PNG / JPEG / WebP",
+      "comparison_width": null,
+      "comparison_height": null,
+      "quality_tier": null,
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "Free tier 不支持",
+      "note": "单张总价随输入、尺寸与质量变化，因此不进入固定单张价柱图。"
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_image_generation": true
+}

@@ -1,0 +1,109 @@
+{
+  "provider_name": "OpenAI Sora",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "9c6a7db42d8cd425319551abbe45fbc6cdb5449d49bd1b25052ff864df38fbb0",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://developers.openai.com/api/docs/pricing",
+  "source_urls": [
+    "https://developers.openai.com/api/docs/pricing",
+    "https://developers.openai.com/api/docs/guides/video-generation",
+    "https://developers.openai.com/api/docs/deprecations"
+  ],
+  "official_examples": [
+    {
+      "title": "Sora 2 官方样片",
+      "url": "https://openai.com/index/sora-2/",
+      "note": "OpenAI 官方发布页与生成样片"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Sora 2",
+      "variant_key": "Sora 2",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video"
+      ],
+      "pricing": "$0.10/生成秒",
+      "currency": "USD",
+      "price_per_second": 0.1,
+      "comparison_group": "usd-720p-audio",
+      "price_basis": "Sora 2 · 720p · 原生音频 · DEPRECATED，2026-09-24 停用",
+      "resolution": "720p",
+      "duration": "4/8/12/16/20s",
+      "frame_rate": null,
+      "aspect_ratios": "竖屏 / 横屏",
+      "native_audio": true,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "sunsetting",
+      "sunset_at": "2026-09-24",
+      "region": "intl",
+      "free_quota": "无",
+      "note": "2026-03-24 起弃用，且官方未给替代型号，不建议新接入。"
+    },
+    {
+      "name": "Sora 2 Pro",
+      "variant_key": "Sora 2 Pro",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video"
+      ],
+      "pricing": "$0.30/秒（720p）；$0.70/秒（1080p）",
+      "currency": "USD",
+      "price_per_second": 0.3,
+      "comparison_group": "usd-720p-audio",
+      "price_basis": "Sora 2 Pro · 720p · 原生音频 · DEPRECATED",
+      "resolution": "720p",
+      "duration": "4/8/12/16/20s",
+      "frame_rate": null,
+      "aspect_ratios": "竖屏 / 横屏",
+      "native_audio": true,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "sunsetting",
+      "sunset_at": "2026-09-24",
+      "region": "intl",
+      "free_quota": "无",
+      "note": "同系列 1080p 为 $0.70/秒；计划 2026-09-24 停用。"
+    },
+    {
+      "name": "Sora 2 Pro 1080p",
+      "variant_key": "Sora 2 Pro 1080p",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video"
+      ],
+      "pricing": "$0.70/生成秒",
+      "currency": "USD",
+      "price_per_second": 0.7,
+      "comparison_group": "usd-1080p-audio",
+      "price_basis": "Sora 2 Pro · 1080p · 原生音频 · DEPRECATED",
+      "resolution": "1080p",
+      "duration": "4/8/12/16/20s",
+      "frame_rate": null,
+      "aspect_ratios": "竖屏 / 横屏",
+      "native_audio": true,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "sunsetting",
+      "sunset_at": "2026-09-24",
+      "region": "intl",
+      "free_quota": "无",
+      "note": "计划 2026-09-24 停用。"
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_video_generation": true
+}

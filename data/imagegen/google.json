@@ -1,0 +1,87 @@
+{
+  "provider_name": "Google Imagen / Gemini Image",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "f1658780511b301326d107b1625d894ebd2bcbb6dd75143b80d5be3a03155322",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+  "source_urls": [
+    "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+    "https://ai.google.dev/gemini-api/docs/image-generation?hl=en",
+    "https://ai.google.dev/gemini-api/docs/deprecations"
+  ],
+  "official_examples": [
+    {
+      "title": "Gemini 3.1 Flash Image（Nano Banana 2）官方样例",
+      "url": "https://ai.google.dev/gemini-api/docs/image-generation",
+      "media_url": "https://storage.googleapis.com/generativeai-downloads/images/isometric-pool.jpg",
+      "note": "Google 官方文档样图属于 Flash Image（非 Flash-Lite）；Imagen 4 已于 2026-08-17 停用"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Gemini 3.1 Flash-Lite Image",
+      "variant_key": "Gemini 3.1 Flash-Lite Image",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "image-edit",
+        "reference"
+      ],
+      "pricing": "1K 图片输出约 $0.0336/张，另计文本/图片输入；图片输出 $30/百万 tokens",
+      "currency": "USD",
+      "price_per_image": null,
+      "comparison_group": null,
+      "price_basis": "输出 token 价，不是完整单次请求价",
+      "resolution": "1K",
+      "aspect_ratios": "多种比例",
+      "output_formats": "PNG / JPEG",
+      "comparison_width": null,
+      "comparison_height": null,
+      "quality_tier": null,
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "图片模型 API Free Tier 不可用",
+      "note": "当前 Gemini Image 按 token 计费，不进固定单张价柱图。"
+    },
+    {
+      "name": "Gemini 3.1 Flash Image（Nano Banana 2）",
+      "variant_key": "Gemini 3.1 Flash Image（Nano Banana 2）",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "image-edit",
+        "reference"
+      ],
+      "pricing": "图片输出 $60/百万 tokens，另计文本/图片输入",
+      "currency": "USD",
+      "price_per_image": null,
+      "comparison_group": null,
+      "price_basis": "输出 token 价，不是完整单次请求价",
+      "resolution": "1K / 2K / 4K",
+      "aspect_ratios": "多种比例",
+      "output_formats": "PNG / JPEG（官方示例）",
+      "comparison_width": null,
+      "comparison_height": null,
+      "quality_tier": null,
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "图片模型 API Free Tier 不可用",
+      "note": "官方 isometric-pool 样图属于本模型；Imagen 4 已于 2026-08-17 停用。"
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_image_generation": true
+}

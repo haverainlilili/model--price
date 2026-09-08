@@ -1,0 +1,59 @@
+{
+  "provider_name": "Stability AI Video",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "75fae5083114443e85310dd9daca7e80847be61ff273cb639de17cd3b47c3762",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://kb.stability.ai/knowledge-base/how-to-access-stable-video-diffusion",
+  "source_urls": [
+    "https://kb.stability.ai/knowledge-base/how-to-access-stable-video-diffusion",
+    "https://platform.stability.ai/docs/release-notes"
+  ],
+  "official_examples": [
+    {
+      "title": "Stable Video Diffusion 官方样片",
+      "url": "https://stability.ai/news-updates/stable-video-diffusion-open-ai-video-model",
+      "media_url": "https://raw.githubusercontent.com/Stability-AI/generative-models/e8cd6576/assets/tile.gif",
+      "media_type": "image",
+      "note": "官方开源模型样片；托管视频 API 已于 2025-07-24 停用"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Stable Video Diffusion（self-host only）",
+      "variant_key": "Stable Video Diffusion（self-host only）",
+      "api_available": false,
+      "modes": [
+        "image-to-video"
+      ],
+      "pricing": "托管视频 API 已停止；自托管计算成本自定",
+      "currency": null,
+      "price_per_second": null,
+      "comparison_group": null,
+      "price_basis": "无当前托管 API 价格",
+      "resolution": "1024×576 等",
+      "duration": "≤4s",
+      "frame_rate": "模型条件 6fps / 输出 24fps（版本相关）",
+      "aspect_ratios": null,
+      "native_audio": false,
+      "comparison_resolution": null,
+      "lifecycle_status": "self-host-only",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": "Stability 托管 SVD API 已于 2025-07-24 停用；当前仅开源自托管。"
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_video_generation": true
+}

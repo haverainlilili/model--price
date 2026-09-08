@@ -1,0 +1,86 @@
+{
+  "provider_name": "腾讯混元生图",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "74f5e6a695d9620ebbae2f4ba0ae82e3ca6c25dacb6e798537da2d9f9cb46094",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://cloud.tencent.com/document/product/1823/130055",
+  "source_urls": [
+    "https://cloud.tencent.com/document/product/1823/130055",
+    "https://cloud.tencent.com/document/product/1823/135745",
+    "https://intl.cloud.tencent.com/document/product/1300/78937"
+  ],
+  "official_examples": [
+    {
+      "title": "Hunyuan Image 3.0 官方样例",
+      "url": "https://github.com/Tencent-Hunyuan/HunyuanImage-3.0",
+      "media_url": "https://raw.githubusercontent.com/Tencent-Hunyuan/HunyuanImage-3.0/bc855383e05838e5a5bfa47314eef55545a85423/assets/banner_all.jpg",
+      "note": "腾讯混元官方仓库与固定版本样图"
+    }
+  ],
+  "service_regions": [
+    "domestic",
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "hy-image-v3（中国区）",
+      "variant_key": "hy-image-v3（中国区）",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "reference"
+      ],
+      "pricing": "¥10/百万 tokens × 20,000 tokens/张 = ¥0.20/张",
+      "currency": "CNY",
+      "price_per_image": 0.2,
+      "comparison_group": "cny-standard-1mp",
+      "price_basis": "TokenHub · 中国区 · 1024×1024",
+      "resolution": "边长 512–2048；总像素≤1024²；含精确 1024²",
+      "aspect_ratios": "37 个预设",
+      "output_formats": "PNG / JPG / JPEG；临时 URL",
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "standard",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "domestic",
+      "free_quota": null,
+      "note": "当前 TokenHub 未公布稳定数值免费生图额度。"
+    },
+    {
+      "name": "hy-image-v3（国际区）",
+      "variant_key": "hy-image-v3（国际区）",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "reference"
+      ],
+      "pricing": "$1.60/百万 tokens × 20,000 tokens/张 = $0.032/张",
+      "currency": "USD",
+      "price_per_image": 0.032,
+      "comparison_group": "usd-standard-1mp",
+      "price_basis": "TokenHub · 国际区 · 1024×1024",
+      "resolution": "1024×1024",
+      "aspect_ratios": null,
+      "output_formats": null,
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "standard",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": "与中国区是独立官方区域价，不由汇率换算。"
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_image_generation": true
+}

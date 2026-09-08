@@ -1,0 +1,140 @@
+{
+  "provider_name": "阿里云百炼 Wan Image",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "6555e5cfbddc1b413597edc0f268de590352486ffe2c96c38252e91510110a02",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://help.aliyun.com/zh/model-studio/wan2-7-image-pro",
+  "source_urls": [
+    "https://help.aliyun.com/zh/model-studio/wan2-7-image-pro",
+    "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+    "https://www.alibabacloud.com/help/en/model-studio/new-free-quota"
+  ],
+  "official_examples": [
+    {
+      "title": "Wan 2.7 Image Pro 官方样例",
+      "url": "https://help.aliyun.com/zh/model-studio/wan-image-generation-and-editing-api-reference",
+      "media_url": "https://help-static-aliyun-doc.aliyuncs.com/assets/img/en-US/9163205771/p1063463.webp",
+      "note": "阿里云官方文档与稳定官方样图"
+    }
+  ],
+  "service_regions": [
+    "domestic",
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Wan 2.7 Image（中国区）",
+      "variant_key": "Wan 2.7 Image（中国区）",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "image-edit",
+        "reference"
+      ],
+      "pricing": "¥0.20/输出图",
+      "currency": "CNY",
+      "price_per_image": 0.2,
+      "comparison_group": "cny-standard-1mp",
+      "price_basis": "Wan 2.7 · 中国北京 · 1K · 文生图",
+      "resolution": "1K / 2K / 4K",
+      "aspect_ratios": "1:8–8:1",
+      "output_formats": "PNG",
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "standard",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "domestic",
+      "free_quota": "50 张/模型，90 天",
+      "note": null
+    },
+    {
+      "name": "Wan 2.7 Image Pro（中国区）",
+      "variant_key": "Wan 2.7 Image Pro（中国区）",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "image-edit",
+        "reference"
+      ],
+      "pricing": "¥0.50/输出图",
+      "currency": "CNY",
+      "price_per_image": 0.5,
+      "comparison_group": "cny-premium-1mp",
+      "price_basis": "Wan 2.7 Pro · 中国北京 · 1K · 文生图",
+      "resolution": "1K / 2K（默认）/ 4K",
+      "aspect_ratios": "1:8–8:1",
+      "output_formats": "PNG",
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "premium",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "domestic",
+      "free_quota": "50 张/模型，90 天",
+      "note": null
+    },
+    {
+      "name": "Wan 2.7 Image（新加坡）",
+      "variant_key": "Wan 2.7 Image（新加坡）",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "image-edit",
+        "reference"
+      ],
+      "pricing": "$0.03/输出图",
+      "currency": "USD",
+      "price_per_image": 0.03,
+      "comparison_group": "usd-standard-1mp",
+      "price_basis": "Wan 2.7 · 新加坡 · 1K · 文生图",
+      "resolution": "1K / 2K / 4K",
+      "aspect_ratios": null,
+      "output_formats": null,
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "standard",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "50 张/模型，90 天",
+      "note": null
+    },
+    {
+      "name": "Wan 2.7 Image Pro（新加坡）",
+      "variant_key": "Wan 2.7 Image Pro（新加坡）",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "image-edit",
+        "reference"
+      ],
+      "pricing": "$0.075/输出图",
+      "currency": "USD",
+      "price_per_image": 0.075,
+      "comparison_group": "usd-premium-1mp",
+      "price_basis": "Wan 2.7 Pro · 新加坡 · 1K · 文生图",
+      "resolution": "1K / 2K / 4K",
+      "aspect_ratios": null,
+      "output_formats": null,
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "premium",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "50 张/模型，90 天",
+      "note": "区域价来自官方区域表，不使用站内汇率换算。"
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_image_generation": true
+}

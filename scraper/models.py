@@ -1,9 +1,10 @@
 """结构化抽取结果的 Pydantic 模型（同时生成提示词中的 JSON Schema）。"""
 from __future__ import annotations
 
-from typing import List, Optional
+from datetime import date
+from typing import List, Literal, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
 class ModelPrice(BaseModel):
@@ -94,6 +95,215 @@ class WebSearchPage(BaseModel):
     has_search: bool = Field(..., description="该厂商是否提供联网/网络搜索能力")
     offerings: List[WebSearchOffering] = Field(
         default_factory=list, description="搜索能力条目(通常 1 条; 有多个产品时多条)")
+
+
+def _validate_iso_calendar_date(value: Optional[str]) -> Optional[str]:
+    if value is not None:
+        try:
+            date.fromisoformat(value)
+        except ValueError as exc:
+            raise ValueError("must be a real ISO calendar date (YYYY-MM-DD)") from exc
+    return value
+
+
+ImageGenerationMode = Literal[
+    "text-to-image", "image-to-image", "image-edit", "reference",
+    "inpainting", "outpainting",
+]
+VideoGenerationMode = Literal[
+    "text-to-video", "image-to-video", "first-last-frame",
+    "reference", "reference-to-video", "video-edit", "video-to-video",
+]
+
+
+class StrictGenerationModel(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+
+class ImageGenerationOffering(StrictGenerationModel):
+    """一项生图模型/API 的官网客观事实。"""
+
+    name: str = Field(..., description="模型或生图产品名原文")
+    variant_key: Optional[str] = Field(None, description="同模型拆分区域/质量/队列/模式时的稳定客观档位键")
+    api_available: Optional[bool] = Field(
+        None, description="官网是否明确提供公开 API；未说明则 null")
+    modes: List[ImageGenerationMode] = Field(
+        default_factory=list,
+        description="官网明确支持的模式，如 text-to-image / image-edit / reference")
+    pricing: Optional[str] = Field(None, description="官网定价原文或忠实简写")
+    currency: Optional[str] = Field(None, description="USD / CNY / EUR 等原始币种")
+    region: Optional[Literal["intl", "domestic"]] = Field(
+        None, description="该独立区域价/部署端点属于国际或中国国内；无区域差异则 null")
+    price_per_image: Optional[float] = Field(
+        None, ge=0, allow_inf_nan=False, description="指定公开档位的原币种单张价格；不能机械换算则 null")
+    comparison_group: Optional[Literal[
+        "usd-standard-1mp", "cny-standard-1mp",
+        "usd-premium-1mp", "cny-premium-1mp",
+    ]] = Field(
+        None, description="严格可比组：币种 × standard/premium × 约 1MP；不满足则 null")
+    price_basis: Optional[str] = Field(
+        None, description="单张价格对应的模型、质量、分辨率和计费档位")
+    resolution: Optional[str] = Field(None, description="官网明确的输出分辨率")
+    aspect_ratios: Optional[str] = Field(None, description="官网明确支持的宽高比")
+    output_formats: Optional[str] = Field(None, description="官网明确的输出格式")
+    comparison_width: Optional[int] = Field(
+        None, gt=0, description="仅可比柱图对应输出的精确像素宽；不进柱图则 null")
+    comparison_height: Optional[int] = Field(
+        None, gt=0, description="仅可比柱图对应输出的精确像素高；不进柱图则 null")
+    quality_tier: Optional[Literal["standard", "premium"]] = Field(
+        None, description="仅可比柱图的 standard/premium 客观价档；不进柱图则 null")
+    lifecycle_status: Literal[
+        "active", "deprecated", "sunsetting", "legacy-existing-only", "discontinued", "self-host-only", "unknown",
+    ] = Field("unknown", description="该型号/API 当前官方生命周期状态；官网未说明则 unknown")
+    sunset_at: Optional[str] = Field(
+        None, pattern=r"^\d{4}-\d{2}-\d{2}$", description="已公告停止服务日 YYYY-MM-DD")
+    free_quota: Optional[str] = Field(None, description="官网明确的免费额度")
+    note: Optional[str] = Field(None, description="限制、附加费用或其它客观事实")
+
+    @field_validator("price_per_image", mode="before")
+    @classmethod
+    def reject_boolean_image_price(cls, value):
+        if isinstance(value, bool):
+            raise ValueError("price_per_image must be numeric, not boolean")
+        return value
+
+    @field_validator("sunset_at")
+    @classmethod
+    def validate_sunset_at(cls, value):
+        return _validate_iso_calendar_date(value)
+
+    @model_validator(mode="after")
+    def validate_comparison_contract(self):
+        group = self.comparison_group
+        if group is None:
+            if any(value is not None for value in (
+                    self.comparison_width, self.comparison_height, self.quality_tier)):
+                raise ValueError("comparison dimensions/tier require comparison_group")
+            return self
+        expected_currency = group.split("-", 1)[0].upper()
+        expected_tier = "premium" if "-premium-" in group else "standard"
+        width, height = self.comparison_width, self.comparison_height
+        if (self.price_per_image is None or self.api_available is not True
+                or (self.currency or "").upper() != expected_currency
+                or width is None or height is None or width != height
+                or not 800_000 <= width * height <= 1_500_000
+                or self.quality_tier != expected_tier
+                or not (self.price_basis or "").strip()):
+            raise ValueError("image comparison_group facts are incomplete or inconsistent")
+        return self
+
+
+class ImageGenerationPage(StrictGenerationModel):
+    """一个厂商官网生图能力/定价页的抽取结果。"""
+
+    page_has_relevant_content: bool = Field(
+        ..., description="页面是有效产品/价格/停用说明，而非报错、登录或人机验证壳")
+    product_status: Literal["active", "discontinued", "unknown"] = Field(
+        ..., description="产品整体状态；正式停止时为 discontinued")
+    product_status_date: Optional[str] = Field(
+        None, pattern=r"^\d{4}-\d{2}-\d{2}$", description="整体停用生效日 YYYY-MM-DD")
+    product_status_note: Optional[str] = Field(
+        None, description="官网整体状态或停用说明，不超过 120 字")
+    has_image_generation: bool = Field(..., description="该厂商是否提供生图产品")
+    offerings: List[ImageGenerationOffering] = Field(default_factory=list)
+
+    @field_validator("product_status_date")
+    @classmethod
+    def validate_product_status_date(cls, value):
+        return _validate_iso_calendar_date(value)
+
+
+class VideoGenerationOffering(StrictGenerationModel):
+    """一项生视频模型/API 的官网客观事实。"""
+
+    name: str = Field(..., description="模型或生视频产品名原文")
+    variant_key: Optional[str] = Field(None, description="同模型拆分区域/分辨率/音频/队列/模式时的稳定客观档位键")
+    api_available: Optional[bool] = Field(
+        None, description="官网是否明确提供公开 API；未说明则 null")
+    modes: List[VideoGenerationMode] = Field(
+        default_factory=list,
+        description="官网明确支持的模式，如 text-to-video / image-to-video / first-last-frame")
+    pricing: Optional[str] = Field(None, description="官网定价原文或忠实简写")
+    currency: Optional[str] = Field(None, description="USD / CNY / EUR 等原始币种")
+    region: Optional[Literal["intl", "domestic"]] = Field(
+        None, description="该独立区域价/部署端点属于国际或中国国内；无区域差异则 null")
+    price_per_second: Optional[float] = Field(
+        None, ge=0, allow_inf_nan=False, description="指定公开档位的原币种每生成秒价格；不能机械换算则 null")
+    comparison_group: Optional[Literal[
+        "usd-480p-silent", "usd-480p-audio",
+        "usd-720p-silent", "usd-720p-audio",
+        "usd-1080p-silent", "usd-1080p-audio",
+        "cny-480p-silent", "cny-480p-audio",
+        "cny-720p-silent", "cny-720p-audio",
+        "cny-1080p-silent", "cny-1080p-audio",
+    ]] = Field(
+        None, description="严格可比组，编码币种、分辨率与是否含原生音频；不满足则 null")
+    price_basis: Optional[str] = Field(
+        None, description="每秒价格对应的模型、模式、分辨率、音频和公开档位")
+    resolution: Optional[str] = Field(None, description="官网明确的输出分辨率")
+    duration: Optional[str] = Field(None, description="官网明确支持的片段时长")
+    frame_rate: Optional[str] = Field(None, description="官网明确的帧率")
+    aspect_ratios: Optional[str] = Field(None, description="官网明确支持的宽高比")
+    native_audio: Optional[bool] = Field(
+        None, description="是否由该模型原生生成同步音频；官网未说明则 null")
+    comparison_resolution: Optional[Literal["480p", "720p", "1080p"]] = Field(
+        None, description="仅可比柱图采用的精确输出档；不进柱图则 null")
+    lifecycle_status: Literal[
+        "active", "deprecated", "sunsetting", "legacy-existing-only", "discontinued", "self-host-only", "unknown",
+    ] = Field("unknown", description="该型号/API 当前官方生命周期状态；官网未说明则 unknown")
+    sunset_at: Optional[str] = Field(
+        None, pattern=r"^\d{4}-\d{2}-\d{2}$", description="已公告停止服务日 YYYY-MM-DD")
+    free_quota: Optional[str] = Field(None, description="官网明确的免费额度")
+    note: Optional[str] = Field(None, description="限制、附加费用或其它客观事实")
+
+    @field_validator("price_per_second", mode="before")
+    @classmethod
+    def reject_boolean_video_price(cls, value):
+        if isinstance(value, bool):
+            raise ValueError("price_per_second must be numeric, not boolean")
+        return value
+
+    @field_validator("sunset_at")
+    @classmethod
+    def validate_sunset_at(cls, value):
+        return _validate_iso_calendar_date(value)
+
+    @model_validator(mode="after")
+    def validate_comparison_contract(self):
+        group = self.comparison_group
+        if group is None:
+            if self.comparison_resolution is not None:
+                raise ValueError("comparison_resolution requires comparison_group")
+            return self
+        expected_currency, expected_resolution, audio_kind = group.split("-")
+        expected_audio = audio_kind == "audio"
+        if (self.price_per_second is None or self.api_available is not True
+                or (self.currency or "").lower() != expected_currency
+                or self.comparison_resolution != expected_resolution
+                or self.native_audio is not expected_audio
+                or not (self.price_basis or "").strip()):
+            raise ValueError("video comparison_group facts are incomplete or inconsistent")
+        return self
+
+
+class VideoGenerationPage(StrictGenerationModel):
+    """一个厂商官网生视频能力/定价页的抽取结果。"""
+
+    page_has_relevant_content: bool = Field(
+        ..., description="页面是有效产品/价格/停用说明，而非报错、登录或人机验证壳")
+    product_status: Literal["active", "discontinued", "unknown"] = Field(
+        ..., description="产品整体状态；正式停止时为 discontinued")
+    product_status_date: Optional[str] = Field(
+        None, pattern=r"^\d{4}-\d{2}-\d{2}$", description="整体停用生效日 YYYY-MM-DD")
+    product_status_note: Optional[str] = Field(
+        None, description="官网整体状态或停用说明，不超过 120 字")
+    has_video_generation: bool = Field(..., description="该厂商是否提供生视频产品")
+    offerings: List[VideoGenerationOffering] = Field(default_factory=list)
+
+    @field_validator("product_status_date")
+    @classmethod
+    def validate_product_status_date(cls, value):
+        return _validate_iso_calendar_date(value)
 
 
 class NewsEntry(BaseModel):

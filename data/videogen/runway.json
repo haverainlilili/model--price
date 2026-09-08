@@ -1,0 +1,58 @@
+{
+  "provider_name": "Runway",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "7c5f3a92d21db75cf509109e39221b2353aeb416a4f4f339c95324508c6c1891",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://docs.dev.runwayml.com/guides/pricing/",
+  "source_urls": [
+    "https://docs.dev.runwayml.com/guides/pricing/",
+    "https://docs.dev.runwayml.com/guides/using-models/"
+  ],
+  "official_examples": [
+    {
+      "title": "Runway 官方模型展示",
+      "url": "https://runwayml.com/research/introducing-runway-gen-4.5",
+      "note": "Runway 官方研究与模型样片入口"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Gen-4.5",
+      "variant_key": "Gen-4.5",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video"
+      ],
+      "pricing": "12 credits/秒；1 credit=$0.01",
+      "currency": "USD",
+      "price_per_second": 0.12,
+      "comparison_group": "usd-720p-silent",
+      "price_basis": "Gen-4.5 · 720p · 无原生生成音频",
+      "resolution": "1280×720 / 720×1280 等",
+      "duration": "2–10s",
+      "frame_rate": "24/25fps",
+      "aspect_ratios": null,
+      "native_audio": false,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "无免费生成 API credits；需充值，最低 $10",
+      "note": "原生 API 行未公开首尾帧模式。"
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_video_generation": true
+}

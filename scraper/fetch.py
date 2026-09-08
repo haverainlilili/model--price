@@ -12,6 +12,7 @@ import shutil
 import time
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urljoin
 
 import requests
 
@@ -102,11 +103,12 @@ def html_to_text(html: str) -> str:
     return text.strip()
 
 
-def _clean(text: str) -> str:
+def _clean(text: str, max_chars: int | None = MAX_TEXT_CHARS) -> str:
     text = text.replace("​", "").replace("\xa0", " ")
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n\s*\n+", "\n", text)
-    return text.strip()[:MAX_TEXT_CHARS]
+    cleaned = text.strip()
+    return cleaned if max_chars is None else cleaned[:max_chars]
 
 
 def _find_chrome_executable() -> str | None:
@@ -143,7 +145,8 @@ def _chrome_launch_options() -> dict:
 
 
 def _render_once(url: str, wait_ms: int, preserve_links: bool = False,
-                 language: str = "zh-CN") -> str:
+                 language: str = "zh-CN", max_chars: int | None = MAX_TEXT_CHARS,
+                 final_url_validator=None) -> str:
     """执行一次浏览器渲染；公告可选择保留链接，价格页保持纯文本。"""
     try:
         from playwright.sync_api import sync_playwright
@@ -159,11 +162,15 @@ def _render_once(url: str, wait_ms: int, preserve_links: bool = False,
                 )
                 page = ctx.new_page()
                 page.goto(url, wait_until="domcontentloaded", timeout=45000)
+                if final_url_validator is not None and not final_url_validator(page.url):
+                    raise FetchError(f"重定向到非允许官网: {page.url}")
                 try:
                     page.wait_for_load_state("networkidle", timeout=12000)
                 except Exception:
                     pass  # 有些站永远有长连接, networkidle 等不到
                 page.wait_for_timeout(wait_ms)
+                if final_url_validator is not None and not final_url_validator(page.url):
+                    raise FetchError(f"延迟重定向到非允许官网: {page.url}")
                 if preserve_links:
                     # 公告抽取需要 href；inner_text 会把链接目标全部丢掉。
                     text = html_to_text(page.locator("body").first.inner_html())
@@ -174,7 +181,7 @@ def _render_once(url: str, wait_ms: int, preserve_links: bool = False,
                 browser.close()
         if not text or not text.strip():
             raise FetchError("渲染后页面为空")
-        return _clean(text)
+        return _clean(text, max_chars=max_chars)
     except FetchError:
         raise
     except Exception as exc:
@@ -183,7 +190,9 @@ def _render_once(url: str, wait_ms: int, preserve_links: bool = False,
 
 def fetch_rendered(url: str, wait_ms: int = 6000, retries: int = 2,
                    preserve_links: bool = False,
-                   language: str = "zh-CN") -> str:
+                   language: str = "zh-CN",
+                   max_chars: int | None = MAX_TEXT_CHARS,
+                   final_url_validator=None) -> str:
     """用无头浏览器渲染页面，瞬时导航失败会有限重试。
 
     preserve_links=True 时把正文链接保留为 Markdown，供公告抽取使用；
@@ -199,6 +208,8 @@ def fetch_rendered(url: str, wait_ms: int = 6000, retries: int = 2,
                 wait_ms,
                 preserve_links=preserve_links,
                 language=language,
+                max_chars=max_chars,
+                final_url_validator=final_url_validator,
             )
         except FetchError as exc:
             last_err = exc
@@ -207,7 +218,8 @@ def fetch_rendered(url: str, wait_ms: int = 6000, retries: int = 2,
     raise last_err
 
 
-def fetch(url: str, retries: int = 2, language: str = "zh-CN") -> str:
+def fetch(url: str, retries: int = 2, language: str = "zh-CN",
+          max_chars: int | None = MAX_TEXT_CHARS, final_url_validator=None) -> str:
     """抓取 url 并返回纯文本。失败重试, 最终失败抛 FetchError。"""
     headers = {
         "User-Agent": DEFAULT_UA,
@@ -217,16 +229,33 @@ def fetch(url: str, retries: int = 2, language: str = "zh-CN") -> str:
     last_err: Exception = FetchError("unknown")
     for attempt in range(retries + 1):
         try:
-            resp = requests.get(url, headers=headers, timeout=TIMEOUT,
-                                allow_redirects=True)
+            current_url = url
+            resp = None
+            for _hop in range(11):
+                if final_url_validator is not None and not final_url_validator(current_url):
+                    raise FetchError(f"重定向到非允许官网: {current_url}")
+                resp = requests.get(current_url, headers=headers, timeout=TIMEOUT,
+                                    allow_redirects=False)
+                if resp.status_code not in (301, 302, 303, 307, 308):
+                    break
+                location = resp.headers.get("location")
+                if not location:
+                    break
+                current_url = urljoin(current_url, location)
+            else:
+                raise FetchError("官网重定向次数超过 10 次")
+            final_url = getattr(resp, "url", None) or current_url
             if resp.status_code == 200:
+                if final_url_validator is not None and not final_url_validator(final_url):
+                    raise FetchError(f"重定向到非允许官网: {final_url}")
                 # 响应头没给 charset 时 requests 会猜 ISO-8859-1, 中文页会乱码
                 if not resp.encoding or resp.encoding.lower() == "iso-8859-1":
                     resp.encoding = resp.apparent_encoding or "utf-8"
                 body = resp.text
                 ctype = resp.headers.get("content-type", "").lower()
                 looks_html = "html" in ctype or body[:200].lstrip().startswith("<")
-                return _clean(html_to_text(body) if looks_html else body)
+                return _clean(html_to_text(body) if looks_html else body,
+                              max_chars=max_chars)
             last_err = FetchError(f"HTTP {resp.status_code}")
         except requests.RequestException as exc:
             last_err = exc

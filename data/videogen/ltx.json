@@ -1,0 +1,85 @@
+{
+  "provider_name": "LTX Video API",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "f842c082ac1b7fa2148cd616ee20ffc228b66692b04a09ffbb5f0be545f4cf17",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://docs.ltx.video/pricing",
+  "source_urls": [
+    "https://docs.ltx.video/pricing",
+    "https://docs.ltx.video/models"
+  ],
+  "official_examples": [
+    {
+      "title": "LTX 2.5 官方视频模型样例",
+      "url": "https://ltx.io/model/api",
+      "note": "LTX 官方模型与 API 展示"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "LTX 2.5 Fast 720p",
+      "variant_key": "LTX 2.5 Fast 720p",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "$0.09/秒",
+      "currency": "USD",
+      "price_per_second": 0.09,
+      "comparison_group": "usd-720p-audio",
+      "price_basis": "LTX 2.5 Fast · 720p · native audio",
+      "resolution": "720p",
+      "duration": "6–20s",
+      "frame_rate": "24/25/48/50fps",
+      "aspect_ratios": "横屏 / 竖屏",
+      "native_audio": true,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "无；最低购买 $5",
+      "note": null
+    },
+    {
+      "name": "LTX 2.5 Fast 1080p",
+      "variant_key": "LTX 2.5 Fast 1080p",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "$0.13/秒",
+      "currency": "USD",
+      "price_per_second": 0.13,
+      "comparison_group": "usd-1080p-audio",
+      "price_basis": "LTX 2.5 Fast · 1080p · native audio",
+      "resolution": "1080p",
+      "duration": "6–20s",
+      "frame_rate": "24/25/48/50fps",
+      "aspect_ratios": "横屏 / 竖屏",
+      "native_audio": true,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "无；最低购买 $5",
+      "note": null
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_video_generation": true
+}

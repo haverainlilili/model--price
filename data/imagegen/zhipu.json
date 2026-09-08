@@ -1,0 +1,109 @@
+{
+  "provider_name": "智谱 CogView",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "cc9491e17d4899100f84c4f59d492b0ad19002f17817e9f25763a6de7b786d25",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://docs.bigmodel.cn/cn/guide/models/image-generation/cogview-4",
+  "source_urls": [
+    "https://docs.bigmodel.cn/cn/guide/models/image-generation/cogview-4",
+    "https://docs.bigmodel.cn/cn/guide/models/free/cogview-3-flash",
+    "https://docs.z.ai/guides/overview/pricing",
+    "https://docs.z.ai/api-reference/image/generate-image"
+  ],
+  "official_examples": [
+    {
+      "title": "CogView-4 官方应用示例",
+      "url": "https://docs.bigmodel.cn/cn/guide/models/image-generation/cogview-4",
+      "media_url": "https://cdn.bigmodel.cn/markdown/176832067703920260113-235926.jpeg",
+      "note": "智谱官方文档与稳定官方样图"
+    }
+  ],
+  "service_regions": [
+    "domestic",
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "CogView-4（中国区）",
+      "variant_key": "CogView-4（中国区）",
+      "api_available": true,
+      "modes": [
+        "text-to-image"
+      ],
+      "pricing": "¥0.06/次；Batch ¥0.03/次",
+      "currency": "CNY",
+      "price_per_image": 0.06,
+      "comparison_group": "cny-standard-1mp",
+      "price_basis": "CogView-4 · 中国区 · 1024×1024 · 非 Batch",
+      "resolution": "边长 512–2048、16 的倍数、面积≤2²¹；含 1024²",
+      "aspect_ratios": null,
+      "output_formats": "URL 保留 30 天",
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "standard",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "domestic",
+      "free_quota": null,
+      "note": null
+    },
+    {
+      "name": "CogView-3-Flash（中国区）",
+      "variant_key": "CogView-3-Flash（中国区）",
+      "api_available": true,
+      "modes": [
+        "text-to-image"
+      ],
+      "pricing": "免费模型；官网未公布数值配额",
+      "currency": "CNY",
+      "price_per_image": null,
+      "comparison_group": null,
+      "price_basis": "独立免费模型，不是 CogView-4 免费额度",
+      "resolution": "1024×1024",
+      "aspect_ratios": null,
+      "output_formats": null,
+      "comparison_width": null,
+      "comparison_height": null,
+      "quality_tier": null,
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "domestic",
+      "free_quota": "免费（官网未公布数值配额）",
+      "note": "与 CogView-4 分列，不能把本模型免费状态套用于 CogView-4。"
+    },
+    {
+      "name": "CogView-4（全球区）",
+      "variant_key": "CogView-4（全球区）",
+      "api_available": true,
+      "modes": [
+        "text-to-image"
+      ],
+      "pricing": "$0.01/张",
+      "currency": "USD",
+      "price_per_image": 0.01,
+      "comparison_group": "usd-standard-1mp",
+      "price_basis": "CogView-4 · 全球区 · 1024×1024",
+      "resolution": "1024×1024",
+      "aspect_ratios": null,
+      "output_formats": null,
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "standard",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": "全球与中国区为独立官方区域价。"
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_image_generation": true
+}

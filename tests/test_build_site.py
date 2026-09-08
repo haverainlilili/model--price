@@ -1,6 +1,25 @@
+import os
+import stat
+import tempfile
 import unittest
+from pathlib import Path
 
 from scraper import build_site
+
+
+class AtomicArtifactTests(unittest.TestCase):
+    def test_atomic_write_preserves_public_read_permissions(self):
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory) / "index.html"
+            target.write_text("old", encoding="utf-8")
+            os.chmod(target, 0o644)
+            build_site._atomic_write_text(target, "new")
+            self.assertEqual(target.read_text(encoding="utf-8"), "new")
+            self.assertEqual(stat.S_IMODE(target.stat().st_mode), 0o644)
+
+            fresh = Path(directory) / "data.json"
+            build_site._atomic_write_text(fresh, "{}")
+            self.assertEqual(stat.S_IMODE(fresh.stat().st_mode), 0o644)
 
 
 class ResponsiveCssTests(unittest.TestCase):
@@ -33,6 +52,24 @@ class ViewSwitchTests(unittest.TestCase):
         self.assertIn('data-view-btn="websearch"', tabs)
         self.assertIn('aria-controls="websearch-overview"', tabs)
         self.assertIn('联网搜索</button>', tabs)
+
+    def test_child_hashes_keep_their_owning_module_visible(self):
+        self.assertIn("v.indexOf('imagegen-')===0", build_site.JS)
+        self.assertIn("v.indexOf('videogen-')===0", build_site.JS)
+        self.assertIn("v.indexOf('ws-')===0", build_site.JS)
+        self.assertIn("v.indexOf('plan-')===0", build_site.JS)
+
+    def test_renders_both_media_generation_tabs_when_present(self):
+        tabs = build_site._view_tabs(
+            has_plans=True, has_websearch=True,
+            has_imagegen=True, has_videogen=True)
+
+        self.assertIn('data-view-btn="imagegen"', tabs)
+        self.assertIn('aria-controls="imagegen-overview"', tabs)
+        self.assertIn('AI 生图</button>', tabs)
+        self.assertIn('data-view-btn="videogen"', tabs)
+        self.assertIn('aria-controls="videogen-overview"', tabs)
+        self.assertIn('AI 生视频</button>', tabs)
 
 
 class QuickVariantTests(unittest.TestCase):
@@ -447,6 +484,223 @@ class WebSearchSectionTests(unittest.TestCase):
             build_site._websearch_section(self._cfg(), {}),
             "",
         )
+
+
+class GenerationSectionTests(unittest.TestCase):
+    def _configs(self):
+        return [
+            {
+                "id": "intl", "name": "Intl Lab", "region": "国际",
+                "examples": [{
+                    "title": "Official output",
+                    "url": "https://official.example/gallery",
+                    "media_url": "https://official.example/sample.webp",
+                    "note": "Official source",
+                }],
+            },
+            {"id": "cn", "name": "CN Lab", "region": "国内"},
+        ]
+
+    def test_image_chart_scales_only_inside_strict_currency_and_quality_groups(self):
+        base = {
+            "api_available": True, "resolution": "1024x1024",
+            "comparison_width": 1024, "comparison_height": 1024,
+            "quality_tier": "standard", "currency": "USD",
+            "comparison_group": "usd-standard-1mp", "price_basis": "1K default",
+        }
+        records = {
+            "intl": {"offerings": [
+                {**base, "name": "Low", "price_per_image": .02},
+                {**base, "name": "High", "price_per_image": .04},
+                {**base, "name": "Wrong currency", "currency": "CNY", "price_per_image": .01},
+                {"name": "Dynamic token", "currency": "USD", "price_per_image": None,
+                 "comparison_group": None, "pricing": "token based"},
+                {**base, "name": "Missing currency", "currency": None, "price_per_image": .01},
+                {**base, "name": "No public API", "api_available": False, "price_per_image": .01},
+                {**base, "name": "Wrong shape", "resolution": "1024x2048",
+                 "comparison_width": 1024, "comparison_height": 2048, "price_per_image": .01},
+                {**base, "name": "Wrong tier", "quality_tier": "premium", "price_per_image": .01},
+            ]},
+            "cn": {"offerings": [{
+                **base, "name": "CN Standard", "currency": "CNY",
+                "comparison_group": "cny-standard-1mp", "price_per_image": .1,
+            }]},
+        }
+
+        chart = build_site._generation_price_chart("imagegen", self._configs(), records)
+
+        self.assertIn("USD · 标准约 1MP", chart)
+        self.assertIn("人民币 · 标准约 1MP", chart)
+        self.assertIn('style="--ws-bar-height:50.0%"', chart)
+        self.assertIn('style="--ws-bar-height:100.0%"', chart)
+        for excluded in ("Wrong currency", "Dynamic token", "Missing currency",
+                         "No public API", "Wrong shape", "Wrong tier"):
+            self.assertNotIn(excluded, chart)
+        self.assertIn("不同组的柱高不可横向比较", chart)
+
+    def test_video_chart_keeps_audio_and_silent_rates_separate(self):
+        base = {
+            "api_available": True, "resolution": "720p", "comparison_resolution": "720p",
+            "currency": "USD", "price_basis": "720p official",
+        }
+        records = {"intl": {"offerings": [
+            {**base, "name": "Audio", "price_per_second": .1,
+             "comparison_group": "usd-720p-audio", "native_audio": True},
+            {**base, "name": "Silent", "price_per_second": .05,
+             "comparison_group": "usd-720p-silent", "native_audio": False},
+            {**base, "name": "Bad audio claim", "price_per_second": .01,
+             "comparison_group": "usd-720p-audio", "native_audio": False},
+            {**base, "name": "Unknown silent audio", "price_per_second": .01,
+             "comparison_group": "usd-720p-silent", "native_audio": None},
+            {**base, "name": "Wrong video resolution", "comparison_resolution": "1080p",
+             "price_per_second": .01, "comparison_group": "usd-720p-silent",
+             "native_audio": False},
+            {**base, "name": "Video no API", "api_available": False,
+             "price_per_second": .01, "comparison_group": "usd-720p-silent",
+             "native_audio": False},
+            {**base, "name": "Deprecated model", "price_per_second": .08,
+             "comparison_group": "usd-720p-silent", "native_audio": False,
+             "lifecycle_status": "deprecated"},
+        ]}}
+
+        chart = build_site._generation_price_chart("videogen", self._configs(), records)
+
+        self.assertIn("USD · 720p · 原生音频", chart)
+        self.assertIn("USD · 720p · 无原生音频", chart)
+        for excluded in ("Bad audio claim", "Unknown silent audio",
+                         "Wrong video resolution", "Video no API"):
+            self.assertNotIn(excluded, chart)
+        self.assertIn('class="ws-bar-col gen-bar-col is-transitional"', chart)
+        self.assertIn('data-life="已弃用（仍可调用）"', chart)
+        self.assertNotIn("即将停用", chart)
+
+    def test_lifecycle_cutoff_excludes_expired_chart_but_keeps_future_striped(self):
+        from datetime import date
+        offering = {
+            "name": "Scheduled", "api_available": True, "currency": "USD",
+            "price_per_second": .1, "comparison_group": "usd-720p-silent",
+            "native_audio": False, "comparison_resolution": "720p",
+            "lifecycle_status": "sunsetting", "sunset_at": "2026-09-24",
+        }
+        records = {"intl": {"offerings": [offering]}}
+        before = build_site._generation_price_entries(
+            "videogen", self._configs(), records, date(2026, 9, 23))
+        on_date = build_site._generation_price_entries(
+            "videogen", self._configs(), records, date(2026, 9, 24))
+        after = build_site._generation_price_entries(
+            "videogen", self._configs(), records, date(2026, 9, 25))
+        self.assertEqual(len(before["usd-720p-silent"]), 1)
+        self.assertTrue(before["usd-720p-silent"][0]["transitional"])
+        self.assertEqual(len(on_date["usd-720p-silent"]), 1)
+        self.assertEqual(after["usd-720p-silent"], [])
+
+    def test_mixed_service_regions_publish_dynamic_chart_counts(self):
+        providers = [{"id": "mixed", "name": "Mixed", "region": "国内"}]
+        records = {"mixed": {"offerings": [
+            {"name": "Global", "region": "intl", "api_available": True,
+             "currency": "USD", "price_per_image": .03,
+             "comparison_group": "usd-standard-1mp", "comparison_width": 1024,
+             "comparison_height": 1024, "quality_tier": "standard",
+             "price_basis": "global 1K"},
+            {"name": "China", "region": "domestic", "api_available": True,
+             "currency": "CNY", "price_per_image": .2,
+             "comparison_group": "cny-standard-1mp", "comparison_width": 1024,
+             "comparison_height": 1024, "quality_tier": "standard",
+             "price_basis": "China 1K"},
+        ]}}
+        chart = build_site._generation_price_chart("imagegen", providers, records)
+        self.assertEqual(chart.count('data-total="1" data-intl="1" data-domestic="0"'), 2)
+        self.assertEqual(chart.count('data-total="1" data-intl="0" data-domestic="1"'), 2)
+        self.assertIn('data-region="intl"', chart)
+        self.assertIn('data-region="domestic"', chart)
+        self.assertIn('data-region-bars', chart)
+
+    def test_discontinued_provider_tombstone_and_unstated_quota_are_factual(self):
+        providers = [{"id": "gone", "name": "Gone API", "region": "国际"},
+                     {"id": "live", "name": "Live API", "region": "国际"}]
+        records = {
+            "gone": {"source": "official", "has_image_generation": False,
+                     "product_status": "discontinued",
+                     "product_status_date": "2026-08-17",
+                     "product_status_note": "Official shutdown",
+                     "source_urls": ["https://official.example/deprecations"],
+                     "offerings": []},
+            "live": {"source": "official", "offerings": [{
+                "name": "Current", "api_available": True, "modes": ["text-to-image"],
+                "free_quota": None,
+            }]},
+        }
+        section = build_site._imagegen_section(providers, records)
+        self.assertIn("Gone API", section)
+        self.assertIn("已于 2026-08-17 停止", section)
+        self.assertIn("Official shutdown", section)
+        self.assertIn('class="gen-row gen-tombstone"', section)
+        self.assertIn("官网未说明", section)
+
+    def test_mobile_generation_gallery_is_horizontal_and_details_jump_remains(self):
+        self.assertIn(".gen-sample-card{flex:0 0 min(82vw,320px)", build_site.CSS)
+        self.assertIn("body[data-view=imagegen] .jump-imagegen", build_site.CSS)
+        self.assertIn("scroller.scrollLeft=Math.max", build_site.JS)
+        self.assertEqual(build_site.JS.count("scrollIntoView"), 2)
+        self.assertNotIn("x.scrollIntoView", build_site.JS)
+
+    def test_small_official_decimal_is_not_rounded(self):
+        self.assertEqual(build_site._fmt(.0035), "0.0035")
+
+    def test_official_gallery_renders_media_and_rejects_unsafe_links(self):
+        configs = self._configs() + [{
+            "id": "unsafe", "name": "Unsafe", "region": "国际",
+            "examples": [{"title": "bad", "url": "javascript:alert(1)"}],
+        }]
+
+        gallery = build_site._generation_examples("imagegen", configs, {})
+
+        self.assertIn('src="https://official.example/sample.webp"', gallery)
+        self.assertIn('href="https://official.example/gallery"', gallery)
+        self.assertIn("查看厂商官方样例", gallery)
+        self.assertNotIn("javascript:", gallery)
+        self.assertNotIn(">bad<", gallery)
+
+    def test_video_gallery_can_show_an_official_gif_as_image(self):
+        configs = [{
+            "id": "demo", "name": "Demo", "region": "国际",
+            "examples": [{
+                "title": "Official montage", "url": "https://example.com/gallery",
+                "media_url": "https://example.com/montage.gif", "media_type": "image",
+            }],
+        }]
+
+        gallery = build_site._generation_examples("videogen", configs, {})
+
+        self.assertIn('<img src="https://example.com/montage.gif"', gallery)
+        self.assertNotIn("<video", gallery)
+
+    def test_fact_table_shows_api_status_sources_and_no_subjective_score(self):
+        configs = [{
+            "id": "demo", "name": "Demo", "region": "国际",
+            "examples": [{"title": "Sample", "url": "https://example.com/sample"}],
+        }]
+        records = {"demo": {
+            "source": "official_seed", "seed_verified": True,
+            "source_url": "https://example.com/pricing",
+            "offerings": [{
+                "name": "Web-only model", "api_available": False,
+                "modes": ["text-to-image"], "pricing": "$10/month",
+                "currency": "USD", "price_per_image": None,
+                "comparison_group": None, "resolution": "1024x1024",
+                "free_quota": "none", "note": "automation prohibited",
+            }],
+        }}
+
+        section = build_site._imagegen_section(configs, records)
+
+        self.assertIn("AI 生图 · 价格与能力", section)
+        self.assertIn("不做主观画质评分", section)
+        self.assertIn("✗ 无公开 API", section)
+        self.assertIn("官网事实种子 · 待自动校准", section)
+        self.assertIn('href="https://example.com/pricing"', section)
+        self.assertIn('href="https://example.com/sample"', section)
+        self.assertNotIn("评分：", section)
 
 
 class NewsCardTests(unittest.TestCase):

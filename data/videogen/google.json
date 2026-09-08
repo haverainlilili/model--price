@@ -1,0 +1,187 @@
+{
+  "provider_name": "Google Veo",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "9741c20854ade3557f9ed2615b19e07dd38fd9ae2a84d6230b32e0ccf89725dc",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+  "source_urls": [
+    "https://ai.google.dev/gemini-api/docs/pricing",
+    "https://ai.google.dev/gemini-api/docs/video"
+  ],
+  "official_examples": [
+    {
+      "title": "Veo 3.1 官方视频样片",
+      "url": "https://deepmind.google/models/veo/",
+      "media_url": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/veo__page-cover-1_hcTy7l3.mp4",
+      "note": "Google DeepMind 官方模型页与稳定官方样片"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Veo 3.1 Lite",
+      "variant_key": "Veo 3.1 Lite",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "$0.05/秒（720p）；$0.08/秒（1080p）",
+      "currency": "USD",
+      "price_per_second": 0.05,
+      "comparison_group": "usd-720p-audio",
+      "price_basis": "Veo 3.1 Lite · 720p · 原生同步音频",
+      "resolution": "720p / 1080p",
+      "duration": "4/6/8s",
+      "frame_rate": "24fps",
+      "aspect_ratios": "16:9 / 9:16",
+      "native_audio": true,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "Free Tier 不可用",
+      "note": null
+    },
+    {
+      "name": "Veo 3.1 Fast",
+      "variant_key": "Veo 3.1 Fast",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "$0.10/秒（720p）；$0.12/秒（1080p）",
+      "currency": "USD",
+      "price_per_second": 0.1,
+      "comparison_group": "usd-720p-audio",
+      "price_basis": "Veo 3.1 Fast · 720p · 原生同步音频",
+      "resolution": "720p / 1080p / 4K",
+      "duration": "4/6/8s",
+      "frame_rate": "24fps",
+      "aspect_ratios": "16:9 / 9:16",
+      "native_audio": true,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "Free Tier 不可用",
+      "note": null
+    },
+    {
+      "name": "Veo 3.1 Standard",
+      "variant_key": "Veo 3.1 Standard",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame"
+      ],
+      "pricing": "$0.40/秒（720p/1080p）",
+      "currency": "USD",
+      "price_per_second": 0.4,
+      "comparison_group": "usd-720p-audio",
+      "price_basis": "Veo 3.1 Standard · 720p · 原生同步音频",
+      "resolution": "720p / 1080p / 4K",
+      "duration": "4/6/8s",
+      "frame_rate": "24fps",
+      "aspect_ratios": "16:9 / 9:16",
+      "native_audio": true,
+      "comparison_resolution": "720p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "Free Tier 不可用",
+      "note": null
+    },
+    {
+      "name": "Veo 3.1 Fast 1080p",
+      "variant_key": "Veo 3.1 Fast 1080p",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video"
+      ],
+      "pricing": "$0.12/秒",
+      "currency": "USD",
+      "price_per_second": 0.12,
+      "comparison_group": "usd-1080p-audio",
+      "price_basis": "Veo 3.1 Fast · 1080p · 原生同步音频",
+      "resolution": "1080p",
+      "duration": "4/6/8s",
+      "frame_rate": "24fps",
+      "aspect_ratios": "16:9 / 9:16",
+      "native_audio": true,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "Free Tier 不可用",
+      "note": null
+    },
+    {
+      "name": "Veo 3.1 Lite 1080p",
+      "variant_key": "Veo 3.1 Lite 1080p",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video"
+      ],
+      "pricing": "$0.08/秒",
+      "currency": "USD",
+      "price_per_second": 0.08,
+      "comparison_group": "usd-1080p-audio",
+      "price_basis": "Veo 3.1 Lite · 1080p · 原生同步音频",
+      "resolution": "1080p",
+      "duration": "4/6/8s",
+      "frame_rate": "24fps",
+      "aspect_ratios": "16:9 / 9:16",
+      "native_audio": true,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "Free Tier 不可用",
+      "note": null
+    },
+    {
+      "name": "Veo 3.1 Standard 1080p",
+      "variant_key": "Veo 3.1 Standard 1080p",
+      "api_available": true,
+      "modes": [
+        "text-to-video",
+        "image-to-video"
+      ],
+      "pricing": "$0.40/秒",
+      "currency": "USD",
+      "price_per_second": 0.4,
+      "comparison_group": "usd-1080p-audio",
+      "price_basis": "Veo 3.1 Standard · 1080p · 原生同步音频",
+      "resolution": "1080p",
+      "duration": "4/6/8s",
+      "frame_rate": "24fps",
+      "aspect_ratios": "16:9 / 9:16",
+      "native_audio": true,
+      "comparison_resolution": "1080p",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": "Free Tier 不可用",
+      "note": null
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_video_generation": true
+}

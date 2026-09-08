@@ -1,0 +1,86 @@
+{
+  "provider_name": "MiniMax Image",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "2e329251ea070a236ef2c0caf28d4296b3a6c1451c7ae6fa0a12bfb5a746601d",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://platform.minimaxi.com/docs/guides/pricing-paygo",
+  "source_urls": [
+    "https://platform.minimaxi.com/docs/guides/pricing-paygo",
+    "https://platform.minimaxi.com/docs/api-reference/image-generation-t2i",
+    "https://platform.minimax.io/docs/guides/pricing-paygo"
+  ],
+  "official_examples": [
+    {
+      "title": "MiniMax image-01 官方样例",
+      "url": "https://platform.minimax.io/docs/guides/image-generation",
+      "media_url": "https://filecdn.minimax.chat/public/b2c8d2e7-e0bf-4f00-8e91-6b7b18c17bda.jpeg",
+      "note": "MiniMax 官方文档与官方 CDN 样图"
+    }
+  ],
+  "service_regions": [
+    "domestic",
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "image-01（中国区）",
+      "variant_key": "image-01（中国区）",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "reference"
+      ],
+      "pricing": "¥0.025/张",
+      "currency": "CNY",
+      "price_per_image": 0.025,
+      "comparison_group": "cny-standard-1mp",
+      "price_basis": "image-01 · 中国区 · 1024×1024",
+      "resolution": "1024×1024；亦支持 512–2048 自定义",
+      "aspect_ratios": "1:1、16:9、4:3、3:2、2:3、3:4、9:16、21:9",
+      "output_formats": "URL（24h）/ Base64",
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "standard",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "domestic",
+      "free_quota": null,
+      "note": null
+    },
+    {
+      "name": "image-01（全球区）",
+      "variant_key": "image-01（全球区）",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "reference"
+      ],
+      "pricing": "$0.0035/张",
+      "currency": "USD",
+      "price_per_image": 0.0035,
+      "comparison_group": "usd-standard-1mp",
+      "price_basis": "image-01 · 全球区 · 1024×1024",
+      "resolution": "1024×1024",
+      "aspect_ratios": null,
+      "output_formats": null,
+      "comparison_width": 1024,
+      "comparison_height": 1024,
+      "quality_tier": "standard",
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": "最新官方全球价；无稳定数值 API 免费额度。"
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_image_generation": true
+}

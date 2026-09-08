@@ -1,0 +1,108 @@
+{
+  "provider_name": "Adobe Firefly",
+  "category": "api",
+  "source": "official_seed",
+  "seed_verified": true,
+  "verified_at": "2026-09-08",
+  "verification_hash": "96707f0740478660c53f72ef3991682c1a22a4ef5ff54af573e4359f4e129f2e",
+  "page_has_relevant_content": null,
+  "product_status": "active",
+  "product_status_date": null,
+  "product_status_note": null,
+  "seed_cutoff": "latest official snapshot · 2026-09-08",
+  "source_url": "https://developer.adobe.com/firefly-services/docs/firefly-api/",
+  "source_urls": [
+    "https://developer.adobe.com/firefly-services/docs/firefly-api/",
+    "https://developer.adobe.com/firefly-services/docs/firefly-api/guides/concepts/credits/",
+    "https://developer.adobe.com/firefly-services/docs/firefly-api/guides/how-tos/cm-generate-image/feature-guide"
+  ],
+  "official_examples": [
+    {
+      "title": "Adobe Firefly 文生图官方样例",
+      "url": "https://www.adobe.com/products/firefly/features/text-to-image.html",
+      "note": "Adobe 官方功能与生成示例页"
+    }
+  ],
+  "service_regions": [
+    "intl"
+  ],
+  "offerings": [
+    {
+      "name": "Firefly Image 5 Generate Image API",
+      "variant_key": "Firefly Image 5 Generate Image API",
+      "api_available": true,
+      "modes": [
+        "text-to-image",
+        "image-edit",
+        "reference"
+      ],
+      "pricing": "企业授权 / 联系销售；消费者 generative credits 不是 API 单价",
+      "currency": null,
+      "price_per_image": null,
+      "comparison_group": null,
+      "price_basis": "Generate Image API 无公开自助单张价",
+      "resolution": "原生最高 4MP",
+      "aspect_ratios": null,
+      "output_formats": null,
+      "comparison_width": null,
+      "comparison_height": null,
+      "quality_tier": null,
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": "Image 5 的 instruct edit 使用 referenceBlobs。"
+    },
+    {
+      "name": "Firefly Fill Image API",
+      "variant_key": "Firefly Fill Image API",
+      "api_available": true,
+      "modes": [
+        "inpainting"
+      ],
+      "pricing": "企业授权 / 联系销售",
+      "currency": null,
+      "price_per_image": null,
+      "comparison_group": null,
+      "price_basis": "独立 Fill Image API；无公开自助单张价",
+      "resolution": null,
+      "aspect_ratios": null,
+      "output_formats": null,
+      "comparison_width": null,
+      "comparison_height": null,
+      "quality_tier": null,
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": "与 Image 5 Generate Image 端点分列。"
+    },
+    {
+      "name": "Firefly Expand Image API",
+      "variant_key": "Firefly Expand Image API",
+      "api_available": true,
+      "modes": [
+        "outpainting"
+      ],
+      "pricing": "企业授权 / 联系销售",
+      "currency": null,
+      "price_per_image": null,
+      "comparison_group": null,
+      "price_basis": "独立 Expand Image API；无公开自助单张价",
+      "resolution": null,
+      "aspect_ratios": null,
+      "output_formats": null,
+      "comparison_width": null,
+      "comparison_height": null,
+      "quality_tier": null,
+      "lifecycle_status": "active",
+      "sunset_at": null,
+      "region": "intl",
+      "free_quota": null,
+      "note": "与 Image 5 Generate Image 端点分列。"
+    }
+  ],
+  "fetched_at": null,
+  "seeded_at": "2026-09-08T09:00:46+00:00",
+  "has_image_generation": true
+}

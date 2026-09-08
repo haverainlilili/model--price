@@ -26,7 +26,7 @@
    "output_per_1m": 20.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Standard；短上下文；促销价，原价未注明，至少持续至 2026-11-21"
+   "note": "Standard；短上下文；促销价格至少持续至2026年11月21日，页面未提供原价"
   },
   {
    "model": "gpt-5.6-sol",
@@ -34,7 +34,7 @@
    "output_per_1m": 30.0,
    "cached_input_per_1m": 0.8,
    "currency": "USD",
-   "note": "Standard；长上下文；促销价，原价未注明，至少持续至 2026-11-21"
+   "note": "Standard；长上下文；促销价格至少持续至2026年11月21日，页面未提供原价"
   },
   {
    "model": "gpt-5.6-terra",
@@ -386,7 +386,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "Batch；短上下文；促销价，原价未注明，至少持续至 2026-11-21"
+   "note": "Batch；短上下文；促销价格至少持续至2026年11月21日，页面未提供原价"
   },
   {
    "model": "gpt-5.6-sol",
@@ -394,7 +394,7 @@
    "output_per_1m": 15.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Batch；长上下文；促销价，原价未注明，至少持续至 2026-11-21"
+   "note": "Batch；长上下文；促销价格至少持续至2026年11月21日，页面未提供原价"
   },
   {
    "model": "gpt-5.6-terra",
@@ -722,7 +722,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "Flex；短上下文；促销价，原价未注明，至少持续至 2026-11-21"
+   "note": "Flex；短上下文；促销价格至少持续至2026年11月21日，页面未提供原价"
   },
   {
    "model": "gpt-5.6-sol",
@@ -730,7 +730,7 @@
    "output_per_1m": 15.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Flex；长上下文；促销价，原价未注明，至少持续至 2026-11-21"
+   "note": "Flex；长上下文；促销价格至少持续至2026年11月21日，页面未提供原价"
   },
   {
    "model": "gpt-5.6-terra",
@@ -906,7 +906,7 @@
    "output_per_1m": 150.0,
    "cached_input_per_1m": 4.0,
    "currency": "USD",
-   "note": "Fast mode；长上下文；不支持 EU 数据驻留"
+   "note": "Fast mode；长上下文"
   },
   {
    "model": "gpt-5.6-sol",
@@ -914,7 +914,7 @@
    "output_per_1m": 40.0,
    "cached_input_per_1m": 0.8,
    "currency": "USD",
-   "note": "Fast mode；短上下文；促销价，原价未注明，至少持续至 2026-11-21"
+   "note": "Fast mode；短上下文；促销价格至少持续至2026年11月21日，页面未提供原价"
   },
   {
    "model": "gpt-5.6-sol",
@@ -922,7 +922,7 @@
    "output_per_1m": 60.0,
    "cached_input_per_1m": 1.6,
    "currency": "USD",
-   "note": "Fast mode；长上下文；促销价，原价未注明，至少持续至 2026-11-21"
+   "note": "Fast mode；长上下文；促销价格至少持续至2026年11月21日，页面未提供原价"
   },
   {
    "model": "gpt-5.6-terra",
@@ -1077,12 +1077,28 @@
    "note": "Fast mode"
   },
   {
+   "model": "gpt-5.6-sol",
+   "input_per_1m": 4.0,
+   "output_per_1m": 20.0,
+   "cached_input_per_1m": 0.4,
+   "currency": "USD",
+   "note": "Cyber models；短上下文；促销价格至少持续至2026年11月21日，页面未提供原价"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "input_per_1m": 8.0,
+   "output_per_1m": 30.0,
+   "cached_input_per_1m": 0.8,
+   "currency": "USD",
+   "note": "Cyber models；长上下文；促销价格至少持续至2026年11月21日，页面未提供原价"
+  },
+  {
    "model": "gpt-5.6-cyber",
    "input_per_1m": 12.5,
    "output_per_1m": 75.0,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Cyber；短上下文"
+   "note": "Cyber models；短上下文"
   },
   {
    "model": "gpt-5.5-cyber",
@@ -1090,7 +1106,7 @@
    "output_per_1m": 75.0,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Cyber；短上下文"
+   "note": "Cyber models；短上下文"
   },
   {
    "model": "gpt-realtime-2.1",
@@ -1290,7 +1306,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Audio tokens；TTS"
+   "note": "Audio tokens"
   },
   {
    "model": "gpt-4o-mini-tts",
@@ -1298,7 +1314,39 @@
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Text tokens；TTS"
+   "note": "Text tokens"
+  },
+  {
+   "model": "gpt-image-2.5-sunburst",
+   "input_per_1m": 8.0,
+   "output_per_1m": 30.0,
+   "cached_input_per_1m": 2.0,
+   "currency": "USD",
+   "note": "图像生成；Standard；Image tokens"
+  },
+  {
+   "model": "gpt-image-2.5-sunburst",
+   "input_per_1m": 5.0,
+   "output_per_1m": null,
+   "cached_input_per_1m": 1.25,
+   "currency": "USD",
+   "note": "图像生成；Standard；Text tokens"
+  },
+  {
+   "model": "gpt-image-2.5-flare",
+   "input_per_1m": 8.0,
+   "output_per_1m": 30.0,
+   "cached_input_per_1m": 2.0,
+   "currency": "USD",
+   "note": "图像生成；Standard；Image tokens"
+  },
+  {
+   "model": "gpt-image-2.5-flare",
+   "input_per_1m": 5.0,
+   "output_per_1m": null,
+   "cached_input_per_1m": 1.25,
+   "currency": "USD",
+   "note": "图像生成；Standard；Text tokens"
   },
   {
    "model": "gpt-image-2",
@@ -1466,7 +1514,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "转录模型；另列估算成本 $0.006/分钟"
+   "note": "转录模型；另有页面列出的估算成本 $0.006/minute"
   },
   {
    "model": "gpt-4o-mini-transcribe",
@@ -1474,7 +1522,7 @@
    "output_per_1m": 5.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "转录模型；另列估算成本 $0.003/分钟"
+   "note": "转录模型；另有页面列出的估算成本 $0.003/minute"
   },
   {
    "model": "gpt-4o-transcribe-diarize",
@@ -1482,7 +1530,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "转录及说话人分离；另列估算成本 $0.006/分钟"
+   "note": "转录与说话人分离模型；另有页面列出的估算成本 $0.006/minute"
   },
   {
    "model": "chat-latest",
@@ -1490,7 +1538,7 @@
    "output_per_1m": 30.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Specialized；ChatGPT；Standard"
+   "note": "Specialized models；ChatGPT；Standard"
   },
   {
    "model": "gpt-5.3-codex",
@@ -1498,7 +1546,7 @@
    "output_per_1m": 14.0,
    "cached_input_per_1m": 0.175,
    "currency": "USD",
-   "note": "Specialized；Codex；Standard"
+   "note": "Specialized models；Codex；Standard"
   },
   {
    "model": "gpt-5-search-api",
@@ -1506,7 +1554,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.125,
    "currency": "USD",
-   "note": "Specialized；Search；Standard"
+   "note": "Specialized models；Search；Standard"
   },
   {
    "model": "text-embedding-3-small",
@@ -1514,7 +1562,7 @@
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "类型：Embedding；Standard"
+   "note": "embedding；Standard"
   },
   {
    "model": "text-embedding-3-large",
@@ -1522,7 +1570,7 @@
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "类型：Embedding；Standard"
+   "note": "embedding；Standard"
   },
   {
    "model": "text-embedding-ada-002",
@@ -1530,7 +1578,7 @@
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "类型：Embedding；Standard"
+   "note": "embedding；Standard"
   },
   {
    "model": "omni-moderation-latest",
@@ -1538,7 +1586,7 @@
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "类型：Moderation；限时免费"
+   "note": "Moderation；免费"
   },
   {
    "model": "gpt-5.3-codex",
@@ -1546,7 +1594,7 @@
    "output_per_1m": 28.0,
    "cached_input_per_1m": 0.35,
    "currency": "USD",
-   "note": "Specialized；Codex；Fast mode"
+   "note": "Specialized models；Codex；Fast mode"
   },
   {
    "model": "o4-mini-2025-04-16",
@@ -1554,7 +1602,7 @@
    "output_per_1m": 16.0,
    "cached_input_per_1m": 1.0,
    "currency": "USD",
-   "note": "微调模型推理；Standard；训练价按小时，未计入 token 字段"
+   "note": "微调模型推理；Standard；训练价格为 $100/hour，未计入token价格字段"
   },
   {
    "model": "o4-mini-2025-04-16 (data sharing)",
@@ -1562,7 +1610,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "微调模型推理；Standard；data sharing"
+   "note": "微调模型推理；Standard；data sharing；训练价格为 $100/hour，未计入token价格字段"
   },
   {
    "model": "gpt-4.1-2025-04-14",
@@ -1634,7 +1682,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "微调模型推理；Batch；训练价按小时，未计入 token 字段"
+   "note": "微调模型推理；Batch；训练价格为 $100/hour，未计入token价格字段"
   },
   {
    "model": "o4-mini-2025-04-16 (data sharing)",
@@ -1642,7 +1690,7 @@
    "output_per_1m": 4.0,
    "cached_input_per_1m": 0.25,
    "currency": "USD",
-   "note": "微调模型推理；Batch；data sharing"
+   "note": "微调模型推理；Batch；data sharing；训练价格为 $100/hour，未计入token价格字段"
   },
   {
    "model": "gpt-4.1-2025-04-14",
@@ -1710,9 +1758,9 @@
   }
  ],
  "page_has_pricing": true,
- "price_hash": "74854a23958471528fcff8563d0c27a7f143cb17ef8b58ff659c320aeff205a2",
- "fetched_at": "2026-09-04T20:05:46Z",
- "status_note": "页面无变化",
+ "price_hash": "d327a865a1840c95f22c734f2a887eb66a9b2f6f7163f51bbecaf40cd112a2a5",
+ "fetched_at": "2026-09-08T19:05:46Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-08T18:05:46Z"
+ "last_fetch_ts": "2026-09-08T19:05:46Z"
 }

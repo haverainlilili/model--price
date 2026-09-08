@@ -2,7 +2,7 @@
  "url": "https://open.bigmodel.cn/pricing",
  "source": "claude",
  "currency": "CNY",
- "promotions": "GLM-5.3-Flash：5折限时两周至09-09\nBatch API：高效完成大规模数据处理任务，只需五折费用 了解更多信息\n新品上线限时抢4折体验包，立享优惠",
+ "promotions": "GLM-5.3-Flash：5折限时两周\n缓存存储：将上下文缓存起来，按“元/百万tokens/小时”计费，目前多数模型为限时免费。\n有。Batch API 面向大规模离线数据处理任务，按标准 API 价格的五折计费，适合批量分析、数据清洗等非实时场景。",
  "models": [
   {
    "model": "GLM-5.3",
@@ -10,7 +10,7 @@
    "output_per_1m": 28.0,
    "cached_input_per_1m": 2.0,
    "currency": "CNY",
-   "note": "上下文 1M；缓存存储限时免费"
+   "note": "1M上下文；缓存存储限时免费"
   },
   {
    "model": "GLM-5.3-Flash",
@@ -18,7 +18,7 @@
    "output_per_1m": 1.4,
    "cached_input_per_1m": 0.115,
    "currency": "CNY",
-   "note": "上下文 1M；5折限时两周至09-09，原输入价 ¥0.8/百万 tokens、原输出价 ¥2.8/百万 tokens、原缓存命中价 ¥0.23/百万 tokens；缓存存储限时免费"
+   "note": "原生多模态模型，1M上下文；5折限时两周，原价输入0.8元/百万tokens、输出2.8元/百万tokens、缓存命中0.23元/百万tokens；缓存存储限时免费"
   },
   {
    "model": "GLM-5.2",
@@ -26,167 +26,63 @@
    "output_per_1m": 28.0,
    "cached_input_per_1m": 2.0,
    "currency": "CNY",
-   "note": "上下文 1M；缓存存储限时免费"
+   "note": "文本模型，1M上下文；缓存存储限时免费"
   },
   {
-   "model": "GLM-5.1",
-   "input_per_1m": 6.0,
-   "output_per_1m": 24.0,
-   "cached_input_per_1m": 1.3,
+   "model": "GLM-OCR",
+   "input_per_1m": 0.2,
+   "output_per_1m": 0.2,
+   "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "输入长度 [0, 32) 千tokens；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-5.1",
-   "input_per_1m": 8.0,
-   "output_per_1m": 28.0,
-   "cached_input_per_1m": 2.0,
-   "currency": "CNY",
-   "note": "输入长度 [32+) 千tokens；缓存存储限时免费"
+   "note": "OCR模型，32K上下文；Batch API不支持"
   },
   {
    "model": "GLM-5V-Turbo",
    "input_per_1m": 5.0,
    "output_per_1m": 22.0,
-   "cached_input_per_1m": 1.2,
+   "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "输入长度 [0, 32) 千tokens；多模态模型；缓存存储限时免费"
+   "note": "多模态模型；[0,32K)档位"
   },
   {
    "model": "GLM-5V-Turbo",
    "input_per_1m": 7.0,
    "output_per_1m": 26.0,
-   "cached_input_per_1m": 1.8,
+   "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "输入长度 [32+) 千tokens；多模态模型；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-5-Turbo",
-   "input_per_1m": 5.0,
-   "output_per_1m": 22.0,
-   "cached_input_per_1m": 1.2,
-   "currency": "CNY",
-   "note": "输入长度 [0, 32) 千tokens；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-5-Turbo",
-   "input_per_1m": 7.0,
-   "output_per_1m": 26.0,
-   "cached_input_per_1m": 1.8,
-   "currency": "CNY",
-   "note": "输入长度 [32+) 千tokens；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-5",
-   "input_per_1m": 4.0,
-   "output_per_1m": 18.0,
-   "cached_input_per_1m": 1.0,
-   "currency": "CNY",
-   "note": "输入长度 [0, 32) 千tokens；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-5",
-   "input_per_1m": 6.0,
-   "output_per_1m": 22.0,
-   "cached_input_per_1m": 1.5,
-   "currency": "CNY",
-   "note": "输入长度 [32+) 千tokens；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-4.7",
-   "input_per_1m": 2.0,
-   "output_per_1m": 8.0,
-   "cached_input_per_1m": 0.4,
-   "currency": "CNY",
-   "note": "输入长度 [0, 32) 千tokens；输出长度 [0, 0.2) 千tokens；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-4.7",
-   "input_per_1m": 3.0,
-   "output_per_1m": 14.0,
-   "cached_input_per_1m": 0.6,
-   "currency": "CNY",
-   "note": "输入长度 [0, 32) 千tokens；输出长度 [0.2+) 千tokens；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-4.7",
-   "input_per_1m": 4.0,
-   "output_per_1m": 16.0,
-   "cached_input_per_1m": 0.8,
-   "currency": "CNY",
-   "note": "输入长度 [32, 200) 千tokens；缓存存储限时免费"
+   "note": "多模态模型；[32K+)档位"
   },
   {
    "model": "GLM-4.6V",
    "input_per_1m": 1.0,
    "output_per_1m": 3.0,
-   "cached_input_per_1m": 0.2,
+   "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "输入长度 [0, 32) 千tokens；多模态模型；缓存存储限时免费"
+   "note": "多模态模型；[0,32K)档位"
   },
   {
    "model": "GLM-4.6V",
    "input_per_1m": 2.0,
    "output_per_1m": 6.0,
-   "cached_input_per_1m": 0.4,
+   "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "输入长度 [32, 128) 千tokens；多模态模型；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-4.5-Air",
-   "input_per_1m": 0.8,
-   "output_per_1m": 2.0,
-   "cached_input_per_1m": 0.16,
-   "currency": "CNY",
-   "note": "输入长度 [0, 32) 千tokens；输出长度 [0, 0.2) 千tokens；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-4.5-Air",
-   "input_per_1m": 0.8,
-   "output_per_1m": 6.0,
-   "cached_input_per_1m": 0.16,
-   "currency": "CNY",
-   "note": "输入长度 [0, 32) 千tokens；输出长度 [0.2+) 千tokens；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-4.5-Air",
-   "input_per_1m": 1.2,
-   "output_per_1m": 8.0,
-   "cached_input_per_1m": 0.24,
-   "currency": "CNY",
-   "note": "输入长度 [32, 128) 千tokens；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-4.7-FlashX",
-   "input_per_1m": 0.5,
-   "output_per_1m": 3.0,
-   "cached_input_per_1m": 0.1,
-   "currency": "CNY",
-   "note": "上下文 200K；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-4.7-Flash",
-   "input_per_1m": 0.0,
-   "output_per_1m": 0.0,
-   "cached_input_per_1m": 0.0,
-   "currency": "CNY",
-   "note": "上下文 200K；限时免费"
+   "note": "多模态模型；[32K,128K)档位"
   },
   {
    "model": "GLM-4.6V-FlashX",
    "input_per_1m": 0.15,
    "output_per_1m": 1.5,
-   "cached_input_per_1m": 0.03,
+   "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "输入长度 [0, 32) 千tokens；多模态模型；缓存存储限时免费"
+   "note": "多模态模型；[0,32K)档位"
   },
   {
    "model": "GLM-4.6V-FlashX",
    "input_per_1m": 0.3,
    "output_per_1m": 3.0,
-   "cached_input_per_1m": 0.03,
+   "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "输入长度 [32, 128) 千tokens；多模态模型；缓存存储限时免费"
+   "note": "多模态模型；[32K,128K)档位"
   },
   {
    "model": "GLM-4.6V-Flash",
@@ -200,143 +96,47 @@
    "model": "GLM-4.5V",
    "input_per_1m": 2.0,
    "output_per_1m": 6.0,
-   "cached_input_per_1m": 0.4,
+   "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "输入长度 [0, 32) 千tokens；多模态模型；缓存存储限时免费"
+   "note": "多模态模型；[0,32K)档位"
   },
   {
    "model": "GLM-4.5V",
    "input_per_1m": 4.0,
    "output_per_1m": 12.0,
-   "cached_input_per_1m": 0.8,
-   "currency": "CNY",
-   "note": "输入长度 [32, 64) 千tokens；多模态模型；缓存存储限时免费"
-  },
-  {
-   "model": "GLM-4-Plus",
-   "input_per_1m": 5.0,
-   "output_per_1m": 5.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "上下文 128K；页面仅列统一单价，未区分输入与输出"
+   "note": "多模态模型；[32K,64K)档位"
   },
   {
-   "model": "GLM-4-Plus",
-   "input_per_1m": 2.5,
-   "output_per_1m": 2.5,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "Batch API；上下文 128K；页面仅列统一单价，未区分输入与输出；五折费用，标准 API 原价 ¥5/百万 tokens"
-  },
-  {
-   "model": "GLM-4-Air-250414",
-   "input_per_1m": 0.5,
-   "output_per_1m": 0.5,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "上下文 128K；页面仅列统一单价，未区分输入与输出"
-  },
-  {
-   "model": "GLM-4-Air-250414",
-   "input_per_1m": 0.25,
-   "output_per_1m": 0.25,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "Batch API；上下文 128K；页面仅列统一单价，未区分输入与输出；五折费用，标准 API 原价 ¥0.5/百万 tokens"
-  },
-  {
-   "model": "GLM-4-AirX",
-   "input_per_1m": 10.0,
-   "output_per_1m": 10.0,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "上下文 8K；页面仅列统一单价，未区分输入与输出"
-  },
-  {
-   "model": "GLM-4-Long",
-   "input_per_1m": 1.0,
-   "output_per_1m": 1.0,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "上下文 1M；页面仅列统一单价，未区分输入与输出"
-  },
-  {
-   "model": "GLM-4-Long",
-   "input_per_1m": 0.5,
-   "output_per_1m": 0.5,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "Batch API；上下文 1M；页面仅列统一单价，未区分输入与输出；五折费用，标准 API 原价 ¥1/百万 tokens"
-  },
-  {
-   "model": "GLM-4-Assistant",
-   "input_per_1m": 5.0,
-   "output_per_1m": 5.0,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "上下文 128K；页面仅列统一单价，未区分输入与输出"
-  },
-  {
-   "model": "GLM-Z1-Air",
-   "input_per_1m": 0.5,
-   "output_per_1m": 0.5,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "上下文 128K；推理模型；页面仅列统一单价，未区分输入与输出"
-  },
-  {
-   "model": "GLM-Z1-AirX",
-   "input_per_1m": 5.0,
-   "output_per_1m": 5.0,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "上下文 32K；推理模型；页面仅列统一单价，未区分输入与输出"
-  },
-  {
-   "model": "GLM-Z1-FlashX",
-   "input_per_1m": 0.1,
-   "output_per_1m": 0.1,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "上下文 128K；推理模型；页面仅列统一单价，未区分输入与输出"
-  },
-  {
-   "model": "GLM-4-FlashX-250414",
-   "input_per_1m": 0.1,
-   "output_per_1m": 0.1,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "上下文 128K；页面仅列统一单价，未区分输入与输出"
-  },
-  {
-   "model": "GLM-4-FlashX-250414",
-   "input_per_1m": 0.05,
-   "output_per_1m": 0.05,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "Batch API；上下文 128K；页面仅列统一单价，未区分输入与输出；五折费用，标准 API 原价 ¥0.1/百万 tokens"
-  },
-  {
-   "model": "GLM-4-Flash-250414",
+   "model": "GLM-4.7-Flash",
    "input_per_1m": 0.0,
    "output_per_1m": 0.0,
-   "cached_input_per_1m": null,
+   "cached_input_per_1m": 0.0,
    "currency": "CNY",
-   "note": "上下文 128K；页面仅列统一单价，未区分输入与输出；限时免费"
+   "note": "文本模型，200K上下文；限时免费"
   },
   {
-   "model": "GLM-Z1-Flash",
-   "input_per_1m": 0.0,
-   "output_per_1m": 0.0,
-   "cached_input_per_1m": null,
+   "model": "GLM-5.1",
+   "input_per_1m": 6.0,
+   "output_per_1m": 24.0,
+   "cached_input_per_1m": 1.3,
    "currency": "CNY",
-   "note": "上下文 128K；推理模型；页面仅列统一单价，未区分输入与输出；限时免费"
+   "note": "[0,32K)档位"
+  },
+  {
+   "model": "GLM-5.1",
+   "input_per_1m": 8.0,
+   "output_per_1m": 28.0,
+   "cached_input_per_1m": 2.0,
+   "currency": "CNY",
+   "note": "[32K+)档位"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "29ad334f038d502c552966a3ccd37211a81a715438d1601b8fcfa9770f000708",
- "fetched_at": "2026-09-07T14:09:21Z",
- "status_note": "页面无变化",
+ "price_hash": "56a00e82e713e0c5b218a95c858fa18a95493add26f8a182f3f4fda5d7a2c01d",
+ "fetched_at": "2026-09-08T04:07:14Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-08T03:07:14Z"
+ "last_fetch_ts": "2026-09-08T04:07:14Z"
 }

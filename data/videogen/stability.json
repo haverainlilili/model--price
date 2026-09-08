@@ -1,15 +1,11 @@
 {
  "provider_name": "Stability AI Video",
  "category": "api",
- "source": "official_seed",
- "seed_verified": true,
- "verified_at": "2026-09-08",
- "verification_hash": "75fae5083114443e85310dd9daca7e80847be61ff273cb639de17cd3b47c3762",
- "page_has_relevant_content": null,
- "product_status": "active",
- "product_status_date": null,
- "product_status_note": null,
- "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source": "official",
+ "page_has_relevant_content": true,
+ "product_status": "discontinued",
+ "product_status_date": "2025-07-24",
+ "product_status_note": "Stable Video Diffusion API 已正式弃用，托管 API 端点不再可用；模型仅可自行托管。",
  "source_url": "https://kb.stability.ai/knowledge-base/how-to-access-stable-video-diffusion",
  "source_urls": [
   "https://kb.stability.ai/knowledge-base/how-to-access-stable-video-diffusion",
@@ -27,44 +23,17 @@
  "service_regions": [
   "intl"
  ],
- "offerings": [
-  {
-   "name": "Stable Video Diffusion（self-host only）",
-   "variant_key": "Stable Video Diffusion（self-host only）",
-   "api_available": false,
-   "modes": [
-    "image-to-video"
-   ],
-   "pricing": "托管视频 API 已停止；自托管计算成本自定",
-   "currency": null,
-   "price_per_second": null,
-   "comparison_group": null,
-   "price_basis": "无当前托管 API 价格",
-   "resolution": "1024×576 等",
-   "duration": "≤4s",
-   "frame_rate": "模型条件 6fps / 输出 24fps（版本相关）",
-   "aspect_ratios": null,
-   "native_audio": false,
-   "comparison_resolution": null,
-   "lifecycle_status": "self-host-only",
-   "sunset_at": null,
-   "region": "intl",
-   "free_quota": null,
-   "note": "Stability 托管 SVD API 已于 2025-07-24 停用；当前仅开源自托管。"
-  }
- ],
- "fetched_at": null,
- "seeded_at": "2026-09-08T09:00:46+00:00",
- "has_video_generation": true,
+ "offerings": [],
+ "fetched_at": "2026-09-08T14:24:55Z",
+ "has_video_generation": false,
  "configured_source_urls": [
   "https://kb.stability.ai/knowledge-base/how-to-access-stable-video-diffusion",
   "https://platform.stability.ai/docs/release-notes"
  ],
- "last_fetch_ts": "2026-09-08T13:28:52Z",
+ "last_fetch_ts": "2026-09-08T14:24:55Z",
  "source_warnings": [],
  "videogen_hash": "f0dfb0e7ff5ca2d55d370b2aeda72094a01ff9af7d04e424a79256b63cc1cd12",
- "videogen_pending_shrink_hash": "5aa70882cbeea506ffee35c5308c419de3dac757bc1a799b61fb780f28dc3977",
- "videogen_pending_shrink_count": 0,
- "status_note": "官网生视频抽取覆盖项由 1 变为 0，等待下轮同语义结果确认",
- "last_error": "官网生视频抽取覆盖项由 1 变为 0，等待下轮同语义结果确认"
+ "status_note": null,
+ "last_error": null,
+ "videogen_excerpt_hash": "44c590e6397f045cabdd17ae744329f47ba286e578056f559229473bd1c42675"
 }

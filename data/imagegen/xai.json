@@ -1,60 +1,71 @@
 {
-  "provider_name": "xAI Grok Imagine",
-  "category": "api",
-  "source": "official_seed",
-  "seed_verified": true,
-  "verified_at": "2026-09-08",
-  "verification_hash": "dc86ed1743bc4390cf82181fee32ccd287b31818eb7d8a5b4853b10b0351ccfa",
-  "page_has_relevant_content": null,
-  "product_status": "active",
-  "product_status_date": null,
-  "product_status_note": null,
-  "seed_cutoff": "latest official snapshot · 2026-09-08",
-  "source_url": "https://docs.x.ai/developers/pricing",
-  "source_urls": [
-    "https://docs.x.ai/developers/pricing",
-    "https://docs.x.ai/developers/model-capabilities/images/generation"
-  ],
-  "official_examples": [
-    {
-      "title": "Grok Imagine Image 2.0 官方样例",
-      "url": "https://x.ai/news/grok-imagine-image-2",
-      "media_url": "https://docs.x.ai/images/generation/style-oil-painting.webp",
-      "note": "xAI 官方模型发布页与官方文档样图"
-    }
-  ],
-  "service_regions": [
-    "intl"
-  ],
-  "offerings": [
-    {
-      "name": "grok-imagine-image-2.0",
-      "variant_key": "grok-imagine-image-2.0",
-      "api_available": true,
-      "modes": [
-        "text-to-image",
-        "image-edit",
-        "reference"
-      ],
-      "pricing": "$0.06/张（1K medium，API 默认 quality）",
-      "currency": "USD",
-      "price_per_image": 0.06,
-      "comparison_group": "usd-standard-1mp",
-      "price_basis": "1K · medium（API 默认）· 无参考图文生图",
-      "resolution": "1K / 2K",
-      "aspect_ratios": "1:1、16:9、9:16、4:3、3:4、3:2、2:3 等",
-      "output_formats": "URL / Base64",
-      "comparison_width": 1024,
-      "comparison_height": 1024,
-      "quality_tier": "standard",
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": null,
-      "note": "1K low 为 $0.04/张；参考图另收 $0.01/张；2K 价格更高。"
-    }
-  ],
-  "fetched_at": null,
-  "seeded_at": "2026-09-08T09:00:46+00:00",
-  "has_image_generation": true
+ "provider_name": "xAI Grok Imagine",
+ "category": "api",
+ "source": "official_seed",
+ "seed_verified": true,
+ "verified_at": "2026-09-08",
+ "verification_hash": "dc86ed1743bc4390cf82181fee32ccd287b31818eb7d8a5b4853b10b0351ccfa",
+ "page_has_relevant_content": null,
+ "product_status": "active",
+ "product_status_date": null,
+ "product_status_note": null,
+ "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source_url": "https://docs.x.ai/developers/pricing",
+ "source_urls": [
+  "https://docs.x.ai/developers/pricing",
+  "https://docs.x.ai/developers/model-capabilities/images/generation"
+ ],
+ "official_examples": [
+  {
+   "title": "Grok Imagine Image 2.0 官方样例",
+   "url": "https://x.ai/news/grok-imagine-image-2",
+   "media_url": "https://docs.x.ai/images/generation/style-oil-painting.webp",
+   "note": "xAI 官方模型发布页与官方文档样图"
+  }
+ ],
+ "service_regions": [
+  "intl"
+ ],
+ "offerings": [
+  {
+   "name": "grok-imagine-image-2.0",
+   "variant_key": "grok-imagine-image-2.0",
+   "api_available": true,
+   "modes": [
+    "text-to-image",
+    "image-edit",
+    "reference"
+   ],
+   "pricing": "$0.06/张（1K medium，API 默认 quality）",
+   "currency": "USD",
+   "price_per_image": 0.06,
+   "comparison_group": "usd-standard-1mp",
+   "price_basis": "1K · medium（API 默认）· 无参考图文生图",
+   "resolution": "1K / 2K",
+   "aspect_ratios": "1:1、16:9、9:16、4:3、3:4、3:2、2:3 等",
+   "output_formats": "URL / Base64",
+   "comparison_width": 1024,
+   "comparison_height": 1024,
+   "quality_tier": "standard",
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": null,
+   "note": "1K low 为 $0.04/张；参考图另收 $0.01/张；2K 价格更高。"
+  }
+ ],
+ "fetched_at": null,
+ "seeded_at": "2026-09-08T09:00:46+00:00",
+ "has_image_generation": true,
+ "configured_source_urls": [
+  "https://docs.x.ai/developers/pricing",
+  "https://docs.x.ai/developers/model-capabilities/images/generation"
+ ],
+ "last_fetch_ts": "2026-09-08T14:21:40Z",
+ "source_warnings": [],
+ "imagegen_hash": "c0187b1ed5ca108dd76124de65c343e5eefe7b31560f1d43c7cf9807e4a6e323",
+ "imagegen_pending_shrink_hash": "ed63510c97791f45b312a14df625c98ca5d9e75ba922a7883c65e41506484ff5",
+ "imagegen_pending_shrink_count": 3,
+ "status_note": "官网生图抽取覆盖项由 1 变为 3，等待下轮同语义结果确认",
+ "last_error": "官网生图抽取覆盖项由 1 变为 3，等待下轮同语义结果确认"
 }

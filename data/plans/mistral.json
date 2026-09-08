@@ -2,7 +2,7 @@
  "plans": [
   {
    "name": "Free",
-   "plan_type": "聊天会员",
+   "plan_type": "Vibe plan",
    "price": "Free",
    "billing": null,
    "quotas": [
@@ -13,14 +13,14 @@
     }
    ],
    "models": [],
-   "note": "其他消息、网页搜索和编程会话额度仅标注为 Limited，未给出明确数值，未抽取。",
+   "note": "Messages, web searches, and coding sessions are described only as “Limited,” without a numeric quota.",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Pro",
-   "plan_type": "聊天会员",
+   "plan_type": "Vibe plan",
    "price": "$14.99",
-   "billing": "/mo；Excluding taxes",
+   "billing": "/mo; Excluding taxes",
    "quotas": [
     {
      "label": "API credits",
@@ -38,6 +38,11 @@
      "window": null
     },
     {
+     "label": "Task scheduling",
+     "value": "Up to 5",
+     "window": null
+    },
+    {
      "label": "Image generation",
      "value": "Up to 40x free",
      "window": null
@@ -49,12 +54,12 @@
     }
    ],
    "models": [],
-   "note": "“Up to 6x free”“Up to 5x free”和“Up to 40x free”均为官网相对于 Free 套餐的上限口径；Flash answers 为 FAQ 中的示例额度。",
+   "note": "Relative quotas retain the official “Up to” and “x free” wording. The FAQ states that Pro allows 150 Flash answers per day.",
    "source_url": "https://mistral.ai/pricing"
   },
   {
-   "name": "Mistral Pro",
-   "plan_type": "Education plan",
+   "name": "Education plan",
+   "plan_type": "Mistral Pro student plan",
    "price": "$5.99",
    "billing": "/ month",
    "quotas": [
@@ -65,14 +70,14 @@
     }
    ],
    "models": [],
-   "note": "官网 FAQ 表述为：Verified students can get Mistral Pro for $5.99 / month (normally $14.99).",
+   "note": "For verified students; the FAQ says the normal price is $14.99.",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Team",
-   "plan_type": "团队会员",
+   "plan_type": "Vibe team plan",
    "price": "$24.99",
-   "billing": "/user/mo；Excluding taxes",
+   "billing": "/user/mo; Excluding taxes",
    "quotas": [
     {
      "label": "Messages",
@@ -101,18 +106,18 @@
     }
    ],
    "models": [],
-   "note": "相对倍数均以 Free 套餐为基准并保留官网的“Up to”口径；Flash answers 为 FAQ 中的示例额度。",
+   "note": "Relative quotas retain the official “Up to” and “x free” wording. The FAQ explicitly compares 200 Flash answers per day on Team with 150 per day on Pro.",
    "source_url": "https://mistral.ai/pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-08T04:10:05Z",
+ "last_fetch_ts": "2026-09-08T05:10:57Z",
  "source": "official",
  "source_urls": [
   "https://mistral.ai/pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "6ac02b8212b897fdd25aec57bcd5b93ffe5a7d9ec87bf33e4cdf664a87c62124",
- "fetched_at": "2026-09-04T10:12:40Z",
- "status_note": "页面无变化"
+ "plans_hash": "0b1df9ac15677683b8347ab77c3cabe1d55b1236734eab518d6a856afc6314d7",
+ "fetched_at": "2026-09-08T05:10:57Z",
+ "status_note": null
 }

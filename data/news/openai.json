@@ -2,16 +2,23 @@
  "entries": [
   {
    "date": "Sep 8",
+   "title": "Prompt Cache Diagnostics is now generally available in the Responses API for GPT-5.6 and later supported models.",
+   "url": "https://developers.openai.com/api/docs/guides/prompt-caching/diagnostics",
+   "summary": "提示缓存诊断功能正式上线，可分析缓存未命中原因。",
+   "first_seen": "2026-09-08T23:09:18Z"
+  },
+  {
+   "date": "Sep 8",
    "title": "Released GPT Image 2.5 Sunburst and GPT Image 2.5 Flare for image generation and editing through the Image API and the Responses API image generation tool.",
    "url": "https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst",
-   "summary": "发布两款图像生成与编辑模型，支持xhigh和max质量。",
+   "summary": "发布两款GPT Image 2.5模型，分别侧重编辑精度与生成速度。",
    "first_seen": "2026-09-08T19:11:21Z"
   },
   {
    "date": "Sep 3",
    "title": "Released GPT-6 Astra, our most capable model, built for the hardest end-to-end work.",
    "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-   "summary": "发布GPT-6 Astra，面向复杂端到端推理、编码与研究任务。",
+   "summary": "发布GPT-6 Astra，面向复杂端到端推理、编程及研究任务。",
    "first_seen": "2026-09-08T19:11:21Z"
   },
   {
@@ -25,7 +32,7 @@
    "date": "Sep 2",
    "title": "Updated API errors so applications can distinguish traffic that increases too quickly from temporary model overload.",
    "url": "https://developers.openai.com/api/docs/guides/error-codes",
-   "summary": "更新API错误码，以区分流量增长过快和模型临时过载。",
+   "summary": "更新API错误码，以区分流量增长过快与临时模型过载。",
    "first_seen": "2026-09-02T18:09:13Z"
   },
   {
@@ -39,54 +46,47 @@
    "date": "Aug 29",
    "title": "Mutual TLS (mTLS) and X.509 workload identity federation are now generally available for the OpenAI API.",
    "url": "https://developers.openai.com/api/docs/guides/mutual-tls",
-   "summary": "OpenAI API正式提供mTLS和X.509工作负载身份联邦。",
+   "summary": "OpenAI API正式支持mTLS与X.509工作负载身份联合。",
    "first_seen": "2026-09-02T18:09:13Z"
   },
   {
    "date": "Aug 26",
    "title": "Announced the deprecation of `whisper-1`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, and `gpt-4o-transcribe-diarize`.",
    "url": "https://developers.openai.com/api/docs/deprecations",
-   "summary": "四款转录模型将于2027年2月26日停用，Assistants API已关闭。",
+   "summary": "多款旧转录模型将于2027年2月26日停用，Assistants API已关闭。",
    "first_seen": "2026-08-31T10:21:49Z"
   },
   {
    "date": "Aug 21",
    "title": "API customers can now select regional processing for an individual request by using a prefixed domain with an API key from a project having Global geography.",
    "url": "https://developers.openai.com/api/docs/guides/your-data#select-a-processing-region-per-request",
-   "summary": "全球地域项目现可按单次API请求选择区域处理。",
+   "summary": "API客户现可按单次请求选择区域处理位置。",
    "first_seen": "2026-09-02T18:09:13Z"
   },
   {
    "date": "Aug 21",
    "title": "GPT-5.6 Sol now costs $4 per million input tokens and $20 per million output tokens, representing 20% lower input pricing and 33% lower output pricing.",
    "url": "https://developers.openai.com/api/docs/pricing",
-   "summary": "GPT-5.6 Sol输入降价20%，输出降价33%。",
+   "summary": "GPT-5.6 Sol输入与输出价格分别下调20%和33%。",
    "first_seen": "2026-09-08T19:11:21Z"
   },
   {
    "date": "Aug 20",
    "title": "Released the Prompt Caching dashboard on the OpenAI API platform.",
    "url": "https://platform.openai.com/usage?usage_section=prompt-caching",
-   "summary": "发布提示缓存仪表板，可分析命中率及各类令牌用量。",
+   "summary": "上线提示缓存仪表板，可查看命中率及各类缓存令牌指标。",
    "first_seen": "2026-09-02T18:09:13Z"
   },
   {
    "date": "Aug 20",
    "title": "Transparent backgrounds are now available in preview for `gpt-image-2` and `gpt-image-2-2026-04-21` in the Images API and the Responses API image generation tool.",
    "url": "https://developers.openai.com/api/docs/guides/image-generation#customize-image-output",
-   "summary": "GPT Image 2在图像与Responses API中预览支持透明背景。",
+   "summary": "GPT Image 2在图像及Responses API中预览支持透明背景。",
    "first_seen": "2026-09-02T18:09:13Z"
-  },
-  {
-   "date": "Aug 13",
-   "title": "Announced Ultrafast mode, a new API service tier for GPT-5.6 Sol that runs up to 14x faster than Standard processing.",
-   "url": "https://openai.com/form/ultrafast/",
-   "summary": "公布GPT-5.6 Sol超高速模式，速度最高为标准处理的14倍。",
-   "first_seen": "2026-09-08T19:11:21Z"
   }
  ],
- "news_hash": "90cdce85aa19c4330b16d09225ea0208815cd0ccca2f4ec5f5dcd6e6d269cfc4",
- "fetched_at": "2026-09-08T19:11:21Z",
+ "news_hash": "64d8a8975dbf2aafb4151e9f7d23aa81058856ef0fd2e3fb235cd46da9915fc1",
+ "fetched_at": "2026-09-08T23:09:18Z",
  "status_note": null,
  "last_error": null
 }

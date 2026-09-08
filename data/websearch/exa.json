@@ -12,53 +12,53 @@
  "offerings": [
   {
    "name": "Search",
-   "pricing": "$7 / 1k requests；base price includes up to 10 results",
+   "pricing": "$7 / 1k requests",
    "price_per_1k_usd": 7.0,
-   "price_basis": "/search 基础价（每次最多 10 个结果）",
+   "price_basis": "/search base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "标准搜索结果，包含 URLs 和页面内容；支持 highlights、结构化输出和 AI summary",
+   "output_type": "标准搜索结果，包含 URLs 和页面内容；可返回 highlights、structured outputs 和 AI summary",
    "cites_sources": true,
    "default_on": null,
-   "note": "超过10个结果按$1/千结果计费；AI页面摘要按$1/千页计费。"
+   "note": "超过10个结果按$1/1k results计费；AI page summaries按$1/1k pages计费。"
   },
   {
    "name": "Deep Search — deep-lite",
    "pricing": "$12 / 1k requests",
    "price_per_1k_usd": 12.0,
-   "price_basis": "deep-lite 基础价（每次最多 10 个结果）",
+   "price_basis": "deep-lite base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "轻量级综合结果，属于带结构化输出和引用的多步研究",
    "cites_sources": true,
    "default_on": null,
-   "note": "延迟约4秒；额外结果和AI页面摘要与标准搜索同价。"
+   "note": "延迟约4秒；额外结果及AI页面摘要与标准搜索同价。"
   },
   {
    "name": "Deep Search — deep",
    "pricing": "$12 / 1k requests",
    "price_per_1k_usd": 12.0,
-   "price_basis": "deep 基础价（每次最多 10 个结果）",
+   "price_basis": "deep base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "带结构化输出和引用的多步推理结果",
+   "output_type": "多步推理、结构化输出和引用",
    "cites_sources": true,
    "default_on": null,
-   "note": "延迟4–15秒；额外结果和AI页面摘要与标准搜索同价。"
+   "note": "延迟4–15秒；额外结果及AI页面摘要与标准搜索同价。"
   },
   {
    "name": "Deep Search — deep-reasoning",
    "pricing": "$15 / 1k requests",
    "price_per_1k_usd": 15.0,
-   "price_basis": "deep-reasoning 基础价（每次最多 10 个结果）",
+   "price_basis": "deep-reasoning base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "面向较难研究任务、带结构化输出和引用的多步研究结果",
+   "output_type": "面向较难研究任务的多步研究结果，包含结构化输出和引用",
    "cites_sources": true,
    "default_on": null,
-   "note": "延迟12–40秒；额外结果和AI页面摘要与标准搜索同价。"
+   "note": "延迟12–40秒；额外结果及AI页面摘要与标准搜索同价。"
   },
   {
    "name": "Answer",
    "pricing": "$5 / 1k requests",
    "price_per_1k_usd": 5.0,
-   "price_basis": "/answer 基础价",
+   "price_basis": "/answer base price",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "An LLM answer to a question, with citations.",
    "cites_sources": true,
@@ -67,96 +67,30 @@
   },
   {
    "name": "Monitors",
-   "pricing": "$15 / 1k requests；base price includes up to 10 results",
+   "pricing": "$15 / 1k requests",
    "price_per_1k_usd": 15.0,
-   "price_basis": "/monitors 基础价（每次最多 10 个结果）",
+   "price_basis": "/monitors base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "定时搜索并呈现网络上的新事件",
    "cites_sources": null,
    "default_on": null,
-   "note": "超过10个结果按$1/千结果计费；AI页面摘要按$1/千页计费。"
+   "note": "超过10个结果按$1/1k results计费；AI page summaries按$1/1k pages计费。"
   },
   {
-   "name": "Agent — minimal",
-   "pricing": "$0.012 / request",
-   "price_per_1k_usd": 12.0,
-   "price_basis": "Agent fixed effort：minimal，固定每次请求价格",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "异步深度研究、列表构建和信息丰富",
-   "cites_sources": null,
-   "default_on": null,
-   "note": null
-  },
-  {
-   "name": "Agent — low",
-   "pricing": "$0.025 / request",
-   "price_per_1k_usd": 25.0,
-   "price_basis": "Agent fixed effort：low，固定每次请求价格",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "异步深度研究、列表构建和信息丰富",
-   "cites_sources": null,
-   "default_on": null,
-   "note": null
-  },
-  {
-   "name": "Agent — medium",
-   "pricing": "$0.10 / request",
-   "price_per_1k_usd": 100.0,
-   "price_basis": "Agent fixed effort：medium，固定每次请求价格",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "异步深度研究、列表构建和信息丰富",
-   "cites_sources": null,
-   "default_on": null,
-   "note": null
-  },
-  {
-   "name": "Agent — high",
-   "pricing": "$0.50 / request",
-   "price_per_1k_usd": 500.0,
-   "price_basis": "Agent fixed effort：high，固定每次请求价格",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "异步深度研究、列表构建和信息丰富",
-   "cites_sources": null,
-   "default_on": null,
-   "note": null
-  },
-  {
-   "name": "Agent — xhigh",
-   "pricing": "$1.00 / request",
-   "price_per_1k_usd": 1000.0,
-   "price_basis": "Agent fixed effort：xhigh，固定每次请求价格",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "异步深度研究、列表构建和信息丰富",
-   "cites_sources": null,
-   "default_on": null,
-   "note": null
-  },
-  {
-   "name": "Agent — auto / beta max",
-   "pricing": "Usage-based：$0.10 / ACU；Search tool calls $0.005 / search",
-   "price_per_1k_usd": null,
-   "price_basis": "Agent 按实际用量计费",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "异步深度研究、列表构建和信息丰富",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "auto默认每次运行上限$5；beta max默认上限$20。"
-  },
-  {
-   "name": "Search tool calls",
+   "name": "Agent — Search tool calls",
    "pricing": "$0.005 / search",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Agent 用量计费模式中的搜索工具调用",
+   "price_basis": "Agent metered runs中的Search tool calls",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Agent 内置搜索工具调用",
+   "output_type": "Agent异步深度研究、列表构建和数据丰富中的搜索工具调用",
    "cites_sources": null,
    "default_on": null,
-   "note": "在Agent运行的其他用量成本之外按搜索次数计费。"
+   "note": "搜索工具调用费叠加于ACU等实际用量；auto默认上限$5，beta max默认上限$20。"
   }
  ],
- "fetched_at": "2026-09-05T12:15:08Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-08T23:15:26Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-08T22:14:08Z",
- "websearch_hash": "228fcd1291a4da7e1b7e33873a4b3bb6ef0333403c80154fc1da0c63b4629d1e"
+ "last_fetch_ts": "2026-09-08T23:15:26Z",
+ "websearch_hash": "263de0359201089c90f9821c4dbf211517551f42d767dfb86b908070c0f51a51"
 }

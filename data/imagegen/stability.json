@@ -1,58 +1,69 @@
 {
-  "provider_name": "Stability AI",
-  "category": "api",
-  "source": "official_seed",
-  "seed_verified": true,
-  "verified_at": "2026-09-08",
-  "verification_hash": "9dd67501aba856e70c51c30e7087f4886dd9248fdd6ff5b12a89c6b571de42e0",
-  "page_has_relevant_content": null,
-  "product_status": "active",
-  "product_status_date": null,
-  "product_status_note": null,
-  "seed_cutoff": "latest official snapshot · 2026-09-08",
-  "source_url": "https://platform.stability.ai/pricing",
-  "source_urls": [
-    "https://platform.stability.ai/pricing",
-    "https://stability.ai/stable-image"
-  ],
-  "official_examples": [
-    {
-      "title": "Stable Diffusion 3.5 官方样例（非 Stable Image Ultra）",
-      "url": "https://stability.ai/news-updates/introducing-stable-diffusion-3-5",
-      "note": "Stability AI 官方模型发布页；展示 SD3.5，不作为 Ultra 档位样图"
-    }
-  ],
-  "service_regions": [
-    "intl"
-  ],
-  "offerings": [
-    {
-      "name": "Stable Image Ultra",
-      "variant_key": "Stable Image Ultra",
-      "api_available": true,
-      "modes": [
-        "text-to-image",
-        "image-to-image"
-      ],
-      "pricing": "8 credits/张；1 credit=$0.01",
-      "currency": "USD",
-      "price_per_image": 0.08,
-      "comparison_group": "usd-premium-1mp",
-      "price_basis": "Ultra · 1:1 / 1K-class · PAYG",
-      "resolution": "1K-class",
-      "aspect_ratios": "含 1:1 等 9 种比例",
-      "output_formats": "JPEG / PNG / WebP",
-      "comparison_width": 1024,
-      "comparison_height": 1024,
-      "quality_tier": "premium",
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": "新账户 25 credits",
-      "note": "独立编辑/控制接口通常另计 4–8 credits。"
-    }
-  ],
-  "fetched_at": null,
-  "seeded_at": "2026-09-08T09:00:46+00:00",
-  "has_image_generation": true
+ "provider_name": "Stability AI",
+ "category": "api",
+ "source": "official_seed",
+ "seed_verified": true,
+ "verified_at": "2026-09-08",
+ "verification_hash": "9dd67501aba856e70c51c30e7087f4886dd9248fdd6ff5b12a89c6b571de42e0",
+ "page_has_relevant_content": null,
+ "product_status": "active",
+ "product_status_date": null,
+ "product_status_note": null,
+ "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source_url": "https://platform.stability.ai/pricing",
+ "source_urls": [
+  "https://platform.stability.ai/pricing",
+  "https://stability.ai/stable-image"
+ ],
+ "official_examples": [
+  {
+   "title": "Stable Diffusion 3.5 官方样例（非 Stable Image Ultra）",
+   "url": "https://stability.ai/news-updates/introducing-stable-diffusion-3-5",
+   "note": "Stability AI 官方模型发布页；展示 SD3.5，不作为 Ultra 档位样图"
+  }
+ ],
+ "service_regions": [
+  "intl"
+ ],
+ "offerings": [
+  {
+   "name": "Stable Image Ultra",
+   "variant_key": "Stable Image Ultra",
+   "api_available": true,
+   "modes": [
+    "text-to-image",
+    "image-to-image"
+   ],
+   "pricing": "8 credits/张；1 credit=$0.01",
+   "currency": "USD",
+   "price_per_image": 0.08,
+   "comparison_group": "usd-premium-1mp",
+   "price_basis": "Ultra · 1:1 / 1K-class · PAYG",
+   "resolution": "1K-class",
+   "aspect_ratios": "含 1:1 等 9 种比例",
+   "output_formats": "JPEG / PNG / WebP",
+   "comparison_width": 1024,
+   "comparison_height": 1024,
+   "quality_tier": "premium",
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": "新账户 25 credits",
+   "note": "独立编辑/控制接口通常另计 4–8 credits。"
+  }
+ ],
+ "fetched_at": null,
+ "seeded_at": "2026-09-08T09:00:46+00:00",
+ "has_image_generation": true,
+ "configured_source_urls": [
+  "https://platform.stability.ai/pricing",
+  "https://stability.ai/stable-image"
+ ],
+ "last_fetch_ts": "2026-09-08T16:20:14Z",
+ "source_warnings": [],
+ "imagegen_hash": "031d257135a9bcd0d5404cb795803859b54d0c481705ccea9803cdde2a62a7ea",
+ "imagegen_pending_shrink_hash": "1a6b71d141937bb571242e44b60d3d6b34f15f9df107c7041de44058245fc869",
+ "imagegen_pending_shrink_count": 6,
+ "status_note": "官网生图抽取覆盖项由 1 变为 6，等待下轮同语义结果确认",
+ "last_error": "官网生图抽取覆盖项由 1 变为 6，等待下轮同语义结果确认"
 }

@@ -1,60 +1,71 @@
 {
-  "provider_name": "xAI Grok Imagine Video",
-  "category": "api",
-  "source": "official_seed",
-  "seed_verified": true,
-  "verified_at": "2026-09-08",
-  "verification_hash": "cecbf8aa973a313aecea7b7d53ea3a1841962e4a494361911f67defd991fb20d",
-  "page_has_relevant_content": null,
-  "product_status": "active",
-  "product_status_date": null,
-  "product_status_note": null,
-  "seed_cutoff": "latest official snapshot · 2026-09-08",
-  "source_url": "https://docs.x.ai/developers/pricing",
-  "source_urls": [
-    "https://docs.x.ai/developers/pricing",
-    "https://docs.x.ai/developers/model-capabilities/video/generation"
-  ],
-  "official_examples": [
-    {
-      "title": "Grok Imagine Video 1.5 官方样片",
-      "url": "https://x.ai/news/grok-imagine-video-1-5",
-      "note": "xAI 官方发布页与视频样例"
-    }
-  ],
-  "service_regions": [
-    "intl"
-  ],
-  "offerings": [
-    {
-      "name": "grok-imagine-video-1.5",
-      "variant_key": "grok-imagine-video-1.5",
-      "api_available": true,
-      "modes": [
-        "text-to-video",
-        "image-to-video",
-        "video-edit",
-        "reference"
-      ],
-      "pricing": "$0.080/输出秒",
-      "currency": "USD",
-      "price_per_second": 0.08,
-      "comparison_group": "usd-720p-audio",
-      "price_basis": "Video 1.5 · 720p · 原生音频（官网模型费率）",
-      "resolution": "480p / 720p / 1080p",
-      "duration": "1–15s",
-      "frame_rate": null,
-      "aspect_ratios": "1:1、16:9、9:16、4:3、3:4、3:2、2:3",
-      "native_audio": true,
-      "comparison_resolution": "720p",
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": null,
-      "note": "原生音频默认开启，可关闭；型号费率按输出秒列示。"
-    }
-  ],
-  "fetched_at": null,
-  "seeded_at": "2026-09-08T09:00:46+00:00",
-  "has_video_generation": true
+ "provider_name": "xAI Grok Imagine Video",
+ "category": "api",
+ "source": "official_seed",
+ "seed_verified": true,
+ "verified_at": "2026-09-08",
+ "verification_hash": "cecbf8aa973a313aecea7b7d53ea3a1841962e4a494361911f67defd991fb20d",
+ "page_has_relevant_content": null,
+ "product_status": "active",
+ "product_status_date": null,
+ "product_status_note": null,
+ "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source_url": "https://docs.x.ai/developers/pricing",
+ "source_urls": [
+  "https://docs.x.ai/developers/pricing",
+  "https://docs.x.ai/developers/model-capabilities/video/generation"
+ ],
+ "official_examples": [
+  {
+   "title": "Grok Imagine Video 1.5 官方样片",
+   "url": "https://x.ai/news/grok-imagine-video-1-5",
+   "note": "xAI 官方发布页与视频样例"
+  }
+ ],
+ "service_regions": [
+  "intl"
+ ],
+ "offerings": [
+  {
+   "name": "grok-imagine-video-1.5",
+   "variant_key": "grok-imagine-video-1.5",
+   "api_available": true,
+   "modes": [
+    "text-to-video",
+    "image-to-video",
+    "video-edit",
+    "reference"
+   ],
+   "pricing": "$0.080/输出秒",
+   "currency": "USD",
+   "price_per_second": 0.08,
+   "comparison_group": "usd-720p-audio",
+   "price_basis": "Video 1.5 · 720p · 原生音频（官网模型费率）",
+   "resolution": "480p / 720p / 1080p",
+   "duration": "1–15s",
+   "frame_rate": null,
+   "aspect_ratios": "1:1、16:9、9:16、4:3、3:4、3:2、2:3",
+   "native_audio": true,
+   "comparison_resolution": "720p",
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": null,
+   "note": "原生音频默认开启，可关闭；型号费率按输出秒列示。"
+  }
+ ],
+ "fetched_at": null,
+ "seeded_at": "2026-09-08T09:00:46+00:00",
+ "has_video_generation": true,
+ "configured_source_urls": [
+  "https://docs.x.ai/developers/pricing",
+  "https://docs.x.ai/developers/model-capabilities/video/generation"
+ ],
+ "last_fetch_ts": "2026-09-08T16:23:36Z",
+ "source_warnings": [],
+ "videogen_hash": "8c4d375c8c26749074d0d20a552fa1f6184585289acdcb60d06382827df48bcd",
+ "videogen_pending_shrink_hash": "4de76a493c855f7d5265a5af6ec9a44416acdad0083bccf0168834e3ed68e301",
+ "videogen_pending_shrink_count": 5,
+ "status_note": "官网生视频抽取覆盖项由 1 变为 5，等待下轮同语义结果确认",
+ "last_error": "官网生视频抽取覆盖项由 1 变为 5，等待下轮同语义结果确认"
 }

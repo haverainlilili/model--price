@@ -1,86 +1,92 @@
 {
-  "provider_name": "Ideogram",
-  "category": "api",
-  "source": "official_seed",
-  "seed_verified": true,
-  "verified_at": "2026-09-08",
-  "verification_hash": "82109c18a37b6dea82a60d3fc7943b7081ea4a65a37f7583c8c87c099344e1bb",
-  "page_has_relevant_content": null,
-  "product_status": "active",
-  "product_status_date": null,
-  "product_status_note": null,
-  "seed_cutoff": "latest official snapshot · 2026-09-08",
-  "source_url": "https://ideogram.ai/api-pricing/",
-  "source_urls": [
-    "https://ideogram.ai/api-pricing/",
-    "https://developer.ideogram.ai/"
-  ],
-  "official_examples": [
-    {
-      "title": "Ideogram 4.0 官方图片展示",
-      "url": "https://ideogram.ai/models/4.0/",
-      "note": "Ideogram 官方模型页"
-    }
-  ],
-  "service_regions": [
-    "intl"
-  ],
-  "offerings": [
-    {
-      "name": "Ideogram 4 Default",
-      "variant_key": "Ideogram 4 Default",
-      "api_available": true,
-      "modes": [
-        "text-to-image",
-        "image-edit",
-        "reference",
-        "outpainting"
-      ],
-      "pricing": "$0.06/张",
-      "currency": "USD",
-      "price_per_image": 0.06,
-      "comparison_group": "usd-standard-1mp",
-      "price_basis": "V4 Default · 1K 正方形",
-      "resolution": "1K-class",
-      "aspect_ratios": "多种比例",
-      "output_formats": "URL（临时）",
-      "comparison_width": 1024,
-      "comparison_height": 1024,
-      "quality_tier": "standard",
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": null,
-      "note": "Remix、Edit、Reframe、换背景适用官网 API 价表。"
-    },
-    {
-      "name": "Ideogram 4 Quality",
-      "variant_key": "Ideogram 4 Quality",
-      "api_available": true,
-      "modes": [
-        "text-to-image",
-        "image-edit",
-        "reference"
-      ],
-      "pricing": "$0.10/张",
-      "currency": "USD",
-      "price_per_image": 0.1,
-      "comparison_group": "usd-premium-1mp",
-      "price_basis": "V4 Quality · 1K 正方形",
-      "resolution": "1K-class",
-      "aspect_ratios": "多种比例",
-      "output_formats": "URL（临时）",
-      "comparison_width": 1024,
-      "comparison_height": 1024,
-      "quality_tier": "premium",
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": null,
-      "note": null
-    }
-  ],
-  "fetched_at": null,
-  "seeded_at": "2026-09-08T09:00:46+00:00",
-  "has_image_generation": true
+ "provider_name": "Ideogram",
+ "category": "api",
+ "source": "official_seed",
+ "seed_verified": true,
+ "verified_at": "2026-09-08",
+ "verification_hash": "82109c18a37b6dea82a60d3fc7943b7081ea4a65a37f7583c8c87c099344e1bb",
+ "page_has_relevant_content": null,
+ "product_status": "active",
+ "product_status_date": null,
+ "product_status_note": null,
+ "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source_url": "https://ideogram.ai/api-pricing/",
+ "source_urls": [
+  "https://ideogram.ai/api-pricing/",
+  "https://developer.ideogram.ai/"
+ ],
+ "official_examples": [
+  {
+   "title": "Ideogram 4.0 官方图片展示",
+   "url": "https://ideogram.ai/models/4.0/",
+   "note": "Ideogram 官方模型页"
+  }
+ ],
+ "service_regions": [
+  "intl"
+ ],
+ "offerings": [
+  {
+   "name": "Ideogram 4 Default",
+   "variant_key": "Ideogram 4 Default",
+   "api_available": true,
+   "modes": [
+    "text-to-image",
+    "image-edit",
+    "reference",
+    "outpainting"
+   ],
+   "pricing": "$0.06/张",
+   "currency": "USD",
+   "price_per_image": 0.06,
+   "comparison_group": "usd-standard-1mp",
+   "price_basis": "V4 Default · 1K 正方形",
+   "resolution": "1K-class",
+   "aspect_ratios": "多种比例",
+   "output_formats": "URL（临时）",
+   "comparison_width": 1024,
+   "comparison_height": 1024,
+   "quality_tier": "standard",
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": null,
+   "note": "Remix、Edit、Reframe、换背景适用官网 API 价表。"
+  },
+  {
+   "name": "Ideogram 4 Quality",
+   "variant_key": "Ideogram 4 Quality",
+   "api_available": true,
+   "modes": [
+    "text-to-image",
+    "image-edit",
+    "reference"
+   ],
+   "pricing": "$0.10/张",
+   "currency": "USD",
+   "price_per_image": 0.1,
+   "comparison_group": "usd-premium-1mp",
+   "price_basis": "V4 Quality · 1K 正方形",
+   "resolution": "1K-class",
+   "aspect_ratios": "多种比例",
+   "output_formats": "URL（临时）",
+   "comparison_width": 1024,
+   "comparison_height": 1024,
+   "quality_tier": "premium",
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": null,
+   "note": null
+  }
+ ],
+ "fetched_at": null,
+ "seeded_at": "2026-09-08T09:00:46+00:00",
+ "has_image_generation": true,
+ "configured_source_urls": [
+  "https://ideogram.ai/api-pricing/",
+  "https://developer.ideogram.ai/"
+ ],
+ "last_error": "https://ideogram.ai/api-pricing/: 重定向到非允许官网: http://ideogram.ai/pricing/?pricing_tab=api",
+ "last_fetch_ts": "2026-09-08T18:19:55Z"
 }

@@ -5,7 +5,7 @@
  "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
- "product_status_note": null,
+ "product_status_note": "官网提供 Grok Imagine 图片生成 API 及按张定价。",
  "source_url": "https://docs.x.ai/developers/pricing",
  "source_urls": [
   "https://docs.x.ai/developers/pricing",
@@ -24,30 +24,6 @@
  ],
  "offerings": [
   {
-   "name": "grok-imagine-image",
-   "variant_key": null,
-   "api_available": true,
-   "modes": [
-    "text-to-image"
-   ],
-   "pricing": "$0.02 / image",
-   "currency": "USD",
-   "region": null,
-   "price_per_image": 0.02,
-   "comparison_group": null,
-   "price_basis": "grok-imagine-image；质量和分辨率未在价格表中指定；按生成图片计费",
-   "resolution": null,
-   "aspect_ratios": null,
-   "output_formats": null,
-   "comparison_width": null,
-   "comparison_height": null,
-   "quality_tier": null,
-   "lifecycle_status": "unknown",
-   "sunset_at": null,
-   "free_quota": null,
-   "note": "Batch API 支持图片生成，但仍按标准费率计费。"
-  },
-  {
    "name": "grok-imagine-image-quality",
    "variant_key": null,
    "api_available": true,
@@ -59,7 +35,7 @@
    "region": null,
    "price_per_image": 0.05,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image-quality；质量和分辨率未在价格表中指定；按生成图片计费",
+   "price_basis": "grok-imagine-image-quality，按生成图片张数计费；官网未给出对应分辨率",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -69,7 +45,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "Batch API 支持图片生成，但仍按标准费率计费。"
+   "note": "图片和视频生成可用于 Batch API，但仍按标准费率计费。"
   },
   {
    "name": "grok-imagine-image-2.0",
@@ -83,31 +59,53 @@
    "region": null,
    "price_per_image": 0.04,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image-2.0；价格表未按 low/medium 或 1k/2k 拆价；按生成图片计费",
+   "price_basis": "grok-imagine-image-2.0，按生成图片张数计费；价格表未按质量或分辨率拆分",
    "resolution": "1k（默认）、2k",
    "aspect_ratios": "1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3, 2:1, 1:2, 19.5:9, 9:19.5, 20:9, 9:20, 21:9, 5:2, auto",
-   "output_formats": "URL（默认）或 base64",
+   "output_formats": "url（默认）、b64_json/base64",
    "comparison_width": null,
    "comparison_height": null,
    "quality_tier": null,
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "支持每请求生成1–10张；quality支持low、medium、auto，生成默认auto当前采用low。"
+   "note": "每次可生成1–10张；支持low、medium、auto质量，auto生成时当前使用low，并按实际质量计费。"
+  },
+  {
+   "name": "grok-imagine-image",
+   "variant_key": null,
+   "api_available": true,
+   "modes": [
+    "text-to-image"
+   ],
+   "pricing": "$0.02 / image",
+   "currency": "USD",
+   "region": null,
+   "price_per_image": 0.02,
+   "comparison_group": null,
+   "price_basis": "grok-imagine-image，按生成图片张数计费；官网未给出对应分辨率",
+   "resolution": null,
+   "aspect_ratios": null,
+   "output_formats": null,
+   "comparison_width": null,
+   "comparison_height": null,
+   "quality_tier": null,
+   "lifecycle_status": "unknown",
+   "sunset_at": null,
+   "free_quota": null,
+   "note": "图片和视频生成可用于 Batch API，但仍按标准费率计费。"
   }
  ],
- "fetched_at": "2026-09-08T15:19:12Z",
+ "fetched_at": "2026-09-08T18:17:49Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://docs.x.ai/developers/pricing",
   "https://docs.x.ai/developers/model-capabilities/images/generation"
  ],
- "last_fetch_ts": "2026-09-08T17:17:22Z",
+ "last_fetch_ts": "2026-09-08T18:17:49Z",
  "source_warnings": [],
- "imagegen_hash": "d3eeef9f6a2ae00f56e1386e46c667c97b511e130ef5f50d9b236a84c2ecdd95",
- "status_note": "官网生图抽取覆盖项由 3 变为 3，等待下轮同语义结果确认",
- "last_error": "官网生图抽取覆盖项由 3 变为 3，等待下轮同语义结果确认",
- "imagegen_excerpt_hash": "95b9155b470d367cfc22d73a318d94234e7c06f8a1ae24c9def1a54e5e087483",
- "imagegen_pending_shrink_hash": "f9e7c0e6265e44e6a5876ffac386f270fe842d8ba38c57faba66e6e0922ed3cd",
- "imagegen_pending_shrink_count": 3
+ "imagegen_hash": "66b8b01818ddff7b97a7c96e0b87c11ee410257a4bb5bb1597f779e782d298b7",
+ "status_note": null,
+ "last_error": null,
+ "imagegen_excerpt_hash": "0b2894d6a3cba112d9b9453ab466a7944e2d41b454f50b3f02ccccac0d0fc62f"
 }

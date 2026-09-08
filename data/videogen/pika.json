@@ -1,59 +1,70 @@
 {
-  "provider_name": "Pika API",
-  "category": "api",
-  "source": "official_seed",
-  "seed_verified": true,
-  "verified_at": "2026-09-08",
-  "verification_hash": "b6fc8fb2a9c2eadd29dc3110e7a30a2caae4abd5f0663f6d8fb9dc3328396955",
-  "page_has_relevant_content": null,
-  "product_status": "active",
-  "product_status_date": null,
-  "product_status_note": null,
-  "seed_cutoff": "latest official snapshot · 2026-09-08",
-  "source_url": "https://dev.pika.art/pricing",
-  "source_urls": [
-    "https://dev.pika.art/pricing",
-    "https://dev.pika.art/models/pika/pika-2.5"
-  ],
-  "official_examples": [
-    {
-      "title": "Pika 2.5 官方 API 样例",
-      "url": "https://dev.pika.art/models/pika/pika-2.5/image-to-video/examples",
-      "note": "Pika 第一方开发者平台与官方 CDN 样片"
-    }
-  ],
-  "service_regions": [
-    "intl"
-  ],
-  "offerings": [
-    {
-      "name": "Pika 2.5 API",
-      "variant_key": "Pika 2.5 API",
-      "api_available": true,
-      "modes": [
-        "text-to-video",
-        "image-to-video",
-        "first-last-frame"
-      ],
-      "pricing": "边际生成价：720p $0.04/秒；1080p $0.06–0.09/秒；另有强制 $10/月",
-      "currency": "USD",
-      "price_per_second": null,
-      "comparison_group": null,
-      "price_basis": "存在固定月费，完整每秒成本无法直接比较",
-      "resolution": "720p / 1080p",
-      "duration": "T2V 5s；I2V 5/10s；多关键帧 1–10s",
-      "frame_rate": null,
-      "aspect_ratios": null,
-      "native_audio": false,
-      "comparison_resolution": null,
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": "0；首月 $10 用量抵扣需先付月费",
-      "note": "2026-08-05 上线的 Pika 第一方 API；Soundtrack 独立计费 $0.005/秒。"
-    }
-  ],
-  "fetched_at": null,
-  "seeded_at": "2026-09-08T09:00:46+00:00",
-  "has_video_generation": true
+ "provider_name": "Pika API",
+ "category": "api",
+ "source": "official_seed",
+ "seed_verified": true,
+ "verified_at": "2026-09-08",
+ "verification_hash": "b6fc8fb2a9c2eadd29dc3110e7a30a2caae4abd5f0663f6d8fb9dc3328396955",
+ "page_has_relevant_content": null,
+ "product_status": "active",
+ "product_status_date": null,
+ "product_status_note": null,
+ "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source_url": "https://dev.pika.art/pricing",
+ "source_urls": [
+  "https://dev.pika.art/pricing",
+  "https://dev.pika.art/models/pika/pika-2.5"
+ ],
+ "official_examples": [
+  {
+   "title": "Pika 2.5 官方 API 样例",
+   "url": "https://dev.pika.art/models/pika/pika-2.5/image-to-video/examples",
+   "note": "Pika 第一方开发者平台与官方 CDN 样片"
+  }
+ ],
+ "service_regions": [
+  "intl"
+ ],
+ "offerings": [
+  {
+   "name": "Pika 2.5 API",
+   "variant_key": "Pika 2.5 API",
+   "api_available": true,
+   "modes": [
+    "text-to-video",
+    "image-to-video",
+    "first-last-frame"
+   ],
+   "pricing": "边际生成价：720p $0.04/秒；1080p $0.06–0.09/秒；另有强制 $10/月",
+   "currency": "USD",
+   "price_per_second": null,
+   "comparison_group": null,
+   "price_basis": "存在固定月费，完整每秒成本无法直接比较",
+   "resolution": "720p / 1080p",
+   "duration": "T2V 5s；I2V 5/10s；多关键帧 1–10s",
+   "frame_rate": null,
+   "aspect_ratios": null,
+   "native_audio": false,
+   "comparison_resolution": null,
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": "0；首月 $10 用量抵扣需先付月费",
+   "note": "2026-08-05 上线的 Pika 第一方 API；Soundtrack 独立计费 $0.005/秒。"
+  }
+ ],
+ "fetched_at": null,
+ "seeded_at": "2026-09-08T09:00:46+00:00",
+ "has_video_generation": true,
+ "configured_source_urls": [
+  "https://dev.pika.art/pricing",
+  "https://dev.pika.art/models/pika/pika-2.5"
+ ],
+ "last_fetch_ts": "2026-09-08T11:25:27Z",
+ "source_warnings": [],
+ "videogen_hash": "ece600d2b8bb2ba508b6bb637cf6c4dbfbd9f2044cdc2246dbdbb9285689e0d9",
+ "videogen_pending_shrink_hash": "81d63abd4d147e15ae322941876d066422104dbbe04bc150f36692c5edba9592",
+ "videogen_pending_shrink_count": 12,
+ "status_note": "官网生视频抽取覆盖项由 1 变为 12，等待下轮同语义结果确认",
+ "last_error": "官网生视频抽取覆盖项由 1 变为 12，等待下轮同语义结果确认"
 }

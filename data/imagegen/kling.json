@@ -1,61 +1,71 @@
 {
-  "provider_name": "可灵 Kling Image",
-  "category": "api",
-  "source": "official_seed",
-  "seed_verified": true,
-  "verified_at": "2026-09-08",
-  "verification_hash": "e54512de3833a7f3acd0ae41e01c21a624ef7980dad6f2972d00cc2ddc2c3f3d",
-  "page_has_relevant_content": null,
-  "product_status": "active",
-  "product_status_date": null,
-  "product_status_note": null,
-  "seed_cutoff": "latest official snapshot · 2026-09-08",
-  "source_url": "https://klingai.com/document-api/pricing/base/image",
-  "source_urls": [
-    "https://klingai.com/document-api/pricing/base/image",
-    "https://klingai.com/document-api/guides/capability-map/image",
-    "https://klingai.com/document-api/api/image/3-0-omni/image-generation"
-  ],
-  "official_examples": [
-    {
-      "title": "Kling Image 3 Omni 官方样例",
-      "url": "https://klingai.com/quickstart/klingai-image-3-omni-user-guide",
-      "media_url": "https://static-73.klingai-cdn-aws.com/kling-blog/file/1e8b5a2d0b62b47794b370d69cd798a9d5a4a55e93538bcdace0bee5a9830359.png",
-      "note": "可灵官方指南与官方 CDN 样图"
-    }
-  ],
-  "service_regions": [
-    "domestic"
-  ],
-  "offerings": [
-    {
-      "name": "Kling Image 3.0 / Omni",
-      "variant_key": "Kling Image 3.0 / Omni",
-      "api_available": true,
-      "modes": [
-        "text-to-image",
-        "image-to-image",
-        "reference"
-      ],
-      "pricing": "1K/2K 8 points=¥0.20/张",
-      "currency": "CNY",
-      "price_per_image": 0.2,
-      "comparison_group": "cny-standard-1mp",
-      "price_basis": "Image 3.0 · 中国区 · 1K",
-      "resolution": "1K / 2K / 4K",
-      "aspect_ratios": "多种比例",
-      "output_formats": "URL 保留 30 天",
-      "comparison_width": 1024,
-      "comparison_height": 1024,
-      "quality_tier": "standard",
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "domestic",
-      "free_quota": null,
-      "note": "Omni/O1 最多 10 张参考图；4K 为 ¥0.40/张。美元 UI 等值不作为独立区域价。"
-    }
-  ],
-  "fetched_at": null,
-  "seeded_at": "2026-09-08T09:00:46+00:00",
-  "has_image_generation": true
+ "provider_name": "可灵 Kling Image",
+ "category": "api",
+ "source": "official_seed",
+ "seed_verified": true,
+ "verified_at": "2026-09-08",
+ "verification_hash": "e54512de3833a7f3acd0ae41e01c21a624ef7980dad6f2972d00cc2ddc2c3f3d",
+ "page_has_relevant_content": null,
+ "product_status": "active",
+ "product_status_date": null,
+ "product_status_note": null,
+ "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source_url": "https://klingai.com/document-api/pricing/base/image",
+ "source_urls": [
+  "https://klingai.com/document-api/pricing/base/image",
+  "https://klingai.com/document-api/guides/capability-map/image",
+  "https://klingai.com/document-api/api/image/3-0-omni/image-generation"
+ ],
+ "official_examples": [
+  {
+   "title": "Kling Image 3 Omni 官方样例",
+   "url": "https://klingai.com/quickstart/klingai-image-3-omni-user-guide",
+   "media_url": "https://static-73.klingai-cdn-aws.com/kling-blog/file/1e8b5a2d0b62b47794b370d69cd798a9d5a4a55e93538bcdace0bee5a9830359.png",
+   "note": "可灵官方指南与官方 CDN 样图"
+  }
+ ],
+ "service_regions": [
+  "domestic"
+ ],
+ "offerings": [
+  {
+   "name": "Kling Image 3.0 / Omni",
+   "variant_key": "Kling Image 3.0 / Omni",
+   "api_available": true,
+   "modes": [
+    "text-to-image",
+    "image-to-image",
+    "reference"
+   ],
+   "pricing": "1K/2K 8 points=¥0.20/张",
+   "currency": "CNY",
+   "price_per_image": 0.2,
+   "comparison_group": "cny-standard-1mp",
+   "price_basis": "Image 3.0 · 中国区 · 1K",
+   "resolution": "1K / 2K / 4K",
+   "aspect_ratios": "多种比例",
+   "output_formats": "URL 保留 30 天",
+   "comparison_width": 1024,
+   "comparison_height": 1024,
+   "quality_tier": "standard",
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "domestic",
+   "free_quota": null,
+   "note": "Omni/O1 最多 10 张参考图；4K 为 ¥0.40/张。美元 UI 等值不作为独立区域价。"
+  }
+ ],
+ "fetched_at": null,
+ "seeded_at": "2026-09-08T09:00:46+00:00",
+ "has_image_generation": true,
+ "configured_source_urls": [
+  "https://klingai.com/document-api/pricing/base/image",
+  "https://klingai.com/document-api/guides/capability-map/image",
+  "https://klingai.com/document-api/api/image/3-0-omni/image-generation"
+ ],
+ "last_fetch_ts": "2026-09-08T11:19:29Z",
+ "source_warnings": [],
+ "imagegen_hash": "87527a2d0cc8ee559f4ad40020e5667fda51ad793644d12b11e02bba249c903d",
+ "status_note": "官网生图页面无效: 页面是空白/报错/登录/验证壳；保留上次数据",
+ "last_error": "官网生图页面无效: 页面是空白/报错/登录/验证壳；保留上次数据"
 }

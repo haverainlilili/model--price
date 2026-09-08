@@ -290,7 +290,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.16,
    "currency": "CNY",
-   "note": "在线推理（常规）；输入长度 [0, 32] 千 token"
+   "note": "在线推理（常规）；多模态视觉模型；输入长度 [0, 32] 千 token"
   },
   {
    "model": "doubao-seed-1.6-vision",
@@ -298,7 +298,7 @@
    "output_per_1m": 16.0,
    "cached_input_per_1m": 0.16,
    "currency": "CNY",
-   "note": "在线推理（常规）；输入长度 (32, 128] 千 token"
+   "note": "在线推理（常规）；多模态视觉模型；输入长度 (32, 128] 千 token"
   },
   {
    "model": "doubao-seed-1.6-vision",
@@ -306,7 +306,7 @@
    "output_per_1m": 24.0,
    "cached_input_per_1m": 0.16,
    "currency": "CNY",
-   "note": "在线推理（常规）；输入长度 (128, 256] 千 token"
+   "note": "在线推理（常规）；多模态视觉模型；输入长度 (128, 256] 千 token"
   },
   {
    "model": "doubao-seed-translation",
@@ -314,7 +314,7 @@
    "output_per_1m": 3.6,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "在线推理（常规）"
+   "note": "在线推理（常规）；翻译模型"
   },
   {
    "model": "doubao-1.5-pro-32k",
@@ -338,7 +338,7 @@
    "output_per_1m": 9.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "在线推理（常规）"
+   "note": "在线推理（常规）；多模态视觉模型"
   },
   {
    "model": "glm-5.2",
@@ -386,7 +386,7 @@
    "output_per_1m": 9.0,
    "cached_input_per_1m": 0.1,
    "currency": "CNY",
-   "note": "在线推理（常规）"
+   "note": "在线推理（常规）；价格已于 2026 年 8 月 21 日调整"
   },
   {
    "model": "deepseek-v4-pro预览版",
@@ -394,7 +394,7 @@
    "output_per_1m": 27.0,
    "cached_input_per_1m": 0.3,
    "currency": "CNY",
-   "note": "在线推理（常规）；模型计费标准已于 2026 年 8 月 28 日全面上调"
+   "note": "在线推理（常规）；价格已于 2026 年 8 月 28 日调整"
   },
   {
    "model": "deepseek-v4-flash预览版",
@@ -402,7 +402,7 @@
    "output_per_1m": 9.0,
    "cached_input_per_1m": 0.1,
    "currency": "CNY",
-   "note": "在线推理（常规）；模型计费标准已于 2026 年 8 月 28 日全面上调"
+   "note": "在线推理（常规）；价格已于 2026 年 8 月 28 日调整"
   },
   {
    "model": "doubao-seed-2.1-turbo",
@@ -634,7 +634,7 @@
    "output_per_1m": 4.0,
    "cached_input_per_1m": 0.16,
    "currency": "CNY",
-   "note": "批量推理；输入长度 [0, 32] 千 token"
+   "note": "批量推理；多模态视觉模型；输入长度 [0, 32] 千 token"
   },
   {
    "model": "doubao-seed-1.6-vision",
@@ -642,7 +642,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.16,
    "currency": "CNY",
-   "note": "批量推理；输入长度 (32, 128] 千 token"
+   "note": "批量推理；多模态视觉模型；输入长度 (32, 128] 千 token"
   },
   {
    "model": "doubao-seed-1.6-vision",
@@ -650,7 +650,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": 0.16,
    "currency": "CNY",
-   "note": "批量推理；输入长度 (128, 256] 千 token"
+   "note": "批量推理；多模态视觉模型；输入长度 (128, 256] 千 token"
   },
   {
    "model": "doubao-seed-1.6-lite",
@@ -746,7 +746,7 @@
    "output_per_1m": 1.8,
    "cached_input_per_1m": 0.24,
    "currency": "CNY",
-   "note": "批量推理"
+   "note": "批量推理；翻译模型"
   },
   {
    "model": "doubao-1.5-pro-32k",
@@ -810,7 +810,7 @@
    "output_per_1m": 4.5,
    "cached_input_per_1m": 0.1,
    "currency": "CNY",
-   "note": "批量推理"
+   "note": "批量推理；价格已于 2026 年 8 月 21 日调整"
   },
   {
    "model": "deepseek-v4-pro预览版",
@@ -818,7 +818,7 @@
    "output_per_1m": 13.5,
    "cached_input_per_1m": 0.3,
    "currency": "CNY",
-   "note": "批量推理；模型计费标准已于 2026 年 8 月 28 日全面上调"
+   "note": "批量推理；价格已于 2026 年 8 月 28 日调整"
   },
   {
    "model": "deepseek-v4-flash预览版",
@@ -826,7 +826,7 @@
    "output_per_1m": 4.5,
    "cached_input_per_1m": 0.1,
    "currency": "CNY",
-   "note": "批量推理；模型计费标准已于 2026 年 8 月 28 日全面上调"
+   "note": "批量推理；价格已于 2026 年 8 月 28 日调整"
   },
   {
    "model": "doubao-seedance-2.5",
@@ -834,7 +834,7 @@
    "output_per_1m": 70.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 480p/720p，输入不含视频"
+   "note": "视频生成模型；在线推理；输出视频 480p/720p，输入不含视频"
   },
   {
    "model": "doubao-seedance-2.5",
@@ -842,7 +842,7 @@
    "output_per_1m": 42.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 480p/720p，输入包含视频"
+   "note": "视频生成模型；在线推理；输出视频 480p/720p，输入包含视频"
   },
   {
    "model": "doubao-seedance-2.5",
@@ -850,7 +850,7 @@
    "output_per_1m": 55.44,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 1080p，输入不含视频；限时72折，原价 77 元/百万 token；活动时间：北京时间（UTC+8）2026 年 8 月 14 日 14:00 至 9 月 17 日 14:00"
+   "note": "视频生成模型；在线推理；输出视频 1080p，输入不含视频；限时72折，原价 77 元/百万 token"
   },
   {
    "model": "doubao-seedance-2.5",
@@ -858,7 +858,7 @@
    "output_per_1m": 33.12,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 1080p，输入包含视频；限时72折，原价 46 元/百万 token；活动时间：北京时间（UTC+8）2026 年 8 月 14 日 14:00 至 9 月 17 日 14:00"
+   "note": "视频生成模型；在线推理；输出视频 1080p，输入包含视频；限时72折，原价 46 元/百万 token"
   },
   {
    "model": "doubao-seedance-2.0",
@@ -866,7 +866,7 @@
    "output_per_1m": 46.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 480p/720p，输入不含视频"
+   "note": "视频生成模型；在线推理；输出视频 480p/720p，输入不含视频"
   },
   {
    "model": "doubao-seedance-2.0",
@@ -874,7 +874,7 @@
    "output_per_1m": 28.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 480p/720p，输入包含视频"
+   "note": "视频生成模型；在线推理；输出视频 480p/720p，输入包含视频"
   },
   {
    "model": "doubao-seedance-2.0",
@@ -882,7 +882,7 @@
    "output_per_1m": 51.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 1080p，输入不含视频"
+   "note": "视频生成模型；在线推理；输出视频 1080p，输入不含视频"
   },
   {
    "model": "doubao-seedance-2.0",
@@ -890,7 +890,7 @@
    "output_per_1m": 31.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 1080p，输入包含视频"
+   "note": "视频生成模型；在线推理；输出视频 1080p，输入包含视频"
   },
   {
    "model": "doubao-seedance-2.0",
@@ -898,7 +898,7 @@
    "output_per_1m": 26.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 4k，输入不含视频"
+   "note": "视频生成模型；在线推理；输出视频 4k，输入不含视频"
   },
   {
    "model": "doubao-seedance-2.0",
@@ -906,7 +906,7 @@
    "output_per_1m": 16.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 4k，输入包含视频"
+   "note": "视频生成模型；在线推理；输出视频 4k，输入包含视频"
   },
   {
    "model": "doubao-seedance-2.0-fast",
@@ -914,7 +914,7 @@
    "output_per_1m": 27.75,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 480p/720p，输入不含视频；限时75折，原价 37 元/百万 token；活动时间：北京时间（UTC+8）2026 年 8 月 7 日 14:00 至 10 月 7 日 14:00"
+   "note": "视频生成模型；在线推理；输出视频 480p/720p，输入不含视频；限时75折，原价 37 元/百万 token"
   },
   {
    "model": "doubao-seedance-2.0-fast",
@@ -922,7 +922,7 @@
    "output_per_1m": 16.5,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 480p/720p，输入包含视频；限时75折，原价 22 元/百万 token；活动时间：北京时间（UTC+8）2026 年 8 月 7 日 14:00 至 10 月 7 日 14:00"
+   "note": "视频生成模型；在线推理；输出视频 480p/720p，输入包含视频；限时75折，原价 22 元/百万 token"
   },
   {
    "model": "doubao-seedance-2.0-mini",
@@ -930,7 +930,7 @@
    "output_per_1m": 9.2,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 480p/720p，输入不含视频；限时4折，原价 23 元/百万 token；活动时间：北京时间（UTC+8）2026 年 8 月 7 日 14:00 至 10 月 7 日 14:00"
+   "note": "视频生成模型；在线推理；输出视频 480p/720p，输入不含视频；限时4折，原价 23 元/百万 token"
   },
   {
    "model": "doubao-seedance-2.0-mini",
@@ -938,7 +938,7 @@
    "output_per_1m": 5.6,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；输出 480p/720p，输入包含视频；限时4折，原价 14 元/百万 token；活动时间：北京时间（UTC+8）2026 年 8 月 7 日 14:00 至 10 月 7 日 14:00"
+   "note": "视频生成模型；在线推理；输出视频 480p/720p，输入包含视频；限时4折，原价 14 元/百万 token"
   },
   {
    "model": "doubao-seedance-1.5-pro",
@@ -946,7 +946,7 @@
    "output_per_1m": 16.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；有声视频"
+   "note": "视频生成模型；在线推理；有声视频"
   },
   {
    "model": "doubao-seedance-1.5-pro",
@@ -954,7 +954,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理；无声视频"
+   "note": "视频生成模型；在线推理；无声视频"
   },
   {
    "model": "doubao-seedance-1.5-pro",
@@ -962,7 +962,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；离线推理；有声视频"
+   "note": "视频生成模型；离线推理；有声视频"
   },
   {
    "model": "doubao-seedance-1.5-pro",
@@ -970,7 +970,7 @@
    "output_per_1m": 4.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；离线推理；无声视频"
+   "note": "视频生成模型；离线推理；无声视频"
   },
   {
    "model": "doubao-seedance-1.0-pro",
@@ -978,7 +978,7 @@
    "output_per_1m": 15.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理"
+   "note": "视频生成模型；在线推理"
   },
   {
    "model": "doubao-seedance-1.0-pro",
@@ -986,7 +986,7 @@
    "output_per_1m": 7.5,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；离线推理"
+   "note": "视频生成模型；离线推理"
   },
   {
    "model": "doubao-seedance-1.0-pro-fast",
@@ -994,7 +994,7 @@
    "output_per_1m": 4.2,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；在线推理"
+   "note": "视频生成模型；在线推理"
   },
   {
    "model": "doubao-seedance-1.0-pro-fast",
@@ -1002,7 +1002,7 @@
    "output_per_1m": 2.1,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频生成；离线推理"
+   "note": "视频生成模型；离线推理"
   },
   {
    "model": "doubao-embedding-vision",
@@ -1010,13 +1010,13 @@
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "embedding；文本输入 0.70 元/百万 token，图片输入 1.80 元/百万 token"
+   "note": "embedding 多模态向量模型；文本输入价格；图片输入 1.8 元/百万 token"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "7ea0e8c770e56d90dcaecdd088c89f666f412d56816d35f608572e1f4b935a2e",
- "fetched_at": "2026-09-08T21:06:34Z",
+ "price_hash": "e0eefc71a3041c01e40ae470fc72722bfbc24fbf256be43a0315edd33f594965",
+ "fetched_at": "2026-09-08T22:05:58Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-08T21:06:34Z"
+ "last_fetch_ts": "2026-09-08T22:05:58Z"
 }

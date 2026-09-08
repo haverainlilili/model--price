@@ -1,138 +1,148 @@
 {
-  "provider_name": "可灵 Kling Video",
-  "category": "api",
-  "source": "official_seed",
-  "seed_verified": true,
-  "verified_at": "2026-09-08",
-  "verification_hash": "5c4559a1b866fac3808ef8992a7813efa3d2c504ec8fc0b555a33f5f9d2cce04",
-  "page_has_relevant_content": null,
-  "product_status": "active",
-  "product_status_date": null,
-  "product_status_note": null,
-  "seed_cutoff": "latest official snapshot · 2026-09-08",
-  "source_url": "https://klingai.com/dev/pricing",
-  "source_urls": [
-    "https://klingai.com/dev/pricing",
-    "https://klingai.com/document-api/guides/capability-map/video",
-    "https://klingai.com/document-api/api/video/video-generation"
-  ],
-  "official_examples": [
-    {
-      "title": "Kling AI 官方视频样片",
-      "url": "https://klingai.com/",
-      "note": "可灵官方创作平台"
-    }
-  ],
-  "service_regions": [
-    "intl"
-  ],
-  "offerings": [
-    {
-      "name": "Kling Video 3.0 720p Audio",
-      "variant_key": "Kling Video 3.0 720p Audio",
-      "api_available": true,
-      "modes": [
-        "text-to-video",
-        "image-to-video",
-        "first-last-frame"
-      ],
-      "pricing": "$0.126/秒",
-      "currency": "USD",
-      "price_per_second": 0.126,
-      "comparison_group": "usd-720p-audio",
-      "price_basis": "Video 3.0 · 720p · native audio",
-      "resolution": "720p",
-      "duration": "3–15s",
-      "frame_rate": null,
-      "aspect_ratios": "16:9 / 9:16 / 1:1",
-      "native_audio": true,
-      "comparison_resolution": "720p",
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": null,
-      "note": null
-    },
-    {
-      "name": "Kling Video 3.0 720p Silent",
-      "variant_key": "Kling Video 3.0 720p Silent",
-      "api_available": true,
-      "modes": [
-        "text-to-video",
-        "image-to-video",
-        "first-last-frame"
-      ],
-      "pricing": "$0.084/秒",
-      "currency": "USD",
-      "price_per_second": 0.084,
-      "comparison_group": "usd-720p-silent",
-      "price_basis": "Video 3.0 · 720p · audio off",
-      "resolution": "720p",
-      "duration": "3–15s",
-      "frame_rate": null,
-      "aspect_ratios": "16:9 / 9:16 / 1:1",
-      "native_audio": false,
-      "comparison_resolution": "720p",
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": null,
-      "note": null
-    },
-    {
-      "name": "Kling Video 3.0 1080p Audio",
-      "variant_key": "Kling Video 3.0 1080p Audio",
-      "api_available": true,
-      "modes": [
-        "text-to-video",
-        "image-to-video",
-        "first-last-frame"
-      ],
-      "pricing": "$0.168/秒",
-      "currency": "USD",
-      "price_per_second": 0.168,
-      "comparison_group": "usd-1080p-audio",
-      "price_basis": "Video 3.0 · 1080p · native audio",
-      "resolution": "1080p",
-      "duration": "3–15s",
-      "frame_rate": null,
-      "aspect_ratios": "16:9 / 9:16 / 1:1",
-      "native_audio": true,
-      "comparison_resolution": "1080p",
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": null,
-      "note": null
-    },
-    {
-      "name": "Kling Video 3.0 1080p Silent",
-      "variant_key": "Kling Video 3.0 1080p Silent",
-      "api_available": true,
-      "modes": [
-        "text-to-video",
-        "image-to-video",
-        "first-last-frame"
-      ],
-      "pricing": "$0.112/秒",
-      "currency": "USD",
-      "price_per_second": 0.112,
-      "comparison_group": "usd-1080p-silent",
-      "price_basis": "Video 3.0 · 1080p · audio off",
-      "resolution": "1080p",
-      "duration": "3–15s",
-      "frame_rate": null,
-      "aspect_ratios": "16:9 / 9:16 / 1:1",
-      "native_audio": false,
-      "comparison_resolution": "1080p",
-      "lifecycle_status": "active",
-      "sunset_at": null,
-      "region": "intl",
-      "free_quota": null,
-      "note": null
-    }
-  ],
-  "fetched_at": null,
-  "seeded_at": "2026-09-08T09:00:46+00:00",
-  "has_video_generation": true
+ "provider_name": "可灵 Kling Video",
+ "category": "api",
+ "source": "official_seed",
+ "seed_verified": true,
+ "verified_at": "2026-09-08",
+ "verification_hash": "5c4559a1b866fac3808ef8992a7813efa3d2c504ec8fc0b555a33f5f9d2cce04",
+ "page_has_relevant_content": null,
+ "product_status": "active",
+ "product_status_date": null,
+ "product_status_note": null,
+ "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "source_url": "https://klingai.com/dev/pricing",
+ "source_urls": [
+  "https://klingai.com/dev/pricing",
+  "https://klingai.com/document-api/guides/capability-map/video",
+  "https://klingai.com/document-api/api/video/video-generation"
+ ],
+ "official_examples": [
+  {
+   "title": "Kling AI 官方视频样片",
+   "url": "https://klingai.com/",
+   "note": "可灵官方创作平台"
+  }
+ ],
+ "service_regions": [
+  "intl"
+ ],
+ "offerings": [
+  {
+   "name": "Kling Video 3.0 720p Audio",
+   "variant_key": "Kling Video 3.0 720p Audio",
+   "api_available": true,
+   "modes": [
+    "text-to-video",
+    "image-to-video",
+    "first-last-frame"
+   ],
+   "pricing": "$0.126/秒",
+   "currency": "USD",
+   "price_per_second": 0.126,
+   "comparison_group": "usd-720p-audio",
+   "price_basis": "Video 3.0 · 720p · native audio",
+   "resolution": "720p",
+   "duration": "3–15s",
+   "frame_rate": null,
+   "aspect_ratios": "16:9 / 9:16 / 1:1",
+   "native_audio": true,
+   "comparison_resolution": "720p",
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": null,
+   "note": null
+  },
+  {
+   "name": "Kling Video 3.0 720p Silent",
+   "variant_key": "Kling Video 3.0 720p Silent",
+   "api_available": true,
+   "modes": [
+    "text-to-video",
+    "image-to-video",
+    "first-last-frame"
+   ],
+   "pricing": "$0.084/秒",
+   "currency": "USD",
+   "price_per_second": 0.084,
+   "comparison_group": "usd-720p-silent",
+   "price_basis": "Video 3.0 · 720p · audio off",
+   "resolution": "720p",
+   "duration": "3–15s",
+   "frame_rate": null,
+   "aspect_ratios": "16:9 / 9:16 / 1:1",
+   "native_audio": false,
+   "comparison_resolution": "720p",
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": null,
+   "note": null
+  },
+  {
+   "name": "Kling Video 3.0 1080p Audio",
+   "variant_key": "Kling Video 3.0 1080p Audio",
+   "api_available": true,
+   "modes": [
+    "text-to-video",
+    "image-to-video",
+    "first-last-frame"
+   ],
+   "pricing": "$0.168/秒",
+   "currency": "USD",
+   "price_per_second": 0.168,
+   "comparison_group": "usd-1080p-audio",
+   "price_basis": "Video 3.0 · 1080p · native audio",
+   "resolution": "1080p",
+   "duration": "3–15s",
+   "frame_rate": null,
+   "aspect_ratios": "16:9 / 9:16 / 1:1",
+   "native_audio": true,
+   "comparison_resolution": "1080p",
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": null,
+   "note": null
+  },
+  {
+   "name": "Kling Video 3.0 1080p Silent",
+   "variant_key": "Kling Video 3.0 1080p Silent",
+   "api_available": true,
+   "modes": [
+    "text-to-video",
+    "image-to-video",
+    "first-last-frame"
+   ],
+   "pricing": "$0.112/秒",
+   "currency": "USD",
+   "price_per_second": 0.112,
+   "comparison_group": "usd-1080p-silent",
+   "price_basis": "Video 3.0 · 1080p · audio off",
+   "resolution": "1080p",
+   "duration": "3–15s",
+   "frame_rate": null,
+   "aspect_ratios": "16:9 / 9:16 / 1:1",
+   "native_audio": false,
+   "comparison_resolution": "1080p",
+   "lifecycle_status": "active",
+   "sunset_at": null,
+   "region": "intl",
+   "free_quota": null,
+   "note": null
+  }
+ ],
+ "fetched_at": null,
+ "seeded_at": "2026-09-08T09:00:46+00:00",
+ "has_video_generation": true,
+ "configured_source_urls": [
+  "https://klingai.com/dev/pricing",
+  "https://klingai.com/document-api/guides/capability-map/video",
+  "https://klingai.com/document-api/api/video/video-generation"
+ ],
+ "last_fetch_ts": "2026-09-08T22:22:28Z",
+ "source_warnings": [],
+ "videogen_hash": "abb4237327b19b032a6b769505e9f891f2f7ebd653f4858fd757b1b7e92368a6",
+ "status_note": "官网生视频页面无效: 页面是空白/报错/登录/验证壳；保留上次数据",
+ "last_error": "官网生视频页面无效: 页面是空白/报错/登录/验证壳；保留上次数据"
 }

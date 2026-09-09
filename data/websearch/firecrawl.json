@@ -12,86 +12,97 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search — Free Plan",
-   "pricing": "$0/month; 1,000 credits / month; 500 searches",
+   "name": "Search",
+   "pricing": "Free Plan: $0/month; 1,000 credits/month; 500 searches or 1,000 pages scraped",
    "price_per_1k_usd": 0.0,
-   "price_basis": "Free Plan（500 searches/月）",
+   "price_basis": "Free Plan（500次搜索/月，每次最多10个结果）",
    "free_quota": "1,000 credits every month, refreshed monthly, no credit card required.",
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可附完整页面内容",
+   "output_type": "结构化搜索结果，含标题、描述和URL；可选返回全文Markdown、HTML、链接或截图",
    "cites_sources": true,
    "default_on": null,
-   "note": "Search按每10个结果2 credits计费并向上取整；启用抓取时另收抓取credits。"
+   "note": "Search按每10个结果2 credits计费并向上取整；Highlights默认包含。"
   },
   {
    "name": "Search — Hobby",
-   "pricing": "$16/month billed annually for 5,000 credits per month (2,500 searches); monthly billing is $19/month. PAYG: 1,000 extra credits per $5.",
+   "pricing": "Hobby: $19/month billed monthly, or $16/month billed annually, for 5,000 credits per month (2,500 searches or 5,000 pages scraped).",
    "price_per_1k_usd": 6.4,
-   "price_basis": "Hobby年付月均价（2,500 searches/月）",
+   "price_basis": "Hobby年付档（$16/月，2,500次搜索/月）",
    "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可附完整页面内容",
+   "output_type": "结构化搜索结果，含标题、描述和URL；可选返回全文Markdown、HTML、链接或截图",
    "cites_sources": true,
    "default_on": null,
-   "note": "PAYG按$5/1,000 credits，即每千次10结果搜索$10；仅付费计划可用。"
+   "note": "超额额度：1,000 credits/$5，即约500次每10结果的搜索。"
   },
   {
    "name": "Search — Standard",
-   "pricing": "$83/month billed annually for 100,000 credits per month (50,000 searches). PAYG: 2,000 extra credits per $5.",
+   "pricing": "Standard: $83/month, billed annually; 100,000 credits/month; 50,000 searches or 100,000 pages scraped",
    "price_per_1k_usd": 1.66,
-   "price_basis": "Standard年付月均价（50,000 searches/月）",
+   "price_basis": "Standard年付档（$83/月，50,000次搜索/月）",
    "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可附完整页面内容",
+   "output_type": "结构化搜索结果，含标题、描述和URL；可选返回全文Markdown、HTML、链接或截图",
    "cites_sources": true,
    "default_on": null,
-   "note": "PAYG按$5/2,000 credits，即每千次10结果搜索$5。"
+   "note": "超额额度：2,000 credits/$5，即约1,000次每10结果的搜索。"
   },
   {
    "name": "Search — Growth",
-   "pricing": "$333/month billed annually for 500,000 credits per month (250,000 searches). PAYG: 2,500 extra credits per $5.",
+   "pricing": "Growth: $333/month, billed annually; 500,000 credits/month; 250,000 searches or 500,000 pages scraped",
    "price_per_1k_usd": 1.332,
-   "price_basis": "Growth年付月均价（250,000 searches/月）",
+   "price_basis": "Growth年付档（$333/月，250,000次搜索/月）",
    "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可附完整页面内容",
+   "output_type": "结构化搜索结果，含标题、描述和URL；可选返回全文Markdown、HTML、链接或截图",
    "cites_sources": true,
    "default_on": null,
-   "note": "PAYG按$5/2,500 credits，即每千次10结果搜索$4。"
+   "note": "超额额度：2,500 credits/$5，即约1,250次每10结果的搜索。"
   },
   {
    "name": "Search — Scale",
-   "pricing": "$599/month billed annually for 1,000,000 credits per month (500,000 searches). PAYG: 5,000 extra credits per $5.",
+   "pricing": "Scale: $599/monthly, billed yearly; 1,000,000 credits/month; 500,000 searches or 1,000,000 pages scraped",
    "price_per_1k_usd": 1.198,
-   "price_basis": "Scale年付月均价（500,000 searches/月）",
+   "price_basis": "Scale年付档（$599/月，500,000次搜索/月）",
    "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述及URL；可附完整页面内容",
+   "output_type": "结构化搜索结果，含标题、描述和URL；可选返回全文Markdown、HTML、链接或截图",
    "cites_sources": true,
    "default_on": null,
-   "note": "PAYG按$5/5,000 credits，即每千次10结果搜索$2。"
+   "note": "超额额度：5,000 credits/$5，即约2,500次每10结果的搜索。"
+  },
+  {
+   "name": "Search — Enterprise",
+   "pricing": "Custom credits; Custom; Bulk discounts",
+   "price_per_1k_usd": null,
+   "price_basis": "Enterprise定制档",
+   "free_quota": null,
+   "output_type": "结构化搜索结果，含标题、描述和URL；可选返回全文Markdown、HTML、链接或截图",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "含定制并发、专属支持与SLA、批量折扣及Zero-data retention。"
   },
   {
    "name": "End-to-End ZDR",
-   "pricing": "Cost: 10 credits per 10 results; available on Enterprise plans with custom pricing.",
+   "pricing": "Cost: 10 credits per 10 results",
    "price_per_1k_usd": null,
-   "price_basis": "Enterprise ZDR search",
+   "price_basis": "Enterprise ZDR search（enterprise:[\"zdr\"]）",
    "free_quota": null,
    "output_type": "零数据保留的结构化搜索结果，含来源URL",
    "cites_sources": true,
-   "default_on": null,
-   "note": "Firecrawl及上游搜索提供商均不存储查询或结果数据；enterprise:[\"zdr\"]。"
+   "default_on": false,
+   "note": "Firecrawl及上游搜索提供商均不存储查询或结果数据；仅Enterprise可用。"
   },
   {
    "name": "Anonymized ZDR",
-   "pricing": "Cost: 2 credits per 10 results; available on Enterprise plans with custom pricing.",
+   "pricing": "Cost: 2 credits per 10 results",
    "price_per_1k_usd": null,
-   "price_basis": "Enterprise anonymized ZDR search",
+   "price_basis": "Enterprise anonymized ZDR（enterprise:[\"anon\"]）",
    "free_quota": null,
    "output_type": "匿名化零数据保留的结构化搜索结果，含来源URL",
    "cites_sources": true,
-   "default_on": null,
-   "note": "Firecrawl侧完全零保留；上游可能缓存匿名查询；enterprise:[\"anon\"]。"
+   "default_on": false,
+   "note": "Firecrawl端完整零保留；上游可能缓存已完全匿名化的查询。"
   }
  ],
- "fetched_at": "2026-09-09T09:16:25Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-09T15:16:18Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-09T14:16:40Z",
- "websearch_hash": "a8aa8a043f4253b28c4882604a4250cb52d1235ab8e800f5658ba56fe7446e6c"
+ "last_fetch_ts": "2026-09-09T15:16:18Z",
+ "websearch_hash": "0ed44bd6cabd8fbbaf478b7ed1d35d176fd647790da7606618b33b7c6ed117a3"
 }

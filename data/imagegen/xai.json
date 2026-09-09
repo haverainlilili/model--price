@@ -5,7 +5,7 @@
  "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
- "product_status_note": "官网提供 Grok Imagine 图片生成 API 及按张定价。",
+ "product_status_note": null,
  "source_url": "https://docs.x.ai/developers/pricing",
  "source_urls": [
   "https://docs.x.ai/developers/pricing",
@@ -35,7 +35,7 @@
    "region": null,
    "price_per_image": 0.05,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image-quality，按生成图片张数计费；官网未给出对应分辨率",
+   "price_basis": "grok-imagine-image-quality；按生成图片计费；质量和分辨率未在价格表中注明",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -45,7 +45,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "图片和视频生成可用于 Batch API，但仍按标准费率计费。"
+   "note": "图片和视频生成可使用 Batch API，但仍按标准费率计费。"
   },
   {
    "name": "grok-imagine-image-2.0",
@@ -59,17 +59,17 @@
    "region": null,
    "price_per_image": 0.04,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image-2.0，按生成图片张数计费；价格表未按质量或分辨率拆分",
+   "price_basis": "grok-imagine-image-2.0；按生成图片计费；支持1k/2k及low/medium/auto，价格表未按档位拆价",
    "resolution": "1k（默认）、2k",
    "aspect_ratios": "1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3, 2:1, 1:2, 19.5:9, 9:19.5, 20:9, 9:20, 21:9, 5:2, auto",
-   "output_formats": "url（默认）、b64_json/base64",
+   "output_formats": "URL（默认）或 base64",
    "comparison_width": null,
    "comparison_height": null,
    "quality_tier": null,
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "每次可生成1–10张；支持low、medium、auto质量，auto生成时当前使用low，并按实际质量计费。"
+   "note": "每次可生成1–10张；quality支持low、medium、auto，生成时auto当前使用low。"
   },
   {
    "name": "grok-imagine-image",
@@ -83,7 +83,7 @@
    "region": null,
    "price_per_image": 0.02,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image，按生成图片张数计费；官网未给出对应分辨率",
+   "price_basis": "grok-imagine-image；按生成图片计费；质量和分辨率未在价格表中注明",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -93,21 +93,19 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "图片和视频生成可用于 Batch API，但仍按标准费率计费。"
+   "note": "图片和视频生成可使用 Batch API，但仍按标准费率计费。"
   }
  ],
- "fetched_at": "2026-09-08T18:17:49Z",
+ "fetched_at": "2026-09-09T08:18:05Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://docs.x.ai/developers/pricing",
   "https://docs.x.ai/developers/model-capabilities/images/generation"
  ],
- "last_fetch_ts": "2026-09-09T07:20:29Z",
+ "last_fetch_ts": "2026-09-09T08:18:05Z",
  "source_warnings": [],
- "imagegen_hash": "0c6a01b0ed2991f9ef43804d2c1f77d9d931d54bd93ddeaeacc07521f7e47dee",
- "status_note": "官网生图抽取产品停用/迁移说明变为空，等待下轮同语义结果确认",
- "last_error": "官网生图抽取产品停用/迁移说明变为空，等待下轮同语义结果确认",
- "imagegen_excerpt_hash": "0b2894d6a3cba112d9b9453ab466a7944e2d41b454f50b3f02ccccac0d0fc62f",
- "imagegen_pending_shrink_hash": "ed63510c97791f45b312a14df625c98ca5d9e75ba922a7883c65e41506484ff5",
- "imagegen_pending_shrink_count": 3
+ "imagegen_hash": "5ec403597d2b3adc76c016fc76c03400cf892688c8e49fd37adcd50442f3a4a1",
+ "status_note": null,
+ "last_error": null,
+ "imagegen_excerpt_hash": "301c058bd1ec270b54a294b666cb06e6568b50b1b6dff56d6611beffc78e26e9"
 }

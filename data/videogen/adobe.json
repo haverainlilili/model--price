@@ -1,15 +1,11 @@
 {
  "provider_name": "Adobe Firefly Video",
  "category": "api",
- "source": "official_seed",
- "seed_verified": true,
- "verified_at": "2026-09-08",
- "verification_hash": "8bef91e10939141ead5292ce7dbdf12933e1e4a924bff759d943de291a335bcd",
- "page_has_relevant_content": null,
+ "source": "official",
+ "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
  "product_status_note": null,
- "seed_cutoff": "latest official snapshot · 2026-09-08",
  "source_url": "https://developer.adobe.com/firefly-services/docs/firefly-api/",
  "source_urls": [
   "https://developer.adobe.com/firefly-services/docs/firefly-api/",
@@ -23,48 +19,43 @@
   }
  ],
  "service_regions": [
+  "domestic",
   "intl"
  ],
  "offerings": [
   {
-   "name": "Firefly Video Model 1",
-   "variant_key": "Firefly Video Model 1",
+   "name": "Generate Video API",
+   "variant_key": null,
    "api_available": true,
-   "modes": [
-    "text-to-video",
-    "image-to-video",
-    "first-last-frame"
-   ],
-   "pricing": "540p 0.4 Operations/秒；720p 1 Op/秒；1080p 2 Ops/秒；USD/Op 未公开",
+   "modes": [],
+   "pricing": null,
    "currency": null,
+   "region": null,
    "price_per_second": null,
    "comparison_group": null,
-   "price_basis": "企业自定义 Operation 单价",
-   "resolution": "540p / 720p / 1080p",
-   "duration": "固定 5s",
+   "price_basis": null,
+   "resolution": "1920x1080, 1280x720, 960x540, 1080x1920, 720x1280, 540x960, 1080x1080, 720x720, 540x540",
+   "duration": null,
    "frame_rate": null,
-   "aspect_ratios": "16:9 / 9:16 / 1:1",
+   "aspect_ratios": "16:9, 9:16, 1:1",
    "native_audio": null,
    "comparison_resolution": null,
-   "lifecycle_status": "active",
+   "lifecycle_status": "unknown",
    "sunset_at": null,
-   "region": "intl",
    "free_quota": null,
-   "note": "需要 Firefly Services entitlement 与 OAuth S2S。"
+   "note": "Firefly API默认限速为每组织4 RPM、每日9,000次请求；更高限额需联系客户经理。"
   }
  ],
- "fetched_at": null,
- "seeded_at": "2026-09-08T09:00:46+00:00",
+ "fetched_at": "2026-09-09T01:16:24Z",
  "has_video_generation": true,
  "configured_source_urls": [
   "https://developer.adobe.com/firefly-services/docs/firefly-api/",
   "https://developer.adobe.com/firefly-services/docs/firefly-api/getting-started/usage-notes/"
  ],
- "last_fetch_ts": "2026-09-09T00:22:46Z",
+ "last_fetch_ts": "2026-09-09T01:16:24Z",
  "source_warnings": [],
  "videogen_hash": "e512ce6f89cf6ea202cc7d638a68a1053acac8cf80534000e7d4f4ebf58a2c01",
- "videogen_pending_shrink_hash": "c6243ea7e3f32cb880b93f25aa891165c9246f52172044f8306344c83cd83f01",
- "videogen_pending_shrink_count": 1,
- "status_note": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
- "last_error": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认"
+ "status_note": null,
+ "last_error": null,
+ "videogen_excerpt_hash": "2d661ea54f0c2f0d032a66f7dd8ed4e3be787e63335cab603621d5b57e2d2cbc"
 }

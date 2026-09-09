@@ -1,15 +1,11 @@
 {
  "provider_name": "AWS Nova Reel",
  "category": "sunsetting",
- "source": "official_seed",
- "seed_verified": true,
- "verified_at": "2026-09-08",
- "verification_hash": "f224782d33433f699fc97125c273b2321a1e13d0d694a61604c010e45c06860b",
- "page_has_relevant_content": null,
+ "source": "official",
+ "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
  "product_status_note": null,
- "seed_cutoff": "latest official snapshot · 2026-09-08",
  "source_url": "https://aws.amazon.com/nova/pricing/",
  "source_urls": [
   "https://aws.amazon.com/nova/pricing/",
@@ -24,48 +20,47 @@
   }
  ],
  "service_regions": [
+  "domestic",
   "intl"
  ],
  "offerings": [
   {
-   "name": "Amazon Nova Reel 1.1",
-   "variant_key": "Amazon Nova Reel 1.1",
+   "name": "Amazon Nova Reel",
+   "variant_key": null,
    "api_available": true,
    "modes": [
     "text-to-video",
     "image-to-video"
    ],
-   "pricing": "$0.08/秒",
-   "currency": "USD",
-   "price_per_second": 0.08,
-   "comparison_group": "usd-720p-silent",
-   "price_basis": "Nova Reel 1.1 · 1280×720 · 无音频 · LEGACY/EOL 2026-09-30",
-   "resolution": "1280×720",
-   "duration": "6s 增量，最长 120s",
-   "frame_rate": "24fps",
+   "pricing": null,
+   "currency": null,
+   "region": null,
+   "price_per_second": null,
+   "comparison_group": null,
+   "price_basis": null,
+   "resolution": "1280x720",
+   "duration": "6 second increments, up to two minutes",
+   "frame_rate": "24",
    "aspect_ratios": null,
-   "native_audio": false,
-   "comparison_resolution": "720p",
-   "lifecycle_status": "legacy-existing-only",
-   "sunset_at": "2026-09-30",
-   "region": "intl",
-   "free_quota": "无 Nova Reel 免费额度",
-   "note": "2026-03-30 起 Legacy，仅存量客户；连续 15 天无成功调用可能失去访问；2026-09-30 EOL。"
+   "native_audio": null,
+   "comparison_resolution": null,
+   "lifecycle_status": "unknown",
+   "sunset_at": null,
+   "free_quota": null,
+   "note": "模型ID为 amazon.nova-reel-v1:1；支持异步调用API，不支持同步调用API；仅支持英语。"
   }
  ],
- "fetched_at": null,
- "seeded_at": "2026-09-08T09:00:46+00:00",
+ "fetched_at": "2026-09-09T11:21:29Z",
  "has_video_generation": true,
  "configured_source_urls": [
   "https://aws.amazon.com/nova/pricing/",
   "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
   "https://docs.aws.amazon.com/nova/latest/userguide/video-generation.html"
  ],
- "last_fetch_ts": "2026-09-09T10:21:11Z",
+ "last_fetch_ts": "2026-09-09T11:21:29Z",
  "source_warnings": [],
  "videogen_hash": "065bfa1a4f63cd9fb39dc74c5ef75b2715e71fe2ef0b40d6e7ef3be761381695",
- "videogen_pending_shrink_hash": "cc268e98ec45a6968da3cfc2f4541f2853e7620e6e9dfbb9c80a11f00d7617f6",
- "videogen_pending_shrink_count": 1,
- "status_note": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
- "last_error": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认"
+ "status_note": null,
+ "last_error": null,
+ "videogen_excerpt_hash": "f8b14b55767063b6d70339be165da13d84b03f9c8a6378c7d890ce1b5f73cbf7"
 }

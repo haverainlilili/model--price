@@ -9,11 +9,21 @@
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "月额度"
+     "window": "每月"
     },
     {
      "label": "Agent 优先生成队列",
      "value": "4 倍速",
+     "window": null
+    },
+    {
+     "label": "小组件任务",
+     "value": "6 个",
+     "window": null
+    },
+    {
+     "label": "定时任务",
+     "value": "6 个",
      "window": null
     },
     {
@@ -26,7 +36,7 @@
     "K2.6",
     "K3"
    ],
-   "note": "Agent 用量是官网基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，但该单位不属于本次允许抽取的额度类型，未列入 quotas。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -38,17 +48,32 @@
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "月额度"
+     "window": "每月"
     },
     {
-     "label": "Agent 优先生成队列",
-     "value": "4 倍速",
+     "label": "Agent 任务并行",
+     "value": "2 个",
      "window": null
     },
     {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群",
      "value": "25 次",
      "window": "每个计费周期"
+    },
+    {
+     "label": "Agent 集群子任务并行",
+     "value": "2 个",
+     "window": null
+    },
+    {
+     "label": "定时任务",
+     "value": "10 个",
+     "window": null
+    },
+    {
+     "label": "小组件任务",
+     "value": "10 个",
+     "window": null
     },
     {
      "label": "专业数据库",
@@ -60,7 +85,7 @@
     "K2.6",
     "K3"
    ],
-   "note": "官网写明该套餐“在 Andante 基础上”，因此包含 Andante 的 Agent 优先生成队列 4 倍速权益；Agent 集群为 2 个子任务并行。Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有会员功能共享额度池并按实际 token 消耗扣除。",
+   "note": "官网表述为“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，但该单位不属于本次允许抽取的额度类型，未列入 quotas。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -72,17 +97,37 @@
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "月额度"
+     "window": "每月"
     },
     {
-     "label": "Agent 优先生成队列",
-     "value": "4 倍速",
+     "label": "Agent 任务并行",
+     "value": "2 个",
      "window": null
     },
     {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群",
      "value": "50 次",
      "window": "每个计费周期"
+    },
+    {
+     "label": "Agent 集群子任务并行",
+     "value": "4 个",
+     "window": null
+    },
+    {
+     "label": "Kimi Claw 群聊",
+     "value": "10 个",
+     "window": null
+    },
+    {
+     "label": "定时任务",
+     "value": "15 个",
+     "window": null
+    },
+    {
+     "label": "小组件任务",
+     "value": "15 个",
+     "window": null
     },
     {
      "label": "专业数据库",
@@ -94,7 +139,7 @@
     "K2.6",
     "K3"
    ],
-   "note": "官网写明该套餐“在 Andante 基础上”，因此包含 Andante 的 Agent 优先生成队列 4 倍速权益；Agent 集群为 4 个子任务并行。Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有会员功能共享额度池并按实际 token 消耗扣除。",
+   "note": "官网表述为“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，但该单位不属于本次允许抽取的额度类型，未列入 quotas。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -106,21 +151,41 @@
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "月额度"
+     "window": "每月"
     },
     {
-     "label": "Agent 优先生成队列",
-     "value": "4 倍速",
+     "label": "Agent 任务并行",
+     "value": "4 个",
      "window": null
     },
     {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群",
      "value": "120 次",
      "window": "每个计费周期"
     },
     {
+     "label": "Agent 集群子任务并行",
+     "value": "8 个",
+     "window": null
+    },
+    {
+     "label": "Kimi Claw 群聊",
+     "value": "10 个",
+     "window": null
+    },
+    {
      "label": "超长对话容量",
      "value": "百万 Tokens",
+     "window": null
+    },
+    {
+     "label": "定时任务",
+     "value": "20 个",
+     "window": null
+    },
+    {
+     "label": "小组件任务",
+     "value": "20 个",
      "window": null
     },
     {
@@ -133,18 +198,18 @@
     "K2.6",
     "K3"
    ],
-   "note": "官网写明该套餐“在 Andante 基础上”，因此包含 Andante 的 Agent 优先生成队列 4 倍速权益；Agent 集群为 8 个子任务并行。Agent 用量是基于常见任务 token 消耗估算、将月额度用于同一功能时的参考值。所有会员功能共享额度池并按实际 token 消耗扣除。",
+   "note": "官网表述为“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。“百万 Tokens”是官网对超长对话容量的原文口径。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；额度在每个计费周期自动刷新，未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额，但该单位不属于本次允许抽取的额度类型，未列入 quotas。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-09T12:12:32Z",
+ "last_fetch_ts": "2026-09-09T13:12:09Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "f262f30e94e4cd980c7563ae9d2eda45dd580b414709517416cda116f447d386",
- "fetched_at": "2026-09-09T12:12:32Z",
+ "plans_hash": "1dc49e48ddb3ebc6ed7acb7dbf8bf37ef6830006ec97d334e895b4bd7c1f314a",
+ "fetched_at": "2026-09-09T13:12:09Z",
  "status_note": null
 }

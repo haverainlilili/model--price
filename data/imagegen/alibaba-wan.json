@@ -27,7 +27,7 @@
  "offerings": [
   {
    "name": "wan2.7-image-pro",
-   "variant_key": "cn",
+   "variant_key": "domestic",
    "api_available": true,
    "modes": [
     "text-to-image",
@@ -35,12 +35,12 @@
     "image-edit",
     "reference"
    ],
-   "pricing": "华北2（北京）图片生成 0.5元/张",
+   "pricing": "华北2（北京）：图片生成 0.5 元/张",
    "currency": "CNY",
    "region": "domestic",
    "price_per_image": 0.5,
    "comparison_group": null,
-   "price_basis": "wan2.7-image-pro旗舰版，分辨率未说明，华北2（北京）按生成图片张数计费",
+   "price_basis": "wan2.7-image-pro，华北2（北京）图片生成按张计费；页面未列明分辨率",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -50,7 +50,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "华北2（北京）RPM为300，支持模型调优；页面价格为调用原价，不含限时优惠。"
+   "note": "支持模型调优；不支持批量推理；限流为300 RPM。"
   },
   {
    "name": "wan2.7-image-pro",
@@ -62,12 +62,12 @@
     "image-edit",
     "reference"
    ],
-   "pricing": "新加坡（国际部署）图片生成 0.562065元/张",
+   "pricing": "新加坡（部署范围：国际）：图片生成 0.562065 元/张",
    "currency": "CNY",
    "region": "intl",
    "price_per_image": 0.562065,
    "comparison_group": null,
-   "price_basis": "wan2.7-image-pro旗舰版，分辨率未说明，新加坡国际部署按生成图片张数计费",
+   "price_basis": "wan2.7-image-pro，新加坡国际部署图片生成按张计费；页面未列明分辨率",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -77,22 +77,20 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "新加坡国际部署RPM为300，不支持模型调优；页面价格为调用原价，不含限时优惠。"
+   "note": "不支持模型调优和批量推理；限流为300 RPM。"
   }
  ],
- "fetched_at": "2026-09-08T20:19:34Z",
+ "fetched_at": "2026-09-09T18:17:33Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://help.aliyun.com/zh/model-studio/wan2-7-image-pro",
   "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
   "https://www.alibabacloud.com/help/en/model-studio/new-free-quota"
  ],
- "last_fetch_ts": "2026-09-09T17:16:42Z",
+ "last_fetch_ts": "2026-09-09T18:17:33Z",
  "source_warnings": [],
  "imagegen_hash": "5408fa62ba31d0d1a1305abc4a916bcb60ee8d5bb78e42168e35715913d13682",
- "status_note": "官网生图抽取覆盖项由 2 变为 2，等待下轮同语义结果确认",
- "last_error": "官网生图抽取覆盖项由 2 变为 2，等待下轮同语义结果确认",
- "imagegen_excerpt_hash": "28b8d5578712f4116bb8aab0b829eb91b98c6c859345d6b417acfe79f02a097b",
- "imagegen_pending_shrink_hash": "43c9eeb357c6442a895d855b501ee73deb6cb32e7bebae2acac0b229fcdb690e",
- "imagegen_pending_shrink_count": 2
+ "status_note": null,
+ "last_error": null,
+ "imagegen_excerpt_hash": "48573b156e64e6d236137b4515bcfcf8a58e008dcdf566ec44f0061c0f702636"
 }

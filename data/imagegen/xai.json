@@ -24,54 +24,6 @@
  ],
  "offerings": [
   {
-   "name": "grok-imagine-image-quality",
-   "variant_key": null,
-   "api_available": true,
-   "modes": [
-    "text-to-image"
-   ],
-   "pricing": "$0.05 / image",
-   "currency": "USD",
-   "region": null,
-   "price_per_image": 0.05,
-   "comparison_group": null,
-   "price_basis": "grok-imagine-image-quality；按生成图片计费；质量和分辨率未在价格表中注明",
-   "resolution": null,
-   "aspect_ratios": null,
-   "output_formats": null,
-   "comparison_width": null,
-   "comparison_height": null,
-   "quality_tier": null,
-   "lifecycle_status": "unknown",
-   "sunset_at": null,
-   "free_quota": null,
-   "note": "图片和视频生成可使用 Batch API，但仍按标准费率计费。"
-  },
-  {
-   "name": "grok-imagine-image-2.0",
-   "variant_key": null,
-   "api_available": true,
-   "modes": [
-    "text-to-image"
-   ],
-   "pricing": "$0.04 / image",
-   "currency": "USD",
-   "region": null,
-   "price_per_image": 0.04,
-   "comparison_group": null,
-   "price_basis": "grok-imagine-image-2.0；按生成图片计费；支持1k/2k及low/medium/auto，价格表未按档位拆价",
-   "resolution": "1k（默认）、2k",
-   "aspect_ratios": "1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3, 2:1, 1:2, 19.5:9, 9:19.5, 20:9, 9:20, 21:9, 5:2, auto",
-   "output_formats": "URL（默认）或 base64",
-   "comparison_width": null,
-   "comparison_height": null,
-   "quality_tier": null,
-   "lifecycle_status": "unknown",
-   "sunset_at": null,
-   "free_quota": null,
-   "note": "每次可生成1–10张；quality支持low、medium、auto，生成时auto当前使用low。"
-  },
-  {
    "name": "grok-imagine-image",
    "variant_key": null,
    "api_available": true,
@@ -83,7 +35,7 @@
    "region": null,
    "price_per_image": 0.02,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image；按生成图片计费；质量和分辨率未在价格表中注明",
+   "price_basis": "grok-imagine-image；官网未注明质量和分辨率；按生成图片计费",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -93,19 +45,68 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "图片和视频生成可使用 Batch API，但仍按标准费率计费。"
+   "note": "Batch API支持图片生成，但仍按标准费率计费。"
+  },
+  {
+   "name": "grok-imagine-image-quality",
+   "variant_key": null,
+   "api_available": true,
+   "modes": [
+    "text-to-image"
+   ],
+   "pricing": "$0.05 / image",
+   "currency": "USD",
+   "region": null,
+   "price_per_image": 0.05,
+   "comparison_group": null,
+   "price_basis": "grok-imagine-image-quality；官网未注明分辨率及具体质量档定义；按生成图片计费",
+   "resolution": null,
+   "aspect_ratios": null,
+   "output_formats": null,
+   "comparison_width": null,
+   "comparison_height": null,
+   "quality_tier": null,
+   "lifecycle_status": "unknown",
+   "sunset_at": null,
+   "free_quota": null,
+   "note": "Batch API支持图片生成，但仍按标准费率计费。"
+  },
+  {
+   "name": "grok-imagine-image-2.0",
+   "variant_key": null,
+   "api_available": true,
+   "modes": [
+    "text-to-image",
+    "image-edit"
+   ],
+   "pricing": "$0.04 / image",
+   "currency": "USD",
+   "region": null,
+   "price_per_image": 0.04,
+   "comparison_group": null,
+   "price_basis": "grok-imagine-image-2.0；官网列价未按质量或分辨率拆分；按生成图片计费",
+   "resolution": "1k（默认）、2k",
+   "aspect_ratios": "1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3, 2:1, 1:2, 19.5:9, 9:19.5, 20:9, 9:20, 21:9, 5:2, auto",
+   "output_formats": "URL（默认）或 base64",
+   "comparison_width": null,
+   "comparison_height": null,
+   "quality_tier": null,
+   "lifecycle_status": "unknown",
+   "sunset_at": null,
+   "free_quota": null,
+   "note": "每次可生成1–10张；支持low、medium、auto，生成时auto当前使用low；Batch仍按标准费率。"
   }
  ],
- "fetched_at": "2026-09-09T08:18:05Z",
+ "fetched_at": "2026-09-09T09:19:39Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://docs.x.ai/developers/pricing",
   "https://docs.x.ai/developers/model-capabilities/images/generation"
  ],
- "last_fetch_ts": "2026-09-09T08:18:05Z",
+ "last_fetch_ts": "2026-09-09T09:19:39Z",
  "source_warnings": [],
- "imagegen_hash": "5ec403597d2b3adc76c016fc76c03400cf892688c8e49fd37adcd50442f3a4a1",
+ "imagegen_hash": "cc585f66f606b6ee262b8333d9f66d3634b9a2215da42660d4f1aea293615f73",
  "status_note": null,
  "last_error": null,
- "imagegen_excerpt_hash": "301c058bd1ec270b54a294b666cb06e6568b50b1b6dff56d6611beffc78e26e9"
+ "imagegen_excerpt_hash": "12a6565229c1435dea7d0f116ca6f49d155cfe1962efdccdc95304a8d9d10797"
 }

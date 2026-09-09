@@ -2,14 +2,14 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "会员计划",
+   "plan_type": "Kimi 会员计划",
    "price": "¥49/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新，未使用的额度到期清零",
+   "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "月额度"
+     "window": "按月刷新"
     },
     {
      "label": "Agent 优先生成队列",
@@ -17,28 +17,28 @@
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "1000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": "按月刷新"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。Kimi Code 另有 5 小时 / 周使用限额；频次限制以页面提示为准。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，额度按月刷新。Kimi Code 另有 5 小时 / 周使用限额。连续包年仅标注“年付更优惠”，未公布明确年价。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "会员计划",
+   "plan_type": "Kimi 会员计划",
    "price": "¥99/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新，未使用的额度到期清零",
+   "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "月额度"
+     "window": "按月刷新"
     },
     {
      "label": "Agent 优先生成队列",
@@ -46,33 +46,33 @@
      "window": null
     },
     {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群可用",
      "value": "25 次",
-     "window": "每个计费周期（按月刷新）"
+     "window": "按月刷新"
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "2000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": "按月刷新"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "官网标注“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。Kimi Code 另有 5 小时 / 周使用限额；频次限制以页面提示为准。",
+   "note": "官网标注“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，额度按月刷新。Kimi Code 另有 5 小时 / 周使用限额。连续包年仅标注“年付更优惠”，未公布明确年价。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "会员计划",
+   "plan_type": "Kimi 会员计划",
    "price": "¥199/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新，未使用的额度到期清零",
+   "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "月额度"
+     "window": "按月刷新"
     },
     {
      "label": "Agent 优先生成队列",
@@ -80,33 +80,33 @@
      "window": null
     },
     {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群可用",
      "value": "50 次",
-     "window": "每个计费周期（按月刷新）"
+     "window": "按月刷新"
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "5000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": "按月刷新"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "官网标注“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。Kimi Code 另有 5 小时 / 周使用限额；频次限制以页面提示为准。",
+   "note": "官网标注“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，额度按月刷新。Kimi Code 另有 5 小时 / 周使用限额。连续包年仅标注“年付更优惠”，未公布明确年价。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "会员计划",
+   "plan_type": "Kimi 会员计划",
    "price": "¥699/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新，未使用的额度到期清零",
+   "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "月额度"
+     "window": "按月刷新"
     },
     {
      "label": "Agent 优先生成队列",
@@ -114,9 +114,9 @@
      "window": null
     },
     {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群可用",
      "value": "120 次",
-     "window": "每个计费周期（按月刷新）"
+     "window": "按月刷新"
     },
     {
      "label": "超长对话容量",
@@ -124,27 +124,27 @@
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "12000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": "按月刷新"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "官网标注“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。Kimi Code 另有 5 小时 / 周使用限额；频次限制以页面提示为准。",
+   "note": "官网标注“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，额度按月刷新。Kimi Code 另有 5 小时 / 周使用限额。连续包年仅标注“年付更优惠”，未公布明确年价。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-09T08:10:22Z",
+ "last_fetch_ts": "2026-09-09T09:12:20Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "83378814b23c27b2ff75d6d966b47edd93e17c76c14ddfd69d144e3480e52fb3",
- "fetched_at": "2026-09-09T08:10:22Z",
+ "plans_hash": "40a4801578512ae3fe9d2e71eb8172958ed405f7389d624e8026367f61f94923",
+ "fetched_at": "2026-09-09T09:12:20Z",
  "status_note": null
 }

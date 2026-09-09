@@ -1,15 +1,11 @@
 {
  "provider_name": "腾讯混元生图",
  "category": "api",
- "source": "official_seed",
- "seed_verified": true,
- "verified_at": "2026-09-08",
- "verification_hash": "74f5e6a695d9620ebbae2f4ba0ae82e3ca6c25dacb6e798537da2d9f9cb46094",
- "page_has_relevant_content": null,
+ "source": "official",
+ "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
- "product_status_note": null,
- "seed_cutoff": "latest official snapshot · 2026-09-08",
+ "product_status_note": "腾讯云国际站模型价格页列出 Hy-Image-3.0 图片生成服务及按 Token 后付费价格。",
  "source_url": "https://cloud.tencent.com/document/product/1823/130055",
  "source_urls": [
   "https://cloud.tencent.com/document/product/1823/130055",
@@ -25,74 +21,46 @@
   }
  ],
  "service_regions": [
-  "domestic",
   "intl"
  ],
  "offerings": [
   {
-   "name": "hy-image-v3（中国区）",
-   "variant_key": "hy-image-v3（中国区）",
+   "name": "Hy-Image-3.0",
+   "variant_key": "intl",
    "api_available": true,
    "modes": [
     "text-to-image",
     "reference"
    ],
-   "pricing": "¥10/百万 tokens × 20,000 tokens/张 = ¥0.20/张",
-   "currency": "CNY",
-   "price_per_image": 0.2,
-   "comparison_group": "cny-standard-1mp",
-   "price_basis": "TokenHub · 中国区 · 1024×1024",
-   "resolution": "边长 512–2048；总像素≤1024²；含精确 1024²",
-   "aspect_ratios": "37 个预设",
-   "output_formats": "PNG / JPG / JPEG；临时 URL",
-   "comparison_width": 1024,
-   "comparison_height": 1024,
-   "quality_tier": "standard",
-   "lifecycle_status": "active",
-   "sunset_at": null,
-   "region": "domestic",
-   "free_quota": null,
-   "note": "当前 TokenHub 未公布稳定数值免费生图额度。"
-  },
-  {
-   "name": "hy-image-v3（国际区）",
-   "variant_key": "hy-image-v3（国际区）",
-   "api_available": true,
-   "modes": [
-    "text-to-image",
-    "reference"
-   ],
-   "pricing": "$1.60/百万 tokens × 20,000 tokens/张 = $0.032/张",
+   "pricing": "1.6 USD/million tokens；20,000 tokens/image；Estimated Reference Cost: USD 0.032/image",
    "currency": "USD",
+   "region": "intl",
    "price_per_image": 0.032,
-   "comparison_group": "usd-standard-1mp",
-   "price_basis": "TokenHub · 国际区 · 1024×1024",
-   "resolution": "1024×1024",
+   "comparison_group": null,
+   "price_basis": "Hy-Image-3.0，文生图或参考图生图，不区分分辨率，后付费按 20,000 tokens/张、1.6 USD/百万 tokens 计费",
+   "resolution": "No distinction",
    "aspect_ratios": null,
    "output_formats": null,
-   "comparison_width": 1024,
-   "comparison_height": 1024,
-   "quality_tier": "standard",
-   "lifecycle_status": "active",
+   "comparison_width": null,
+   "comparison_height": null,
+   "quality_tier": null,
+   "lifecycle_status": "unknown",
    "sunset_at": null,
-   "region": "intl",
    "free_quota": null,
-   "note": "与中国区是独立官方区域价，不由汇率换算。"
+   "note": "按 Token 计费，后付费按小时结算；参考成本为估算，最终费用以控制台和账单为准。"
   }
  ],
- "fetched_at": null,
- "seeded_at": "2026-09-08T09:00:46+00:00",
+ "fetched_at": "2026-09-09T19:16:08Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://cloud.tencent.com/document/product/1823/130055",
   "https://cloud.tencent.com/document/product/1823/135745",
   "https://intl.cloud.tencent.com/document/product/1300/78937"
  ],
- "last_fetch_ts": "2026-09-09T18:18:59Z",
+ "last_fetch_ts": "2026-09-09T19:16:08Z",
  "source_warnings": [],
- "imagegen_hash": "a059476f6d52b500dc0ca9fadabc3413cfbe67bbafb1009e6084cdc1755c82ac",
- "imagegen_pending_shrink_hash": "aee5a3c1b9ab7d4fd0eeb2aa06f1bb7f029bd72c18b3d7991bfd91cf0aebec14",
- "imagegen_pending_shrink_count": 1,
- "status_note": "官网生图抽取覆盖项由 2 变为 1，等待下轮同语义结果确认",
- "last_error": "官网生图抽取覆盖项由 2 变为 1，等待下轮同语义结果确认"
+ "imagegen_hash": "1e6745d6a0d41efb42f43233a86ebcaf9c78de647e80956af7f8a3455d2c50a4",
+ "status_note": null,
+ "last_error": null,
+ "imagegen_excerpt_hash": "3eabdd0773b14e030e1bd9a0b84937a20a53e43762c45f3f31d23740904be207"
 }

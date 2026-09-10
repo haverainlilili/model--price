@@ -14,61 +14,61 @@
    "name": "Web search",
    "pricing": "$10.00 / 1k calls + Search content tokens billed at model rates.",
    "price_per_1k_usd": 10.0,
-   "price_basis": "Web search (all models), per 1k calls",
+   "price_basis": "Web search (all models)，每1,000次调用",
    "free_quota": null,
-   "output_type": "回答文本、web_search_call、内联 URL 引用及可选完整来源列表",
+   "output_type": "带内联URL引用的文本答案、搜索调用信息及可选完整来源列表",
    "cites_sources": true,
    "default_on": false,
-   "note": "需在 Responses API 的 tools 数组中配置；搜索上下文上限为128k。"
+   "note": "需在Responses API的tools数组中启用；搜索上下文窗口限128k。"
   },
   {
    "name": "Image Web search",
    "pricing": "$10.00 / 1k calls + Search content tokens billed at model rates.",
    "price_per_1k_usd": 10.0,
-   "price_basis": "Image Web search (all models), per 1k calls",
+   "price_basis": "Image Web search (all models)，每1,000次调用",
    "free_quota": null,
-   "output_type": "图片结果及文本结果；含图片URL、来源页面URL、缩略图和可选说明",
+   "output_type": "图片结果及可选文本结果；含图片URL、来源网页URL、缩略图和可选说明",
    "cites_sources": true,
    "default_on": false,
-   "note": "需将 search_content_types 设为 image；原始结果通过 web_search_call.results 返回。"
+   "note": "通过search_content_types加入image；可用max_results指定正数结果量。"
   },
   {
-   "name": "Web search preview",
+   "name": "Web search preview (reasoning models, including `gpt-5`, `o-series`)",
    "pricing": "$10.00 / 1k calls + Search content tokens billed at model rates.",
    "price_per_1k_usd": 10.0,
-   "price_basis": "reasoning models（including gpt-5, o-series）, per 1k calls",
+   "price_basis": "推理模型的Web search preview，每1,000次调用",
    "free_quota": null,
-   "output_type": "回答文本、搜索调用及带 URL 的内联引用",
+   "output_type": "带内联URL引用的文本答案及web_search_call输出",
    "cites_sources": true,
    "default_on": false,
-   "note": "旧版工具；不支持 filters、return_token_budget，且忽略 external_web_access。"
+   "note": "旧版工具；不支持filters和return_token_budget，并忽略external_web_access。"
   },
   {
-   "name": "Web search preview",
+   "name": "Web search preview (non-reasoning models)",
    "pricing": "$25.00 / 1k calls + Search content tokens are free.",
    "price_per_1k_usd": 25.0,
-   "price_basis": "non-reasoning models, per 1k calls",
+   "price_basis": "非推理模型的Web search preview，每1,000次调用",
    "free_quota": null,
-   "output_type": "回答文本、搜索调用及带 URL 的内联引用",
+   "output_type": "带内联URL引用的文本答案及web_search_call输出",
    "cites_sources": true,
    "default_on": false,
-   "note": "旧版工具；搜索内容 token 免费。"
+   "note": "搜索内容token免费；旧版工具不支持filters和return_token_budget。"
   },
   {
    "name": "gpt-5-search-api",
-   "pricing": "Input $1.25 / 1M tokens; cached input $0.125 / 1M tokens; output $10.00 / 1M tokens.",
+   "pricing": "Input $1.25 / 1M tokens; Cached input $0.125 / 1M tokens; Output $10.00 / 1M tokens.",
    "price_per_1k_usd": null,
-   "price_basis": "Standard specialized Search model，按 token 计费",
+   "price_basis": "Standard，按输入、缓存输入和输出token计费",
    "free_quota": null,
-   "output_type": "Chat Completions 专用搜索模型生成的联网搜索回答",
+   "output_type": "Chat Completions专用搜索模型生成的带来源引用答案",
    "cites_sources": true,
    "default_on": true,
-   "note": "Chat Completions 搜索模型在响应前始终搜索；上下文窗口200k。"
+   "note": "Chat Completions搜索模型在响应前始终搜索；上下文窗口200k。"
   }
  ],
- "fetched_at": "2026-09-09T21:15:15Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-10T18:13:48Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-10T17:16:56Z",
- "websearch_hash": "aab1204e231e79e35bd76fba27804e9a56f89f566adbf02971ff53c5b047867d"
+ "last_fetch_ts": "2026-09-10T18:13:48Z",
+ "websearch_hash": "876a31bd88f4e8126647d0c5d50bb257a4bfe57b8643108090418ec4022978b8"
 }

@@ -1,32 +1,39 @@
 {
  "entries": [
   {
+   "date": "Sep 10",
+   "title": "GPT-Live 1",
+   "url": "https://developers.openai.com/api/docs/models/gpt-live-1",
+   "summary": "GPT-Live 1正式开放，支持全双工语音会话，每分钟0.05美元。",
+   "first_seen": "2026-09-10T18:09:26Z"
+  },
+  {
    "date": "Sep 8",
-   "title": "Prompt Cache Diagnostics is now generally available in the Responses API for GPT-5.6 and later supported models.",
+   "title": "Prompt Cache Diagnostics",
    "url": "https://developers.openai.com/api/docs/guides/prompt-caching/diagnostics",
-   "summary": "提示缓存诊断功能正式上线，可分析缓存未命中原因。",
-   "first_seen": "2026-09-08T23:09:18Z"
+   "summary": "Responses API正式提供提示缓存诊断，支持GPT-5.6及后续模型。",
+   "first_seen": "2026-09-10T18:09:26Z"
   },
   {
    "date": "Sep 8",
-   "title": "Released GPT Image 2.5 Sunburst and GPT Image 2.5 Flare for image generation and editing through the Image API and the Responses API image generation tool.",
+   "title": "Released GPT Image 2.5 Sunburst and GPT Image 2.5 Flare",
    "url": "https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst",
-   "summary": "发布两款GPT Image 2.5模型，分别侧重编辑精度与生成速度。",
-   "first_seen": "2026-09-08T19:11:21Z"
+   "summary": "发布两款GPT Image 2.5模型，分别侧重精准编辑与快速生成。",
+   "first_seen": "2026-09-10T18:09:26Z"
   },
   {
    "date": "Sep 3",
-   "title": "Released GPT-6 Astra, our most capable model, built for the hardest end-to-end work.",
+   "title": "GPT-6 Astra",
    "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-   "summary": "发布GPT-6 Astra，面向复杂端到端推理、编程及研究任务。",
-   "first_seen": "2026-09-08T19:11:21Z"
+   "summary": "发布GPT-6 Astra，面向推理、编程、计算机操作和研究等复杂任务。",
+   "first_seen": "2026-09-10T18:09:26Z"
   },
   {
    "date": "Sep 3",
-   "title": "Added new controls for long-running work with GPT-6 Astra in the Responses API:",
+   "title": "Added new controls for long-running work with GPT-6 Astra in the Responses API",
    "url": "https://developers.openai.com/api/docs/guides/async-tool-calling",
-   "summary": "Responses API新增异步工具调用、中途引导及推理强度调整。",
-   "first_seen": "2026-09-08T19:11:21Z"
+   "summary": "Responses API新增异步工具调用、回合中引导及动态推理强度控制。",
+   "first_seen": "2026-09-10T18:09:26Z"
   },
   {
    "date": "Sep 2",
@@ -44,49 +51,42 @@
   },
   {
    "date": "Aug 29",
-   "title": "Mutual TLS (mTLS) and X.509 workload identity federation are now generally available for the OpenAI API.",
+   "title": "Mutual TLS (mTLS) and X.509 workload identity federation",
    "url": "https://developers.openai.com/api/docs/guides/mutual-tls",
-   "summary": "OpenAI API正式支持mTLS与X.509工作负载身份联合。",
-   "first_seen": "2026-09-02T18:09:13Z"
+   "summary": "OpenAI API正式支持mTLS和X.509工作负载身份联合。",
+   "first_seen": "2026-09-10T18:09:26Z"
   },
   {
    "date": "Aug 26",
    "title": "Announced the deprecation of `whisper-1`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, and `gpt-4o-transcribe-diarize`.",
    "url": "https://developers.openai.com/api/docs/deprecations",
-   "summary": "多款旧转录模型将于2027年2月26日停用，Assistants API已关闭。",
+   "summary": "多款转录模型宣布弃用并将于2027年2月26日停用，Assistants API亦已关闭。",
    "first_seen": "2026-08-31T10:21:49Z"
   },
   {
    "date": "Aug 21",
-   "title": "API customers can now select regional processing for an individual request by using a prefixed domain with an API key from a project having Global geography.",
+   "title": "API customers can now select regional processing for an individual request",
    "url": "https://developers.openai.com/api/docs/guides/your-data#select-a-processing-region-per-request",
-   "summary": "API客户现可按单次请求选择区域处理位置。",
-   "first_seen": "2026-09-02T18:09:13Z"
+   "summary": "API客户现可为单个请求选择区域处理。",
+   "first_seen": "2026-09-10T18:09:26Z"
   },
   {
    "date": "Aug 21",
-   "title": "GPT-5.6 Sol now costs $4 per million input tokens and $20 per million output tokens, representing 20% lower input pricing and 33% lower output pricing.",
+   "title": "GPT-5.6 Sol now costs $4 per million input tokens and $20 per million output tokens",
    "url": "https://developers.openai.com/api/docs/pricing",
    "summary": "GPT-5.6 Sol输入与输出价格分别下调20%和33%。",
-   "first_seen": "2026-09-08T19:11:21Z"
+   "first_seen": "2026-09-10T18:09:26Z"
   },
   {
    "date": "Aug 20",
-   "title": "Released the Prompt Caching dashboard on the OpenAI API platform.",
+   "title": "Prompt Caching dashboard",
    "url": "https://platform.openai.com/usage?usage_section=prompt-caching",
-   "summary": "上线提示缓存仪表板，可查看命中率及各类缓存令牌指标。",
-   "first_seen": "2026-09-02T18:09:13Z"
-  },
-  {
-   "date": "Aug 20",
-   "title": "Transparent backgrounds are now available in preview for `gpt-image-2` and `gpt-image-2-2026-04-21` in the Images API and the Responses API image generation tool.",
-   "url": "https://developers.openai.com/api/docs/guides/image-generation#customize-image-output",
-   "summary": "GPT Image 2在图像及Responses API中预览支持透明背景。",
-   "first_seen": "2026-09-02T18:09:13Z"
+   "summary": "发布提示缓存仪表板，可跟踪命中率及各类缓存令牌用量。",
+   "first_seen": "2026-09-10T18:09:26Z"
   }
  ],
- "news_hash": "64d8a8975dbf2aafb4151e9f7d23aa81058856ef0fd2e3fb235cd46da9915fc1",
- "fetched_at": "2026-09-08T23:09:18Z",
+ "news_hash": "01786707e660d3ae6878a750dc1fedc21fc1fa62b0c20d83f21a9c0f4d7dd93a",
+ "fetched_at": "2026-09-10T18:09:26Z",
  "status_note": null,
  "last_error": null
 }

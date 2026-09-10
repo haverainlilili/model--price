@@ -4,12 +4,12 @@
    "name": "Andante",
    "plan_type": "聊天会员",
    "price": "¥49/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新",
+   "billing": "连续包月；额度按月刷新",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "每月"
+     "window": "按月刷新"
     },
     {
      "label": "Agent 优先生成队列",
@@ -19,23 +19,26 @@
     {
      "label": "专业数据库",
      "value": "1000 次调用",
-     "window": "每个计费周期"
+     "window": "按月刷新"
     }
    ],
-   "models": [],
-   "note": "Agent 用量是将月额度用于同一功能时的参考值，基于常见任务 token 消耗估算。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额。官网亦支持连续包年，但仅标注“年付更优惠”，未公开具体年价。",
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；未使用额度到期清零。页面另称支持连续包年，但仅标注“年付更优惠”，未公开具体年付价格。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
    "plan_type": "聊天会员",
    "price": "¥99/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新",
+   "billing": "连续包月；额度按月刷新",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "每月"
+     "window": "按月刷新"
     },
     {
      "label": "Agent 优先生成队列",
@@ -45,28 +48,31 @@
     {
      "label": "Agent 集群",
      "value": "25 次",
-     "window": "每个计费周期"
+     "window": "按月刷新"
     },
     {
      "label": "专业数据库",
      "value": "2000 次调用",
-     "window": "每个计费周期"
+     "window": "按月刷新"
     }
    ],
-   "models": [],
-   "note": "套餐在 Andante 基础上提供所列权益。Agent 用量是将月额度用于同一功能时的参考值，基于常见任务 token 消耗估算。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额。官网亦支持连续包年，但仅标注“年付更优惠”，未公开具体年价。",
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "本套餐在 Andante 基础上提供权益。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。Agent 集群每次支持 2 个子任务并行。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；未使用额度到期清零。页面另称支持连续包年，但仅标注“年付更优惠”，未公开具体年付价格。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
    "plan_type": "聊天会员",
    "price": "¥199/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新",
+   "billing": "连续包月；额度按月刷新",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "每月"
+     "window": "按月刷新"
     },
     {
      "label": "Agent 优先生成队列",
@@ -76,28 +82,31 @@
     {
      "label": "Agent 集群",
      "value": "50 次",
-     "window": "每个计费周期"
+     "window": "按月刷新"
     },
     {
      "label": "专业数据库",
      "value": "5000 次调用",
-     "window": "每个计费周期"
+     "window": "按月刷新"
     }
    ],
-   "models": [],
-   "note": "套餐在 Andante 基础上提供所列权益。Agent 用量是将月额度用于同一功能时的参考值，基于常见任务 token 消耗估算。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额。官网亦支持连续包年，但仅标注“年付更优惠”，未公开具体年价。",
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "本套餐在 Andante 基础上提供权益。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。Agent 集群每次支持 4 个子任务并行。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；未使用额度到期清零。页面另称支持连续包年，但仅标注“年付更优惠”，未公开具体年付价格。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
    "plan_type": "聊天会员",
    "price": "¥699/月",
-   "billing": "连续包月；额度在每个计费周期自动刷新",
+   "billing": "连续包月；额度按月刷新",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "每月"
+     "window": "按月刷新"
     },
     {
      "label": "Agent 优先生成队列",
@@ -107,7 +116,7 @@
     {
      "label": "Agent 集群",
      "value": "120 次",
-     "window": "每个计费周期"
+     "window": "按月刷新"
     },
     {
      "label": "超长对话容量",
@@ -117,22 +126,25 @@
     {
      "label": "专业数据库",
      "value": "12000 次调用",
-     "window": "每个计费周期"
+     "window": "按月刷新"
     }
    ],
-   "models": [],
-   "note": "套餐在 Andante 基础上提供所列权益。Agent 用量是将月额度用于同一功能时的参考值，基于常见任务 token 消耗估算。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额。官网亦支持连续包年，但仅标注“年付更优惠”，未公开具体年价。",
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "本套餐在 Andante 基础上提供权益。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。Agent 集群每次支持 8 个子任务并行。官网原文仅写“支持百万 Tokens 超长对话容量”，未给出更精确数值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除；未使用额度到期清零。页面另称支持连续包年，但仅标注“年付更优惠”，未公开具体年付价格。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-10T01:11:35Z",
+ "last_fetch_ts": "2026-09-10T02:10:49Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "de53bf5d6a7988c3611dd5cc4109a7339ea954b6cc2df03ddfdc456a3207dbb2",
- "fetched_at": "2026-09-10T01:11:35Z",
+ "plans_hash": "23ce267fdffcc728df731c3123351efdda118689cc56bf00ab76ea0de790e108",
+ "fetched_at": "2026-09-10T02:10:49Z",
  "status_note": null
 }

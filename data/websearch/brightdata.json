@@ -11,52 +11,52 @@
  "offerings": [
   {
    "name": "SERP API — Free Tier",
-   "pricing": "Free Tier: 5K requests; 5K records per month; no credit card required",
-   "price_per_1k_usd": null,
-   "price_basis": "Free Tier",
-   "free_quota": "5K records per month",
-   "output_type": "搜索结果以 JSON 或 HTML 输出",
+   "pricing": "Free Tier",
+   "price_per_1k_usd": 0.0,
+   "price_basis": "Free Tier（5K requests）",
+   "free_quota": "5K requests; 5K records per month",
+   "output_type": "搜索结果数据，以 JSON 或 HTML 输出",
    "cites_sources": null,
    "default_on": null,
-   "note": "支持主要搜索引擎；仅成功请求计费；执行每次 API 计为一次请求。"
+   "note": "支持主要搜索引擎、195个国家及城市级定位；仅成功请求计费。"
   },
   {
    "name": "SERP API — Pay as you go",
    "pricing": "$1.5/1K requests",
    "price_per_1k_usd": 1.5,
-   "price_basis": "Pay as you go；成功请求",
+   "price_basis": "Pay as you go（每1K requests）",
    "free_quota": null,
-   "output_type": "搜索结果以 JSON 或 HTML 输出",
+   "output_type": "搜索结果数据，以 JSON 或 HTML 输出",
    "cites_sources": null,
    "default_on": null,
-   "note": "无限并发，可设置月度支出上限；仅成功请求计费。"
+   "note": "Pay only for success；无限并发；每次执行 API 计为一个请求。"
   },
   {
    "name": "SERP API — Scale",
    "pricing": "$499/month; 380K requests included; $1.3/1K additional requests",
    "price_per_1k_usd": 1.3,
-   "price_basis": "Scale 额外请求",
+   "price_basis": "Scale（超出380K included后的additional requests）",
    "free_quota": null,
-   "output_type": "搜索结果以 JSON 或 HTML 输出",
+   "output_type": "搜索结果数据，以 JSON 或 HTML 输出",
    "cites_sources": null,
    "default_on": null,
-   "note": "含每月380K请求，额外请求$1.3/千次；无限并发，可随时取消。"
+   "note": "无限并发，可随时取消；页面称滑块可调整套餐。"
   },
   {
    "name": "SERP API — Enterprise",
-   "pricing": "Custom; volume discounts",
+   "pricing": "Custom; Volume discounts",
    "price_per_1k_usd": null,
-   "price_basis": "Enterprise 定制价格",
+   "price_basis": "Enterprise（定制报价）",
    "free_quota": null,
-   "output_type": "搜索结果以 JSON 或 HTML 输出",
+   "output_type": "搜索结果数据，以 JSON 或 HTML 输出",
    "cites_sources": null,
    "default_on": null,
-   "note": "提供客户经理、Premium SLA、优先支持和SSO。"
+   "note": "含Account manager、Premium SLA、Priority support和SSO。"
   }
  ],
- "fetched_at": "2026-09-10T09:19:53Z",
+ "fetched_at": "2026-09-10T10:19:20Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-10T09:19:53Z",
- "websearch_hash": "3cacf89d37687580f8d11cb20af25b2774a5bd3b7fefa44ee30473629251feba"
+ "last_fetch_ts": "2026-09-10T10:19:20Z",
+ "websearch_hash": "170f7513180e9c178dd2ee89ea77ad31e99b8b9f1a053767ee6b333c0dba526d"
 }

@@ -12,30 +12,30 @@
  "offerings": [
   {
    "name": "Tavily Search (basic, fast, ultra-fast)",
-   "pricing": "basic, fast, ultra-fast: 1 API Credit; Pay-as-you-go: $0.008 per credit",
+   "pricing": "Pay-as-you-go: $0.008 per credit; basic, fast, ultra-fast: 1 API Credit per request. Monthly plans: $0.0075 - $0.005 per credit.",
    "price_per_1k_usd": 8.0,
-   "price_basis": "Pay-as-you-go；basic、fast、ultra-fast（1 credit/次）",
+   "price_basis": "Pay as you go（$0.008/credit；1 credit/request）",
    "free_quota": "You get 1,000 free API Credits every month. No credit card required.",
-   "output_type": "按相关性排序的结构化搜索结果，含标题、来源 URL、内容；可选 LLM 生成答案和图片",
+   "output_type": "按相关性排序的结构化搜索结果，含标题、来源URL和内容片段；可选LLM答案、图片及原始内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "默认 search_depth=basic；最多返回20条结果；月付计划每credit为$0.0075-$0.005。"
+   "note": "basic为默认深度；默认最多返回10条结果，可设置为0至20条。"
   },
   {
    "name": "Tavily Search (advanced)",
-   "pricing": "advanced: 2 API Credits; Pay-as-you-go: $0.008 per credit",
+   "pricing": "Pay-as-you-go: $0.008 per credit; advanced: 2 API Credits per request. Monthly plans: $0.0075 - $0.005 per credit.",
    "price_per_1k_usd": 16.0,
-   "price_basis": "Pay-as-you-go；advanced（2 credits/次）",
+   "price_basis": "Pay as you go（$0.008/credit；2 credits/request）",
    "free_quota": "You get 1,000 free API Credits every month. No credit card required.",
-   "output_type": "按相关性排序的结构化搜索结果，含标题、来源 URL、多个相关片段；可选详细 LLM 答案",
+   "output_type": "按相关性排序的结构化搜索结果，每个URL可返回多个语义相关片段；可选更详细的LLM答案",
    "cites_sources": true,
    "default_on": null,
-   "note": "advanced为最高相关性、较高延迟；每来源可配置1至3个片段；最多返回20条结果。"
+   "note": "advanced提供最高相关性但延迟增加；每个来源可配置1至3个内容片段。"
   }
  ],
- "fetched_at": "2026-09-05T12:14:57Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-10T13:15:45Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-10T12:15:19Z",
- "websearch_hash": "6f87d9d2ed612b396d2e9b4530d2520a359c1346ebe008460979fbb9fc9e9bf2"
+ "last_fetch_ts": "2026-09-10T13:15:45Z",
+ "websearch_hash": "92ba87a5a50bc7aa0a34e7e9e772e53b140613d489bc8518386b81102af3ff19"
 }

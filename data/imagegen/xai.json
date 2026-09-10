@@ -5,7 +5,7 @@
  "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
- "product_status_note": null,
+ "product_status_note": "官网提供 Grok Imagine 图片生成 API、模型价格及调用文档。",
  "source_url": "https://docs.x.ai/developers/pricing",
  "source_urls": [
   "https://docs.x.ai/developers/pricing",
@@ -24,30 +24,6 @@
  ],
  "offerings": [
   {
-   "name": "grok-imagine-image",
-   "variant_key": null,
-   "api_available": true,
-   "modes": [
-    "text-to-image"
-   ],
-   "pricing": "$0.02 / image",
-   "currency": "USD",
-   "region": null,
-   "price_per_image": 0.02,
-   "comparison_group": null,
-   "price_basis": "grok-imagine-image；官网未注明质量和分辨率；按生成图片计费",
-   "resolution": null,
-   "aspect_ratios": null,
-   "output_formats": null,
-   "comparison_width": null,
-   "comparison_height": null,
-   "quality_tier": null,
-   "lifecycle_status": "unknown",
-   "sunset_at": null,
-   "free_quota": null,
-   "note": "Batch API支持图片生成，但仍按标准费率计费。"
-  },
-  {
    "name": "grok-imagine-image-quality",
    "variant_key": null,
    "api_available": true,
@@ -59,7 +35,7 @@
    "region": null,
    "price_per_image": 0.05,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image-quality；官网未注明分辨率及具体质量档定义；按生成图片计费",
+   "price_basis": "grok-imagine-image-quality；定价表未指定质量档或分辨率；标准 API 每张图片",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -69,7 +45,31 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "Batch API支持图片生成，但仍按标准费率计费。"
+   "note": "图片生成支持 Batch API，但仍按标准费率计费。"
+  },
+  {
+   "name": "grok-imagine-image",
+   "variant_key": null,
+   "api_available": true,
+   "modes": [
+    "text-to-image"
+   ],
+   "pricing": "$0.02 / image",
+   "currency": "USD",
+   "region": null,
+   "price_per_image": 0.02,
+   "comparison_group": null,
+   "price_basis": "grok-imagine-image；定价表未指定质量档或分辨率；标准 API 每张图片",
+   "resolution": null,
+   "aspect_ratios": null,
+   "output_formats": null,
+   "comparison_width": null,
+   "comparison_height": null,
+   "quality_tier": null,
+   "lifecycle_status": "unknown",
+   "sunset_at": null,
+   "free_quota": null,
+   "note": "图片生成支持 Batch API，但仍按标准费率计费。"
   },
   {
    "name": "grok-imagine-image-2.0",
@@ -84,7 +84,7 @@
    "region": null,
    "price_per_image": 0.04,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image-2.0；官网列价未按质量或分辨率拆分；按生成图片计费",
+   "price_basis": "grok-imagine-image-2.0；定价表未按 low/medium 或 1k/2k 拆分；标准 API 每张图片",
    "resolution": "1k（默认）、2k",
    "aspect_ratios": "1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3, 2:1, 1:2, 19.5:9, 9:19.5, 20:9, 9:20, 21:9, 5:2, auto",
    "output_formats": "URL（默认）或 base64",
@@ -94,21 +94,19 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "每次可生成1–10张；支持low、medium、auto，生成时auto当前使用low；Batch仍按标准费率。"
+   "note": "每次可生成1–10张；支持low、medium、auto，生图auto当前使用low；临时URL需及时下载。"
   }
  ],
- "fetched_at": "2026-09-09T09:19:39Z",
+ "fetched_at": "2026-09-10T16:20:36Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://docs.x.ai/developers/pricing",
   "https://docs.x.ai/developers/model-capabilities/images/generation"
  ],
- "last_fetch_ts": "2026-09-10T15:22:20Z",
+ "last_fetch_ts": "2026-09-10T16:20:36Z",
  "source_warnings": [],
  "imagegen_hash": "6c4c0c8f1978e7c9801db37f417594f9d256a46e2faf83c8d1b09494cc752a2a",
- "status_note": "官网生图完整页面已变化但安全摘录无变化；保留旧事实且不接受本次网页哈希",
- "last_error": "官网生图完整页面已变化但安全摘录无变化；保留旧事实且不接受本次网页哈希",
- "imagegen_excerpt_hash": "12a6565229c1435dea7d0f116ca6f49d155cfe1962efdccdc95304a8d9d10797",
- "imagegen_pending_shrink_hash": "10fef422bb626bf2dfafacc136b01b6d8f0663af69bcbdd59a051bbe6c1819dc",
- "imagegen_pending_shrink_count": 3
+ "status_note": null,
+ "last_error": null,
+ "imagegen_excerpt_hash": "d73dcd190411f970297ce18f940b4a0909e1886f533ec2ef97df3c0eb1febbe8"
 }

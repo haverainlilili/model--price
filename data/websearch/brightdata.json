@@ -11,52 +11,52 @@
  "offerings": [
   {
    "name": "SERP API — Free Tier",
-   "pricing": "Free Tier",
-   "price_per_1k_usd": 0.0,
-   "price_basis": "Free Tier（5K requests额度内）",
-   "free_quota": "5K requests；5K records per month；No credit card required",
-   "output_type": "搜索结果数据，以 JSON 或 HTML 输出",
+   "pricing": "Free Tier: 5K requests; 5K records per month; no credit card required",
+   "price_per_1k_usd": null,
+   "price_basis": "Free Tier",
+   "free_quota": "5K records per month",
+   "output_type": "搜索结果以 JSON 或 HTML 输出",
    "cites_sources": null,
    "default_on": null,
-   "note": "支持主要搜索引擎；每次执行API计为一次请求。"
+   "note": "支持主要搜索引擎；仅成功请求计费；执行每次 API 计为一次请求。"
   },
   {
    "name": "SERP API — Pay as you go",
    "pricing": "$1.5/1K requests",
    "price_per_1k_usd": 1.5,
-   "price_basis": "Pay as you go；仅成功请求计费",
+   "price_basis": "Pay as you go；成功请求",
    "free_quota": null,
-   "output_type": "搜索结果数据，以 JSON 或 HTML 输出",
+   "output_type": "搜索结果以 JSON 或 HTML 输出",
    "cites_sources": null,
    "default_on": null,
-   "note": "Pay only for success；无限并发。"
+   "note": "无限并发，可设置月度支出上限；仅成功请求计费。"
   },
   {
    "name": "SERP API — Scale",
-   "pricing": "$499/month；380K requests included；$1.3/1K additional requests",
+   "pricing": "$499/month; 380K requests included; $1.3/1K additional requests",
    "price_per_1k_usd": 1.3,
-   "price_basis": "Scale档位的additional requests",
+   "price_basis": "Scale 额外请求",
    "free_quota": null,
-   "output_type": "搜索结果数据，以 JSON 或 HTML 输出",
+   "output_type": "搜索结果以 JSON 或 HTML 输出",
    "cites_sources": null,
    "default_on": null,
-   "note": "380K请求/月包含在$499月费中；额外请求按千次计费。"
+   "note": "含每月380K请求，额外请求$1.3/千次；无限并发，可随时取消。"
   },
   {
    "name": "SERP API — Enterprise",
-   "pricing": "Custom",
+   "pricing": "Custom; volume discounts",
    "price_per_1k_usd": null,
-   "price_basis": "Enterprise；Talk to sales",
+   "price_basis": "Enterprise 定制价格",
    "free_quota": null,
-   "output_type": "搜索结果数据，以 JSON 或 HTML 输出",
+   "output_type": "搜索结果以 JSON 或 HTML 输出",
    "cites_sources": null,
    "default_on": null,
-   "note": "提供批量折扣、客户经理、Premium SLA、优先支持和SSO。"
+   "note": "提供客户经理、Premium SLA、优先支持和SSO。"
   }
  ],
- "fetched_at": "2026-09-10T08:15:51Z",
+ "fetched_at": "2026-09-10T09:19:53Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-10T08:15:51Z",
- "websearch_hash": "c0656b267e993c7713d6d675a823d735c104312f47642557aa9eb8f886fdf2f5"
+ "last_fetch_ts": "2026-09-10T09:19:53Z",
+ "websearch_hash": "3cacf89d37687580f8d11cb20af25b2774a5bd3b7fefa44ee30473629251feba"
 }

@@ -5,7 +5,7 @@
  "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
- "product_status_note": null,
+ "product_status_note": "官网提供视频生成 API 文档及按生成秒计费的公开价格。",
  "source_url": "https://docs.x.ai/developers/pricing",
  "source_urls": [
   "https://docs.x.ai/developers/pricing",
@@ -31,16 +31,17 @@
     "image-to-video",
     "reference-to-video",
     "first-last-frame",
-    "video-edit"
+    "video-edit",
+    "video-to-video"
    ],
    "pricing": "$0.080 / sec",
    "currency": "USD",
    "region": null,
    "price_per_second": 0.08,
    "comparison_group": "usd-480p-audio",
-   "price_basis": "grok-imagine-video-1.5，480p API 视频生成；默认生成音轨，标准费率 $0.080/秒",
+   "price_basis": "grok-imagine-video-1.5，480p，生成视频默认含音轨，标准 API 按 $0.080/生成秒计费",
    "resolution": "480p",
-   "duration": "生成 1–15 秒；视频编辑保留原片时长且最长 8.7 秒",
+   "duration": "1–15 seconds; video editing retains the original duration, capped at 8.7 seconds",
    "frame_rate": null,
    "aspect_ratios": "1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3",
    "native_audio": true,
@@ -48,7 +49,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "异步生成；默认含音轨，可用 generate_audio=False 请求静音；Batch API 仍按标准费率。"
+   "note": "默认生成音轨，可用 generate_audio=False 请求静音；异步生成，Batch API 不打折。"
   },
   {
    "name": "grok-imagine-video-1.5",
@@ -59,16 +60,17 @@
     "image-to-video",
     "reference-to-video",
     "first-last-frame",
-    "video-edit"
+    "video-edit",
+    "video-to-video"
    ],
    "pricing": "$0.080 / sec",
    "currency": "USD",
    "region": null,
    "price_per_second": 0.08,
    "comparison_group": "usd-720p-audio",
-   "price_basis": "grok-imagine-video-1.5，720p API 视频生成；默认生成音轨，标准费率 $0.080/秒",
+   "price_basis": "grok-imagine-video-1.5，720p，生成视频默认含音轨，标准 API 按 $0.080/生成秒计费",
    "resolution": "720p",
-   "duration": "生成 1–15 秒；视频编辑保留原片时长且最长 8.7 秒",
+   "duration": "1–15 seconds; video editing retains the original duration, capped at 8.7 seconds",
    "frame_rate": null,
    "aspect_ratios": "1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3",
    "native_audio": true,
@@ -76,7 +78,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "参考视频最高 720p；编辑输出匹配输入但最高 720p；默认含音轨，可请求静音。"
+   "note": "参考生视频最高为720p；编辑输出匹配输入且最高720p；Batch API按标准费率。"
   },
   {
    "name": "grok-imagine-video-1.5",
@@ -91,7 +93,7 @@
    "region": null,
    "price_per_second": 0.08,
    "comparison_group": "usd-1080p-audio",
-   "price_basis": "grok-imagine-video-1.5，1080p 文生视频或图生视频 API；默认生成音轨，标准费率 $0.080/秒",
+   "price_basis": "grok-imagine-video-1.5，文本生视频或图生视频，1080p，默认含音轨，标准 API 按 $0.080/生成秒计费",
    "resolution": "1080p",
    "duration": "1–15 seconds",
    "frame_rate": null,
@@ -101,7 +103,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "1080p 仅明确支持文生视频和图生视频；参考视频及视频编辑最高 720p。"
+   "note": "1080p仅明确支持文本生视频和图生视频；参考生视频及视频编辑最高720p。"
   },
   {
    "name": "grok-imagine-video",
@@ -111,16 +113,17 @@
     "text-to-video",
     "image-to-video",
     "reference-to-video",
-    "video-edit"
+    "video-edit",
+    "video-to-video"
    ],
    "pricing": "$0.050 / sec",
    "currency": "USD",
    "region": null,
    "price_per_second": 0.05,
    "comparison_group": "usd-480p-audio",
-   "price_basis": "grok-imagine-video，480p API 视频生成；默认生成音轨，标准费率 $0.050/秒",
+   "price_basis": "grok-imagine-video，480p，生成视频默认含音轨，标准 API 按 $0.050/生成秒计费",
    "resolution": "480p",
-   "duration": "生成 1–15 秒；视频编辑保留原片时长且最长 8.7 秒",
+   "duration": "1–15 seconds; video editing retains the original duration, capped at 8.7 seconds",
    "frame_rate": null,
    "aspect_ratios": "1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3",
    "native_audio": true,
@@ -128,7 +131,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "Classic 模型不支持 last_frame，且不允许 image 与参考输入组合；可请求静音。"
+   "note": "不支持last_frame，且不能将image与参考输入组合；Batch API按标准费率。"
   },
   {
    "name": "grok-imagine-video",
@@ -138,16 +141,17 @@
     "text-to-video",
     "image-to-video",
     "reference-to-video",
-    "video-edit"
+    "video-edit",
+    "video-to-video"
    ],
    "pricing": "$0.050 / sec",
    "currency": "USD",
    "region": null,
    "price_per_second": 0.05,
    "comparison_group": "usd-720p-audio",
-   "price_basis": "grok-imagine-video，720p API 视频生成；默认生成音轨，标准费率 $0.050/秒",
+   "price_basis": "grok-imagine-video，720p，生成视频默认含音轨，标准 API 按 $0.050/生成秒计费",
    "resolution": "720p",
-   "duration": "生成 1–15 秒；视频编辑保留原片时长且最长 8.7 秒",
+   "duration": "1–15 seconds; video editing retains the original duration, capped at 8.7 seconds",
    "frame_rate": null,
    "aspect_ratios": "1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3",
    "native_audio": true,
@@ -155,19 +159,19 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "Classic 模型不支持 last_frame，且不允许 image 与参考输入组合；编辑最高 720p。"
+   "note": "不支持last_frame，且不能将image与参考输入组合；视频编辑输出最高720p。"
   }
  ],
- "fetched_at": "2026-09-10T08:20:14Z",
+ "fetched_at": "2026-09-10T09:23:20Z",
  "has_video_generation": true,
  "configured_source_urls": [
   "https://docs.x.ai/developers/pricing",
   "https://docs.x.ai/developers/model-capabilities/video/generation"
  ],
- "last_fetch_ts": "2026-09-10T08:20:14Z",
+ "last_fetch_ts": "2026-09-10T09:23:20Z",
  "source_warnings": [],
- "videogen_hash": "d2de1314d044e940ab23580efbae194f98c40be4652509775042f6c3b3fdb24f",
+ "videogen_hash": "1d7c9803e73eaaff6a0d82779c693989b9d25e3966941b41a0f1a473721ddc3e",
  "status_note": null,
  "last_error": null,
- "videogen_excerpt_hash": "c9afdff6024c75d216612a9a8cfaebcf5a906c3822a6f64a88f21637010a12fd"
+ "videogen_excerpt_hash": "4e567f3e0949f870f5925bac0d01baeb18576d514353e790fd329dbbb3e1b080"
 }

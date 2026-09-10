@@ -2,91 +2,91 @@
  "entries": [
   {
    "date": "Sep 10",
+   "title": "You can now set expiration dates when creating project API keys.",
+   "url": "https://developers.openai.com/api/docs/guides/production-best-practices#api-keys",
+   "summary": "项目API密钥现可设置到期日，并可强制限制最长有效期。",
+   "first_seen": "2026-09-10T22:09:06Z"
+  },
+  {
+   "date": "Sep 10",
    "title": "Released the Agents API in public beta.",
    "url": "https://developers.openai.com/api/docs/guides/agents-api/overview",
-   "summary": "Agents API公测，提供托管编排、上下文压缩与恢复。",
+   "summary": "Agents API公开测试，提供托管式会话编排、压缩与恢复。",
    "first_seen": "2026-09-10T20:09:17Z"
   },
   {
    "date": "Sep 10",
    "title": "GPT-Live 1 is now generally available in the API.",
    "url": "https://developers.openai.com/api/docs/models/gpt-live-1",
-   "summary": "GPT-Live 1正式可用，语音会话每分钟0.05美元。",
+   "summary": "GPT-Live 1正式可用，支持全双工语音，每分钟0.05美元。",
    "first_seen": "2026-09-10T20:09:17Z"
   },
   {
    "date": "Sep 8",
    "title": "Prompt Cache Diagnostics is now generally available in the Responses API for GPT-5.6 and later supported models.",
    "url": "https://developers.openai.com/api/docs/guides/prompt-caching/diagnostics",
-   "summary": "提示缓存诊断正式可用，可分析缓存未命中原因。",
+   "summary": "提示缓存诊断正式可用，可分析缓存复用及未命中原因。",
    "first_seen": "2026-09-10T20:09:17Z"
   },
   {
    "date": "Sep 8",
    "title": "Released GPT Image 2.5 Sunburst and GPT Image 2.5 Flare for image generation and editing through the Image API and the Responses API image generation tool.",
    "url": "https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst",
-   "summary": "发布两款GPT Image 2.5模型，支持生成、编辑及新质量档位。",
+   "summary": "发布两款GPT Image 2.5模型，分别侧重精确编辑与快速生成。",
    "first_seen": "2026-09-10T20:09:17Z"
   },
   {
    "date": "Sep 3",
    "title": "Released GPT-6 Astra, our most capable model, built for the hardest end-to-end work.",
    "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-   "summary": "发布GPT-6 Astra，面向复杂推理、编程、研究和计算机操作。",
+   "summary": "发布GPT-6 Astra，面向复杂推理、编程、研究及端到端任务。",
    "first_seen": "2026-09-10T20:09:17Z"
   },
   {
    "date": "Sep 3",
    "title": "Added new controls for long-running work with GPT-6 Astra in the Responses API:",
    "url": "https://developers.openai.com/api/docs/guides/async-tool-calling",
-   "summary": "Responses API新增异步工具调用、中途引导和推理强度调整。",
+   "summary": "Responses API新增异步工具调用、中途引导及推理强度调整。",
    "first_seen": "2026-09-10T20:09:17Z"
   },
   {
    "date": "Sep 2",
    "title": "Updated API errors so applications can distinguish traffic that increases too quickly from temporary model overload.",
    "url": "https://developers.openai.com/api/docs/guides/error-codes",
-   "summary": "API新增错误码区分流量增长过快与临时模型过载。",
+   "summary": "API现以不同错误码区分流量增长过快与模型临时过载。",
    "first_seen": "2026-09-02T18:09:13Z"
   },
   {
    "date": "Sep 1",
    "title": "Connections to `api.openai.com` can now use IPv6.",
    "url": null,
-   "summary": "api.openai.com现已支持IPv6连接。",
+   "summary": "OpenAI API域名连接现已支持IPv6。",
    "first_seen": "2026-09-08T19:11:21Z"
   },
   {
    "date": "Aug 29",
    "title": "Mutual TLS (mTLS) and X.509 workload identity federation are now generally available for the OpenAI API.",
    "url": "https://developers.openai.com/api/docs/guides/mutual-tls",
-   "summary": "OpenAI API正式支持mTLS及X.509工作负载身份联合。",
+   "summary": "OpenAI API正式支持mTLS与X.509工作负载身份联合。",
    "first_seen": "2026-09-10T20:09:17Z"
   },
   {
    "date": "Aug 26",
    "title": "Announced the deprecation of `whisper-1`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, and `gpt-4o-transcribe-diarize`.",
    "url": "https://developers.openai.com/api/docs/deprecations",
-   "summary": "多款转录模型宣布弃用，Assistants API同日关闭。",
+   "summary": "四款转录模型将于2027年2月26日停用，需迁移至新模型。",
    "first_seen": "2026-08-31T10:21:49Z"
   },
   {
    "date": "Aug 21",
    "title": "API customers can now select regional processing for an individual request by using a prefixed domain with an API key from a project having Global geography.",
    "url": "https://developers.openai.com/api/docs/guides/your-data#select-a-processing-region-per-request",
-   "summary": "支持通过前缀域名为单个API请求选择区域处理。",
-   "first_seen": "2026-09-10T20:09:17Z"
-  },
-  {
-   "date": "Aug 21",
-   "title": "GPT-5.6 Sol now costs $4 per million input tokens and $20 per million output tokens, representing 20% lower input pricing and 33% lower output pricing.",
-   "url": "https://developers.openai.com/api/docs/pricing",
-   "summary": "GPT-5.6 Sol输入降价20%，输出降价33%。",
+   "summary": "API客户现可通过前缀域名为单次请求选择区域处理。",
    "first_seen": "2026-09-10T20:09:17Z"
   }
  ],
- "news_hash": "e01b0013d8710254800f6491f18e50672a3c4d6957e58547aa6b4a69ac35539d",
- "fetched_at": "2026-09-10T20:09:17Z",
+ "news_hash": "725c346d8dcf3b1dd44f57812da0ad945e8baac8ebd56927a5533d899e87667f",
+ "fetched_at": "2026-09-10T22:09:06Z",
  "status_note": null,
  "last_error": null
 }

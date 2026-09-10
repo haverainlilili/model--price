@@ -11,85 +11,63 @@
  "offerings": [
   {
    "name": "联网搜索（turbo 策略）",
-   "pricing": "2026年2月27日 00:00 起正式计费，每调用1000次3元；网页内容增加的输入Token按模型标准价格计费。",
+   "pricing": "2026年2月27日 00:00 起正式计费，每调用 1000 次费用为 3元；另收模型调用费用。",
    "price_per_1k_usd": null,
-   "price_basis": "turbo策略，华北2（北京）地域",
+   "price_basis": "turbo 策略，华北2（北京）地域",
    "free_quota": "本身不提供免费调用额度",
-   "output_type": "模型生成回复；DashScope可返回搜索结果列表及角标引用",
+   "output_type": "模型内置联网搜索；生成模型回答，可通过 DashScope 返回搜索结果列表和角标引用",
    "cites_sources": true,
    "default_on": false,
-   "note": "turbo为默认搜索策略；联网搜索需通过enable_search或web_search工具启用。"
+   "note": "turbo 为默认搜索策略；模型调用按输入 Token 标准价格计费。"
   },
   {
    "name": "联网搜索（max 策略）",
-   "pricing": "2026年2月27日 00:00 起正式计费，每调用1000次4元；网页内容增加的输入Token按模型标准价格计费。",
+   "pricing": "2026年2月27日 00:00 起正式计费，每调用 1000 次费用为 4元；另收模型调用费用。",
    "price_per_1k_usd": null,
-   "price_basis": "max策略，华北2（北京）地域",
+   "price_basis": "max 策略，华北2（北京）地域",
    "free_quota": "本身不提供免费调用额度",
-   "output_type": "模型生成回复；DashScope可返回搜索结果列表及角标引用",
+   "output_type": "模型内置多源联网搜索；生成模型回答，可通过 DashScope 返回搜索结果列表和角标引用",
    "cites_sources": true,
    "default_on": false,
-   "note": "max采用更全面的搜索策略，可调用多源搜索引擎，响应时间可能更长。"
+   "note": "采用更全面的搜索策略，可调用多源搜索引擎，响应时间可能更长。"
   },
   {
    "name": "联网搜索（agent 策略）",
-   "pricing": "每调用1000次4元；网页内容增加的输入Token按模型标准价格计费。",
+   "pricing": "每调用 1000 次：华北2（北京）、美国（弗吉尼亚）、中国香港、日本（东京）、德国（法兰克福）4元；新加坡73.392381元。另收模型调用费用。",
    "price_per_1k_usd": null,
-   "price_basis": "agent策略，华北2（北京）、美国、中国香港、日本、德国地域",
+   "price_basis": "agent 策略，按地域计费",
    "free_quota": "本身不提供免费调用额度",
-   "output_type": "多次调用联网搜索工具与大模型，生成多轮信息检索与内容整合回复",
+   "output_type": "模型可多次调用联网搜索工具并进行多轮信息检索与内容整合",
    "cites_sources": true,
    "default_on": false,
-   "note": "Responses API联网搜索工具按agent策略计费；启用时仅支持enable_source。"
-  },
-  {
-   "name": "联网搜索（agent 策略）",
-   "pricing": "每调用1000次73.392381元；网页内容增加的输入Token按模型标准价格计费。",
-   "price_per_1k_usd": null,
-   "price_basis": "agent策略，新加坡地域",
-   "free_quota": "本身不提供免费调用额度",
-   "output_type": "多次调用联网搜索工具与大模型，生成多轮信息检索与内容整合回复",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "启用agent策略时仅支持返回搜索来源（enable_source:true）。"
+   "note": "启用时仅支持 enable_source:true，其他联网搜索功能不可用。"
   },
   {
    "name": "联网搜索（agent_max 策略）",
-   "pricing": "联网搜索工具每1000次调用4元，网页抓取工具限时免费；另按模型标准价格计输入Token。",
+   "pricing": "限时优惠：联网搜索工具每 1000 次调用，华北2（北京）、美国（弗吉尼亚）、中国香港、日本（东京）、德国（法兰克福）4元；新加坡73.392381元；网页抓取工具限时免费。",
    "price_per_1k_usd": null,
-   "price_basis": "agent_max策略，华北2（北京）、美国、中国香港、日本、德国地域",
-   "free_quota": "本身不提供免费调用额度",
-   "output_type": "联网搜索、网页抓取与模型整合回复",
+   "price_basis": "agent_max 策略，按地域计费",
+   "free_quota": "网页抓取工具限时免费",
+   "output_type": "模型内置联网搜索与网页抓取",
    "cites_sources": true,
    "default_on": false,
-   "note": "仅适用于qwen3-max、qwen3-max-2026-01-23的思考模式。"
-  },
-  {
-   "name": "联网搜索（agent_max 策略）",
-   "pricing": "联网搜索工具每1000次调用73.392381元，网页抓取工具限时免费；另按模型标准价格计输入Token。",
-   "price_per_1k_usd": null,
-   "price_basis": "agent_max策略，新加坡地域",
-   "free_quota": "本身不提供免费调用额度",
-   "output_type": "联网搜索、网页抓取与模型整合回复",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "仅适用于qwen3-max、qwen3-max-2026-01-23的思考模式。"
+   "note": "仅适用于 qwen3-max、qwen3-max-2026-01-23 的思考模式。"
   },
   {
    "name": "联网搜索 MCP",
-   "pricing": "免费额度用尽后按29元/千次计费",
+   "pricing": "免费额度用尽后按 29 元/千次计费。",
    "price_per_1k_usd": null,
-   "price_basis": "联网搜索MCP，免费额度用尽后",
-   "free_quota": "全部用户前2000次调用免费",
-   "output_type": "模型通过MCP工具检索并返回实时搜索结果",
+   "price_basis": "联网搜索 MCP，全部用户",
+   "free_quota": "全部用户前 2000 次调用免费",
+   "output_type": "可添加到智能体应用的联网搜索 MCP 工具",
    "cites_sources": null,
    "default_on": false,
    "note": "与模型内置联网搜索相互独立，计费也相互独立。"
   }
  ],
- "fetched_at": "2026-09-07T12:15:18Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-10T05:14:09Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-10T04:12:06Z",
- "websearch_hash": "28176cc368bd85e55c48f5ffd487e4023884f1926100174aab5e59928b3e2ce2"
+ "last_fetch_ts": "2026-09-10T05:14:09Z",
+ "websearch_hash": "4a3ce6f7f34944849c4e8910223c0d94aaac226ae9522aa87dffb842f157f7f8"
 }

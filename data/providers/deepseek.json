@@ -2,7 +2,7 @@
  "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
  "source": "claude",
  "currency": "CNY",
- "promotions": null,
+ "promotions": "空闲时段价格为高峰时段价格的一半。高峰时段为北京时间周一至周五 9:00 - 12:00、14:00 - 18:00（其余为空闲时段）。",
  "models": [
   {
    "model": "deepseek-flash",
@@ -10,7 +10,7 @@
    "output_per_1m": 4.0,
    "cached_input_per_1m": 0.02,
    "currency": "CNY",
-   "note": "空闲时段（北京时间周一至周五 9:00-12:00、14:00-18:00 以外时段）；模型版本 DeepSeek-V4.1-Flash"
+   "note": "空闲时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00 以外的时段）"
   },
   {
    "model": "deepseek-flash",
@@ -18,7 +18,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.04,
    "currency": "CNY",
-   "note": "高峰时段（北京时间周一至周五 9:00-12:00、14:00-18:00）；模型版本 DeepSeek-V4.1-Flash"
+   "note": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）"
   },
   {
    "model": "deepseek-v4-pro",
@@ -26,7 +26,7 @@
    "output_per_1m": 13.5,
    "cached_input_per_1m": 0.15,
    "currency": "CNY",
-   "note": "空闲时段（北京时间周一至周五 9:00-12:00、14:00-18:00 以外时段）；模型版本 DeepSeek-V4-Pro-0813。北京时间 2026 年 9 月 14 日 12:00 之后，至未来 V4.1 Pro 上线之前，请求将全部路由到 V4.1 Flash，并按 V4.1 Flash 价格计费"
+   "note": "空闲时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00 以外的时段）"
   },
   {
    "model": "deepseek-v4-pro",
@@ -34,13 +34,13 @@
    "output_per_1m": 27.0,
    "cached_input_per_1m": 0.3,
    "currency": "CNY",
-   "note": "高峰时段（北京时间周一至周五 9:00-12:00、14:00-18:00）；模型版本 DeepSeek-V4-Pro-0813。北京时间 2026 年 9 月 14 日 12:00 之后，至未来 V4.1 Pro 上线之前，请求将全部路由到 V4.1 Flash，并按 V4.1 Flash 价格计费"
+   "note": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "963f99abe0d1482e23bb5524ccc066137bdd8569e4235d12f2db55e37e13beda",
- "fetched_at": "2026-09-10T06:06:28Z",
- "status_note": "页面无变化",
+ "price_hash": "7e2967be931aced364f4c3b70958166ff32b79d40adde96fbc4cd5cbb20fdd52",
+ "fetched_at": "2026-09-10T08:06:34Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-10T07:06:34Z"
+ "last_fetch_ts": "2026-09-10T08:06:34Z"
 }

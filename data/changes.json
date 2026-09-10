@@ -4,34 +4,6 @@
   "provider": "doubao",
   "provider_name": "火山方舟 (豆包)",
   "kind": "change",
-  "model": "doubao-seed-1.6",
-  "fields": [
-   {
-    "field": "note",
-    "old": "批量推理；输入长度 (128, 256] 千 token",
-    "new": "批量推理；输入长度 (128, 256] 千 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-09T20:06:32Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-1.6-lite",
-  "fields": [
-   {
-    "field": "note",
-    "old": "批量推理；输入长度 (128, 256] 千 token",
-    "new": "批量推理；输入长度 (128, 256] 千 tokens"
-   }
-  ]
- },
- {
-  "ts": "2026-09-09T20:06:32Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
   "model": "doubao-seed-1.6-flash",
   "fields": [
    {
@@ -5627,5 +5599,33 @@
   "kind": "removed",
   "model": "重排模型-知识库【通用】",
   "fields": []
+ },
+ {
+  "ts": "2026-09-10T08:06:34Z",
+  "provider": "deepseek",
+  "provider_name": "DeepSeek",
+  "kind": "change",
+  "model": "deepseek-flash",
+  "fields": [
+   {
+    "field": "note",
+    "old": "高峰时段（北京时间周一至周五 9:00-12:00、14:00-18:00）；模型版本 DeepSeek-V4.1-Flash",
+    "new": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-10T08:06:34Z",
+  "provider": "deepseek",
+  "provider_name": "DeepSeek",
+  "kind": "change",
+  "model": "deepseek-v4-pro",
+  "fields": [
+   {
+    "field": "note",
+    "old": "高峰时段（北京时间周一至周五 9:00-12:00、14:00-18:00）；模型版本 DeepSeek-V4-Pro-0813。北京时间 2026 年 9 月 14 日 12:00 之后，至未来 V4.1 Pro 上线之前，请求将全部路由到 V4.1 Flash，并按 V4.1 Flash 价格计费",
+    "new": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）"
+   }
+  ]
  }
 ]

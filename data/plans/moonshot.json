@@ -9,7 +9,7 @@
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     },
     {
      "label": "Agent 优先生成队列",
@@ -19,11 +19,14 @@
     {
      "label": "专业数据库调用",
      "value": "1000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每个计费周期"
     }
    ],
-   "models": [],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有会员功能共享一个额度池，按实际 token 消耗扣除；未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额。",
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新，未使用额度到期清零。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -35,7 +38,7 @@
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     },
     {
      "label": "Agent 优先生成队列",
@@ -44,17 +47,20 @@
     },
     {
      "label": "Agent 集群可用次数",
-     "value": "25 次",
-     "window": "每个计费周期（按月刷新）"
+     "value": "25 次（2 个子任务并行）",
+     "window": "每个计费周期"
     },
     {
      "label": "专业数据库调用",
      "value": "2000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每个计费周期"
     }
    ],
-   "models": [],
-   "note": "套餐权益在 Andante 基础上提供。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有会员功能共享一个额度池，按实际 token 消耗扣除；未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额。",
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "官网表述为“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新，未使用额度到期清零。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -66,7 +72,7 @@
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     },
     {
      "label": "Agent 优先生成队列",
@@ -75,17 +81,20 @@
     },
     {
      "label": "Agent 集群可用次数",
-     "value": "50 次",
-     "window": "每个计费周期（按月刷新）"
+     "value": "50 次（4 个子任务并行）",
+     "window": "每个计费周期"
     },
     {
      "label": "专业数据库调用",
      "value": "5000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每个计费周期"
     }
    ],
-   "models": [],
-   "note": "套餐权益在 Andante 基础上提供。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有会员功能共享一个额度池，按实际 token 消耗扣除；未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额。",
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "官网表述为“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新，未使用额度到期清零。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -97,7 +106,7 @@
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     },
     {
      "label": "Agent 优先生成队列",
@@ -106,8 +115,8 @@
     },
     {
      "label": "Agent 集群可用次数",
-     "value": "120 次",
-     "window": "每个计费周期（按月刷新）"
+     "value": "120 次（8 个子任务并行）",
+     "window": "每个计费周期"
     },
     {
      "label": "超长对话容量",
@@ -117,22 +126,25 @@
     {
      "label": "专业数据库调用",
      "value": "12000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每个计费周期"
     }
    ],
-   "models": [],
-   "note": "套餐权益在 Andante 基础上提供。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有会员功能共享一个额度池，按实际 token 消耗扣除；未使用额度到期清零。Kimi Code 另有 5 小时 / 周使用限额。",
+   "models": [
+    "K2.6",
+    "K3"
+   ],
+   "note": "官网表述为“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。“百万 Tokens”为官网对超长对话容量的原文口径。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新，未使用额度到期清零。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-10T20:12:18Z",
+ "last_fetch_ts": "2026-09-10T21:15:35Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "54cda7e8759df4aba8717d127e59dcf73958275b5e18c001fc0e405014c29019",
- "fetched_at": "2026-09-10T20:12:18Z",
+ "plans_hash": "6355445f15d4eacd3e5be6310120094d2a889d485f87f48ac58efae643a61881",
+ "fetched_at": "2026-09-10T21:15:35Z",
  "status_note": null
 }

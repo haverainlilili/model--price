@@ -12,20 +12,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search",
-   "pricing": "Search costs 2 credits per 10 results, rounded up. Entry plan Hobby: $19/month billed monthly, or $16/month billed annually, for 5,000 credits per month (2,500 searches or 5,000 pages scraped).",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": "Free Plan: 1,000 credits / month; 500 searches or 1,000 pages scraped. No cost, no card.",
-   "output_type": "按 web、news、images 分组的结构化结果，含标题、描述和 URL；可选返回全文 Markdown、HTML、链接或截图",
+   "name": "Web Search API",
+   "pricing": "Hobby: $16/month billed annually, for 5,000 credits per month (2,500 searches or 5,000 pages scraped). Search costs 2 credits per 10 results.",
+   "price_per_1k_usd": 6.4,
+   "price_basis": "Hobby 年付（2,500 次搜索/月，按每次最多10条结果）",
+   "free_quota": "1,000 credits every month（500 searches），no credit card required.",
+   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述与URL；可选抓取全文Markdown、HTML、链接或截图",
    "cites_sources": true,
-   "default_on": null,
-   "note": "每10条结果2 credits并向上取整；抓取结果另计费。企业端到端ZDR为每10条结果10 credits。"
+   "default_on": false,
+   "note": "搜索按每10条结果2 credits计费并向上取整；启用内容抓取时另收逐页抓取费用。"
   }
  ],
- "fetched_at": "2026-09-09T22:14:16Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-10T04:14:09Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-10T03:16:26Z",
- "websearch_hash": "257fa1754fcb1d244f54983ae540c2e08efbc039a111c0820c46d80ed97e08a5"
+ "last_fetch_ts": "2026-09-10T04:14:09Z",
+ "websearch_hash": "7f1e6a22bb01fbcb75250dda96e29ee396ad7b4940aeebc26561e2126a60e2a6"
 }

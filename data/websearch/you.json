@@ -12,63 +12,63 @@
  "offerings": [
   {
    "name": "Web Search API — Free",
-   "pricing": "Free · 100 queries/day",
-   "price_per_1k_usd": null,
+   "pricing": "Free",
+   "price_per_1k_usd": 0.0,
    "price_basis": "Free（100 queries/day）",
-   "free_quota": "100 queries per day; no API key required",
-   "output_type": "Structured JSON web and news results with URLs, snippets, and rich metadata",
+   "free_quota": "100 queries per day; $100 free credit",
+   "output_type": "结构化 JSON 的 web 和 news 结果，含 URL、标题、描述、snippets 和丰富元数据",
    "cites_sources": true,
    "default_on": null,
-   "note": "Web and news results in one query; Search is free to try without signup."
+   "note": "无需 API key；web 和 news 一次查询返回。"
   },
   {
    "name": "Web Search API",
    "pricing": "$5.00 /1k calls",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Pay-as-you-go Web Search API calls",
+   "price_basis": "Pay-as-you-go；每 1,000 calls",
    "free_quota": "All new accounts receive $100 in free credits to get started.",
-   "output_type": "Structured JSON web and news results with URLs, snippets or highlights, and rich metadata",
+   "output_type": "结构化 web 和 news 搜索结果；默认 snippets，可请求 highlights 或完整页面内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "Up to 100 results/call. Full-page extraction is $1/1k live-fetched pages; cache is free."
+   "note": "每次最多100条结果；新闻无额外费用。完整页面实时抓取另收$1/千页，缓存免费。"
   },
   {
    "name": "Answer API",
    "pricing": "$5.00 /1k calls",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Answer API calls",
+   "price_basis": "每 1,000 calls",
    "free_quota": "$100 free credit",
-   "output_type": "Real-time synthesized, citation-grounded answer from retrieved passages",
+   "output_type": "实时联网搜索后生成的 citation-grounded synthesized answer",
    "cites_sources": true,
    "default_on": null,
-   "note": "Single-call web search and synthesis; supports the same operators as Web Search."
+   "note": "单次调用完成搜索与综合；答案仅根据检索到的 passages 生成。"
   },
   {
    "name": "Research API — Lite",
    "pricing": "$12.00 /1k calls",
    "price_per_1k_usd": 12.0,
-   "price_basis": "Lite tier",
+   "price_basis": "Lite；每 1,000 calls",
    "free_quota": "$100 free credit",
-   "output_type": "Source-backed synthesized answers with inline citations",
+   "output_type": "开放网络多步搜索与综合，返回带内联引用的 source-backed answers",
    "cites_sources": true,
    "default_on": null,
-   "note": "Multi-step search and synthesis pipeline; Lite is for simple factual lookups."
+   "note": "Lite 用于简单事实查询；页面另列 Standard、Deep、Exhaustive、Frontier，未显示其价格。"
   },
   {
    "name": "Finance Research API — Deep",
    "pricing": "$110.00 /1k calls",
    "price_per_1k_usd": 110.0,
-   "price_basis": "Deep tier",
+   "price_basis": "Deep；每 1,000 calls",
    "free_quota": "$100 free credit",
-   "output_type": "Multi-source financial research and synthesized cited answers",
+   "output_type": "面向金融工作流的多来源研究与综合答案，含可追溯 [[n]] 来源引用",
    "cites_sources": true,
    "default_on": null,
-   "note": "Covers filings, macro data, markets and derived calculations; traceable [[n]] references."
+   "note": "覆盖 filings、宏观数据、市场和派生计算；页面另列 Exhaustive，未显示其价格。"
   }
  ],
- "fetched_at": "2026-09-08T15:13:58Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-10T00:15:03Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-09T23:12:59Z",
- "websearch_hash": "b8a1bb0860945cf95f6d229a1bda2c63803a74359160c1120094ce51cafd8daa"
+ "last_fetch_ts": "2026-09-10T00:15:03Z",
+ "websearch_hash": "df4a03b39355d53dec4784b45f10fd42fff4710e812ed5e99c6030d5478c39b4"
 }

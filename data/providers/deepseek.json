@@ -5,20 +5,20 @@
  "promotions": null,
  "models": [
   {
-   "model": "deepseek-v4-flash",
-   "input_per_1m": 1.5,
-   "output_per_1m": 4.5,
-   "cached_input_per_1m": 0.05,
+   "model": "deepseek-flash",
+   "input_per_1m": 1.0,
+   "output_per_1m": 4.0,
+   "cached_input_per_1m": 0.02,
    "currency": "CNY",
-   "note": "空闲时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00 以外的时段）"
+   "note": "空闲时段（北京时间周一至周五 9:00-12:00、14:00-18:00 以外时段）；模型版本 DeepSeek-V4.1-Flash"
   },
   {
-   "model": "deepseek-v4-flash",
-   "input_per_1m": 3.0,
-   "output_per_1m": 9.0,
-   "cached_input_per_1m": 0.1,
+   "model": "deepseek-flash",
+   "input_per_1m": 2.0,
+   "output_per_1m": 8.0,
+   "cached_input_per_1m": 0.04,
    "currency": "CNY",
-   "note": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）"
+   "note": "高峰时段（北京时间周一至周五 9:00-12:00、14:00-18:00）；模型版本 DeepSeek-V4.1-Flash"
   },
   {
    "model": "deepseek-v4-pro",
@@ -26,7 +26,7 @@
    "output_per_1m": 13.5,
    "cached_input_per_1m": 0.15,
    "currency": "CNY",
-   "note": "空闲时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00 以外的时段）"
+   "note": "空闲时段（北京时间周一至周五 9:00-12:00、14:00-18:00 以外时段）；模型版本 DeepSeek-V4-Pro-0813。北京时间 2026 年 9 月 14 日 12:00 之后，至未来 V4.1 Pro 上线之前，请求将全部路由到 V4.1 Flash，并按 V4.1 Flash 价格计费"
   },
   {
    "model": "deepseek-v4-pro",
@@ -34,29 +34,13 @@
    "output_per_1m": 27.0,
    "cached_input_per_1m": 0.3,
    "currency": "CNY",
-   "note": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）"
-  },
-  {
-   "model": "deepseek-v4-flash-vision-exp",
-   "input_per_1m": 1.5,
-   "output_per_1m": 4.5,
-   "cached_input_per_1m": 0.05,
-   "currency": "CNY",
-   "note": "空闲时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00 以外的时段）；多模态视觉模型，图片按尺寸换算成 token，与文本 token 一并计费"
-  },
-  {
-   "model": "deepseek-v4-flash-vision-exp",
-   "input_per_1m": 3.0,
-   "output_per_1m": 9.0,
-   "cached_input_per_1m": 0.1,
-   "currency": "CNY",
-   "note": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）；多模态视觉模型，图片按尺寸换算成 token，与文本 token 一并计费"
+   "note": "高峰时段（北京时间周一至周五 9:00-12:00、14:00-18:00）；模型版本 DeepSeek-V4-Pro-0813。北京时间 2026 年 9 月 14 日 12:00 之后，至未来 V4.1 Pro 上线之前，请求将全部路由到 V4.1 Flash，并按 V4.1 Flash 价格计费"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "1b022660fffa10a5750efbf2e4aca911c46ac68ac06b11e0c45eaa4dfd23febb",
- "fetched_at": "2026-09-01T07:09:06Z",
- "status_note": "页面无变化",
+ "price_hash": "963f99abe0d1482e23bb5524ccc066137bdd8569e4235d12f2db55e37e13beda",
+ "fetched_at": "2026-09-10T06:06:28Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-10T05:06:27Z"
+ "last_fetch_ts": "2026-09-10T06:06:28Z"
 }

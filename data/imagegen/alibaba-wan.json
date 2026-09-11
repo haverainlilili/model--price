@@ -5,7 +5,7 @@
  "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
- "product_status_note": "阿里云百炼提供 wan2.7-image-pro 推理服务，并公布北京和新加坡部署价格。",
+ "product_status_note": null,
  "source_url": "https://help.aliyun.com/zh/model-studio/wan2-7-image-pro",
  "source_urls": [
   "https://help.aliyun.com/zh/model-studio/wan2-7-image-pro",
@@ -35,12 +35,12 @@
     "image-edit",
     "reference"
    ],
-   "pricing": "华北2（北京）：图片生成 0.5 元/张",
+   "pricing": "图片生成：0.5元/张",
    "currency": "CNY",
    "region": "domestic",
    "price_per_image": 0.5,
    "comparison_group": null,
-   "price_basis": "wan2.7-image-pro，质量与分辨率未注明，华北2（北京）按生成图片张数计费",
+   "price_basis": "wan2.7-image-pro，图片生成，按张计费，华北2（北京）",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -50,7 +50,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "华北2（北京）RPM 为300；支持模型调优。页面价格为调用原价，不含限时优惠。"
+   "note": "支持文生图、文生组图、图生组图、图像编辑、多图参考生成和交互式编辑。"
   },
   {
    "name": "wan2.7-image-pro",
@@ -62,12 +62,12 @@
     "image-edit",
     "reference"
    ],
-   "pricing": "新加坡（国际部署）：图片生成 0.562065 元/张",
+   "pricing": "图片生成：0.562065元/张",
    "currency": "CNY",
    "region": "intl",
    "price_per_image": 0.562065,
    "comparison_group": null,
-   "price_basis": "wan2.7-image-pro，质量与分辨率未注明，新加坡国际部署按生成图片张数计费",
+   "price_basis": "wan2.7-image-pro，图片生成，按张计费，新加坡国际部署",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -77,22 +77,20 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "新加坡国际部署RPM为300，不支持模型调优。页面价格为调用原价，不含限时优惠。"
+   "note": "支持文生图、文生组图、图生组图、图像编辑、多图参考生成和交互式编辑。"
   }
  ],
- "fetched_at": "2026-09-10T21:21:52Z",
+ "fetched_at": "2026-09-11T12:17:09Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://help.aliyun.com/zh/model-studio/wan2-7-image-pro",
   "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
   "https://www.alibabacloud.com/help/en/model-studio/new-free-quota"
  ],
- "last_fetch_ts": "2026-09-11T11:17:54Z",
+ "last_fetch_ts": "2026-09-11T12:17:09Z",
  "source_warnings": [],
  "imagegen_hash": "00f64d6d02fb0d148816b907e3cc70234a239d446015bea0c40d1eab76304904",
- "status_note": "官网生图抽取产品停用/迁移说明变为空，等待下轮同语义结果确认",
- "last_error": "官网生图抽取产品停用/迁移说明变为空，等待下轮同语义结果确认",
- "imagegen_excerpt_hash": "436c1ca27b532bd165d9c0bba1ae0c86a7c27f85d3d17640952067e6f98c5d8d",
- "imagegen_pending_shrink_hash": "86ef06865f426802d6c5f6b171322901b2edb626051dd88ed6f3c837f95212a5",
- "imagegen_pending_shrink_count": 2
+ "status_note": null,
+ "last_error": null,
+ "imagegen_excerpt_hash": "32820f45f350a3c761aff0970e87b040b1029d056e7f21a1ef790f63524fdaa7"
 }

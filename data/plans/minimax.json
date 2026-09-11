@@ -3,294 +3,174 @@
   {
    "name": "Plus",
    "plan_type": "Token Plan",
-   "price": "¥49 / 月",
-   "billing": "连续包月",
+   "price": "￥490 / 每年（按年订阅）；¥49 / 月",
+   "billing": "每年，按年订阅；月度对比为 ¥49 / 月",
    "quotas": [
     {
      "label": "M3 用量",
-     "value": "约 6 亿+ token",
+     "value": "月度约 6 亿+ token",
      "window": "月度"
     },
     {
-     "label": "日常编程调用",
+     "label": "日常编程调用（按 M3 单次 ~50K token 估算）",
      "value": "约 12,000 次",
      "window": "月度"
     },
     {
      "label": "M2.7 调用（参考）",
-     "value": "1,500 次",
-     "window": "每 5 小时"
+     "value": "1,500 次 / 5 小时",
+     "window": "5 小时"
     },
     {
      "label": "M2.7-highspeed 调用（参考）",
-     "value": "750 次",
-     "window": "每 5 小时"
+     "value": "750 次 / 5 小时",
+     "window": "5 小时"
     }
    ],
    "models": [
     "M3",
-    "M2.7",
-    "M2.7-highspeed"
+    "M2.7"
    ],
-   "note": "日常编程调用按 M3 单次 ~50K token 估算。M2.7 与 M3 共用配额，数值为 5 小时窗口仅调用对应模型时的估算量。套餐内额度受 5 小时固定窗口和周窗口控制，未使用额度不结转；高峰时段可能动态限流。",
+   "note": "M3、M2.7 与图像/语音额度共享；M2.7 和 M2.7-highspeed 数值为仅调用对应模型时的估算量。套餐内 Token Plan 额度受 5 小时固定窗口和周窗口控制，未使用额度不会结转。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
    "name": "Max",
    "plan_type": "Token Plan",
-   "price": "¥119 / 月",
-   "billing": "连续包月",
+   "price": "￥1,190 / 每年（按年订阅）；¥119 / 月",
+   "billing": "每年，按年订阅；月度对比为 ¥119 / 月",
    "quotas": [
     {
      "label": "M3 用量",
-     "value": "约 18 亿+ token",
+     "value": "月度约 18 亿+ token",
      "window": "月度"
     },
     {
-     "label": "日常编程调用",
+     "label": "日常编程调用（按 M3 单次 ~50K token 估算）",
      "value": "约 36,000 次",
      "window": "月度"
     },
     {
+     "label": "视频生成",
+     "value": "3 条 / 日",
+     "window": "每日"
+    },
+    {
      "label": "M2.7 调用（参考）",
-     "value": "4,500 次",
-     "window": "每 5 小时"
+     "value": "4,500 次 / 5 小时",
+     "window": "5 小时"
     },
     {
      "label": "M2.7-highspeed 调用（参考）",
-     "value": "2,250 次",
-     "window": "每 5 小时"
-    },
-    {
-     "label": "Hailuo2.3 视频生成",
-     "value": "3 条",
-     "window": "每日"
+     "value": "2,250 次 / 5 小时",
+     "window": "5 小时"
     }
    ],
    "models": [
     "M3",
     "M2.7",
-    "M2.7-highspeed",
     "Hailuo2.3"
    ],
-   "note": "日常编程调用按 M3 单次 ~50K token 估算。M2.7 与 M3 共用配额，数值为 5 小时窗口仅调用对应模型时的估算量。套餐内额度受 5 小时固定窗口和周窗口控制，未使用额度不结转；高峰时段可能动态限流。",
+   "note": "M3、M2.7 与图像/语音额度共享；M2.7 和 M2.7-highspeed 数值为仅调用对应模型时的估算量。套餐内 Token Plan 额度受 5 小时固定窗口和周窗口控制，未使用额度不会结转。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
    "name": "Ultra",
    "plan_type": "Token Plan",
-   "price": "¥469 / 月",
-   "billing": "连续包月",
+   "price": "￥4,690 / 每年（按年订阅）；¥469 / 月",
+   "billing": "每年，按年订阅；月度对比为 ¥469 / 月",
    "quotas": [
     {
      "label": "M3 用量",
-     "value": "约 71 亿+ token",
+     "value": "月度约 71 亿+ token",
      "window": "月度"
     },
     {
-     "label": "日常编程调用",
+     "label": "日常编程调用（按 M3 单次 ~50K token 估算）",
      "value": "约 140,000 次",
      "window": "月度"
     },
     {
+     "label": "视频生成",
+     "value": "5 条 / 日",
+     "window": "每日"
+    },
+    {
      "label": "M2.7 调用（参考）",
-     "value": "15,000 次",
-     "window": "每 5 小时"
+     "value": "15,000 次 / 5 小时",
+     "window": "5 小时"
     },
     {
      "label": "M2.7-highspeed 调用（参考）",
-     "value": "7,500 次",
-     "window": "每 5 小时"
-    },
-    {
-     "label": "Hailuo2.3 视频生成",
-     "value": "5 条",
-     "window": "每日"
+     "value": "7,500 次 / 5 小时",
+     "window": "5 小时"
     }
    ],
    "models": [
     "M3",
     "M2.7",
-    "M2.7-highspeed",
     "Hailuo2.3"
    ],
-   "note": "日常编程调用按 M3 单次 ~50K token 估算。M2.7 与 M3 共用配额，数值为 5 小时窗口仅调用对应模型时的估算量。套餐内额度受 5 小时固定窗口和周窗口控制，未使用额度不结转；高峰时段可能动态限流。",
-   "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
-  },
-  {
-   "name": "Plus",
-   "plan_type": "Token Plan",
-   "price": "￥490",
-   "billing": "每年，按年订阅",
-   "quotas": [
-    {
-     "label": "M3 用量",
-     "value": "约 6 亿+ token",
-     "window": "月度"
-    },
-    {
-     "label": "日常编程调用",
-     "value": "约 12,000 次",
-     "window": "月度"
-    },
-    {
-     "label": "M2.7 调用（参考）",
-     "value": "1,500 次",
-     "window": "每 5 小时"
-    },
-    {
-     "label": "M2.7-highspeed 调用（参考）",
-     "value": "750 次",
-     "window": "每 5 小时"
-    }
-   ],
-   "models": [
-    "M3",
-    "M2.7",
-    "M2.7-highspeed"
-   ],
-   "note": "页面标注立省 ￥98，并同时展示 ￥588。日常编程调用按 M3 单次 ~50K token 估算。M2.7 与 M3 共用配额，数值为 5 小时窗口仅调用对应模型时的估算量。套餐内额度受 5 小时固定窗口和周窗口控制，未使用额度不结转；高峰时段可能动态限流。",
-   "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
-  },
-  {
-   "name": "Max",
-   "plan_type": "Token Plan",
-   "price": "￥1,190",
-   "billing": "每年，按年订阅",
-   "quotas": [
-    {
-     "label": "M3 用量",
-     "value": "约 18 亿+ token",
-     "window": "月度"
-    },
-    {
-     "label": "日常编程调用",
-     "value": "约 36,000 次",
-     "window": "月度"
-    },
-    {
-     "label": "M2.7 调用（参考）",
-     "value": "4,500 次",
-     "window": "每 5 小时"
-    },
-    {
-     "label": "M2.7-highspeed 调用（参考）",
-     "value": "2,250 次",
-     "window": "每 5 小时"
-    },
-    {
-     "label": "Hailuo2.3 视频生成",
-     "value": "3 条",
-     "window": "每日"
-    }
-   ],
-   "models": [
-    "M3",
-    "M2.7",
-    "M2.7-highspeed",
-    "Hailuo2.3"
-   ],
-   "note": "页面同时展示 ￥1,490。日常编程调用按 M3 单次 ~50K token 估算。M2.7 与 M3 共用配额，数值为 5 小时窗口仅调用对应模型时的估算量。套餐内额度受 5 小时固定窗口和周窗口控制，未使用额度不结转；高峰时段可能动态限流。",
-   "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
-  },
-  {
-   "name": "Ultra",
-   "plan_type": "Token Plan",
-   "price": "￥4,690",
-   "billing": "每年，按年订阅",
-   "quotas": [
-    {
-     "label": "M3 用量",
-     "value": "约 71 亿+ token",
-     "window": "月度"
-    },
-    {
-     "label": "日常编程调用",
-     "value": "约 140,000 次",
-     "window": "月度"
-    },
-    {
-     "label": "M2.7 调用（参考）",
-     "value": "15,000 次",
-     "window": "每 5 小时"
-    },
-    {
-     "label": "M2.7-highspeed 调用（参考）",
-     "value": "7,500 次",
-     "window": "每 5 小时"
-    },
-    {
-     "label": "Hailuo2.3 视频生成",
-     "value": "5 条",
-     "window": "每日"
-    }
-   ],
-   "models": [
-    "M3",
-    "M2.7",
-    "M2.7-highspeed",
-    "Hailuo2.3"
-   ],
-   "note": "页面标注立省 ￥938，并同时展示 ￥5,628。日常编程调用按 M3 单次 ~50K token 估算。M2.7 与 M3 共用配额，数值为 5 小时窗口仅调用对应模型时的估算量。套餐内额度受 5 小时固定窗口和周窗口控制，未使用额度不结转；高峰时段可能动态限流。",
+   "note": "M3、M2.7 与图像/语音额度共享；M2.7 和 M2.7-highspeed 数值为仅调用对应模型时的估算量。套餐内 Token Plan 额度受 5 小时固定窗口和周窗口控制，未使用额度不会结转。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
    "name": "入门版",
-   "plan_type": "积分购买",
+   "plan_type": "积分资源包",
    "price": "¥30",
    "billing": "购买之日起 1 年内有效",
    "quotas": [
     {
      "label": "积分",
      "value": "4,489 积分",
-     "window": null
+     "window": "购买之日起 1 年内有效"
     }
    ],
    "models": [],
-   "note": null,
+   "note": "积分购买资源包。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
    "name": "进阶版",
-   "plan_type": "积分购买",
+   "plan_type": "积分资源包",
    "price": "¥150",
    "billing": "购买之日起 1 年内有效",
    "quotas": [
     {
      "label": "积分",
      "value": "22,460 积分",
-     "window": null
+     "window": "购买之日起 1 年内有效"
     }
    ],
    "models": [],
-   "note": null,
+   "note": "积分购买资源包。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
    "name": "高级版",
-   "plan_type": "积分购买",
+   "plan_type": "积分资源包",
    "price": "¥500",
    "billing": "购买之日起 1 年内有效",
    "quotas": [
     {
      "label": "积分",
      "value": "74,900 积分",
-     "window": null
+     "window": "购买之日起 1 年内有效"
     }
    ],
    "models": [],
-   "note": null,
+   "note": "积分购买资源包。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-11T12:11:44Z",
+ "last_fetch_ts": "2026-09-11T13:12:03Z",
  "source": "official",
  "source_urls": [
   "https://platform.minimaxi.com/subscribe/token-plan"
  ],
  "page_has_plans": true,
- "plans_hash": "463ff039c3d4b67088bca7b467ed416f8bb0b2f0839235bdb62189252393c914",
- "fetched_at": "2026-09-05T04:10:29Z",
- "status_note": "页面无变化"
+ "plans_hash": "eee9a69e3bbdb62d91869450b498ad99596c9669406561d3d5853899c8f6d25f",
+ "fetched_at": "2026-09-11T13:12:03Z",
+ "status_note": null
 }

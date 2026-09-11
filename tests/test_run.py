@@ -381,6 +381,14 @@ class ProviderConfigurationTests(unittest.TestCase):
         }
         self.assertEqual(len(run._validate_official_generation_urls(github, "imagegen")), 1)
 
+    def test_deepseek_pins_version_aware_pricing_extraction(self):
+        deepseek = next(
+            provider for provider in run.load_providers()
+            if provider["id"] == "deepseek"
+        )
+
+        self.assertEqual(deepseek["pricing_extraction_revision"], 2)
+
     def test_google_sources_pin_the_english_locale(self):
         google = next(
             provider for provider in run.load_providers()
@@ -392,6 +400,119 @@ class ProviderConfigurationTests(unittest.TestCase):
 
 
 class ProcessProviderTests(unittest.TestCase):
+    def test_pricing_revision_forces_version_aware_refresh(self):
+        page_hash = run._sha("same page")
+        previous = {
+            "source": "claude",
+            "currency": "CNY",
+            "promotions": "已接受的峰谷计价说明",
+            "page_has_pricing": True,
+            "models": [{"model": "deepseek-flash", "input_per_1m": 1,
+                        "output_per_1m": 4, "currency": "CNY",
+                        "note": "已接受的价格档位说明"}],
+            "price_hash": page_hash,
+            "pricing_extraction_revision": 1,
+        }
+        extracted = {
+            "model": "deepseek-flash",
+            "display_name": "DeepSeek-V4.1-Flash",
+            "input_per_1m": 1,
+            "output_per_1m": 4,
+            "currency": "CNY",
+            "note": "新抽取器的改写不应覆盖已接受说明",
+        }
+        page = SimpleNamespace(
+            models=[SimpleNamespace(model_dump=lambda: extracted)],
+            currency="CNY", promotions="新抽取器遗漏或改写的说明",
+            page_has_pricing=True,
+        )
+        cfg = {
+            "id": "deepseek", "name": "DeepSeek",
+            "pricing_url": "https://official.example/pricing",
+            "pricing_extraction_revision": 2,
+        }
+        with (
+            patch.object(run.history, "load_provider", return_value=previous),
+            patch.object(run.history, "save_provider") as save,
+            patch.object(run.history, "append_changes") as changes,
+            patch.object(run, "_fetch_pricing_text", return_value=(
+                cfg["pricing_url"], "same page")),
+            patch.object(run.extract, "has_api_key", return_value=True),
+            patch.object(run.extract, "extract_pricing", return_value=page) as extract,
+        ):
+            run.process_provider(cfg)
+
+        extract.assert_called_once()
+        changes.assert_not_called()
+        saved = save.call_args.args[1]
+        self.assertEqual(saved["pricing_extraction_revision"], 2)
+        self.assertEqual(saved["models"][0]["display_name"], "DeepSeek-V4.1-Flash")
+        self.assertEqual(saved["models"][0]["note"], "已接受的价格档位说明")
+        self.assertEqual(saved["promotions"], "已接受的峰谷计价说明")
+
+    def test_revision_refresh_mismatch_preserves_facts_and_stays_pending(self):
+        page_hash = run._sha("same page")
+        previous = {
+            "source": "claude",
+            "models": [{"model": "deepseek-flash", "input_per_1m": 1,
+                        "output_per_1m": 4, "currency": "CNY",
+                        "note": "已接受说明"}],
+            "price_hash": page_hash,
+            "pricing_extraction_revision": 1,
+        }
+        unsafe = {
+            "model": "deepseek-flash",
+            "display_name": "DeepSeek-V4.1-Flash",
+            "input_per_1m": 999,
+            "output_per_1m": 4,
+            "currency": "CNY",
+            "note": "被改写说明",
+        }
+        page = SimpleNamespace(
+            models=[SimpleNamespace(model_dump=lambda: unsafe)],
+            currency="CNY", promotions=None, page_has_pricing=True,
+        )
+        cfg = {"id": "deepseek", "name": "DeepSeek",
+               "pricing_url": "https://official.example/pricing",
+               "pricing_extraction_revision": 2}
+        with (
+            patch.object(run.history, "load_provider", return_value=previous),
+            patch.object(run.history, "save_provider") as save,
+            patch.object(run.history, "append_changes") as changes,
+            patch.object(run, "_fetch_pricing_text", return_value=(
+                cfg["pricing_url"], "same page")),
+            patch.object(run.extract, "has_api_key", return_value=True),
+            patch.object(run.extract, "extract_pricing", return_value=page),
+        ):
+            run.process_provider(cfg)
+
+        saved = save.call_args.args[1]
+        self.assertEqual(saved["models"], previous["models"])
+        self.assertEqual(saved["pricing_extraction_revision"], 1)
+        self.assertIn("新版抽取", saved["last_error"])
+        changes.assert_not_called()
+
+    def test_matching_pricing_revision_still_skips_unchanged_page(self):
+        previous = {
+            "models": [{"model": "deepseek-flash"}],
+            "price_hash": run._sha("same page"),
+            "pricing_extraction_revision": 2,
+        }
+        cfg = {"id": "deepseek", "name": "DeepSeek",
+               "pricing_url": "https://official.example/pricing",
+               "pricing_extraction_revision": 2}
+        with (
+            patch.object(run.history, "load_provider", return_value=previous),
+            patch.object(run.history, "save_provider") as save,
+            patch.object(run, "_fetch_pricing_text", return_value=(
+                cfg["pricing_url"], "same page")),
+            patch.object(run.extract, "extract_pricing") as extract,
+        ):
+            run.process_provider(cfg)
+
+        extract.assert_not_called()
+        self.assertEqual(save.call_args.args[1]["status_note"], "页面无变化")
+
     @patch.object(run.history, "append_changes")
     @patch.object(run.history, "save_provider")
     @patch.object(run.extract, "extract_pricing")

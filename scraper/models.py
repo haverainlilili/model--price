@@ -10,7 +10,10 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 class ModelPrice(BaseModel):
     """单个模型的按量价格, 单位: 每百万 tokens。"""
 
-    model: str = Field(..., description="模型名, 保留页面原文, 如 GPT-5.2 / qwen3-max")
+    model: str = Field(
+        ..., description="API 调用名或价格表模型标识, 保留页面原文, 如 gpt-5.2")
+    display_name: Optional[str] = Field(
+        None, description="官网另列的模型版本/产品展示名, 如 DeepSeek-V4.1-Flash; 没有则 null")
     input_per_1m: Optional[float] = Field(
         None, description="输入价格(每百万 tokens), 页面原币种; 没有则 null")
     output_per_1m: Optional[float] = Field(

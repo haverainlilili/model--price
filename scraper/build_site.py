@@ -82,6 +82,15 @@ def _fmt(v) -> str:
     return rendered or "0"
 
 
+def _model_label_parts(model: dict, fallback: str = "") -> tuple[str, str]:
+    """Return official display name plus a distinct API identifier, if supplied."""
+    api_name = str(model.get("model") or fallback).strip()
+    display_name = str(model.get("display_name") or "").strip()
+    if display_name and display_name.casefold() != api_name.casefold():
+        return display_name, api_name
+    return api_name, ""
+
+
 def _sym(cur: str | None) -> str:
     return CUR_SYMBOL.get((cur or "").upper(), "")
 
@@ -259,7 +268,7 @@ body[data-view=videogen] .jump-videogen{display:flex}
 .lowest-desc{max-width:470px;margin:0;color:var(--ink2);font-size:11.5px;text-align:right}
 .lowest-scroll{overflow-x:auto;scrollbar-color:var(--line2) transparent}
 .lowest-plot{display:flex;align-items:stretch;gap:8px;min-width:980px;padding:22px 18px 16px}
-.lowest-col{display:grid;grid-template-rows:24px 184px 34px 54px;flex:1 0 74px;min-width:0;
+.lowest-col{display:grid;grid-template-rows:24px 184px 34px 70px;flex:1 0 74px;min-width:0;
   text-align:center}
 .lowest-amount{align-self:start;color:var(--ink);font:700 10.5px/1 var(--mono);
   font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -274,6 +283,8 @@ body[data-view=videogen] .jump-videogen{display:flex}
   padding:2px 2px 0}
 .lowest-model{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;
   -webkit-line-clamp:2;color:var(--ink);font:700 11.5px/1.3 var(--mono);word-break:break-word}
+.lowest-model-api{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap;color:var(--ink3);font:600 8.5px/1.2 var(--mono)}
 .lowest-variant{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;
   white-space:nowrap;padding:2px 5px;border-radius:4px;background:var(--accent-bg);
   color:var(--accent-dark);font:700 9px/1.2 var(--sans)}
@@ -308,7 +319,9 @@ body[data-view=videogen] .jump-videogen{display:flex}
 .btag{flex:none;font:650 9px var(--mono);color:var(--ink3);letter-spacing:.08em}
 .bmodel{display:flex;align-items:center;gap:5px;min-width:0;font-family:var(--mono);
   font-size:10.5px;color:var(--ink2)}
-.bmodel-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bmodel-copy{display:flex;flex-direction:column;min-width:0;gap:1px}
+.bmodel-name,.bmodel-api{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bmodel-api{color:var(--ink3);font-size:8.5px}
 .bvariant{flex:none;max-width:74px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
   padding:2px 5px;border-radius:4px;background:var(--accent-bg);color:var(--accent-dark);
   font:700 8.5px/1.2 var(--sans)}
@@ -387,6 +400,8 @@ tbody tr:nth-child(even){background:#FAFAF6}
 tbody tr:hover td{background:#F1F6F2}
 td.c-model{font-family:var(--mono);font-size:11.5px;font-weight:650;text-align:left;
   color:var(--ink);word-break:break-all}
+.c-model-name{display:block}.c-model-api{display:block;margin-top:3px;color:var(--ink3);
+  font-size:9.5px;font-weight:550;word-break:break-all}
 td.c-note{text-align:left;font-size:11.5px;color:var(--ink2);max-width:360px}
 .price{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:650;white-space:nowrap}
 .price-zero{color:var(--down);font-weight:750}
@@ -1106,15 +1121,16 @@ def _cheapest_chart(providers_cfg: list, recs: dict, rate: float) -> str:
                     prices.append(price)
             if not prices:
                 continue
-            model_name = str(model.get("model") or "未命名模型")
+            api_model = str(model.get("model") or "未命名模型")
+            display_name, api_id = _model_label_parts(model, "未命名模型")
             note = str(model.get("note") or "").strip()
-            variant = _quick_variant(note) if name_counts.get(model_name, 0) > 1 else ""
-            choices.append((sum(prices), model_name, converted[0], converted[1],
+            variant = _quick_variant(note) if name_counts.get(api_model, 0) > 1 else ""
+            choices.append((sum(prices), display_name, api_id, converted[0], converted[1],
                             variant, note))
         if choices:
-            total, model_name, input_price, output_price, variant, note = min(
+            total, display_name, api_id, input_price, output_price, variant, note = min(
                 choices, key=lambda item: item[0])
-            picks.append((cfg, total, model_name, input_price, output_price,
+            picks.append((cfg, total, display_name, api_id, input_price, output_price,
                           variant, note))
 
     if not picks:
@@ -1127,14 +1143,18 @@ def _cheapest_chart(providers_cfg: list, recs: dict, rate: float) -> str:
         return f"¥{_fmt(round(value, 2))}" if value is not None else "无报价"
 
     columns = []
-    for cfg, total, model_name, input_price, output_price, variant, note in picks:
+    for cfg, total, display_name, api_id, input_price, output_price, variant, note in picks:
         region = "domestic" if cfg.get("region") == "国内" else "intl"
         provider = cfg.get("name_cn") or cfg.get("name") or cfg["id"]
         height = total / highest * 100 if highest > 0 else 0
         amount = f"¥{_fmt(round(total, 2))}"
         variant_detail = f"，档位 {variant}" if variant else ""
-        detail = (f"{provider}，{model_name}{variant_detail}，输入加输出合计 {amount}；"
-                  f"输入 {price_label(input_price)}，输出 {price_label(output_price)}")
+        api_detail = f"，API ID {api_id}" if api_id else ""
+        detail = (f"{provider}，{display_name}{api_detail}{variant_detail}，"
+                  f"输入加输出合计 {amount}；输入 {price_label(input_price)}，"
+                  f"输出 {price_label(output_price)}")
+        api_html = (f'<span class="lowest-model-api" title="API ID: {_e(api_id)}">'
+                    f'API · {_e(api_id)}</span>' if api_id else "")
         variant_html = (f'<span class="lowest-variant" title="{_e(note)}">'
                         f'{_e(variant)}</span>' if variant else "")
         columns.append(
@@ -1145,7 +1165,7 @@ def _cheapest_chart(providers_cfg: list, recs: dict, rate: float) -> str:
             f'<div class="lowest-bar" style="--bar-height:{height:.1f}%"></div></div>'
             f'<div class="lowest-provider" title="{_e(provider)}">{_e(provider)}</div>'
             f'<div class="lowest-model-wrap"><span class="lowest-model" '
-            f'title="{_e(model_name)}">{_e(model_name)}</span>{variant_html}</div>'
+            f'title="{_e(display_name)}">{_e(display_name)}</span>{api_html}{variant_html}</div>'
             f'</div>')
 
     return (
@@ -1194,9 +1214,10 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
             if ci is None and co is None:
                 continue
             model = str(m.get("model") or "")
+            display_name, api_id = _model_label_parts(m)
             note = str(m.get("note") or "").strip()
             variant = _quick_variant(note) if name_counts.get(model, 0) > 1 else ""
-            rows.append((model, ci, co, variant, note))
+            rows.append((display_name, api_id, ci, co, variant, note))
             vals += [v for v in (ci, co) if v]
         if rows:
             groups.append((cfg, rows))
@@ -1224,15 +1245,18 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
         region = cfg.get("region", "")
         dr = "domestic" if region == "国内" else "intl"
         inner = []
-        for model, ci, co, variant, note in rows:
+        for display_name, api_id, ci, co, variant, note in rows:
             bars = (f'<div class="bbar b-in" style="--wl:{w_log(ci)}%;'
                     f'--wi:{w_lin(ci)}%"><i>{vlabel(ci)}</i></div>'
                     f'<div class="bbar b-out" style="--wl:{w_log(co)}%;'
                     f'--wi:{w_lin(co)}%"><i>{vlabel(co)}</i></div>')
             tag = (f'<span class="bvariant" title="{_e(note)}">{_e(variant)}</span>'
                    if variant else "")
+            api_html = (f'<span class="bmodel-api" title="API ID: {_e(api_id)}">'
+                        f'API · {_e(api_id)}</span>' if api_id else "")
             inner.append(f'<div class="brow"><span class="bmodel">'
-                         f'<span class="bmodel-name">{_e(model)}</span>{tag}</span>'
+                         f'<span class="bmodel-copy"><span class="bmodel-name">'
+                         f'{_e(display_name)}</span>{api_html}</span>{tag}</span>'
                          f'<div class="bbars">{bars}</div></div>')
         parts.append(f'<div class="bgroup" data-region="{dr}">'
                      f'<div class="bprov">{_e(cfg.get("name_cn") or cfg["name"])}'
@@ -2113,8 +2137,12 @@ def _prov_section(cfg: dict, rec: dict | None, rate: float) -> str:
     rows = []
     for m in models:
         note = _e(m.get("note") or "")
+        display_name, api_id = _model_label_parts(m)
+        api_html = (f'<span class="c-model-api">API · {_e(api_id)}</span>'
+                    if api_id else "")
         rows.append(
-            f'<tr><td class="c-model">{_e(m.get("model", ""))}</td>'
+            f'<tr><td class="c-model"><span class="c-model-name">'
+            f'{_e(display_name)}</span>{api_html}</td>'
             f'<td>{_price_cell(m.get("input_per_1m"), m.get("currency") or cur, rate)}</td>'
             f'<td>{_price_cell(m.get("output_per_1m"), m.get("currency") or cur, rate)}</td>'
             f'<td>{_price_cell(m.get("cached_input_per_1m"), m.get("currency") or cur, rate)}</td>'
@@ -2133,7 +2161,7 @@ def _prov_section(cfg: dict, rec: dict | None, rate: float) -> str:
             f'<span class="tag tag-region">{_e(region)}</span>{badge_html}</div>'
             f'<div class="prov-meta">{"".join(m and f"<span>{m}</span>" or "" for m in meta_bits)}'
             f'{toggle}</div></summary>{source}{promo}<div class="table-wrap"><table>'
-            f'<thead><tr><th>模型</th><th>输入 / 百万tokens</th>'
+            f'<thead><tr><th>模型 / API ID</th><th>输入 / 百万tokens</th>'
             f'<th>输出 / 百万tokens</th><th>缓存输入</th>'
             f'<th class="c-note-h">备注</th></tr></thead>'
             f'<tbody>{"".join(rows)}</tbody></table></div></details>')

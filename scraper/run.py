@@ -432,12 +432,47 @@ def _news_fingerprint(source_url: str, text: str) -> str:
     return _sha(re.sub(r"\s+", " ", text).strip())
 
 
+def _pricing_row_identity(model: dict) -> tuple:
+    """Stable row identity for a same-page extraction-schema refresh."""
+    return (
+        str(model.get("model") or "").strip().casefold(),
+        model.get("input_per_1m"),
+        model.get("output_per_1m"),
+        model.get("cached_input_per_1m"),
+        str(model.get("currency") or "").strip().upper(),
+    )
+
+
+def _merge_revision_only_pricing(previous: list[dict], current: list[dict]):
+    """Fill newly introduced fields without rewriting facts from unchanged HTML."""
+    buckets: dict[tuple, list[dict]] = {}
+    for model in current:
+        buckets.setdefault(_pricing_row_identity(model), []).append(model)
+    merged = []
+    for old in previous:
+        candidates = buckets.get(_pricing_row_identity(old)) or []
+        if not candidates:
+            return None
+        fresh = candidates.pop(0)
+        row = dict(old)
+        for key, value in fresh.items():
+            if key not in row or row[key] is None or row[key] == "" or row[key] == []:
+                row[key] = value
+        merged.append(row)
+    if len(merged) != len(current) or any(buckets.values()):
+        return None
+    return merged
+
+
 def process_provider(cfg: dict) -> None:
     pid = cfg["id"]
     name = cfg.get("name_cn") or cfg["name"]
     now = utcnow()
     prev = history.load_provider(pid) or {}
     record = dict(prev)
+    extraction_revision = int(cfg.get("pricing_extraction_revision") or 1)
+    if extraction_revision < 1:
+        raise ValueError("pricing_extraction_revision 必须是正整数")
     record["url"] = (cfg.get("pricing_urls") or [cfg.get("pricing_url")])[0]
 
     try:
@@ -453,7 +488,9 @@ def process_provider(cfg: dict) -> None:
     record["last_fetch_ts"] = now
     page_hash = _sha(text)
 
-    if prev.get("price_hash") == page_hash:
+    previous_revision = int(prev.get("pricing_extraction_revision") or 1)
+    if (prev.get("price_hash") == page_hash
+            and previous_revision == extraction_revision):
         record["status_note"] = "页面无变化"
         history.save_provider(pid, record)
         print(f"[{pid}] 页面无变化, 跳过抽取")
@@ -467,6 +504,20 @@ def process_provider(cfg: dict) -> None:
 
     page = extract.extract_pricing(name, first_url, text)
     new_models = [m.model_dump() for m in page.models]
+    revision_only = (prev.get("price_hash") == page_hash
+                     and previous_revision != extraction_revision)
+    preserve_revision_facts = False
+    if revision_only and prev.get("models") and new_models:
+        merged = _merge_revision_only_pricing(prev["models"], new_models)
+        if merged is None:
+            message = ("官网页面未变化，但新版抽取的价格行与已接受事实不一致；"
+                       "保留旧数据并等待重试")
+            record.update({"status_note": message, "last_error": message})
+            history.save_provider(pid, record)
+            print(f"[{pid}] 抽取版本刷新不一致，保留旧数据")
+            return
+        new_models = merged
+        preserve_revision_facts = True
 
     # 空结果通常意味着页面结构、人机验证或抽取暂时异常。已有真实价格时，
     # 宁可保留上次数据并标记为陈旧，也不能把整个厂商的模型价格清空。
@@ -484,7 +535,8 @@ def process_provider(cfg: dict) -> None:
         return
 
     # 只有旧数据也来自真实抽取时才记变动; 种子数据 -> 首次抽取是初始化
-    if prev.get("source") == "claude" and prev.get("models"):
+    if (prev.get("source") == "claude" and prev.get("models")
+            and prev.get("price_hash") != page_hash):
         diffs = history.diff_models(prev["models"], new_models)
         if diffs:
             history.append_changes([
@@ -492,15 +544,24 @@ def process_provider(cfg: dict) -> None:
                 for d in diffs
             ])
 
+    accepted_currency = (prev.get("currency") if preserve_revision_facts
+                         else page.currency)
+    accepted_promotions = (prev.get("promotions") if preserve_revision_facts
+                           else page.promotions)
+    accepted_page_has_pricing = (prev.get("page_has_pricing")
+                                 if preserve_revision_facts
+                                 else page.page_has_pricing)
     record.update({
         "source": "claude",
-        "currency": page.currency,
-        "promotions": page.promotions,
+        "currency": accepted_currency,
+        "promotions": accepted_promotions,
         "models": new_models,
-        "page_has_pricing": page.page_has_pricing,
+        "page_has_pricing": accepted_page_has_pricing,
         "price_hash": page_hash,
+        "pricing_extraction_revision": extraction_revision,
         "fetched_at": now,
-        "status_note": None if page.page_has_pricing else "页面未见价格表(可能 JS 渲染)",
+        "status_note": (None if accepted_page_has_pricing
+                        else "页面未见价格表(可能 JS 渲染)"),
     })
     history.save_provider(pid, record)
     print(f"[{pid}] 抽取到 {len(new_models)} 个模型")

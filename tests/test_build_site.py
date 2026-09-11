@@ -72,6 +72,23 @@ class ViewSwitchTests(unittest.TestCase):
         self.assertIn('AI 生视频</button>', tabs)
 
 
+class ModelLabelTests(unittest.TestCase):
+    def test_separates_official_display_name_from_api_identifier(self):
+        self.assertEqual(
+            build_site._model_label_parts({
+                "model": "deepseek-flash",
+                "display_name": "DeepSeek-V4.1-Flash",
+            }),
+            ("DeepSeek-V4.1-Flash", "deepseek-flash"),
+        )
+
+    def test_uses_api_identifier_when_no_separate_display_name_exists(self):
+        self.assertEqual(
+            build_site._model_label_parts({"model": "gpt-5"}),
+            ("gpt-5", ""),
+        )
+
+
 class QuickVariantTests(unittest.TestCase):
     def test_summarizes_context_tier(self):
         self.assertEqual(
@@ -162,6 +179,20 @@ class QuickChartTests(unittest.TestCase):
         self.assertIn('<span class="bvariant" title="Standard，长上下文">标准·长</span>', chart)
 
 
+    def test_shows_official_display_name_and_api_id(self):
+        providers = [{"id": "deepseek", "name": "DeepSeek", "region": "国内"}]
+        records = {"deepseek": {"currency": "CNY", "models": [{
+            "model": "deepseek-flash",
+            "display_name": "DeepSeek-V4.1-Flash",
+            "input_per_1m": 1,
+            "output_per_1m": 4,
+        }]}}
+
+        chart = build_site._quick_chart(providers, records, rate=7.0)
+
+        self.assertIn("DeepSeek-V4.1-Flash", chart)
+        self.assertIn("API · deepseek-flash", chart)
+
 class CheapestChartTests(unittest.TestCase):
     def test_chooses_lowest_total_from_each_providers_first_four_rows(self):
         providers = [{
@@ -238,6 +269,23 @@ class CheapestChartTests(unittest.TestCase):
 
 
 class ProviderSectionTests(unittest.TestCase):
+    def test_shows_official_display_name_above_api_id(self):
+        section = build_site._prov_section(
+            {"id": "deepseek", "name": "DeepSeek", "region": "国内",
+             "pricing_url": "https://api-docs.deepseek.com/pricing"},
+            {"currency": "CNY", "source": "claude", "models": [{
+                "model": "deepseek-flash",
+                "display_name": "DeepSeek-V4.1-Flash",
+                "input_per_1m": 1,
+                "output_per_1m": 4,
+            }]},
+            rate=7.0,
+        )
+
+        self.assertIn("模型 / API ID", section)
+        self.assertIn('<span class="c-model-name">DeepSeek-V4.1-Flash</span>', section)
+        self.assertIn('<span class="c-model-api">API · deepseek-flash</span>', section)
+
     def test_price_details_are_collapsed_by_default(self):
         section = build_site._prov_section(
             {

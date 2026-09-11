@@ -43,9 +43,10 @@ PRICING_SYSTEM = """你是一个严谨的大模型厂商官网价格页解析器
 4. 限时折扣/活动价: 折后价填价格字段, 原价和活动说明写进 note, 例如「限时5折, 原价 ¥8/百万」。免费模型记 0 并在 note 注明「限时免费」。
 5. 只关注 API 按量价格: 跳过订阅套餐(如 ChatGPT Plus / Claude Pro)、企业定制价、充值优惠。
 6. 以对话/推理/多模态文本模型为主; embedding / rerank 等如果页面上有且价格简单, 也抽取并在 note 标注类型。
-7. model 保留页面上的模型名原文。同一模型不同上下文档位价格不同时拆成多行, 在 note 标注档位。
-8. promotions 汇总页面上明显的促销/活动文字(整段抄录), 没有则为 null。
-9. 如果页面文本不含价格表(如 JS 渲染的空壳、报错页、人机验证页), 把 page_has_pricing 设为 false 且 models 留空。"""
+7. model 优先填写官网价格表中的实际 API 调用名/模型标识；页面只有产品名时保留产品名原文。同一模型不同上下文或峰谷价格档位拆成多行, 在 note 标注档位。
+8. 官网若在同一价格列另列“模型版本”或正式产品展示名，display_name 填该原文，且每个价格档位都保留映射；否则填 null。不要把 API 调用名和版本名拼在同一字段。例如 model=deepseek-flash、display_name=DeepSeek-V4.1-Flash。
+9. promotions 汇总页面上明显的促销/活动文字(整段抄录), 没有则为 null。
+10. 如果页面文本不含价格表(如 JS 渲染的空壳、报错页、人机验证页), 把 page_has_pricing 设为 false 且 models 留空。"""
 
 
 NEWS_SYSTEM = """你从厂商官方公告 / changelog / 新闻页文本中抽取最近的公告条目。

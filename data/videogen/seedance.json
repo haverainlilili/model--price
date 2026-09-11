@@ -1,15 +1,11 @@
 {
  "provider_name": "火山方舟 Seedance",
  "category": "api",
- "source": "official_seed",
- "seed_verified": true,
- "verified_at": "2026-09-08",
- "verification_hash": "e0b687133ab1bd51bbc8fc16bf8ce7bb6c4f3a25a4b5e8ea78ef7618b140b7b1",
- "page_has_relevant_content": null,
+ "source": "official",
+ "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
  "product_status_note": null,
- "seed_cutoff": "latest official snapshot · 2026-09-08",
  "source_url": "https://docs.volcengine.com/docs/82379/1544106?lang=zh",
  "source_urls": [
   "https://docs.volcengine.com/docs/82379/1544106?lang=zh",
@@ -23,50 +19,43 @@
   }
  ],
  "service_regions": [
-  "domestic"
+  "domestic",
+  "intl"
  ],
  "offerings": [
   {
-   "name": "Doubao Seedance 2.5",
-   "variant_key": "Doubao Seedance 2.5",
+   "name": "视频生成 API",
+   "variant_key": null,
    "api_available": true,
-   "modes": [
-    "text-to-video",
-    "image-to-video",
-    "first-last-frame",
-    "reference",
-    "video-to-video"
-   ],
-   "pricing": "按 token×像素动态计费；官方 5s 16:9 无输入示例约 ¥3.36/¥7.56/¥18.71",
-   "currency": "CNY",
+   "modes": [],
+   "pricing": null,
+   "currency": null,
+   "region": null,
    "price_per_second": null,
    "comparison_group": null,
-   "price_basis": "480p/720p/1080p 动态 token 价，示例不是固定每秒价",
-   "resolution": "480p / 720p / 1080p",
-   "duration": "4–30s",
-   "frame_rate": "24fps",
-   "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9 / adaptive",
-   "native_audio": true,
+   "price_basis": null,
+   "resolution": null,
+   "duration": null,
+   "frame_rate": null,
+   "aspect_ratios": null,
+   "native_audio": null,
    "comparison_resolution": null,
-   "lifecycle_status": "active",
+   "lifecycle_status": "unknown",
    "sunset_at": null,
-   "region": "domestic",
    "free_quota": null,
-   "note": "1080p 10-bit；公开促销/账号额度不保证所有账户可用。"
+   "note": "官网提供创建、查询、查询列表及取消或删除视频生成任务的 API 文档；所给页面未展示具体模型、价格或参数。"
   }
  ],
- "fetched_at": null,
- "seeded_at": "2026-09-08T09:00:46+00:00",
+ "fetched_at": "2026-09-11T06:21:13Z",
  "has_video_generation": true,
  "configured_source_urls": [
   "https://docs.volcengine.com/docs/82379/1544106?lang=zh",
   "https://docs.volcengine.com/docs/82379/1520757"
  ],
- "last_fetch_ts": "2026-09-11T05:19:52Z",
+ "last_fetch_ts": "2026-09-11T06:21:13Z",
  "source_warnings": [],
  "videogen_hash": "475d43771ea5d2e3fb90e3b5b823b20a896543dafb988544401b57afbbbc6eb2",
- "status_note": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
- "last_error": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
- "videogen_pending_shrink_hash": "5fd4cb7446c9065423ed3bb67c5bbab5da27930de7d6b5a5fc1abc957d759a23",
- "videogen_pending_shrink_count": 1
+ "status_note": null,
+ "last_error": null,
+ "videogen_excerpt_hash": "70717deb1160cca393365945f05754fba2d79a5dd1eb289b349f726b8f7e5eb7"
 }

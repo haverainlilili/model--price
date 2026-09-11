@@ -143,6 +143,13 @@ class QuickVariantTests(unittest.TestCase):
     def test_summarizes_batch_tier(self):
         self.assertEqual(build_site._quick_variant("批量；输出含思考 token"), "批量")
 
+    def test_batch_availability_does_not_mislabel_standard_price(self):
+        self.assertEqual(
+            build_site._quick_variant(
+                "华北2（北京）；0<Token≤32K；Batch调用半价；上下文缓存享折扣"),
+            "0–32K",
+        )
+
     def test_combines_service_and_length_tiers(self):
         self.assertEqual(
             build_site._quick_variant("优先服务；> 512k 输入 tokens"),
@@ -157,7 +164,7 @@ class QuickVariantTests(unittest.TestCase):
 
 
 class QuickChartTests(unittest.TestCase):
-    def test_shows_four_models_and_labels_duplicate_price_tiers(self):
+    def test_shows_four_series_and_keeps_only_cheapest_duplicate_tier(self):
         providers = [{"id": "demo", "name": "Demo", "region": "国际"}]
         records = {"demo": {"currency": "USD", "models": [
             {"model": "same", "input_per_1m": 1, "output_per_1m": 2,
@@ -171,13 +178,99 @@ class QuickChartTests(unittest.TestCase):
 
         chart = build_site._quick_chart(providers, records, rate=7.0)
 
-        self.assertIn("每家最新的 4 个模型", chart)
+        self.assertIn("每家最新的 4 个模型系列", chart)
         self.assertIn("third", chart)
         self.assertIn("fourth", chart)
-        self.assertNotIn("fifth", chart)
+        self.assertIn("fifth", chart)
+        self.assertEqual(chart.count('<span class="bmodel-name">same</span>'), 1)
         self.assertIn('<span class="bvariant" title="Standard，短上下文">标准·短</span>', chart)
-        self.assertIn('<span class="bvariant" title="Standard，长上下文">标准·长</span>', chart)
+        self.assertNotIn("Standard，长上下文", chart)
 
+
+    def test_qwen_generation_keeps_flash_instead_of_max(self):
+        providers = [{"id": "qwen", "name": "Qwen", "region": "国内"}]
+        records = {"qwen": {"currency": "CNY", "models": [
+            {"model": "qwen3.8-max-prime", "input_per_1m": 24,
+             "output_per_1m": 72},
+            {"model": "qwen3.8-max", "input_per_1m": 12,
+             "output_per_1m": 36},
+            {"model": "qwen3.7-max", "input_per_1m": 12,
+             "output_per_1m": 36},
+            {"model": "qwen3.6-max", "input_per_1m": 9,
+             "output_per_1m": 54},
+            {"model": "qwen3-max", "input_per_1m": 2.5,
+             "output_per_1m": 10},
+            {"model": "qwen3.8-flash", "input_per_1m": .8,
+             "output_per_1m": 2.7},
+        ]}}
+
+        chart = build_site._quick_chart(providers, records, rate=7.0)
+
+        self.assertIn('<span class="bmodel-name">qwen3.8-flash</span>', chart)
+        self.assertNotIn("qwen3.8-max", chart)
+        self.assertIn("¥0.8", chart)
+        self.assertIn("¥2.7", chart)
+
+    def test_free_variant_is_the_lowest_series_price(self):
+        providers = [{"id": "demo", "name": "Demo", "region": "国内"}]
+        records = {"demo": {"currency": "CNY", "models": [
+            {"model": "demo4-pro", "input_per_1m": 1, "output_per_1m": 2},
+            {"model": "demo4-flash", "input_per_1m": 0, "output_per_1m": 0},
+        ]}}
+
+        chart = build_site._quick_chart(providers, records, rate=7.0)
+
+        self.assertIn('<span class="bmodel-name">demo4-flash</span>', chart)
+        self.assertNotIn("demo4-pro", chart)
+        self.assertEqual(chart.count("<i>¥0</i>"), 2)
+
+    def test_model_series_key_ignores_tier_but_preserves_version(self):
+        qwen_flash = build_site._model_series_key({"model": "qwen3.8-flash"})
+        qwen_max = build_site._model_series_key({"model": "qwen3.8-max-prime"})
+        self.assertEqual(qwen_flash, qwen_max)
+        self.assertNotEqual(
+            qwen_flash, build_site._model_series_key({"model": "qwen3.7-flash"}))
+        self.assertEqual(
+            build_site._model_series_key({"model": "Claude Opus 5"}),
+            build_site._model_series_key({"model": "Claude Sonnet 5"}),
+        )
+        self.assertNotEqual(
+            build_site._model_series_key({"model": "Claude Fable 5.1"}),
+            build_site._model_series_key({"model": "Claude Sonnet 5"}),
+        )
+        self.assertEqual(
+            build_site._model_series_key({"model": "豆包 旗舰 2.0"}),
+            build_site._model_series_key({"model": "豆包 轻量 2.0"}),
+        )
+        self.assertNotEqual(
+            build_site._model_series_key({"model": "豆包 轻量 2.0"}),
+            build_site._model_series_key({"model": "云雀 轻量 2.0"}),
+        )
+        self.assertEqual(
+            build_site._model_series_key({"model": "qwen3.8-max-0902"}),
+            build_site._model_series_key({"model": "qwen3.8-flash"}),
+        )
+        self.assertEqual(
+            build_site._model_series_key({"model": "gpt-5.6-sol"}),
+            build_site._model_series_key({"model": "gpt-5.6-luna"}),
+        )
+
+    def test_model_series_key_preserves_semantic_product_suffixes(self):
+        different_pairs = (
+            ("qwen3.5-flash", "qwen3.5-ocr"),
+            ("Gemini 3.5 Flash", "Gemini 3.5 Live Translate"),
+            ("Gemini 3.5 Flash", "Gemini 3.5 Flash Image"),
+            ("gpt-5", "gpt-5-search-api"),
+            ("deepseek-r1", "deepseek-r1-distill-qwen-32b"),
+            ("doubao-seed-1.6", "doubao-seed-1.6-vision"),
+            ("qwen3.5-flash", "qwen3.5-coder"),
+        )
+        for general, specialist in different_pairs:
+            with self.subTest(general=general, specialist=specialist):
+                self.assertNotEqual(
+                    build_site._model_series_key({"model": general}),
+                    build_site._model_series_key({"model": specialist}),
+                )
 
     def test_shows_official_display_name_and_api_id(self):
         providers = [{"id": "deepseek", "name": "DeepSeek", "region": "国内"}]
@@ -194,7 +287,7 @@ class QuickChartTests(unittest.TestCase):
         self.assertIn("API · deepseek-flash", chart)
 
 class CheapestChartTests(unittest.TestCase):
-    def test_chooses_lowest_total_from_each_providers_first_four_rows(self):
+    def test_chooses_cheapest_variant_from_latest_model_series(self):
         providers = [{
             "id": "demo",
             "name": "Demo",
@@ -202,23 +295,43 @@ class CheapestChartTests(unittest.TestCase):
             "region": "国际",
         }]
         records = {"demo": {"currency": "USD", "models": [
-            {"model": "expensive", "input_per_1m": 4, "output_per_1m": 8},
-            {"model": "cheapest", "input_per_1m": 1, "output_per_1m": 2},
-            {"model": "partial", "input_per_1m": None, "output_per_1m": 5},
-            {"model": "other", "input_per_1m": 2, "output_per_1m": 3},
-            {"model": "ignored-fifth", "input_per_1m": .1, "output_per_1m": .1},
+            {"model": "demo4-max", "input_per_1m": 4, "output_per_1m": 8},
+            {"model": "demo3-flash", "input_per_1m": .1, "output_per_1m": .1},
+            {"model": "demo4-flash", "input_per_1m": 1, "output_per_1m": 2},
+            {"model": "demo4-max-prime", "input_per_1m": 8, "output_per_1m": 16},
         ]}}
 
         chart = build_site._cheapest_chart(providers, records, rate=7.0)
 
-        self.assertIn("各厂商最新 4 条中的最低价", chart)
+        self.assertIn("各厂商最新模型系列的最低价", chart)
         self.assertIn("价格 = 输入价 + 输出价", chart)
         self.assertIn("示例厂商", chart)
-        self.assertIn("cheapest", chart)
+        self.assertIn("demo4-flash", chart)
         self.assertIn("¥21", chart)
-        self.assertNotIn("expensive", chart)
-        self.assertNotIn("ignored-fifth", chart)
+        self.assertNotIn("demo4-max", chart)
+        self.assertNotIn("demo3-flash", chart)
         self.assertIn('role="list"', chart)
+
+    def test_qwen_latest_series_uses_late_flash_row_before_provider_minimum(self):
+        providers = [{"id": "qwen", "name": "Qwen", "region": "国内"}]
+        records = {"qwen": {"currency": "CNY", "models": [
+            {"model": "qwen3.8-max", "input_per_1m": 12,
+             "output_per_1m": 36},
+            {"model": "qwen3.7-max", "input_per_1m": .1,
+             "output_per_1m": .1},
+            {"model": "qwen3.6-max", "input_per_1m": 20,
+             "output_per_1m": 60},
+            {"model": "qwen3-max", "input_per_1m": 20,
+             "output_per_1m": 60},
+            {"model": "qwen3.8-flash", "input_per_1m": .8,
+             "output_per_1m": 2.7},
+        ]}}
+
+        chart = build_site._cheapest_chart(providers, records, rate=7.0)
+
+        self.assertIn("qwen3.8-flash", chart)
+        self.assertNotIn("qwen3.8-max", chart)
+        self.assertIn("¥3.5", chart)
 
     def test_uses_a_single_available_price_component(self):
         providers = [{"id": "demo", "name": "Demo", "region": "国内"}]

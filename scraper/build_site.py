@@ -91,6 +91,85 @@ def _model_label_parts(model: dict, fallback: str = "") -> tuple[str, str]:
     return api_name, ""
 
 
+_MODEL_SERIES_PREFIX_TIERS = frozenset({
+    "fable", "flash", "haiku", "large", "lite", "maverick", "max",
+    "medium", "mini", "opus", "premier", "prime", "pro", "scout",
+    "small", "sonnet", "turbo", "ultra", "专业", "增强", "旗舰", "极速", "轻量",
+})
+_MODEL_SERIES_SUFFIX_IGNORED = _MODEL_SERIES_PREFIX_TIERS | frozenset({
+    "api", "astra", "batch", "context", "dated", "express", "fast",
+    "flashx", "flex", "highspeed", "instant", "latest", "length", "luna",
+    "model", "nano", "plus", "preview", "priority", "snapshot", "sol",
+    "stable", "standard", "terra", "thinking", "tier", "token", "tokens",
+    "正式版", "预览版",
+})
+_MODEL_SERIES_VERSION_RE = re.compile(r"\d+(?:\.\d+)*(?:[a-z])?", re.I)
+_MODEL_SERIES_SUFFIX_TOKEN_RE = re.compile(r"[a-z]+|\d+[a-z]?|[\u3400-\u9fff]+", re.I)
+
+
+def _model_series_key(model: dict) -> str:
+    """Derive a conservative model-generation key from the official label.
+
+    Flash/Max/Pro, queue names and snapshot dates are pricing variants. Semantic
+    suffixes such as OCR, Image, Search, Vision, Code or Distill remain in the key
+    so a cheaper specialist product cannot replace the general model's bar.
+    Names without a version token are grouped only when their full names match.
+    """
+    api_name = str(model.get("model") or "").strip()
+    label = str(model.get("display_name") or api_name).strip().casefold()
+    normalized = re.sub(r"[‐‑‒–—]+", "-", label)
+    version = _MODEL_SERIES_VERSION_RE.search(normalized)
+    if version:
+        prefix = normalized[:version.start()]
+        for tier in _MODEL_SERIES_PREFIX_TIERS:
+            prefix = re.sub(
+                rf"(?<![a-z]){re.escape(tier)}(?![a-z])", " ", prefix)
+        prefix = re.sub(r"[^a-z0-9\u3400-\u9fff]+", "-", prefix).strip("-")
+
+        suffix = normalized[version.end():]
+        suffix = re.sub(r"high[\s-]+speed", "highspeed", suffix)
+        semantic = []
+        for token in _MODEL_SERIES_SUFFIX_TOKEN_RE.findall(suffix):
+            token = token.casefold()
+            if (token in _MODEL_SERIES_SUFFIX_IGNORED
+                    or re.fullmatch(r"\d+(?:[bk])?", token)):
+                continue
+            if token not in semantic:
+                semantic.append(token)
+        semantic_key = "-".join(semantic) or "base"
+        return (f"version:{prefix or '_'}:{version.group(0).casefold()}:"
+                f"{semantic_key}")
+    exact = re.sub(r"\s+", " ", normalized).strip()
+    return f"exact:{exact or api_name.casefold()}"
+
+
+def _lowest_models_by_series(models: list[dict], price_score,
+                             limit: int = 4) -> list[dict]:
+    """Return source-ordered model series, keeping the cheapest row per series."""
+    grouped: dict[str, list[tuple[int, dict]]] = {}
+    order: list[str] = []
+    for index, model in enumerate(models):
+        key = _model_series_key(model)
+        if key not in grouped:
+            grouped[key] = []
+            order.append(key)
+        grouped[key].append((index, model))
+
+    selected = []
+    for key in order:
+        candidates = []
+        for index, model in grouped[key]:
+            score = price_score(model)
+            if score is not None:
+                candidates.append((score, index, model))
+        if not candidates:
+            continue
+        selected.append(min(candidates, key=lambda item: (item[0], item[1]))[2])
+        if len(selected) >= limit:
+            break
+    return selected
+
+
 def _sym(cur: str | None) -> str:
     return CUR_SYMBOL.get((cur or "").upper(), "")
 
@@ -1006,7 +1085,10 @@ def _quick_variant(note: str | None) -> str:
 
     lower = text.lower()
     tier = ""
-    if "批量" in text or "batch" in lower:
+    if re.search(
+            r"(?:^|[；;,，])\s*(?:批量(?:处理|推理)?|"
+            r"batch(?:\s+(?:api|tier|mode|processing|inference))?)"
+            r"\s*(?:[；;,，]|$)", lower):
         tier = "批量"
     elif "flex" in lower:
         tier = "Flex"
@@ -1041,11 +1123,24 @@ def _quick_variant(note: str | None) -> str:
             r"输入长度\s*\[\s*(\d+(?:\.\d+)?)\s*\+\s*\)", text)
         limit_match = re.search(
             r"([≤≥<>])\s*(\d+(?:\.\d+)?)\s*[kK]\s*输入", text)
+        token_band = re.search(
+            r"(\d+(?:\.\d+)?)\s*([kKmM]?)\s*<\s*tokens?\s*"
+            r"(?:≤|<=)\s*(\d+(?:\.\d+)?)\s*([kKmM]?)", text,
+            flags=re.IGNORECASE)
         if open_match:
             band = f"{compact_number(open_match.group(1))}K+"
         elif limit_match:
             limit = compact_number(limit_match.group(2))
             band = f"{limit_match.group(1)}{limit}K"
+        elif token_band:
+            start = compact_number(token_band.group(1))
+            end = compact_number(token_band.group(3))
+            start_unit = token_band.group(2).upper()
+            end_unit = token_band.group(4).upper()
+            if start_unit and start_unit == end_unit:
+                band = f"{start}–{end}{end_unit}"
+            else:
+                band = f"{start}{start_unit}–{end}{end_unit}"
 
     if context:
         return f"{tier}·{context}" if tier else f"{context}上下文"
@@ -1176,7 +1271,7 @@ def _plan_bar_heights(plans: list[dict]) -> list[float]:
 
 
 def _cheapest_chart(providers_cfg: list, recs: dict, rate: float) -> str:
-    """从每家价格页最前 4 条记录中选输入价与输出价合计最低的一条。"""
+    """每家取官网排序最新的模型系列，再选择其中最低的公开档位。"""
     picks = []
     for cfg in providers_cfg:
         rec = recs.get(cfg["id"]) or {}
@@ -1185,28 +1280,33 @@ def _cheapest_chart(providers_cfg: list, recs: dict, rate: float) -> str:
         for model in models:
             model_name = str(model.get("model") or "")
             name_counts[model_name] = name_counts.get(model_name, 0) + 1
-        choices = []
-        for model in models[:4]:
+
+        def converted_prices(model):
             cur = (model.get("currency") or rec.get("currency") or "").upper()
             if cur not in {"CNY", "USD"}:
-                continue
+                return None, None, None
             fx = rate if cur == "USD" else 1.0
-            prices = []
             converted = []
             for field in ("input_per_1m", "output_per_1m"):
                 value = model.get(field)
                 price = (float(value) * fx
                          if isinstance(value, (int, float)) and value >= 0 else None)
                 converted.append(price)
-                if price is not None:
-                    prices.append(price)
-            if not prices:
+            prices = [value for value in converted if value is not None]
+            return (sum(prices), converted[0], converted[1]) if prices else (None, None, None)
+
+        series_models = _lowest_models_by_series(
+            models, lambda model: converted_prices(model)[0], limit=1)
+        choices = []
+        for model in series_models:
+            total, input_price, output_price = converted_prices(model)
+            if total is None:
                 continue
             api_model = str(model.get("model") or "未命名模型")
             display_name, api_id = _model_label_parts(model, "未命名模型")
             note = str(model.get("note") or "").strip()
             variant = _quick_variant(note) if name_counts.get(api_model, 0) > 1 else ""
-            choices.append((sum(prices), display_name, api_id, converted[0], converted[1],
+            choices.append((total, display_name, api_id, input_price, output_price,
                             variant, note))
         if choices:
             total, display_name, api_id, input_price, output_price, variant, note = min(
@@ -1253,27 +1353,29 @@ def _cheapest_chart(providers_cfg: list, recs: dict, rate: float) -> str:
         '<section class="lowest" id="lowest" aria-labelledby="lowest-title">'
         '<div class="lowest-head"><div><p class="lowest-kicker">LOWEST BY PROVIDER</p>'
         '<div class="lowest-title-line"><h2 class="lowest-title" id="lowest-title">'
-        '各厂商最新 4 条中的最低价</h2>'
+        '各厂商最新模型系列的最低价</h2>'
         '<span class="lowest-formula">价格 = 输入价 + 输出价</span></div></div>'
-        '<p class="lowest-desc">每根柱代表一家厂商 · 从左到右按合计价由低到高 · '
-        '统一折算人民币</p></div>'
+        '<p class="lowest-desc">每根柱代表一家厂商最新系列的最低公开档 · '
+        '从左到右按合计价由低到高 · 统一折算人民币</p></div>'
         '<div class="lowest-scroll" role="region" tabindex="0" '
         'aria-label="各厂商最低价柱状图，可横向滚动">'
         f'<div class="lowest-plot" role="list">{"".join(columns)}</div></div>'
-        f'<p class="lowest-foot">横轴为厂商，柱高按合计价线性比较；每家仅在官网价格页最前的 '
-        f'4 条记录中选择；同名模型沿用价格速览中的档位摘要。缺少输入价或输出价时，'
+        f'<p class="lowest-foot">横轴为厂商，柱高按合计价线性比较；每家先取官网排序最前的'
+        f'最新模型系列，再从该系列全部 Flash、Max、Pro 及价格档位中保留输入价与输出价'
+        f'合计最低的一项；同名模型沿用价格速览中的档位摘要。缺少输入价或输出价时，'
         f'以已有单项价格参与比较 · '
         f'USD 按 1 USD ≈ ¥{_fmt(rate)} 折算。</p></section>')
 
 
 def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
-    """首页顶部价格速览: 每家厂商价格页最前的 4 个模型, 输入/输出双条。
+    """首页价格速览: 每家最新 4 个系列各取合计价最低的输入/输出双条。
 
     对数/线性双刻度同时渲染(条宽写进 CSS 变量 --wl/--wi, 按钮切换):
     线性刻度价格差异直观, 但跨数量级时低价模型被压成一条线; 对数刻度
     完整但压缩差异。两种互补, 读者自选。
     跨厂商可比的前提是同一币种: USD 统一按汇率折算成人民币。
-    「最新 4 个」按各官网价格页的排列顺序取(各家都把最新模型放在最前)。
+    「最新 4 个」按各官网价格页中模型系列首次出现的顺序取；同一数字版本的
+    Flash/Max/Pro 等档位只保留输入价与输出价合计最低的一项。
     """
     groups, vals = [], []
     for cfg in providers_cfg:
@@ -1283,38 +1385,48 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
         for model in models:
             name = str(model.get("model") or "")
             name_counts[name] = name_counts.get(name, 0) + 1
-        rows = []
-        for m in models[:4]:
-            cur = (m.get("currency") or rec.get("currency") or "").upper()
+
+        def converted_prices(model):
+            cur = (model.get("currency") or rec.get("currency") or "").upper()
+            if cur not in {"CNY", "USD"}:
+                return None, None
             fx = rate if cur == "USD" else 1.0
 
-            def cv(v, _fx=fx):
-                return float(v) * _fx if isinstance(v, (int, float)) and v > 0 else None
+            def cv(value):
+                return (float(value) * fx
+                        if isinstance(value, (int, float)) and value >= 0 else None)
 
-            ci, co = cv(m.get("input_per_1m")), cv(m.get("output_per_1m"))
-            if ci is None and co is None:
-                continue
+            return cv(model.get("input_per_1m")), cv(model.get("output_per_1m"))
+
+        def price_score(model):
+            ci, co = converted_prices(model)
+            values = [value for value in (ci, co) if value is not None]
+            return sum(values) if values else None
+
+        rows = []
+        for m in _lowest_models_by_series(models, price_score, limit=4):
+            ci, co = converted_prices(m)
             model = str(m.get("model") or "")
             display_name, api_id = _model_label_parts(m)
             note = str(m.get("note") or "").strip()
             variant = _quick_variant(note) if name_counts.get(model, 0) > 1 else ""
             rows.append((display_name, api_id, ci, co, variant, note))
-            vals += [v for v in (ci, co) if v]
+            vals += [v for v in (ci, co) if v is not None and v > 0]
         if rows:
             groups.append((cfg, rows))
-    if not groups or not vals:
+    if not groups:
         return ""
 
-    lo, hi = min(vals), max(vals)
+    lo, hi = (min(vals), max(vals)) if vals else (1.0, 1.0)
     span = math.log10(hi) - math.log10(lo) if hi > lo else 1.0
 
     def w_log(v) -> str:
-        if v is None:
+        if v is None or v <= 0:
             return "0"
         return f"{max(2.0, min(100.0, (math.log10(v) - math.log10(lo)) / span * 100)):.1f}"
 
     def w_lin(v) -> str:
-        if v is None:
+        if v is None or v <= 0:
             return "0"
         return f"{max(1.5, v / hi * 100):.1f}"
 
@@ -1346,19 +1458,19 @@ def _quick_chart(providers_cfg: list, recs: dict, rate: float) -> str:
 
     return (
         '<section class="quick" id="quick" aria-label="价格速览图">'
-        '<div class="quick-head"><h2 class="quick-title">价格速览 · 每家最新的 4 个模型'
+        '<div class="quick-head"><h2 class="quick-title">价格速览 · 每家最新的 4 个模型系列'
         '</h2><div class="blegend"><span><i class="sw sw-in"></i>输入</span>'
         '<span><i class="sw sw-out"></i>输出</span>'
-        '<span class="bnote">统一折算人民币</span>'
+        '<span class="bnote">每系列只留最低价 · 统一折算人民币</span>'
         '<div class="seg seg-scale" role="group" aria-label="刻度切换">'
         '<button data-scale-btn="log" class="on" aria-pressed="true">对数刻度</button>'
         '<button data-scale-btn="lin" aria-pressed="false">线性刻度</button></div>'
         '</div></div>'
         f'<div class="chart-grid">{"".join(parts)}</div>'
         f'<p class="bfoot">线性刻度下价格差异直观, 但低价模型会被压扁; 对数刻度完整'
-        f'但压缩差异 —— 右上角可切换 · USD 按 1 USD ≈ ¥{_fmt(rate)} 折算 · 每家取'
-        '官网价格页最前的 4 个模型(即最新), 同名模型后的标签说明价格档位差异; '
-        '完整价格与备注见下方明细表。</p></section>')
+        f'但压缩差异 —— 右上角可切换 · USD 按 1 USD ≈ ¥{_fmt(rate)} 折算 · 每家按'
+        '官网顺序取最新 4 个模型系列，每个系列只展示输入价与输出价合计最低的公开档位；'
+        '同名模型后的标签说明所选价格档位，全部型号和档位仍保留在下方明细表。</p></section>')
 
 
 def _plans_section(providers_cfg: list, records: dict) -> str:

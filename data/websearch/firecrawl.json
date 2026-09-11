@@ -12,97 +12,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search — Free Plan",
-   "pricing": "$0/month; 1,000 credits/month; 500 searches or 1,000 pages scraped",
+   "name": "Web Search API",
+   "pricing": "Search costs 2 credits per 10 results, rounded up. Plans: Free $0/month with 1,000 credits; Hobby $16/month billed annually with 5,000 credits; Standard $83/month billed annually with 100,000 credits; Growth $333/month billed annually with 500,000 credits; Scale $599/month billed annually with 1,000,000 credits. Pay-as-you-go: $5 increments, credits vary by plan.",
    "price_per_1k_usd": null,
-   "price_basis": "Free Plan",
-   "free_quota": "1,000 credits every month, refreshed monthly, no credit card required.",
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述和URL；可选返回全文Markdown、HTML、链接或截图",
+   "price_basis": "Credit-based pricing; Search uses 2 credits per 10 results. Credits are shared across endpoints; paid plan and result count affect the effective price.",
+   "free_quota": "1,000 credits/month; pricing page states this covers 500 searches or 1,000 pages scraped.",
+   "output_type": "结构化搜索结果，包含标题、描述和 URL；可选返回网页 Markdown、HTML、链接或截图",
    "cites_sources": true,
    "default_on": null,
-   "note": "Search costs 2 credits per 10 results，按每10条向上取整；可免API key使用。"
-  },
-  {
-   "name": "Search — Hobby",
-   "pricing": "Hobby: $19/month billed monthly, or $16/month billed annually, for 5,000 credits per month (2,500 searches or 5,000 pages scraped).",
-   "price_per_1k_usd": null,
-   "price_basis": "Hobby；5,000 credits/month",
-   "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述和URL；可选抓取搜索结果全文",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "超额$5/1,000 credits；搜索按结果数计费，2 credits/10 results并向上取整。"
-  },
-  {
-   "name": "Search — Standard",
-   "pricing": "$83/month billed annually; 100,000 credits/month; 50,000 searches or 100,000 pages scraped",
-   "price_per_1k_usd": null,
-   "price_basis": "Standard；年付月均价",
-   "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述和URL；可选抓取搜索结果全文",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "超额$5/2,000 credits；搜索按结果数计费，2 credits/10 results并向上取整。"
-  },
-  {
-   "name": "Search — Growth",
-   "pricing": "$333/month billed annually; 500,000 credits/month; 250,000 searches or 500,000 pages scraped",
-   "price_per_1k_usd": null,
-   "price_basis": "Growth；年付月均价",
-   "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述和URL；可选抓取搜索结果全文",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "超额$5/2,500 credits；搜索按结果数计费，2 credits/10 results并向上取整。"
-  },
-  {
-   "name": "Search — Scale",
-   "pricing": "$599/monthly, billed yearly; 1,000,000 credits/month; 500,000 searches or 1,000,000 pages scraped",
-   "price_per_1k_usd": null,
-   "price_basis": "Scale；年付月均价",
-   "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述和URL；可选抓取搜索结果全文",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "超额$5/5,000 credits；搜索按结果数计费，2 credits/10 results并向上取整。"
-  },
-  {
-   "name": "Search — Enterprise",
-   "pricing": "Custom credits; Custom; Bulk discounts",
-   "price_per_1k_usd": null,
-   "price_basis": "Enterprise定制方案",
-   "free_quota": null,
-   "output_type": "结构化网页、新闻和图片搜索结果，含标题、描述和URL；可选抓取搜索结果全文",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "包含定制并发、专属支持与SLA、Zero-data retention、SSO及高级安全功能。"
-  },
-  {
-   "name": "End-to-End ZDR",
-   "pricing": "Cost: 10 credits per 10 results",
-   "price_per_1k_usd": null,
-   "price_basis": "Enterprise ZDR search",
-   "free_quota": null,
-   "output_type": "零数据保留的结构化搜索结果",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "需设置enterprise:[\"zdr\"]；Firecrawl及上游搜索提供商均不存储查询或结果数据。"
-  },
-  {
-   "name": "Anonymized ZDR",
-   "pricing": "Cost: 2 credits per 10 results",
-   "price_per_1k_usd": null,
-   "price_basis": "Enterprise anonymized ZDR search",
-   "free_quota": null,
-   "output_type": "匿名化零数据保留的结构化搜索结果",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "需设置enterprise:[\"anon\"]；Firecrawl不保留数据，上游可能缓存完全匿名化的查询。"
+   "note": "搜索费用按结果数向上取整；启用内容抓取时还会收取每页抓取费用。"
   }
  ],
- "fetched_at": "2026-09-11T02:16:05Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-11T09:14:11Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-11T08:14:34Z",
- "websearch_hash": "60907d6ff38cd88b02563c4194a3bac8e61c17cee7c8ad1164892c6e2fbda2e0"
+ "last_fetch_ts": "2026-09-11T09:14:11Z",
+ "websearch_hash": "a372627a8cc3e7a45f6a809c3cc5ff39dc00e948d67c5bef124bb195922a4a33"
 }

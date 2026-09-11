@@ -1090,6 +1090,19 @@ class ProcessGenerationTests(unittest.TestCase):
             run._generation_candidate_signature(first, True),
             run._generation_candidate_signature(second, True))
 
+    def test_semantic_confirmation_preserves_video_price_provenance(self):
+        direct = [{
+            "name": "A", "currency": "CNY", "price_per_second": 1.51,
+            "comparison_price_type": "direct",
+        }]
+        fixed_example = [{
+            **direct[0], "comparison_price_type": "official-fixed-example",
+        }]
+
+        self.assertNotEqual(
+            run._generation_candidate_signature(direct, True),
+            run._generation_candidate_signature(fixed_example, True))
+
     def test_same_count_identity_loss_is_suspicious(self):
         previous = {"offerings": [{"name": "A"}, {"name": "B"}]}
         page = SimpleNamespace(

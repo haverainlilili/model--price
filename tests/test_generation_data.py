@@ -6,7 +6,8 @@ from scraper import build_site, run
 from pydantic import ValidationError
 
 from scraper.models import (
-    ImageGenerationOffering, ImageGenerationPage, VideoGenerationPage,
+    ImageGenerationOffering, ImageGenerationPage, VideoGenerationOffering,
+    VideoGenerationPage,
 )
 from scripts import make_generation as seed
 
@@ -74,6 +75,70 @@ class GenerationSeedDataTests(unittest.TestCase):
                         flag: record[flag],
                         "offerings": record["offerings"],
                     })
+
+    def test_video_fixed_example_derives_strict_group_from_objective_facts(self):
+        offering = VideoGenerationOffering.model_validate({
+            "name": "doubao-seedance-2.5",
+            "api_available": True,
+            "currency": "CNY",
+            "price_per_second": 1.51,
+            "comparison_price_type": "official-fixed-example",
+            "price_basis": "官网 720p、16:9、5 秒固定场景元/秒示例",
+            "resolution": "720p",
+            "native_audio": True,
+        })
+
+        self.assertEqual(offering.comparison_group, "cny-720p-audio")
+        self.assertEqual(offering.comparison_resolution, "720p")
+
+    def test_temporary_video_chart_price_requires_complete_date_window(self):
+        base = {
+            "name": "promotional video",
+            "api_available": True,
+            "currency": "CNY",
+            "price_per_second": 1.51,
+            "comparison_price_type": "official-fixed-example",
+            "price_basis": "720p 16:9 5秒原生有声",
+            "resolution": "720p",
+            "native_audio": True,
+        }
+        with self.assertRaisesRegex(ValidationError, "start and end dates"):
+            VideoGenerationOffering.model_validate({
+                **base, "note": "阶段性72折优惠",
+            })
+
+        accepted = VideoGenerationOffering.model_validate({
+            **base,
+            "note": "2026-08-14 14:00至2026-09-17 14:00（UTC+8）按刊例价72折",
+        })
+        self.assertEqual(accepted.comparison_group, "cny-720p-audio")
+
+    def test_charted_seedance_promotions_keep_official_expiry_timestamps(self):
+        record = records("videogen")["seedance"]
+        rows = [row for row in record["offerings"]
+                if row["name"] in ("doubao-seedance-2.0-fast",
+                                   "doubao-seedance-2.0-mini")]
+        self.assertTrue(rows)
+        for row in rows:
+            self.assertIn("2026-08-07 14:00", row["note"])
+            self.assertIn("2026-10-07 14:00", row["note"])
+            self.assertIn("UTC+8", row["note"])
+        seed25 = next(row for row in record["offerings"]
+                      if row["name"] == "doubao-seedance-2.5"
+                      and row["resolution"] == "1080p")
+        self.assertIn("2026-08-14 14:00", seed25["note"])
+        self.assertIn("2026-09-17 14:00", seed25["note"])
+        self.assertIn("UTC+8", seed25["note"])
+
+    def test_seedance_catalog_renders_dynamic_official_sources(self):
+        cfg = next(item for item in run.load_videogen_providers()
+                   if item["id"] == "seedance")
+
+        self.assertTrue(cfg["videogen_render"])
+        self.assertIn("https://docs.volcengine.com/docs/82379/1544106?lang=zh",
+                      cfg["videogen_urls"])
+        self.assertIn("https://seed.bytedance.com/en/seedance2_5",
+                      cfg["videogen_urls"])
 
     def test_unknown_comparison_groups_fail_schema_validation(self):
         with self.assertRaises(ValidationError):

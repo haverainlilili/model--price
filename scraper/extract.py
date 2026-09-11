@@ -106,17 +106,18 @@ VIDEOGEN_SYSTEM = """你从生视频产品官网的价格页和 API 文档中抽
 1. page_has_relevant_content：产品/价格/正式停用说明页面为 true；空白、报错、登录墙、人机验证或无关导航壳为 false。它与产品是否仍提供是两个字段。
 2. product_status 填 active / discontinued / unknown；正式停用时同时填写 product_status_date 与 product_status_note。has_video_generation 表示官网是否仍提供生成式视频产品；正式停用说明页应 page_has_relevant_content=true、product_status=discontinued 且本字段=false。
 3. offerings 按模型、分辨率、是否原生音频或价格明显不同的公开档位拆分，每项填写：
-   - name：模型/产品名原文。variant_key：同一模型按区域/分辨率/音频/队列/模式拆分时填写稳定简短档位键，不可用易变说明文字；没有拆分档位可填 null。
+   - name：模型/产品名原文；官网价格表出现实际 API 模型标识时优先逐字使用该标识，不得自行改成标题式产品名。variant_key：同一模型按区域/分辨率/音频/队列/模式拆分时填写稳定简短档位键，不可用易变说明文字；没有拆分档位可填 null。
    - api_available：官网明确提供开发者 API 才为 true；明确只有网页/应用且无官方 API 才为 false；没说则 null。
    - modes：只收录官网明确能力，使用 text-to-video / image-to-video / first-last-frame / reference-to-video / video-edit 等简短值；参考视频驱动不等于视频编辑。
    - pricing、currency：保留官网原币种，不换汇。存在中国区/全球区/新加坡等独立价时，region 按端点填 domestic 或 intl；无独立区域含义填 null。
-   - price_per_second：官网直接按生成秒报价；或固定 credits/秒且公开固定 PAYG credit 单价；或固定价格对应固定片段秒数时才可机械换算。token/像素动态计费、订阅额度折算、强制月费下的边际价、企业询价或时长不固定必须为 null。
-   - comparison_group：只有无需订阅折算/强制月费，且明确分辨率和音频口径才能进入柱图，编码为 {usd|cny}-{480p|720p|1080p}-{silent|audio}。原生同步音频明确包含才用 audio；视频本身不生成音频用 silent；不清楚则 null。已公告弃用/EOL 仍可按当前有效价格分组，但必须在 price_basis 和 note 写明日期。
-   - comparison_resolution：进入柱图时必须填 480p/720p/1080p 并与 comparison_group 一致；不进柱图填 null。
+   - price_per_second：官网直接按生成秒报价；或固定 credits/秒且公开固定 PAYG credit 单价；或固定价格对应固定片段秒数时才可机械换算。官网价格页若针对固定分辨率、宽高比、时长和输入条件同时公布“元/个”和“元/秒”示例，必须使用官网原文“元/秒”数值，不得用总价重新除法得到更多小数；price_basis 与 note 必须标明固定场景及动态 token 实际结算。只有官网没有“元/秒”而明确给出固定总价和固定秒数时，才可机械换算并保留足以还原官网总价的精度。没有官网固定场景秒价的 token/像素动态计费、订阅额度折算、强制月费下的边际价、企业询价或时长不固定必须为 null。
+   - comparison_price_type：price_per_second 非 null 时必须填写其事实来源：官网直接按秒计费填 direct；官网针对固定场景直接列出元/秒示例填 official-fixed-example；官网固定总价除以固定秒数填 fixed-duration-derived。其它情况为 null。
+   - comparison_group：只有无需订阅折算/强制月费，且明确分辨率和音频口径才能进入柱图，编码为 {usd|cny}-{480p|720p|1080p}-{silent|audio}。原生同步音频明确包含才用 audio；视频本身不生成音频用 silent；不清楚则 null。若官网对同一精确模型明确写明音视频联合生成/有声视频，且计费公式不含音频因子、该模型价格表也未按音频开关另行定价，则视为固定场景秒价已含原生音频，该场景可且只可归入 audio，不得复制到 silent。不同版本之间绝不继承音频能力。comparison_price_type 与其它客观字段齐全时系统会确定分组，不要因实际采用动态 token 结算而遗漏官网直接公布的固定场景秒价类型。已公告弃用/EOL 仍可按当前有效价格分组，但必须在 price_basis 和 note 写明日期。
+   - comparison_resolution：进入柱图时必须填 480p/720p/1080p 并与 comparison_group 一致；不进柱图填 null。若同一模型/分辨率只有默认有声固定场景价，不要仅为记录可关闭音频而另造一个无秒价的 silent 重复项，只在有独立官网价格或固定示例时拆分音频档。
    - lifecycle_status / sunset_at：按官网填写 active/deprecated/sunsetting/legacy-existing-only/discontinued/self-host-only；官网未说明生命周期时填 unknown；有正式停用日必须填 YYYY-MM-DD。
    - price_basis：必须写清模型、模式、分辨率、原生音频口径与计费档。
    - resolution、duration、frame_rate、aspect_ratios、native_audio、free_quota：仅按官网原文。
-   - note：限制、附加音频/高清费用、排队方式或 API 状态等客观说明，不超过 120 字。
+   - note：限制、附加音频/高清费用、排队方式或 API 状态等客观说明，不超过 120 字。price_per_second 或 pricing 使用限时折扣/活动价时，每个受影响档位必须写出官网完整起止日期、时间与时区，不得只写“限时”或“阶段性”。
 4. 不把第三方托管价格当作厂商官方 API 价；不同分辨率、音频能力和币种绝不混组；不做主观质量评分。
 5. 有效页面明确没有/已停用生视频产品时 has_video_generation=false 且 offerings 留空。无效壳页同样留空，但必须 page_has_relevant_content=false。页面没写的字段填 null/空数组，严禁猜测。"""
 

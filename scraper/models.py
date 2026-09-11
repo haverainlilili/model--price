@@ -1,6 +1,7 @@
 """结构化抽取结果的 Pydantic 模型（同时生成提示词中的 JSON Schema）。"""
 from __future__ import annotations
 
+import re
 from datetime import date
 from typing import List, Literal, Optional
 
@@ -232,6 +233,10 @@ class VideoGenerationOffering(StrictGenerationModel):
         None, description="该独立区域价/部署端点属于国际或中国国内；无区域差异则 null")
     price_per_second: Optional[float] = Field(
         None, ge=0, allow_inf_nan=False, description="指定公开档位的原币种每生成秒价格；不能机械换算则 null")
+    comparison_price_type: Optional[Literal[
+        "direct", "official-fixed-example", "fixed-duration-derived",
+    ]] = Field(
+        None, description="秒价的官网事实类型；动态计费且无固定场景秒价时为 null")
     comparison_group: Optional[Literal[
         "usd-480p-silent", "usd-480p-audio",
         "usd-720p-silent", "usd-720p-audio",
@@ -271,6 +276,29 @@ class VideoGenerationOffering(StrictGenerationModel):
     def validate_sunset_at(cls, value):
         return _validate_iso_calendar_date(value)
 
+    @model_validator(mode="before")
+    @classmethod
+    def derive_video_comparison_group(cls, values):
+        if not isinstance(values, dict) or values.get("comparison_group") is not None:
+            return values
+        if values.get("comparison_price_type") is None:
+            return values
+        currency = str(values.get("currency") or "").lower()
+        resolution = str(values.get("resolution") or "").strip().lower()
+        audio = values.get("native_audio")
+        if (currency not in ("usd", "cny")
+                or resolution not in ("480p", "720p", "1080p")
+                or type(audio) is not bool
+                or values.get("api_available") is not True
+                or values.get("price_per_second") is None
+                or not str(values.get("price_basis") or "").strip()):
+            return values
+        normalized = dict(values)
+        normalized["comparison_group"] = (
+            f"{currency}-{resolution}-{'audio' if audio else 'silent'}")
+        normalized["comparison_resolution"] = resolution
+        return normalized
+
     @model_validator(mode="after")
     def validate_comparison_contract(self):
         group = self.comparison_group
@@ -286,6 +314,24 @@ class VideoGenerationOffering(StrictGenerationModel):
                 or self.native_audio is not expected_audio
                 or not (self.price_basis or "").strip()):
             raise ValueError("video comparison_group facts are incomplete or inconsistent")
+        return self
+
+    @model_validator(mode="after")
+    def validate_temporary_discount_window(self):
+        if self.price_per_second is None:
+            return self
+        text = " ".join(str(value or "") for value in (
+            self.pricing, self.price_basis, self.note))
+        temporary_discount = (
+            "永久" not in text
+            and (bool(re.search(r"\d+(?:\.\d+)?折", text))
+                 or any(mark in text.lower() for mark in (
+                     "限时", "阶段性", "活动价", "limited-time", "temporary discount"))))
+        if temporary_discount:
+            dates = set(re.findall(r"\d{4}-\d{2}-\d{2}", text))
+            if len(dates) < 2:
+                raise ValueError(
+                    "temporary chart price requires official start and end dates")
         return self
 
 

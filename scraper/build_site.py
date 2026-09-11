@@ -534,6 +534,22 @@ body[data-view=imagegen] .currency-switch,body[data-view=videogen] .currency-swi
   font:600 9px/1.35 var(--sans);overflow:hidden}
 .ws-chart-foot{margin:0;padding:11px 18px;border-top:1px solid var(--line);background:var(--panel2);
   color:var(--ink2);font-size:11.5px}
+.gen-chart-controls{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;
+  padding:12px 14px;border-bottom:1px solid var(--line);background:#FFF}
+.gen-chart-controls[hidden],.gen-chart-panels>[hidden],.gen-chart-empty[hidden]{display:none}
+.gen-chart-control,.gen-chart-spec{display:flex;align-items:center;gap:9px;min-width:0}
+.gen-chart-control-label{flex:none;color:var(--ink3);font:700 9px/1 var(--mono);
+  letter-spacing:.1em;text-transform:uppercase}
+.gen-chart-spec{justify-content:flex-end;flex:1}.gen-chart-spec select{width:min(100%,430px);min-height:40px;
+  padding:0 34px 0 11px;border:1px solid var(--line2);border-radius:9px;background:#FFF;
+  color:var(--ink);font:650 11.5px var(--sans)}
+.gen-chart-panels{grid-template-columns:minmax(0,1fr)}
+.gen-chart-panels .ws-chart-group{grid-column:1/-1}
+.gen-chart-empty{margin:0;padding:12px 16px;border-top:1px solid var(--line);background:#FFF8E8;
+  color:#6E522D;font-size:11.5px}
+.gen-chart-noscript{margin:0;padding:10px 16px;border-top:1px solid var(--line);color:var(--ink2);font-size:11px}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;
+  margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .ws-table{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .ws-table table{min-width:1120px}
 .ws-name{font-weight:720;text-align:left}.ws-output{text-align:left;color:var(--ink2)}
@@ -696,6 +712,9 @@ body[data-region=domestic] .gen-row[data-region=intl]{display:none}
   .quick-head{align-items:flex-start;flex-direction:column;padding:17px}
   .plan-chart-head{align-items:flex-start;flex-direction:column;gap:7px;padding:17px}
   .plan-chart-desc{text-align:left}
+  .gen-chart-controls{align-items:stretch;flex-direction:column;padding:11px 10px}
+  .gen-chart-control{justify-content:space-between}.gen-chart-spec{align-items:stretch;flex-direction:column;gap:6px}
+  .gen-chart-spec select{width:100%;max-width:none;min-height:44px}
   .plan-chart-grid,.ws-chart-grid{padding:10px}
   .blegend{justify-content:flex-start}
   .chart-grid{padding:10px}
@@ -766,6 +785,65 @@ JS = """
       if(target)target.scrollIntoView({block:'start'});
     }
   }
+  function generationPanelCount(panel){
+    var bars=panel&&panel.querySelector('[data-region-bars]');
+    if(!bars)return 0;
+    var r=b.dataset.region||'all';
+    return Number(r==='all'?bars.dataset.total:bars.dataset[r])||0;
+  }
+  function setGenerationChart(root,currency,groupKey,announce){
+    var panels=Array.prototype.slice.call(root.querySelectorAll('[data-gen-chart-panel]'));
+    var candidates=panels.filter(function(x){return x.dataset.genCurrency===currency});
+    if(!candidates.length)return false;
+    var target=candidates.find(function(x){return x.dataset.genGroup===groupKey})||candidates[0];
+    panels.forEach(function(x){x.hidden=x!==target});
+    root.dataset.genCurrency=currency;root.dataset.genGroup=target.dataset.genGroup;
+    root.querySelectorAll('[data-gen-currency-btn]').forEach(function(x){
+      var on=x.dataset.genCurrencyBtn===currency;
+      x.classList.toggle('on',on);x.setAttribute('aria-pressed',on);
+    });
+    var select=root.querySelector('[data-gen-group-select]');
+    if(select){
+      Array.prototype.forEach.call(select.options,function(option){
+        var active=option.dataset.genCurrency===currency;
+        option.hidden=!active;option.disabled=!active;
+      });
+      select.value=target.dataset.genGroup;
+    }
+    var count=generationPanelCount(target);
+    var heading=target.querySelector('h4');
+    var label=heading?heading.textContent:'当前严格口径';
+    var summary=root.querySelector('[data-gen-chart-summary]');
+    if(summary)summary.textContent=count+' 项 · '+label;
+    var empty=root.querySelector('[data-gen-chart-empty]');
+    if(empty)empty.hidden=count!==0;
+    var status=root.querySelector('[data-gen-chart-status]');
+    if(status)status.textContent=(announce?'已切换：':'')+label+'，当前价区 '+count+' 项';
+    return true;
+  }
+  function setGenerationCurrency(root,currency){
+    var preferred=root.getAttribute('data-default-'+currency)||'';
+    setGenerationChart(root,currency,preferred,true);
+  }
+  function syncGenerationChartRegion(root){
+    setGenerationChart(root,root.dataset.genCurrency||'cny',root.dataset.genGroup||'',false);
+  }
+  function initGenerationChart(root){
+    try{
+      var currency=root.getAttribute('data-default-cny')?'cny':'usd';
+      var group=root.getAttribute('data-default-'+currency)||'';
+      if(!setGenerationChart(root,currency,group,false))return;
+      root.querySelectorAll('[data-gen-currency-btn]').forEach(function(x){
+        x.addEventListener('click',function(){setGenerationCurrency(root,x.dataset.genCurrencyBtn)});
+      });
+      var select=root.querySelector('[data-gen-group-select]');
+      if(select)select.addEventListener('change',function(){
+        setGenerationChart(root,root.dataset.genCurrency,select.value,true);
+      });
+      var controls=root.querySelector('[data-gen-chart-controls]');
+      if(controls)controls.hidden=false;
+    }catch(e){console.error('generation chart init failed',e)}
+  }
   function setRegion(r){
     b.dataset.region=r;
     document.querySelectorAll('[data-region-btn]').forEach(function(x){
@@ -782,8 +860,10 @@ JS = """
     document.querySelectorAll('[data-region-bars]').forEach(function(x){
       var n=Number(r==='all'?x.dataset.total:x.dataset[r]);
       x.style.setProperty('--ws-count',Math.max(1,n));
-      var group=x.closest('.ws-chart-group');if(group)group.hidden=n===0;
+      var group=x.closest('.ws-chart-group');
+      if(group&&!group.hasAttribute('data-gen-chart-panel'))group.hidden=n===0;
     });
+    document.querySelectorAll('[data-gen-chart-root]').forEach(syncGenerationChartRegion);
   }
   function setCur(c){
     b.dataset.currency=c;
@@ -828,6 +908,7 @@ JS = """
     var target=document.getElementById(id);
     if(target)target.scrollIntoView({block:'start',behavior:'instant'});
   }
+  document.querySelectorAll('[data-gen-chart-root]').forEach(initGenerationChart);
   var initialView=viewForHash(location.hash);
   setView(initialView,false,false);
   if(location.hash&&initialView!=='prices')requestAnimationFrame(scrollToCurrentHash);
@@ -1643,6 +1724,14 @@ IMAGE_PRICE_GROUPS = {
     "usd-premium-1mp": ("USD · 高质量约 1MP", "$ / 张", "约 0.8–1.5MP 正方形 · High/Ultra/Premium"),
     "cny-premium-1mp": ("人民币 · 高质量约 1MP", "¥ / 张", "约 0.8–1.5MP 正方形 · High/Ultra/Premium"),
 }
+VIDEO_PRICE_TYPE_META = {
+    "published": ("既有官网秒价", "已收录的官网可比秒价口径"),
+    "direct": ("直接按秒计费", "官网直接按生成秒计费"),
+    "official-fixed-example": ("官网固定场景示例", "官网直接公布的固定场景元/秒示例"),
+    "fixed-duration-derived": ("固定片段换算", "官网固定片段总价机械除以固定秒数"),
+}
+
+
 VIDEO_PRICE_GROUPS = {
     "usd-480p-silent": ("USD · 480p · 无原生音频", "$ / 秒", "视频画面，不含模型原生同步音频"),
     "usd-480p-audio": ("USD · 480p · 原生音频", "$ / 秒", "模型同时生成同步语音/音效"),
@@ -1769,6 +1858,7 @@ def _generation_price_entries(kind: str, providers_cfg: list, records: dict,
                 "region": region,
                 "transitional": lifecycle["transitional"],
                 "lifecycle_label": lifecycle["label"],
+                "price_type": str(off.get("comparison_price_type") or "published"),
             })
     for items in result.values():
         items.sort(key=lambda item: (item["price"], item["provider"], item["product"]))
@@ -1778,12 +1868,72 @@ def _generation_price_entries(kind: str, providers_cfg: list, records: dict,
 def _generation_price_chart(kind: str, providers_cfg: list, records: dict) -> str:
     groups = IMAGE_PRICE_GROUPS if kind == "imagegen" else VIDEO_PRICE_GROUPS
     entries = _generation_price_entries(kind, providers_cfg, records)
-    articles = []
-    total = 0
+    is_image = kind == "imagegen"
+    panels = []
     for group, (label, unit, desc) in groups.items():
         items = entries[group]
         if not items:
             continue
+        if is_image:
+            partitions = [(None, items)]
+        else:
+            by_type = {key: [] for key in VIDEO_PRICE_TYPE_META}
+            for item in items:
+                price_type = item["price_type"]
+                if price_type not in by_type:
+                    price_type = "published"
+                by_type[price_type].append(item)
+            partitions = [(key, values) for key, values in by_type.items() if values]
+        for price_type, panel_items in partitions:
+            panel_key = group if price_type is None else f"{group}--{price_type}"
+            panel_label = label
+            panel_desc = desc
+            if price_type is not None:
+                type_label, type_desc = VIDEO_PRICE_TYPE_META[price_type]
+                panel_label = f"{label} · {type_label}"
+                panel_desc = f"{desc} · {type_desc}"
+            panels.append({
+                "key": panel_key,
+                "currency": group.split("-", 1)[0],
+                "group": group,
+                "label": panel_label,
+                "unit": unit,
+                "desc": panel_desc,
+                "items": panel_items,
+                "price_type": price_type or "",
+            })
+    if not panels:
+        return ""
+
+    panel_by_key = {panel["key"]: panel for panel in panels}
+
+    def default_for(currency: str) -> str:
+        available = [p["key"] for p in panels if p["currency"] == currency]
+        if not available:
+            return ""
+        if is_image:
+            preferred = [f"{currency}-standard-1mp", f"{currency}-premium-1mp"]
+        else:
+            preferred = []
+            for resolution, audio in (("720p", "audio"), ("720p", "silent"),
+                                      ("1080p", "audio"), ("1080p", "silent"),
+                                      ("480p", "audio"), ("480p", "silent")):
+                for price_type in ("official-fixed-example", "direct", "published",
+                                   "fixed-duration-derived"):
+                    preferred.append(
+                        f"{currency}-{resolution}-{audio}--{price_type}")
+        return next((key for key in preferred if key in panel_by_key), available[0])
+
+    default_cny = default_for("cny")
+    default_usd = default_for("usd")
+    initial_currency = "cny" if default_cny else "usd"
+    initial_group = default_cny or default_usd
+    articles = []
+    total = 0
+    for panel in panels:
+        group, label, unit, desc = (
+            panel["group"], panel["label"], panel["unit"], panel["desc"])
+        items = panel["items"]
         total += len(items)
         max_price = max(item["price"] for item in items) or 1
         bars = []
@@ -1808,12 +1958,14 @@ def _generation_price_chart(kind: str, providers_cfg: list, records: dict) -> st
                 f'{_e(item["product"])}</span>'
                 f'<span class="ws-bar-basis" title="{_e(item["basis"])}">'
                 f'{_e(item["basis"])}</span></div>')
-        group_id = f'{kind}-chart-{group}'
-        intl_count = sum(item["region"] == "intl" for item in items)
-        domestic_count = sum(item["region"] == "domestic" for item in items)
+        panel_id = f'{kind}-chart-{panel["key"]}'
+        intl_count = sum(item["region"] in ("intl", "both") for item in items)
+        domestic_count = sum(item["region"] in ("domestic", "both") for item in items)
         articles.append(
-            f'<article class="ws-chart-group" aria-labelledby="{group_id}">'
-            f'<header class="ws-chart-group-head"><h4 id="{group_id}">{_e(label)}</h4>'
+            f'<article class="ws-chart-group" aria-labelledby="{panel_id}" '
+            f'data-gen-chart-panel data-gen-currency="{panel["currency"]}" '
+            f'data-gen-group="{_e(panel["key"])}" data-price-type="{_e(panel["price_type"])}">'
+            f'<header class="ws-chart-group-head"><h4 id="{panel_id}">{_e(label)}</h4>'
             f'<span data-region-count data-total="{len(items)}" data-intl="{intl_count}" '
             f'data-domestic="{domestic_count}" data-suffix=" · {_e(desc)}">'
             f'{len(items)} 项 · {_e(desc)}</span></header>'
@@ -1823,29 +1975,65 @@ def _generation_price_chart(kind: str, providers_cfg: list, records: dict) -> st
             f'data-intl="{intl_count}" data-domestic="{domestic_count}" role="list" '
             f'style="--ws-count:{len(items)}">'
             f'{"".join(bars)}</div></div></article>')
-    if not articles:
-        return ""
-    is_image = kind == "imagegen"
+
+    options = []
+    for panel in panels:
+        short_label = panel["label"]
+        for prefix in ("人民币 · ", "USD · "):
+            if short_label.startswith(prefix):
+                short_label = short_label[len(prefix):]
+        selected = " selected" if panel["key"] == initial_group else ""
+        options.append(
+            f'<option value="{_e(panel["key"])}" '
+            f'data-gen-currency="{panel["currency"]}"{selected}>{_e(short_label)}</option>')
+
     title = "生图 API 单张价格柱状图" if is_image else "生视频 API 每秒价格柱状图"
     kicker = "PRICE / IMAGE" if is_image else "PRICE / GENERATED SECOND"
-    method = ("只在同币种、同质量和约 1MP 分辨率组内线性比较"
-              if is_image else "只在同币种、同分辨率和同原生音频口径组内线性比较")
+    method = ("币种与质量口径分开选择，只显示一个严格可比组"
+              if is_image else "币种、分辨率、原生音频与秒价事实类型分开选择，只显示一个严格可比组")
     excluded = ("订阅折算、动态 token/积分、非约 1MP 输出和企业询价"
-                if is_image else "订阅折算、动态 token/像素、无法并入总价的参考素材附加费和企业询价")
+                if is_image else "没有官网固定场景秒价的动态 token/像素、订阅折算、参考素材动态附加费和企业询价")
+    fixed_note = ("" if is_image else
+                  "Seedance 等动态 token 模型仅使用官网直接公布的固定场景元/秒示例，并与直接秒价、固定片段换算分组隔离；")
     cls = "gen-image-chart" if is_image else "gen-video-chart"
+    cny_disabled = "" if default_cny else " disabled"
+    usd_disabled = "" if default_usd else " disabled"
+    cny_on = " on" if initial_currency == "cny" else ""
+    usd_on = " on" if initial_currency == "usd" else ""
+    cny_pressed = str(initial_currency == "cny").lower()
+    usd_pressed = str(initial_currency == "usd").lower()
+    initial_items = len(panel_by_key[initial_group]["items"])
     return (
-        f'<div class="ws-price-chart {cls}" id="{kind}-price-chart">'
+        f'<div class="ws-price-chart {cls}" id="{kind}-price-chart" '
+        f'data-gen-chart-root="{kind}" data-default-cny="{_e(default_cny)}" '
+        f'data-default-usd="{_e(default_usd)}">'
         '<div class="plan-chart-head"><div>'
         f'<p class="plan-chart-kicker">{kicker}</p><h3 class="plan-chart-title">{title}</h3></div>'
-        f'<p class="plan-chart-desc"><span data-region-count data-total="{total}" '
-        f'data-intl="{sum(len([x for x in items if x["region"] == "intl"]) for items in entries.values())}" '
-        f'data-domestic="{sum(len([x for x in items if x["region"] == "domestic"]) for items in entries.values())}" '
-        f'data-suffix=" · 官网价格满足严格比较条件">{total} 项 · 官网价格满足严格比较条件</span>'
-        f'<br>{method}</p></div>'
-        f'<div class="ws-chart-grid">{"".join(articles)}</div>'
-        f'<p class="ws-chart-foot">柱顶数字为精确官网价，柱高只在本组内线性缩放；{excluded}不进入柱图。'
-        '不同组的柱高不可横向比较；帧率、时长、队列、促销与模式差异见柱下口径，不视为完全等价；'
-        '斜纹柱表示厂商已公告弃用或停用日期。</p></div>')
+        f'<p class="plan-chart-desc"><span data-gen-chart-summary aria-live="polite">'
+        f'{initial_items} 项 · 当前严格口径</span><br>{method}</p></div>'
+        '<div class="gen-chart-controls" data-gen-chart-controls hidden>'
+        '<div class="gen-chart-control"><span class="gen-chart-control-label">币种</span>'
+        '<div class="seg gen-currency-switch" role="group" aria-label="价格币种">'
+        f'<button type="button" class="{cny_on.strip()}" data-gen-currency-btn="cny" '
+        f'aria-pressed="{cny_pressed}" aria-controls="{kind}-chart-panels"{cny_disabled}>'
+        '人民币 / ¥</button>'
+        f'<button type="button" class="{usd_on.strip()}" data-gen-currency-btn="usd" '
+        f'aria-pressed="{usd_pressed}" aria-controls="{kind}-chart-panels"{usd_disabled}>'
+        'USD / $</button></div></div>'
+        f'<label class="gen-chart-spec"><span class="gen-chart-control-label">比较口径</span>'
+        f'<select data-gen-group-select aria-controls="{kind}-chart-panels">'
+        f'{"".join(options)}</select></label>'
+        '<span class="sr-only" data-gen-chart-status role="status" aria-live="polite"></span>'
+        '</div>'
+        f'<div class="ws-chart-grid gen-chart-panels" id="{kind}-chart-panels">'
+        f'{"".join(articles)}</div>'
+        '<p class="gen-chart-empty" data-gen-chart-empty hidden>当前区域没有这个口径的可比项；'
+        '请切换价区、币种或比较口径。</p>'
+        f'<p class="ws-chart-foot">柱顶数字为精确官网价，柱高只在当前组内线性缩放；{excluded}不进入柱图。'
+        f'{fixed_note}切换只替换完整分组，不换汇、不混合不同口径；不同组的柱高不可横向比较；'
+        '帧率、时长、队列、促销与模式差异见柱下口径；斜纹柱表示厂商已公告弃用或停用日期。</p>'
+        '<noscript><p class="gen-chart-noscript">币种与口径切换需要 JavaScript；完整官网事实仍可在下方明细表查看。</p></noscript>'
+        '</div>')
 
 
 def _generation_examples(kind: str, providers_cfg: list, records: dict) -> str:

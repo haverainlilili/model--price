@@ -151,7 +151,8 @@ def _generation_service_regions(offerings: list[dict]) -> list[str]:
 
 
 GENERATION_PRESERVED_FIELDS = (
-    "modes", "pricing", "price_per_image", "price_per_second", "price_basis",
+    "modes", "pricing", "price_per_image", "price_per_second",
+    "comparison_price_type", "price_basis",
     "resolution", "duration", "frame_rate", "aspect_ratios", "output_formats",
     "free_quota", "note",
 )
@@ -208,7 +209,8 @@ def _generation_candidate_signature(offerings: list[dict], has_value: bool,
                 field: (sorted(offering.get(field) or [])
                         if field == "modes" else
                         offering.get(field)
-                        if field in ("price_per_image", "price_per_second") else
+                        if field in ("price_per_image", "price_per_second",
+                                     "comparison_price_type") else
                         bool(str(offering.get(field) or "").strip()))
                 for field in GENERATION_PRESERVED_FIELDS if field != "note"},
         })

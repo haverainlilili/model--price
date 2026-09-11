@@ -586,6 +586,66 @@ class GenerationSectionTests(unittest.TestCase):
             self.assertNotIn(excluded, chart)
         self.assertIn("不同组的柱高不可横向比较", chart)
 
+    def test_media_chart_uses_one_root_scoped_currency_switcher(self):
+        base = {
+            "api_available": True, "resolution": "1024x1024",
+            "comparison_width": 1024, "comparison_height": 1024,
+            "quality_tier": "standard", "price_basis": "official 1K",
+        }
+        records = {
+            "intl": {"offerings": [{
+                **base, "name": "USD model", "currency": "USD",
+                "price_per_image": .02, "comparison_group": "usd-standard-1mp",
+            }]},
+            "cn": {"offerings": [{
+                **base, "name": "CNY model", "currency": "CNY",
+                "price_per_image": .2, "comparison_group": "cny-standard-1mp",
+            }]},
+        }
+
+        chart = build_site._generation_price_chart("imagegen", self._configs(), records)
+
+        self.assertEqual(chart.count('data-gen-chart-root="imagegen"'), 1)
+        self.assertIn('data-gen-chart-controls hidden', chart)
+        self.assertIn('data-gen-currency-btn="cny"', chart)
+        self.assertIn('data-gen-currency-btn="usd"', chart)
+        self.assertIn('data-gen-group-select', chart)
+        self.assertEqual(chart.count('data-gen-chart-panel'), 2)
+        self.assertIn('data-default-cny="cny-standard-1mp"', chart)
+        self.assertIn('data-default-usd="usd-standard-1mp"', chart)
+        self.assertIn("initGenerationChart", build_site.JS)
+        self.assertIn("!group.hasAttribute('data-gen-chart-panel')", build_site.JS)
+        self.assertIn("syncGenerationChartRegion", build_site.JS)
+
+    def test_video_chart_isolates_fixed_examples_from_other_second_prices(self):
+        base = {
+            "api_available": True, "resolution": "720p",
+            "comparison_resolution": "720p", "native_audio": True,
+            "currency": "CNY", "comparison_group": "cny-720p-audio",
+        }
+        records = {"cn": {"offerings": [
+            {**base, "name": "Published direct", "price_per_second": .2,
+             "price_basis": "direct public second price"},
+            {**base, "name": "Seedance fixed example", "price_per_second": 1.51,
+             "comparison_price_type": "official-fixed-example",
+             "price_basis": "official 720p 16:9 5-second example"},
+        ]}}
+
+        chart = build_site._generation_price_chart("videogen", self._configs(), records)
+
+        published_key = 'data-gen-group="cny-720p-audio--published"'
+        fixed_key = 'data-gen-group="cny-720p-audio--official-fixed-example"'
+        self.assertIn(published_key, chart)
+        self.assertIn(fixed_key, chart)
+        self.assertIn('data-default-cny="cny-720p-audio--official-fixed-example"', chart)
+        published_panel = chart.split(published_key, 1)[1].split('</article>', 1)[0]
+        fixed_panel = chart.split(fixed_key, 1)[1].split('</article>', 1)[0]
+        self.assertIn("Published direct", published_panel)
+        self.assertNotIn("Seedance fixed example", published_panel)
+        self.assertIn("Seedance fixed example", fixed_panel)
+        self.assertNotIn("Published direct", fixed_panel)
+        self.assertIn("官网固定场景示例", fixed_panel)
+
     def test_video_chart_keeps_audio_and_silent_rates_separate(self):
         base = {
             "api_available": True, "resolution": "720p", "comparison_resolution": "720p",

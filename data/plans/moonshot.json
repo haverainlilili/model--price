@@ -4,8 +4,13 @@
    "name": "Andante",
    "plan_type": "聊天会员",
    "price": "¥49/月",
-   "billing": "连续包月；连续包年（年付更优惠）",
+   "billing": "连续包月",
    "quotas": [
+    {
+     "label": "Agent 用量",
+     "value": "约 30 个",
+     "window": "月额度"
+    },
     {
      "label": "专业数据库调用",
      "value": "1000 次调用",
@@ -13,15 +18,25 @@
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；Agent 用量约 30 个为官网基于常见任务 token 消耗的月额度参考值。Kimi Code 另有 5 小时 / 周使用限额。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
    "plan_type": "聊天会员",
    "price": "¥99/月",
-   "billing": "连续包月；连续包年（年付更优惠）",
+   "billing": "连续包月",
    "quotas": [
+    {
+     "label": "Agent 用量",
+     "value": "约 60 个",
+     "window": "月额度"
+    },
+    {
+     "label": "Agent 集群",
+     "value": "25 次",
+     "window": null
+    },
     {
      "label": "专业数据库调用",
      "value": "2000 次调用",
@@ -29,15 +44,25 @@
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；Agent 用量约 60 个为官网基于常见任务 token 消耗的月额度参考值。Kimi Code 另有 5 小时 / 周使用限额。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算。Agent 集群支持 2 个子任务并行。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
    "plan_type": "聊天会员",
    "price": "¥199/月",
-   "billing": "连续包月；连续包年（年付更优惠）",
+   "billing": "连续包月",
    "quotas": [
+    {
+     "label": "Agent 用量",
+     "value": "约 150 个",
+     "window": "月额度"
+    },
+    {
+     "label": "Agent 集群",
+     "value": "50 次",
+     "window": null
+    },
     {
      "label": "专业数据库调用",
      "value": "5000 次调用",
@@ -45,15 +70,25 @@
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；Agent 用量约 150 个为官网基于常见任务 token 消耗的月额度参考值。Kimi Code 另有 5 小时 / 周使用限额。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算。Agent 集群支持 4 个子任务并行。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
    "plan_type": "聊天会员",
    "price": "¥699/月",
-   "billing": "连续包月；连续包年（年付更优惠）",
+   "billing": "连续包月",
    "quotas": [
+    {
+     "label": "Agent 用量",
+     "value": "约 360 个",
+     "window": "月额度"
+    },
+    {
+     "label": "Agent 集群",
+     "value": "120 次",
+     "window": null
+    },
     {
      "label": "超长对话容量",
      "value": "百万 Tokens",
@@ -66,18 +101,18 @@
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；Agent 用量约 360 个为官网基于常见任务 token 消耗的月额度参考值。Kimi Code 另有 5 小时 / 周使用限额。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算。Agent 集群支持 8 个子任务并行。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-11T17:11:19Z",
+ "last_fetch_ts": "2026-09-11T18:10:16Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "ec5eaef4f6bb11d1db17d28c06fa6d21601bf9be66e6ba5b0e8fb97469eec348",
- "fetched_at": "2026-09-11T17:11:19Z",
+ "plans_hash": "3ff436b71da7da105e18e8447855c7a3515e8bda1238da35a6a0b2645d51a91b",
+ "fetched_at": "2026-09-11T18:10:16Z",
  "status_note": null
 }

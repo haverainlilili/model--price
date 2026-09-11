@@ -12,20 +12,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Web Search API",
-   "pricing": "Credit-based. Free: $0/month with 1,000 credits/month; Hobby: $16/month billed annually for 5,000 credits; Standard: $83/month billed annually for 100,000 credits; Growth: $333/month billed annually for 500,000 credits; Scale: $599/month billed annually for 1,000,000 credits. Search costs 2 credits per 10 results, rounded up.",
+   "name": "Search (/search endpoint)",
+   "pricing": "Search costs 2 credits per 10 results, rounded up. Free: 1,000 credits/month; Hobby: $16/month billed annually for 5,000 credits; Standard: $83/month billed annually for 100,000 credits; Growth: $333/month billed annually for 500,000 credits; Scale: $599/month billed annually for 1,000,000 credits. Pay-as-you-go: $5 increments; credit quantity varies by plan.",
    "price_per_1k_usd": null,
-   "price_basis": null,
+   "price_basis": "Credit-based pricing; Search 2 credits per 10 results. Pay-as-you-go rates range from 1,000 credits/$5 on Hobby to 5,000 credits/$5 on Scale.",
    "free_quota": "1,000 credits every month, refreshed monthly, no credit card required; pricing page states this covers 500 searches or 1,000 pages scraped.",
-   "output_type": "结构化搜索结果，包含标题、描述和 URL；可选返回网页 Markdown、HTML、链接或截图",
+   "output_type": "结构化搜索结果，包含标题、描述和 URL；可选返回结果页面的 Markdown、HTML、链接或截图",
    "cites_sources": true,
    "default_on": null,
-   "note": "支持 web、news、images；可按域名、地点、时间和类别筛选；搜索结果可选抓取内容。"
+   "note": "1–10个结果收费2 credits，11–20个收费4 credits；启用抓取选项会另收页面费用。ZDR搜索为企业版：匿名2 credits/10结果，端到端10 credits/10结果。"
   }
  ],
- "fetched_at": "2026-09-11T19:14:46Z",
+ "fetched_at": "2026-09-11T20:16:08Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-11T19:14:46Z",
- "websearch_hash": "c5998a1c944ce60bafe52415f722196b3876cb8e8a4a14d7e3932f7e57b3d63a"
+ "last_fetch_ts": "2026-09-11T20:16:08Z",
+ "websearch_hash": "8d905cbe9b2b9c2371c51dd4566e6e451d4e44c20fc9751cbf63331b13d78589"
 }

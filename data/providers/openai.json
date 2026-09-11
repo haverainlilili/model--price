@@ -2,122 +2,137 @@
  "url": "https://developers.openai.com/api/docs/pricing",
  "source": "claude",
  "currency": "USD",
- "promotions": "GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026.",
+ "promotions": "GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026. Regional processing (data residency) endpoints are charged a 10% uplift for models released on or after March 5, 2026, that are eligible for data residency. Fast mode was renamed from Priority processing on July 30, 2026. OpenAI is winding down the fine-tuning platform; the platform is no longer accessible to new users, but existing users will be able to create training jobs for the coming months.",
  "models": [
   {
    "model": "gpt-6-astra",
+   "display_name": null,
    "input_per_1m": 10.0,
    "output_per_1m": 50.0,
    "cached_input_per_1m": 1.0,
    "currency": "USD",
-   "note": "Standard；Short context"
+   "note": "Standard，Short context"
   },
   {
    "model": "gpt-6-astra",
+   "display_name": null,
    "input_per_1m": 20.0,
    "output_per_1m": 75.0,
    "cached_input_per_1m": 2.0,
    "currency": "USD",
-   "note": "Standard；Long context"
+   "note": "Standard，Long context"
   },
   {
    "model": "gpt-5.6-sol",
+   "display_name": null,
    "input_per_1m": 4.0,
    "output_per_1m": 20.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Standard；Short context；GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026."
+   "note": "Standard，Short context；GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026."
   },
   {
    "model": "gpt-5.6-sol",
+   "display_name": null,
    "input_per_1m": 8.0,
    "output_per_1m": 30.0,
    "cached_input_per_1m": 0.8,
    "currency": "USD",
-   "note": "Standard；Long context；GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026."
+   "note": "Standard，Long context；GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026."
   },
   {
    "model": "gpt-5.6-terra",
+   "display_name": null,
    "input_per_1m": 2.0,
    "output_per_1m": 12.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "Standard；Short context"
+   "note": "Standard，Short context"
   },
   {
    "model": "gpt-5.6-terra",
+   "display_name": null,
    "input_per_1m": 4.0,
    "output_per_1m": 18.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Standard；Long context"
+   "note": "Standard，Long context"
   },
   {
    "model": "gpt-5.6-luna",
+   "display_name": null,
    "input_per_1m": 0.2,
    "output_per_1m": 1.2,
    "cached_input_per_1m": 0.02,
    "currency": "USD",
-   "note": "Standard；Short context"
+   "note": "Standard，Short context"
   },
   {
    "model": "gpt-5.6-luna",
+   "display_name": null,
    "input_per_1m": 0.4,
    "output_per_1m": 1.8,
    "cached_input_per_1m": 0.04,
    "currency": "USD",
-   "note": "Standard；Long context"
+   "note": "Standard，Long context"
   },
   {
    "model": "gpt-5.5 (<272K context length)",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": 30.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Standard；Short context"
+   "note": "Standard，Short context"
   },
   {
    "model": "gpt-5.5 (<272K context length)",
+   "display_name": null,
    "input_per_1m": 10.0,
    "output_per_1m": 45.0,
    "cached_input_per_1m": 1.0,
    "currency": "USD",
-   "note": "Standard；Long context"
+   "note": "Standard，Long context"
   },
   {
    "model": "gpt-5.5-pro (<272K context length)",
+   "display_name": null,
    "input_per_1m": 30.0,
    "output_per_1m": 180.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Standard；Short context"
+   "note": "Standard，Short context"
   },
   {
    "model": "gpt-5.5-pro (<272K context length)",
+   "display_name": null,
    "input_per_1m": 60.0,
    "output_per_1m": 270.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Standard；Long context"
+   "note": "Standard，Long context"
   },
   {
    "model": "gpt-5.4 (<272K context length)",
+   "display_name": null,
    "input_per_1m": 2.5,
    "output_per_1m": 15.0,
    "cached_input_per_1m": 0.25,
    "currency": "USD",
-   "note": "Standard；Short context"
+   "note": "Standard，Short context"
   },
   {
    "model": "gpt-5.4 (<272K context length)",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": 22.5,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Standard；Long context"
+   "note": "Standard，Long context"
   },
   {
    "model": "gpt-5.4-mini",
+   "display_name": null,
    "input_per_1m": 0.75,
    "output_per_1m": 4.5,
    "cached_input_per_1m": 0.075,
@@ -126,6 +141,7 @@
   },
   {
    "model": "gpt-5.4-nano",
+   "display_name": null,
    "input_per_1m": 0.2,
    "output_per_1m": 1.25,
    "cached_input_per_1m": 0.02,
@@ -134,22 +150,25 @@
   },
   {
    "model": "gpt-5.4-pro (<272K context length)",
+   "display_name": null,
    "input_per_1m": 30.0,
    "output_per_1m": 180.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Standard；Short context"
+   "note": "Standard，Short context"
   },
   {
    "model": "gpt-5.4-pro (<272K context length)",
+   "display_name": null,
    "input_per_1m": 60.0,
    "output_per_1m": 270.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Standard；Long context"
+   "note": "Standard，Long context"
   },
   {
    "model": "gpt-5.2",
+   "display_name": null,
    "input_per_1m": 1.75,
    "output_per_1m": 14.0,
    "cached_input_per_1m": 0.175,
@@ -158,6 +177,7 @@
   },
   {
    "model": "gpt-5.2-pro",
+   "display_name": null,
    "input_per_1m": 21.0,
    "output_per_1m": 168.0,
    "cached_input_per_1m": null,
@@ -166,6 +186,7 @@
   },
   {
    "model": "gpt-5.1",
+   "display_name": null,
    "input_per_1m": 1.25,
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.125,
@@ -174,6 +195,7 @@
   },
   {
    "model": "gpt-5",
+   "display_name": null,
    "input_per_1m": 1.25,
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.125,
@@ -182,6 +204,7 @@
   },
   {
    "model": "gpt-5-mini",
+   "display_name": null,
    "input_per_1m": 0.25,
    "output_per_1m": 2.0,
    "cached_input_per_1m": 0.025,
@@ -190,6 +213,7 @@
   },
   {
    "model": "gpt-5-nano",
+   "display_name": null,
    "input_per_1m": 0.05,
    "output_per_1m": 0.4,
    "cached_input_per_1m": 0.005,
@@ -198,6 +222,7 @@
   },
   {
    "model": "gpt-5-pro",
+   "display_name": null,
    "input_per_1m": 15.0,
    "output_per_1m": 120.0,
    "cached_input_per_1m": null,
@@ -206,6 +231,7 @@
   },
   {
    "model": "gpt-4.1",
+   "display_name": null,
    "input_per_1m": 2.0,
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.5,
@@ -214,6 +240,7 @@
   },
   {
    "model": "gpt-4.1-mini",
+   "display_name": null,
    "input_per_1m": 0.4,
    "output_per_1m": 1.6,
    "cached_input_per_1m": 0.1,
@@ -222,6 +249,7 @@
   },
   {
    "model": "gpt-4.1-nano",
+   "display_name": null,
    "input_per_1m": 0.1,
    "output_per_1m": 0.4,
    "cached_input_per_1m": 0.025,
@@ -230,6 +258,7 @@
   },
   {
    "model": "gpt-4o",
+   "display_name": null,
    "input_per_1m": 2.5,
    "output_per_1m": 10.0,
    "cached_input_per_1m": 1.25,
@@ -237,15 +266,8 @@
    "note": "Standard"
   },
   {
-   "model": "gpt-4o-2024-05-13",
-   "input_per_1m": 5.0,
-   "output_per_1m": 15.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Standard"
-  },
-  {
    "model": "gpt-4o-mini",
+   "display_name": null,
    "input_per_1m": 0.15,
    "output_per_1m": 0.6,
    "cached_input_per_1m": 0.075,
@@ -254,6 +276,7 @@
   },
   {
    "model": "o1",
+   "display_name": null,
    "input_per_1m": 15.0,
    "output_per_1m": 60.0,
    "cached_input_per_1m": 7.5,
@@ -262,6 +285,7 @@
   },
   {
    "model": "o1-pro",
+   "display_name": null,
    "input_per_1m": 150.0,
    "output_per_1m": 600.0,
    "cached_input_per_1m": null,
@@ -270,6 +294,7 @@
   },
   {
    "model": "o3-pro",
+   "display_name": null,
    "input_per_1m": 20.0,
    "output_per_1m": 80.0,
    "cached_input_per_1m": null,
@@ -278,6 +303,7 @@
   },
   {
    "model": "o3",
+   "display_name": null,
    "input_per_1m": 2.0,
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.5,
@@ -286,6 +312,7 @@
   },
   {
    "model": "o4-mini",
+   "display_name": null,
    "input_per_1m": 1.1,
    "output_per_1m": 4.4,
    "cached_input_per_1m": 0.275,
@@ -294,6 +321,7 @@
   },
   {
    "model": "o3-mini",
+   "display_name": null,
    "input_per_1m": 1.1,
    "output_per_1m": 4.4,
    "cached_input_per_1m": 0.55,
@@ -302,6 +330,7 @@
   },
   {
    "model": "gpt-4-turbo-2024-04-09",
+   "display_name": null,
    "input_per_1m": 10.0,
    "output_per_1m": 30.0,
    "cached_input_per_1m": null,
@@ -310,6 +339,7 @@
   },
   {
    "model": "gpt-4-0613",
+   "display_name": null,
    "input_per_1m": 30.0,
    "output_per_1m": 60.0,
    "cached_input_per_1m": null,
@@ -318,6 +348,7 @@
   },
   {
    "model": "gpt-3.5-turbo",
+   "display_name": null,
    "input_per_1m": 0.5,
    "output_per_1m": 1.5,
    "cached_input_per_1m": null,
@@ -326,6 +357,7 @@
   },
   {
    "model": "gpt-3.5-turbo-0125",
+   "display_name": null,
    "input_per_1m": 0.5,
    "output_per_1m": 1.5,
    "cached_input_per_1m": null,
@@ -334,6 +366,7 @@
   },
   {
    "model": "gpt-3.5-turbo-1106",
+   "display_name": null,
    "input_per_1m": 1.0,
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
@@ -342,6 +375,7 @@
   },
   {
    "model": "gpt-3.5-turbo-instruct",
+   "display_name": null,
    "input_per_1m": 1.5,
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
@@ -350,6 +384,7 @@
   },
   {
    "model": "davinci-002",
+   "display_name": null,
    "input_per_1m": 2.0,
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
@@ -358,6 +393,7 @@
   },
   {
    "model": "babbage-002",
+   "display_name": null,
    "input_per_1m": 0.4,
    "output_per_1m": 0.4,
    "cached_input_per_1m": null,
@@ -365,111 +401,53 @@
    "note": "Standard"
   },
   {
-   "model": "gpt-6-astra",
-   "input_per_1m": 5.0,
-   "output_per_1m": 25.0,
-   "cached_input_per_1m": 0.5,
-   "currency": "USD",
-   "note": "Batch；Short context"
-  },
-  {
-   "model": "gpt-6-astra",
-   "input_per_1m": 10.0,
-   "output_per_1m": 37.5,
-   "cached_input_per_1m": 1.0,
-   "currency": "USD",
-   "note": "Batch；Long context"
-  },
-  {
    "model": "gpt-5.6-sol",
+   "display_name": null,
    "input_per_1m": 2.0,
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "Batch；Short context；GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026."
-  },
-  {
-   "model": "gpt-5.6-sol",
-   "input_per_1m": 4.0,
-   "output_per_1m": 15.0,
-   "cached_input_per_1m": 0.4,
-   "currency": "USD",
-   "note": "Batch；Long context；GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026."
+   "note": "Batch，Short context"
   },
   {
    "model": "gpt-5.6-terra",
+   "display_name": null,
    "input_per_1m": 1.0,
    "output_per_1m": 6.0,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "Batch；Short context"
-  },
-  {
-   "model": "gpt-5.6-terra",
-   "input_per_1m": 2.0,
-   "output_per_1m": 9.0,
-   "cached_input_per_1m": 0.2,
-   "currency": "USD",
-   "note": "Batch；Long context"
+   "note": "Batch，Short context"
   },
   {
    "model": "gpt-5.6-luna",
+   "display_name": null,
    "input_per_1m": 0.1,
    "output_per_1m": 0.6,
    "cached_input_per_1m": 0.01,
    "currency": "USD",
-   "note": "Batch；Short context"
-  },
-  {
-   "model": "gpt-5.6-luna",
-   "input_per_1m": 0.2,
-   "output_per_1m": 0.9,
-   "cached_input_per_1m": 0.02,
-   "currency": "USD",
-   "note": "Batch；Long context"
+   "note": "Batch，Short context"
   },
   {
    "model": "gpt-5.5 (<272K context length)",
+   "display_name": null,
    "input_per_1m": 2.5,
    "output_per_1m": 15.0,
    "cached_input_per_1m": 0.25,
    "currency": "USD",
-   "note": "Batch；Short context"
-  },
-  {
-   "model": "gpt-5.5 (<272K context length)",
-   "input_per_1m": 5.0,
-   "output_per_1m": 22.5,
-   "cached_input_per_1m": 0.5,
-   "currency": "USD",
-   "note": "Batch；Long context"
-  },
-  {
-   "model": "gpt-5.5-pro (<272K context length)",
-   "input_per_1m": 15.0,
-   "output_per_1m": 90.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch；Short context"
+   "note": "Batch，Short context"
   },
   {
    "model": "gpt-5.4 (<272K context length)",
+   "display_name": null,
    "input_per_1m": 1.25,
    "output_per_1m": 7.5,
    "cached_input_per_1m": 0.13,
    "currency": "USD",
-   "note": "Batch；Short context"
-  },
-  {
-   "model": "gpt-5.4 (<272K context length)",
-   "input_per_1m": 2.5,
-   "output_per_1m": 11.25,
-   "cached_input_per_1m": 0.25,
-   "currency": "USD",
-   "note": "Batch；Long context"
+   "note": "Batch，Short context"
   },
   {
    "model": "gpt-5.4-mini",
+   "display_name": null,
    "input_per_1m": 0.375,
    "output_per_1m": 2.25,
    "cached_input_per_1m": 0.0375,
@@ -478,6 +456,7 @@
   },
   {
    "model": "gpt-5.4-nano",
+   "display_name": null,
    "input_per_1m": 0.1,
    "output_per_1m": 0.625,
    "cached_input_per_1m": 0.01,
@@ -485,23 +464,8 @@
    "note": "Batch"
   },
   {
-   "model": "gpt-5.4-pro (<272K context length)",
-   "input_per_1m": 15.0,
-   "output_per_1m": 90.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch；Short context"
-  },
-  {
-   "model": "gpt-5.4-pro (<272K context length)",
-   "input_per_1m": 30.0,
-   "output_per_1m": 135.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch；Long context"
-  },
-  {
    "model": "gpt-5.2",
+   "display_name": null,
    "input_per_1m": 0.875,
    "output_per_1m": 7.0,
    "cached_input_per_1m": 0.0875,
@@ -509,15 +473,8 @@
    "note": "Batch"
   },
   {
-   "model": "gpt-5.2-pro",
-   "input_per_1m": 10.5,
-   "output_per_1m": 84.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
    "model": "gpt-5.1",
+   "display_name": null,
    "input_per_1m": 0.625,
    "output_per_1m": 5.0,
    "cached_input_per_1m": 0.0625,
@@ -526,6 +483,7 @@
   },
   {
    "model": "gpt-5",
+   "display_name": null,
    "input_per_1m": 0.625,
    "output_per_1m": 5.0,
    "cached_input_per_1m": 0.0625,
@@ -534,6 +492,7 @@
   },
   {
    "model": "gpt-5-mini",
+   "display_name": null,
    "input_per_1m": 0.125,
    "output_per_1m": 1.0,
    "cached_input_per_1m": 0.0125,
@@ -542,6 +501,7 @@
   },
   {
    "model": "gpt-5-nano",
+   "display_name": null,
    "input_per_1m": 0.025,
    "output_per_1m": 0.2,
    "cached_input_per_1m": 0.0025,
@@ -550,6 +510,7 @@
   },
   {
    "model": "gpt-5-pro",
+   "display_name": null,
    "input_per_1m": 7.5,
    "output_per_1m": 60.0,
    "cached_input_per_1m": null,
@@ -557,79 +518,8 @@
    "note": "Batch"
   },
   {
-   "model": "gpt-4.1",
-   "input_per_1m": 1.0,
-   "output_per_1m": 4.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "gpt-4.1-mini",
-   "input_per_1m": 0.2,
-   "output_per_1m": 0.8,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "gpt-4.1-nano",
-   "input_per_1m": 0.05,
-   "output_per_1m": 0.2,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "gpt-4o",
-   "input_per_1m": 1.25,
-   "output_per_1m": 5.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "gpt-4o-2024-05-13",
-   "input_per_1m": 2.5,
-   "output_per_1m": 7.5,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "gpt-4o-mini",
-   "input_per_1m": 0.075,
-   "output_per_1m": 0.3,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "o1",
-   "input_per_1m": 7.5,
-   "output_per_1m": 30.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "o1-pro",
-   "input_per_1m": 75.0,
-   "output_per_1m": 300.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "o3-pro",
-   "input_per_1m": 10.0,
-   "output_per_1m": 40.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
    "model": "o3",
+   "display_name": null,
    "input_per_1m": 1.0,
    "output_per_1m": 4.0,
    "cached_input_per_1m": null,
@@ -638,174 +528,61 @@
   },
   {
    "model": "o4-mini",
+   "display_name": null,
    "input_per_1m": 0.55,
    "output_per_1m": 2.2,
    "cached_input_per_1m": null,
    "currency": "USD",
    "note": "Batch"
-  },
-  {
-   "model": "o3-mini",
-   "input_per_1m": 0.55,
-   "output_per_1m": 2.2,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "gpt-4-turbo-2024-04-09",
-   "input_per_1m": 5.0,
-   "output_per_1m": 15.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "gpt-4-0613",
-   "input_per_1m": 15.0,
-   "output_per_1m": 30.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "gpt-3.5-turbo-0125",
-   "input_per_1m": 0.25,
-   "output_per_1m": 0.75,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "gpt-3.5-turbo-1106",
-   "input_per_1m": 1.0,
-   "output_per_1m": 2.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "davinci-002",
-   "input_per_1m": 1.0,
-   "output_per_1m": 1.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "babbage-002",
-   "input_per_1m": 0.2,
-   "output_per_1m": 0.2,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Batch"
-  },
-  {
-   "model": "gpt-6-astra",
-   "input_per_1m": 5.0,
-   "output_per_1m": 25.0,
-   "cached_input_per_1m": 0.5,
-   "currency": "USD",
-   "note": "Flex；Short context"
-  },
-  {
-   "model": "gpt-6-astra",
-   "input_per_1m": 10.0,
-   "output_per_1m": 37.5,
-   "cached_input_per_1m": 1.0,
-   "currency": "USD",
-   "note": "Flex；Long context"
   },
   {
    "model": "gpt-5.6-sol",
+   "display_name": null,
    "input_per_1m": 2.0,
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "Flex；Short context；GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026."
-  },
-  {
-   "model": "gpt-5.6-sol",
-   "input_per_1m": 4.0,
-   "output_per_1m": 15.0,
-   "cached_input_per_1m": 0.4,
-   "currency": "USD",
-   "note": "Flex；Long context；GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026."
+   "note": "Flex，Short context"
   },
   {
    "model": "gpt-5.6-terra",
+   "display_name": null,
    "input_per_1m": 1.0,
    "output_per_1m": 6.0,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "Flex；Short context"
-  },
-  {
-   "model": "gpt-5.6-terra",
-   "input_per_1m": 2.0,
-   "output_per_1m": 9.0,
-   "cached_input_per_1m": 0.2,
-   "currency": "USD",
-   "note": "Flex；Long context"
+   "note": "Flex，Short context"
   },
   {
    "model": "gpt-5.6-luna",
+   "display_name": null,
    "input_per_1m": 0.1,
    "output_per_1m": 0.6,
    "cached_input_per_1m": 0.01,
    "currency": "USD",
-   "note": "Flex；Short context"
-  },
-  {
-   "model": "gpt-5.6-luna",
-   "input_per_1m": 0.2,
-   "output_per_1m": 0.9,
-   "cached_input_per_1m": 0.02,
-   "currency": "USD",
-   "note": "Flex；Long context"
+   "note": "Flex，Short context"
   },
   {
    "model": "gpt-5.5 (<272K context length)",
+   "display_name": null,
    "input_per_1m": 2.5,
    "output_per_1m": 15.0,
    "cached_input_per_1m": 0.25,
    "currency": "USD",
-   "note": "Flex；Short context"
-  },
-  {
-   "model": "gpt-5.5 (<272K context length)",
-   "input_per_1m": 5.0,
-   "output_per_1m": 22.5,
-   "cached_input_per_1m": 0.5,
-   "currency": "USD",
-   "note": "Flex；Long context"
-  },
-  {
-   "model": "gpt-5.5-pro (<272K context length)",
-   "input_per_1m": 15.0,
-   "output_per_1m": 90.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Flex；Short context"
+   "note": "Flex，Short context"
   },
   {
    "model": "gpt-5.4 (<272K context length)",
+   "display_name": null,
    "input_per_1m": 1.25,
    "output_per_1m": 7.5,
    "cached_input_per_1m": 0.13,
    "currency": "USD",
-   "note": "Flex；Short context"
-  },
-  {
-   "model": "gpt-5.4 (<272K context length)",
-   "input_per_1m": 2.5,
-   "output_per_1m": 11.25,
-   "cached_input_per_1m": 0.25,
-   "currency": "USD",
-   "note": "Flex；Long context"
+   "note": "Flex，Short context"
   },
   {
    "model": "gpt-5.4-mini",
+   "display_name": null,
    "input_per_1m": 0.375,
    "output_per_1m": 2.25,
    "cached_input_per_1m": 0.0375,
@@ -814,6 +591,7 @@
   },
   {
    "model": "gpt-5.4-nano",
+   "display_name": null,
    "input_per_1m": 0.1,
    "output_per_1m": 0.625,
    "cached_input_per_1m": 0.01,
@@ -821,23 +599,8 @@
    "note": "Flex"
   },
   {
-   "model": "gpt-5.4-pro (<272K context length)",
-   "input_per_1m": 15.0,
-   "output_per_1m": 90.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Flex；Short context"
-  },
-  {
-   "model": "gpt-5.4-pro (<272K context length)",
-   "input_per_1m": 30.0,
-   "output_per_1m": 135.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Flex；Long context"
-  },
-  {
    "model": "gpt-5.2",
+   "display_name": null,
    "input_per_1m": 0.875,
    "output_per_1m": 7.0,
    "cached_input_per_1m": 0.0875,
@@ -846,6 +609,7 @@
   },
   {
    "model": "gpt-5.1",
+   "display_name": null,
    "input_per_1m": 0.625,
    "output_per_1m": 5.0,
    "cached_input_per_1m": 0.0625,
@@ -854,6 +618,7 @@
   },
   {
    "model": "gpt-5",
+   "display_name": null,
    "input_per_1m": 0.625,
    "output_per_1m": 5.0,
    "cached_input_per_1m": 0.0625,
@@ -862,6 +627,7 @@
   },
   {
    "model": "gpt-5-mini",
+   "display_name": null,
    "input_per_1m": 0.125,
    "output_per_1m": 1.0,
    "cached_input_per_1m": 0.0125,
@@ -870,6 +636,7 @@
   },
   {
    "model": "gpt-5-nano",
+   "display_name": null,
    "input_per_1m": 0.025,
    "output_per_1m": 0.2,
    "cached_input_per_1m": 0.0025,
@@ -878,6 +645,7 @@
   },
   {
    "model": "o3",
+   "display_name": null,
    "input_per_1m": 1.0,
    "output_per_1m": 4.0,
    "cached_input_per_1m": 0.25,
@@ -886,6 +654,7 @@
   },
   {
    "model": "o4-mini",
+   "display_name": null,
    "input_per_1m": 0.55,
    "output_per_1m": 2.2,
    "cached_input_per_1m": 0.138,
@@ -893,87 +662,35 @@
    "note": "Flex"
   },
   {
-   "model": "gpt-6-astra",
-   "input_per_1m": 20.0,
-   "output_per_1m": 100.0,
-   "cached_input_per_1m": 2.0,
-   "currency": "USD",
-   "note": "Fast mode；Short context"
-  },
-  {
-   "model": "gpt-6-astra",
-   "input_per_1m": 40.0,
-   "output_per_1m": 150.0,
-   "cached_input_per_1m": 4.0,
-   "currency": "USD",
-   "note": "Fast mode；Long context；EU data residency 不可用"
-  },
-  {
    "model": "gpt-5.6-sol",
+   "display_name": null,
    "input_per_1m": 8.0,
    "output_per_1m": 40.0,
    "cached_input_per_1m": 0.8,
    "currency": "USD",
-   "note": "Fast mode；Short context；GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026."
-  },
-  {
-   "model": "gpt-5.6-sol",
-   "input_per_1m": 16.0,
-   "output_per_1m": 60.0,
-   "cached_input_per_1m": 1.6,
-   "currency": "USD",
-   "note": "Fast mode；Long context；GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026."
-  },
-  {
-   "model": "gpt-5.6-terra",
-   "input_per_1m": 4.0,
-   "output_per_1m": 24.0,
-   "cached_input_per_1m": 0.4,
-   "currency": "USD",
-   "note": "Fast mode；Short context"
-  },
-  {
-   "model": "gpt-5.6-terra",
-   "input_per_1m": 8.0,
-   "output_per_1m": 36.0,
-   "cached_input_per_1m": 0.8,
-   "currency": "USD",
-   "note": "Fast mode；Long context"
-  },
-  {
-   "model": "gpt-5.6-luna",
-   "input_per_1m": 0.4,
-   "output_per_1m": 2.4,
-   "cached_input_per_1m": 0.04,
-   "currency": "USD",
-   "note": "Fast mode；Short context"
-  },
-  {
-   "model": "gpt-5.6-luna",
-   "input_per_1m": 0.8,
-   "output_per_1m": 3.6,
-   "cached_input_per_1m": 0.08,
-   "currency": "USD",
-   "note": "Fast mode；Long context"
+   "note": "Fast mode，Short context"
   },
   {
    "model": "gpt-5.5 (<272K context length)",
+   "display_name": null,
    "input_per_1m": 12.5,
    "output_per_1m": 75.0,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Fast mode；Short context"
+   "note": "Fast mode，Short context"
   },
   {
    "model": "gpt-5.4 (<272K context length)",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": 30.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Fast mode；Short context"
+   "note": "Fast mode，Short context"
   },
   {
    "model": "gpt-5.4-mini",
+   "display_name": null,
    "input_per_1m": 1.5,
    "output_per_1m": 9.0,
    "cached_input_per_1m": 0.15,
@@ -982,6 +699,7 @@
   },
   {
    "model": "gpt-5.2",
+   "display_name": null,
    "input_per_1m": 3.5,
    "output_per_1m": 28.0,
    "cached_input_per_1m": 0.35,
@@ -990,6 +708,7 @@
   },
   {
    "model": "gpt-5.1",
+   "display_name": null,
    "input_per_1m": 2.5,
    "output_per_1m": 20.0,
    "cached_input_per_1m": 0.25,
@@ -998,6 +717,7 @@
   },
   {
    "model": "gpt-5",
+   "display_name": null,
    "input_per_1m": 2.5,
    "output_per_1m": 20.0,
    "cached_input_per_1m": 0.25,
@@ -1006,6 +726,7 @@
   },
   {
    "model": "gpt-5-mini",
+   "display_name": null,
    "input_per_1m": 0.45,
    "output_per_1m": 3.6,
    "cached_input_per_1m": 0.045,
@@ -1014,6 +735,7 @@
   },
   {
    "model": "gpt-4.1",
+   "display_name": null,
    "input_per_1m": 3.5,
    "output_per_1m": 14.0,
    "cached_input_per_1m": 0.875,
@@ -1022,6 +744,7 @@
   },
   {
    "model": "gpt-4.1-mini",
+   "display_name": null,
    "input_per_1m": 0.7,
    "output_per_1m": 2.8,
    "cached_input_per_1m": 0.175,
@@ -1030,6 +753,7 @@
   },
   {
    "model": "gpt-4.1-nano",
+   "display_name": null,
    "input_per_1m": 0.2,
    "output_per_1m": 0.8,
    "cached_input_per_1m": 0.05,
@@ -1038,6 +762,7 @@
   },
   {
    "model": "gpt-4o",
+   "display_name": null,
    "input_per_1m": 4.25,
    "output_per_1m": 17.0,
    "cached_input_per_1m": 2.125,
@@ -1045,15 +770,8 @@
    "note": "Fast mode"
   },
   {
-   "model": "gpt-4o-2024-05-13",
-   "input_per_1m": 8.75,
-   "output_per_1m": 26.25,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Fast mode"
-  },
-  {
    "model": "gpt-4o-mini",
+   "display_name": null,
    "input_per_1m": 0.25,
    "output_per_1m": 1.0,
    "cached_input_per_1m": 0.125,
@@ -1062,6 +780,7 @@
   },
   {
    "model": "o3",
+   "display_name": null,
    "input_per_1m": 3.5,
    "output_per_1m": 14.0,
    "cached_input_per_1m": 0.875,
@@ -1070,6 +789,7 @@
   },
   {
    "model": "o4-mini",
+   "display_name": null,
    "input_per_1m": 2.0,
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.5,
@@ -1077,455 +797,404 @@
    "note": "Fast mode"
   },
   {
-   "model": "gpt-5.6-sol",
-   "input_per_1m": 4.0,
-   "output_per_1m": 20.0,
-   "cached_input_per_1m": 0.4,
-   "currency": "USD",
-   "note": "Cyber models；Short context；GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026."
-  },
-  {
-   "model": "gpt-5.6-sol",
-   "input_per_1m": 8.0,
-   "output_per_1m": 30.0,
-   "cached_input_per_1m": 0.8,
-   "currency": "USD",
-   "note": "Cyber models；Long context；GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026."
-  },
-  {
    "model": "gpt-5.6-cyber",
+   "display_name": null,
    "input_per_1m": 12.5,
    "output_per_1m": 75.0,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Cyber model；Short context"
+   "note": "Cyber model"
   },
   {
    "model": "gpt-5.5-cyber",
+   "display_name": null,
    "input_per_1m": 12.5,
    "output_per_1m": 75.0,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Cyber model；Short context"
+   "note": "Cyber model"
   },
   {
    "model": "gpt-realtime-2.1",
+   "display_name": null,
    "input_per_1m": 32.0,
    "output_per_1m": 64.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Realtime；Audio tokens"
+   "note": "Realtime，Audio modality"
   },
   {
    "model": "gpt-realtime-2.1",
+   "display_name": null,
    "input_per_1m": 4.0,
    "output_per_1m": 24.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Realtime；Text tokens"
+   "note": "Realtime，Text modality"
   },
   {
    "model": "gpt-realtime-2.1",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": null,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Realtime；Image tokens"
+   "note": "Realtime，Image modality"
   },
   {
    "model": "gpt-realtime-2.1-mini",
+   "display_name": null,
    "input_per_1m": 10.0,
    "output_per_1m": 20.0,
    "cached_input_per_1m": 0.3,
    "currency": "USD",
-   "note": "Realtime；Audio tokens"
+   "note": "Realtime，Audio modality"
   },
   {
    "model": "gpt-realtime-2.1-mini",
+   "display_name": null,
    "input_per_1m": 0.6,
    "output_per_1m": 2.4,
    "cached_input_per_1m": 0.06,
    "currency": "USD",
-   "note": "Realtime；Text tokens"
+   "note": "Realtime，Text modality"
   },
   {
    "model": "gpt-realtime-2.1-mini",
+   "display_name": null,
    "input_per_1m": 0.8,
    "output_per_1m": null,
    "cached_input_per_1m": 0.08,
    "currency": "USD",
-   "note": "Realtime；Image tokens"
+   "note": "Realtime，Image modality"
   },
   {
    "model": "gpt-realtime-2",
+   "display_name": null,
    "input_per_1m": 32.0,
    "output_per_1m": 64.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Realtime；Audio tokens"
+   "note": "Realtime，Audio modality"
   },
   {
    "model": "gpt-realtime-2",
+   "display_name": null,
    "input_per_1m": 4.0,
    "output_per_1m": 24.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Realtime；Text tokens"
+   "note": "Realtime，Text modality"
   },
   {
    "model": "gpt-realtime-2",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": null,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Realtime；Image tokens"
+   "note": "Realtime，Image modality"
   },
   {
    "model": "gpt-realtime-1.5",
+   "display_name": null,
    "input_per_1m": 32.0,
    "output_per_1m": 64.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Realtime；Audio tokens"
+   "note": "Realtime，Audio modality"
   },
   {
    "model": "gpt-realtime-1.5",
+   "display_name": null,
    "input_per_1m": 4.0,
    "output_per_1m": 16.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Realtime；Text tokens"
+   "note": "Realtime，Text modality"
   },
   {
    "model": "gpt-realtime-1.5",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": null,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Realtime；Image tokens"
+   "note": "Realtime，Image modality"
   },
   {
    "model": "gpt-realtime-mini",
+   "display_name": null,
    "input_per_1m": 10.0,
    "output_per_1m": 20.0,
    "cached_input_per_1m": 0.3,
    "currency": "USD",
-   "note": "Realtime；Audio tokens"
+   "note": "Realtime，Audio modality"
   },
   {
    "model": "gpt-realtime-mini",
+   "display_name": null,
    "input_per_1m": 0.6,
    "output_per_1m": 2.4,
    "cached_input_per_1m": 0.06,
    "currency": "USD",
-   "note": "Realtime；Text tokens"
+   "note": "Realtime，Text modality"
   },
   {
    "model": "gpt-realtime-mini",
+   "display_name": null,
    "input_per_1m": 0.8,
    "output_per_1m": null,
    "cached_input_per_1m": 0.08,
    "currency": "USD",
-   "note": "Realtime；Image tokens"
+   "note": "Realtime，Image modality"
   },
   {
    "model": "gpt-realtime",
+   "display_name": null,
    "input_per_1m": 32.0,
    "output_per_1m": 64.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Realtime；Audio tokens"
+   "note": "Realtime，Audio modality"
   },
   {
    "model": "gpt-realtime",
+   "display_name": null,
    "input_per_1m": 4.0,
    "output_per_1m": 16.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Realtime；Text tokens"
+   "note": "Realtime，Text modality"
   },
   {
    "model": "gpt-realtime",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": null,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Realtime；Image tokens"
+   "note": "Realtime，Image modality"
   },
   {
    "model": "gpt-audio-1.5",
+   "display_name": null,
    "input_per_1m": 32.0,
    "output_per_1m": 64.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Audio tokens"
+   "note": "Audio model，Audio modality"
   },
   {
    "model": "gpt-audio-1.5",
+   "display_name": null,
    "input_per_1m": 2.5,
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Text tokens"
+   "note": "Audio model，Text modality"
   },
   {
    "model": "gpt-audio-mini",
+   "display_name": null,
    "input_per_1m": 10.0,
    "output_per_1m": 20.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Audio tokens"
+   "note": "Audio model，Audio modality"
   },
   {
    "model": "gpt-audio-mini",
+   "display_name": null,
    "input_per_1m": 0.6,
    "output_per_1m": 2.4,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Text tokens"
+   "note": "Audio model，Text modality"
   },
   {
    "model": "gpt-audio",
+   "display_name": null,
    "input_per_1m": 32.0,
    "output_per_1m": 64.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Audio tokens"
+   "note": "Audio model，Audio modality"
   },
   {
    "model": "gpt-audio",
+   "display_name": null,
    "input_per_1m": 2.5,
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Text tokens"
+   "note": "Audio model，Text modality"
   },
   {
    "model": "gpt-4o-mini-tts",
+   "display_name": null,
    "input_per_1m": null,
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Audio output tokens"
+   "note": "Text-to-speech，Audio modality"
   },
   {
    "model": "gpt-4o-mini-tts",
+   "display_name": null,
    "input_per_1m": 0.6,
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Text input tokens"
+   "note": "Text-to-speech，Text modality"
   },
   {
    "model": "gpt-image-2.5-sunburst",
+   "display_name": null,
    "input_per_1m": 8.0,
    "output_per_1m": 30.0,
    "cached_input_per_1m": 2.0,
    "currency": "USD",
-   "note": "Image generation；Standard；Image tokens"
+   "note": "Image generation，Image modality"
   },
   {
    "model": "gpt-image-2.5-sunburst",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": null,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Image generation；Standard；Text tokens"
+   "note": "Image generation，Text modality"
   },
   {
    "model": "gpt-image-2.5-flare",
+   "display_name": null,
    "input_per_1m": 8.0,
    "output_per_1m": 30.0,
    "cached_input_per_1m": 2.0,
    "currency": "USD",
-   "note": "Image generation；Standard；Image tokens"
+   "note": "Image generation，Image modality"
   },
   {
    "model": "gpt-image-2.5-flare",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": null,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Image generation；Standard；Text tokens"
+   "note": "Image generation，Text modality"
   },
   {
    "model": "gpt-image-2",
+   "display_name": null,
    "input_per_1m": 8.0,
    "output_per_1m": 30.0,
    "cached_input_per_1m": 2.0,
    "currency": "USD",
-   "note": "Image generation；Standard；Image tokens"
+   "note": "Image generation，Image modality；Standard"
   },
   {
    "model": "gpt-image-2",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": null,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Image generation；Standard；Text tokens"
+   "note": "Image generation，Text modality；Standard"
   },
   {
    "model": "gpt-image-1.5",
+   "display_name": null,
    "input_per_1m": 8.0,
    "output_per_1m": 32.0,
    "cached_input_per_1m": 2.0,
    "currency": "USD",
-   "note": "Image generation；Standard；Image tokens"
+   "note": "Image generation，Image modality；Standard"
   },
   {
    "model": "gpt-image-1.5",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": 10.0,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Image generation；Standard；Text tokens"
+   "note": "Image generation，Text modality；Standard"
   },
   {
    "model": "gpt-image-1-mini",
+   "display_name": null,
    "input_per_1m": 2.5,
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.25,
    "currency": "USD",
-   "note": "Image generation；Standard；Image tokens"
+   "note": "Image generation，Image modality；Standard"
   },
   {
    "model": "gpt-image-1-mini",
+   "display_name": null,
    "input_per_1m": 2.0,
    "output_per_1m": null,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "Image generation；Standard；Text tokens"
+   "note": "Image generation，Text modality；Standard"
   },
   {
    "model": "gpt-image-1",
+   "display_name": null,
    "input_per_1m": 10.0,
    "output_per_1m": 40.0,
    "cached_input_per_1m": 2.5,
    "currency": "USD",
-   "note": "Image generation；Standard；Image tokens"
+   "note": "Image generation，Image modality；Standard"
   },
   {
    "model": "gpt-image-1",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": null,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Image generation；Standard；Text tokens"
+   "note": "Image generation，Text modality；Standard"
   },
   {
    "model": "chatgpt-image-latest",
+   "display_name": null,
    "input_per_1m": 8.0,
    "output_per_1m": 32.0,
    "cached_input_per_1m": 2.0,
    "currency": "USD",
-   "note": "Image generation；Standard；Image tokens"
+   "note": "Image generation，Image modality；Standard"
   },
   {
    "model": "chatgpt-image-latest",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": 10.0,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Image generation；Standard；Text tokens"
-  },
-  {
-   "model": "gpt-image-2",
-   "input_per_1m": 4.0,
-   "output_per_1m": 15.0,
-   "cached_input_per_1m": 1.0,
-   "currency": "USD",
-   "note": "Image generation；Batch；Image tokens"
-  },
-  {
-   "model": "gpt-image-2",
-   "input_per_1m": 2.5,
-   "output_per_1m": null,
-   "cached_input_per_1m": 0.625,
-   "currency": "USD",
-   "note": "Image generation；Batch；Text tokens"
-  },
-  {
-   "model": "gpt-image-1.5",
-   "input_per_1m": 4.0,
-   "output_per_1m": 16.0,
-   "cached_input_per_1m": 1.0,
-   "currency": "USD",
-   "note": "Image generation；Batch；Image tokens"
-  },
-  {
-   "model": "gpt-image-1.5",
-   "input_per_1m": 2.5,
-   "output_per_1m": 5.0,
-   "cached_input_per_1m": 0.63,
-   "currency": "USD",
-   "note": "Image generation；Batch；Text tokens"
-  },
-  {
-   "model": "gpt-image-1-mini",
-   "input_per_1m": 1.25,
-   "output_per_1m": 4.0,
-   "cached_input_per_1m": 0.13,
-   "currency": "USD",
-   "note": "Image generation；Batch；Image tokens"
-  },
-  {
-   "model": "gpt-image-1-mini",
-   "input_per_1m": 1.0,
-   "output_per_1m": null,
-   "cached_input_per_1m": 0.1,
-   "currency": "USD",
-   "note": "Image generation；Batch；Text tokens"
-  },
-  {
-   "model": "gpt-image-1",
-   "input_per_1m": 5.0,
-   "output_per_1m": 20.0,
-   "cached_input_per_1m": 1.25,
-   "currency": "USD",
-   "note": "Image generation；Batch；Image tokens"
-  },
-  {
-   "model": "gpt-image-1",
-   "input_per_1m": 2.5,
-   "output_per_1m": null,
-   "cached_input_per_1m": 0.63,
-   "currency": "USD",
-   "note": "Image generation；Batch；Text tokens"
-  },
-  {
-   "model": "chatgpt-image-latest",
-   "input_per_1m": 4.0,
-   "output_per_1m": 16.0,
-   "cached_input_per_1m": 1.0,
-   "currency": "USD",
-   "note": "Image generation；Batch；Image tokens"
-  },
-  {
-   "model": "chatgpt-image-latest",
-   "input_per_1m": 2.5,
-   "output_per_1m": 5.0,
-   "cached_input_per_1m": 0.63,
-   "currency": "USD",
-   "note": "Image generation；Batch；Text tokens"
+   "note": "Image generation，Text modality；Standard"
   },
   {
    "model": "gpt-4o-transcribe",
+   "display_name": null,
    "input_per_1m": 2.5,
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Transcription"
+   "note": "Transcription model"
   },
   {
    "model": "gpt-4o-mini-transcribe",
+   "display_name": null,
    "input_per_1m": 1.25,
    "output_per_1m": 5.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Transcription"
+   "note": "Transcription model"
   },
   {
    "model": "gpt-4o-transcribe-diarize",
+   "display_name": null,
    "input_per_1m": 2.5,
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
@@ -1534,233 +1203,181 @@
   },
   {
    "model": "chat-latest",
+   "display_name": null,
    "input_per_1m": 5.0,
    "output_per_1m": 30.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Specialized；ChatGPT；Standard"
+   "note": "Specialized model，ChatGPT"
   },
   {
    "model": "gpt-5.3-codex",
+   "display_name": null,
    "input_per_1m": 1.75,
    "output_per_1m": 14.0,
    "cached_input_per_1m": 0.175,
    "currency": "USD",
-   "note": "Specialized；Codex；Standard"
-  },
-  {
-   "model": "gpt-5-search-api",
-   "input_per_1m": 1.25,
-   "output_per_1m": 10.0,
-   "cached_input_per_1m": 0.125,
-   "currency": "USD",
-   "note": "Specialized；Search；Standard"
-  },
-  {
-   "model": "text-embedding-3-small",
-   "input_per_1m": 0.02,
-   "output_per_1m": null,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Embedding；Standard"
-  },
-  {
-   "model": "text-embedding-3-large",
-   "input_per_1m": 0.13,
-   "output_per_1m": null,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Embedding；Standard"
-  },
-  {
-   "model": "text-embedding-ada-002",
-   "input_per_1m": 0.1,
-   "output_per_1m": null,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Embedding；Standard"
-  },
-  {
-   "model": "omni-moderation-latest",
-   "input_per_1m": 0.0,
-   "output_per_1m": null,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Moderation；限时免费"
+   "note": "Specialized model，Codex；Standard"
   },
   {
    "model": "gpt-5.3-codex",
+   "display_name": null,
    "input_per_1m": 3.5,
    "output_per_1m": 28.0,
    "cached_input_per_1m": 0.35,
    "currency": "USD",
-   "note": "Specialized；Codex；Fast mode"
+   "note": "Specialized model，Codex；Fast mode"
+  },
+  {
+   "model": "gpt-rosalind-research",
+   "display_name": null,
+   "input_per_1m": 5.0,
+   "output_per_1m": 25.0,
+   "cached_input_per_1m": 0.5,
+   "currency": "USD",
+   "note": "Specialized model，Life Sciences；Billing begins on October 5, 2026；Access limited to approved internal research through the trusted-access program"
+  },
+  {
+   "model": "gpt-5-search-api",
+   "display_name": null,
+   "input_per_1m": 1.25,
+   "output_per_1m": 10.0,
+   "cached_input_per_1m": 0.125,
+   "currency": "USD",
+   "note": "Specialized model，Search"
+  },
+  {
+   "model": "text-embedding-3-small",
+   "display_name": null,
+   "input_per_1m": 0.02,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "Embedding model"
+  },
+  {
+   "model": "text-embedding-3-large",
+   "display_name": null,
+   "input_per_1m": 0.13,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "Embedding model"
+  },
+  {
+   "model": "text-embedding-ada-002",
+   "display_name": null,
+   "input_per_1m": 0.1,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "Embedding model"
+  },
+  {
+   "model": "omni-moderation-latest",
+   "display_name": null,
+   "input_per_1m": 0.0,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "Moderation model；免费"
   },
   {
    "model": "o4-mini-2025-04-16",
+   "display_name": null,
    "input_per_1m": 4.0,
    "output_per_1m": 16.0,
    "cached_input_per_1m": 1.0,
    "currency": "USD",
-   "note": "Fine-tuned model inference；Standard；训练费为 $100.00/hour"
+   "note": "Fine-tuned model inference，Standard；Training price excluded"
   },
   {
    "model": "o4-mini-2025-04-16 (data sharing)",
+   "display_name": null,
    "input_per_1m": 2.0,
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Fine-tuned model inference；Standard；data sharing；训练费为 $100.00/hour"
+   "note": "Fine-tuned model inference，Standard；启用 data sharing 的折扣价格；Training price excluded"
   },
   {
    "model": "gpt-4.1-2025-04-14",
+   "display_name": null,
    "input_per_1m": 3.0,
    "output_per_1m": 12.0,
    "cached_input_per_1m": 0.75,
    "currency": "USD",
-   "note": "Fine-tuned model inference；Standard"
+   "note": "Fine-tuned model inference，Standard；Training price excluded"
   },
   {
    "model": "gpt-4.1-mini-2025-04-14",
+   "display_name": null,
    "input_per_1m": 0.8,
    "output_per_1m": 3.2,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "Fine-tuned model inference；Standard"
+   "note": "Fine-tuned model inference，Standard；Training price excluded"
   },
   {
    "model": "gpt-4.1-nano-2025-04-14",
+   "display_name": null,
    "input_per_1m": 0.2,
    "output_per_1m": 0.8,
    "cached_input_per_1m": 0.05,
    "currency": "USD",
-   "note": "Fine-tuned model inference；Standard"
+   "note": "Fine-tuned model inference，Standard；Training price excluded"
   },
   {
    "model": "gpt-4o-2024-08-06",
+   "display_name": null,
    "input_per_1m": 3.75,
    "output_per_1m": 15.0,
    "cached_input_per_1m": 1.875,
    "currency": "USD",
-   "note": "Fine-tuned model inference；Standard"
+   "note": "Fine-tuned model inference，Standard；Training price excluded"
   },
   {
    "model": "gpt-4o-mini-2024-07-18",
+   "display_name": null,
    "input_per_1m": 0.3,
    "output_per_1m": 1.2,
    "cached_input_per_1m": 0.15,
    "currency": "USD",
-   "note": "Fine-tuned model inference；Standard"
+   "note": "Fine-tuned model inference，Standard；Training price excluded"
   },
   {
    "model": "gpt-3.5-turbo (legacy)",
+   "display_name": null,
    "input_per_1m": 3.0,
    "output_per_1m": 6.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Fine-tuned model inference；Standard；legacy"
+   "note": "Fine-tuned model inference，Legacy；Standard；Training price excluded"
   },
   {
    "model": "davinci-002 (legacy)",
+   "display_name": null,
    "input_per_1m": 12.0,
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Fine-tuned model inference；Standard；legacy"
+   "note": "Fine-tuned model inference，Legacy；Standard；Training price excluded"
   },
   {
    "model": "babbage-002 (legacy)",
+   "display_name": null,
    "input_per_1m": 1.6,
    "output_per_1m": 1.6,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Fine-tuned model inference；Standard；legacy"
-  },
-  {
-   "model": "o4-mini-2025-04-16",
-   "input_per_1m": 2.0,
-   "output_per_1m": 8.0,
-   "cached_input_per_1m": 0.5,
-   "currency": "USD",
-   "note": "Fine-tuned model inference；Batch；训练费为 $100.00/hour"
-  },
-  {
-   "model": "o4-mini-2025-04-16 (data sharing)",
-   "input_per_1m": 1.0,
-   "output_per_1m": 4.0,
-   "cached_input_per_1m": 0.25,
-   "currency": "USD",
-   "note": "Fine-tuned model inference；Batch；data sharing；训练费为 $100.00/hour"
-  },
-  {
-   "model": "gpt-4.1-2025-04-14",
-   "input_per_1m": 1.5,
-   "output_per_1m": 6.0,
-   "cached_input_per_1m": 0.5,
-   "currency": "USD",
-   "note": "Fine-tuned model inference；Batch"
-  },
-  {
-   "model": "gpt-4.1-mini-2025-04-14",
-   "input_per_1m": 0.4,
-   "output_per_1m": 1.6,
-   "cached_input_per_1m": 0.1,
-   "currency": "USD",
-   "note": "Fine-tuned model inference；Batch"
-  },
-  {
-   "model": "gpt-4.1-nano-2025-04-14",
-   "input_per_1m": 0.1,
-   "output_per_1m": 0.4,
-   "cached_input_per_1m": 0.025,
-   "currency": "USD",
-   "note": "Fine-tuned model inference；Batch"
-  },
-  {
-   "model": "gpt-4o-2024-08-06",
-   "input_per_1m": 2.225,
-   "output_per_1m": 12.5,
-   "cached_input_per_1m": 0.9,
-   "currency": "USD",
-   "note": "Fine-tuned model inference；Batch"
-  },
-  {
-   "model": "gpt-4o-mini-2024-07-18",
-   "input_per_1m": 0.15,
-   "output_per_1m": 0.6,
-   "cached_input_per_1m": 0.075,
-   "currency": "USD",
-   "note": "Fine-tuned model inference；Batch"
-  },
-  {
-   "model": "gpt-3.5-turbo (legacy)",
-   "input_per_1m": 1.5,
-   "output_per_1m": 3.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Fine-tuned model inference；Batch；legacy"
-  },
-  {
-   "model": "davinci-002 (legacy)",
-   "input_per_1m": 6.0,
-   "output_per_1m": 6.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Fine-tuned model inference；Batch；legacy"
-  },
-  {
-   "model": "babbage-002 (legacy)",
-   "input_per_1m": 0.8,
-   "output_per_1m": 0.9,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "Fine-tuned model inference；Batch；legacy"
+   "note": "Fine-tuned model inference，Legacy；Standard；Training price excluded"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "d01d7625dd58f6f13f925ebd9e475bafb59d25e823abb7414c05d35d63442ecd",
- "fetched_at": "2026-09-10T18:05:46Z",
- "status_note": "页面无变化",
+ "price_hash": "af433765bde120ee41c54fcf948e085680514c02c776b8ad13f070d037b94472",
+ "fetched_at": "2026-09-11T20:05:46Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-11T19:05:46Z"
+ "last_fetch_ts": "2026-09-11T20:05:46Z",
+ "pricing_extraction_revision": 1
 }

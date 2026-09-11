@@ -11,64 +11,64 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Web search",
+   "name": "web_search",
    "pricing": "$10.00 / 1k calls + Search content tokens billed at model rates.",
    "price_per_1k_usd": 10.0,
-   "price_basis": "Web search（all models）/ 每 1,000 次调用",
+   "price_basis": "Web search（all models）；按工具调用计费，搜索内容 token 另按模型费率计费",
    "free_quota": null,
-   "output_type": "带内联 URL 引用的模型回答；包含 web_search_call 和 message annotations",
+   "output_type": "模型工具；文本答案带内联 URL 引用，并返回 web_search_call",
    "cites_sources": true,
    "default_on": false,
-   "note": "Responses API 中可使用 filters、sources、external_web_access 和 return_token_budget。"
+   "note": "Responses API 中搜索可选；支持域名过滤、来源列表、实时访问和搜索上下文设置。"
   },
   {
    "name": "Image Web search",
    "pricing": "$10.00 / 1k calls + Search content tokens billed at model rates.",
    "price_per_1k_usd": 10.0,
-   "price_basis": "Image Web search（all models）/ 每 1,000 次调用",
+   "price_basis": "Image Web search（all models）；按工具调用计费，搜索内容 token 另按模型费率计费",
    "free_quota": null,
-   "output_type": "图像搜索结果；含 image_url、source_website_url、thumbnail_url 和 caption",
+   "output_type": "图片搜索结果；包含图片 URL、来源网页 URL、缩略图 URL 和可选说明",
    "cites_sources": true,
    "default_on": false,
-   "note": "可与 text 搜索结果一起返回；需通过 search_content_types 启用 image。"
+   "note": "可与文本搜索结果同时返回；需在 web_search 中设置 search_content_types。"
   },
   {
-   "name": "Web search preview（reasoning models, including gpt-5, o-series）",
+   "name": "web_search_preview（reasoning models, including gpt-5, o-series）",
    "pricing": "$10.00 / 1k calls + Search content tokens billed at model rates.",
    "price_per_1k_usd": 10.0,
-   "price_basis": "Web search preview（reasoning models）/ 每 1,000 次调用",
+   "price_basis": "Web search preview（reasoning models）；按工具调用计费，搜索内容 token 另按模型费率计费",
    "free_quota": null,
-   "output_type": "带来源引用的模型回答",
+   "output_type": "模型搜索工具；文本答案带 URL 引用",
    "cites_sources": true,
    "default_on": false,
-   "note": "legacy 工具；不支持 filters 或 return_token_budget，并忽略 external_web_access。"
+   "note": "旧版 Responses API 工具；不支持 filters、return_token_budget，并忽略 external_web_access。"
   },
   {
-   "name": "Web search preview（non-reasoning models）",
+   "name": "web_search_preview（non-reasoning models）",
    "pricing": "$25.00 / 1k calls + Search content tokens are free.",
    "price_per_1k_usd": 25.0,
-   "price_basis": "Web search preview（non-reasoning models）/ 每 1,000 次调用",
+   "price_basis": "Web search preview（non-reasoning models）；按工具调用计费，搜索内容 token 免费",
    "free_quota": null,
-   "output_type": "带来源引用的模型回答",
+   "output_type": "模型搜索工具；文本答案带 URL 引用",
    "cites_sources": true,
    "default_on": false,
-   "note": "Search content tokens 免费；preview 变体的 external_web_access 参数被忽略。"
+   "note": "旧版 Responses API 工具；不支持 filters、return_token_budget，并忽略 external_web_access。"
   },
   {
    "name": "gpt-5-search-api",
-   "pricing": "输入 $1.25 / 1M tokens；缓存输入 $0.125 / 1M tokens；输出 $10.00 / 1M tokens",
+   "pricing": "Input $1.25 / 1M tokens; cached input $0.125 / 1M tokens; output $10.00 / 1M tokens.",
    "price_per_1k_usd": null,
-   "price_basis": "Standard pricing / Search specialized model",
+   "price_basis": "Specialized Search model；按输入、缓存输入和输出 token 计费",
    "free_quota": null,
-   "output_type": "Chat Completions 搜索模型响应",
+   "output_type": "Chat Completions 搜索模型生成的搜索答案",
    "cites_sources": null,
-   "default_on": false,
-   "note": "Chat Completions 搜索模型路径；搜索模型总是在响应前搜索。"
+   "default_on": true,
+   "note": "Chat Completions 搜索模型路径；搜索模型在响应前总是执行搜索。"
   }
  ],
- "fetched_at": "2026-09-11T02:31:45Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-11T20:12:49Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-11T19:11:34Z",
- "websearch_hash": "4779f905cdbb69d561843111552d9cc7f3c3fa3461e49d09ee7de819b04ba94c"
+ "last_fetch_ts": "2026-09-11T20:12:49Z",
+ "websearch_hash": "1d33ef5b3053c67d04dd121db94b44f58f87d96390c8b224ac601c91d24fea6e"
 }

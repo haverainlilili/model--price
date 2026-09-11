@@ -2,50 +2,88 @@
  "plans": [
   {
    "name": "大语言模型推理资源包 qwen-plus",
-   "plan_type": "Token 资源包",
+   "plan_type": "资源包",
    "price": "11.66/114.4 元",
    "billing": "自购买日起生效，有效期可选 3 个月、6 个月或 1 年",
    "quotas": [
     {
      "label": "包含输入和输出总Tokens",
-     "value": "1,200万/1.1亿 Tokens",
-     "window": "有效期可选 3 个月、6 个月或 1 年"
+     "value": "1,200万/1.1亿",
+     "window": null
     }
    ],
    "models": [
     "qwen-plus",
     "qwen-plus-latest"
    ],
-   "note": "仅支持抵扣单次请求输入在0<Token≤128K阶梯范围内的实时推理费用（非思考模式，包含输入和输出）；不支持 Batch调用、上下文缓存、模型调优和模型部署产生的费用。",
+   "note": "仅支持抵扣单次请求输入在0<Token≤128K阶梯范围内的实时推理费用（非思考模式，包含输入和输出）。",
    "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference_dp_cn#/buy"
   },
   {
    "name": "大语言模型推理资源包 qwen-max",
-   "plan_type": "Token 资源包",
+   "plan_type": "资源包",
    "price": "57.6/125/1250/3750/6250 元",
    "billing": "自购买之日起有效期为 1 年",
    "quotas": [
     {
      "label": "包含输入和输出总Tokens",
-     "value": "1,800万/3,900万/3.9亿/11.7亿/19.5亿 Tokens",
-     "window": "1 年"
+     "value": "1,800万/3,900万/3.9亿/11.7亿/19.5亿",
+     "window": null
     }
    ],
    "models": [
     "qwen-max"
    ],
-   "note": "仅支持抵扣实时推理产生的费用（非思考模式，包含输入和输出）；不支持 Batch调用、上下文缓存、模型调优和模型部署产生的费用。",
+   "note": "仅支持抵扣实时推理产生的费用（非思考模式，包含输入和输出）。",
    "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference2_dp_cn#/buy"
+  },
+  {
+   "name": "千问图像生成模型资源包 qwen-image",
+   "plan_type": "资源包",
+   "price": "20/100 元",
+   "billing": "自购买之日起有效期为 3 个月",
+   "quotas": [
+    {
+     "label": "资源包容量（生成图片张数）",
+     "value": "80/400",
+     "window": null
+    }
+   ],
+   "models": [
+    "qwen-image",
+    "qwen-image-edit"
+   ],
+   "note": "使用文生图模型生成一张图片消耗 1 张额度，使用图片编辑模型编辑一张图片消耗 1.2 张额度。",
+   "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_qwenimage_dp_cn"
+  },
+  {
+   "name": "千问图像生成模型资源包 qwen-image-plus",
+   "plan_type": "资源包",
+   "price": "20/196（9.8折）/1,900（9.5折）/18,000（9折）/85,000（8.5折） 元",
+   "billing": "对于100、1,000张档位，自购买之日起有效期为3个月；对于10,000、100,000张档位，自购买之日起有效期为6个月；对于500,000张档位，自购买之日起有效期为12个月",
+   "quotas": [
+    {
+     "label": "资源包容量（生成图片张数）",
+     "value": "100/1,000/10,000/100,000/500,000",
+     "window": null
+    }
+   ],
+   "models": [
+    "qwen-image-plus",
+    "qwen-image-edit-plus"
+   ],
+   "note": "生成或编辑一张图片消耗 1 张额度。",
+   "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_qwenimageplus_dp_cn"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-11T09:10:06Z",
+ "last_fetch_ts": "2026-09-11T10:09:59Z",
  "source": "official",
  "source_urls": [
   "https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package"
  ],
  "page_has_plans": true,
- "plans_hash": "c1bc02cfabfda1cd3e570dd50b4f52a51925b1dfecb04d1b5ac8f606f0e9cd74",
- "fetched_at": "2026-09-11T06:11:43Z",
- "status_note": "页面无变化"
+ "plans_hash": "1ef02f4a77202b6d8649b3ed297b3ec33441c9008b018f4a97caef3d40c2a157",
+ "fetched_at": "2026-09-11T10:09:59Z",
+ "status_note": null
 }

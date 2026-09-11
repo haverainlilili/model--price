@@ -2,121 +2,77 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "会员计划",
+   "plan_type": "聊天会员",
    "price": "¥49/月",
-   "billing": "连续包月",
+   "billing": "连续包月；连续包年",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "每个计费周期（按月刷新）"
-    },
-    {
-     "label": "Agent 优先生成队列",
-     "value": "4 倍速",
-     "window": null
+     "window": "每月"
     },
     {
      "label": "专业数据库调用",
      "value": "1000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     }
    ],
-   "models": [
-    "K2.6",
-    "K3"
-   ],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。",
+   "models": [],
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算。连续包年价格页面仅标注“年付更优惠”。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "会员计划",
+   "plan_type": "聊天会员",
    "price": "¥99/月",
-   "billing": "连续包月",
+   "billing": "连续包月；连续包年",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "每个计费周期（按月刷新）"
-    },
-    {
-     "label": "Agent 优先生成队列",
-     "value": "4 倍速",
-     "window": null
-    },
-    {
-     "label": "Agent 集群可用",
-     "value": "25 次",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     },
     {
      "label": "专业数据库调用",
      "value": "2000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     }
    ],
-   "models": [
-    "K2.6",
-    "K3"
-   ],
-   "note": "套餐注明“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。",
+   "models": [],
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算。连续包年价格页面仅标注“年付更优惠”。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "会员计划",
+   "plan_type": "聊天会员",
    "price": "¥199/月",
-   "billing": "连续包月",
+   "billing": "连续包月；连续包年",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "每个计费周期（按月刷新）"
-    },
-    {
-     "label": "Agent 优先生成队列",
-     "value": "4 倍速",
-     "window": null
-    },
-    {
-     "label": "Agent 集群可用",
-     "value": "50 次",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     },
     {
      "label": "专业数据库调用",
      "value": "5000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     }
    ],
-   "models": [
-    "K2.6",
-    "K3"
-   ],
-   "note": "套餐注明“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。",
+   "models": [],
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算。连续包年价格页面仅标注“年付更优惠”。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "会员计划",
+   "plan_type": "聊天会员",
    "price": "¥699/月",
-   "billing": "连续包月",
+   "billing": "连续包月；连续包年",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "每个计费周期（按月刷新）"
-    },
-    {
-     "label": "Agent 优先生成队列",
-     "value": "4 倍速",
-     "window": null
-    },
-    {
-     "label": "Agent 集群可用",
-     "value": "120 次",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     },
     {
      "label": "超长对话容量",
@@ -126,25 +82,22 @@
     {
      "label": "专业数据库调用",
      "value": "12000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     }
    ],
-   "models": [
-    "K2.6",
-    "K3"
-   ],
-   "note": "套餐注明“在 Andante 基础上”。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值。“百万 Tokens”为官网原文，未自行补充或换算具体数值。所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。",
+   "models": [],
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算。连续包年价格页面仅标注“年付更优惠”。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-11T01:11:35Z",
+ "last_fetch_ts": "2026-09-11T02:30:59Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "a119717e472e466b9233949b82116b9578438595947159d1ece2e7595ddad316",
- "fetched_at": "2026-09-11T01:11:35Z",
+ "plans_hash": "8f9cb320fc6805e28143e4f0f109e1dda0bb046e73b608c879f32e375563cc54",
+ "fetched_at": "2026-09-11T02:30:59Z",
  "status_note": null
 }

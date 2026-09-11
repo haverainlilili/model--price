@@ -2,50 +2,50 @@
  "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
  "source": "claude",
  "currency": "CNY",
- "promotions": "空闲时段价格为高峰时段价格的一半。高峰时段为北京时间周一至周五 9:00 - 12:00、14:00 - 18:00（其余为空闲时段）。",
+ "promotions": null,
  "models": [
   {
    "model": "deepseek-flash",
+   "display_name": "DeepSeek-V4.1-Flash",
    "input_per_1m": 1.0,
    "output_per_1m": 4.0,
    "cached_input_per_1m": 0.02,
    "currency": "CNY",
-   "note": "空闲时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00 以外的时段）",
-   "display_name": "DeepSeek-V4.1-Flash"
+   "note": "空闲时段价格；高峰时段为北京时间周一至周五 9:00-12:00、14:00-18:00，其余为空闲时段"
   },
   {
    "model": "deepseek-flash",
+   "display_name": "DeepSeek-V4.1-Flash",
    "input_per_1m": 2.0,
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.04,
    "currency": "CNY",
-   "note": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）",
-   "display_name": "DeepSeek-V4.1-Flash"
+   "note": "高峰时段价格；高峰时段为北京时间周一至周五 9:00-12:00、14:00-18:00"
   },
   {
    "model": "deepseek-v4-pro",
+   "display_name": "DeepSeek-V4-Pro-0813",
    "input_per_1m": 4.5,
    "output_per_1m": 13.5,
    "cached_input_per_1m": 0.15,
    "currency": "CNY",
-   "note": "空闲时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00 以外的时段）",
-   "display_name": "DeepSeek-V4-Pro-0813"
+   "note": "空闲时段价格；高峰时段为北京时间周一至周五 9:00-12:00、14:00-18:00，其余为空闲时段"
   },
   {
    "model": "deepseek-v4-pro",
+   "display_name": "DeepSeek-V4-Pro-0813",
    "input_per_1m": 9.0,
    "output_per_1m": 27.0,
    "cached_input_per_1m": 0.3,
    "currency": "CNY",
-   "note": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）",
-   "display_name": "DeepSeek-V4-Pro-0813"
+   "note": "高峰时段价格；高峰时段为北京时间周一至周五 9:00-12:00、14:00-18:00"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "7e2967be931aced364f4c3b70958166ff32b79d40adde96fbc4cd5cbb20fdd52",
- "fetched_at": "2026-09-11T07:25:13Z",
- "status_note": "页面无变化",
+ "price_hash": "cc8e1ae942c237447b134854547bfb3a44e66160daed3dc5dc4547626f7e2b1f",
+ "fetched_at": "2026-09-11T11:06:33Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-11T10:06:16Z",
+ "last_fetch_ts": "2026-09-11T11:06:33Z",
  "pricing_extraction_revision": 2
 }

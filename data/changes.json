@@ -1,38 +1,5 @@
 [
  {
-  "ts": "2026-09-10T23:06:37Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-embedding-vision",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 0.7,
-    "new": 1.8
-   },
-   {
-    "field": "note",
-    "old": "embedding/向量模型；文本输入价格；图片输入 1.80 元/百万 tokens",
-    "new": "向量模型（embedding）；图片输入"
-   }
-  ]
- },
- {
-  "ts": "2026-09-11T00:06:31Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-evolving",
-  "fields": [
-   {
-    "field": "note",
-    "old": "在线推理（常规）；输入长度 [0, 1024] 千 tokens",
-    "new": "在线推理（常规）；档位：输入长度 [0, 1024] 千 token"
-   }
-  ]
- },
- {
   "ts": "2026-09-11T00:06:31Z",
   "provider": "doubao",
   "provider_name": "火山方舟 (豆包)",
@@ -5654,6 +5621,34 @@
     "field": "input_per_1m",
     "old": null,
     "new": 30.0
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-11T11:06:33Z",
+  "provider": "deepseek",
+  "provider_name": "DeepSeek",
+  "kind": "change",
+  "model": "deepseek-flash",
+  "fields": [
+   {
+    "field": "note",
+    "old": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）",
+    "new": "高峰时段价格；高峰时段为北京时间周一至周五 9:00-12:00、14:00-18:00"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-11T11:06:33Z",
+  "provider": "deepseek",
+  "provider_name": "DeepSeek",
+  "kind": "change",
+  "model": "deepseek-v4-pro",
+  "fields": [
+   {
+    "field": "note",
+    "old": "高峰时段（北京时间周一至周五 9:00 - 12:00、14:00 - 18:00）",
+    "new": "高峰时段价格；高峰时段为北京时间周一至周五 9:00-12:00、14:00-18:00"
    }
   ]
  }

@@ -11,53 +11,53 @@
  "offerings": [
   {
    "name": "联网搜索（turbo 策略）",
-   "pricing": "模型调用费用按模型标准输入 Token 价格计费；搜索策略费用：2026年2月27日00:00起，每1000次调用3元（仅适用于华北2（北京）地域）",
+   "pricing": "2026年2月27日00:00起正式计费；每调用1000次费用为3元；另按模型标准价格计收增加的输入Token费用",
    "price_per_1k_usd": null,
-   "price_basis": "turbo 策略；华北2（北京）",
+   "price_basis": "华北2（北京）地域，turbo策略，按1000次调用",
    "free_quota": "本身不提供免费调用额度",
-   "output_type": "模型内置联网搜索生成的回答；DashScope 可返回搜索来源",
+   "output_type": "模型内置联网搜索生成的回答；可选返回搜索来源",
    "cites_sources": true,
    "default_on": false,
-   "note": "默认由模型判断是否搜索；可用 forced_search=true 强制搜索。限流15 RPS。"
+   "note": "turbo为默认搜索策略；联网搜索需启用enable_search，模型可自行判断是否实际搜索。"
   },
   {
    "name": "联网搜索（max 策略）",
-   "pricing": "模型调用费用按模型标准输入 Token 价格计费；搜索策略费用：2026年2月27日00:00起，每1000次调用4元（仅适用于华北2（北京）地域）",
+   "pricing": "2026年2月27日00:00起正式计费；每调用1000次费用为4元；另按模型标准价格计收增加的输入Token费用",
    "price_per_1k_usd": null,
-   "price_basis": "max 策略；华北2（北京）",
+   "price_basis": "华北2（北京）地域，max策略，按1000次调用",
    "free_quota": "本身不提供免费调用额度",
-   "output_type": "模型内置联网搜索生成的回答；DashScope 可返回搜索来源",
+   "output_type": "模型内置联网搜索生成的回答；可选返回搜索来源和角标引用",
    "cites_sources": true,
    "default_on": false,
-   "note": "max采用更全面的搜索策略，可调用多源搜索引擎；响应时间可能更长。"
+   "note": "max采用更全面的搜索策略，可调用多源搜索引擎。"
   },
   {
    "name": "联网搜索（agent 策略）",
-   "pricing": "模型调用费用按模型标准输入 Token 价格计费；每1000次调用4元；新加坡地域每1000次调用73.392381元",
+   "pricing": "每调用1000次费用：华北2（北京）、美国（弗吉尼亚）、中国香港、日本（东京）、德国（法兰克福）4元；新加坡73.392381元；另按模型标准价格计收增加的输入Token费用",
    "price_per_1k_usd": null,
-   "price_basis": "agent 策略；华北2、美国弗吉尼亚、中国香港、日本东京、德国法兰克福及新加坡",
+   "price_basis": "按地域和agent策略，每1000次调用",
    "free_quota": "本身不提供免费调用额度",
-   "output_type": "模型内置多轮搜索工具与模型整合；可返回搜索来源",
+   "output_type": "模型内置多轮联网搜索工具；可返回搜索来源",
    "cites_sources": true,
    "default_on": false,
-   "note": "可多次调用联网搜索工具与大模型；启用时仅支持返回搜索来源。"
+   "note": "agent可多次调用联网搜索工具与大模型；启用时仅支持返回搜索来源。"
   },
   {
    "name": "联网搜索（agent_max 策略）",
-   "pricing": "联网搜索工具每1000次调用：华北2、美国弗吉尼亚、中国香港、日本东京、德国法兰克福为4元；新加坡为73.392381元。网页抓取工具限时免费",
+   "pricing": "每调用1000次费用：华北2（北京）、美国（弗吉尼亚）、中国香港、日本（东京）、德国（法兰克福）4元；新加坡73.392381元；网页抓取工具限时免费；另按模型标准价格计收增加的输入Token费用",
    "price_per_1k_usd": null,
-   "price_basis": "agent_max 策略；指定地域",
+   "price_basis": "按地域和agent_max策略，每1000次调用",
    "free_quota": "本身不提供免费调用额度",
-   "output_type": "模型内置联网搜索与网页抓取工具；可返回搜索来源",
+   "output_type": "模型内置联网搜索与网页抓取工具",
    "cites_sources": true,
    "default_on": false,
-   "note": "仅适用于qwen3-max、qwen3-max-2026-01-23的思考模式。"
+   "note": "agent_max包含联网搜索与网页抓取；仅适用于指定qwen3-max思考模式。"
   },
   {
    "name": "联网搜索 MCP",
    "pricing": "全部用户前2000次调用免费；免费额度用尽后按29元/千次计费",
    "price_per_1k_usd": null,
-   "price_basis": "百炼 MCP 广场联网搜索 MCP；免费额度用尽后",
+   "price_basis": "百炼 MCP 广场联网搜索 MCP，超出免费额度后按1000次调用",
    "free_quota": "全部用户前2000次调用免费",
    "output_type": "MCP 工具调用返回的联网搜索结果",
    "cites_sources": null,
@@ -65,9 +65,9 @@
    "note": "与模型内置联网搜索相互独立，计费也相互独立。"
   }
  ],
- "fetched_at": "2026-09-11T10:11:59Z",
+ "fetched_at": "2026-09-11T11:12:22Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-11T10:11:59Z",
- "websearch_hash": "448c3ccc8f4ea113584828d052b029b63a4850d823ddbfcc54602cadc51f170d"
+ "last_fetch_ts": "2026-09-11T11:12:22Z",
+ "websearch_hash": "6987e17bcbd17d633bc28feb875cb6ceec6caa7102d76c2171e8e968fd123433"
 }

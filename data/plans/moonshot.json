@@ -9,7 +9,7 @@
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "每月"
+     "window": "月额度"
     },
     {
      "label": "Agent 优先生成队列",
@@ -19,16 +19,11 @@
     {
      "label": "专业数据库调用",
      "value": "1000 次调用",
-     "window": "每月"
-    },
-    {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时 / 周",
-     "window": "每周"
+     "window": null
     }
    ],
    "models": [],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，作为将月额度用于同一功能时的参考值；所有会员功能共享额度池，按实际 token 消耗计算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -40,26 +35,26 @@
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "每月"
+     "window": "月额度"
     },
     {
-     "label": "Agent 集群",
-     "value": "25 次（2 个子任务并行）",
-     "window": "每月"
+     "label": "Agent 优先生成队列",
+     "value": "4 倍速",
+     "window": null
+    },
+    {
+     "label": "Agent 集群可用",
+     "value": "25 次",
+     "window": null
     },
     {
      "label": "专业数据库调用",
      "value": "2000 次调用",
-     "window": "每月"
-    },
-    {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时 / 周",
-     "window": "每周"
+     "window": null
     }
    ],
    "models": [],
-   "note": "在 Andante 基础上；Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算。",
+   "note": "在 Andante 基础上；Agent 用量数值基于常见任务 token 消耗估算，作为将月额度用于同一功能时的参考值；所有会员功能共享额度池，按实际 token 消耗计算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -71,26 +66,26 @@
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "每月"
+     "window": "月额度"
     },
     {
-     "label": "Agent 集群",
-     "value": "50 次（4 个子任务并行）",
-     "window": "每月"
+     "label": "Agent 优先生成队列",
+     "value": "4 倍速",
+     "window": null
+    },
+    {
+     "label": "Agent 集群可用",
+     "value": "50 次",
+     "window": null
     },
     {
      "label": "专业数据库调用",
      "value": "5000 次调用",
-     "window": "每月"
-    },
-    {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时 / 周",
-     "window": "每周"
+     "window": null
     }
    ],
    "models": [],
-   "note": "在 Andante 基础上；Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算。",
+   "note": "在 Andante 基础上；Agent 用量数值基于常见任务 token 消耗估算，作为将月额度用于同一功能时的参考值；所有会员功能共享额度池，按实际 token 消耗计算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -102,12 +97,17 @@
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "每月"
+     "window": "月额度"
     },
     {
-     "label": "Agent 集群",
-     "value": "120 次（8 个子任务并行）",
-     "window": "每月"
+     "label": "Agent 优先生成队列",
+     "value": "4 倍速",
+     "window": null
+    },
+    {
+     "label": "Agent 集群可用",
+     "value": "120 次",
+     "window": null
     },
     {
      "label": "超长对话容量",
@@ -117,27 +117,22 @@
     {
      "label": "专业数据库调用",
      "value": "12000 次调用",
-     "window": "每月"
-    },
-    {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时 / 周",
-     "window": "每周"
+     "window": null
     }
    ],
    "models": [],
-   "note": "在 Andante 基础上；Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算。",
+   "note": "在 Andante 基础上；Agent 用量数值基于常见任务 token 消耗估算，作为将月额度用于同一功能时的参考值；所有会员功能共享额度池，按实际 token 消耗计算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-11T13:11:37Z",
+ "last_fetch_ts": "2026-09-11T14:10:30Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "45cb3049b26c5f000bb90ec708c90dd595633f9b4620a0112cdeecb7be55a16a",
- "fetched_at": "2026-09-11T13:11:37Z",
+ "plans_hash": "f5062c6e5aa7c5d0243910b7a3e970f36aaf062eecd13bd178a782386a71bb36",
+ "fetched_at": "2026-09-11T14:10:30Z",
  "status_note": null
 }

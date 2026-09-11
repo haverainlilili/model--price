@@ -12,19 +12,19 @@
  "offerings": [
   {
    "name": "Reader API (https://s.jina.ai)",
-   "pricing": "API pricing is based on token usage. Toy Experiment: 10 Million tokens, Free; Prototype Development: 1 Billion tokens for $50 ($0.050 / 1M tokens); Production Deployment: 11 Billion tokens for $500 ($0.045 / 1M tokens).",
+   "pricing": "API pricing is based on token usage. Prototype Development: 1 Billion tokens, $50 (0.050 / 1M tokens); Production Deployment: 11 Billion tokens, $500 (0.045 / 1M tokens).",
    "price_per_1k_usd": null,
-   "price_basis": "按 token 计费；搜索请求每次固定消耗 tokens，starting from 10000 tokens",
-   "free_quota": "Every new API key comes with 10M free tokens!",
-   "output_type": "包含前五条结果、URL 和内容的结构化搜索结果/LLM-friendly text block",
+   "price_basis": "Search Foundation API 按 token 用量计费；每次搜索固定消耗 tokens，起始为 10000 tokens",
+   "free_quota": "Every new API key comes with 10M free tokens",
+   "output_type": "SERP API；返回前五条搜索结果的 URL 和 LLM-friendly 内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "Search the web and convert results to LLM-friendly text；每次返回 top five results；无 API key 100 RPM，免费 API key 100 RPM，付费 API key 1000 RPM"
+   "note": "端点为 s.jina.ai；无 API Key 和免费 API Key 均为 100 RPM，付费 API Key 为 1000 RPM；平均延迟 2.5 秒。"
   }
  ],
- "fetched_at": "2026-09-11T02:34:14Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-11T05:13:53Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-11T04:13:03Z",
- "websearch_hash": "92579b0013ea5dbb15dae3553b1f50dee995c2cf679e499eee68ee84b1b7c70d"
+ "last_fetch_ts": "2026-09-11T05:13:53Z",
+ "websearch_hash": "a67b3f3470fb7a912f9a665ea90d4a25a7add71a76eaea18ac52a62aa38253ea"
 }

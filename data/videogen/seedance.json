@@ -565,10 +565,10 @@
   "https://docs.volcengine.com/docs/82379/1520757",
   "https://seed.bytedance.com/en/seedance2_5"
  ],
- "last_fetch_ts": "2026-09-12T05:26:53Z",
+ "last_fetch_ts": "2026-09-12T16:19:51Z",
  "source_warnings": [],
  "videogen_hash": "91c87d2f1c17c4e3f138b38f961c7edc52e291fda69ef27999f6ff4f3b681df3",
- "status_note": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'message': 'An error occurred. Please retry. (request_id: REQ-20260912-133004.431-013022)', 'type': 'server_error', 'param': '', 'code': 'overloaded_error'}}",
- "last_error": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'message': 'An error occurred. Please retry. (request_id: REQ-20260912-133004.431-013022)', 'type': 'server_error', 'param': '', 'code': 'overloaded_error'}}",
+ "status_note": "官网生视频抽取失败: 结构化输出校验失败: 5 validation errors for VideoGenerationPage\nofferings.2\n  Value error, temporary chart price requires official start and end dates [type=value_error, input_value={'name': 'doubao-seedance...京时间UTC+8）。'}, input_type=dict]\n    For further information visit https://errors.pydantic",
+ "last_error": "官网生视频抽取失败: 结构化输出校验失败: 5 validation errors for VideoGenerationPage\nofferings.2\n  Value error, temporary chart price requires official start and end dates [type=value_error, input_value={'name': 'doubao-seedance...京时间UTC+8）。'}, input_type=dict]\n    For further information visit https://errors.pydantic",
  "videogen_excerpt_hash": "debd1615180f42ec93dfc08b4848f5b4000b76c39886da24c19117f616b162d0"
 }

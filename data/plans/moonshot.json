@@ -7,6 +7,11 @@
    "billing": "连续包月",
    "quotas": [
     {
+     "label": "Agent 用量",
+     "value": "约 30 个",
+     "window": "每月"
+    },
+    {
      "label": "Agent 优先生成队列",
      "value": "4 倍速",
      "window": null
@@ -14,11 +19,11 @@
     {
      "label": "专业数据库",
      "value": "1000 次调用",
-     "window": "每个计费周期"
+     "window": "每月"
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新，未使用的额度到期清零。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -28,18 +33,23 @@
    "billing": "连续包月",
    "quotas": [
     {
+     "label": "Agent 用量",
+     "value": "约 60 个",
+     "window": "每月"
+    },
+    {
      "label": "Agent 集群",
      "value": "25 次",
-     "window": "每个计费周期"
+     "window": "每月"
     },
     {
      "label": "专业数据库",
      "value": "2000 次调用",
-     "window": "每个计费周期"
+     "window": "每月"
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新，未使用的额度到期清零。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -49,18 +59,23 @@
    "billing": "连续包月",
    "quotas": [
     {
+     "label": "Agent 用量",
+     "value": "约 150 个",
+     "window": "每月"
+    },
+    {
      "label": "Agent 集群",
      "value": "50 次",
-     "window": "每个计费周期"
+     "window": "每月"
     },
     {
      "label": "专业数据库",
      "value": "5000 次调用",
-     "window": "每个计费周期"
+     "window": "每月"
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新，未使用的额度到期清零。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -70,9 +85,14 @@
    "billing": "连续包月",
    "quotas": [
     {
+     "label": "Agent 用量",
+     "value": "约 360 个",
+     "window": "每月"
+    },
+    {
      "label": "Agent 集群",
      "value": "120 次",
-     "window": "每个计费周期"
+     "window": "每月"
     },
     {
      "label": "超长对话容量",
@@ -82,22 +102,22 @@
     {
      "label": "专业数据库",
      "value": "12000 次调用",
-     "window": "每个计费周期"
+     "window": "每月"
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新，未使用的额度到期清零。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-12T19:10:57Z",
+ "last_fetch_ts": "2026-09-12T20:11:24Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "580dab5dd821cbf3978da9d6c4765707308f133c2f47336bcbf4078523459bc8",
- "fetched_at": "2026-09-12T19:10:57Z",
+ "plans_hash": "c8835ec50774fece5a7448cc67db2b5f0fb64e21cd49d0f3dcfed98a93eb268a",
+ "fetched_at": "2026-09-12T20:11:24Z",
  "status_note": null
 }

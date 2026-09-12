@@ -12,108 +12,64 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search — Free Plan",
-   "pricing": "1,000 credits / month; 500 searches or 1,000 pages scraped; $0/month",
+   "name": "Search",
+   "pricing": "Free Plan: 1,000 credits / month, $0/month; “500 searches or 1,000 pages scraped”.",
    "price_per_1k_usd": 0.0,
-   "price_basis": "Free Plan（500 searches/月）",
-   "free_quota": "1,000 credits / month（500 searches）",
-   "output_type": "结构化搜索结果，返回 titles、descriptions、URLs；可选抓取完整 markdown、HTML、links 或 screenshots",
+   "price_basis": "Free Plan（500 searches/月，$0）",
+   "free_quota": "1,000 credits / month; 500 searches or 1,000 pages scraped",
+   "output_type": "结构化搜索结果，含 titles、descriptions 和 URLs；可选抓取完整页面内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "Search costs 2 credits per 10 results；搜索结果默认包含 query-relevant Highlights。"
+   "note": "Search costs 2 credits per 10 results，按每 10 条结果向上取整。"
   },
   {
-   "name": "Search — Hobby",
-   "pricing": "$16/month billed yearly；5,000 credits / month；2,500 searches or 5,000 pages scraped",
+   "name": "Search",
+   "pricing": "Hobby: 5,000 credits / month, $16/month billed yearly; “2,500 searches or 5,000 pages scraped”.",
    "price_per_1k_usd": 6.4,
-   "price_basis": "Hobby，年付月均 $16，含 2,500 searches/月",
+   "price_basis": "Hobby 年付（2,500 searches/月，$16/月）",
    "free_quota": null,
-   "output_type": "结构化搜索结果，返回 titles、descriptions、URLs；可选抓取完整 markdown、HTML、links 或 screenshots",
+   "output_type": "结构化搜索结果，含 titles、descriptions 和 URLs；可选抓取完整页面内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "Search costs 2 credits per 10 results；/search rate limit 100/min。"
+   "note": "额外 credits：1,000 extra credits per $5；Search costs 2 credits per 10 results。"
   },
   {
-   "name": "Search — Standard",
-   "pricing": "$83/month billed yearly；100,000 credits / month；50,000 searches or 100,000 pages scraped",
+   "name": "Search",
+   "pricing": "Standard: 100,000 credits / month, $83/month billed yearly; “50,000 searches or 100,000 pages scraped”.",
    "price_per_1k_usd": 1.66,
-   "price_basis": "Standard，年付月均 $83，含 50,000 searches/月",
+   "price_basis": "Standard 年付（50,000 searches/月，$83/月）",
    "free_quota": null,
-   "output_type": "结构化搜索结果，返回 titles、descriptions、URLs；可选抓取完整 markdown、HTML、links 或 screenshots",
+   "output_type": "结构化搜索结果，含 titles、descriptions 和 URLs；可选抓取完整页面内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "Search costs 2 credits per 10 results；/search rate limit 500/min。"
+   "note": "额外 credits：2,000 extra credits per $5；Search costs 2 credits per 10 results。"
   },
   {
-   "name": "Search — Growth",
-   "pricing": "$333/month billed yearly；500,000 credits / month；250,000 searches or 500,000 pages scraped",
+   "name": "Search",
+   "pricing": "Growth: 500,000 credits / month, $333/month billed yearly; “250,000 searches or 500,000 pages scraped”.",
    "price_per_1k_usd": 1.332,
-   "price_basis": "Growth，年付月均 $333，含 250,000 searches/月",
+   "price_basis": "Growth 年付（250,000 searches/月，$333/月）",
    "free_quota": null,
-   "output_type": "结构化搜索结果，返回 titles、descriptions、URLs；可选抓取完整 markdown、HTML、links 或 screenshots",
+   "output_type": "结构化搜索结果，含 titles、descriptions 和 URLs；可选抓取完整页面内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "Search costs 2 credits per 10 results；/search rate limit 5,000/min。"
+   "note": "额外 credits：2,500 extra credits per $5；Search costs 2 credits per 10 results。"
   },
   {
-   "name": "Search — Scale",
-   "pricing": "$599/monthly billed yearly；1,000,000 credits / month；500,000 searches or 1,000,000 pages scraped",
+   "name": "Search",
+   "pricing": "Scale: 1,000,000 credits / month, $599/month billed yearly; “500,000 searches or 1,000,000 pages scraped”.",
    "price_per_1k_usd": 1.198,
-   "price_basis": "Scale，年付月均 $599，含 500,000 searches/月",
+   "price_basis": "Scale 年付（500,000 searches/月，$599/月）",
    "free_quota": null,
-   "output_type": "结构化搜索结果，返回 titles、descriptions、URLs；可选抓取完整 markdown、HTML、links 或 screenshots",
+   "output_type": "结构化搜索结果，含 titles、descriptions 和 URLs；可选抓取完整页面内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "Search costs 2 credits per 10 results；/search rate limit 10,000/min。"
-  },
-  {
-   "name": "Search — Pay-as-you-go Hobby",
-   "pricing": "1,000 extra credits per $5；Search costs 2 credits per 10 results",
-   "price_per_1k_usd": 10.0,
-   "price_basis": "Hobby PAYG（$5/1,000 credits；2 credits/次基础搜索）",
-   "free_quota": null,
-   "output_type": "结构化搜索结果，返回 titles、descriptions、URLs；可选抓取完整 markdown、HTML、links 或 screenshots",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "仅付费计划；搜索按每 10 个结果向上取整，scrapeOptions 另按页收费。"
-  },
-  {
-   "name": "Search — Pay-as-you-go Standard",
-   "pricing": "2,000 extra credits per $5；Search costs 2 credits per 10 results",
-   "price_per_1k_usd": 5.0,
-   "price_basis": "Standard PAYG（$5/2,000 credits；2 credits/次基础搜索）",
-   "free_quota": null,
-   "output_type": "结构化搜索结果，返回 titles、descriptions、URLs；可选抓取完整 markdown、HTML、links 或 screenshots",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "仅付费计划；搜索按每 10 个结果向上取整，scrapeOptions 另按页收费。"
-  },
-  {
-   "name": "Search — Pay-as-you-go Growth",
-   "pricing": "2,500 extra credits per $5；Search costs 2 credits per 10 results",
-   "price_per_1k_usd": 4.0,
-   "price_basis": "Growth PAYG（$5/2,500 credits；2 credits/次基础搜索）",
-   "free_quota": null,
-   "output_type": "结构化搜索结果，返回 titles、descriptions、URLs；可选抓取完整 markdown、HTML、links 或 screenshots",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "仅付费计划；搜索按每 10 个结果向上取整，scrapeOptions 另按页收费。"
-  },
-  {
-   "name": "Search — Pay-as-you-go Scale",
-   "pricing": "5,000 extra credits per $5；Search costs 2 credits per 10 results",
-   "price_per_1k_usd": 2.0,
-   "price_basis": "Scale PAYG（$5/5,000 credits；2 credits/次基础搜索）",
-   "free_quota": null,
-   "output_type": "结构化搜索结果，返回 titles、descriptions、URLs；可选抓取完整 markdown、HTML、links 或 screenshots",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "仅付费计划；搜索按每 10 个结果向上取整，scrapeOptions 另按页收费。"
+   "note": "额外 credits：5,000 extra credits per $5；Search costs 2 credits per 10 results。"
   }
  ],
- "fetched_at": "2026-09-12T16:14:13Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-12T22:13:38Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-12T20:14:55Z",
- "websearch_hash": "2aea31e6b7bea2e47a61a7726654fe74eeec2a2de6a5c7188cd9ede1f9b10b80"
+ "last_fetch_ts": "2026-09-12T22:13:38Z",
+ "websearch_hash": "cfdfe822ba70babdd84867a5775000358728ed69b43e4c768357ff00cbbf5768"
 }

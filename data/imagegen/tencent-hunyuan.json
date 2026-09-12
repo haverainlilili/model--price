@@ -5,7 +5,7 @@
  "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
- "product_status_note": "腾讯云国际站 TokenHub 定价页列有 Hy-Image-3.0 图片生成模型及后付费价格。",
+ "product_status_note": null,
  "source_url": "https://cloud.tencent.com/document/product/1823/130055",
  "source_urls": [
   "https://cloud.tencent.com/document/product/1823/130055",
@@ -26,18 +26,18 @@
  "offerings": [
   {
    "name": "Hy-Image-3.0",
-   "variant_key": "intl",
+   "variant_key": null,
    "api_available": true,
    "modes": [
     "text-to-image",
     "reference"
    ],
-   "pricing": "1.6 USD/million tokens；20,000 tokens/image；estimated reference cost USD 0.032/image",
+   "pricing": "Token-based postpaid billing: USD 1.6/million tokens; 20,000 tokens/image; estimated reference cost USD 0.032/image.",
    "currency": "USD",
    "region": "intl",
    "price_per_image": 0.032,
    "comparison_group": null,
-   "price_basis": "Hy-Image-3.0，text-to-image/reference-to-image，分辨率不区分，后付费 token 档，20,000 tokens/图",
+   "price_basis": "Hy-Image-3.0, text-to-image or reference-to-image generation, resolution: no distinction, postpaid token billing.",
    "resolution": "No distinction",
    "aspect_ratios": null,
    "output_formats": null,
@@ -47,22 +47,20 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "后付费按小时结算；账单项目、单价、消耗规则和最终费用以控制台及账单中心为准。"
+   "note": "The page states settlement is hourly under postpaid mode; final fees are subject to console and billing-center invoice."
   }
  ],
- "fetched_at": "2026-09-10T22:17:16Z",
+ "fetched_at": "2026-09-12T22:15:36Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://cloud.tencent.com/document/product/1823/130055",
   "https://cloud.tencent.com/document/product/1823/135745",
   "https://intl.cloud.tencent.com/document/product/1300/78937"
  ],
- "last_fetch_ts": "2026-09-12T20:16:58Z",
+ "last_fetch_ts": "2026-09-12T22:15:36Z",
  "source_warnings": [],
- "imagegen_hash": "98d23205a2b6f11efa43a13fb50760fe151be125ac3e3b75aacceb8e23553239",
- "status_note": "官网生图抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
- "last_error": "官网生图抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
- "imagegen_excerpt_hash": "c8782c9a28af3cfae3f346d612345755ea462f1d26bf425c386a2e7ac3abbef9",
- "imagegen_pending_shrink_hash": "2b13b15458a0e89828b9b3d0b0e58c4bb499caf863f7a7b07162bf8a9342d405",
- "imagegen_pending_shrink_count": 1
+ "imagegen_hash": "f683803c60576b1e8fedd679bea8410777570c83cfedaaa34188d7bcb9949bca",
+ "status_note": null,
+ "last_error": null,
+ "imagegen_excerpt_hash": "223c5fc870a510b2dd5fc27688f625db998ad833975a14f1fd6740fd69214057"
 }

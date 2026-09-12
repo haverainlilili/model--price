@@ -12,20 +12,75 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search (/search endpoint)",
-   "pricing": "Search costs 2 credits per 10 results, rounded up. Free: 1,000 credits/month; Hobby: $16/month billed annually for 5,000 credits; Standard: $83/month billed annually for 100,000 credits; Growth: $333/month billed annually for 500,000 credits; Scale: $599/month billed annually for 1,000,000 credits. Pay-as-you-go: $5 increments; credit quantity varies by plan.",
-   "price_per_1k_usd": null,
-   "price_basis": "Credit-based pricing; Search 2 credits per 10 results. Pay-as-you-go rates range from 1,000 credits/$5 on Hobby to 5,000 credits/$5 on Scale.",
-   "free_quota": "1,000 credits every month, refreshed monthly, no credit card required; pricing page states this covers 500 searches or 1,000 pages scraped.",
-   "output_type": "结构化搜索结果，包含标题、描述和 URL；可选返回结果页面的 Markdown、HTML、链接或截图",
+   "name": "Search",
+   "pricing": "Free Plan: 1,000 credits / month, $0/month; 500 searches or 1,000 pages scraped.",
+   "price_per_1k_usd": 0.0,
+   "price_basis": "Free Plan（500 searches/month）",
+   "free_quota": "1,000 credits every month; 500 searches or 1,000 pages scraped",
+   "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs，可选返回每个结果的 markdown、HTML、links 或 screenshots",
    "cites_sources": true,
    "default_on": null,
-   "note": "1–10个结果收费2 credits，11–20个收费4 credits；启用抓取选项会另收页面费用。ZDR搜索为企业版：匿名2 credits/10结果，端到端10 credits/10结果。"
+   "note": "Search costs 2 credits per 10 results; rounded up."
+  },
+  {
+   "name": "Search",
+   "pricing": "Hobby: $16/month, billed yearly, for 5,000 credits/month; 2,500 searches or 5,000 pages scraped.",
+   "price_per_1k_usd": 6.4,
+   "price_basis": "Hobby 年付（2,500 searches/month）",
+   "free_quota": null,
+   "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs，可选抓取结果内容",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "月付价格为 $19/month；Search costs 2 credits per 10 results."
+  },
+  {
+   "name": "Search",
+   "pricing": "Standard: $83/month, billed yearly, for 100,000 credits/month; 50,000 searches or 100,000 pages scraped.",
+   "price_per_1k_usd": 1.66,
+   "price_basis": "Standard 年付（50,000 searches/month）",
+   "free_quota": null,
+   "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs，可选抓取结果内容",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "Search costs 2 credits per 10 results."
+  },
+  {
+   "name": "Search",
+   "pricing": "Growth: $333/month, billed yearly, for 500,000 credits/month; 250,000 searches or 500,000 pages scraped.",
+   "price_per_1k_usd": 1.332,
+   "price_basis": "Growth 年付（250,000 searches/month）",
+   "free_quota": null,
+   "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs，可选抓取结果内容",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "Search costs 2 credits per 10 results."
+  },
+  {
+   "name": "Search",
+   "pricing": "Scale: $599/month, billed yearly, for 1,000,000 credits/month; 500,000 searches or 1,000,000 pages scraped.",
+   "price_per_1k_usd": 1.198,
+   "price_basis": "Scale 年付（500,000 searches/month）",
+   "free_quota": null,
+   "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs，可选抓取结果内容",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "Search costs 2 credits per 10 results."
+  },
+  {
+   "name": "Search",
+   "pricing": "Pay-as-you-go: $5 increments. Hobby: 1,000 credits; Standard: 2,000; Growth: 2,500; Scale: 5,000.",
+   "price_per_1k_usd": 10.0,
+   "price_basis": "PAYG Hobby（$5/1,000 credits；Search 2 credits/10 results）",
+   "free_quota": null,
+   "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs，可选抓取结果内容",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "PAYG 仅限付费计划；Standard/Growth/Scale 的每千搜索成本分别为 $5/$4/$2。"
   }
  ],
- "fetched_at": "2026-09-11T20:16:08Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-12T14:16:39Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-12T00:18:38Z",
- "websearch_hash": "8d905cbe9b2b9c2371c51dd4566e6e451d4e44c20fc9751cbf63331b13d78589"
+ "last_fetch_ts": "2026-09-12T14:16:39Z",
+ "websearch_hash": "3fd711effe7153a905d114b1508502c8386250dccd1cbcd9dc03fcca5cc06c7e"
 }

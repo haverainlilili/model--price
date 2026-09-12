@@ -11,52 +11,19 @@
  "offerings": [
   {
    "name": "Google Search API",
-   "pricing": "Starter: $50* for 50k credits ($1.00/1k); no monthly subscriptions; credits valid for 6 months.",
+   "pricing": "Starter: $50 for 50k credits ($1.00/1k); no monthly subscriptions; credits valid for 6 months.",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Starter，50k credits / 50,000 queries",
-   "free_quota": "Get 2,500 free queries. No credit card required.",
-   "output_type": "结构化 JSON 搜索结果，含 organic、knowledgeGraph、peopleAlsoAsk、relatedSearches 等",
+   "price_basis": "Starter，50k credits / Submit 50,000 queries",
+   "free_quota": "Get 2,500 free queries; No credit card required",
+   "output_type": "结构化 JSON 搜索结果（organic、knowledgeGraph、images、news、places、videos、shopping 等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "实时直接查询 Google；搜索、图片、新闻、地图、地点、视频、购物、学术、专利及自动补全。"
-  },
-  {
-   "name": "Google Search API",
-   "pricing": "Standard: $375* for 500k credits ($0.75/1k).",
-   "price_per_1k_usd": 0.75,
-   "price_basis": "Standard，500k credits / 500,000 queries",
-   "free_quota": null,
-   "output_type": "结构化 JSON 搜索结果",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "100 queries per second；实时结果；credits valid for 6 months。"
-  },
-  {
-   "name": "Google Search API",
-   "pricing": "Scale: $1250* for 2.5M credits ($0.50/1k).",
-   "price_per_1k_usd": 0.5,
-   "price_basis": "Scale，2.5M credits / 2,500,000 queries",
-   "free_quota": null,
-   "output_type": "结构化 JSON 搜索结果",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "200 queries per second；实时结果；credits valid for 6 months。"
-  },
-  {
-   "name": "Google Search API",
-   "pricing": "Ultimate: $3750* for 12.5M credits ($0.30/1k).",
-   "price_per_1k_usd": 0.3,
-   "price_basis": "Ultimate，12.5M credits / 12,500,000 queries",
-   "free_quota": null,
-   "output_type": "结构化 JSON 搜索结果",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "300 queries per second；实时结果；credits valid for 6 months。"
+   "note": "API 每次调用直接查询 Google，返回实时结果；成功响应才扣 credits。价格随批量降至 $0.30/1k。"
   }
  ],
- "fetched_at": "2026-09-12T22:14:01Z",
+ "fetched_at": "2026-09-12T23:14:13Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-12T22:14:01Z",
- "websearch_hash": "85281242fca393d0409d91c5077edab9780505351a1d868b8d404b2fd73b4867"
+ "last_fetch_ts": "2026-09-12T23:14:13Z",
+ "websearch_hash": "d5791118217c4068837f0ba785a0a050b71189fc203c84dc21c00705096d4d1f"
 }

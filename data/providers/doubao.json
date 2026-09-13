@@ -2,7 +2,7 @@
  "url": "https://www.volcengine.com/docs/82379/1099320",
  "source": "claude",
  "currency": "CNY",
- "promotions": "限时优惠\nSeedance 2.5：北京时间（UTC+8）2026 年 8 月 14 日 14:00 至 9 月 17 日 14:00 期间，1080p 分辨率按刊例价 72 折计费（480p、720p 不参与折扣），最低降至约 2.7 元/秒。\nSeedance 2.0 mini：北京时间（UTC+8）2026 年 8 月 7 日 14:00 至 10 月 7 日 14:00 期间，480p、720p 分辨率均按刊例价 4 折计费，以 720p 为例，最低降至约 0.2 元/秒。\nSeedance 2.0 fast：北京时间（UTC+8）2026 年 8 月 7 日 14:00 至 10 月 7 日 14:00 期间，480p、720p 分辨率均按刊例价 75 折计费，以 720p 为例，最低降至约 0.6 元/秒。",
+ "promotions": "Seedance 2.5：北京时间（UTC+8）2026 年 8 月 14 日 14:00 至 9 月 17 日 14:00 期间，1080p 分辨率按刊例价 72 折计费（480p、720p 不参与折扣），最低降至约 2.7 元/秒。\nSeedance 2.0 mini：北京时间（UTC+8）2026 年 8 月 7 日 14:00 至 10 月 7 日 14:00 期间，480p、720p 分辨率均按刊例价 4 折计费，以 720p 为例，最低降至约 0.2 元/秒。\nSeedance 2.0 fast：北京时间（UTC+8）2026 年 8 月 7 日 14:00 至 10 月 7 日 14:00 期间，480p、720p 分辨率均按刊例价 75 折计费，以 720p 为例，最低降至约 0.6 元/秒。",
  "models": [
   {
    "model": "doubao-seed-evolving",
@@ -452,7 +452,7 @@
    "output_per_1m": 27.0,
    "cached_input_per_1m": 0.3,
    "currency": "CNY",
-   "note": "在线推理（常规）；2026 年 8 月 28 日已上调至当前价格"
+   "note": "在线推理（常规）；2026 年 8 月 28 日完成全面上调"
   },
   {
    "model": "deepseek-v4-flash预览版",
@@ -461,7 +461,7 @@
    "output_per_1m": 9.0,
    "cached_input_per_1m": 0.1,
    "currency": "CNY",
-   "note": "在线推理（常规）；2026 年 8 月 28 日已上调至当前价格"
+   "note": "在线推理（常规）；2026 年 8 月 28 日完成全面上调"
   },
   {
    "model": "doubao-seed-2.1-turbo",
@@ -929,7 +929,7 @@
    "output_per_1m": 13.5,
    "cached_input_per_1m": 0.3,
    "currency": "CNY",
-   "note": "批量推理；2026 年 8 月 28 日已上调至当前价格"
+   "note": "批量推理；2026 年 8 月 28 日完成全面上调"
   },
   {
    "model": "deepseek-v4-flash预览版",
@@ -938,7 +938,7 @@
    "output_per_1m": 4.5,
    "cached_input_per_1m": 0.1,
    "currency": "CNY",
-   "note": "批量推理；2026 年 8 月 28 日已上调至当前价格"
+   "note": "批量推理；2026 年 8 月 28 日完成全面上调"
   },
   {
    "model": "doubao-embedding-vision",
@@ -947,14 +947,77 @@
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "向量模型（embedding）；文本输入价格。图片输入价格 1.8 元/百万 token"
+   "note": "向量模型；文本输入。图片输入 1.8 元/百万 token"
+  },
+  {
+   "model": "文本向量模型-知识库【通用】",
+   "display_name": null,
+   "input_per_1m": 0.5,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "知识库向量模型"
+  },
+  {
+   "model": "文本向量模型（多功能版）-知识库【通用】",
+   "display_name": null,
+   "input_per_1m": 0.5,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "知识库向量模型"
+  },
+  {
+   "model": "文本向量模型（Doubao-embedding）-知识库【通用】",
+   "display_name": null,
+   "input_per_1m": 0.5,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "知识库向量模型"
+  },
+  {
+   "model": "文本向量模型（Doubao-embedding-large）-知识库【通用】",
+   "display_name": null,
+   "input_per_1m": 0.7,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "知识库向量模型"
+  },
+  {
+   "model": "多模态向量模型（Doubao-embedding-vision-text）-知识库【通用】",
+   "display_name": null,
+   "input_per_1m": 0.7,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "知识库多模态向量模型；文本"
+  },
+  {
+   "model": "多模态向量模型（Doubao-embedding-vision-image）-知识库【通用】",
+   "display_name": null,
+   "input_per_1m": 1.8,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "知识库多模态向量模型；图片"
+  },
+  {
+   "model": "重排模型-知识库【通用】",
+   "display_name": null,
+   "input_per_1m": 0.5,
+   "output_per_1m": null,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "知识库重排模型"
   }
  ],
- "page_has_pricing": false,
- "price_hash": "f172039cf702774587e3ce33416cf1cf9996887b97272b0c14e2c817eb4b42ba",
- "fetched_at": "2026-09-13T04:06:38Z",
- "status_note": "官网页面未解析出有效价格，已保留上次 105 个模型",
- "last_error": "官网页面未解析出有效价格，已保留上次 105 个模型",
- "last_fetch_ts": "2026-09-13T06:06:35Z",
+ "page_has_pricing": true,
+ "price_hash": "a8e515f5cac2c6eb5502b66940a400d977c3ea2e06c87ff00ac9b0ca1932fe83",
+ "fetched_at": "2026-09-13T07:06:36Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-09-13T07:06:36Z",
  "pricing_extraction_revision": 1
 }

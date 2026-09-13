@@ -5,7 +5,7 @@
  "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
- "product_status_note": "Videos API 与 Sora 2 系列已于 2026-03-24 宣布弃用，计划于 2026-09-24 停止访问。",
+ "product_status_note": "Sora 2 models and Videos API are deprecated and scheduled for API removal on 2026-09-24.",
  "source_url": "https://developers.openai.com/api/docs/pricing",
  "source_urls": [
   "https://developers.openai.com/api/docs/pricing",
@@ -30,7 +30,7 @@
    "modes": [
     "text-to-video",
     "image-to-video",
-    "reference-to-video",
+    "reference",
     "video-to-video",
     "video-edit"
    ],
@@ -38,18 +38,19 @@
    "currency": "USD",
    "region": null,
    "price_per_second": 0.1,
+   "comparison_price_type": "direct",
    "comparison_group": "usd-720p-audio",
-   "price_basis": "sora-2，标准队列，720p，文本/图像参考等视频生成，生成视频含音频；2026-09-24 停用。",
-   "resolution": "720p; portrait 720x1280; landscape 1280x720",
-   "duration": "Supports 16- and 20-second generations; up to 20 seconds",
+   "price_basis": "Standard API pricing for sora-2, 720p, portrait 720x1280 or landscape 1280x720, with native audio.",
+   "resolution": "720p; 720x1280 portrait or 1280x720 landscape",
+   "duration": "16- and 20-second generations",
    "frame_rate": null,
-   "aspect_ratios": "Portrait and landscape",
+   "aspect_ratios": "9:16, 16:9",
    "native_audio": true,
    "comparison_resolution": "720p",
    "lifecycle_status": "deprecated",
    "sunset_at": "2026-09-24",
    "free_quota": null,
-   "note": "异步渲染；Videos API 与模型已宣布弃用，2026-09-24 停止访问。"
+   "note": "Videos API and sora-2 are deprecated; removal from the API is scheduled for 2026-09-24."
   },
   {
    "name": "sora-2",
@@ -57,24 +58,26 @@
    "api_available": true,
    "modes": [
     "text-to-video",
-    "image-to-video"
+    "image-to-video",
+    "reference"
    ],
    "pricing": "$0.05 per second",
    "currency": "USD",
    "region": null,
    "price_per_second": 0.05,
+   "comparison_price_type": "direct",
    "comparison_group": "usd-720p-audio",
-   "price_basis": "sora-2，Batch 队列，720p，文本或图像参考视频生成，生成视频含音频；2026-09-24 停用。",
-   "resolution": "720p; portrait 720x1280; landscape 1280x720",
-   "duration": "Supports 16- and 20-second generations; up to 20 seconds",
+   "price_basis": "Batch API pricing for sora-2, 720p, portrait 720x1280 or landscape 1280x720, with native audio.",
+   "resolution": "720p; 720x1280 portrait or 1280x720 landscape",
+   "duration": "16- and 20-second generations",
    "frame_rate": null,
-   "aspect_ratios": "Portrait and landscape",
+   "aspect_ratios": "9:16, 16:9",
    "native_audio": true,
    "comparison_resolution": "720p",
    "lifecycle_status": "deprecated",
    "sunset_at": "2026-09-24",
    "free_quota": null,
-   "note": "Batch 仅支持 POST /v1/videos、JSON 请求；结果在批次完成后最多保留 24 小时。"
+   "note": "Batch supports POST /v1/videos only; Videos API and sora-2 are scheduled for removal on 2026-09-24."
   },
   {
    "name": "sora-2-pro",
@@ -83,7 +86,7 @@
    "modes": [
     "text-to-video",
     "image-to-video",
-    "reference-to-video",
+    "reference",
     "video-to-video",
     "video-edit"
    ],
@@ -91,18 +94,19 @@
    "currency": "USD",
    "region": null,
    "price_per_second": 0.3,
+   "comparison_price_type": "direct",
    "comparison_group": "usd-720p-audio",
-   "price_basis": "sora-2-pro，标准队列，720p，文本/图像参考等视频生成，生成视频含音频；2026-09-24 停用。",
-   "resolution": "720p; portrait 720x1280; landscape 1280x720",
-   "duration": "Supports 16- and 20-second generations; up to 20 seconds",
+   "price_basis": "Standard API pricing for sora-2-pro, 720p, portrait 720x1280 or landscape 1280x720, with native audio.",
+   "resolution": "720p; 720x1280 portrait or 1280x720 landscape",
+   "duration": "16- and 20-second generations",
    "frame_rate": null,
-   "aspect_ratios": "Portrait and landscape",
+   "aspect_ratios": "9:16, 16:9",
    "native_audio": true,
    "comparison_resolution": "720p",
    "lifecycle_status": "deprecated",
    "sunset_at": "2026-09-24",
    "free_quota": null,
-   "note": "异步渲染；Videos API 与模型已宣布弃用，2026-09-24 停止访问。"
+   "note": "Videos API and sora-2-pro are deprecated; removal from the API is scheduled for 2026-09-24."
   },
   {
    "name": "sora-2-pro",
@@ -111,7 +115,7 @@
    "modes": [
     "text-to-video",
     "image-to-video",
-    "reference-to-video",
+    "reference",
     "video-to-video",
     "video-edit"
    ],
@@ -119,18 +123,19 @@
    "currency": "USD",
    "region": null,
    "price_per_second": 0.5,
+   "comparison_price_type": "direct",
    "comparison_group": null,
-   "price_basis": "sora-2-pro，标准队列，1024p，文本/图像参考等视频生成，生成视频含音频；2026-09-24 停用。",
-   "resolution": "1024p; portrait 1024x1792; landscape 1792x1024",
-   "duration": "Supports 16- and 20-second generations; up to 20 seconds",
+   "price_basis": "Standard API pricing for sora-2-pro, 1024p, portrait 1024x1792 or landscape 1792x1024, with native audio.",
+   "resolution": "1024p; 1024x1792 portrait or 1792x1024 landscape",
+   "duration": "16- and 20-second generations",
    "frame_rate": null,
-   "aspect_ratios": "Portrait and landscape",
+   "aspect_ratios": "9:16, 16:9",
    "native_audio": true,
    "comparison_resolution": null,
    "lifecycle_status": "deprecated",
    "sunset_at": "2026-09-24",
    "free_quota": null,
-   "note": "1024p 不属于规定的 480p/720p/1080p 可比组；2026-09-24 停止访问。"
+   "note": "Videos API and sora-2-pro are deprecated; removal from the API is scheduled for 2026-09-24."
   },
   {
    "name": "sora-2-pro",
@@ -139,7 +144,7 @@
    "modes": [
     "text-to-video",
     "image-to-video",
-    "reference-to-video",
+    "reference",
     "video-to-video",
     "video-edit"
    ],
@@ -147,18 +152,19 @@
    "currency": "USD",
    "region": null,
    "price_per_second": 0.7,
+   "comparison_price_type": "direct",
    "comparison_group": "usd-1080p-audio",
-   "price_basis": "sora-2-pro，标准队列，1080p，文本/图像参考等视频生成，生成视频含音频；2026-09-24 停用。",
-   "resolution": "1080p; portrait 1080x1920; landscape 1920x1080",
-   "duration": "Supports 16- and 20-second generations; up to 20 seconds",
+   "price_basis": "Standard API pricing for sora-2-pro, 1080p, portrait 1080x1920 or landscape 1920x1080, with native audio.",
+   "resolution": "1080p; 1080x1920 portrait or 1920x1080 landscape",
+   "duration": "16- and 20-second generations",
    "frame_rate": null,
-   "aspect_ratios": "Portrait and landscape",
+   "aspect_ratios": "9:16, 16:9",
    "native_audio": true,
    "comparison_resolution": "1080p",
    "lifecycle_status": "deprecated",
    "sunset_at": "2026-09-24",
    "free_quota": null,
-   "note": "1080p 作业可能比短时长的 720p 或 480p 渲染耗时更长；2026-09-24 停止访问。"
+   "note": "Videos API and sora-2-pro are deprecated; removal from the API is scheduled for 2026-09-24."
   },
   {
    "name": "sora-2-pro",
@@ -166,24 +172,26 @@
    "api_available": true,
    "modes": [
     "text-to-video",
-    "image-to-video"
+    "image-to-video",
+    "reference"
    ],
    "pricing": "$0.15 per second",
    "currency": "USD",
    "region": null,
    "price_per_second": 0.15,
+   "comparison_price_type": "direct",
    "comparison_group": "usd-720p-audio",
-   "price_basis": "sora-2-pro，Batch 队列，720p，文本或图像参考视频生成，生成视频含音频；2026-09-24 停用。",
-   "resolution": "720p; portrait 720x1280; landscape 1280x720",
-   "duration": "Supports 16- and 20-second generations; up to 20 seconds",
+   "price_basis": "Batch API pricing for sora-2-pro, 720p, portrait 720x1280 or landscape 1280x720, with native audio.",
+   "resolution": "720p; 720x1280 portrait or 1280x720 landscape",
+   "duration": "16- and 20-second generations",
    "frame_rate": null,
-   "aspect_ratios": "Portrait and landscape",
+   "aspect_ratios": "9:16, 16:9",
    "native_audio": true,
    "comparison_resolution": "720p",
    "lifecycle_status": "deprecated",
    "sunset_at": "2026-09-24",
    "free_quota": null,
-   "note": "Batch 仅支持 POST /v1/videos、JSON 请求；结果在批次完成后最多保留 24 小时。"
+   "note": "Batch supports POST /v1/videos only; Videos API and sora-2-pro are scheduled for removal on 2026-09-24."
   },
   {
    "name": "sora-2-pro",
@@ -191,24 +199,26 @@
    "api_available": true,
    "modes": [
     "text-to-video",
-    "image-to-video"
+    "image-to-video",
+    "reference"
    ],
    "pricing": "$0.25 per second",
    "currency": "USD",
    "region": null,
    "price_per_second": 0.25,
+   "comparison_price_type": "direct",
    "comparison_group": null,
-   "price_basis": "sora-2-pro，Batch 队列，1024p，文本或图像参考视频生成，生成视频含音频；2026-09-24 停用。",
-   "resolution": "1024p; portrait 1024x1792; landscape 1792x1024",
-   "duration": "Supports 16- and 20-second generations; up to 20 seconds",
+   "price_basis": "Batch API pricing for sora-2-pro, 1024p, portrait 1024x1792 or landscape 1792x1024, with native audio.",
+   "resolution": "1024p; 1024x1792 portrait or 1792x1024 landscape",
+   "duration": "16- and 20-second generations",
    "frame_rate": null,
-   "aspect_ratios": "Portrait and landscape",
+   "aspect_ratios": "9:16, 16:9",
    "native_audio": true,
    "comparison_resolution": null,
    "lifecycle_status": "deprecated",
    "sunset_at": "2026-09-24",
    "free_quota": null,
-   "note": "Batch 仅支持 POST /v1/videos；1024p 不属于规定的可比组。"
+   "note": "Batch supports POST /v1/videos only; Videos API and sora-2-pro are scheduled for removal on 2026-09-24."
   },
   {
    "name": "sora-2-pro",
@@ -216,39 +226,39 @@
    "api_available": true,
    "modes": [
     "text-to-video",
-    "image-to-video"
+    "image-to-video",
+    "reference"
    ],
    "pricing": "$0.35 per second",
    "currency": "USD",
    "region": null,
    "price_per_second": 0.35,
+   "comparison_price_type": "direct",
    "comparison_group": "usd-1080p-audio",
-   "price_basis": "sora-2-pro，Batch 队列，1080p，文本或图像参考视频生成，生成视频含音频；2026-09-24 停用。",
-   "resolution": "1080p; portrait 1080x1920; landscape 1920x1080",
-   "duration": "Supports 16- and 20-second generations; up to 20 seconds",
+   "price_basis": "Batch API pricing for sora-2-pro, 1080p, portrait 1080x1920 or landscape 1920x1080, with native audio.",
+   "resolution": "1080p; 1080x1920 portrait or 1920x1080 landscape",
+   "duration": "16- and 20-second generations",
    "frame_rate": null,
-   "aspect_ratios": "Portrait and landscape",
+   "aspect_ratios": "9:16, 16:9",
    "native_audio": true,
    "comparison_resolution": "1080p",
    "lifecycle_status": "deprecated",
    "sunset_at": "2026-09-24",
    "free_quota": null,
-   "note": "Batch 仅支持 POST /v1/videos、JSON 请求；结果在批次完成后最多保留 24 小时。"
+   "note": "Batch supports POST /v1/videos only; Videos API and sora-2-pro are scheduled for removal on 2026-09-24."
   }
  ],
- "fetched_at": "2026-09-10T20:23:03Z",
+ "fetched_at": "2026-09-13T16:22:58Z",
  "has_video_generation": true,
  "configured_source_urls": [
   "https://developers.openai.com/api/docs/pricing",
   "https://developers.openai.com/api/docs/guides/video-generation",
   "https://developers.openai.com/api/docs/deprecations"
  ],
- "last_fetch_ts": "2026-09-13T09:16:57Z",
+ "last_fetch_ts": "2026-09-13T16:22:58Z",
  "source_warnings": [],
  "videogen_hash": "ffcbbb0977cfcb4edba28c3531160d0aa3b5929e3e783413ee39023aba8f417b",
- "status_note": "官网生视频抽取覆盖项由 8 变为 8，等待下轮同语义结果确认",
- "last_error": "官网生视频抽取覆盖项由 8 变为 8，等待下轮同语义结果确认",
- "videogen_excerpt_hash": "854742b3381004f543bac6e687c82cb117bbf7979586b52a996d8329ab8e8892",
- "videogen_pending_shrink_hash": "8074ff7c490015c909fd50d0f7b623a7f6d45d6c23f262486770a6ed16c2015b",
- "videogen_pending_shrink_count": 8
+ "status_note": null,
+ "last_error": null,
+ "videogen_excerpt_hash": "8b6255f23aac87e87f05419fe9e054f5748700e25c5e3678564a61917346e1b5"
 }

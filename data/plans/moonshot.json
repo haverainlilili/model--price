@@ -2,196 +2,76 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "聊天会员",
+   "plan_type": "会员订阅",
    "price": "¥49/月",
    "billing": "连续包月",
    "quotas": [
-    {
-     "label": "Agent 用量",
-     "value": "约 30 个",
-     "window": "每月"
-    },
     {
      "label": "Agent 优先生成队列",
      "value": "4 倍速",
      "window": null
     },
     {
-     "label": "小组件任务",
-     "value": "6 个",
-     "window": null
-    },
-    {
-     "label": "定时任务",
-     "value": "6 个",
-     "window": null
-    },
-    {
-     "label": "精选插件",
-     "value": "15+ 种可调用",
-     "window": null
-    },
-    {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "1000 次调用",
      "window": null
-    },
-    {
-     "label": "项目数",
-     "value": "20 个",
-     "window": null
-    },
-    {
-     "label": "项目存储空间",
-     "value": "20GB",
-     "window": null
-    },
-    {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时 / 周",
-     "window": "每周"
     }
    ],
    "models": [],
-   "note": "所有会员功能共享一个额度池，按实际 token 消耗扣除。官网说明 Agent 用量数值基于常见任务 token 消耗估算，表示将月额度用于同一功能时的参考值；Kimi Code 的 5 小时 / 周限额仅作用于 Kimi Code。",
+   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "聊天会员",
+   "plan_type": "会员订阅",
    "price": "¥99/月",
    "billing": "连续包月",
    "quotas": [
-    {
-     "label": "Agent 用量",
-     "value": "约 60 个",
-     "window": "每月"
-    },
-    {
-     "label": "Agent 任务并行",
-     "value": "2 个",
-     "window": null
-    },
     {
      "label": "Agent 集群可用",
      "value": "25 次",
      "window": null
     },
     {
-     "label": "Agent 集群子任务并行",
-     "value": "2 个",
-     "window": null
-    },
-    {
-     "label": "定时任务",
-     "value": "10 个",
-     "window": null
-    },
-    {
-     "label": "小组件任务",
-     "value": "10 个",
-     "window": null
-    },
-    {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "2000 次调用",
      "window": null
-    },
-    {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时 / 周",
-     "window": "每周"
     }
    ],
    "models": [],
-   "note": "官网标注为“在 Andante 基础上”。所有会员功能共享一个额度池，按实际 token 消耗扣除。官网说明 Agent 用量数值基于常见任务 token 消耗估算，表示将月额度用于同一功能时的参考值；Kimi Code 的 5 小时 / 周限额仅作用于 Kimi Code。",
+   "note": "在 Andante 基础上；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "聊天会员",
+   "plan_type": "会员订阅",
    "price": "¥199/月",
    "billing": "连续包月",
    "quotas": [
-    {
-     "label": "Agent 用量",
-     "value": "约 150 个",
-     "window": "每月"
-    },
-    {
-     "label": "Agent 任务并行",
-     "value": "2 个",
-     "window": null
-    },
     {
      "label": "Agent 集群可用",
      "value": "50 次",
      "window": null
     },
     {
-     "label": "Agent 集群子任务并行",
-     "value": "4 个",
-     "window": null
-    },
-    {
-     "label": "Kimi Claw 群聊",
-     "value": "10 个",
-     "window": null
-    },
-    {
-     "label": "定时任务",
-     "value": "15 个",
-     "window": null
-    },
-    {
-     "label": "小组件任务",
-     "value": "15 个",
-     "window": null
-    },
-    {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "5000 次调用",
      "window": null
-    },
-    {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时 / 周",
-     "window": "每周"
     }
    ],
    "models": [],
-   "note": "官网标注为“在 Andante 基础上”。所有会员功能共享一个额度池，按实际 token 消耗扣除。官网说明 Agent 用量数值基于常见任务 token 消耗估算，表示将月额度用于同一功能时的参考值；Kimi Code 的 5 小时 / 周限额仅作用于 Kimi Code。",
+   "note": "在 Andante 基础上；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "聊天会员",
+   "plan_type": "会员订阅",
    "price": "¥699/月",
    "billing": "连续包月",
    "quotas": [
     {
-     "label": "Agent 用量",
-     "value": "约 360 个",
-     "window": "每月"
-    },
-    {
-     "label": "Agent 任务并行",
-     "value": "4 个",
-     "window": null
-    },
-    {
      "label": "Agent 集群可用",
      "value": "120 次",
-     "window": null
-    },
-    {
-     "label": "Agent 集群子任务并行",
-     "value": "8 个",
-     "window": null
-    },
-    {
-     "label": "Kimi Claw 群聊",
-     "value": "10 个",
      "window": null
     },
     {
@@ -200,49 +80,24 @@
      "window": null
     },
     {
-     "label": "定时任务",
-     "value": "20 个",
-     "window": null
-    },
-    {
-     "label": "小组件任务",
-     "value": "20 个",
-     "window": null
-    },
-    {
-     "label": "项目数",
-     "value": "100 个",
-     "window": null
-    },
-    {
-     "label": "项目存储空间",
-     "value": "50GB",
-     "window": null
-    },
-    {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "12000 次调用",
      "window": null
-    },
-    {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时 / 周",
-     "window": "每周"
     }
    ],
    "models": [],
-   "note": "官网标注为“在 Andante 基础上”。所有会员功能共享一个额度池，按实际 token 消耗扣除。官网说明 Agent 用量数值基于常见任务 token 消耗估算，表示将月额度用于同一功能时的参考值；Kimi Code 的 5 小时 / 周限额仅作用于 Kimi Code。",
+   "note": "在 Andante 基础上；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-13T09:10:53Z",
+ "last_fetch_ts": "2026-09-13T10:10:43Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "d5fdb7416cee38ebecd1332b7f050c2ae0e631e6e932a84193d510f44dc1c4c0",
- "fetched_at": "2026-09-13T09:10:53Z",
+ "plans_hash": "9c314e6b37262ea1fac898540551386da6515627ac7dc738cdb28974f79f427a",
+ "fetched_at": "2026-09-13T10:10:43Z",
  "status_note": null
 }

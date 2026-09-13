@@ -3,502 +3,6 @@
   "ts": "2026-09-12T15:05:27Z",
   "provider": "openai",
   "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5.6-sol",
-  "fields": [
-   {
-    "field": "output_per_1m",
-    "old": 40.0,
-    "new": 30.0
-   },
-   {
-    "field": "note",
-    "old": "Fast mode，Short context",
-    "new": "Standard，长上下文；促销价格"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5.6-terra",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 1.0,
-    "new": 4.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": 6.0,
-    "new": 18.0
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 0.1,
-    "new": 0.4
-   },
-   {
-    "field": "note",
-    "old": "Flex，Short context",
-    "new": "Standard，长上下文"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5.6-luna",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 0.1,
-    "new": 0.4
-   },
-   {
-    "field": "output_per_1m",
-    "old": 0.6,
-    "new": 1.8
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 0.01,
-    "new": 0.04
-   },
-   {
-    "field": "note",
-    "old": "Flex，Short context",
-    "new": "Standard，长上下文"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5.5 (<272K context length)",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 12.5,
-    "new": 10.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": 75.0,
-    "new": 45.0
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 1.25,
-    "new": 1.0
-   },
-   {
-    "field": "note",
-    "old": "Fast mode，Short context",
-    "new": "Standard，长上下文"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5.5-pro (<272K context length)",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Standard，Long context",
-    "new": "Standard，长上下文"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5.4 (<272K context length)",
-  "fields": [
-   {
-    "field": "output_per_1m",
-    "old": 30.0,
-    "new": 22.5
-   },
-   {
-    "field": "note",
-    "old": "Fast mode，Short context",
-    "new": "Standard，长上下文"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5.4-mini",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 1.5,
-    "new": 0.75
-   },
-   {
-    "field": "output_per_1m",
-    "old": 9.0,
-    "new": 4.5
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 0.15,
-    "new": 0.075
-   },
-   {
-    "field": "note",
-    "old": "Fast mode",
-    "new": "Standard，短上下文"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5.4-nano",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 0.1,
-    "new": 0.2
-   },
-   {
-    "field": "output_per_1m",
-    "old": 0.625,
-    "new": 1.25
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 0.01,
-    "new": 0.02
-   },
-   {
-    "field": "note",
-    "old": "Flex",
-    "new": "Standard，短上下文"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5.4-pro (<272K context length)",
-  "fields": [
-   {
-    "field": "note",
-    "old": "Standard，Long context",
-    "new": "Standard，长上下文"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5.2",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 3.5,
-    "new": 1.75
-   },
-   {
-    "field": "output_per_1m",
-    "old": 28.0,
-    "new": 14.0
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 0.35,
-    "new": 0.175
-   },
-   {
-    "field": "note",
-    "old": "Fast mode",
-    "new": "Standard"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5.1",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 2.5,
-    "new": 1.25
-   },
-   {
-    "field": "output_per_1m",
-    "old": 20.0,
-    "new": 10.0
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 0.25,
-    "new": 0.125
-   },
-   {
-    "field": "note",
-    "old": "Fast mode",
-    "new": "Standard"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 2.5,
-    "new": 1.25
-   },
-   {
-    "field": "output_per_1m",
-    "old": 20.0,
-    "new": 10.0
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 0.25,
-    "new": 0.125
-   },
-   {
-    "field": "note",
-    "old": "Fast mode",
-    "new": "Standard"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5-mini",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 0.45,
-    "new": 0.25
-   },
-   {
-    "field": "output_per_1m",
-    "old": 3.6,
-    "new": 2.0
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 0.045,
-    "new": 0.025
-   },
-   {
-    "field": "note",
-    "old": "Fast mode",
-    "new": "Standard"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5-nano",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 0.025,
-    "new": 0.05
-   },
-   {
-    "field": "output_per_1m",
-    "old": 0.2,
-    "new": 0.4
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 0.0025,
-    "new": 0.005
-   },
-   {
-    "field": "note",
-    "old": "Flex",
-    "new": "Standard"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-5-pro",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 7.5,
-    "new": 15.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": 60.0,
-    "new": 120.0
-   },
-   {
-    "field": "note",
-    "old": "Batch",
-    "new": "Standard"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-4.1",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 3.5,
-    "new": 2.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": 14.0,
-    "new": 8.0
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 0.875,
-    "new": 0.5
-   },
-   {
-    "field": "note",
-    "old": "Fast mode",
-    "new": "Standard"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-4.1-mini",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 0.7,
-    "new": 0.4
-   },
-   {
-    "field": "output_per_1m",
-    "old": 2.8,
-    "new": 1.6
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 0.175,
-    "new": 0.1
-   },
-   {
-    "field": "note",
-    "old": "Fast mode",
-    "new": "Standard"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-4.1-nano",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 0.2,
-    "new": 0.1
-   },
-   {
-    "field": "output_per_1m",
-    "old": 0.8,
-    "new": 0.4
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 0.05,
-    "new": 0.025
-   },
-   {
-    "field": "note",
-    "old": "Fast mode",
-    "new": "Standard"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
-  "kind": "change",
-  "model": "gpt-4o",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 4.25,
-    "new": 2.5
-   },
-   {
-    "field": "output_per_1m",
-    "old": 17.0,
-    "new": 10.0
-   },
-   {
-    "field": "cached_input_per_1m",
-    "old": 2.125,
-    "new": 1.25
-   },
-   {
-    "field": "note",
-    "old": "Fast mode",
-    "new": "Standard"
-   }
-  ]
- },
- {
-  "ts": "2026-09-12T15:05:27Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
   "kind": "new",
   "model": "gpt-4o-2024-05-13",
   "fields": [
@@ -6998,6 +6502,387 @@
     "field": "output_per_1m",
     "old": null,
     "new": 9.2
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-pro",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 28.8,
+    "new": 4.8
+   },
+   {
+    "field": "output_per_1m",
+    "old": 144.0,
+    "new": 24.0
+   },
+   {
+    "field": "cached_input_per_1m",
+    "old": 5.76,
+    "new": 1.92
+   },
+   {
+    "field": "note",
+    "old": "在线推理（低延迟）；输入长度 (128, 256]",
+    "new": "批量推理；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-lite",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 1.8,
+    "new": 0.9
+   },
+   {
+    "field": "output_per_1m",
+    "old": 10.8,
+    "new": 5.4
+   },
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；音频输入 27 元/百万 token，音频缓存命中 5.4 元/百万 token",
+    "new": "批量推理；输入长度 (128, 256]；音频输入 13.5 元/百万 token，音频缓存命中 5.4 元/百万 token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-mini",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 0.8,
+    "new": 0.4
+   },
+   {
+    "field": "output_per_1m",
+    "old": 8.0,
+    "new": 4.0
+   },
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；音频输入 12 元/百万 token，音频缓存命中 2.4 元/百万 token",
+    "new": "批量推理；输入长度 (128, 256]；音频输入 6 元/百万 token，音频缓存命中 2.4 元/百万 token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-code",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 9.6,
+    "new": 4.8
+   },
+   {
+    "field": "output_per_1m",
+    "old": 48.0,
+    "new": 24.0
+   },
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]",
+    "new": "批量推理；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-translation",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 1.2,
+    "new": 0.6
+   },
+   {
+    "field": "output_per_1m",
+    "old": 3.6,
+    "new": 1.8
+   },
+   {
+    "field": "cached_input_per_1m",
+    "old": null,
+    "new": 0.24
+   },
+   {
+    "field": "note",
+    "old": "在线推理（常规）",
+    "new": "批量推理"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-1.5-pro-32k",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 0.8,
+    "new": 0.4
+   },
+   {
+    "field": "output_per_1m",
+    "old": 2.0,
+    "new": 1.0
+   },
+   {
+    "field": "note",
+    "old": "在线推理（常规）",
+    "new": "批量推理"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-1.5-lite-32k",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 0.3,
+    "new": 0.15
+   },
+   {
+    "field": "output_per_1m",
+    "old": 0.6,
+    "new": 0.3
+   },
+   {
+    "field": "note",
+    "old": "在线推理（常规）",
+    "new": "批量推理"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "glm-4.7",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 4.0,
+    "new": 2.0
+   },
+   {
+    "field": "output_per_1m",
+    "old": 16.0,
+    "new": 8.0
+   },
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (32, 200]",
+    "new": "批量推理；输入长度 (32, 200]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "deepseek-v4-pro预览版",
+  "fields": [
+   {
+    "field": "note",
+    "old": "批量推理；模型计费标准于 2026 年 8 月 28 日全面上调",
+    "new": "批量推理；模型计费标准已于 2026 年 8 月 28 日完成全面上调"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "deepseek-v4-flash预览版",
+  "fields": [
+   {
+    "field": "note",
+    "old": "批量推理；模型计费标准于 2026 年 8 月 28 日全面上调",
+    "new": "批量推理；模型计费标准已于 2026 年 8 月 28 日完成全面上调"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-pro-32k",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": null,
+    "new": 0.8
+   },
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 2.0
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-embedding-vision",
+  "fields": [
+   {
+    "field": "note",
+    "old": "向量模型（embedding）；文本输入。图片输入为 1.8 元/百万 token",
+    "new": "向量模型（embedding）；文本输入价格。图片输入 1.8 元/百万 token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seedance-2.5",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": 70.0,
+    "new": 33.12
+   },
+   {
+    "field": "note",
+    "old": "视频生成模型，在线推理 token 单价；输出视频分辨率 480p、720p，输入不含视频。1080p 输入不含视频原价 77 元/百万 token，限时 72 折",
+    "new": "视频生成模型；在线推理；输出视频分辨率 1080p，输入包含视频；限时72折，原价 46 元/百万 token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seedance-2.0",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": 46.0,
+    "new": 16.0
+   },
+   {
+    "field": "note",
+    "old": "视频生成模型，在线推理 token 单价；输出视频分辨率 480p、720p，输入不含视频",
+    "new": "视频生成模型；在线推理；输出视频分辨率 4k；输入包含视频"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seedance-2.0-fast",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": 27.75,
+    "new": 16.5
+   },
+   {
+    "field": "note",
+    "old": "视频生成模型，在线推理 token 单价；输出视频分辨率 480p、720p，输入不含视频；限时 75 折，原价 37 元/百万 token",
+    "new": "视频生成模型；在线推理；输出视频分辨率 480p、720p，输入包含视频；限时75折，原价 22 元/百万 token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seedance-2.0-mini",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": 9.2,
+    "new": 5.6
+   },
+   {
+    "field": "note",
+    "old": "视频生成模型，在线推理 token 单价；输出视频分辨率 480p、720p，输入不含视频；限时 4 折，原价 23 元/百万 token",
+    "new": "视频生成模型；在线推理；输出视频分辨率 480p、720p，输入包含视频；限时4折，原价 14 元/百万 token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-1.5-pro",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 4.0
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-1.0-pro",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 7.5
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-13T15:06:34Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-1.0-pro-fast",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 2.1
    }
   ]
  }

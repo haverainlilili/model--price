@@ -13,19 +13,41 @@
  "offerings": [
   {
    "name": "Search",
-   "pricing": "Hobby: $19/month billed monthly, or $16/month billed annually, for 5,000 credits per month (2,500 searches or 5,000 pages scraped). Search costs 2 credits per 10 results.",
-   "price_per_1k_usd": 6.4,
-   "price_basis": "Hobby 年付（$16/月；2,500 searches/月）",
-   "free_quota": "1,000 credits / month；500 searches or 1,000 pages scraped",
-   "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs，可选抓取每个结果的 markdown、HTML、links 或 screenshots",
+   "pricing": "Search costs 2 credits per 10 results; paid-plan pay-as-you-go credits cost $5 per increment (Hobby: 1,000 credits).",
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": "500 searches or 1,000 pages scraped",
+   "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs，可选附带每个结果的完整页面内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "搜索结果默认包含 query-relevant Highlights；搜索费用按每 10 个结果 2 credits，向上取整。"
+   "note": "费用按结果数向上取整：1–10 个结果为 2 credits；搜索结果默认包含 Highlights。"
+  },
+  {
+   "name": "Search — Anonymized ZDR",
+   "pricing": "Cost: 2 credits per 10 results. Available on Enterprise plans via enterprise: [\"anon\"].",
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": null,
+   "output_type": "结构化搜索结果",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "Firecrawl 侧全零数据保留；上游搜索提供商可能缓存查询，但查询会被完全匿名化。"
+  },
+  {
+   "name": "Search — End-to-End ZDR",
+   "pricing": "Cost: 10 credits per 10 results. Available on Enterprise plans via enterprise: [\"zdr\"].",
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": null,
+   "output_type": "结构化搜索结果",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "Firecrawl 与上游搜索提供商均执行零数据保留；查询和结果数据不会在管道任何环节存储。"
   }
  ],
- "fetched_at": "2026-09-13T14:14:45Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-13T18:15:38Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-13T17:13:39Z",
- "websearch_hash": "654e3700efa7ce7a5358acfeb1a6a472161575379a8e84f396c2b84453b2a728"
+ "last_fetch_ts": "2026-09-13T18:15:38Z",
+ "websearch_hash": "73eba4a7222b24f2bc072e5ddb5c4e54921efd1c316416ccd8467d31997c250f"
 }

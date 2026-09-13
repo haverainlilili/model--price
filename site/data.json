@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-09-13T22:19:23Z",
+ "generated_at": "2026-09-13T23:22:31Z",
  "fx": {
   "usd_cny": 6.7082,
   "source": "frankfurter.dev",
-  "fetched_at": "2026-09-13T22:19:23Z"
+  "fetched_at": "2026-09-13T23:22:31Z"
  },
  "providers": {
   "anthropic": {
@@ -56,7 +56,7 @@
     "fetched_at": "2026-09-03T01:59:26Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-13T22:05:45Z"
+    "last_fetch_ts": "2026-09-13T23:05:45Z"
    }
   },
   "openai": {
@@ -698,7 +698,7 @@
     "fetched_at": "2026-09-12T15:05:27Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-13T22:05:46Z",
+    "last_fetch_ts": "2026-09-13T23:05:46Z",
     "pricing_extraction_revision": 1
    }
   },
@@ -1704,7 +1704,7 @@
     "fetched_at": "2026-09-04T10:05:36Z",
     "status_note": "页面无变化",
     "last_error": "官网重定向次数超过 10 次",
-    "last_fetch_ts": "2026-09-13T22:05:46Z"
+    "last_fetch_ts": "2026-09-13T23:05:46Z"
    }
   },
   "xai": {
@@ -1734,7 +1734,7 @@
     "fetched_at": "2026-09-13T06:05:48Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-13T22:05:48Z",
+    "last_fetch_ts": "2026-09-13T23:05:48Z",
     "pricing_extraction_revision": 1
    }
   },
@@ -1844,7 +1844,7 @@
     "fetched_at": "2026-08-31T11:40:03Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-13T22:06:10Z"
+    "last_fetch_ts": "2026-09-13T23:06:12Z"
    }
   },
   "deepseek": {
@@ -1901,7 +1901,7 @@
     "fetched_at": "2026-09-11T11:06:33Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-13T22:06:30Z",
+    "last_fetch_ts": "2026-09-13T23:06:32Z",
     "pricing_extraction_revision": 2
    }
   },
@@ -2868,7 +2868,7 @@
     "fetched_at": "2026-09-13T18:06:27Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-13T22:06:31Z",
+    "last_fetch_ts": "2026-09-13T23:06:33Z",
     "pricing_extraction_revision": 1
    }
   },
@@ -2884,6 +2884,60 @@
     "currency": "CNY",
     "promotions": "限时优惠\nSeedance 2.5：北京时间（UTC+8）2026 年 8 月 14 日 14:00 至 9 月 17 日 14:00 期间，1080p 分辨率按刊例价 72 折计费（480p、720p 不参与折扣），最低降至约 2.7 元/秒。\nSeedance 2.0 mini：北京时间（UTC+8）2026 年 8 月 7 日 14:00 至 10 月 7 日 14:00 期间，480p、720p 分辨率均按刊例价 4 折计费，以 720p 为例，最低降至约 0.2 元/秒。\nSeedance 2.0 fast：北京时间（UTC+8）2026 年 8 月 7 日 14:00 至 10 月 7 日 14:00 期间，480p、720p 分辨率均按刊例价 75 折计费，以 720p 为例，最低降至约 0.6 元/秒。",
     "models": [
+     {
+      "model": "deepseek-v4-pro预览版",
+      "display_name": null,
+      "input_per_1m": 9.0,
+      "output_per_1m": 27.0,
+      "cached_input_per_1m": 0.3,
+      "currency": "CNY",
+      "note": "在线推理（常规）"
+     },
+     {
+      "model": "deepseek-v4-pro预览版",
+      "display_name": null,
+      "input_per_1m": 4.5,
+      "output_per_1m": 13.5,
+      "cached_input_per_1m": 0.3,
+      "currency": "CNY",
+      "note": "批量推理"
+     },
+     {
+      "model": "deepseek-v4-flash预览版",
+      "display_name": null,
+      "input_per_1m": 3.0,
+      "output_per_1m": 9.0,
+      "cached_input_per_1m": 0.1,
+      "currency": "CNY",
+      "note": "在线推理（常规）"
+     },
+     {
+      "model": "deepseek-v4-flash预览版",
+      "display_name": null,
+      "input_per_1m": 1.5,
+      "output_per_1m": 4.5,
+      "cached_input_per_1m": 0.1,
+      "currency": "CNY",
+      "note": "批量推理"
+     },
+     {
+      "model": "deepseek-v4-flash正式版",
+      "display_name": null,
+      "input_per_1m": 3.0,
+      "output_per_1m": 9.0,
+      "cached_input_per_1m": 0.1,
+      "currency": "CNY",
+      "note": "在线推理（常规）"
+     },
+     {
+      "model": "deepseek-v4-flash正式版",
+      "display_name": null,
+      "input_per_1m": 1.5,
+      "output_per_1m": 4.5,
+      "cached_input_per_1m": 0.1,
+      "currency": "CNY",
+      "note": "批量推理"
+     },
      {
       "model": "doubao-seed-evolving",
       "display_name": null,
@@ -2903,6 +2957,15 @@
       "note": "在线推理（常规）；输入长度 [0, 256]"
      },
      {
+      "model": "doubao-seed-2.1-pro",
+      "display_name": null,
+      "input_per_1m": 3.0,
+      "output_per_1m": 15.0,
+      "cached_input_per_1m": 1.2,
+      "currency": "CNY",
+      "note": "批量推理；输入长度 [0, 256]"
+     },
+     {
       "model": "doubao-seed-2.1-turbo",
       "display_name": null,
       "input_per_1m": 3.0,
@@ -2910,6 +2973,24 @@
       "cached_input_per_1m": 0.6,
       "currency": "CNY",
       "note": "在线推理（常规）；输入长度 [0, 256]"
+     },
+     {
+      "model": "doubao-seed-2.1-turbo",
+      "display_name": null,
+      "input_per_1m": 6.0,
+      "output_per_1m": 30.0,
+      "cached_input_per_1m": 1.2,
+      "currency": "CNY",
+      "note": "在线推理（低延迟）；输入长度 [0, 256]"
+     },
+     {
+      "model": "doubao-seed-2.1-turbo",
+      "display_name": null,
+      "input_per_1m": 1.5,
+      "output_per_1m": 7.5,
+      "cached_input_per_1m": 0.6,
+      "currency": "CNY",
+      "note": "批量推理；输入长度 [0, 256]"
      },
      {
       "model": "doubao-seed-2.0-pro",
@@ -2945,7 +3026,16 @@
       "output_per_1m": 3.6,
       "cached_input_per_1m": 0.12,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 [0, 32]；音频输入 9，音频缓存命中 1.8 元/百万 token"
+      "note": "在线推理（常规）；非音频输入；输入长度 [0, 32]"
+     },
+     {
+      "model": "doubao-seed-2.0-lite",
+      "display_name": null,
+      "input_per_1m": 9.0,
+      "output_per_1m": 3.6,
+      "cached_input_per_1m": 1.8,
+      "currency": "CNY",
+      "note": "在线推理（常规）；音频输入；输入长度 [0, 32]"
      },
      {
       "model": "doubao-seed-2.0-lite",
@@ -2954,7 +3044,16 @@
       "output_per_1m": 5.4,
       "cached_input_per_1m": 0.18,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 (32, 128]；音频输入 13.5，音频缓存命中 2.7 元/百万 token"
+      "note": "在线推理（常规）；非音频输入；输入长度 (32, 128]"
+     },
+     {
+      "model": "doubao-seed-2.0-lite",
+      "display_name": null,
+      "input_per_1m": 13.5,
+      "output_per_1m": 5.4,
+      "cached_input_per_1m": 2.7,
+      "currency": "CNY",
+      "note": "在线推理（常规）；音频输入；输入长度 (32, 128]"
      },
      {
       "model": "doubao-seed-2.0-lite",
@@ -2963,7 +3062,16 @@
       "output_per_1m": 10.8,
       "cached_input_per_1m": 0.36,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 (128, 256]；音频输入 27，音频缓存命中 5.4 元/百万 token"
+      "note": "在线推理（常规）；非音频输入；输入长度 (128, 256]"
+     },
+     {
+      "model": "doubao-seed-2.0-lite",
+      "display_name": null,
+      "input_per_1m": 27.0,
+      "output_per_1m": 10.8,
+      "cached_input_per_1m": 5.4,
+      "currency": "CNY",
+      "note": "在线推理（常规）；音频输入；输入长度 (128, 256]"
      },
      {
       "model": "doubao-seed-2.0-mini",
@@ -2972,7 +3080,16 @@
       "output_per_1m": 2.0,
       "cached_input_per_1m": 0.04,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 [0, 32]；音频输入 3，音频缓存命中 0.6 元/百万 token"
+      "note": "在线推理（常规）；非音频输入；输入长度 [0, 32]"
+     },
+     {
+      "model": "doubao-seed-2.0-mini",
+      "display_name": null,
+      "input_per_1m": 3.0,
+      "output_per_1m": 2.0,
+      "cached_input_per_1m": 0.6,
+      "currency": "CNY",
+      "note": "在线推理（常规）；音频输入；输入长度 [0, 32]"
      },
      {
       "model": "doubao-seed-2.0-mini",
@@ -2981,7 +3098,16 @@
       "output_per_1m": 4.0,
       "cached_input_per_1m": 0.08,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 (32, 128]；音频输入 6，音频缓存命中 1.2 元/百万 token"
+      "note": "在线推理（常规）；非音频输入；输入长度 (32, 128]"
+     },
+     {
+      "model": "doubao-seed-2.0-mini",
+      "display_name": null,
+      "input_per_1m": 6.0,
+      "output_per_1m": 4.0,
+      "cached_input_per_1m": 1.2,
+      "currency": "CNY",
+      "note": "在线推理（常规）；音频输入；输入长度 (32, 128]"
      },
      {
       "model": "doubao-seed-2.0-mini",
@@ -2990,7 +3116,16 @@
       "output_per_1m": 8.0,
       "cached_input_per_1m": 0.16,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 (128, 256]；音频输入 12，音频缓存命中 2.4 元/百万 token"
+      "note": "在线推理（常规）；非音频输入；输入长度 (128, 256]"
+     },
+     {
+      "model": "doubao-seed-2.0-mini",
+      "display_name": null,
+      "input_per_1m": 12.0,
+      "output_per_1m": 8.0,
+      "cached_input_per_1m": 2.4,
+      "currency": "CNY",
+      "note": "在线推理（常规）；音频输入；输入长度 (128, 256]"
      },
      {
       "model": "doubao-seed-2.0-code",
@@ -3026,7 +3161,7 @@
       "output_per_1m": 2.0,
       "cached_input_per_1m": 0.16,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 [0, 32] 且输出长度 [0, 0.2]"
+      "note": "在线推理（常规）；输入长度 [0, 32]，输出长度 [0, 0.2]"
      },
      {
       "model": "doubao-seed-1.8",
@@ -3035,7 +3170,7 @@
       "output_per_1m": 8.0,
       "cached_input_per_1m": 0.16,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 [0, 32] 且输出长度 (0.2,+∞)"
+      "note": "在线推理（常规）；输入长度 [0, 32]，输出长度 (0.2,+∞)"
      },
      {
       "model": "doubao-seed-1.8",
@@ -3107,7 +3242,7 @@
       "output_per_1m": 2.0,
       "cached_input_per_1m": 0.16,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 [0, 32] 且输出长度 [0, 0.2]"
+      "note": "在线推理（常规）；输入长度 [0, 32]，输出长度 [0, 0.2]"
      },
      {
       "model": "doubao-seed-1.6",
@@ -3116,7 +3251,7 @@
       "output_per_1m": 8.0,
       "cached_input_per_1m": 0.16,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 [0, 32] 且输出长度 (0.2,+∞)"
+      "note": "在线推理（常规）；输入长度 [0, 32]，输出长度 (0.2,+∞)"
      },
      {
       "model": "doubao-seed-1.6",
@@ -3143,7 +3278,7 @@
       "output_per_1m": 0.6,
       "cached_input_per_1m": 0.06,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 [0, 32] 且输出长度 [0, 0.2]"
+      "note": "在线推理（常规）；输入长度 [0, 32]，输出长度 [0, 0.2]"
      },
      {
       "model": "doubao-seed-1.6-lite",
@@ -3152,7 +3287,7 @@
       "output_per_1m": 2.4,
       "cached_input_per_1m": 0.06,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 [0, 32] 且输出长度 (0.2,+∞)"
+      "note": "在线推理（常规）；输入长度 [0, 32]，输出长度 (0.2,+∞)"
      },
      {
       "model": "doubao-seed-1.6-lite",
@@ -3287,7 +3422,7 @@
       "output_per_1m": 8.0,
       "cached_input_per_1m": 0.4,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 [0, 32] 且输出长度 [0, 0.2]"
+      "note": "在线推理（常规）；输入长度 [0, 32]，输出长度 [0, 0.2]"
      },
      {
       "model": "glm-4.7",
@@ -3296,7 +3431,7 @@
       "output_per_1m": 14.0,
       "cached_input_per_1m": 0.6,
       "currency": "CNY",
-      "note": "在线推理（常规）；输入长度 [0, 32] 且输出长度 (0.2,+∞)"
+      "note": "在线推理（常规）；输入长度 [0, 32]，输出长度 (0.2,+∞)"
      },
      {
       "model": "glm-4.7",
@@ -3308,247 +3443,202 @@
       "note": "在线推理（常规）；输入长度 (32, 200]"
      },
      {
-      "model": "deepseek-v4-pro正式版",
+      "model": "doubao-seedance-2.5",
       "display_name": null,
-      "input_per_1m": 9.0,
-      "output_per_1m": 27.0,
-      "cached_input_per_1m": 0.3,
+      "input_per_1m": null,
+      "output_per_1m": 70.0,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "在线推理（常规）"
+      "note": "视频生成模型；在线推理；输出视频分辨率 480p、720p；输入不含视频"
      },
      {
-      "model": "deepseek-v4-flash正式版",
+      "model": "doubao-seedance-2.5",
       "display_name": null,
-      "input_per_1m": 3.0,
-      "output_per_1m": 9.0,
-      "cached_input_per_1m": 0.1,
+      "input_per_1m": null,
+      "output_per_1m": 42.0,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "在线推理（常规）"
+      "note": "视频生成模型；在线推理；输出视频分辨率 480p、720p；输入包含视频"
      },
      {
-      "model": "deepseek-v4-pro预览版",
+      "model": "doubao-seedance-2.5",
       "display_name": null,
-      "input_per_1m": 9.0,
-      "output_per_1m": 27.0,
-      "cached_input_per_1m": 0.3,
+      "input_per_1m": null,
+      "output_per_1m": 55.44,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "在线推理（常规）；模型计费标准已于 2026 年 8 月 28 日完成全面上调"
+      "note": "视频生成模型；在线推理；输出视频分辨率 1080p；输入不含视频；限时72折，原价 ¥77/百万 token"
      },
      {
-      "model": "deepseek-v4-flash预览版",
+      "model": "doubao-seedance-2.5",
       "display_name": null,
-      "input_per_1m": 3.0,
-      "output_per_1m": 9.0,
-      "cached_input_per_1m": 0.1,
+      "input_per_1m": null,
+      "output_per_1m": 33.12,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "在线推理（常规）；模型计费标准已于 2026 年 8 月 28 日完成全面上调"
+      "note": "视频生成模型；在线推理；输出视频分辨率 1080p；输入包含视频；限时72折，原价 ¥46/百万 token"
      },
      {
-      "model": "doubao-seed-2.1-turbo",
+      "model": "doubao-seedance-2.0",
       "display_name": null,
-      "input_per_1m": 6.0,
-      "output_per_1m": 30.0,
-      "cached_input_per_1m": 1.2,
+      "input_per_1m": null,
+      "output_per_1m": 46.0,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "在线推理（低延迟）；输入长度 [0, 256]"
+      "note": "视频生成模型；在线推理；输出视频分辨率 480p、720p；输入不含视频"
      },
      {
-      "model": "doubao-seed-2.0-pro",
+      "model": "doubao-seedance-2.0",
       "display_name": null,
-      "input_per_1m": 9.6,
-      "output_per_1m": 48.0,
-      "cached_input_per_1m": 1.92,
+      "input_per_1m": null,
+      "output_per_1m": 28.0,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "在线推理（低延迟）；输入长度 [0, 32]"
+      "note": "视频生成模型；在线推理；输出视频分辨率 480p、720p；输入包含视频"
      },
      {
-      "model": "doubao-seed-2.0-pro",
+      "model": "doubao-seedance-2.0",
       "display_name": null,
-      "input_per_1m": 14.4,
-      "output_per_1m": 72.0,
-      "cached_input_per_1m": 2.88,
+      "input_per_1m": null,
+      "output_per_1m": 51.0,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "在线推理（低延迟）；输入长度 (32, 128]"
+      "note": "视频生成模型；在线推理；输出视频分辨率 1080p；输入不含视频"
      },
      {
-      "model": "doubao-seed-2.0-pro",
+      "model": "doubao-seedance-2.0",
       "display_name": null,
-      "input_per_1m": 28.8,
-      "output_per_1m": 144.0,
-      "cached_input_per_1m": 5.76,
+      "input_per_1m": null,
+      "output_per_1m": 31.0,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "在线推理（低延迟）；输入长度 (128, 256]"
+      "note": "视频生成模型；在线推理；输出视频分辨率 1080p；输入包含视频"
      },
      {
-      "model": "doubao-seed-2.0-lite",
+      "model": "doubao-seedance-2.0",
       "display_name": null,
-      "input_per_1m": 1.2,
-      "output_per_1m": 7.2,
-      "cached_input_per_1m": 0.24,
+      "input_per_1m": null,
+      "output_per_1m": 26.0,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "在线推理（低延迟）；输入长度 [0, 32]；音频输入 18，音频缓存命中 3.6 元/百万 token"
+      "note": "视频生成模型；在线推理；输出视频分辨率 4k；输入不含视频"
      },
      {
-      "model": "doubao-seed-2.0-lite",
+      "model": "doubao-seedance-2.0",
       "display_name": null,
-      "input_per_1m": 1.8,
-      "output_per_1m": 10.8,
-      "cached_input_per_1m": 0.36,
-      "currency": "CNY",
-      "note": "在线推理（低延迟）；输入长度 (32, 128]；音频输入 27，音频缓存命中 5.4 元/百万 token"
-     },
-     {
-      "model": "doubao-seed-2.0-lite",
-      "display_name": null,
-      "input_per_1m": 3.6,
-      "output_per_1m": 21.6,
-      "cached_input_per_1m": 0.72,
-      "currency": "CNY",
-      "note": "在线推理（低延迟）；输入长度 (128, 256]；音频输入 54，音频缓存命中 10.8 元/百万 token"
-     },
-     {
-      "model": "doubao-seed-2.0-mini",
-      "display_name": null,
-      "input_per_1m": 0.4,
-      "output_per_1m": 4.0,
-      "cached_input_per_1m": 0.08,
-      "currency": "CNY",
-      "note": "在线推理（低延迟）；输入长度 [0, 32]；音频输入 6，音频缓存命中 1.2 元/百万 token"
-     },
-     {
-      "model": "doubao-seed-2.0-mini",
-      "display_name": null,
-      "input_per_1m": 0.8,
-      "output_per_1m": 8.0,
-      "cached_input_per_1m": 0.16,
-      "currency": "CNY",
-      "note": "在线推理（低延迟）；输入长度 (32, 128]；音频输入 12，音频缓存命中 2.4 元/百万 token"
-     },
-     {
-      "model": "doubao-seed-2.0-mini",
-      "display_name": null,
-      "input_per_1m": 1.6,
+      "input_per_1m": null,
       "output_per_1m": 16.0,
-      "cached_input_per_1m": 0.32,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "在线推理（低延迟）；输入长度 (128, 256]；音频输入 24，音频缓存命中 4.8 元/百万 token"
+      "note": "视频生成模型；在线推理；输出视频分辨率 4k；输入包含视频"
      },
      {
-      "model": "doubao-seed-2.1-pro",
+      "model": "doubao-seedance-2.0-fast",
       "display_name": null,
-      "input_per_1m": 3.0,
-      "output_per_1m": 15.0,
-      "cached_input_per_1m": 1.2,
+      "input_per_1m": null,
+      "output_per_1m": 27.75,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "批量推理；输入长度 [0, 256]"
+      "note": "视频生成模型；在线推理；输出视频分辨率 480p、720p；输入不含视频；限时75折，原价 ¥37/百万 token"
      },
      {
-      "model": "doubao-seed-2.1-turbo",
+      "model": "doubao-seedance-2.0-fast",
       "display_name": null,
-      "input_per_1m": 1.5,
-      "output_per_1m": 7.5,
-      "cached_input_per_1m": 0.6,
+      "input_per_1m": null,
+      "output_per_1m": 16.5,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "批量推理；输入长度 [0, 256]"
+      "note": "视频生成模型；在线推理；输出视频分辨率 480p、720p；输入包含视频；限时75折，原价 ¥22/百万 token"
      },
      {
-      "model": "doubao-seed-2.0-pro",
+      "model": "doubao-seedance-2.0-mini",
       "display_name": null,
-      "input_per_1m": 1.6,
+      "input_per_1m": null,
+      "output_per_1m": 9.2,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "视频生成模型；在线推理；输出视频分辨率 480p、720p；输入不含视频；限时4折，原价 ¥23/百万 token"
+     },
+     {
+      "model": "doubao-seedance-2.0-mini",
+      "display_name": null,
+      "input_per_1m": null,
+      "output_per_1m": 5.6,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "视频生成模型；在线推理；输出视频分辨率 480p、720p；输入包含视频；限时4折，原价 ¥14/百万 token"
+     },
+     {
+      "model": "doubao-seedance-1.5-pro",
+      "display_name": null,
+      "input_per_1m": null,
+      "output_per_1m": 16.0,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "视频生成模型；在线推理；有声视频"
+     },
+     {
+      "model": "doubao-seedance-1.5-pro",
+      "display_name": null,
+      "input_per_1m": null,
       "output_per_1m": 8.0,
-      "cached_input_per_1m": 0.64,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "批量推理；输入长度 [0, 32]"
+      "note": "视频生成模型；在线推理；无声视频"
      },
      {
-      "model": "doubao-seed-2.0-pro",
+      "model": "doubao-seedance-1.5-pro",
       "display_name": null,
-      "input_per_1m": 2.4,
-      "output_per_1m": 12.0,
-      "cached_input_per_1m": 0.96,
+      "input_per_1m": null,
+      "output_per_1m": 8.0,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "批量推理；输入长度 (32, 128]"
+      "note": "视频生成模型；离线推理；有声视频"
      },
      {
-      "model": "doubao-seed-2.0-pro",
+      "model": "doubao-seedance-1.5-pro",
       "display_name": null,
-      "input_per_1m": 4.8,
-      "output_per_1m": 24.0,
-      "cached_input_per_1m": 1.92,
+      "input_per_1m": null,
+      "output_per_1m": 4.0,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "批量推理；输入长度 (128, 256]"
+      "note": "视频生成模型；离线推理；无声视频"
      },
      {
-      "model": "doubao-seed-translation",
+      "model": "doubao-seedance-1.0-pro",
       "display_name": null,
-      "input_per_1m": 0.6,
-      "output_per_1m": 1.8,
-      "cached_input_per_1m": 0.24,
+      "input_per_1m": null,
+      "output_per_1m": 15.0,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "批量推理"
+      "note": "视频生成模型；在线推理"
      },
      {
-      "model": "doubao-1.5-pro-32k",
+      "model": "doubao-seedance-1.0-pro",
       "display_name": null,
-      "input_per_1m": 0.4,
-      "output_per_1m": 1.0,
-      "cached_input_per_1m": 0.16,
+      "input_per_1m": null,
+      "output_per_1m": 7.5,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "批量推理"
+      "note": "视频生成模型；离线推理"
      },
      {
-      "model": "doubao-1.5-lite-32k",
+      "model": "doubao-seedance-1.0-pro-fast",
       "display_name": null,
-      "input_per_1m": 0.15,
-      "output_per_1m": 0.3,
-      "cached_input_per_1m": 0.06,
+      "input_per_1m": null,
+      "output_per_1m": 4.2,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "批量推理"
+      "note": "视频生成模型；在线推理"
      },
      {
-      "model": "doubao-pro-32k",
+      "model": "doubao-seedance-1.0-pro-fast",
       "display_name": null,
-      "input_per_1m": 0.8,
-      "output_per_1m": 2.0,
-      "cached_input_per_1m": 0.16,
+      "input_per_1m": null,
+      "output_per_1m": 2.1,
+      "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "批量推理"
-     },
-     {
-      "model": "deepseek-v4-pro正式版",
-      "display_name": null,
-      "input_per_1m": 4.5,
-      "output_per_1m": 13.5,
-      "cached_input_per_1m": 0.3,
-      "currency": "CNY",
-      "note": "批量推理"
-     },
-     {
-      "model": "deepseek-v4-flash正式版",
-      "display_name": null,
-      "input_per_1m": 1.5,
-      "output_per_1m": 4.5,
-      "cached_input_per_1m": 0.1,
-      "currency": "CNY",
-      "note": "批量推理"
-     },
-     {
-      "model": "deepseek-v4-pro预览版",
-      "display_name": null,
-      "input_per_1m": 4.5,
-      "output_per_1m": 13.5,
-      "cached_input_per_1m": 0.3,
-      "currency": "CNY",
-      "note": "批量推理；模型计费标准已于 2026 年 8 月 28 日完成全面上调"
-     },
-     {
-      "model": "deepseek-v4-flash预览版",
-      "display_name": null,
-      "input_per_1m": 1.5,
-      "output_per_1m": 4.5,
-      "cached_input_per_1m": 0.1,
-      "currency": "CNY",
-      "note": "批量推理；模型计费标准已于 2026 年 8 月 28 日完成全面上调"
+      "note": "视频生成模型；离线推理"
      },
      {
       "model": "doubao-embedding-vision",
@@ -3557,15 +3647,24 @@
       "output_per_1m": null,
       "cached_input_per_1m": null,
       "currency": "CNY",
-      "note": "向量模型（embedding）；图片输入 1.8 元/百万 token"
+      "note": "向量模型（embedding）；文本输入"
+     },
+     {
+      "model": "doubao-embedding-vision",
+      "display_name": null,
+      "input_per_1m": 1.8,
+      "output_per_1m": null,
+      "cached_input_per_1m": null,
+      "currency": "CNY",
+      "note": "向量模型（embedding）；图片输入"
      }
     ],
     "page_has_pricing": true,
-    "price_hash": "c2857ded2ca2f2e1b499c91e93452f1bc789f399b7e6f297994730c5cb19a817",
-    "fetched_at": "2026-09-13T22:06:34Z",
+    "price_hash": "d4399967aa542a411e22bfb49139ff9d69526ff528f1c7459f8c6df663a6c5e8",
+    "fetched_at": "2026-09-13T23:06:37Z",
     "status_note": null,
     "last_error": null,
-    "last_fetch_ts": "2026-09-13T22:06:34Z",
+    "last_fetch_ts": "2026-09-13T23:06:37Z",
     "pricing_extraction_revision": 1
    }
   },
@@ -3715,7 +3814,7 @@
     "fetched_at": "2026-09-09T16:07:13Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-13T22:07:59Z"
+    "last_fetch_ts": "2026-09-13T23:07:52Z"
    }
   },
   "moonshot": {
@@ -3768,7 +3867,7 @@
     "fetched_at": "2026-09-11T06:08:57Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-13T22:08:25Z"
+    "last_fetch_ts": "2026-09-13T23:08:18Z"
    }
   },
   "minimax": {
@@ -3885,356 +3984,11 @@
     "fetched_at": "2026-09-07T11:09:54Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-13T22:08:35Z"
+    "last_fetch_ts": "2026-09-13T23:08:28Z"
    }
   }
  },
  "changes": [
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-seed-1.8",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": 1.2,
-     "new": 2.4
-    },
-    {
-     "field": "output_per_1m",
-     "old": 12.0,
-     "new": 24.0
-    },
-    {
-     "field": "note",
-     "old": "批量推理；输入长度 (128, 256]",
-     "new": "在线推理（常规）；输入长度(128,256]"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-seed-character",
-   "fields": [
-    {
-     "field": "note",
-     "old": "在线推理（常规）；输入长度 (32, 128]；缓存存储 0.017 元/百万token/小时",
-     "new": "在线推理（常规）；输入长度(32,128]"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-seed-code",
-   "fields": [
-    {
-     "field": "note",
-     "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
-     "new": "在线推理（常规）；输入长度(128,256]"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-seed-1.6-flash",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": 0.3,
-     "new": 0.6
-    },
-    {
-     "field": "output_per_1m",
-     "old": 3.0,
-     "new": 6.0
-    },
-    {
-     "field": "note",
-     "old": "批量推理；输入长度 (128, 256]",
-     "new": "在线推理（常规）；输入长度(128,256]"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-seed-translation",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": 0.6,
-     "new": 1.2
-    },
-    {
-     "field": "output_per_1m",
-     "old": 1.8,
-     "new": 3.6
-    },
-    {
-     "field": "cached_input_per_1m",
-     "old": 0.24,
-     "new": null
-    },
-    {
-     "field": "note",
-     "old": "批量推理",
-     "new": "在线推理（常规）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-1.5-pro-32k",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": 0.4,
-     "new": 0.8
-    },
-    {
-     "field": "output_per_1m",
-     "old": 1.0,
-     "new": 2.0
-    },
-    {
-     "field": "note",
-     "old": "批量推理",
-     "new": "在线推理（常规）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-1.5-lite-32k",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": 0.15,
-     "new": 0.3
-    },
-    {
-     "field": "output_per_1m",
-     "old": 0.3,
-     "new": 0.6
-    },
-    {
-     "field": "note",
-     "old": "批量推理",
-     "new": "在线推理（常规）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-1.5-vision-pro",
-   "fields": [
-    {
-     "field": "note",
-     "old": "在线推理（常规）",
-     "new": "在线推理（常规）；多模态模型"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "glm-5.3-flash",
-   "fields": [
-    {
-     "field": "note",
-     "old": "在线推理（常规）；缓存存储 0.017 元/百万token/小时",
-     "new": "在线推理（常规）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "glm-5.2",
-   "fields": [
-    {
-     "field": "note",
-     "old": "在线推理（常规）；缓存存储 0.017 元/百万token/小时",
-     "new": "在线推理（常规）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "glm-4.7",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": 2.0,
-     "new": 4.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": 8.0,
-     "new": 16.0
-    },
-    {
-     "field": "note",
-     "old": "批量推理；输入长度 (32, 200]",
-     "new": "在线推理（常规）；输入长度(32,200]"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "deepseek-v4-pro正式版",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": 4.5,
-     "new": 9.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": 13.5,
-     "new": 27.0
-    },
-    {
-     "field": "note",
-     "old": "批量推理",
-     "new": "在线推理（常规）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "deepseek-v4-flash正式版",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": 1.5,
-     "new": 3.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": 4.5,
-     "new": 9.0
-    },
-    {
-     "field": "note",
-     "old": "批量推理",
-     "new": "在线推理（常规）"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "deepseek-v4-pro预览版",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": 4.5,
-     "new": 9.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": 13.5,
-     "new": 27.0
-    },
-    {
-     "field": "note",
-     "old": "批量推理；模型计费标准已于 2026 年 8 月 28 日全面上调",
-     "new": "在线推理（常规）；2026年8月28日全面上调后的当前价格"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "deepseek-v4-flash预览版",
-   "fields": [
-    {
-     "field": "input_per_1m",
-     "old": 1.5,
-     "new": 3.0
-    },
-    {
-     "field": "output_per_1m",
-     "old": 4.5,
-     "new": 9.0
-    },
-    {
-     "field": "note",
-     "old": "批量推理；模型计费标准已于 2026 年 8 月 28 日全面上调",
-     "new": "在线推理（常规）；2026年8月28日全面上调后的当前价格"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "change",
-   "model": "doubao-embedding-vision",
-   "fields": [
-    {
-     "field": "note",
-     "old": "向量（embedding）模型；文本输入价格。图片输入 1.8 元/百万token",
-     "new": "embedding；文本输入价格。图片输入为1.80元/百万token"
-    }
-   ]
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "removed",
-   "model": "doubao-seed-1.6",
-   "fields": []
-  },
-  {
-   "ts": "2026-09-12T23:06:35Z",
-   "provider": "doubao",
-   "provider_name": "火山方舟 (豆包)",
-   "kind": "removed",
-   "model": "doubao-seed-1.6-lite",
-   "fields": []
-  },
   {
    "ts": "2026-09-12T23:06:35Z",
    "provider": "doubao",
@@ -10955,6 +10709,326 @@
      "new": "向量模型（embedding）；图片输入 1.8 元/百万 token"
     }
    ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "change",
+   "model": "deepseek-v4-pro预览版",
+   "fields": [
+    {
+     "field": "note",
+     "old": "批量推理；模型计费标准已于 2026 年 8 月 28 日完成全面上调",
+     "new": "批量推理"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "change",
+   "model": "deepseek-v4-flash预览版",
+   "fields": [
+    {
+     "field": "note",
+     "old": "批量推理；模型计费标准已于 2026 年 8 月 28 日完成全面上调",
+     "new": "批量推理"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "change",
+   "model": "doubao-seed-2.0-pro",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 4.8,
+     "new": 9.6
+    },
+    {
+     "field": "output_per_1m",
+     "old": 24.0,
+     "new": 48.0
+    },
+    {
+     "field": "note",
+     "old": "批量推理；输入长度 (128, 256]",
+     "new": "在线推理（常规）；输入长度 (128, 256]"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "change",
+   "model": "doubao-seed-2.0-lite",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 3.6,
+     "new": 27.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": 21.6,
+     "new": 10.8
+    },
+    {
+     "field": "cached_input_per_1m",
+     "old": 0.72,
+     "new": 5.4
+    },
+    {
+     "field": "note",
+     "old": "在线推理（低延迟）；输入长度 (128, 256]；音频输入 54，音频缓存命中 10.8 元/百万 token",
+     "new": "在线推理（常规）；音频输入；输入长度 (128, 256]"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "change",
+   "model": "doubao-seed-2.0-mini",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 1.6,
+     "new": 12.0
+    },
+    {
+     "field": "output_per_1m",
+     "old": 16.0,
+     "new": 8.0
+    },
+    {
+     "field": "cached_input_per_1m",
+     "old": 0.32,
+     "new": 2.4
+    },
+    {
+     "field": "note",
+     "old": "在线推理（低延迟）；输入长度 (128, 256]；音频输入 24，音频缓存命中 4.8 元/百万 token",
+     "new": "在线推理（常规）；音频输入；输入长度 (128, 256]"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "change",
+   "model": "doubao-seed-translation",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 0.6,
+     "new": 1.2
+    },
+    {
+     "field": "output_per_1m",
+     "old": 1.8,
+     "new": 3.6
+    },
+    {
+     "field": "cached_input_per_1m",
+     "old": 0.24,
+     "new": null
+    },
+    {
+     "field": "note",
+     "old": "批量推理",
+     "new": "在线推理（常规）"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "change",
+   "model": "doubao-1.5-pro-32k",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 0.4,
+     "new": 0.8
+    },
+    {
+     "field": "output_per_1m",
+     "old": 1.0,
+     "new": 2.0
+    },
+    {
+     "field": "note",
+     "old": "批量推理",
+     "new": "在线推理（常规）"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "change",
+   "model": "doubao-1.5-lite-32k",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 0.15,
+     "new": 0.3
+    },
+    {
+     "field": "output_per_1m",
+     "old": 0.3,
+     "new": 0.6
+    },
+    {
+     "field": "note",
+     "old": "批量推理",
+     "new": "在线推理（常规）"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "new",
+   "model": "doubao-seedance-2.5",
+   "fields": [
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 33.12
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "new",
+   "model": "doubao-seedance-2.0",
+   "fields": [
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 16.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "new",
+   "model": "doubao-seedance-2.0-fast",
+   "fields": [
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 16.5
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "new",
+   "model": "doubao-seedance-2.0-mini",
+   "fields": [
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 5.6
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "new",
+   "model": "doubao-seedance-1.5-pro",
+   "fields": [
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 4.0
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "new",
+   "model": "doubao-seedance-1.0-pro",
+   "fields": [
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 7.5
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "new",
+   "model": "doubao-seedance-1.0-pro-fast",
+   "fields": [
+    {
+     "field": "output_per_1m",
+     "old": null,
+     "new": 2.1
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "change",
+   "model": "doubao-embedding-vision",
+   "fields": [
+    {
+     "field": "input_per_1m",
+     "old": 0.7,
+     "new": 1.8
+    },
+    {
+     "field": "note",
+     "old": "向量模型（embedding）；图片输入 1.8 元/百万 token",
+     "new": "向量模型（embedding）；图片输入"
+    }
+   ]
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "removed",
+   "model": "deepseek-v4-pro正式版",
+   "fields": []
+  },
+  {
+   "ts": "2026-09-13T23:06:37Z",
+   "provider": "doubao",
+   "provider_name": "火山方舟 (豆包)",
+   "kind": "removed",
+   "model": "doubao-pro-32k",
+   "fields": []
   }
  ],
  "news": {
@@ -11941,7 +12015,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:10:22Z",
+   "last_fetch_ts": "2026-09-13T23:10:11Z",
    "source": "official",
    "source_urls": [
     "https://support.claude.com/en/articles/11049762-choose-a-claude-plan",
@@ -12055,7 +12129,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:10:29Z",
+   "last_fetch_ts": "2026-09-13T23:10:19Z",
    "source": "official",
    "source_urls": [
     "https://mistral.ai/pricing"
@@ -12197,7 +12271,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:10:44Z",
+   "last_fetch_ts": "2026-09-13T23:10:33Z",
    "source": "official",
    "source_urls": [
     "https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package"
@@ -12210,7 +12284,7 @@
   "doubao": {
    "plans": [
     {
-     "name": "Lite",
+     "name": "Lite 套餐",
      "plan_type": "Coding Plan",
      "price": "首购优惠价仅9.9元/月",
      "billing": "月",
@@ -12225,13 +12299,14 @@
       "Doubao-Seed-Code",
       "GLM-4.7",
       "DeepSeek-V3.2",
-      "Kimi-K2-Thinking"
+      "Kimi-K2-Thinking",
+      "Auto 模式"
      ],
-     "note": "官网表述为首购优惠价；请求额度为“最多约”值。叠加推荐优惠券首月优惠低至8.9元；首购一次性下单三个月可享5折。",
+     "note": "官网表述为首购优惠价；请求额度为“最多约”值。叠加推荐优惠券时，首月优惠低至8.9元；首购一次性下单三个月可享5折。",
      "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
     },
     {
-     "name": "Pro",
+     "name": "Pro 套餐",
      "plan_type": "Coding Plan",
      "price": "首购优惠价49.9元/月",
      "billing": "月",
@@ -12242,8 +12317,8 @@
        "window": "每5小时"
       },
       {
-       "label": "相对用量",
-       "value": "Lite 套餐的5倍",
+       "label": "相对 Lite 套餐用量",
+       "value": "5倍",
        "window": null
       }
      ],
@@ -12251,21 +12326,22 @@
       "Doubao-Seed-Code",
       "GLM-4.7",
       "DeepSeek-V3.2",
-      "Kimi-K2-Thinking"
+      "Kimi-K2-Thinking",
+      "Auto 模式"
      ],
-     "note": "官网表述为首购优惠价；请求额度为“最多约”值。",
+     "note": "官网表述为首购优惠价；请求额度为“最多约”值。官网称 Pro 套餐用量是 Lite 套餐的5倍。",
      "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:10:45Z",
+   "last_fetch_ts": "2026-09-13T23:10:35Z",
    "source": "official",
    "source_urls": [
     "https://developer.volcengine.com/articles/7595502342175195187"
    ],
    "page_has_plans": true,
-   "plans_hash": "2a7f84983f7cd6cf04fbf6a9fdf6bc83054f46cb8b64ce3975c8eb7b0b544a19",
-   "fetched_at": "2026-09-13T22:10:45Z",
+   "plans_hash": "748882e3be6f80bfd07f65206b60b754511960c2e392b64b5148ebc44201b8ee",
+   "fetched_at": "2026-09-13T23:10:35Z",
    "status_note": null
   },
   "moonshot": {
@@ -12274,90 +12350,110 @@
      "name": "Andante",
      "plan_type": "会员计划",
      "price": "¥49/月",
-     "billing": "连续包月；连续包年（年付更优惠）",
+     "billing": "连续包月",
      "quotas": [
+      {
+       "label": "Agent 用量",
+       "value": "约 30 个",
+       "window": "按月"
+      },
       {
        "label": "Agent 优先生成队列",
        "value": "4 倍速",
        "window": null
       },
       {
-       "label": "专业数据库调用",
+       "label": "专业数据库",
        "value": "1000 次调用",
-       "window": "每个计费周期（按月刷新）"
+       "window": "按月"
       }
      ],
      "models": [],
-     "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；官网称 Agent 用量数值为基于常见任务 token 消耗的月额度估算。",
+     "note": "所有会员功能共享一个额度池，按实际 token 消耗计算；Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值。",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Moderato",
      "plan_type": "会员计划",
      "price": "¥99/月",
-     "billing": "连续包月；连续包年（年付更优惠）",
+     "billing": "连续包月",
      "quotas": [
+      {
+       "label": "Agent 用量",
+       "value": "约 60 个",
+       "window": "按月"
+      },
       {
        "label": "Agent 优先生成队列",
        "value": "4 倍速",
        "window": null
       },
       {
-       "label": "Agent 集群可用",
+       "label": "Agent 集群",
        "value": "25 次",
-       "window": "每个计费周期（按月刷新）"
+       "window": "按月"
       },
       {
-       "label": "专业数据库调用",
+       "label": "专业数据库",
        "value": "2000 次调用",
-       "window": "每个计费周期（按月刷新）"
+       "window": "按月"
       }
      ],
      "models": [],
-     "note": "在 Andante 基础上；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。",
+     "note": "在 Andante 基础上。所有会员功能共享一个额度池，按实际 token 消耗计算；Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值。",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Allegretto",
      "plan_type": "会员计划",
      "price": "¥199/月",
-     "billing": "连续包月；连续包年（年付更优惠）",
+     "billing": "连续包月",
      "quotas": [
+      {
+       "label": "Agent 用量",
+       "value": "约 150 个",
+       "window": "按月"
+      },
       {
        "label": "Agent 优先生成队列",
        "value": "4 倍速",
        "window": null
       },
       {
-       "label": "Agent 集群可用",
+       "label": "Agent 集群",
        "value": "50 次",
-       "window": "每个计费周期（按月刷新）"
+       "window": "按月"
       },
       {
-       "label": "专业数据库调用",
+       "label": "专业数据库",
        "value": "5000 次调用",
-       "window": "每个计费周期（按月刷新）"
+       "window": "按月"
       }
      ],
      "models": [],
-     "note": "在 Andante 基础上；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。",
+     "note": "在 Andante 基础上。所有会员功能共享一个额度池，按实际 token 消耗计算；Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值。",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Allegro",
      "plan_type": "会员计划",
      "price": "¥699/月",
-     "billing": "连续包月；连续包年（年付更优惠）",
+     "billing": "连续包月",
      "quotas": [
+      {
+       "label": "Agent 用量",
+       "value": "约 360 个",
+       "window": "按月"
+      },
       {
        "label": "Agent 优先生成队列",
        "value": "4 倍速",
        "window": null
       },
       {
-       "label": "Agent 集群可用",
+       "label": "Agent 集群",
        "value": "120 次",
-       "window": "每个计费周期（按月刷新）"
+       "window": "按月"
       },
       {
        "label": "超长对话容量",
@@ -12365,25 +12461,25 @@
        "window": null
       },
       {
-       "label": "专业数据库调用",
+       "label": "专业数据库",
        "value": "12000 次调用",
-       "window": "每个计费周期（按月刷新）"
+       "window": "按月"
       }
      ],
      "models": [],
-     "note": "在 Andante 基础上；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。",
+     "note": "在 Andante 基础上。所有会员功能共享一个额度池，按实际 token 消耗计算；Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值。",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:10:52Z",
+   "last_fetch_ts": "2026-09-13T23:10:42Z",
    "source": "official",
    "source_urls": [
     "https://www.kimi.com/help/membership/membership-pricing"
    ],
    "page_has_plans": true,
-   "plans_hash": "dd851cbe0f8d710086d0d1a4463953e91fc2bc06b80f5bb43509daa13243355e",
-   "fetched_at": "2026-09-13T22:10:52Z",
+   "plans_hash": "93a8733ae631fd3158f37204fde7e14e96e9af303b80e738f99193cd35ecdbc0",
+   "fetched_at": "2026-09-13T23:10:42Z",
    "status_note": null
   },
   "minimax": {
@@ -12552,7 +12648,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:11:13Z",
+   "last_fetch_ts": "2026-09-13T23:10:57Z",
    "source": "official",
    "source_urls": [
     "https://platform.minimaxi.com/subscribe/token-plan"
@@ -12590,7 +12686,7 @@
    "fetched_at": "2026-09-05T12:11:29Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:11:37Z",
+   "last_fetch_ts": "2026-09-13T23:11:21Z",
    "websearch_hash": "703421e832f07a1938c7abb8412f914c73e33d10e21151cee9850de0b9f624d6",
    "name": "Anthropic (Claude)",
    "region": "国际"
@@ -12666,7 +12762,7 @@
    "fetched_at": "2026-09-12T14:13:26Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:11:38Z",
+   "last_fetch_ts": "2026-09-13T23:11:21Z",
    "websearch_hash": "c77ac08baae1f9883d140e792720225c2ff2ed37b415dfdbc79f5595beeaa2c1",
    "name": "OpenAI",
    "region": "国际"
@@ -12709,7 +12805,7 @@
    "fetched_at": "2026-09-05T12:11:51Z",
    "status_note": "页面无变化",
    "last_error": "官网重定向次数超过 10 次",
-   "last_fetch_ts": "2026-09-13T22:11:38Z",
+   "last_fetch_ts": "2026-09-13T23:11:21Z",
    "websearch_hash": "955671ee8bb93d1fb1c9793d002b7b1063d96be98f6e602db5c4f638e14af82d",
    "name": "Google Gemini",
    "region": "国际"
@@ -12740,7 +12836,7 @@
    "fetched_at": null,
    "status_note": "官网页未解析出联网搜索信息，已保留上次 1 条",
    "last_error": "官网页未解析出联网搜索信息，已保留上次 1 条",
-   "last_fetch_ts": "2026-09-13T22:11:40Z",
+   "last_fetch_ts": "2026-09-13T23:11:24Z",
    "websearch_hash": "0b4c311e3ec7a92fd83db8e04e3fdaaa1a100941793b9edfef92bdacb77f2fe0",
    "name": "xAI (Grok)",
    "region": "国际"
@@ -12771,7 +12867,7 @@
    "fetched_at": null,
    "status_note": "官网页未解析出联网搜索信息，已保留上次 1 条",
    "last_error": "官网页未解析出联网搜索信息，已保留上次 1 条",
-   "last_fetch_ts": "2026-09-13T22:12:01Z",
+   "last_fetch_ts": "2026-09-13T23:11:45Z",
    "websearch_hash": "0f83717359640927fb3395aceaa3a48eee73f43f406a44817495ce8b579b22a9",
    "name": "Mistral",
    "region": "国际"
@@ -12802,7 +12898,7 @@
    "fetched_at": null,
    "status_note": "官网页未解析出联网搜索信息，已保留上次 1 条",
    "last_error": "官网页未解析出联网搜索信息，已保留上次 1 条",
-   "last_fetch_ts": "2026-09-13T22:12:24Z",
+   "last_fetch_ts": "2026-09-13T23:12:08Z",
    "websearch_hash": "2e1f14bd5f3e1cd9421d94ec37988a13a6e26ea8f99898d7e88d1fa983846ae2",
    "name": "DeepSeek",
    "region": "国内"
@@ -12877,7 +12973,7 @@
    "fetched_at": "2026-09-11T11:12:22Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:12:27Z",
+   "last_fetch_ts": "2026-09-13T23:12:10Z",
    "websearch_hash": "6987e17bcbd17d633bc28feb875cb6ceec6caa7102d76c2171e8e968fd123433",
    "name": "阿里云百炼 (Qwen)",
    "region": "国内"
@@ -12905,11 +13001,11 @@
      "note": null
     }
    ],
-   "fetched_at": "2026-09-13T22:12:29Z",
+   "fetched_at": "2026-09-13T23:12:12Z",
    "status_note": null,
    "last_error": "官网页未解析出联网搜索信息，已保留上次 1 条",
-   "last_fetch_ts": "2026-09-13T22:12:29Z",
-   "websearch_hash": "0cc545660a05f65dcf4bec068d4b74063e29b490c90e44832d8e4bdf54ce9556",
+   "last_fetch_ts": "2026-09-13T23:12:12Z",
+   "websearch_hash": "b952fa41cdc5e42683c0dd3b45f3885da8d8dba6217b02f0fa2ae145b86ee375",
    "name": "火山方舟 (豆包)",
    "region": "国内"
   },
@@ -12994,7 +13090,7 @@
    "fetched_at": "2026-09-08T04:12:53Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:13:08Z",
+   "last_fetch_ts": "2026-09-13T23:12:45Z",
    "websearch_hash": "1d23fe3abcc3cc70fbc612c4c9d8fa0e7fb37f089582873fb6e78d2196d82d8d",
    "name": "智谱 (GLM)",
    "region": "国内"
@@ -13025,7 +13121,7 @@
    "fetched_at": "2026-09-05T12:14:24Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:13:22Z",
+   "last_fetch_ts": "2026-09-13T23:12:59Z",
    "websearch_hash": "652e42276a18be3a7c1de0ea727e5e781d2f446fda12c9a827533467602b0db2",
    "name": "月之暗面 (Kimi)",
    "region": "国内"
@@ -13056,7 +13152,7 @@
    "fetched_at": null,
    "status_note": "官网页未解析出联网搜索信息，已保留上次 1 条",
    "last_error": "官网页未解析出联网搜索信息，已保留上次 1 条",
-   "last_fetch_ts": "2026-09-13T22:13:25Z",
+   "last_fetch_ts": "2026-09-13T23:13:02Z",
    "websearch_hash": "34be97b0a397564582c6906b00fdddd56674266223036d9c1fcc3c0296246bb3",
    "name": "MiniMax",
    "region": "国内"
@@ -13099,7 +13195,7 @@
    "fetched_at": "2026-09-10T13:15:45Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:13:44Z",
+   "last_fetch_ts": "2026-09-13T23:13:25Z",
    "websearch_hash": "92ba87a5a50bc7aa0a34e7e9e772e53b140613d489bc8518386b81102af3ff19",
    "name": "Tavily",
    "region": "国际"
@@ -13197,7 +13293,7 @@
    "fetched_at": "2026-09-08T23:15:26Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:13:44Z",
+   "last_fetch_ts": "2026-09-13T23:13:26Z",
    "websearch_hash": "263de0359201089c90f9821c4dbf211517551f42d767dfb86b908070c0f51a51",
    "name": "Exa",
    "region": "国际"
@@ -13240,7 +13336,7 @@
    "fetched_at": "2026-09-07T08:13:53Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:13:45Z",
+   "last_fetch_ts": "2026-09-13T23:13:26Z",
    "websearch_hash": "280d29766af531a097fd47e5d22419304c803d6bebbdbe38ebb57c98a9892f90",
    "name": "Brave Search API",
    "region": "国际"
@@ -13349,7 +13445,7 @@
    "fetched_at": "2026-09-05T12:15:51Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:13:45Z",
+   "last_fetch_ts": "2026-09-13T23:13:27Z",
    "websearch_hash": "177b119d5e37366a474226870b047405dbdb1ef3aae9baf7cf96bf03efa41a28",
    "name": "Perplexity",
    "region": "国际"
@@ -13414,7 +13510,7 @@
    "fetched_at": "2026-09-11T17:14:16Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:13:46Z",
+   "last_fetch_ts": "2026-09-13T23:13:29Z",
    "websearch_hash": "8dab2bcdbc3966fc1661b3e159a61770dcbcd701e98dfbdacffc1088123de787",
    "name": "You.com",
    "region": "国际"
@@ -13524,7 +13620,7 @@
    "fetched_at": "2026-09-11T14:13:30Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:13:47Z",
+   "last_fetch_ts": "2026-09-13T23:13:29Z",
    "websearch_hash": "ab1dcb2f3898c8f44ef6e44324d226dd7a97f8260be8ae8dc0763e8d45272f08",
    "name": "Linkup",
    "region": "国际"
@@ -13556,7 +13652,7 @@
    "fetched_at": "2026-09-13T18:14:53Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:13:48Z",
+   "last_fetch_ts": "2026-09-13T23:13:30Z",
    "websearch_hash": "92579b0013ea5dbb15dae3553b1f50dee995c2cf679e499eee68ee84b1b7c70d",
    "name": "Jina AI Search",
    "region": "国际"
@@ -13575,44 +13671,66 @@
    "has_search": true,
    "offerings": [
     {
-     "name": "Search",
-     "pricing": "Search costs 2 credits per 10 results; paid-plan pay-as-you-go credits cost $5 per increment (Hobby: 1,000 credits).",
-     "price_per_1k_usd": null,
-     "price_basis": null,
-     "free_quota": "500 searches or 1,000 pages scraped",
-     "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs，可选附带每个结果的完整页面内容",
+     "name": "Search — Free Plan",
+     "pricing": "$0/month; 1,000 credits / month; 500 searches or 1,000 pages scraped",
+     "price_per_1k_usd": 0.0,
+     "price_basis": "Free Plan（500 searches/month）",
+     "free_quota": "1,000 credits / month；500 searches or 1,000 pages scraped",
+     "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs；可选返回抓取内容",
      "cites_sources": true,
      "default_on": null,
-     "note": "费用按结果数向上取整：1–10 个结果为 2 credits；搜索结果默认包含 Highlights。"
+     "note": "Search costs 2 credits per 10 results; results include Highlights by default."
     },
     {
-     "name": "Search — Anonymized ZDR",
-     "pricing": "Cost: 2 credits per 10 results. Available on Enterprise plans via enterprise: [\"anon\"].",
-     "price_per_1k_usd": null,
-     "price_basis": null,
+     "name": "Search — Hobby",
+     "pricing": "$16/month billed yearly ($19/month billed monthly), 5,000 credits / month; 2,500 searches or 5,000 pages scraped",
+     "price_per_1k_usd": 6.4,
+     "price_basis": "Hobby annual billing（2,500 searches/month included）",
      "free_quota": null,
-     "output_type": "结构化搜索结果",
+     "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs；可选返回抓取内容",
      "cites_sources": true,
-     "default_on": false,
-     "note": "Firecrawl 侧全零数据保留；上游搜索提供商可能缓存查询，但查询会被完全匿名化。"
+     "default_on": null,
+     "note": "Pay-as-you-go: 1,000 extra credits per $5; Search costs 2 credits per 10 results."
     },
     {
-     "name": "Search — End-to-End ZDR",
-     "pricing": "Cost: 10 credits per 10 results. Available on Enterprise plans via enterprise: [\"zdr\"].",
-     "price_per_1k_usd": null,
-     "price_basis": null,
+     "name": "Search — Standard",
+     "pricing": "$83/month billed yearly, 100,000 credits / month; 50,000 searches or 100,000 pages scraped",
+     "price_per_1k_usd": 1.66,
+     "price_basis": "Standard annual billing（50,000 searches/month included）",
      "free_quota": null,
-     "output_type": "结构化搜索结果",
+     "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs；可选返回抓取内容",
      "cites_sources": true,
-     "default_on": false,
-     "note": "Firecrawl 与上游搜索提供商均执行零数据保留；查询和结果数据不会在管道任何环节存储。"
+     "default_on": null,
+     "note": "Pay-as-you-go: 2,000 extra credits per $5; Search costs 2 credits per 10 results."
+    },
+    {
+     "name": "Search — Growth",
+     "pricing": "$333/month billed yearly, 500,000 credits / month; 250,000 searches or 500,000 pages scraped",
+     "price_per_1k_usd": 1.332,
+     "price_basis": "Growth annual billing（250,000 searches/month included）",
+     "free_quota": null,
+     "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs；可选返回抓取内容",
+     "cites_sources": true,
+     "default_on": null,
+     "note": "Pay-as-you-go: 2,500 extra credits per $5; Search costs 2 credits per 10 results."
+    },
+    {
+     "name": "Search — Scale",
+     "pricing": "$599/month billed yearly, 1,000,000 credits / month; 500,000 searches or 1,000,000 pages scraped",
+     "price_per_1k_usd": 1.198,
+     "price_basis": "Scale annual billing（500,000 searches/month included）",
+     "free_quota": null,
+     "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs；可选返回抓取内容",
+     "cites_sources": true,
+     "default_on": null,
+     "note": "Pay-as-you-go: 5,000 extra credits per $5; Search costs 2 credits per 10 results."
     }
    ],
-   "fetched_at": "2026-09-13T18:15:38Z",
-   "status_note": "页面无变化",
+   "fetched_at": "2026-09-13T23:14:11Z",
+   "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:14:29Z",
-   "websearch_hash": "73eba4a7222b24f2bc072e5ddb5c4e54921efd1c316416ccd8467d31997c250f",
+   "last_fetch_ts": "2026-09-13T23:14:11Z",
+   "websearch_hash": "5d1c896167ace9d5f366d4754d222a89ba0155f0466c70af4830bbabafcbf19e",
    "name": "Firecrawl Search",
    "region": "国际"
   },
@@ -13642,7 +13760,7 @@
    "fetched_at": "2026-09-05T12:18:10Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:14:30Z",
+   "last_fetch_ts": "2026-09-13T23:14:31Z",
    "websearch_hash": "32b595bd27cdd7f9f75f9f8268815ccfa7015a647ae79eb788fcf72040d65d62",
    "name": "博查 AI Search API",
    "region": "国内"
@@ -13660,21 +13778,21 @@
    "offerings": [
     {
      "name": "Google Search API",
-     "pricing": "Starter: $50 for 50k credits ($1.00/1k); no monthly subscriptions; pay for credits needed.",
+     "pricing": "Starter: $50 for 50k credits ($1.00/1k); Standard: $375 for 500k credits ($0.75/1k); Scale: $1250 for 2.5M credits ($0.50/1k); Ultimate: $3750 for 12.5M credits ($0.30/1k).",
      "price_per_1k_usd": 1.0,
      "price_basis": "Starter（50k credits / 50,000 queries）",
-     "free_quota": "Get 2,500 free queries. No credit card required.",
-     "output_type": "结构化 Google SERP 搜索结果（JSON），包括 organic、knowledgeGraph、peopleAlsoAsk、relatedSearches 等",
+     "free_quota": "Get 2,500 free queries; No credit card required",
+     "output_type": "结构化 Google SERP 搜索结果（JSON），含网页、图片、新闻、地图、地点、视频、购物、学术、专利和自动补全结果",
      "cites_sources": true,
      "default_on": null,
-     "note": "成功响应时扣除 credits；每次 API 调用直接查询 Google，实时结果，不缓存。"
+     "note": "按 credits top-up，无月度订阅；每次成功响应扣 credits；credits 有效期 6 个月；实时查询 Google。"
     }
    ],
-   "fetched_at": "2026-09-13T22:14:31Z",
+   "fetched_at": "2026-09-13T23:14:32Z",
    "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:14:31Z",
-   "websearch_hash": "62cc7f6fa1ea10f2a7d538d89e70e316664d1f401a5b3f4ad4ab6c1d70672414",
+   "last_fetch_ts": "2026-09-13T23:14:32Z",
+   "websearch_hash": "e6e69f2d99352020e4087519866d7d24ece4ef305d907ddf5f51ff77cd906a77",
    "name": "Serper",
    "region": "国际"
   },
@@ -13704,7 +13822,7 @@
    "fetched_at": "2026-09-05T12:18:32Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:14:39Z",
+   "last_fetch_ts": "2026-09-13T23:14:40Z",
    "websearch_hash": "a9e52ac3c1d629f5f3701c626dec8fa7a3a9c3ec68af4e325a2be7ffad67f624",
    "name": "SerpApi",
    "region": "国际"
@@ -13735,7 +13853,7 @@
    "fetched_at": "2026-09-05T12:18:40Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:14:39Z",
+   "last_fetch_ts": "2026-09-13T23:14:40Z",
    "websearch_hash": "a154e899032153ed36e0025ebaa7b31cc7b5fb1f11c9cc12df975a6681190df8",
    "name": "Google Custom Search JSON API",
    "region": "国际"
@@ -13788,7 +13906,7 @@
    "fetched_at": "2026-09-05T12:18:45Z",
    "status_note": "页面无变化",
    "last_error": "HTTP 404",
-   "last_fetch_ts": "2026-09-13T22:14:39Z",
+   "last_fetch_ts": "2026-09-13T23:14:41Z",
    "websearch_hash": "83f1f9f967a24d40481c9c2dd56746100916d602f20a49c90669c4f559efc066",
    "name": "DataForSEO SERP API",
    "region": "国际"
@@ -13809,18 +13927,29 @@
      "pricing": "Free Tier: 5K requests; Pay as you go: $1.5/1K requests; Scale: $499/month, 380K requests included, $1.3/1K additional requests; Enterprise: Custom.",
      "price_per_1k_usd": 1.5,
      "price_basis": "Pay as you go（$1.5/1K requests）",
-     "free_quota": "5K requests；5K records per month；No credit card required",
+     "free_quota": "Free Tier: 5K requests; 5K records per month",
      "output_type": "JSON or HTML output",
      "cites_sources": null,
      "default_on": null,
-     "note": "Pay only for success；每次 API 执行计为一次 request；支持195个国家及城市级定位。"
+     "note": "Pay only for success；每次 API 执行计为一次 request；支持主要搜索引擎和195个国家。"
+    },
+    {
+     "name": "SERP API Scale",
+     "pricing": "$499/month; 380K requests included; $1.3/1K additional requests.",
+     "price_per_1k_usd": 1.3,
+     "price_basis": "Scale additional requests",
+     "free_quota": null,
+     "output_type": "JSON or HTML output",
+     "cites_sources": null,
+     "default_on": null,
+     "note": "Unlimited concurrency；Cancel anytime。"
     }
    ],
-   "fetched_at": "2026-09-13T22:14:48Z",
+   "fetched_at": "2026-09-13T23:14:50Z",
    "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-13T22:14:48Z",
-   "websearch_hash": "7373ee1e4681bd416811c4bd3f8de6efd18775938897815aed9fb85a6a396a95",
+   "last_fetch_ts": "2026-09-13T23:14:50Z",
+   "websearch_hash": "ad72aad8746582e65592e5e36d81b642e69fddd6c68aabd2c696eefd48147a21",
    "name": "Bright Data SERP API",
    "region": "国际"
   }
@@ -13889,13 +14018,13 @@
     "https://developers.openai.com/api/docs/pricing",
     "https://developers.openai.com/api/docs/guides/image-generation"
    ],
-   "last_fetch_ts": "2026-09-13T22:15:10Z",
+   "last_fetch_ts": "2026-09-13T23:15:01Z",
    "source_warnings": [],
    "imagegen_hash": "5aceadcf15e3aaa1274b0d5f2c2797d2250a17817b3724fd5ebc7c98d41abccd",
-   "status_note": "官网生图抽取覆盖项由 1 变为 12，等待下轮同语义结果确认",
-   "last_error": "官网生图抽取覆盖项由 1 变为 12，等待下轮同语义结果确认",
-   "imagegen_pending_shrink_hash": "0fcfca1f40967aca92706214b85e290dc89c1b3f9a33ba2a9d0b9777210c1ebb",
-   "imagegen_pending_shrink_count": 12,
+   "status_note": "官网生图抽取覆盖项由 1 变为 7，等待下轮同语义结果确认",
+   "last_error": "官网生图抽取覆盖项由 1 变为 7，等待下轮同语义结果确认",
+   "imagegen_pending_shrink_hash": "541d12ebdb6d9f63e059317d4607ec5ef8082c943f2ea1dc64a9f452b6643cdf",
+   "imagegen_pending_shrink_count": 7,
    "name": "OpenAI",
    "region": "国际"
   },
@@ -13990,10 +14119,10 @@
     "https://ai.google.dev/gemini-api/docs/image-generation?hl=en",
     "https://ai.google.dev/gemini-api/docs/deprecations"
    ],
-   "last_fetch_ts": "2026-09-13T22:15:47Z",
+   "last_fetch_ts": "2026-09-13T23:15:33Z",
    "source_warnings": [
-    "https://ai.google.dev/gemini-api/docs/image-generation?hl=en: 重定向到非允许官网: https://accounts.google.com/o/oauth2/v2/auth?client_id=157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fai.google.dev%2Foauth2callback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles.award+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdevprofiles.full_control.firstparty+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgoogledevelopers&access_type=online&response_type=code&state=%7B%22csrf_token%22%3A+%22e1ff716aef7899dcec5839024e71af5c62fd8a0cfe82e7af3296f9d535da4417%22%2C+%22return_url%22%3A+%22https%3A%2F%2Fai.google.dev%2Fgemini-api%2Fdocs%2Fimage-generation%3Fhl%3Den%22%7D&prompt=none&auto_signin=True",
-    "https://ai.google.dev/gemini-api/docs/deprecations: 重定向到非允许官网: https://accounts.google.com/o/oauth2/v2/auth?client_id=157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fai.google.dev%2Foauth2callback&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles.award+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdevprofiles.full_control.firstparty+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgoogledevelopers+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&access_type=online&response_type=code&state=%7B%22csrf_token%22%3A+%22145fcb325dae8158bd07a0925830d1a834c1705b27a8b2b95ff9e416a03d44a8%22%2C+%22return_url%22%3A+%22https%3A%2F%2Fai.google.dev%2Fgemini-api%2Fdocs%2Fdeprecations%22%7D&prompt=none&auto_signin=True"
+    "https://ai.google.dev/gemini-api/docs/image-generation?hl=en: 重定向到非允许官网: https://accounts.google.com/o/oauth2/v2/auth?client_id=157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fai.google.dev%2Foauth2callback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgoogledevelopers+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles.award+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdevprofiles.full_control.firstparty+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=online&response_type=code&state=%7B%22csrf_token%22%3A+%2266279e569e43c3ef0d0f07ead135a65fbf4357e57aab6e09887459018589448b%22%2C+%22return_url%22%3A+%22https%3A%2F%2Fai.google.dev%2Fgemini-api%2Fdocs%2Fimage-generation%3Fhl%3Den%22%7D&prompt=none&auto_signin=True",
+    "https://ai.google.dev/gemini-api/docs/deprecations: 重定向到非允许官网: https://accounts.google.com/o/oauth2/v2/auth?client_id=157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fai.google.dev%2Foauth2callback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgoogledevelopers+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles.award+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdevprofiles.full_control.firstparty+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&access_type=online&response_type=code&state=%7B%22csrf_token%22%3A+%22b419feea43b3fb4b716b1bafd974d7864b1b00386edf42d097ab7ab693ca7f3f%22%2C+%22return_url%22%3A+%22https%3A%2F%2Fai.google.dev%2Fgemini-api%2Fdocs%2Fdeprecations%22%7D&prompt=none&auto_signin=True"
    ],
    "imagegen_hash": "465d7a9b8c5939900a333f7eb93bf41cff49ab2f0b7767f9fa27ecb9857ae1f5",
    "status_note": "2 个次要官网来源抓取失败；保留上次完整事实，来源恢复后再更新",
@@ -14027,18 +14156,16 @@
    ],
    "offerings": [
     {
-     "name": "grok-imagine-image",
+     "name": "grok-imagine-image-quality",
      "variant_key": null,
      "api_available": true,
-     "modes": [
-      "text-to-image"
-     ],
-     "pricing": "$0.02 / image",
+     "modes": [],
+     "pricing": "$0.05 / image",
      "currency": "USD",
      "region": null,
-     "price_per_image": 0.02,
+     "price_per_image": 0.05,
      "comparison_group": null,
-     "price_basis": "grok-imagine-image，按每张图片计费；定价页未指定对应分辨率或质量档。",
+     "price_basis": "grok-imagine-image-quality，按每张图片计费；页面未说明对应质量或分辨率。",
      "resolution": null,
      "aspect_ratios": null,
      "output_formats": null,
@@ -14048,7 +14175,29 @@
      "lifecycle_status": "unknown",
      "sunset_at": null,
      "free_quota": null,
-     "note": "官网 Imagine API 定价。"
+     "note": null
+    },
+    {
+     "name": "grok-imagine-image",
+     "variant_key": null,
+     "api_available": true,
+     "modes": [],
+     "pricing": "$0.02 / image",
+     "currency": "USD",
+     "region": null,
+     "price_per_image": 0.02,
+     "comparison_group": null,
+     "price_basis": "grok-imagine-image，按每张图片计费；页面未说明对应质量或分辨率。",
+     "resolution": null,
+     "aspect_ratios": null,
+     "output_formats": null,
+     "comparison_width": null,
+     "comparison_height": null,
+     "quality_tier": null,
+     "lifecycle_status": "unknown",
+     "sunset_at": null,
+     "free_quota": null,
+     "note": null
     },
     {
      "name": "grok-imagine-image-2.0",
@@ -14062,57 +14211,31 @@
      "region": null,
      "price_per_image": 0.04,
      "comparison_group": null,
-     "price_basis": "grok-imagine-image-2.0，按每张图片计费；定价页未指定对应分辨率或质量档。",
+     "price_basis": "grok-imagine-image-2.0，按每张图片计费；可选 1k 或 2k 分辨率及 low、medium、auto 质量，页面未按这些选项拆分价格。",
      "resolution": "1k（默认）；2k",
      "aspect_ratios": "1:1、16:9、9:16、4:3、3:4、3:2、2:3、2:1、1:2、19.5:9、9:19.5、20:9、9:20、21:9、5:2、auto",
-     "output_formats": "url（默认，临时托管 URL）；base64",
+     "output_formats": "url（默认临时托管 URL）；base64（b64_json）",
      "comparison_width": null,
      "comparison_height": null,
      "quality_tier": null,
      "lifecycle_status": "unknown",
      "sunset_at": null,
      "free_quota": null,
-     "note": "支持 n=1–10；quality 可为 low、medium 或 auto，auto 生图当前使用 low。"
-    },
-    {
-     "name": "grok-imagine-image-quality",
-     "variant_key": null,
-     "api_available": true,
-     "modes": [
-      "text-to-image"
-     ],
-     "pricing": "$0.05 / image",
-     "currency": "USD",
-     "region": null,
-     "price_per_image": 0.05,
-     "comparison_group": null,
-     "price_basis": "grok-imagine-image-quality，按每张图片计费；定价页未指定对应分辨率或质量档。",
-     "resolution": null,
-     "aspect_ratios": null,
-     "output_formats": null,
-     "comparison_width": null,
-     "comparison_height": null,
-     "quality_tier": null,
-     "lifecycle_status": "unknown",
-     "sunset_at": null,
-     "free_quota": null,
-     "note": "官网 Imagine API 定价。"
+     "note": "支持单次请求 1–10 张；auto 生成当前使用 low 质量。"
     }
    ],
-   "fetched_at": "2026-09-13T09:15:41Z",
+   "fetched_at": "2026-09-13T23:16:20Z",
    "has_image_generation": true,
    "configured_source_urls": [
     "https://docs.x.ai/developers/pricing",
     "https://docs.x.ai/developers/model-capabilities/images/generation"
    ],
-   "last_fetch_ts": "2026-09-13T22:16:19Z",
+   "last_fetch_ts": "2026-09-13T23:16:20Z",
    "source_warnings": [],
-   "imagegen_hash": "3b0d432138261a5edb412867b3dfab1cf05d7274ba665ce38cb656ec40161c0d",
-   "status_note": "官网生图抽取已记录能力/额度/规格事实变少，等待下轮同语义结果确认",
-   "last_error": "官网生图抽取已记录能力/额度/规格事实变少，等待下轮同语义结果确认",
-   "imagegen_excerpt_hash": "6e0c71b54d7ab96d5c47a8249c0b2b3a2382bb5acb498e6d1e6ce63905872a24",
-   "imagegen_pending_shrink_hash": "e90cabd404ac099cf509cf4cac3618db5b1900a9832460f9429361b865266117",
-   "imagegen_pending_shrink_count": 3,
+   "imagegen_hash": "1105873e4f1d85e8004d88126137e40561fd07f1dd13ffa815a047cb5c322337",
+   "status_note": null,
+   "last_error": null,
+   "imagegen_excerpt_hash": "3b7bbc7866c07c3e264912b850e6c6fbc676c882ff5f85ec4d95cca8fe7ef4b0",
    "name": "xAI Grok Imagine",
    "region": "国际"
   },
@@ -14178,13 +14301,13 @@
     "https://docs.bfl.ai/quick_start/pricing",
     "https://docs.bfl.ai/flux_2"
    ],
-   "last_fetch_ts": "2026-09-13T22:16:30Z",
+   "last_fetch_ts": "2026-09-13T23:16:31Z",
    "source_warnings": [],
    "imagegen_hash": "2fc2c12634940c7cf6bf7115bb1ae54206d6c0b84ef6f146571f73a77cb3a675",
-   "status_note": "官网生图抽取覆盖项由 1 变为 13，等待下轮同语义结果确认",
-   "last_error": "官网生图抽取覆盖项由 1 变为 13，等待下轮同语义结果确认",
-   "imagegen_pending_shrink_hash": "4c0abc17a206ef45bad961aadafc85248f940baa58f75bde055291c92903a021",
-   "imagegen_pending_shrink_count": 13,
+   "status_note": "官网生图抽取覆盖项由 1 变为 14，等待下轮同语义结果确认",
+   "last_error": "官网生图抽取覆盖项由 1 变为 14，等待下轮同语义结果确认",
+   "imagegen_pending_shrink_hash": "3f24a3586c85499d144590e23bf77b3c5c080a745c6e5aba26f85f9b3acc3c68",
+   "imagegen_pending_shrink_count": 14,
    "name": "Black Forest Labs",
    "region": "国际"
   },
@@ -15783,7 +15906,7 @@
     "https://klingai.com/document-api/guides/capability-map/image",
     "https://klingai.com/document-api/api/image/3-0-omni/image-generation"
    ],
-   "last_fetch_ts": "2026-09-13T22:14:53Z",
+   "last_fetch_ts": "2026-09-13T23:14:54Z",
    "source_warnings": [],
    "imagegen_hash": "87527a2d0cc8ee559f4ad40020e5667fda51ad793644d12b11e02bba249c903d",
    "status_note": "官网生图页面无效: 页面是空白/报错/登录/验证壳；保留上次数据",
@@ -16050,7 +16173,7 @@
     "https://developers.openai.com/api/docs/guides/video-generation",
     "https://developers.openai.com/api/docs/deprecations"
    ],
-   "last_fetch_ts": "2026-09-13T22:17:02Z",
+   "last_fetch_ts": "2026-09-13T23:17:09Z",
    "source_warnings": [],
    "videogen_hash": "ffcbbb0977cfcb4edba28c3531160d0aa3b5929e3e783413ee39023aba8f417b",
    "status_note": "页面无变化",
@@ -16249,8 +16372,8 @@
     "https://ai.google.dev/gemini-api/docs/pricing",
     "https://ai.google.dev/gemini-api/docs/video"
    ],
-   "last_error": "https://ai.google.dev/gemini-api/docs/pricing: 重定向到非允许官网: https://accounts.google.com/o/oauth2/v2/auth?client_id=157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fai.google.dev%2Foauth2callback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo",
-   "last_fetch_ts": "2026-09-13T22:17:02Z",
+   "last_error": "https://ai.google.dev/gemini-api/docs/pricing: 重定向到非允许官网: https://accounts.google.com/o/oauth2/v2/auth?client_id=157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fai.google.dev%2Foauth2callback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgooglede",
+   "last_fetch_ts": "2026-09-13T23:17:09Z",
    "name": "Google Veo",
    "region": "国际"
   },
@@ -16429,12 +16552,14 @@
     "https://docs.x.ai/developers/pricing",
     "https://docs.x.ai/developers/model-capabilities/video/generation"
    ],
-   "last_fetch_ts": "2026-09-13T22:17:03Z",
+   "last_fetch_ts": "2026-09-13T23:17:09Z",
    "source_warnings": [],
-   "videogen_hash": "74198636ad24deeea18fd197ae05058882e63f64c314cab005c4c7b972072787",
-   "status_note": null,
-   "last_error": null,
+   "videogen_hash": "6694cc8d9e7059d371512b7e9ab3dd64afa1b6651366ac3a1e4b9a32fb1f0956",
+   "status_note": "官网生视频抽取覆盖项由 5 变为 2，等待下轮同语义结果确认",
+   "last_error": "官网生视频抽取覆盖项由 5 变为 2，等待下轮同语义结果确认",
    "videogen_excerpt_hash": "31d79e0ecce99d28666fd64254eca4370fe8242b27f4dc6d7a886a610705d299",
+   "videogen_pending_shrink_hash": "2aad5e8665eb4b28efc935d4c0a0b1f0df8764ac561df03047b9484aaca86dcd",
+   "videogen_pending_shrink_count": 2,
    "name": "xAI Grok Imagine Video",
    "region": "国际"
   },
@@ -16499,7 +16624,7 @@
     "https://docs.dev.runwayml.com/guides/pricing/",
     "https://docs.dev.runwayml.com/guides/using-models/"
    ],
-   "last_fetch_ts": "2026-09-13T22:17:20Z",
+   "last_fetch_ts": "2026-09-13T23:17:29Z",
    "source_warnings": [
     "https://docs.dev.runwayml.com/guides/using-models/: HTTP 404"
    ],
@@ -16563,7 +16688,7 @@
     "https://developer.adobe.com/firefly-services/docs/firefly-api/",
     "https://developer.adobe.com/firefly-services/docs/firefly-api/getting-started/usage-notes/"
    ],
-   "last_fetch_ts": "2026-09-13T22:18:24Z",
+   "last_fetch_ts": "2026-09-13T23:18:27Z",
    "source_warnings": [],
    "videogen_hash": "e512ce6f89cf6ea202cc7d638a68a1053acac8cf80534000e7d4f4ebf58a2c01",
    "status_note": "页面无变化",
@@ -16660,13 +16785,13 @@
     "https://docs.agents.lumalabs.ai/guides/pricing/",
     "https://docs.agents.lumalabs.ai/guides/videos/generation/"
    ],
-   "last_fetch_ts": "2026-09-13T22:18:24Z",
+   "last_fetch_ts": "2026-09-13T23:18:27Z",
    "source_warnings": [],
    "videogen_hash": "e9ed67fa2b51b8b7e07d6babf1923dc77734a1312cd5149a90fc77565825d966",
-   "status_note": "官网生视频抽取覆盖项由 2 变为 43，等待下轮同语义结果确认",
-   "last_error": "官网生视频抽取覆盖项由 2 变为 43，等待下轮同语义结果确认",
-   "videogen_pending_shrink_hash": "7117ff44f4d84a338edd8d7c0afa7c0415251ebb2f0d6310d2eb22a711391ead",
-   "videogen_pending_shrink_count": 43,
+   "status_note": "官网生视频抽取覆盖项由 2 变为 31，等待下轮同语义结果确认",
+   "last_error": "官网生视频抽取覆盖项由 2 变为 31，等待下轮同语义结果确认",
+   "videogen_pending_shrink_hash": "b2e71194113888f0bcf0a0ae2fa1a7fc3084d894ec4add345fbdfde938a7fdea",
+   "videogen_pending_shrink_count": 31,
    "name": "Luma Ray",
    "region": "国际"
   },
@@ -16812,7 +16937,7 @@
     "https://klingai.com/document-api/guides/capability-map/video",
     "https://klingai.com/document-api/api/video/video-generation"
    ],
-   "last_fetch_ts": "2026-09-13T22:19:16Z",
+   "last_fetch_ts": "2026-09-13T23:19:20Z",
    "source_warnings": [],
    "videogen_hash": "abb4237327b19b032a6b769505e9f891f2f7ebd653f4858fd757b1b7e92368a6",
    "status_note": "官网页声明仍有生视频产品但未解析出条目，已保留上次 4 条",
@@ -17223,7 +17348,7 @@
     "https://platform.minimax.io/docs/guides/pricing-paygo",
     "https://platform.minimax.io/docs/api-reference/video-generation-v2-create"
    ],
-   "last_fetch_ts": "2026-09-13T16:17:29Z",
+   "last_fetch_ts": "2026-09-13T23:19:30Z",
    "source_warnings": [],
    "videogen_hash": "d06598094b2fddc5f5eec854dbaa31baaf4861eaf9684c3375b2c84dab4e5de2",
    "status_note": "页面无变化",
@@ -17799,13 +17924,13 @@
     "https://docs.volcengine.com/docs/82379/1520757",
     "https://seed.bytedance.com/en/seedance2_5"
    ],
-   "last_fetch_ts": "2026-09-13T17:16:40Z",
+   "last_fetch_ts": "2026-09-13T23:19:31Z",
    "source_warnings": [],
-   "videogen_hash": "537be6f3799503068b85e159cf23c334e1b8cdb5a40b014c6bab4eb070499518",
+   "videogen_hash": "d4cb3d264e3b0beb273b6d3b4d14a4072938c9e90e234e5f7a13a6c000f8b493",
    "status_note": "官网生视频抽取覆盖项由 19 变为 21，等待下轮同语义结果确认",
    "last_error": "官网生视频抽取覆盖项由 19 变为 21，等待下轮同语义结果确认",
    "videogen_excerpt_hash": "debd1615180f42ec93dfc08b4848f5b4000b76c39886da24c19117f616b162d0",
-   "videogen_pending_shrink_hash": "75ce3f8603898df9dd7d6a465cb3ba70014826d60ee2df710bb7c8c11b0a71be",
+   "videogen_pending_shrink_hash": "db2fbeaf6a237fe05c120ac7ed27b604c2cf42166617dfbebabb6a8b57365b56",
    "videogen_pending_shrink_count": 21,
    "name": "火山方舟 Seedance",
    "region": "国内"
@@ -19348,7 +19473,7 @@
     "https://kb.stability.ai/knowledge-base/how-to-access-stable-video-diffusion",
     "https://platform.stability.ai/docs/release-notes"
    ],
-   "last_fetch_ts": "2026-09-13T22:16:54Z",
+   "last_fetch_ts": "2026-09-13T23:17:01Z",
    "source_warnings": [],
    "videogen_hash": "f0dfb0e7ff5ca2d55d370b2aeda72094a01ff9af7d04e424a79256b63cc1cd12",
    "status_note": "页面无变化",
@@ -19446,7 +19571,7 @@
     "https://docs.ltx.video/models"
    ],
    "last_error": "https://docs.ltx.video/pricing: HTTP 403",
-   "last_fetch_ts": "2026-09-13T22:16:55Z",
+   "last_fetch_ts": "2026-09-13T23:17:01Z",
    "name": "LTX Video API",
    "region": "国际"
   },
@@ -19655,7 +19780,7 @@
     "https://docs.haiper.ai/api-reference/api-pricing",
     "https://docs.haiper.ai/api-reference/overview"
    ],
-   "last_fetch_ts": "2026-09-13T22:17:01Z",
+   "last_fetch_ts": "2026-09-13T23:17:07Z",
    "source_warnings": [],
    "videogen_hash": "e48a75a2d170e9cfd8eb64882cec83dd68d32456949234f93a0447ba3029ae09",
    "status_note": "页面无变化",
@@ -19723,7 +19848,7 @@
     "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
     "https://docs.aws.amazon.com/nova/latest/userguide/video-generation.html"
    ],
-   "last_fetch_ts": "2026-09-13T22:17:02Z",
+   "last_fetch_ts": "2026-09-13T23:17:08Z",
    "source_warnings": [],
    "videogen_hash": "065bfa1a4f63cd9fb39dc74c5ef75b2715e71fe2ef0b40d6e7ef3be761381695",
    "status_note": "页面无变化",

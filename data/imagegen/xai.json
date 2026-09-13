@@ -35,17 +35,17 @@
    "region": null,
    "price_per_image": 0.05,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image-quality，官网公布的按张计费档位；分辨率和质量对应的精确像素输出未公布",
-   "resolution": "1k（默认）或 2k",
-   "aspect_ratios": "1:1、16:9、9:16、4:3、3:4、3:2、2:3、2:1、1:2、19.5:9、9:19.5、20:9、9:20、21:9、5:2、auto",
-   "output_formats": "临时 URL（默认）或 base64",
+   "price_basis": "grok-imagine-image-quality，标准 API，按每张图片计费；质量和分辨率未注明。",
+   "resolution": null,
+   "aspect_ratios": null,
+   "output_formats": null,
    "comparison_width": null,
    "comparison_height": null,
    "quality_tier": null,
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "文档明确提供图片生成 API；页面未给出该模型的精确像素尺寸或免费额度。"
+   "note": null
   },
   {
    "name": "grok-imagine-image-2.0",
@@ -59,17 +59,17 @@
    "region": null,
    "price_per_image": 0.04,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image-2.0，官网公布的按张计费档位；支持 low、medium、auto 质量参数，但未公布精确像素尺寸",
-   "resolution": "1k（默认）或 2k",
+   "price_basis": "grok-imagine-image-2.0，标准 API，按每张图片计费；价格页未按质量或分辨率区分。",
+   "resolution": "1k（默认）；2k",
    "aspect_ratios": "1:1、16:9、9:16、4:3、3:4、3:2、2:3、2:1、1:2、19.5:9、9:19.5、20:9、9:20、21:9、5:2、auto",
-   "output_formats": "临时 URL（默认）或 base64",
+   "output_formats": "url（默认）；base64（b64_json）",
    "comparison_width": null,
    "comparison_height": null,
    "quality_tier": null,
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "quality 参数仅支持该模型，可选 low、medium、auto；auto 生成时当前使用 low，编辑时使用 medium。"
+   "note": "支持 quality=low、medium、auto；auto 生图当前使用 low。单请求 n 为 1–10。"
   },
   {
    "name": "grok-imagine-image",
@@ -83,31 +83,29 @@
    "region": null,
    "price_per_image": 0.02,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image，官网公布的按张计费档位；分辨率和质量对应的精确像素输出未公布",
-   "resolution": "1k（默认）或 2k",
-   "aspect_ratios": "1:1、16:9、9:16、4:3、3:4、3:2、2:3、2:1、1:2、19.5:9、9:19.5、20:9、9:20、21:9、5:2、auto",
-   "output_formats": "临时 URL（默认）或 base64",
+   "price_basis": "grok-imagine-image，标准 API，按每张图片计费；质量和分辨率未注明。",
+   "resolution": null,
+   "aspect_ratios": null,
+   "output_formats": null,
    "comparison_width": null,
    "comparison_height": null,
    "quality_tier": null,
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "文档明确提供图片生成 API；页面未给出该模型的精确像素尺寸或免费额度。"
+   "note": null
   }
  ],
- "fetched_at": "2026-09-11T21:17:12Z",
+ "fetched_at": "2026-09-13T08:17:04Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://docs.x.ai/developers/pricing",
   "https://docs.x.ai/developers/model-capabilities/images/generation"
  ],
- "last_fetch_ts": "2026-09-13T07:16:40Z",
+ "last_fetch_ts": "2026-09-13T08:17:04Z",
  "source_warnings": [],
  "imagegen_hash": "0874108425420d4dc6c85fa7657130dc5c3d379598dc7890bf342b3f618a33d0",
- "status_note": "官网生图抽取覆盖项由 3 变为 3，等待下轮同语义结果确认",
- "last_error": "官网生图抽取覆盖项由 3 变为 3，等待下轮同语义结果确认",
- "imagegen_excerpt_hash": "301c058bd1ec270b54a294b666cb06e6568b50b1b6dff56d6611beffc78e26e9",
- "imagegen_pending_shrink_hash": "28e9d084a57c8c080d49e35819303edb14eba997c4090b9b353b2fe4855f15cc",
- "imagegen_pending_shrink_count": 3
+ "status_note": null,
+ "last_error": null,
+ "imagegen_excerpt_hash": "73700932167d5f0de134b8eb42177767c13e6a23adaeddecff67026486306abc"
 }

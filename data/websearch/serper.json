@@ -11,19 +11,19 @@
  "offerings": [
   {
    "name": "Google Search API",
-   "pricing": "Starter: $50 for 50k credits ($1.00/1k); Standard: $375 for 500k credits ($0.75/1k); Scale: $1250 for 2.5M credits ($0.50/1k); Ultimate: $3750 for 12.5M credits ($0.30/1k). No monthly subscriptions; credits valid for 6 months.",
+   "pricing": "Starter: $50* for 50k credits ($1.00/1k); no monthly subscriptions, pay for credits needed.",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Starter，50k credits / Submit 50,000 queries",
+   "price_basis": "Starter，50k credits / 50,000 queries",
    "free_quota": "Get 2,500 free queries. No credit card required.",
-   "output_type": "结构化 JSON 搜索结果，含 organic、knowledgeGraph、peopleAlsoAsk、relatedSearches 等字段",
+   "output_type": "结构化 JSON Google SERP 搜索结果，含 organic、knowledgeGraph、peopleAlsoAsk 等字段",
    "cites_sources": true,
    "default_on": null,
-   "note": "每次 API 调用直接查询 Google；实时结果；成功响应时扣 credits。支持 Search、Images、News、Maps、Places、Videos、Shopping、Scholar、Patents、Autocomplete。"
+   "note": "每次成功响应扣除 credits；实时直接查询 Google，结果通常 1–2 秒；Starter credits 有效期 6 个月。"
   }
  ],
- "fetched_at": "2026-09-13T07:15:05Z",
+ "fetched_at": "2026-09-13T08:15:36Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-13T07:15:05Z",
- "websearch_hash": "7706e5907e80181c832184d15409220677cd314f118f53485a3808eaaaaef015"
+ "last_fetch_ts": "2026-09-13T08:15:36Z",
+ "websearch_hash": "fd3460ff7598fede28cbbadff520b08ba32c640e45574859f04ff4f0f80258aa"
 }

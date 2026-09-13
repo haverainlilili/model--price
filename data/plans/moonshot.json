@@ -2,14 +2,14 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥49/月",
    "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     },
     {
      "label": "Agent 优先生成队列",
@@ -19,80 +19,80 @@
     {
      "label": "专业数据库调用",
      "value": "1000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": null
     }
    ],
    "models": [],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享额度池，按实际 token 消耗计算。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算并按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥99/月",
    "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     },
     {
-     "label": "Agent 集群可用",
-     "value": "25 次",
-     "window": "每个计费周期（按月刷新）"
+     "label": "Agent 集群",
+     "value": "可用 25 次（2 个子任务并行）",
+     "window": null
     },
     {
      "label": "专业数据库调用",
      "value": "2000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": null
     }
    ],
    "models": [],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享额度池，按实际 token 消耗计算。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算并按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥199/月",
    "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     },
     {
-     "label": "Agent 集群可用",
-     "value": "50 次",
-     "window": "每个计费周期（按月刷新）"
+     "label": "Agent 集群",
+     "value": "可用 50 次（4 个子任务并行）",
+     "window": null
     },
     {
      "label": "专业数据库调用",
      "value": "5000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": null
     }
    ],
    "models": [],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享额度池，按实际 token 消耗计算。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算并按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥699/月",
    "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "每个计费周期（按月刷新）"
+     "window": "每月"
     },
     {
-     "label": "Agent 集群可用",
-     "value": "120 次",
-     "window": "每个计费周期（按月刷新）"
+     "label": "Agent 集群",
+     "value": "可用 120 次（8 个子任务并行）",
+     "window": null
     },
     {
      "label": "超长对话容量",
@@ -102,22 +102,22 @@
     {
      "label": "专业数据库调用",
      "value": "12000 次调用",
-     "window": "每个计费周期（按月刷新）"
+     "window": null
     }
    ],
    "models": [],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享额度池，按实际 token 消耗计算。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗计算并按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-13T00:10:10Z",
+ "last_fetch_ts": "2026-09-13T01:10:58Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "bcd7944fe3ef6cd9b2989c7104d199818aa959a63f1badac87f6b07dff244ae5",
- "fetched_at": "2026-09-13T00:10:10Z",
+ "plans_hash": "4a40c5c31faf7fa2fa5a73889565ff81a14148885ac0d07aa4f6df33ba78ec50",
+ "fetched_at": "2026-09-13T01:10:58Z",
  "status_note": null
 }

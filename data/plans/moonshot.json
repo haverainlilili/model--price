@@ -9,7 +9,7 @@
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "按月"
+     "window": "每月"
     },
     {
      "label": "Agent 优先生成队列",
@@ -17,13 +17,23 @@
      "window": null
     },
     {
-     "label": "专业数据库",
+     "label": "小组件任务",
+     "value": "6 个",
+     "window": null
+    },
+    {
+     "label": "定时任务",
+     "value": "6 个",
+     "window": null
+    },
+    {
+     "label": "专业数据库调用",
      "value": "1000 次调用",
-     "window": "按月"
+     "window": null
     }
    ],
    "models": [],
-   "note": "所有会员功能共享一个额度池，按实际 token 消耗计算；Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享额度池，按实际 token 消耗计算，按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -35,26 +45,41 @@
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "按月"
+     "window": "每月"
     },
     {
-     "label": "Agent 优先生成队列",
-     "value": "4 倍速",
+     "label": "Agent 任务并行",
+     "value": "2 个",
      "window": null
     },
     {
-     "label": "Agent 集群",
+     "label": "Agent 集群可用",
      "value": "25 次",
-     "window": "按月"
+     "window": null
     },
     {
-     "label": "专业数据库",
+     "label": "子任务并行",
+     "value": "2 个",
+     "window": null
+    },
+    {
+     "label": "定时任务",
+     "value": "10 个",
+     "window": null
+    },
+    {
+     "label": "小组件任务",
+     "value": "10 个",
+     "window": null
+    },
+    {
+     "label": "专业数据库调用",
      "value": "2000 次调用",
-     "window": "按月"
+     "window": null
     }
    ],
    "models": [],
-   "note": "在 Andante 基础上。所有会员功能共享一个额度池，按实际 token 消耗计算；Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享额度池，按实际 token 消耗计算，按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -66,26 +91,46 @@
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "按月"
+     "window": "每月"
     },
     {
-     "label": "Agent 优先生成队列",
-     "value": "4 倍速",
+     "label": "Agent 任务并行",
+     "value": "2 个",
      "window": null
     },
     {
-     "label": "Agent 集群",
+     "label": "Agent 集群可用",
      "value": "50 次",
-     "window": "按月"
+     "window": null
     },
     {
-     "label": "专业数据库",
+     "label": "子任务并行",
+     "value": "4 个",
+     "window": null
+    },
+    {
+     "label": "Kimi Claw 群聊",
+     "value": "10 个",
+     "window": null
+    },
+    {
+     "label": "定时任务",
+     "value": "15 个",
+     "window": null
+    },
+    {
+     "label": "小组件任务",
+     "value": "15 个",
+     "window": null
+    },
+    {
+     "label": "专业数据库调用",
      "value": "5000 次调用",
-     "window": "按月"
+     "window": null
     }
    ],
    "models": [],
-   "note": "在 Andante 基础上。所有会员功能共享一个额度池，按实际 token 消耗计算；Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享额度池，按实际 token 消耗计算，按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
@@ -97,17 +142,27 @@
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "按月"
+     "window": "每月"
     },
     {
-     "label": "Agent 优先生成队列",
-     "value": "4 倍速",
+     "label": "Agent 任务并行",
+     "value": "4 个",
      "window": null
     },
     {
-     "label": "Agent 集群",
+     "label": "Agent 集群可用",
      "value": "120 次",
-     "window": "按月"
+     "window": null
+    },
+    {
+     "label": "子任务并行",
+     "value": "8 个",
+     "window": null
+    },
+    {
+     "label": "Kimi Claw 群聊",
+     "value": "10 个",
+     "window": null
     },
     {
      "label": "超长对话容量",
@@ -115,24 +170,34 @@
      "window": null
     },
     {
-     "label": "专业数据库",
+     "label": "定时任务",
+     "value": "20 个",
+     "window": null
+    },
+    {
+     "label": "小组件任务",
+     "value": "20 个",
+     "window": null
+    },
+    {
+     "label": "专业数据库调用",
      "value": "12000 次调用",
-     "window": "按月"
+     "window": null
     }
    ],
    "models": [],
-   "note": "在 Andante 基础上。所有会员功能共享一个额度池，按实际 token 消耗计算；Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享额度池，按实际 token 消耗计算，按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-13T23:10:42Z",
+ "last_fetch_ts": "2026-09-14T00:10:08Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "93a8733ae631fd3158f37204fde7e14e96e9af303b80e738f99193cd35ecdbc0",
- "fetched_at": "2026-09-13T23:10:42Z",
+ "plans_hash": "3d02dc76ffb0fb00aeed38b71e6b5c989fa005c19c6ac4c46e96d94c24de013b",
+ "fetched_at": "2026-09-14T00:10:08Z",
  "status_note": null
 }

@@ -2,9 +2,9 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥49/月",
-   "billing": "连续包月",
+   "billing": "连续包月；连续包年（年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
@@ -17,25 +17,20 @@
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "1000 次调用",
-     "window": "每月"
-    },
-    {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时",
-     "window": "每周"
+     "window": null
     }
    ],
    "models": [],
-   "note": "所有会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新。Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；Kimi Code 的 5 小时/周限额仅作用于 Kimi Code。",
+   "note": "Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥99/月",
-   "billing": "连续包月",
+   "billing": "连续包月；连续包年（年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
@@ -43,30 +38,30 @@
      "window": "每月"
     },
     {
-     "label": "Agent 集群可用",
+     "label": "Agent 优先生成队列",
+     "value": "4 倍速",
+     "window": null
+    },
+    {
+     "label": "Agent 集群",
      "value": "25 次",
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "2000 次调用",
-     "window": "每月"
-    },
-    {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时",
-     "window": "每周"
+     "window": null
     }
    ],
    "models": [],
-   "note": "所有会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新。Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；Kimi Code 的 5 小时/周限额仅作用于 Kimi Code。",
+   "note": "在 Andante 基础上提供权益。Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥199/月",
-   "billing": "连续包月",
+   "billing": "连续包月；连续包年（年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
@@ -74,30 +69,30 @@
      "window": "每月"
     },
     {
-     "label": "Agent 集群可用",
+     "label": "Agent 优先生成队列",
+     "value": "4 倍速",
+     "window": null
+    },
+    {
+     "label": "Agent 集群",
      "value": "50 次",
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "5000 次调用",
-     "window": "每月"
-    },
-    {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时",
-     "window": "每周"
+     "window": null
     }
    ],
    "models": [],
-   "note": "所有会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新。Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；Kimi Code 的 5 小时/周限额仅作用于 Kimi Code。",
+   "note": "在 Andante 基础上提供权益。Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥699/月",
-   "billing": "连续包月",
+   "billing": "连续包月；连续包年（年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
@@ -105,7 +100,12 @@
      "window": "每月"
     },
     {
-     "label": "Agent 集群可用",
+     "label": "Agent 优先生成队列",
+     "value": "4 倍速",
+     "window": null
+    },
+    {
+     "label": "Agent 集群",
      "value": "120 次",
      "window": null
     },
@@ -115,29 +115,24 @@
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "12000 次调用",
-     "window": "每月"
-    },
-    {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时",
-     "window": "每周"
+     "window": null
     }
    ],
    "models": [],
-   "note": "所有会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新。Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；Kimi Code 的 5 小时/周限额仅作用于 Kimi Code。",
+   "note": "在 Andante 基础上提供权益。Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-14T07:10:22Z",
+ "last_fetch_ts": "2026-09-14T08:10:48Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "ed3bf4b8c758ae77a98bb2e8a73b90248c9b37eb7a8ca55f3f75f99f8d47a0ce",
- "fetched_at": "2026-09-14T07:10:22Z",
+ "plans_hash": "950989ce7fcf77e9dda08dc8565841dc5c5af8f7e28983a85c45051d2cbeddec",
+ "fetched_at": "2026-09-14T08:10:48Z",
  "status_note": null
 }

@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-09-14T07:22:34Z",
+ "generated_at": "2026-09-14T08:23:36Z",
  "fx": {
   "usd_cny": 6.7082,
   "source": "frankfurter.dev",
-  "fetched_at": "2026-09-14T07:22:34Z"
+  "fetched_at": "2026-09-14T08:23:36Z"
  },
  "providers": {
   "anthropic": {
@@ -56,7 +56,7 @@
     "fetched_at": "2026-09-03T01:59:26Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-14T07:05:46Z"
+    "last_fetch_ts": "2026-09-14T08:05:46Z"
    }
   },
   "openai": {
@@ -698,7 +698,7 @@
     "fetched_at": "2026-09-12T15:05:27Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-14T07:05:46Z",
+    "last_fetch_ts": "2026-09-14T08:05:46Z",
     "pricing_extraction_revision": 1
    }
   },
@@ -1704,7 +1704,7 @@
     "fetched_at": "2026-09-04T10:05:36Z",
     "status_note": "页面无变化",
     "last_error": "官网重定向次数超过 10 次",
-    "last_fetch_ts": "2026-09-14T07:05:46Z"
+    "last_fetch_ts": "2026-09-14T08:05:46Z"
    }
   },
   "xai": {
@@ -1734,7 +1734,7 @@
     "fetched_at": "2026-09-14T06:05:09Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-14T07:05:48Z",
+    "last_fetch_ts": "2026-09-14T08:05:48Z",
     "pricing_extraction_revision": 1
    }
   },
@@ -1844,7 +1844,7 @@
     "fetched_at": "2026-08-31T11:40:03Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-14T07:06:14Z"
+    "last_fetch_ts": "2026-09-14T08:06:08Z"
    }
   },
   "deepseek": {
@@ -1901,7 +1901,7 @@
     "fetched_at": "2026-09-11T11:06:33Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-14T07:06:34Z",
+    "last_fetch_ts": "2026-09-14T08:06:28Z",
     "pricing_extraction_revision": 2
    }
   },
@@ -3120,7 +3120,7 @@
     "fetched_at": "2026-09-14T04:06:31Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-14T07:06:36Z",
+    "last_fetch_ts": "2026-09-14T08:06:29Z",
     "pricing_extraction_revision": 1
    }
   },
@@ -3889,7 +3889,7 @@
     "fetched_at": "2026-09-14T06:05:55Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-14T07:06:40Z",
+    "last_fetch_ts": "2026-09-14T08:06:32Z",
     "pricing_extraction_revision": 1
    }
   },
@@ -4039,7 +4039,7 @@
     "fetched_at": "2026-09-09T16:07:13Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-14T07:07:22Z"
+    "last_fetch_ts": "2026-09-14T08:07:15Z"
    }
   },
   "moonshot": {
@@ -4092,7 +4092,7 @@
     "fetched_at": "2026-09-11T06:08:57Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-14T07:07:48Z"
+    "last_fetch_ts": "2026-09-14T08:07:41Z"
    }
   },
   "minimax": {
@@ -4209,7 +4209,7 @@
     "fetched_at": "2026-09-07T11:09:54Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-09-14T07:08:02Z"
+    "last_fetch_ts": "2026-09-14T08:07:54Z"
    }
   }
  },
@@ -11807,7 +11807,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:09:56Z",
+   "last_fetch_ts": "2026-09-14T08:09:49Z",
    "source": "official",
    "source_urls": [
     "https://support.claude.com/en/articles/11049762-choose-a-claude-plan",
@@ -11921,7 +11921,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:10:03Z",
+   "last_fetch_ts": "2026-09-14T08:09:56Z",
    "source": "official",
    "source_urls": [
     "https://mistral.ai/pricing"
@@ -11934,144 +11934,277 @@
   "qwen": {
    "plans": [
     {
-     "name": "大语言模型推理资源包 qwen-plus（1,200万 Tokens档）",
-     "plan_type": "资源包",
+     "name": "大语言模型推理资源包 qwen-plus（1,200万 Tokens）",
+     "plan_type": "API 资源包",
      "price": "11.66 元",
-     "billing": "自购买日起生效，有效期可选 3 个月、6 个月或 1 年",
+     "billing": "自购买日起生效，有效期可选 3 个月、6 个月或 1 年。",
      "quotas": [
       {
        "label": "包含输入和输出总Tokens",
-       "value": "1,200万 Tokens",
-       "window": "有效期可选 3 个月、6 个月或 1 年"
+       "value": "1,200万",
+       "window": null
       }
      ],
      "models": [
       "qwen-plus",
       "qwen-plus-latest"
      ],
-     "note": "仅支持抵扣 qwen-plus、qwen-plus-latest 非思考模式实时推理费用；仅支持单次请求输入在 0<Token≤128K 阶梯范围内的费用。",
+     "note": "仅支持抵扣单次请求输入在0<Token≤128K阶梯范围内的实时推理费用（非思考模式，包含输入和输出）。",
      "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference_dp_cn#/buy"
     },
     {
-     "name": "大语言模型推理资源包 qwen-plus（1.1亿 Tokens档）",
-     "plan_type": "资源包",
+     "name": "大语言模型推理资源包 qwen-plus（1.1亿 Tokens）",
+     "plan_type": "API 资源包",
      "price": "114.4 元",
-     "billing": "自购买日起生效，有效期可选 3 个月、6 个月或 1 年",
+     "billing": "自购买日起生效，有效期可选 3 个月、6 个月或 1 年。",
      "quotas": [
       {
        "label": "包含输入和输出总Tokens",
-       "value": "1.1亿 Tokens",
-       "window": "有效期可选 3 个月、6 个月或 1 年"
+       "value": "1.1亿",
+       "window": null
       }
      ],
      "models": [
       "qwen-plus",
       "qwen-plus-latest"
      ],
-     "note": "仅支持抵扣 qwen-plus、qwen-plus-latest 非思考模式实时推理费用；仅支持单次请求输入在 0<Token≤128K 阶梯范围内的费用。",
+     "note": "仅支持抵扣单次请求输入在0<Token≤128K阶梯范围内的实时推理费用（非思考模式，包含输入和输出）。",
      "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference_dp_cn#/buy"
     },
     {
-     "name": "大语言模型推理资源包 qwen-max（1,800万 Tokens档）",
-     "plan_type": "资源包",
+     "name": "大语言模型推理资源包 qwen-max（1,800万 Tokens）",
+     "plan_type": "API 资源包",
      "price": "57.6 元",
-     "billing": "自购买之日起有效期为 1 年",
+     "billing": "自购买之日起有效期为 1 年。",
      "quotas": [
       {
        "label": "包含输入和输出总Tokens",
-       "value": "1,800万 Tokens",
-       "window": "1 年"
+       "value": "1,800万",
+       "window": null
       }
      ],
      "models": [
       "qwen-max"
      ],
-     "note": "仅支持抵扣 qwen-max 非思考模式实时推理费用，包含输入和输出；不支持 Batch 调用、上下文缓存、模型调优、模型部署产生的费用。",
+     "note": "仅支持抵扣实时推理产生的费用（非思考模式，包含输入和输出）。",
      "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference2_dp_cn#/buy"
     },
     {
-     "name": "大语言模型推理资源包 qwen-max（3,900万 Tokens档）",
-     "plan_type": "资源包",
+     "name": "大语言模型推理资源包 qwen-max（3,900万 Tokens）",
+     "plan_type": "API 资源包",
      "price": "125 元",
-     "billing": "自购买之日起有效期为 1 年",
+     "billing": "自购买之日起有效期为 1 年。",
      "quotas": [
       {
        "label": "包含输入和输出总Tokens",
-       "value": "3,900万 Tokens",
-       "window": "1 年"
+       "value": "3,900万",
+       "window": null
       }
      ],
      "models": [
       "qwen-max"
      ],
-     "note": "仅支持抵扣 qwen-max 非思考模式实时推理费用，包含输入和输出；不支持 Batch 调用、上下文缓存、模型调优、模型部署产生的费用。",
+     "note": "仅支持抵扣实时推理产生的费用（非思考模式，包含输入和输出）。",
      "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference2_dp_cn#/buy"
     },
     {
-     "name": "大语言模型推理资源包 qwen-max（3.9亿 Tokens档）",
-     "plan_type": "资源包",
+     "name": "大语言模型推理资源包 qwen-max（3.9亿 Tokens）",
+     "plan_type": "API 资源包",
      "price": "1250 元",
-     "billing": "自购买之日起有效期为 1 年",
+     "billing": "自购买之日起有效期为 1 年。",
      "quotas": [
       {
        "label": "包含输入和输出总Tokens",
-       "value": "3.9亿 Tokens",
-       "window": "1 年"
+       "value": "3.9亿",
+       "window": null
       }
      ],
      "models": [
       "qwen-max"
      ],
-     "note": "仅支持抵扣 qwen-max 非思考模式实时推理费用，包含输入和输出；不支持 Batch 调用、上下文缓存、模型调优、模型部署产生的费用。",
+     "note": "仅支持抵扣实时推理产生的费用（非思考模式，包含输入和输出）。",
      "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference2_dp_cn#/buy"
     },
     {
-     "name": "大语言模型推理资源包 qwen-max（11.7亿 Tokens档）",
-     "plan_type": "资源包",
+     "name": "大语言模型推理资源包 qwen-max（11.7亿 Tokens）",
+     "plan_type": "API 资源包",
      "price": "3750 元",
-     "billing": "自购买之日起有效期为 1 年",
+     "billing": "自购买之日起有效期为 1 年。",
      "quotas": [
       {
        "label": "包含输入和输出总Tokens",
-       "value": "11.7亿 Tokens",
-       "window": "1 年"
+       "value": "11.7亿",
+       "window": null
       }
      ],
      "models": [
       "qwen-max"
      ],
-     "note": "仅支持抵扣 qwen-max 非思考模式实时推理费用，包含输入和输出；不支持 Batch 调用、上下文缓存、模型调优、模型部署产生的费用。",
+     "note": "仅支持抵扣实时推理产生的费用（非思考模式，包含输入和输出）。",
      "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference2_dp_cn#/buy"
     },
     {
-     "name": "大语言模型推理资源包 qwen-max（19.5亿 Tokens档）",
-     "plan_type": "资源包",
+     "name": "大语言模型推理资源包 qwen-max（19.5亿 Tokens）",
+     "plan_type": "API 资源包",
      "price": "6250 元",
-     "billing": "自购买之日起有效期为 1 年",
+     "billing": "自购买之日起有效期为 1 年。",
      "quotas": [
       {
        "label": "包含输入和输出总Tokens",
-       "value": "19.5亿 Tokens",
-       "window": "1 年"
+       "value": "19.5亿",
+       "window": null
       }
      ],
      "models": [
       "qwen-max"
      ],
-     "note": "仅支持抵扣 qwen-max 非思考模式实时推理费用，包含输入和输出；不支持 Batch 调用、上下文缓存、模型调优、模型部署产生的费用。",
+     "note": "仅支持抵扣实时推理产生的费用（非思考模式，包含输入和输出）。",
      "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference2_dp_cn#/buy"
+    },
+    {
+     "name": "千问图像生成模型资源包qwen-image（80张）",
+     "plan_type": "图像生成模型资源包",
+     "price": "20 元",
+     "billing": "自购买之日起有效期为 3 个月。",
+     "quotas": [
+      {
+       "label": "资源包容量（生成图片张数）",
+       "value": "80",
+       "window": null
+      }
+     ],
+     "models": [
+      "qwen-image",
+      "qwen-image-edit"
+     ],
+     "note": "使用文生图模型生成一张图片消耗 1 张额度，使用图片编辑模型编辑一张图片消耗 1.2 张额度。",
+     "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_qwenimage_dp_cn"
+    },
+    {
+     "name": "千问图像生成模型资源包qwen-image（400张）",
+     "plan_type": "图像生成模型资源包",
+     "price": "100 元",
+     "billing": "自购买之日起有效期为 3 个月。",
+     "quotas": [
+      {
+       "label": "资源包容量（生成图片张数）",
+       "value": "400",
+       "window": null
+      }
+     ],
+     "models": [
+      "qwen-image",
+      "qwen-image-edit"
+     ],
+     "note": "使用文生图模型生成一张图片消耗 1 张额度，使用图片编辑模型编辑一张图片消耗 1.2 张额度。",
+     "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_qwenimage_dp_cn"
+    },
+    {
+     "name": "千问图像生成模型资源包qwen-image-plus（100张）",
+     "plan_type": "图像生成模型资源包",
+     "price": "20 元",
+     "billing": "自购买之日起有效期为3个月。",
+     "quotas": [
+      {
+       "label": "资源包容量（生成图片张数）",
+       "value": "100",
+       "window": null
+      }
+     ],
+     "models": [
+      "qwen-image-plus",
+      "qwen-image-edit-plus"
+     ],
+     "note": "生成或编辑一张图片消耗 1 张额度。",
+     "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_qwenimageplus_dp_cn"
+    },
+    {
+     "name": "千问图像生成模型资源包qwen-image-plus（1,000张）",
+     "plan_type": "图像生成模型资源包",
+     "price": "196 元（9.8折）",
+     "billing": "自购买之日起有效期为3个月。",
+     "quotas": [
+      {
+       "label": "资源包容量（生成图片张数）",
+       "value": "1,000",
+       "window": null
+      }
+     ],
+     "models": [
+      "qwen-image-plus",
+      "qwen-image-edit-plus"
+     ],
+     "note": "官网标注享阶梯折扣；生成或编辑一张图片消耗 1 张额度。",
+     "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_qwenimageplus_dp_cn"
+    },
+    {
+     "name": "千问图像生成模型资源包qwen-image-plus（10,000张）",
+     "plan_type": "图像生成模型资源包",
+     "price": "1,900 元（9.5折）",
+     "billing": "自购买之日起有效期为6个月。",
+     "quotas": [
+      {
+       "label": "资源包容量（生成图片张数）",
+       "value": "10,000",
+       "window": null
+      }
+     ],
+     "models": [
+      "qwen-image-plus",
+      "qwen-image-edit-plus"
+     ],
+     "note": "官网标注享阶梯折扣；生成或编辑一张图片消耗 1 张额度。",
+     "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_qwenimageplus_dp_cn"
+    },
+    {
+     "name": "千问图像生成模型资源包qwen-image-plus（100,000张）",
+     "plan_type": "图像生成模型资源包",
+     "price": "18,000 元（9折）",
+     "billing": "自购买之日起有效期为6个月。",
+     "quotas": [
+      {
+       "label": "资源包容量（生成图片张数）",
+       "value": "100,000",
+       "window": null
+      }
+     ],
+     "models": [
+      "qwen-image-plus",
+      "qwen-image-edit-plus"
+     ],
+     "note": "官网标注享阶梯折扣；生成或编辑一张图片消耗 1 张额度。",
+     "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_qwenimageplus_dp_cn"
+    },
+    {
+     "name": "千问图像生成模型资源包qwen-image-plus（500,000张）",
+     "plan_type": "图像生成模型资源包",
+     "price": "85,000 元（8.5折）",
+     "billing": "自购买之日起有效期为12个月。",
+     "quotas": [
+      {
+       "label": "资源包容量（生成图片张数）",
+       "value": "500,000",
+       "window": null
+      }
+     ],
+     "models": [
+      "qwen-image-plus",
+      "qwen-image-edit-plus"
+     ],
+     "note": "官网标注享阶梯折扣；生成或编辑一张图片消耗 1 张额度。",
+     "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_qwenimageplus_dp_cn"
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:10:19Z",
+   "last_fetch_ts": "2026-09-14T08:10:13Z",
    "source": "official",
    "source_urls": [
     "https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package"
    ],
    "page_has_plans": true,
-   "plans_hash": "4edcd9f93b154269c010ee10a1a9d0d6c3d0e2b10763209c9de6fe1d9deb9f77",
-   "fetched_at": "2026-09-11T11:10:18Z",
-   "status_note": "页面无变化"
+   "plans_hash": "b3eca83ee605f4cb94b7fe7870089ae2c9b957e164a0950ff5d595b5a3e121ab",
+   "fetched_at": "2026-09-14T08:10:13Z",
+   "status_note": null
   },
   "doubao": {
    "plans": [
@@ -12124,7 +12257,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:10:20Z",
+   "last_fetch_ts": "2026-09-14T08:10:35Z",
    "source": "official",
    "source_urls": [
     "https://developer.volcengine.com/articles/7595502342175195187"
@@ -12138,9 +12271,9 @@
    "plans": [
     {
      "name": "Andante",
-     "plan_type": "会员计划",
+     "plan_type": "会员订阅",
      "price": "¥49/月",
-     "billing": "连续包月",
+     "billing": "连续包月；连续包年（年付更优惠）",
      "quotas": [
       {
        "label": "Agent 用量",
@@ -12153,25 +12286,20 @@
        "window": null
       },
       {
-       "label": "专业数据库调用",
+       "label": "专业数据库",
        "value": "1000 次调用",
-       "window": "每月"
-      },
-      {
-       "label": "Kimi Code 使用限额",
-       "value": "5 小时",
-       "window": "每周"
+       "window": null
       }
      ],
      "models": [],
-     "note": "所有会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新。Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；Kimi Code 的 5 小时/周限额仅作用于 Kimi Code。",
+     "note": "Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除。",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Moderato",
-     "plan_type": "会员计划",
+     "plan_type": "会员订阅",
      "price": "¥99/月",
-     "billing": "连续包月",
+     "billing": "连续包月；连续包年（年付更优惠）",
      "quotas": [
       {
        "label": "Agent 用量",
@@ -12179,30 +12307,30 @@
        "window": "每月"
       },
       {
-       "label": "Agent 集群可用",
+       "label": "Agent 优先生成队列",
+       "value": "4 倍速",
+       "window": null
+      },
+      {
+       "label": "Agent 集群",
        "value": "25 次",
        "window": null
       },
       {
-       "label": "专业数据库调用",
+       "label": "专业数据库",
        "value": "2000 次调用",
-       "window": "每月"
-      },
-      {
-       "label": "Kimi Code 使用限额",
-       "value": "5 小时",
-       "window": "每周"
+       "window": null
       }
      ],
      "models": [],
-     "note": "所有会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新。Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；Kimi Code 的 5 小时/周限额仅作用于 Kimi Code。",
+     "note": "在 Andante 基础上提供权益。Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除。",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Allegretto",
-     "plan_type": "会员计划",
+     "plan_type": "会员订阅",
      "price": "¥199/月",
-     "billing": "连续包月",
+     "billing": "连续包月；连续包年（年付更优惠）",
      "quotas": [
       {
        "label": "Agent 用量",
@@ -12210,30 +12338,30 @@
        "window": "每月"
       },
       {
-       "label": "Agent 集群可用",
+       "label": "Agent 优先生成队列",
+       "value": "4 倍速",
+       "window": null
+      },
+      {
+       "label": "Agent 集群",
        "value": "50 次",
        "window": null
       },
       {
-       "label": "专业数据库调用",
+       "label": "专业数据库",
        "value": "5000 次调用",
-       "window": "每月"
-      },
-      {
-       "label": "Kimi Code 使用限额",
-       "value": "5 小时",
-       "window": "每周"
+       "window": null
       }
      ],
      "models": [],
-     "note": "所有会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新。Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；Kimi Code 的 5 小时/周限额仅作用于 Kimi Code。",
+     "note": "在 Andante 基础上提供权益。Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除。",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     },
     {
      "name": "Allegro",
-     "plan_type": "会员计划",
+     "plan_type": "会员订阅",
      "price": "¥699/月",
-     "billing": "连续包月",
+     "billing": "连续包月；连续包年（年付更优惠）",
      "quotas": [
       {
        "label": "Agent 用量",
@@ -12241,7 +12369,12 @@
        "window": "每月"
       },
       {
-       "label": "Agent 集群可用",
+       "label": "Agent 优先生成队列",
+       "value": "4 倍速",
+       "window": null
+      },
+      {
+       "label": "Agent 集群",
        "value": "120 次",
        "window": null
       },
@@ -12251,30 +12384,25 @@
        "window": null
       },
       {
-       "label": "专业数据库调用",
+       "label": "专业数据库",
        "value": "12000 次调用",
-       "window": "每月"
-      },
-      {
-       "label": "Kimi Code 使用限额",
-       "value": "5 小时",
-       "window": "每周"
+       "window": null
       }
      ],
      "models": [],
-     "note": "所有会员功能共享一个额度池，按实际 token 消耗计算，额度按月刷新。Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；Kimi Code 的 5 小时/周限额仅作用于 Kimi Code。",
+     "note": "在 Andante 基础上提供权益。Agent 用量数值基于常见任务 token 消耗估算，为将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除。",
      "source_url": "https://www.kimi.com/help/membership/membership-pricing"
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:10:22Z",
+   "last_fetch_ts": "2026-09-14T08:10:48Z",
    "source": "official",
    "source_urls": [
     "https://www.kimi.com/help/membership/membership-pricing"
    ],
    "page_has_plans": true,
-   "plans_hash": "ed3bf4b8c758ae77a98bb2e8a73b90248c9b37eb7a8ca55f3f75f99f8d47a0ce",
-   "fetched_at": "2026-09-14T07:10:22Z",
+   "plans_hash": "950989ce7fcf77e9dda08dc8565841dc5c5af8f7e28983a85c45051d2cbeddec",
+   "fetched_at": "2026-09-14T08:10:48Z",
    "status_note": null
   },
   "minimax": {
@@ -12443,7 +12571,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:10:46Z",
+   "last_fetch_ts": "2026-09-14T08:11:15Z",
    "source": "official",
    "source_urls": [
     "https://platform.minimaxi.com/subscribe/token-plan"
@@ -12481,7 +12609,7 @@
    "fetched_at": "2026-09-05T12:11:29Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:11:10Z",
+   "last_fetch_ts": "2026-09-14T08:11:40Z",
    "websearch_hash": "703421e832f07a1938c7abb8412f914c73e33d10e21151cee9850de0b9f624d6",
    "name": "Anthropic (Claude)",
    "region": "国际"
@@ -12557,7 +12685,7 @@
    "fetched_at": "2026-09-12T14:13:26Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:11:10Z",
+   "last_fetch_ts": "2026-09-14T08:11:41Z",
    "websearch_hash": "c77ac08baae1f9883d140e792720225c2ff2ed37b415dfdbc79f5595beeaa2c1",
    "name": "OpenAI",
    "region": "国际"
@@ -12600,7 +12728,7 @@
    "fetched_at": "2026-09-05T12:11:51Z",
    "status_note": "页面无变化",
    "last_error": "官网重定向次数超过 10 次",
-   "last_fetch_ts": "2026-09-14T07:11:11Z",
+   "last_fetch_ts": "2026-09-14T08:11:41Z",
    "websearch_hash": "955671ee8bb93d1fb1c9793d002b7b1063d96be98f6e602db5c4f638e14af82d",
    "name": "Google Gemini",
    "region": "国际"
@@ -12631,7 +12759,7 @@
    "fetched_at": null,
    "status_note": "官网页未解析出联网搜索信息，已保留上次 1 条",
    "last_error": "官网页未解析出联网搜索信息，已保留上次 1 条",
-   "last_fetch_ts": "2026-09-14T07:11:13Z",
+   "last_fetch_ts": "2026-09-14T08:11:44Z",
    "websearch_hash": "0b4c311e3ec7a92fd83db8e04e3fdaaa1a100941793b9edfef92bdacb77f2fe0",
    "name": "xAI (Grok)",
    "region": "国际"
@@ -12662,7 +12790,7 @@
    "fetched_at": null,
    "status_note": "官网页未解析出联网搜索信息，已保留上次 1 条",
    "last_error": "官网页未解析出联网搜索信息，已保留上次 1 条",
-   "last_fetch_ts": "2026-09-14T07:11:36Z",
+   "last_fetch_ts": "2026-09-14T08:12:06Z",
    "websearch_hash": "0f83717359640927fb3395aceaa3a48eee73f43f406a44817495ce8b579b22a9",
    "name": "Mistral",
    "region": "国际"
@@ -12693,7 +12821,7 @@
    "fetched_at": null,
    "status_note": "官网页未解析出联网搜索信息，已保留上次 1 条",
    "last_error": "官网页未解析出联网搜索信息，已保留上次 1 条",
-   "last_fetch_ts": "2026-09-14T07:11:59Z",
+   "last_fetch_ts": "2026-09-14T08:12:29Z",
    "websearch_hash": "2e1f14bd5f3e1cd9421d94ec37988a13a6e26ea8f99898d7e88d1fa983846ae2",
    "name": "DeepSeek",
    "region": "国内"
@@ -12768,7 +12896,7 @@
    "fetched_at": "2026-09-11T11:12:22Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:12:02Z",
+   "last_fetch_ts": "2026-09-14T08:12:32Z",
    "websearch_hash": "6987e17bcbd17d633bc28feb875cb6ceec6caa7102d76c2171e8e968fd123433",
    "name": "阿里云百炼 (Qwen)",
    "region": "国内"
@@ -12790,17 +12918,17 @@
      "price_per_1k_usd": null,
      "price_basis": null,
      "free_quota": null,
-     "output_type": "模型能力：联网获取实时知识",
+     "output_type": "联网获取实时知识",
      "cites_sources": null,
      "default_on": null,
      "note": null
     }
    ],
-   "fetched_at": "2026-09-14T07:12:04Z",
+   "fetched_at": "2026-09-14T08:12:34Z",
    "status_note": null,
    "last_error": "官网页未解析出联网搜索信息，已保留上次 1 条",
-   "last_fetch_ts": "2026-09-14T07:12:04Z",
-   "websearch_hash": "633eb154829ba7ecc8774f60ad4066dcf030638409cf9a4d4e52852f39d0c59e",
+   "last_fetch_ts": "2026-09-14T08:12:34Z",
+   "websearch_hash": "7cf9a3796f257f0fe025a635e1a822f6ea9c6157db34da1f146396b89a6c44bd",
    "name": "火山方舟 (豆包)",
    "region": "国内"
   },
@@ -12885,7 +13013,7 @@
    "fetched_at": "2026-09-08T04:12:53Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:12:39Z",
+   "last_fetch_ts": "2026-09-14T08:13:08Z",
    "websearch_hash": "1d23fe3abcc3cc70fbc612c4c9d8fa0e7fb37f089582873fb6e78d2196d82d8d",
    "name": "智谱 (GLM)",
    "region": "国内"
@@ -12916,7 +13044,7 @@
    "fetched_at": "2026-09-05T12:14:24Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:12:53Z",
+   "last_fetch_ts": "2026-09-14T08:13:22Z",
    "websearch_hash": "652e42276a18be3a7c1de0ea727e5e781d2f446fda12c9a827533467602b0db2",
    "name": "月之暗面 (Kimi)",
    "region": "国内"
@@ -12947,7 +13075,7 @@
    "fetched_at": null,
    "status_note": "官网页未解析出联网搜索信息，已保留上次 1 条",
    "last_error": "官网页未解析出联网搜索信息，已保留上次 1 条",
-   "last_fetch_ts": "2026-09-14T07:12:57Z",
+   "last_fetch_ts": "2026-09-14T08:13:26Z",
    "websearch_hash": "34be97b0a397564582c6906b00fdddd56674266223036d9c1fcc3c0296246bb3",
    "name": "MiniMax",
    "region": "国内"
@@ -12990,7 +13118,7 @@
    "fetched_at": "2026-09-10T13:15:45Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:13:16Z",
+   "last_fetch_ts": "2026-09-14T08:13:50Z",
    "websearch_hash": "92ba87a5a50bc7aa0a34e7e9e772e53b140613d489bc8518386b81102af3ff19",
    "name": "Tavily",
    "region": "国际"
@@ -13088,7 +13216,7 @@
    "fetched_at": "2026-09-08T23:15:26Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:13:17Z",
+   "last_fetch_ts": "2026-09-14T08:13:50Z",
    "websearch_hash": "263de0359201089c90f9821c4dbf211517551f42d767dfb86b908070c0f51a51",
    "name": "Exa",
    "region": "国际"
@@ -13131,7 +13259,7 @@
    "fetched_at": "2026-09-07T08:13:53Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:13:17Z",
+   "last_fetch_ts": "2026-09-14T08:13:51Z",
    "websearch_hash": "280d29766af531a097fd47e5d22419304c803d6bebbdbe38ebb57c98a9892f90",
    "name": "Brave Search API",
    "region": "国际"
@@ -13240,7 +13368,7 @@
    "fetched_at": "2026-09-05T12:15:51Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:13:18Z",
+   "last_fetch_ts": "2026-09-14T08:13:51Z",
    "websearch_hash": "177b119d5e37366a474226870b047405dbdb1ef3aae9baf7cf96bf03efa41a28",
    "name": "Perplexity",
    "region": "国际"
@@ -13305,7 +13433,7 @@
    "fetched_at": "2026-09-11T17:14:16Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:13:19Z",
+   "last_fetch_ts": "2026-09-14T08:13:53Z",
    "websearch_hash": "8dab2bcdbc3966fc1661b3e159a61770dcbcd701e98dfbdacffc1088123de787",
    "name": "You.com",
    "region": "国际"
@@ -13415,7 +13543,7 @@
    "fetched_at": "2026-09-11T14:13:30Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:13:20Z",
+   "last_fetch_ts": "2026-09-14T08:13:54Z",
    "websearch_hash": "ab1dcb2f3898c8f44ef6e44324d226dd7a97f8260be8ae8dc0763e8d45272f08",
    "name": "Linkup",
    "region": "国际"
@@ -13433,22 +13561,22 @@
    "has_search": true,
    "offerings": [
     {
-     "name": "Reader API — https://s.jina.ai",
-     "pricing": "API pricing is based on token usage. Prototype Development: $50 for 1 Billion tokens ($0.050 / 1M tokens); Production Deployment: $500 for 11 Billion tokens ($0.045 / 1M tokens).",
+     "name": "Reader API https://s.jina.ai",
+     "pricing": "API pricing is based on token usage. Prototype Development: $50, 1 Billion Tokens, 0.050 / 1M tokens; Production Deployment: $500, 11 Billion Tokens, 0.045 / 1M tokens.",
      "price_per_1k_usd": null,
      "price_basis": null,
-     "free_quota": "Every new API key comes with 10M free tokens!",
-     "output_type": "搜索网页并返回前五条结果及其 URLs 和内容，每条为 clean, LLM-friendly text；JSON mode returns a list of five entries.",
+     "free_quota": "Toy Experiment: 10 Million Tokens; Non-commercial use only (CC-BY-NC). Free.",
+     "output_type": "搜索网页并返回前五个结果的 URL 和内容，每项为干净、LLM-friendly text；JSON 模式返回五个条目。",
      "cites_sources": true,
      "default_on": null,
-     "note": "每次搜索固定消耗 token，starting from 10000 tokens；免费/付费 100 RPM，Premium 1000 RPM。"
+     "note": "每次请求固定消耗 token，starting from 10000 tokens；免费/付费 key 100 RPM，Premium key 1000 RPM。"
     }
    ],
-   "fetched_at": "2026-09-14T04:15:36Z",
-   "status_note": "页面无变化",
+   "fetched_at": "2026-09-14T08:13:54Z",
+   "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:13:21Z",
-   "websearch_hash": "92579b0013ea5dbb15dae3553b1f50dee995c2cf679e499eee68ee84b1b7c70d",
+   "last_fetch_ts": "2026-09-14T08:13:54Z",
+   "websearch_hash": "a67b3f3470fb7a912f9a665ea90d4a25a7add71a76eaea18ac52a62aa38253ea",
    "name": "Jina AI Search",
    "region": "国际"
   },
@@ -13480,7 +13608,7 @@
    "fetched_at": "2026-09-14T04:16:29Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:14:02Z",
+   "last_fetch_ts": "2026-09-14T08:14:43Z",
    "websearch_hash": "c77cffca5c8ae7a91e734fd745729a59f72a39eb082854a64777d1132dfb5eac",
    "name": "Firecrawl Search",
    "region": "国际"
@@ -13511,7 +13639,7 @@
    "fetched_at": "2026-09-05T12:18:10Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:14:04Z",
+   "last_fetch_ts": "2026-09-14T08:14:44Z",
    "websearch_hash": "32b595bd27cdd7f9f75f9f8268815ccfa7015a647ae79eb788fcf72040d65d62",
    "name": "博查 AI Search API",
    "region": "国内"
@@ -13529,21 +13657,21 @@
    "offerings": [
     {
      "name": "Google Search API",
-     "pricing": "Starter: $50* for 50k credits ($1.00/1k); no monthly subscriptions; credits valid for 6 months.",
+     "pricing": "Starter: $50* for 50k credits ($1.00/1k); Standard: $375* for 500k credits ($0.75/1k); Scale: $1250* for 2.5M credits ($0.50/1k); Ultimate: $3750* for 12.5M credits ($0.30/1k). No monthly subscriptions; credits valid for 6 months. * Excluding sales tax/VAT/GST.",
      "price_per_1k_usd": 1.0,
-     "price_basis": "Starter，50k credits / Submit 50,000 queries",
-     "free_quota": "Get 2,500 free queries; No credit card required",
-     "output_type": "结构化 Google SERP 搜索结果（JSON），含 organic、knowledgeGraph、peopleAlsoAsk、relatedSearches 等",
+     "price_basis": "Starter（50k credits / 50,000 queries）",
+     "free_quota": "Get 2,500 free queries. No credit card required.",
+     "output_type": "结构化 Google SERP 搜索结果（JSON），包括 organic、knowledgeGraph、peopleAlsoAsk、relatedSearches 等；并支持 Images、News、Maps、Places、Videos、Shopping、Scholar、Patents、Autocomplete。",
      "cites_sources": true,
      "default_on": null,
-     "note": "每次成功响应扣除 credits；实时直接查询 Google，不缓存。支持位置、语言设置；50 QPS。"
+     "note": "API directly queries Google for latest results; no cache. Results generally return in 1–2 seconds."
     }
    ],
-   "fetched_at": "2026-09-14T07:14:05Z",
+   "fetched_at": "2026-09-14T08:14:45Z",
    "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:14:05Z",
-   "websearch_hash": "4c5b7ef3a21320146a4fb9b8a8165144e60aec3ffef640f70e5c32dce9607c4e",
+   "last_fetch_ts": "2026-09-14T08:14:45Z",
+   "websearch_hash": "96b8e04a32bde4054fa577cfbddcaa346a2ec395b7a9fd655adc433fbac89f18",
    "name": "Serper",
    "region": "国际"
   },
@@ -13573,7 +13701,7 @@
    "fetched_at": "2026-09-05T12:18:32Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:14:14Z",
+   "last_fetch_ts": "2026-09-14T08:14:55Z",
    "websearch_hash": "a9e52ac3c1d629f5f3701c626dec8fa7a3a9c3ec68af4e325a2be7ffad67f624",
    "name": "SerpApi",
    "region": "国际"
@@ -13604,7 +13732,7 @@
    "fetched_at": "2026-09-05T12:18:40Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:14:14Z",
+   "last_fetch_ts": "2026-09-14T08:14:55Z",
    "websearch_hash": "a154e899032153ed36e0025ebaa7b31cc7b5fb1f11c9cc12df975a6681190df8",
    "name": "Google Custom Search JSON API",
    "region": "国际"
@@ -13657,7 +13785,7 @@
    "fetched_at": "2026-09-05T12:18:45Z",
    "status_note": "页面无变化",
    "last_error": "HTTP 404",
-   "last_fetch_ts": "2026-09-14T07:14:14Z",
+   "last_fetch_ts": "2026-09-14T08:14:55Z",
    "websearch_hash": "83f1f9f967a24d40481c9c2dd56746100916d602f20a49c90669c4f559efc066",
    "name": "DataForSEO SERP API",
    "region": "国际"
@@ -13677,19 +13805,19 @@
      "name": "SERP API",
      "pricing": "Free Tier: 5K requests; Pay as you go: $1.5/1K requests; Scale: $499/month, 380K requests included, $1.3/1K additional requests; Enterprise: Custom.",
      "price_per_1k_usd": 1.5,
-     "price_basis": "Pay as you go（$1.5/1K requests）",
-     "free_quota": "Free Tier: 5K requests; 5K records per month; No credit card required",
+     "price_basis": "Pay as you go",
+     "free_quota": "Free Tier: 5K requests; 5K records per month; No credit card required.",
      "output_type": "JSON or HTML output",
      "cites_sources": null,
      "default_on": null,
-     "note": "Pay only for success；each API execution counts as a request；supports all major search engines and 195 countries."
+     "note": "Pay only for success. Each API execution is counted as a request; asynchronous mode counts only “send request”. Supports 195 countries and city-level targeting."
     }
    ],
-   "fetched_at": "2026-09-14T07:14:23Z",
+   "fetched_at": "2026-09-14T08:15:04Z",
    "status_note": null,
    "last_error": null,
-   "last_fetch_ts": "2026-09-14T07:14:23Z",
-   "websearch_hash": "89b923b9ae2563fb20c752eb72e15e745888bce4a9466a3068133db2ace6cfa4",
+   "last_fetch_ts": "2026-09-14T08:15:04Z",
+   "websearch_hash": "3a86129d1e7637667762e21c50511f4e40e2c825061ca3467158a051adc3af82",
    "name": "Bright Data SERP API",
    "region": "国际"
   }
@@ -13758,12 +13886,12 @@
     "https://developers.openai.com/api/docs/pricing",
     "https://developers.openai.com/api/docs/guides/image-generation"
    ],
-   "last_fetch_ts": "2026-09-14T07:15:40Z",
+   "last_fetch_ts": "2026-09-14T08:16:00Z",
    "source_warnings": [],
    "imagegen_hash": "5aceadcf15e3aaa1274b0d5f2c2797d2250a17817b3724fd5ebc7c98d41abccd",
    "status_note": "官网生图抽取覆盖项由 1 变为 7，等待下轮同语义结果确认",
    "last_error": "官网生图抽取覆盖项由 1 变为 7，等待下轮同语义结果确认",
-   "imagegen_pending_shrink_hash": "34b20781cace546246e6c72576a874123bc2707ac28314e6d32b5fcf89dc31d4",
+   "imagegen_pending_shrink_hash": "9e67f610d18aac90d317f41cedfc494bc953a62e8008903972eb84f7a9658750",
    "imagegen_pending_shrink_count": 7,
    "name": "OpenAI",
    "region": "国际"
@@ -13859,10 +13987,10 @@
     "https://ai.google.dev/gemini-api/docs/image-generation?hl=en",
     "https://ai.google.dev/gemini-api/docs/deprecations"
    ],
-   "last_fetch_ts": "2026-09-14T07:16:08Z",
+   "last_fetch_ts": "2026-09-14T08:16:32Z",
    "source_warnings": [
-    "https://ai.google.dev/gemini-api/docs/image-generation?hl=en: 重定向到非允许官网: https://accounts.google.com/o/oauth2/v2/auth?client_id=157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fai.google.dev%2Foauth2callback&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgoogledevelopers+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles.award+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdevprofiles.full_control.firstparty&access_type=online&response_type=code&state=%7B%22csrf_token%22%3A+%2220394a3a6b1f467bbf92ac56147aba1be2889532a3603a5ac7cb4f63c1ac753a%22%2C+%22return_url%22%3A+%22https%3A%2F%2Fai.google.dev%2Fgemini-api%2Fdocs%2Fimage-generation%3Fhl%3Den%22%7D&prompt=none&auto_signin=True",
-    "https://ai.google.dev/gemini-api/docs/deprecations: 重定向到非允许官网: https://accounts.google.com/o/oauth2/v2/auth?client_id=157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fai.google.dev%2Foauth2callback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles.award+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdevprofiles.full_control.firstparty+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgoogledevelopers&access_type=online&response_type=code&state=%7B%22csrf_token%22%3A+%221b3bafbf5c4e568b35400f14051408fd4c14733c59a4e74c6b2dbd8bf3d3fbd3%22%2C+%22return_url%22%3A+%22https%3A%2F%2Fai.google.dev%2Fgemini-api%2Fdocs%2Fdeprecations%22%7D&prompt=none&auto_signin=True"
+    "https://ai.google.dev/gemini-api/docs/image-generation?hl=en: 重定向到非允许官网: https://accounts.google.com/o/oauth2/v2/auth?client_id=157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fai.google.dev%2Foauth2callback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgoogledevelopers+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles.award+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdevprofiles.full_control.firstparty&access_type=online&response_type=code&state=%7B%22csrf_token%22%3A+%223aba346996e682749159ff739205bc9e549a59aa910ed303261e3371ff7cf5c2%22%2C+%22return_url%22%3A+%22https%3A%2F%2Fai.google.dev%2Fgemini-api%2Fdocs%2Fimage-generation%3Fhl%3Den%22%7D&prompt=none&auto_signin=True",
+    "https://ai.google.dev/gemini-api/docs/deprecations: 重定向到非允许官网: https://accounts.google.com/o/oauth2/v2/auth?client_id=157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fai.google.dev%2Foauth2callback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgoogledevelopers+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdeveloperprofiles.award+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdevprofiles.full_control.firstparty&access_type=online&response_type=code&state=%7B%22csrf_token%22%3A+%229e7513aa77a2aa3fa6459fae3742203077a29b7aaf0b4cee7959179b4c41a700%22%2C+%22return_url%22%3A+%22https%3A%2F%2Fai.google.dev%2Fgemini-api%2Fdocs%2Fdeprecations%22%7D&prompt=none&auto_signin=True"
    ],
    "imagegen_hash": "465d7a9b8c5939900a333f7eb93bf41cff49ab2f0b7767f9fa27ecb9857ae1f5",
    "status_note": "2 个次要官网来源抓取失败；保留上次完整事实，来源恢复后再更新",
@@ -15055,7 +15183,7 @@
     "https://leonardo.ai/api"
    ],
    "last_error": "https://leonardo.ai/api: HTTP 403",
-   "last_fetch_ts": "2026-09-14T07:14:29Z",
+   "last_fetch_ts": "2026-09-14T08:15:09Z",
    "name": "Leonardo.Ai",
    "region": "国际"
   },
@@ -15125,7 +15253,7 @@
     "https://docs.midjourney.com/hc/en-us/articles/32013696484109-Community-Guidelines"
    ],
    "last_error": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans: HTTP 403",
-   "last_fetch_ts": "2026-09-14T07:14:36Z",
+   "last_fetch_ts": "2026-09-14T08:15:15Z",
    "name": "Midjourney",
    "region": "国际"
   },
@@ -15186,11 +15314,11 @@
     "https://docs.byteplus.com/en/docs/ModelArk/1544106",
     "https://docs.byteplus.com/en/docs/ModelArk/1541523"
    ],
-   "last_fetch_ts": "2026-09-14T07:14:42Z",
+   "last_fetch_ts": "2026-09-14T08:15:21Z",
    "source_warnings": [],
    "imagegen_hash": "39e66f32e0e3685d7b4c80db530785468c17b443298f956625440cfac060379a",
-   "status_note": "官网页声明仍有生图产品但未解析出条目，已保留上次 1 条",
-   "last_error": "官网页声明仍有生图产品但未解析出条目，已保留上次 1 条",
+   "status_note": "官网生图完整页面已变化但安全摘录无变化；保留旧事实且不接受本次网页哈希",
+   "last_error": "官网生图完整页面已变化但安全摘录无变化；保留旧事实且不接受本次网页哈希",
    "imagegen_excerpt_hash": "e7101ccf4e8f2f9fe7212920c06f80abf70b2c8666a951af0067f37fc3d0f4f8",
    "name": "火山方舟 Seedream",
    "region": "国内"
@@ -15284,7 +15412,7 @@
     "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
     "https://www.alibabacloud.com/help/en/model-studio/new-free-quota"
    ],
-   "last_fetch_ts": "2026-09-14T07:14:52Z",
+   "last_fetch_ts": "2026-09-14T08:15:25Z",
    "source_warnings": [],
    "imagegen_hash": "51cb63ac38cfdcd3a81394c81d0da5bf35a1f33cf046366388c100293d4c14d6",
    "status_note": "页面无变化",
@@ -15407,12 +15535,12 @@
     "https://docs.z.ai/guides/overview/pricing",
     "https://docs.z.ai/api-reference/image/generate-image"
    ],
-   "last_fetch_ts": "2026-09-14T07:14:55Z",
+   "last_fetch_ts": "2026-09-14T08:15:28Z",
    "source_warnings": [],
    "imagegen_hash": "023ed579cbd3be200d716d962d2051ca4cd5ff08348774969ac360cb82691c2e",
    "status_note": "官网生图抽取覆盖项由 3 变为 3，等待下轮同语义结果确认",
    "last_error": "官网生图抽取覆盖项由 3 变为 3，等待下轮同语义结果确认",
-   "imagegen_pending_shrink_hash": "f8465eb4959fb2efca57fbe21dd24b0897e1579f5d0a4cbbe5038066de0219ee",
+   "imagegen_pending_shrink_hash": "c1707211bb4dee9056d39ce5cb8bbfe816ebce22acf71f07be04425749ca5bfe",
    "imagegen_pending_shrink_count": 3,
    "name": "智谱 CogView",
    "region": "国内"
@@ -15476,7 +15604,7 @@
     "https://cloud.tencent.com/document/product/1823/135745",
     "https://intl.cloud.tencent.com/document/product/1300/78937"
    ],
-   "last_fetch_ts": "2026-09-14T07:15:27Z",
+   "last_fetch_ts": "2026-09-14T08:15:49Z",
    "source_warnings": [],
    "imagegen_hash": "98d23205a2b6f11efa43a13fb50760fe151be125ac3e3b75aacceb8e23553239",
    "status_note": "页面无变化",
@@ -15575,7 +15703,7 @@
     "https://platform.minimaxi.com/docs/api-reference/image-generation-t2i",
     "https://platform.minimax.io/docs/guides/pricing-paygo"
    ],
-   "last_fetch_ts": "2026-09-14T07:15:29Z",
+   "last_fetch_ts": "2026-09-14T08:15:51Z",
    "source_warnings": [],
    "imagegen_hash": "d845dd1c90ce41a95796be281944888ed0f919ab69d6635fd236088e2b50122c",
    "imagegen_pending_shrink_hash": "b4f4036eb064ce3fdc9bbd00cf32e576d32c7cc6de47d30a2e315e14762636c6",
@@ -15650,7 +15778,7 @@
     "https://klingai.com/document-api/guides/capability-map/image",
     "https://klingai.com/document-api/api/image/3-0-omni/image-generation"
    ],
-   "last_fetch_ts": "2026-09-14T07:15:30Z",
+   "last_fetch_ts": "2026-09-14T08:15:52Z",
    "source_warnings": [],
    "imagegen_hash": "87527a2d0cc8ee559f4ad40020e5667fda51ad793644d12b11e02bba249c903d",
    "status_note": "官网生图页面无效: 页面是空白/报错/登录/验证壳；保留上次数据",
@@ -17253,7 +17381,7 @@
     "https://docs.agents.lumalabs.ai/guides/pricing/",
     "https://docs.agents.lumalabs.ai/guides/videos/generation/"
    ],
-   "last_fetch_ts": "2026-09-14T07:16:52Z",
+   "last_fetch_ts": "2026-09-14T08:17:27Z",
    "source_warnings": [],
    "videogen_hash": "e9ed67fa2b51b8b7e07d6babf1923dc77734a1312cd5149a90fc77565825d966",
    "status_note": "页面无变化",
@@ -17404,11 +17532,13 @@
     "https://klingai.com/document-api/guides/capability-map/video",
     "https://klingai.com/document-api/api/video/video-generation"
    ],
-   "last_fetch_ts": "2026-09-14T07:16:53Z",
+   "last_fetch_ts": "2026-09-14T08:17:27Z",
    "source_warnings": [],
    "videogen_hash": "abb4237327b19b032a6b769505e9f891f2f7ebd653f4858fd757b1b7e92368a6",
-   "status_note": "官网页声明仍有生视频产品但未解析出条目，已保留上次 4 条",
-   "last_error": "官网页声明仍有生视频产品但未解析出条目，已保留上次 4 条",
+   "status_note": "官网生视频抽取覆盖项由 4 变为 1，等待下轮同语义结果确认",
+   "last_error": "官网生视频抽取覆盖项由 4 变为 1，等待下轮同语义结果确认",
+   "videogen_pending_shrink_hash": "b55920f676ae2f06662a4d2fff5d725dbe25ad8982fe2ed01fa885823ce6800e",
+   "videogen_pending_shrink_count": 1,
    "name": "可灵 Kling Video",
    "region": "国内"
   },
@@ -17815,7 +17945,7 @@
     "https://platform.minimax.io/docs/guides/pricing-paygo",
     "https://platform.minimax.io/docs/api-reference/video-generation-v2-create"
    ],
-   "last_fetch_ts": "2026-09-14T07:17:02Z",
+   "last_fetch_ts": "2026-09-14T08:17:41Z",
    "source_warnings": [],
    "videogen_hash": "d06598094b2fddc5f5eec854dbaa31baaf4861eaf9684c3375b2c84dab4e5de2",
    "status_note": "页面无变化",
@@ -18391,13 +18521,13 @@
     "https://docs.volcengine.com/docs/82379/1520757",
     "https://seed.bytedance.com/en/seedance2_5"
    ],
-   "last_fetch_ts": "2026-09-14T07:17:04Z",
+   "last_fetch_ts": "2026-09-14T08:17:42Z",
    "source_warnings": [],
-   "videogen_hash": "fe3c9b04932d058163ab8ba866f71ce7155f66b4a009046efe5296bd96170e1e",
+   "videogen_hash": "9fa382c6eec6f3f7e52bdfa55f3638f412b16cc32bdcf6ba4ceec6f83351508a",
    "status_note": "官网生视频抽取覆盖项由 19 变为 21，等待下轮同语义结果确认",
    "last_error": "官网生视频抽取覆盖项由 19 变为 21，等待下轮同语义结果确认",
    "videogen_excerpt_hash": "debd1615180f42ec93dfc08b4848f5b4000b76c39886da24c19117f616b162d0",
-   "videogen_pending_shrink_hash": "10db2e65013956d7bae308a572a754ca244a1934642da3fee78b870db44c2197",
+   "videogen_pending_shrink_hash": "8334f86f372b5aed3ad059a50354127eb6e220bdbcc3f75b2299bad98c9c6889",
    "videogen_pending_shrink_count": 21,
    "name": "火山方舟 Seedance",
    "region": "国内"
@@ -18439,13 +18569,13 @@
       "reference-to-video",
       "video-edit"
      ],
-     "pricing": "视频生成（480P）：0.3元/秒",
+     "pricing": "0.3元/秒",
      "currency": "CNY",
      "region": "domestic",
      "price_per_second": 0.3,
      "comparison_price_type": "direct",
      "comparison_group": "cny-480p-audio",
-     "price_basis": "wan3.0-video，视频生成，480P，原生有声视频默认开启，华北2（北京）按输出视频时长每秒计费。",
+     "price_basis": "wan3.0-video，华北2（北京），480P；有声视频默认开启且无单独音频价，视频生成按0.3元/秒。",
      "resolution": "480P",
      "duration": "2~30秒；-1（智能时长，默认5秒）",
      "frame_rate": "30fps",
@@ -18455,7 +18585,7 @@
      "lifecycle_status": "unknown",
      "sunset_at": null,
      "free_quota": null,
-     "note": "原生输出台词、BGM和音效；audio=false 可关闭音频，价格表未按音频开关单列价格。"
+     "note": "输出MP4；有声视频默认开启，可通过audio=false关闭。"
     },
     {
      "name": "wan3.0-video",
@@ -18468,13 +18598,13 @@
       "reference-to-video",
       "video-edit"
      ],
-     "pricing": "视频生成（720P）：0.6元/秒",
+     "pricing": "0.6元/秒",
      "currency": "CNY",
      "region": "domestic",
      "price_per_second": 0.6,
      "comparison_price_type": "direct",
      "comparison_group": "cny-720p-audio",
-     "price_basis": "wan3.0-video，视频生成，720P，原生有声视频默认开启，华北2（北京）按输出视频时长每秒计费。",
+     "price_basis": "wan3.0-video，华北2（北京），720P；有声视频默认开启且无单独音频价，视频生成按0.6元/秒。",
      "resolution": "720P",
      "duration": "2~30秒；-1（智能时长，默认5秒）",
      "frame_rate": "30fps",
@@ -18484,7 +18614,7 @@
      "lifecycle_status": "unknown",
      "sunset_at": null,
      "free_quota": null,
-     "note": "原生输出台词、BGM和音效；audio=false 可关闭音频，价格表未按音频开关单列价格。"
+     "note": "输出MP4；有声视频默认开启，可通过audio=false关闭。"
     },
     {
      "name": "wan3.0-video",
@@ -18497,13 +18627,13 @@
       "reference-to-video",
       "video-edit"
      ],
-     "pricing": "视频生成（1080P）：1.2元/秒",
+     "pricing": "1.2元/秒",
      "currency": "CNY",
      "region": "domestic",
      "price_per_second": 1.2,
      "comparison_price_type": "direct",
      "comparison_group": "cny-1080p-audio",
-     "price_basis": "wan3.0-video，视频生成，1080P，原生有声视频默认开启，华北2（北京）按输出视频时长每秒计费。",
+     "price_basis": "wan3.0-video，华北2（北京），1080P；有声视频默认开启且无单独音频价，视频生成按1.2元/秒。",
      "resolution": "1080P",
      "duration": "2~30秒；-1（智能时长，默认5秒）",
      "frame_rate": "30fps",
@@ -18513,7 +18643,7 @@
      "lifecycle_status": "unknown",
      "sunset_at": null,
      "free_quota": null,
-     "note": "原生输出台词、BGM和音效；audio=false 可关闭音频，价格表未按音频开关单列价格。"
+     "note": "输出MP4；有声视频默认开启，可通过audio=false关闭。"
     },
     {
      "name": "wan3.0-video",
@@ -18526,13 +18656,13 @@
       "reference-to-video",
       "video-edit"
      ],
-     "pricing": "视频生成（480P）：0.37471元/秒",
+     "pricing": "0.37471元/秒",
      "currency": "CNY",
      "region": "intl",
      "price_per_second": 0.37471,
      "comparison_price_type": "direct",
      "comparison_group": "cny-480p-audio",
-     "price_basis": "wan3.0-video，视频生成，480P，原生有声视频默认开启，新加坡国际部署按输出视频时长每秒计费。",
+     "price_basis": "wan3.0-video，新加坡（部署范围：国际），480P；有声视频默认开启且无单独音频价，视频生成按0.37471元/秒。",
      "resolution": "480P",
      "duration": "2~30秒；-1（智能时长，默认5秒）",
      "frame_rate": "30fps",
@@ -18542,7 +18672,7 @@
      "lifecycle_status": "unknown",
      "sunset_at": null,
      "free_quota": null,
-     "note": "新加坡部署范围为国际；原生有声默认开启，audio=false 可关闭。"
+     "note": "新加坡端点RPM为300；输出MP4，有声视频默认开启。"
     },
     {
      "name": "wan3.0-video",
@@ -18555,13 +18685,13 @@
       "reference-to-video",
       "video-edit"
      ],
-     "pricing": "视频生成（720P）：0.74942元/秒",
+     "pricing": "0.74942元/秒",
      "currency": "CNY",
      "region": "intl",
      "price_per_second": 0.74942,
      "comparison_price_type": "direct",
      "comparison_group": "cny-720p-audio",
-     "price_basis": "wan3.0-video，视频生成，720P，原生有声视频默认开启，新加坡国际部署按输出视频时长每秒计费。",
+     "price_basis": "wan3.0-video，新加坡（部署范围：国际），720P；有声视频默认开启且无单独音频价，视频生成按0.74942元/秒。",
      "resolution": "720P",
      "duration": "2~30秒；-1（智能时长，默认5秒）",
      "frame_rate": "30fps",
@@ -18571,7 +18701,7 @@
      "lifecycle_status": "unknown",
      "sunset_at": null,
      "free_quota": null,
-     "note": "新加坡部署范围为国际；原生有声默认开启，audio=false 可关闭。"
+     "note": "新加坡端点RPM为300；输出MP4，有声视频默认开启。"
     },
     {
      "name": "wan3.0-video",
@@ -18584,13 +18714,13 @@
       "reference-to-video",
       "video-edit"
      ],
-     "pricing": "视频生成（1080P）：1.49884元/秒",
+     "pricing": "1.49884元/秒",
      "currency": "CNY",
      "region": "intl",
      "price_per_second": 1.49884,
      "comparison_price_type": "direct",
      "comparison_group": "cny-1080p-audio",
-     "price_basis": "wan3.0-video，视频生成，1080P，原生有声视频默认开启，新加坡国际部署按输出视频时长每秒计费。",
+     "price_basis": "wan3.0-video，新加坡（部署范围：国际），1080P；有声视频默认开启且无单独音频价，视频生成按1.49884元/秒。",
      "resolution": "1080P",
      "duration": "2~30秒；-1（智能时长，默认5秒）",
      "frame_rate": "30fps",
@@ -18600,7 +18730,7 @@
      "lifecycle_status": "unknown",
      "sunset_at": null,
      "free_quota": null,
-     "note": "新加坡部署范围为国际；原生有声默认开启，audio=false 可关闭。"
+     "note": "新加坡端点RPM为300；输出MP4，有声视频默认开启。"
     },
     {
      "name": "wan3.0-video",
@@ -18613,13 +18743,13 @@
       "reference-to-video",
       "video-edit"
      ],
-     "pricing": "视频生成（480P）：0.3元/秒",
+     "pricing": "0.3元/秒",
      "currency": "CNY",
      "region": "intl",
      "price_per_second": 0.3,
      "comparison_price_type": "direct",
      "comparison_group": "cny-480p-audio",
-     "price_basis": "wan3.0-video，视频生成，480P，原生有声视频默认开启，日本（东京）、德国（法兰克福）及美国（弗吉尼亚）全球部署按输出视频时长每秒计费。",
+     "price_basis": "wan3.0-video，日本（东京）、德国（法兰克福）和美国（弗吉尼亚）全球部署，480P；有声视频默认开启，0.3元/秒。",
      "resolution": "480P",
      "duration": "2~30秒；-1（智能时长，默认5秒）",
      "frame_rate": "30fps",
@@ -18629,7 +18759,7 @@
      "lifecycle_status": "unknown",
      "sunset_at": null,
      "free_quota": null,
-     "note": "日本、德国和美国端点的部署范围为全球；原生有声默认开启，audio=false 可关闭。"
+     "note": "日本、德国和美国端点均列为全球部署，RPM均为300。"
     },
     {
      "name": "wan3.0-video",
@@ -18642,13 +18772,13 @@
       "reference-to-video",
       "video-edit"
      ],
-     "pricing": "视频生成（720P）：0.6元/秒",
+     "pricing": "0.6元/秒",
      "currency": "CNY",
      "region": "intl",
      "price_per_second": 0.6,
      "comparison_price_type": "direct",
      "comparison_group": "cny-720p-audio",
-     "price_basis": "wan3.0-video，视频生成，720P，原生有声视频默认开启，日本（东京）、德国（法兰克福）及美国（弗吉尼亚）全球部署按输出视频时长每秒计费。",
+     "price_basis": "wan3.0-video，日本（东京）、德国（法兰克福）和美国（弗吉尼亚）全球部署，720P；有声视频默认开启，0.6元/秒。",
      "resolution": "720P",
      "duration": "2~30秒；-1（智能时长，默认5秒）",
      "frame_rate": "30fps",
@@ -18658,7 +18788,7 @@
      "lifecycle_status": "unknown",
      "sunset_at": null,
      "free_quota": null,
-     "note": "日本、德国和美国端点的部署范围为全球；原生有声默认开启，audio=false 可关闭。"
+     "note": "日本、德国和美国端点均列为全球部署，RPM均为300。"
     },
     {
      "name": "wan3.0-video",
@@ -18671,13 +18801,13 @@
       "reference-to-video",
       "video-edit"
      ],
-     "pricing": "视频生成（1080P）：1.2元/秒",
+     "pricing": "1.2元/秒",
      "currency": "CNY",
      "region": "intl",
      "price_per_second": 1.2,
      "comparison_price_type": "direct",
      "comparison_group": "cny-1080p-audio",
-     "price_basis": "wan3.0-video，视频生成，1080P，原生有声视频默认开启，日本（东京）、德国（法兰克福）及美国（弗吉尼亚）全球部署按输出视频时长每秒计费。",
+     "price_basis": "wan3.0-video，日本（东京）、德国（法兰克福）和美国（弗吉尼亚）全球部署，1080P；有声视频默认开启，1.2元/秒。",
      "resolution": "1080P",
      "duration": "2~30秒；-1（智能时长，默认5秒）",
      "frame_rate": "30fps",
@@ -18687,24 +18817,196 @@
      "lifecycle_status": "unknown",
      "sunset_at": null,
      "free_quota": null,
-     "note": "日本、德国和美国端点的部署范围为全球；原生有声默认开启，audio=false 可关闭。"
+     "note": "日本、德国和美国端点均列为全球部署，RPM均为300。"
+    },
+    {
+     "name": "wan3.0-video-prime",
+     "variant_key": "intl-singapore-480p",
+     "api_available": true,
+     "modes": [
+      "text-to-video",
+      "image-to-video",
+      "first-last-frame",
+      "reference-to-video",
+      "video-edit"
+     ],
+     "pricing": "$0.068/second",
+     "currency": "USD",
+     "region": "intl",
+     "price_per_second": 0.068,
+     "comparison_price_type": "direct",
+     "comparison_group": "usd-480p-audio",
+     "price_basis": "wan3.0-video-prime，新加坡国际部署，480P；系列文档说明原生输出台词、BGM和音效，价格未按音频开关区分。",
+     "resolution": "480P",
+     "duration": "2~30秒；-1（智能时长，默认5秒）",
+     "frame_rate": "30fps",
+     "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、adaptive",
+     "native_audio": true,
+     "comparison_resolution": "480p",
+     "lifecycle_status": "unknown",
+     "sunset_at": null,
+     "free_quota": "30 seconds",
+     "note": "仅输出计费；新加坡免费额度有效期为模型开通、发布或审批后90天。"
+    },
+    {
+     "name": "wan3.0-video-prime",
+     "variant_key": "intl-singapore-720p",
+     "api_available": true,
+     "modes": [
+      "text-to-video",
+      "image-to-video",
+      "first-last-frame",
+      "reference-to-video",
+      "video-edit"
+     ],
+     "pricing": "$0.14/second",
+     "currency": "USD",
+     "region": "intl",
+     "price_per_second": 0.14,
+     "comparison_price_type": "direct",
+     "comparison_group": "usd-720p-audio",
+     "price_basis": "wan3.0-video-prime，新加坡国际部署，720P；系列文档说明原生输出台词、BGM和音效，价格未按音频开关区分。",
+     "resolution": "720P",
+     "duration": "2~30秒；-1（智能时长，默认5秒）",
+     "frame_rate": "30fps",
+     "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、adaptive",
+     "native_audio": true,
+     "comparison_resolution": "720p",
+     "lifecycle_status": "unknown",
+     "sunset_at": null,
+     "free_quota": "30 seconds",
+     "note": "仅输出计费；新加坡免费额度有效期为模型开通、发布或审批后90天。"
+    },
+    {
+     "name": "wan3.0-video-prime",
+     "variant_key": "intl-singapore-1080p",
+     "api_available": true,
+     "modes": [
+      "text-to-video",
+      "image-to-video",
+      "first-last-frame",
+      "reference-to-video",
+      "video-edit"
+     ],
+     "pricing": "$0.28/second",
+     "currency": "USD",
+     "region": "intl",
+     "price_per_second": 0.28,
+     "comparison_price_type": "direct",
+     "comparison_group": "usd-1080p-audio",
+     "price_basis": "wan3.0-video-prime，新加坡国际部署，1080P；系列文档说明原生输出台词、BGM和音效，价格未按音频开关区分。",
+     "resolution": "1080P",
+     "duration": "2~30秒；-1（智能时长，默认5秒）",
+     "frame_rate": "30fps",
+     "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、adaptive",
+     "native_audio": true,
+     "comparison_resolution": "1080p",
+     "lifecycle_status": "unknown",
+     "sunset_at": null,
+     "free_quota": "30 seconds",
+     "note": "仅输出计费；新加坡免费额度有效期为模型开通、发布或审批后90天。"
+    },
+    {
+     "name": "wan3.0-video-prime",
+     "variant_key": "domestic-480p",
+     "api_available": true,
+     "modes": [
+      "text-to-video",
+      "image-to-video",
+      "first-last-frame",
+      "reference-to-video",
+      "video-edit"
+     ],
+     "pricing": "$0.0636/second",
+     "currency": "USD",
+     "region": "domestic",
+     "price_per_second": 0.0636,
+     "comparison_price_type": "direct",
+     "comparison_group": "usd-480p-audio",
+     "price_basis": "wan3.0-video-prime，中国（北京），480P；系列文档说明原生输出台词、BGM和音效，价格未按音频开关区分。",
+     "resolution": "480P",
+     "duration": "2~30秒；-1（智能时长，默认5秒）",
+     "frame_rate": "30fps",
+     "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、adaptive",
+     "native_audio": true,
+     "comparison_resolution": "480p",
+     "lifecycle_status": "unknown",
+     "sunset_at": null,
+     "free_quota": null,
+     "note": "仅输出计费。"
+    },
+    {
+     "name": "wan3.0-video-prime",
+     "variant_key": "domestic-720p",
+     "api_available": true,
+     "modes": [
+      "text-to-video",
+      "image-to-video",
+      "first-last-frame",
+      "reference-to-video",
+      "video-edit"
+     ],
+     "pricing": "$0.127199/second",
+     "currency": "USD",
+     "region": "domestic",
+     "price_per_second": 0.127199,
+     "comparison_price_type": "direct",
+     "comparison_group": "usd-720p-audio",
+     "price_basis": "wan3.0-video-prime，中国（北京），720P；系列文档说明原生输出台词、BGM和音效，价格未按音频开关区分。",
+     "resolution": "720P",
+     "duration": "2~30秒；-1（智能时长，默认5秒）",
+     "frame_rate": "30fps",
+     "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、adaptive",
+     "native_audio": true,
+     "comparison_resolution": "720p",
+     "lifecycle_status": "unknown",
+     "sunset_at": null,
+     "free_quota": null,
+     "note": "仅输出计费。"
+    },
+    {
+     "name": "wan3.0-video-prime",
+     "variant_key": "domestic-1080p",
+     "api_available": true,
+     "modes": [
+      "text-to-video",
+      "image-to-video",
+      "first-last-frame",
+      "reference-to-video",
+      "video-edit"
+     ],
+     "pricing": "$0.254399/second",
+     "currency": "USD",
+     "region": "domestic",
+     "price_per_second": 0.254399,
+     "comparison_price_type": "direct",
+     "comparison_group": "usd-1080p-audio",
+     "price_basis": "wan3.0-video-prime，中国（北京），1080P；系列文档说明原生输出台词、BGM和音效，价格未按音频开关区分。",
+     "resolution": "1080P",
+     "duration": "2~30秒；-1（智能时长，默认5秒）",
+     "frame_rate": "30fps",
+     "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、adaptive",
+     "native_audio": true,
+     "comparison_resolution": "1080p",
+     "lifecycle_status": "unknown",
+     "sunset_at": null,
+     "free_quota": null,
+     "note": "仅输出计费。"
     }
    ],
-   "fetched_at": "2026-09-13T15:23:38Z",
+   "fetched_at": "2026-09-14T08:21:01Z",
    "has_video_generation": true,
    "configured_source_urls": [
     "https://help.aliyun.com/zh/model-studio/wan3-video-generation-guide",
     "https://help.aliyun.com/zh/model-studio/wan3-0-video",
     "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
    ],
-   "last_fetch_ts": "2026-09-14T07:20:11Z",
+   "last_fetch_ts": "2026-09-14T08:21:01Z",
    "source_warnings": [],
    "videogen_hash": "6fb11d018b249e3d74ae219aa7a10ac3ccb7dea7027baed21ce2acda473daa3d",
-   "status_note": "官网生视频抽取覆盖项由 9 变为 10，等待下轮同语义结果确认",
-   "last_error": "官网生视频抽取覆盖项由 9 变为 10，等待下轮同语义结果确认",
-   "videogen_excerpt_hash": "16124527278f357d01769894efb917820358d07fdb33cd44befb92ebea24dca3",
-   "videogen_pending_shrink_hash": "b985846665c6a50ce42e38a9a766aee528fdee177c454e2a9c555801f5e3f24e",
-   "videogen_pending_shrink_count": 10,
+   "status_note": null,
+   "last_error": null,
+   "videogen_excerpt_hash": "3378e4181241ab74e6ecf8b9e2443b5513ba07b1fb26cd70bf2edf4ae0417067",
    "name": "阿里云百炼 Wan Video",
    "region": "国内"
   },
@@ -18820,13 +19122,13 @@
     "https://platform.vidu.com/docs/pricing",
     "https://platform.vidu.com/docs/model-map"
    ],
-   "last_fetch_ts": "2026-09-14T07:21:07Z",
+   "last_fetch_ts": "2026-09-14T08:22:08Z",
    "source_warnings": [],
    "videogen_hash": "2cd6d4fef8fa69659822e065273ccb2ab800d7b5ac02c94eed1b5d61aa9c8e95",
-   "status_note": "官网生视频抽取覆盖项由 3 变为 34，等待下轮同语义结果确认",
-   "last_error": "官网生视频抽取覆盖项由 3 变为 34，等待下轮同语义结果确认",
-   "videogen_pending_shrink_hash": "14de519180d37dbf052b7ab8deff4a6e4d4cd37badf3a20c260caf47fee1a84e",
-   "videogen_pending_shrink_count": 34,
+   "status_note": "官网生视频抽取覆盖项由 3 变为 41，等待下轮同语义结果确认",
+   "last_error": "官网生视频抽取覆盖项由 3 变为 41，等待下轮同语义结果确认",
+   "videogen_pending_shrink_hash": "ae46652881bb0a5ac6cef077c3fcff50c869881dc8c63b868037a0f82b0a4182",
+   "videogen_pending_shrink_count": 41,
    "name": "Vidu API",
    "region": "国内"
   },
@@ -19492,7 +19794,7 @@
    "configured_source_urls": [
     "https://docs.platform.pixverse.ai/pricing-796039m0"
    ],
-   "last_fetch_ts": "2026-09-14T07:22:26Z",
+   "last_fetch_ts": "2026-09-14T08:23:29Z",
    "source_warnings": [],
    "videogen_hash": "42feca41d5eebca401116c6c73e565860c538bd85c72da52d18a0a75a6e01720",
    "status_note": "页面无变化",
@@ -19832,7 +20134,7 @@
     "https://dev.pika.art/pricing",
     "https://dev.pika.art/models/pika/pika-2.5"
    ],
-   "last_fetch_ts": "2026-09-14T07:22:27Z",
+   "last_fetch_ts": "2026-09-14T08:23:29Z",
    "source_warnings": [],
    "videogen_hash": "65fb13c12295c4de6b495c7e08c67da03d7d107def7d525d4f10b5c7323cd200",
    "status_note": "页面无变化",
@@ -19902,7 +20204,7 @@
     "https://cloud.tencent.com/document/product/1616/118994",
     "https://cloud.tencent.com/document/product/1616/126160"
    ],
-   "last_fetch_ts": "2026-09-14T07:22:28Z",
+   "last_fetch_ts": "2026-09-14T08:23:30Z",
    "source_warnings": [],
    "videogen_hash": "50f49d4c2bd716fb58ae27f8a863f6a81399891fd7dc21aa2db573bf1afe8cdf",
    "status_note": "官网生视频页面无效: 页面是空白/报错/登录/验证壳；保留上次数据",

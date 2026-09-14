@@ -13,19 +13,96 @@
  "offerings": [
   {
    "name": "Search",
-   "pricing": "Search costs 2 credits per 10 results. Hobby: $19/month billed monthly, or $16/month billed annually, for 5,000 credits per month (2,500 searches).",
-   "price_per_1k_usd": 6.4,
-   "price_basis": "Hobby 年付（$16/月；2,500 searches/月）",
-   "free_quota": "1,000 credits / month；500 searches or 1,000 pages scraped",
-   "output_type": "结构化搜索结果；返回 titles、descriptions、URLs，可选返回每个结果的 markdown、HTML、links 或 screenshots",
+   "pricing": "Free Plan: $0/month; Search: 2 credits / 10 results.",
+   "price_per_1k_usd": null,
+   "price_basis": "Free Plan（1,000 credits/month；credits shared across endpoints）",
+   "free_quota": "500 searches or 1,000 pages scraped",
+   "output_type": "结构化搜索结果（web、news、images），含 title、description/snippet、URL；可选抓取结果全文内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "结果含 query-relevant Highlights（默认）；搜索 1–10 条结果收费 2 credits，超过 10 条向上取整。"
+   "note": "Search costs 2 credits per 10 results, rounded up."
+  },
+  {
+   "name": "Search",
+   "pricing": "Hobby: $16/month, billed yearly; Search: 2 credits / 10 results.",
+   "price_per_1k_usd": null,
+   "price_basis": "Hobby（5,000 credits/month；2,500 searches）",
+   "free_quota": null,
+   "output_type": "结构化搜索结果（web、news、images），含 title、description/snippet、URL；可选抓取结果全文内容",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "1,000 extra credits per $5；结果数按每10条向上取整计费。"
+  },
+  {
+   "name": "Search",
+   "pricing": "Standard: $83/month, billed yearly; Search: 2 credits / 10 results.",
+   "price_per_1k_usd": null,
+   "price_basis": "Standard（100,000 credits/month；50,000 searches）",
+   "free_quota": null,
+   "output_type": "结构化搜索结果（web、news、images），含 title、description/snippet、URL；可选抓取结果全文内容",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "2,000 extra credits per $5；结果数按每10条向上取整计费。"
+  },
+  {
+   "name": "Search",
+   "pricing": "Growth: $333/month, billed yearly; Search: 2 credits / 10 results.",
+   "price_per_1k_usd": null,
+   "price_basis": "Growth（500,000 credits/month；250,000 searches）",
+   "free_quota": null,
+   "output_type": "结构化搜索结果（web、news、images），含 title、description/snippet、URL；可选抓取结果全文内容",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "2,500 extra credits per $5；结果数按每10条向上取整计费。"
+  },
+  {
+   "name": "Search",
+   "pricing": "Scale: $599/month, billed yearly; Search: 2 credits / 10 results.",
+   "price_per_1k_usd": null,
+   "price_basis": "Scale（1,000,000 credits/month；500,000 searches）",
+   "free_quota": null,
+   "output_type": "结构化搜索结果（web、news、images），含 title、description/snippet、URL；可选抓取结果全文内容",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "5,000 extra credits per $5；结果数按每10条向上取整计费。"
+  },
+  {
+   "name": "Search",
+   "pricing": "Enterprise: Custom credits; Custom.",
+   "price_per_1k_usd": null,
+   "price_basis": "Enterprise",
+   "free_quota": null,
+   "output_type": "结构化搜索结果（web、news、images），含 title、description/snippet、URL；可选抓取结果全文内容",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "Enterprise ZDR search is available via the enterprise parameter."
+  },
+  {
+   "name": "Search — End-to-End ZDR",
+   "pricing": "Cost: 10 credits per 10 results. Available on Enterprise plans.",
+   "price_per_1k_usd": null,
+   "price_basis": "Enterprise parameter: enterprise: [\"zdr\"]",
+   "free_quota": null,
+   "output_type": "结构化搜索结果；可与内容抓取结合",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "Firecrawl and upstream search provider enforce zero data retention."
+  },
+  {
+   "name": "Search — Anonymized ZDR",
+   "pricing": "Cost: 2 credits per 10 results. Available on Enterprise plans.",
+   "price_per_1k_usd": null,
+   "price_basis": "Enterprise parameter: enterprise: [\"anon\"]",
+   "free_quota": null,
+   "output_type": "结构化搜索结果；可与内容抓取结合",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "Firecrawl enforces ZDR; search provider may cache an anonymized query."
   }
  ],
- "fetched_at": "2026-09-14T04:16:29Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-14T09:14:00Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-14T08:14:43Z",
- "websearch_hash": "c77cffca5c8ae7a91e734fd745729a59f72a39eb082854a64777d1132dfb5eac"
+ "last_fetch_ts": "2026-09-14T09:14:00Z",
+ "websearch_hash": "465803cb5f069d70d58f2c54b43e81116e116bcef4123e770b986abd28f0c6a3"
 }

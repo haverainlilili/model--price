@@ -11,19 +11,19 @@
  "offerings": [
   {
    "name": "Google Search API",
-   "pricing": "Starter: $50* for 50k credits ($1.00/1k); Standard: $375* for 500k credits ($0.75/1k); Scale: $1250* for 2.5M credits ($0.50/1k); Ultimate: $3750* for 12.5M credits ($0.30/1k). No monthly subscriptions; pay for credits needed.",
+   "pricing": "Starter: $50* for 50k credits ($1.00/1k); Standard: $375* for 500k credits ($0.75/1k); Scale: $1250* for 2.5M credits ($0.50/1k); Ultimate: $3750* for 12.5M credits ($0.30/1k). No monthly subscriptions; credits valid for 6 months.",
    "price_per_1k_usd": 1.0,
    "price_basis": "Starter，50k credits / 50,000 queries",
    "free_quota": "Get 2,500 free queries. No credit card required.",
-   "output_type": "结构化 JSON Google 搜索结果，含 organic、knowledgeGraph、peopleAlsoAsk、relatedSearches 等字段",
+   "output_type": "结构化 JSON Google SERP 结果，含 organic、knowledgeGraph、peopleAlsoAsk、relatedSearches 等字段",
    "cites_sources": true,
    "default_on": null,
-   "note": "支持 Images、News、Maps、Places、Videos、Shopping、Scholar、Patents、Autocomplete；结果实时返回，积分有效期 6 个月。"
+   "note": "成功响应才扣 credits；每次 API 调用直接查询 Google，实时结果，不缓存。支持图片、新闻、地图、地点、视频、购物等。"
   }
  ],
- "fetched_at": "2026-09-14T13:14:05Z",
+ "fetched_at": "2026-09-14T14:16:08Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-14T13:14:05Z",
- "websearch_hash": "03e9206024badf0402e0bb34ceea4f0a421eb95288e045d8a60ab1849f15fef5"
+ "last_fetch_ts": "2026-09-14T14:16:08Z",
+ "websearch_hash": "69bd2716f5701997f099af4f630899a1431a1400dcde755d5b19841788ac1dce"
 }

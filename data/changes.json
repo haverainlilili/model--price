@@ -1,498 +1,5 @@
 [
  {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-1.5-pro-32k",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 0.8,
-    "new": 0.4
-   },
-   {
-    "field": "output_per_1m",
-    "old": 2.0,
-    "new": 1.0
-   },
-   {
-    "field": "note",
-    "old": "在线推理（常规）",
-    "new": "批量推理"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-1.5-lite-32k",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 0.3,
-    "new": 0.15
-   },
-   {
-    "field": "output_per_1m",
-    "old": 0.6,
-    "new": 0.3
-   },
-   {
-    "field": "note",
-    "old": "在线推理（常规）",
-    "new": "批量推理"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "glm-4.7",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 4.0,
-    "new": 2.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": 16.0,
-    "new": 8.0
-   },
-   {
-    "field": "note",
-    "old": "在线推理（常规）；输入长度 (32, 200]",
-    "new": "批量推理；输入长度 (32, 200]"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "deepseek-v4-pro预览版",
-  "fields": [
-   {
-    "field": "note",
-    "old": "批量推理；模型计费标准于 2026 年 8 月 28 日全面上调",
-    "new": "批量推理；模型计费标准已于 2026 年 8 月 28 日完成全面上调"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "deepseek-v4-flash预览版",
-  "fields": [
-   {
-    "field": "note",
-    "old": "批量推理；模型计费标准于 2026 年 8 月 28 日全面上调",
-    "new": "批量推理；模型计费标准已于 2026 年 8 月 28 日完成全面上调"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "new",
-  "model": "doubao-pro-32k",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 0.8
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 2.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-embedding-vision",
-  "fields": [
-   {
-    "field": "note",
-    "old": "向量模型（embedding）；文本输入。图片输入为 1.8 元/百万 token",
-    "new": "向量模型（embedding）；文本输入价格。图片输入 1.8 元/百万 token"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seedance-2.5",
-  "fields": [
-   {
-    "field": "output_per_1m",
-    "old": 70.0,
-    "new": 33.12
-   },
-   {
-    "field": "note",
-    "old": "视频生成模型，在线推理 token 单价；输出视频分辨率 480p、720p，输入不含视频。1080p 输入不含视频原价 77 元/百万 token，限时 72 折",
-    "new": "视频生成模型；在线推理；输出视频分辨率 1080p，输入包含视频；限时72折，原价 46 元/百万 token"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seedance-2.0",
-  "fields": [
-   {
-    "field": "output_per_1m",
-    "old": 46.0,
-    "new": 16.0
-   },
-   {
-    "field": "note",
-    "old": "视频生成模型，在线推理 token 单价；输出视频分辨率 480p、720p，输入不含视频",
-    "new": "视频生成模型；在线推理；输出视频分辨率 4k；输入包含视频"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seedance-2.0-fast",
-  "fields": [
-   {
-    "field": "output_per_1m",
-    "old": 27.75,
-    "new": 16.5
-   },
-   {
-    "field": "note",
-    "old": "视频生成模型，在线推理 token 单价；输出视频分辨率 480p、720p，输入不含视频；限时 75 折，原价 37 元/百万 token",
-    "new": "视频生成模型；在线推理；输出视频分辨率 480p、720p，输入包含视频；限时75折，原价 22 元/百万 token"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seedance-2.0-mini",
-  "fields": [
-   {
-    "field": "output_per_1m",
-    "old": 9.2,
-    "new": 5.6
-   },
-   {
-    "field": "note",
-    "old": "视频生成模型，在线推理 token 单价；输出视频分辨率 480p、720p，输入不含视频；限时 4 折，原价 23 元/百万 token",
-    "new": "视频生成模型；在线推理；输出视频分辨率 480p、720p，输入包含视频；限时4折，原价 14 元/百万 token"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "new",
-  "model": "doubao-seedance-1.5-pro",
-  "fields": [
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 4.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "new",
-  "model": "doubao-seedance-1.0-pro",
-  "fields": [
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 7.5
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T15:06:34Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "new",
-  "model": "doubao-seedance-1.0-pro-fast",
-  "fields": [
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 2.1
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-2.0-lite",
-  "fields": [
-   {
-    "field": "note",
-    "old": "批量推理；输入长度 (128, 256]；音频输入 13.5 元/百万 token，音频缓存命中 5.4 元/百万 token",
-    "new": "批量推理；输入长度 (128, 256]；音频输入 13.5、音频缓存命中 5.4 元/百万 token"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-2.0-mini",
-  "fields": [
-   {
-    "field": "note",
-    "old": "批量推理；输入长度 (128, 256]；音频输入 6 元/百万 token，音频缓存命中 2.4 元/百万 token",
-    "new": "批量推理；输入长度 (128, 256]；音频输入 6、音频缓存命中 2.4 元/百万 token"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-1.8",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 2.4,
-    "new": 1.2
-   },
-   {
-    "field": "output_per_1m",
-    "old": 24.0,
-    "new": 12.0
-   },
-   {
-    "field": "note",
-    "old": "在线推理（常规）；输入长度 (128, 256]",
-    "new": "批量推理；输入长度 (128, 256]"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-1.6",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 2.4,
-    "new": 1.2
-   },
-   {
-    "field": "output_per_1m",
-    "old": 24.0,
-    "new": 12.0
-   },
-   {
-    "field": "note",
-    "old": "在线推理（常规）；输入长度 (128, 256]",
-    "new": "批量推理；输入长度 (128, 256]"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-1.6-lite",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 1.2,
-    "new": 0.6
-   },
-   {
-    "field": "output_per_1m",
-    "old": 12.0,
-    "new": 6.0
-   },
-   {
-    "field": "note",
-    "old": "在线推理（常规）；输入长度 (128, 256]",
-    "new": "批量推理；输入长度 (128, 256]"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-1.6-flash",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 0.6,
-    "new": 0.3
-   },
-   {
-    "field": "output_per_1m",
-    "old": 6.0,
-    "new": 3.0
-   },
-   {
-    "field": "note",
-    "old": "在线推理（常规）；输入长度 (128, 256]",
-    "new": "批量推理；输入长度 (128, 256]"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-1.6-vision",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 2.4,
-    "new": 1.2
-   },
-   {
-    "field": "output_per_1m",
-    "old": 24.0,
-    "new": 12.0
-   },
-   {
-    "field": "note",
-    "old": "在线推理（常规）；输入长度 (128, 256]",
-    "new": "批量推理；输入长度 (128, 256]"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "deepseek-v4-pro正式版",
-  "fields": [
-   {
-    "field": "note",
-    "old": "批量推理",
-    "new": "批量推理；2026 年 8 月 28 日完成全面上调后的当前价格"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "deepseek-v4-flash正式版",
-  "fields": [
-   {
-    "field": "note",
-    "old": "批量推理",
-    "new": "批量推理；2026 年 8 月 21 日完成全面上调后的当前价格"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "deepseek-v4-pro预览版",
-  "fields": [
-   {
-    "field": "note",
-    "old": "批量推理；模型计费标准已于 2026 年 8 月 28 日完成全面上调",
-    "new": "批量推理；2026 年 8 月 28 日完成全面上调后的当前价格"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "deepseek-v4-flash预览版",
-  "fields": [
-   {
-    "field": "note",
-    "old": "批量推理；模型计费标准已于 2026 年 8 月 28 日完成全面上调",
-    "new": "批量推理；2026 年 8 月 28 日完成全面上调后的当前价格"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-embedding-vision",
-  "fields": [
-   {
-    "field": "note",
-    "old": "向量模型（embedding）；文本输入价格。图片输入 1.8 元/百万 token",
-    "new": "向量模型（embedding）；文本输入价格。图片输入为 1.8 元/百万 token"
-   }
-  ]
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "removed",
-  "model": "doubao-seedance-2.5",
-  "fields": []
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "removed",
-  "model": "doubao-seedance-2.0",
-  "fields": []
- },
- {
-  "ts": "2026-09-13T16:06:35Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "removed",
-  "model": "doubao-seedance-2.0-fast",
-  "fields": []
- },
- {
   "ts": "2026-09-13T16:06:35Z",
   "provider": "doubao",
   "provider_name": "火山方舟 (豆包)",
@@ -6594,5 +6101,510 @@
     "new": "视频生成模型；在线推理，离线推理 2.1 元/百万token"
    }
   ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "deepseek-v4-pro预览版",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 9.0,
+    "new": 4.5
+   },
+   {
+    "field": "output_per_1m",
+    "old": 27.0,
+    "new": 13.5
+   },
+   {
+    "field": "note",
+    "old": "在线推理（常规）；缓存存储 0.017 元/百万token/小时；2026-08-28 后当前价格",
+    "new": "批量推理；2026 年 8 月 28 日完成全面上调，当前价格"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "deepseek-v4-flash预览版",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 3.0,
+    "new": 1.5
+   },
+   {
+    "field": "output_per_1m",
+    "old": 9.0,
+    "new": 4.5
+   },
+   {
+    "field": "note",
+    "old": "在线推理（常规）；缓存存储 0.017 元/百万token/小时；2026-08-28 后当前价格",
+    "new": "批量推理；2026 年 8 月 28 日完成全面上调，当前价格"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-evolving",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 [0, 1024]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 [0, 1024]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-pro",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 28.8,
+    "new": 9.6
+   },
+   {
+    "field": "output_per_1m",
+    "old": 144.0,
+    "new": 48.0
+   },
+   {
+    "field": "cached_input_per_1m",
+    "old": 5.76,
+    "new": 1.92
+   },
+   {
+    "field": "note",
+    "old": "在线推理（低延迟）；输入长度 (128, 256]",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-lite",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；音频输入 27、音频缓存命中 5.4 元/百万token；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]；非音频输入。音频输入 27 元/百万 token，音频缓存命中 5.4 元/百万 token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-mini",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；音频输入 12、音频缓存命中 2.4 元/百万token；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]；非音频输入。音频输入 12 元/百万 token，音频缓存命中 2.4 元/百万 token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-code",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-1.8",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-character",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (32, 128]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (32, 128]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-code",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-1.6",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-1.6-lite",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-1.6-flash",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-1.6-vision",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-translation",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 0.6,
+    "new": 1.2
+   },
+   {
+    "field": "output_per_1m",
+    "old": 1.8,
+    "new": 3.6
+   },
+   {
+    "field": "cached_input_per_1m",
+    "old": 0.24,
+    "new": null
+   },
+   {
+    "field": "note",
+    "old": "批量推理",
+    "new": "在线推理（常规）"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-1.5-pro-32k",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 0.4,
+    "new": 0.8
+   },
+   {
+    "field": "output_per_1m",
+    "old": 1.0,
+    "new": 2.0
+   },
+   {
+    "field": "note",
+    "old": "批量推理",
+    "new": "在线推理（常规）"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-1.5-lite-32k",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 0.15,
+    "new": 0.3
+   },
+   {
+    "field": "output_per_1m",
+    "old": 0.3,
+    "new": 0.6
+   },
+   {
+    "field": "note",
+    "old": "批量推理",
+    "new": "在线推理（常规）"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "glm-5.3-flash",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "glm-5.2",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "glm-4.7",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (32, 200]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (32, 200]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-embedding-vision",
+  "fields": [
+   {
+    "field": "note",
+    "old": "向量模型（embedding）；文本输入价格。图片输入 1.8 元/百万token",
+    "new": "向量模型（embedding）；文本输入。图片输入价格 1.8 元/百万 token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seedance-2.5",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": 55.44,
+    "new": 33.12
+   },
+   {
+    "field": "note",
+    "old": "视频生成模型，在线推理；输出视频分辨率 1080p，输入不含视频；限时72折，原价 77 元/百万token。输入包含视频折后 33.12 元/百万token，原价 46 元/百万token",
+    "new": "视频生成模型，在线推理；输出视频分辨率 1080p，输入包含视频；限时72折，原价 46 元/百万 token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seedance-2.0",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": 26.0,
+    "new": 16.0
+   },
+   {
+    "field": "note",
+    "old": "视频生成模型，在线推理；输出视频分辨率 4k，输入不含视频。输入包含视频 16 元/百万token",
+    "new": "视频生成模型，在线推理；输出视频分辨率 4k；输入包含视频"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seedance-2.0-fast",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": 27.75,
+    "new": 16.5
+   },
+   {
+    "field": "note",
+    "old": "视频生成模型，在线推理；输出视频分辨率 480p、720p，输入不含视频；限时75折，原价 37 元/百万token。输入包含视频折后 16.5 元/百万token，原价 22 元/百万token",
+    "new": "视频生成模型，在线推理；输出视频分辨率 480p、720p，输入包含视频；限时75折，原价 22 元/百万 token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seedance-2.0-mini",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": 9.2,
+    "new": 5.6
+   },
+   {
+    "field": "note",
+    "old": "视频生成模型，在线推理；输出视频分辨率 480p、720p，输入不含视频；限时4折，原价 23 元/百万token。输入包含视频折后 5.6 元/百万token，原价 14 元/百万token",
+    "new": "视频生成模型，在线推理；输出视频分辨率 480p、720p，输入包含视频；限时4折，原价 14 元/百万 token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seedance-1.5-pro",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": 16.0,
+    "new": 4.0
+   },
+   {
+    "field": "note",
+    "old": "视频生成模型，在线推理；有声视频。无声视频 8 元/百万token；离线推理有声 8、无声 4 元/百万token",
+    "new": "视频生成模型，离线推理；无声视频"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seedance-1.0-pro",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": 15.0,
+    "new": 7.5
+   },
+   {
+    "field": "note",
+    "old": "视频生成模型；在线推理，离线推理 7.5 元/百万token",
+    "new": "视频生成模型，离线推理"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seedance-1.0-pro-fast",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": 4.2,
+    "new": 2.1
+   },
+   {
+    "field": "note",
+    "old": "视频生成模型；在线推理，离线推理 2.1 元/百万token",
+    "new": "视频生成模型，离线推理"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-14T06:05:55Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "removed",
+  "model": "doubao-pro-32k",
+  "fields": []
  }
 ]

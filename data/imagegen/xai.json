@@ -24,28 +24,28 @@
  ],
  "offerings": [
   {
-   "name": "grok-imagine-image-2.0",
+   "name": "grok-imagine-image-quality",
    "variant_key": null,
    "api_available": true,
    "modes": [
     "text-to-image"
    ],
-   "pricing": "$0.04 / image",
+   "pricing": "$0.05 / image",
    "currency": "USD",
    "region": null,
-   "price_per_image": 0.04,
+   "price_per_image": 0.05,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image-2.0，按每张图计费；页面未将价格对应到固定质量或精确像素分辨率。",
-   "resolution": "1k（默认）；2k",
-   "aspect_ratios": "1:1、16:9、9:16、4:3、3:4、3:2、2:3、2:1、1:2、19.5:9、9:19.5、20:9、9:20、21:9、5:2、auto",
-   "output_formats": "URL（默认）；base64（b64_json）",
+   "price_basis": "grok-imagine-image-quality，$0.05 per image；官网未说明对应质量或精确分辨率。",
+   "resolution": null,
+   "aspect_ratios": null,
+   "output_formats": null,
    "comparison_width": null,
    "comparison_height": null,
    "quality_tier": null,
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "支持 n=1–10 批量生成。quality 支持 low、medium、auto；auto 生图当前使用 low。"
+   "note": null
   },
   {
    "name": "grok-imagine-image",
@@ -59,7 +59,7 @@
    "region": null,
    "price_per_image": 0.02,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image，按每张图计费；页面未说明质量或分辨率对应关系。",
+   "price_basis": "grok-imagine-image，$0.02 per image；官网未说明对应质量或精确分辨率。",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -72,42 +72,40 @@
    "note": null
   },
   {
-   "name": "grok-imagine-image-quality",
+   "name": "grok-imagine-image-2.0",
    "variant_key": null,
    "api_available": true,
    "modes": [
     "text-to-image"
    ],
-   "pricing": "$0.05 / image",
+   "pricing": "$0.04 / image",
    "currency": "USD",
    "region": null,
-   "price_per_image": 0.05,
+   "price_per_image": 0.04,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image-quality，按每张图计费；页面未说明质量或分辨率对应关系。",
-   "resolution": null,
-   "aspect_ratios": null,
-   "output_formats": null,
+   "price_basis": "grok-imagine-image-2.0，$0.04 per image；支持 low、medium、auto 质量，但官网未按质量或分辨率拆分价格。",
+   "resolution": "1k（默认）；2k",
+   "aspect_ratios": "1:1、16:9、9:16、4:3、3:4、3:2、2:3、2:1、1:2、19.5:9、9:19.5、20:9、9:20、21:9、5:2、auto",
+   "output_formats": "URL（默认）；base64（b64_json）",
    "comparison_width": null,
    "comparison_height": null,
    "quality_tier": null,
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": null
+   "note": "REST Images API 支持 n=1–10；auto 质量当前用于生图时为 low。"
   }
  ],
- "fetched_at": "2026-09-14T00:15:15Z",
+ "fetched_at": "2026-09-14T02:15:14Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://docs.x.ai/developers/pricing",
   "https://docs.x.ai/developers/model-capabilities/images/generation"
  ],
- "last_fetch_ts": "2026-09-14T01:15:39Z",
+ "last_fetch_ts": "2026-09-14T02:15:14Z",
  "source_warnings": [],
- "imagegen_hash": "85a7f2995d2c34f11bfefc6d6c3f187ae24d53ab9c93e308c586ae13029c1895",
- "status_note": "官网生图抽取覆盖项由 3 变为 3，等待下轮同语义结果确认",
- "last_error": "官网生图抽取覆盖项由 3 变为 3，等待下轮同语义结果确认",
- "imagegen_excerpt_hash": "582deb63e595c2aa528f60e75da1f8a1295eaa9b8774eb5139148e8676ebb803",
- "imagegen_pending_shrink_hash": "8cb7168329c4d89dc08c7c70e88d90d70312b04c001757d567aea338cab98d0e",
- "imagegen_pending_shrink_count": 3
+ "imagegen_hash": "1105873e4f1d85e8004d88126137e40561fd07f1dd13ffa815a047cb5c322337",
+ "status_note": null,
+ "last_error": null,
+ "imagegen_excerpt_hash": "3b7bbc7866c07c3e264912b850e6c6fbc676c882ff5f85ec4d95cca8fe7ef4b0"
 }

@@ -27,7 +27,7 @@
  "offerings": [
   {
    "name": "wan2.7-image-pro",
-   "variant_key": "cn-beijing",
+   "variant_key": "domestic",
    "api_available": true,
    "modes": [
     "text-to-image",
@@ -35,12 +35,12 @@
     "image-edit",
     "reference"
    ],
-   "pricing": "华北2（北京）：图片生成 0.5 元/每张。",
+   "pricing": "华北2（北京）：图片生成 0.5 元/张。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_image": 0.5,
    "comparison_group": null,
-   "price_basis": "wan2.7-image-pro，华北2（北京）图片生成，0.5元/张；官网未说明分辨率和质量档。",
+   "price_basis": "wan2.7-image-pro，华北2（北京），图片生成，按每张计费。",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -50,11 +50,11 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "页面仅展示模型调用原价，不包含限时优惠。"
+   "note": "支持文生图、文生组图、图生组图、图像编辑、多图参考生成和交互式编辑。"
   },
   {
    "name": "wan2.7-image-pro",
-   "variant_key": "intl-singapore",
+   "variant_key": "intl",
    "api_available": true,
    "modes": [
     "text-to-image",
@@ -62,12 +62,12 @@
     "image-edit",
     "reference"
    ],
-   "pricing": "新加坡（部署范围：国际）：图片生成 0.562065 元/每张。",
+   "pricing": "新加坡（部署范围：国际）：图片生成 0.562065 元/张。",
    "currency": "CNY",
    "region": "intl",
    "price_per_image": 0.562065,
    "comparison_group": null,
-   "price_basis": "wan2.7-image-pro，新加坡国际部署图片生成，0.562065元/张；官网未说明分辨率和质量档。",
+   "price_basis": "wan2.7-image-pro，新加坡国际部署，图片生成，按每张计费。",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -77,22 +77,20 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "页面仅展示模型调用原价，不包含限时优惠。"
+   "note": "支持文生图、文生组图、图生组图、图像编辑、多图参考生成和交互式编辑。"
   }
  ],
- "fetched_at": "2026-09-14T05:15:41Z",
+ "fetched_at": "2026-09-15T13:16:58Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://help.aliyun.com/zh/model-studio/wan2-7-image-pro",
   "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
   "https://www.alibabacloud.com/help/en/model-studio/new-free-quota"
  ],
- "last_fetch_ts": "2026-09-15T12:16:56Z",
+ "last_fetch_ts": "2026-09-15T13:16:58Z",
  "source_warnings": [],
  "imagegen_hash": "5b3bb92c565f4b9497a2b2bbe7c1a101b720319ce6030401a684b0a7af5f8cd6",
- "status_note": "官网生图抽取覆盖项由 2 变为 2，等待下轮同语义结果确认",
- "last_error": "官网生图抽取覆盖项由 2 变为 2，等待下轮同语义结果确认",
- "imagegen_excerpt_hash": "e1a211c90a43d3df55fc9a3cd7f094e6b841e74d664bcd0c14234105aa72ecdd",
- "imagegen_pending_shrink_hash": "86ef06865f426802d6c5f6b171322901b2edb626051dd88ed6f3c837f95212a5",
- "imagegen_pending_shrink_count": 2
+ "status_note": null,
+ "last_error": null,
+ "imagegen_excerpt_hash": "5e307e653ec5ef535567023ba5a277fa75393656b5c589b8672162833acbdf9d"
 }

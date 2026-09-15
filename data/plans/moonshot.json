@@ -2,14 +2,14 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "会员订阅",
+   "plan_type": "会员计划",
    "price": "¥49/月",
    "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "月额度"
+     "window": "每月"
     },
     {
      "label": "Agent 优先生成队列",
@@ -23,23 +23,28 @@
     }
    ],
    "models": [],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除，并在每个计费周期自动刷新。",
+   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。Agent 用量数值基于常见任务 token 消耗估算，表示将月额度用于同一功能时的参考值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "会员订阅",
+   "plan_type": "会员计划",
    "price": "¥99/月",
    "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "月额度"
+     "window": "每月"
+    },
+    {
+     "label": "Agent 优先生成队列",
+     "value": "4 倍速",
+     "window": null
     },
     {
      "label": "Agent 集群",
-     "value": "25 次调用",
+     "value": "25 次",
      "window": null
     },
     {
@@ -49,23 +54,28 @@
     }
    ],
    "models": [],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除，并在每个计费周期自动刷新。",
+   "note": "在 Andante 基础上提供权益；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。Agent 用量数值基于常见任务 token 消耗估算，表示将月额度用于同一功能时的参考值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "会员订阅",
+   "plan_type": "会员计划",
    "price": "¥199/月",
    "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "月额度"
+     "window": "每月"
+    },
+    {
+     "label": "Agent 优先生成队列",
+     "value": "4 倍速",
+     "window": null
     },
     {
      "label": "Agent 集群",
-     "value": "50 次调用",
+     "value": "50 次",
      "window": null
     },
     {
@@ -75,23 +85,28 @@
     }
    ],
    "models": [],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除，并在每个计费周期自动刷新。",
+   "note": "在 Andante 基础上提供权益；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。Agent 用量数值基于常见任务 token 消耗估算，表示将月额度用于同一功能时的参考值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "会员订阅",
+   "plan_type": "会员计划",
    "price": "¥699/月",
    "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "月额度"
+     "window": "每月"
+    },
+    {
+     "label": "Agent 优先生成队列",
+     "value": "4 倍速",
+     "window": null
     },
     {
      "label": "Agent 集群",
-     "value": "120 次调用",
+     "value": "120 次",
      "window": null
     },
     {
@@ -106,18 +121,18 @@
     }
    ],
    "models": [],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除，并在每个计费周期自动刷新。",
+   "note": "在 Andante 基础上提供权益；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。Agent 用量数值基于常见任务 token 消耗估算，表示将月额度用于同一功能时的参考值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-15T08:10:17Z",
+ "last_fetch_ts": "2026-09-15T09:10:28Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "35850846322803cd94332831ce1a3bd673c36fff6b795e98269bdff2791785dd",
- "fetched_at": "2026-09-15T08:10:17Z",
+ "plans_hash": "92c42fb8db69d5bb816dd58918962eb7654cedc252dc9f8d305ef7d498251464",
+ "fetched_at": "2026-09-15T09:10:28Z",
  "status_note": null
 }

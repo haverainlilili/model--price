@@ -13,19 +13,30 @@
  "offerings": [
   {
    "name": "Search",
-   "pricing": "Search costs 2 credits per 10 results; paid-plan pay-as-you-go increments cost $5 (Hobby: 1,000 credits; Standard: 2,000; Growth: 2,500; Scale: 5,000).",
+   "pricing": "Search costs 2 credits per 10 results; Hobby: $16/month billed yearly for 5,000 credits/month (2,500 searches). Paid-plan pay-as-you-go increments: $5 for 1,000–5,000 credits depending on plan.",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": "1,000 credits / month; 500 searches or 1,000 pages scraped",
-   "output_type": "结构化搜索结果；返回 titles、descriptions 和 URLs，可选返回每个结果的 markdown、HTML、links 或 screenshots",
+   "output_type": "结构化搜索结果；返回 titles、descriptions、URLs，可选返回每个结果的 markdown、HTML、links 或 screenshots",
    "cites_sources": true,
    "default_on": null,
-   "note": "搜索结果默认包含 query-relevant Highlights；1–10 results = 2 credits，启用抓取另按每页收费。"
+   "note": "搜索结果默认包含 query-relevant Highlights；1–10 结果收费 2 credits，向上取整。"
+  },
+  {
+   "name": "End-to-End ZDR",
+   "pricing": "Cost: 10 credits per 10 results. Available on Enterprise plans.",
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": null,
+   "output_type": "零数据保留搜索结果；Firecrawl 和上游搜索提供商均不存储 query 或 result data",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "通过 enterprise: [\"zdr\"] 参数启用；若结合 scrapeOptions，也对结果抓取强制 ZDR。"
   }
  ],
- "fetched_at": "2026-09-15T17:15:25Z",
+ "fetched_at": "2026-09-15T18:15:07Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-15T17:15:25Z",
- "websearch_hash": "b3c74ace59b4f01b9138c15938fa03338a1d8afb2424ec46c667fd2519b71524"
+ "last_fetch_ts": "2026-09-15T18:15:07Z",
+ "websearch_hash": "e43ca0b873f1e39be85d29eb0613e3318d82905dad8adc3d81f9565156c28b24"
 }

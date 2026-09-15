@@ -11,19 +11,52 @@
  "offerings": [
   {
    "name": "Google Search API",
-   "pricing": "Starter: $50 for 50k credits ($1.00/1k); Standard: $375 for 500k credits ($0.75/1k); Scale: $1250 for 2.5M credits ($0.50/1k); Ultimate: $3750 for 12.5M credits ($0.30/1k).",
+   "pricing": "Starter: $50* for 50k credits ($1.00/1k); Standard: $375* for 500k credits ($0.75/1k); Scale: $1250* for 2.5M credits ($0.50/1k); Ultimate: $3750* for 12.5M credits ($0.30/1k). *Excluding sales tax/VAT/GST.",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Starter（50k credits / 50,000 queries）",
+   "price_basis": "Starter，50k credits / 50,000 queries",
    "free_quota": "Get 2,500 free queries. No credit card required.",
-   "output_type": "结构化 Google SERP 搜索结果（JSON），包括 organic、knowledgeGraph、peopleAlsoAsk、relatedSearches；亦支持 Images、News、Maps、Places、Videos、Shopping、Scholar、Patents、Autocomplete。",
+   "output_type": "结构化 JSON 搜索结果，含 organic、knowledgeGraph、peopleAlsoAsk、relatedSearches 等字段",
    "cites_sources": true,
    "default_on": null,
-   "note": "无月订阅，按所需 credits 充值；成功响应才扣 credit；实时直查 Google、不缓存；credits 6 个月有效。"
+   "note": "每次成功响应扣除 credits；API 直接查询 Google，不缓存，结果为实时结果。"
+  },
+  {
+   "name": "Google Search API",
+   "pricing": "Standard: $375* for 500k credits ($0.75/1k).",
+   "price_per_1k_usd": 0.75,
+   "price_basis": "Standard，500k credits / 500,000 queries",
+   "free_quota": null,
+   "output_type": "结构化 JSON 搜索结果",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "100 queries per second；credits valid for 6 months。"
+  },
+  {
+   "name": "Google Search API",
+   "pricing": "Scale: $1250* for 2.5M credits ($0.50/1k).",
+   "price_per_1k_usd": 0.5,
+   "price_basis": "Scale，2.5M credits / 2,500,000 queries",
+   "free_quota": null,
+   "output_type": "结构化 JSON 搜索结果",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "200 queries per second；credits valid for 6 months。"
+  },
+  {
+   "name": "Google Search API",
+   "pricing": "Ultimate: $3750* for 12.5M credits ($0.30/1k).",
+   "price_per_1k_usd": 0.3,
+   "price_basis": "Ultimate，12.5M credits / 12,500,000 queries",
+   "free_quota": null,
+   "output_type": "结构化 JSON 搜索结果",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "300 queries per second；credits valid for 6 months。"
   }
  ],
- "fetched_at": "2026-09-15T22:14:37Z",
+ "fetched_at": "2026-09-15T23:14:28Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-15T22:14:37Z",
- "websearch_hash": "5f07ee2846581bd823e9622888f139b66f12c354dda0e789195f2ad1fa802d98"
+ "last_fetch_ts": "2026-09-15T23:14:28Z",
+ "websearch_hash": "02990eadf8f683ed9e9b3343123a00ed56dbb96f02206ef9262b7a32324dc23d"
 }

@@ -2,7 +2,7 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "会员订阅",
+   "plan_type": "会员计划",
    "price": "¥49/月",
    "billing": "连续包月",
    "quotas": [
@@ -13,17 +13,17 @@
     },
     {
      "label": "专业数据库调用",
-     "value": "1000 次",
+     "value": "1000 次调用",
      "window": null
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。",
+   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；官网称 Agent 用量数值基于常见任务 token 消耗估算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "会员订阅",
+   "plan_type": "会员计划",
    "price": "¥99/月",
    "billing": "连续包月",
    "quotas": [
@@ -34,17 +34,17 @@
     },
     {
      "label": "专业数据库调用",
-     "value": "2000 次",
+     "value": "2000 次调用",
      "window": null
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。",
+   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；官网称 Agent 用量数值基于常见任务 token 消耗估算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "会员订阅",
+   "plan_type": "会员计划",
    "price": "¥199/月",
    "billing": "连续包月",
    "quotas": [
@@ -55,49 +55,49 @@
     },
     {
      "label": "专业数据库调用",
-     "value": "5000 次",
+     "value": "5000 次调用",
      "window": null
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。",
+   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；官网称 Agent 用量数值基于常见任务 token 消耗估算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "会员订阅",
+   "plan_type": "会员计划",
    "price": "¥699/月",
    "billing": "连续包月",
    "quotas": [
-    {
-     "label": "超长对话容量",
-     "value": "百万 Tokens",
-     "window": null
-    },
     {
      "label": "Agent 集群可用",
      "value": "120 次",
      "window": null
     },
     {
+     "label": "超长对话容量",
+     "value": "百万 Tokens",
+     "window": null
+    },
+    {
      "label": "专业数据库调用",
-     "value": "12000 次",
+     "value": "12000 次调用",
      "window": null
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。",
+   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；官网称 Agent 用量数值基于常见任务 token 消耗估算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-15T22:10:51Z",
+ "last_fetch_ts": "2026-09-15T23:10:07Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "7c853efa5c3451dcdfa848a262ed987494b52a0499d9088995cd6d28cc004081",
- "fetched_at": "2026-09-15T22:10:51Z",
+ "plans_hash": "45cb3049b26c5f000bb90ec708c90dd595633f9b4620a0112cdeecb7be55a16a",
+ "fetched_at": "2026-09-15T23:10:07Z",
  "status_note": null
 }

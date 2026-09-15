@@ -11,31 +11,31 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Tavily Search (basic, fast, ultra-fast)",
-   "pricing": "Pay-as-you-go: $0.008 per credit; basic, fast, ultra-fast: 1 API Credit per request. Monthly plans: $0.0075 - $0.005 per credit.",
+   "name": "Tavily Search",
+   "pricing": "Pay-as-you-go: $0.008 per credit. Monthly plans: $0.0075 - $0.005 per credit.",
    "price_per_1k_usd": 8.0,
-   "price_basis": "Pay as you go（$0.008/credit；1 credit/request）",
+   "price_basis": "Pay-as-you-go basic/fast/ultra-fast Search（1 API Credit/次，$0.008/Credit）",
    "free_quota": "You get 1,000 free API Credits every month. No credit card required.",
-   "output_type": "按相关性排序的结构化搜索结果，含标题、来源URL和内容片段；可选LLM答案、图片及原始内容",
+   "output_type": "结构化搜索结果；可选 LLM-generated answer、图片、原始内容",
    "cites_sources": true,
-   "default_on": null,
-   "note": "basic为默认深度；默认最多返回10条结果，可设置为0至20条。"
+   "default_on": false,
+   "note": "basic、fast、ultra-fast 各 1 credit/次；advanced 为 2 credits/次。max_results 默认10、最高20。"
   },
   {
    "name": "Tavily Search (advanced)",
-   "pricing": "Pay-as-you-go: $0.008 per credit; advanced: 2 API Credits per request. Monthly plans: $0.0075 - $0.005 per credit.",
+   "pricing": "Pay-as-you-go: $0.008 per credit. Monthly plans: $0.0075 - $0.005 per credit.",
    "price_per_1k_usd": 16.0,
-   "price_basis": "Pay as you go（$0.008/credit；2 credits/request）",
+   "price_basis": "Pay-as-you-go advanced Search（2 API Credits/次，$0.008/Credit）",
    "free_quota": "You get 1,000 free API Credits every month. No credit card required.",
-   "output_type": "按相关性排序的结构化搜索结果，每个URL可返回多个语义相关片段；可选更详细的LLM答案",
+   "output_type": "结构化搜索结果；可选 LLM-generated answer、图片、原始内容",
    "cites_sources": true,
-   "default_on": null,
-   "note": "advanced提供最高相关性但延迟增加；每个来源可配置1至3个内容片段。"
+   "default_on": false,
+   "note": "advanced 为最高相关性并增加延迟；每 URL 返回多个语义相关片段。"
   }
  ],
- "fetched_at": "2026-09-10T13:15:45Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-15T19:13:07Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-15T18:14:20Z",
- "websearch_hash": "92ba87a5a50bc7aa0a34e7e9e772e53b140613d489bc8518386b81102af3ff19"
+ "last_fetch_ts": "2026-09-15T19:13:07Z",
+ "websearch_hash": "a355d9fcb049b5f51537dc9e4ee7ff9621c4d6df0004dc1f1ed47ebca95a8e36"
 }

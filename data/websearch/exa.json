@@ -14,27 +14,38 @@
    "name": "Search",
    "pricing": "$7 / 1k requests；base price includes up to 10 results. Each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
    "price_per_1k_usd": 7.0,
-   "price_basis": "PAYG /search，基础价格（每请求最多10个结果）",
+   "price_basis": "PAYG /search，基础价（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "实时搜索结果、URL和页面内容；可含 AI summary 和 structured outputs",
-   "cites_sources": true,
+   "output_type": "Standard search results: URLs and page contents; highlights, structured outputs, and AI Summary.",
+   "cites_sources": null,
    "default_on": null,
-   "note": "可按 fast、auto、deep 搜索类型；最多可返回1,000结果（Enterprise）。"
+   "note": "Additional results and Exa-generated page summaries are billed on top."
   },
   {
    "name": "Deep Search",
-   "pricing": "deep-lite: $12 / 1k requests; deep: $12 / 1k requests; deep-reasoning: $15 / 1k requests.",
+   "pricing": "deep-lite $12 / 1k requests; deep $12 / 1k requests; deep-reasoning $15 / 1k requests.",
    "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG deep-lite / deep，基础价格（每请求最多10个结果）",
+   "price_basis": "PAYG deep-lite / deep，/search type，基础价（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "多步骤研究，带 structured outputs and citations",
+   "output_type": "Multi-step research with structured outputs and citations.",
    "cites_sources": true,
    "default_on": null,
-   "note": "deep-reasoning为$15/1k；额外结果和AI页面摘要与标准搜索同价。"
+   "note": "deep-lite ~4 seconds；deep 4–15 seconds；deep-reasoning 12–40 seconds。"
+  },
+  {
+   "name": "Deep Search",
+   "pricing": "deep-reasoning $15 / 1k requests.",
+   "price_per_1k_usd": 15.0,
+   "price_basis": "PAYG deep-reasoning，/search type，基础价（每请求最多10个结果）",
+   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
+   "output_type": "Multi-step research with structured outputs and citations.",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "Latency 12–40 seconds；additional results and AI page summaries cost the same as standard search."
   },
   {
    "name": "Answer",
-   "pricing": "$5 / 1k requests",
+   "pricing": "$5 / 1k requests.",
    "price_per_1k_usd": 5.0,
    "price_basis": "PAYG /answer",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
@@ -45,19 +56,30 @@
   },
   {
    "name": "Monitors",
-   "pricing": "$15 / 1k requests；base price includes up to 10 results. Each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
+   "pricing": "$15 / 1k requests；each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
    "price_per_1k_usd": 15.0,
-   "price_basis": "PAYG /monitors，基础价格（每请求最多10个结果）",
+   "price_basis": "PAYG /monitors，基础价（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "Scheduled searches that surface new events on the web.",
    "cites_sources": null,
    "default_on": null,
-   "note": null
+   "note": "Base price includes up to 10 results."
+  },
+  {
+   "name": "Agent search tool calls",
+   "pricing": "$0.005 / search.",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "Agent metered runs，Search tool calls",
+   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
+   "output_type": "模型内置搜索工具调用",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "auto is the default metered mode; usage bills up to a default $5 cap per run."
   }
  ],
- "fetched_at": "2026-09-15T06:14:00Z",
+ "fetched_at": "2026-09-15T07:14:03Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-15T06:14:00Z",
- "websearch_hash": "571986704885ac81aa61d8de9f431e2da01f6662232bb0466b18d3c969386733"
+ "last_fetch_ts": "2026-09-15T07:14:03Z",
+ "websearch_hash": "f9b38f365d061b722025bc2325433c19be5d93b8d34ed1718dacec67734475de"
 }

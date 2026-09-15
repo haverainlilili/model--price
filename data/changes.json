@@ -3,42 +3,6 @@
   "ts": "2026-09-14T04:06:31Z",
   "provider": "qwen",
   "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen-tts-flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；TTS模型；按Token计费",
-    "new": "华北2（北京）；文本转语音模型；按Token计费"
-   }
-  ]
- },
- {
-  "ts": "2026-09-14T04:06:31Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen-tts-realtime",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；实时TTS模型；按Token计费",
-    "new": "华北2（北京）；实时文本转语音模型；按Token计费"
-   }
-  ]
- },
- {
-  "ts": "2026-09-14T04:06:31Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "removed",
-  "model": "qwen3.7-plus",
-  "fields": []
- },
- {
-  "ts": "2026-09-14T04:06:31Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
   "kind": "removed",
   "model": "glm-4.7",
   "fields": []
@@ -6133,6 +6097,48 @@
     "field": "note",
     "old": "上下文窗口：262,144 tokens",
     "new": null
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-15T07:06:39Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-lite",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；音频输入 27 元/百万 token，音频缓存命中 5.4 元/百万 token",
+    "new": "在线推理（常规）；输入长度 (128, 256]；音频输入 27 元/百万 tokens，音频缓存命中 5.4 元/百万 tokens"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-15T07:06:39Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-mini",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；音频输入 12 元/百万 token，音频缓存命中 2.4 元/百万 token",
+    "new": "在线推理（常规）；输入长度 (128, 256]；音频输入 12 元/百万 tokens，音频缓存命中 2.4 元/百万 tokens"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-15T07:06:39Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-embedding-vision",
+  "fields": [
+   {
+    "field": "note",
+    "old": "向量模型（embedding）；文本输入。图片输入价格为 1.8 元/百万 token",
+    "new": "向量模型（embedding）；文本输入价格。图片输入价格为 1.8 元/百万 tokens"
    }
   ]
  }

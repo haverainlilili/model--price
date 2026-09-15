@@ -2,9 +2,9 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥49/月",
-   "billing": "连续包月；支持连续包年（年付更优惠）",
+   "billing": "连续包月",
    "quotas": [
     {
      "label": "Agent 优先生成队列",
@@ -12,92 +12,92 @@
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "1000 次调用",
      "window": null
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；“Agent 用量约 30 个”为官网基于常见任务 token 消耗的估算，未作为可直接计量的 Token、积分、请求数、相对倍数、TPM 或无限额度抽取。",
+   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥99/月",
-   "billing": "连续包月；支持连续包年（年付更优惠）",
+   "billing": "连续包月",
    "quotas": [
     {
-     "label": "Agent 集群可用",
-     "value": "25 次",
+     "label": "Agent 集群",
+     "value": "25 次可用",
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "2000 次调用",
      "window": null
     }
    ],
    "models": [],
-   "note": "在 Andante 基础上提供权益；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。",
+   "note": "在 Andante 基础上；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥199/月",
-   "billing": "连续包月；支持连续包年（年付更优惠）",
+   "billing": "连续包月",
    "quotas": [
     {
-     "label": "Agent 集群可用",
-     "value": "50 次",
+     "label": "Agent 集群",
+     "value": "50 次可用",
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专业数据库",
      "value": "5000 次调用",
      "window": null
     }
    ],
    "models": [],
-   "note": "在 Andante 基础上提供权益；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。",
+   "note": "在 Andante 基础上；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥699/月",
-   "billing": "连续包月；支持连续包年（年付更优惠）",
+   "billing": "连续包月",
    "quotas": [
-    {
-     "label": "Agent 集群可用",
-     "value": "120 次",
-     "window": null
-    },
     {
      "label": "超长对话容量",
      "value": "百万 Tokens",
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "Agent 集群",
+     "value": "120 次可用",
+     "window": null
+    },
+    {
+     "label": "专业数据库",
      "value": "12000 次调用",
      "window": null
     }
    ],
    "models": [],
-   "note": "在 Andante 基础上提供权益；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算。",
+   "note": "在 Andante 基础上；所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-15T01:10:18Z",
+ "last_fetch_ts": "2026-09-15T02:10:12Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "357e8fb82d865ddd7c86b90612ec8bfb69369f0c2aa1d793df50e3d890a6c9b6",
- "fetched_at": "2026-09-15T01:10:18Z",
+ "plans_hash": "70cde5b4da116bd56aaeb4bbb73426d1307ab1c5b7497cad97a250fd95d9124b",
+ "fetched_at": "2026-09-15T02:10:12Z",
  "status_note": null
 }

@@ -9,23 +9,23 @@
     {
      "label": "API credits",
      "value": "$10 /mo in API credits",
-     "window": "/mo"
+     "window": "每月"
     }
    ],
    "models": [],
-   "note": "官网仅将消息、网页搜索和编程会话表述为 Limited，未给出明确数值，因此未作为额度抽取。",
+   "note": "Limited messages and web searches; limited coding sessions.",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Pro",
    "plan_type": "聊天会员",
-   "price": "$14.99",
-   "billing": "/mo；Excluding taxes",
+   "price": "$14.99 /mo",
+   "billing": "/mo",
    "quotas": [
     {
      "label": "API credits",
      "value": "$30 /mo in API credits",
-     "window": "/mo"
+     "window": "每月"
     },
     {
      "label": "Messages",
@@ -41,73 +41,42 @@
      "label": "Image generation",
      "value": "Up to 40x free",
      "window": null
-    },
-    {
-     "label": "Flash answers",
-     "value": "150 / day",
-     "window": "/ day"
     }
    ],
    "models": [],
-   "note": "“Up to 6x free”“Up to 5x free”和“Up to 40x free”均为官网相对于 Free 套餐的口径；Flash answers 数量来自官网 FAQ 示例。",
-   "source_url": "https://mistral.ai/pricing"
-  },
-  {
-   "name": "Education plan",
-   "plan_type": "学生聊天会员",
-   "price": "$5.99 / month",
-   "billing": "/ month",
-   "quotas": [
-    {
-     "label": "API credits",
-     "value": "$15 /mo in API credits",
-     "window": "/mo"
-    }
-   ],
-   "models": [],
-   "note": "官网 FAQ 写明 Verified students can get Mistral Pro for $5.99 / month；适用于通过验证的学生。",
+   "note": "Excluding taxes. 官网以相对 Free 的倍数标注部分使用额度。",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Team",
-   "plan_type": "团队会员",
-   "price": "$24.99",
-   "billing": "/user/mo；Excluding taxes",
+   "plan_type": "团队工作区",
+   "price": "$24.99 /user/mo",
+   "billing": "/user/mo",
    "quotas": [
     {
-     "label": "Messages",
-     "value": "Up to 6x free",
+     "label": "Storage",
+     "value": "Up to 30GB of storage /user",
      "window": null
     },
     {
-     "label": "Web searches",
-     "value": "Up to 5x free",
+     "label": "Task scheduling",
+     "value": "Unlimited",
      "window": null
-    },
-    {
-     "label": "Image generation",
-     "value": "Up to 40x free",
-     "window": null
-    },
-    {
-     "label": "Flash answers",
-     "value": "200 / day",
-     "window": "/ day"
     }
    ],
    "models": [],
-   "note": "“Up to 6x free”“Up to 5x free”和“Up to 40x free”均为官网相对于 Free 套餐的口径；Flash answers 数量来自官网 FAQ 示例。",
+   "note": "Excluding taxes。",
    "source_url": "https://mistral.ai/pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-15T15:12:20Z",
+ "last_fetch_ts": "2026-09-15T16:11:23Z",
  "source": "official",
  "source_urls": [
   "https://mistral.ai/pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "4c6bc608a7de4caf50b9d4419b2c09e25721a5aee983acdd43ccec5c24087213",
- "fetched_at": "2026-09-10T11:09:49Z",
- "status_note": "页面无变化"
+ "plans_hash": "4bc323609114fc80b404babfcf19eb5095686115ac71b1c7826acdff90c882f3",
+ "fetched_at": "2026-09-15T16:11:23Z",
+ "status_note": null
 }

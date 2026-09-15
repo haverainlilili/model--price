@@ -35,7 +35,7 @@
    "region": null,
    "price_per_image": 0.02,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image，按生成图片计费；官网未说明该价格对应的质量或分辨率。",
+   "price_basis": "grok-imagine-image，按每张图片计费；页面未说明质量或精确像素分辨率。",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -45,7 +45,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "Imagine API 价格页列为每张 $0.02。"
+   "note": "Imagine API 定价；图片生成在 Batch API 中支持，但按标准费率计费。"
   },
   {
    "name": "grok-imagine-image-2.0",
@@ -59,17 +59,17 @@
    "region": null,
    "price_per_image": 0.04,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image-2.0，按生成图片计费；官网未说明不同分辨率或质量的分别单价。",
+   "price_basis": "grok-imagine-image-2.0，按每张图片计费；页面未将价格对应到具体质量或精确像素分辨率。",
    "resolution": "1k（默认）；2k",
    "aspect_ratios": "1:1、16:9、9:16、4:3、3:4、3:2、2:3、2:1、1:2、19.5:9、9:19.5、20:9、9:20、21:9、5:2、auto",
-   "output_formats": "url（默认，临时托管 URL）；base64 / b64_json",
+   "output_formats": "url（默认，临时托管 URL）；base64（response_format=b64_json）",
    "comparison_width": null,
    "comparison_height": null,
    "quality_tier": null,
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "支持 n=1–10；quality 可为 low、medium、auto，auto 生图当前使用 low。"
+   "note": "支持 n=1–10；quality 可为 low、medium、auto，auto 当前生成使用 low。"
   },
   {
    "name": "grok-imagine-image-quality",
@@ -83,7 +83,7 @@
    "region": null,
    "price_per_image": 0.05,
    "comparison_group": null,
-   "price_basis": "grok-imagine-image-quality，按生成图片计费；官网未说明该价格对应的分辨率。",
+   "price_basis": "grok-imagine-image-quality，按每张图片计费；页面未说明质量或精确像素分辨率。",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -93,21 +93,19 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "Imagine API 价格页列为每张 $0.05。"
+   "note": "Imagine API 定价；图片生成在 Batch API 中支持，但按标准费率计费。"
   }
  ],
- "fetched_at": "2026-09-14T17:17:44Z",
+ "fetched_at": "2026-09-15T06:17:23Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://docs.x.ai/developers/pricing",
   "https://docs.x.ai/developers/model-capabilities/images/generation"
  ],
- "last_fetch_ts": "2026-09-15T05:15:50Z",
+ "last_fetch_ts": "2026-09-15T06:17:23Z",
  "source_warnings": [],
- "imagegen_hash": "367cd0f724dfa287cfcfc5aab275f81fda95cb064e242529518fd9c38b0c2cb6",
- "status_note": "官网生图抽取覆盖项由 3 变为 3，等待下轮同语义结果确认",
- "last_error": "官网生图抽取覆盖项由 3 变为 3，等待下轮同语义结果确认",
- "imagegen_excerpt_hash": "63fcbaa289f3006ff727f5c00a3e366d8c53fac36eec10084b0efe9194160f65",
- "imagegen_pending_shrink_hash": "ce8d56d4c5a4b5a5a1438365130f3578555d86bc93cae2f3a6bc83a298945ed5",
- "imagegen_pending_shrink_count": 3
+ "imagegen_hash": "ebd546bbc45a98f70709ab29b000de0d44f154a5226f217521b3b6975fe443e2",
+ "status_note": null,
+ "last_error": null,
+ "imagegen_excerpt_hash": "6e0c71b54d7ab96d5c47a8249c0b2b3a2382bb5acb498e6d1e6ce63905872a24"
 }

@@ -12,53 +12,31 @@
  "offerings": [
   {
    "name": "Search",
-   "pricing": "$7 / 1k requests",
+   "pricing": "$7 / 1k requests；base price includes up to 10 results. Each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
    "price_per_1k_usd": 7.0,
-   "price_basis": "/search base price（up to 10 results）",
+   "price_basis": "PAYG /search，基础价格（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "标准搜索结果，包含 URLs 和页面内容；可返回 highlights、structured outputs 和 AI summary",
+   "output_type": "实时搜索结果、URL和页面内容；可含 AI summary 和 structured outputs",
    "cites_sources": true,
    "default_on": null,
-   "note": "超过10个结果按$1/1k results计费；AI page summaries按$1/1k pages计费。"
+   "note": "可按 fast、auto、deep 搜索类型；最多可返回1,000结果（Enterprise）。"
   },
   {
-   "name": "Deep Search — deep-lite",
-   "pricing": "$12 / 1k requests",
+   "name": "Deep Search",
+   "pricing": "deep-lite: $12 / 1k requests; deep: $12 / 1k requests; deep-reasoning: $15 / 1k requests.",
    "price_per_1k_usd": 12.0,
-   "price_basis": "deep-lite base price（up to 10 results）",
+   "price_basis": "PAYG deep-lite / deep，基础价格（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "轻量级综合结果，属于带结构化输出和引用的多步研究",
+   "output_type": "多步骤研究，带 structured outputs and citations",
    "cites_sources": true,
    "default_on": null,
-   "note": "延迟约4秒；额外结果及AI页面摘要与标准搜索同价。"
-  },
-  {
-   "name": "Deep Search — deep",
-   "pricing": "$12 / 1k requests",
-   "price_per_1k_usd": 12.0,
-   "price_basis": "deep base price（up to 10 results）",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "多步推理、结构化输出和引用",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "延迟4–15秒；额外结果及AI页面摘要与标准搜索同价。"
-  },
-  {
-   "name": "Deep Search — deep-reasoning",
-   "pricing": "$15 / 1k requests",
-   "price_per_1k_usd": 15.0,
-   "price_basis": "deep-reasoning base price（up to 10 results）",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "面向较难研究任务的多步研究结果，包含结构化输出和引用",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "延迟12–40秒；额外结果及AI页面摘要与标准搜索同价。"
+   "note": "deep-reasoning为$15/1k；额外结果和AI页面摘要与标准搜索同价。"
   },
   {
    "name": "Answer",
    "pricing": "$5 / 1k requests",
    "price_per_1k_usd": 5.0,
-   "price_basis": "/answer base price",
+   "price_basis": "PAYG /answer",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "An LLM answer to a question, with citations.",
    "cites_sources": true,
@@ -67,30 +45,19 @@
   },
   {
    "name": "Monitors",
-   "pricing": "$15 / 1k requests",
+   "pricing": "$15 / 1k requests；base price includes up to 10 results. Each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
    "price_per_1k_usd": 15.0,
-   "price_basis": "/monitors base price（up to 10 results）",
+   "price_basis": "PAYG /monitors，基础价格（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "定时搜索并呈现网络上的新事件",
+   "output_type": "Scheduled searches that surface new events on the web.",
    "cites_sources": null,
    "default_on": null,
-   "note": "超过10个结果按$1/1k results计费；AI page summaries按$1/1k pages计费。"
-  },
-  {
-   "name": "Agent — Search tool calls",
-   "pricing": "$0.005 / search",
-   "price_per_1k_usd": 5.0,
-   "price_basis": "Agent metered runs中的Search tool calls",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Agent异步深度研究、列表构建和数据丰富中的搜索工具调用",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "搜索工具调用费叠加于ACU等实际用量；auto默认上限$5，beta max默认上限$20。"
+   "note": null
   }
  ],
- "fetched_at": "2026-09-08T23:15:26Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-15T06:14:00Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-15T05:12:59Z",
- "websearch_hash": "263de0359201089c90f9821c4dbf211517551f42d767dfb86b908070c0f51a51"
+ "last_fetch_ts": "2026-09-15T06:14:00Z",
+ "websearch_hash": "571986704885ac81aa61d8de9f431e2da01f6662232bb0466b18d3c969386733"
 }

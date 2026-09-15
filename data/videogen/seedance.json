@@ -34,15 +34,15 @@
     "reference-to-video",
     "video-edit"
    ],
-   "pricing": "在线推理：480p、720p，输入不含视频70.00元/百万token；输入包含视频42.00元/百万token。",
+   "pricing": "在线推理：输出480p、输入不含视频 70.00元/百万token；官方示例 3.36元/个、0.67元/s。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.67,
    "comparison_price_type": "official-fixed-example",
    "comparison_group": "cny-480p-audio",
-   "price_basis": "doubao-seedance-2.5，输入不含视频，480p、16:9、5秒、有声默认档；官网示例0.67元/秒。实际按token用量结算。",
+   "price_basis": "doubao-seedance-2.5，输入不含视频，16:9、5秒、480p；默认生成有声视频。官方示例0.67元/s，实际按token用量结算。",
    "resolution": "480p",
-   "duration": "[4, 30] 秒；或 -1 智能选择",
+   "duration": "[4, 30] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -50,7 +50,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "仅成功生成计费；可关闭音频。输入含视频时有最低token用量限制。"
+   "note": "支持有声/无声；仅成功生成计费。"
   },
   {
    "name": "doubao-seedance-2.5",
@@ -63,15 +63,15 @@
     "reference-to-video",
     "video-edit"
    ],
-   "pricing": "在线推理：480p、720p，输入不含视频70.00元/百万token；输入包含视频42.00元/百万token。",
+   "pricing": "在线推理：输出720p、输入不含视频 70.00元/百万token；官方示例 7.56元/个、1.51元/s。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 1.51,
    "comparison_price_type": "official-fixed-example",
    "comparison_group": "cny-720p-audio",
-   "price_basis": "doubao-seedance-2.5，输入不含视频，720p、16:9、5秒、有声默认档；官网示例1.51元/秒。实际按token用量结算。",
+   "price_basis": "doubao-seedance-2.5，输入不含视频，16:9、5秒、720p；默认生成有声视频。官方示例1.51元/s，实际按token用量结算。",
    "resolution": "720p",
-   "duration": "[4, 30] 秒；或 -1 智能选择",
+   "duration": "[4, 30] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -79,7 +79,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "仅成功生成计费；可关闭音频。输入含视频时有最低token用量限制。"
+   "note": "支持有声/无声；仅成功生成计费。"
   },
   {
    "name": "doubao-seedance-2.5",
@@ -92,15 +92,15 @@
     "reference-to-video",
     "video-edit"
    ],
-   "pricing": "在线推理1080p：输入不含视频原价77.00元/百万token、输入包含视频原价46.00元/百万token，限时72折。",
+   "pricing": "在线推理：输出1080p、输入不含视频原价77.00元/百万token，限时72折；官方示例 18.71元/个、3.74元/s。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 3.74,
    "comparison_price_type": "official-fixed-example",
    "comparison_group": "cny-1080p-audio",
-   "price_basis": "doubao-seedance-2.5，输入不含视频，1080p、16:9、5秒、有声默认档；官网原价示例3.74元/秒。实际按token用量结算。",
+   "price_basis": "doubao-seedance-2.5，输入不含视频，16:9、5秒、1080p；默认生成有声视频。官方示例3.74元/s，实际按token用量结算。",
    "resolution": "1080p",
-   "duration": "[4, 30] 秒；或 -1 智能选择",
+   "duration": "[4, 30] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -108,7 +108,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "北京时间UTC+8 2026-08-14 14:00至2026-09-17 14:00限时72折；仅成功生成计费。"
+   "note": "1080p限时72折：2026-08-14 14:00至2026-09-17 14:00 UTC+8；仅成功生成计费。"
   },
   {
    "name": "doubao-seedance-2.0",
@@ -121,15 +121,15 @@
     "reference-to-video",
     "video-edit"
    ],
-   "pricing": "在线推理480p、720p：输入不含视频46.00元/百万token；输入包含视频28.00元/百万token。",
+   "pricing": "在线推理：输出480p、输入不含视频 46.00元/百万token；官方示例 2.31元/个、0.46元/s。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.46,
    "comparison_price_type": "official-fixed-example",
    "comparison_group": "cny-480p-audio",
-   "price_basis": "doubao-seedance-2.0，输入不含视频，480p、16:9、5秒、有声默认档；官网示例0.46元/秒。实际按token用量结算。",
+   "price_basis": "doubao-seedance-2.0，输入不含视频，16:9、5秒、480p；默认生成有声视频。官方示例0.46元/s，实际按token用量结算。",
    "resolution": "480p",
-   "duration": "[4, 15] 秒；或 -1 智能选择",
+   "duration": "[4, 15] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -137,7 +137,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "仅成功生成计费；可关闭音频。输入含视频时有最低token用量限制。"
+   "note": "支持有声/无声；仅成功生成计费。"
   },
   {
    "name": "doubao-seedance-2.0",
@@ -150,15 +150,15 @@
     "reference-to-video",
     "video-edit"
    ],
-   "pricing": "在线推理480p、720p：输入不含视频46.00元/百万token；输入包含视频28.00元/百万token。",
+   "pricing": "在线推理：输出720p、输入不含视频 46.00元/百万token；官方示例 4.97元/个、0.99元/s。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.99,
    "comparison_price_type": "official-fixed-example",
    "comparison_group": "cny-720p-audio",
-   "price_basis": "doubao-seedance-2.0，输入不含视频，720p、16:9、5秒、有声默认档；官网示例0.99元/秒。实际按token用量结算。",
+   "price_basis": "doubao-seedance-2.0，输入不含视频，16:9、5秒、720p；默认生成有声视频。官方示例0.99元/s，实际按token用量结算。",
    "resolution": "720p",
-   "duration": "[4, 15] 秒；或 -1 智能选择",
+   "duration": "[4, 15] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -166,7 +166,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "仅成功生成计费；可关闭音频。输入含视频时有最低token用量限制。"
+   "note": "支持有声/无声；仅成功生成计费。"
   },
   {
    "name": "doubao-seedance-2.0",
@@ -179,15 +179,15 @@
     "reference-to-video",
     "video-edit"
    ],
-   "pricing": "在线推理1080p：输入不含视频51.00元/百万token；输入包含视频31.00元/百万token。",
+   "pricing": "在线推理：输出1080p、输入不含视频 51.00元/百万token；官方示例 12.39元/个、2.48元/s。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 2.48,
    "comparison_price_type": "official-fixed-example",
    "comparison_group": "cny-1080p-audio",
-   "price_basis": "doubao-seedance-2.0，输入不含视频，1080p、16:9、5秒、有声默认档；官网示例2.48元/秒。实际按token用量结算。",
+   "price_basis": "doubao-seedance-2.0，输入不含视频，16:9、5秒、1080p；默认生成有声视频。官方示例2.48元/s，实际按token用量结算。",
    "resolution": "1080p",
-   "duration": "[4, 15] 秒；或 -1 智能选择",
+   "duration": "[4, 15] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -195,7 +195,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "仅成功生成计费；可关闭音频。输入含视频时有最低token用量限制。"
+   "note": "支持有声/无声；仅成功生成计费。"
   },
   {
    "name": "doubao-seedance-2.0",
@@ -208,15 +208,15 @@
     "reference-to-video",
     "video-edit"
    ],
-   "pricing": "在线推理4k：输入不含视频26.00元/百万token；输入包含视频16.00元/百万token。",
+   "pricing": "在线推理：输出4k、输入不含视频 26.00元/百万token；官方示例 25.27元/个、5.05元/s。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 5.05,
    "comparison_price_type": "official-fixed-example",
    "comparison_group": null,
-   "price_basis": "doubao-seedance-2.0，输入不含视频，4k、16:9、5秒、有声默认档；官网示例5.05元/秒。实际按token用量结算。",
+   "price_basis": "doubao-seedance-2.0，输入不含视频，16:9、5秒、4k；默认生成有声视频。官方示例5.05元/s，实际按token用量结算。",
    "resolution": "4k",
-   "duration": "[4, 15] 秒；或 -1 智能选择",
+   "duration": "[4, 15] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -224,7 +224,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "仅成功生成计费；可关闭音频。4k不属于可比柱图分辨率。"
+   "note": "支持有声/无声；4k不属于可比柱图分辨率。"
   },
   {
    "name": "doubao-seedance-2.0-fast",
@@ -237,15 +237,15 @@
     "reference-to-video",
     "video-edit"
    ],
-   "pricing": "在线推理：输入不含视频原价37.00元/百万token；输入包含视频原价22.00元/百万token，限时75折。",
+   "pricing": "在线推理：输出480p、输入不含视频原价37.00元/百万token，限时75折；官方示例 1.86元/个、0.37元/s。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.37,
    "comparison_price_type": "official-fixed-example",
    "comparison_group": "cny-480p-audio",
-   "price_basis": "doubao-seedance-2.0-fast，输入不含视频，480p、16:9、5秒、有声默认档；官网原价示例0.37元/秒。实际按token用量结算。",
+   "price_basis": "doubao-seedance-2.0-fast，输入不含视频，16:9、5秒、480p；默认生成有声视频。官方示例0.37元/s，实际按token用量结算。",
    "resolution": "480p",
-   "duration": "[4, 15] 秒；或 -1 智能选择",
+   "duration": "[4, 15] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -253,7 +253,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "北京时间UTC+8 2026-08-07 14:00至2026-10-07 14:00限时75折；仅成功生成计费。"
+   "note": "480p/720p限时75折：2026-08-07 14:00至2026-10-07 14:00 UTC+8。"
   },
   {
    "name": "doubao-seedance-2.0-fast",
@@ -266,15 +266,15 @@
     "reference-to-video",
     "video-edit"
    ],
-   "pricing": "在线推理：输入不含视频原价37.00元/百万token；输入包含视频原价22.00元/百万token，限时75折。",
+   "pricing": "在线推理：输出720p、输入不含视频原价37.00元/百万token，限时75折；官方示例 4.00元/个、0.80元/s。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.8,
    "comparison_price_type": "official-fixed-example",
    "comparison_group": "cny-720p-audio",
-   "price_basis": "doubao-seedance-2.0-fast，输入不含视频，720p、16:9、5秒、有声默认档；官网原价示例0.80元/秒。实际按token用量结算。",
+   "price_basis": "doubao-seedance-2.0-fast，输入不含视频，16:9、5秒、720p；默认生成有声视频。官方示例0.80元/s，实际按token用量结算。",
    "resolution": "720p",
-   "duration": "[4, 15] 秒；或 -1 智能选择",
+   "duration": "[4, 15] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -282,7 +282,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "北京时间UTC+8 2026-08-07 14:00至2026-10-07 14:00限时75折；仅成功生成计费。"
+   "note": "480p/720p限时75折：2026-08-07 14:00至2026-10-07 14:00 UTC+8。"
   },
   {
    "name": "doubao-seedance-2.0-mini",
@@ -295,15 +295,15 @@
     "reference-to-video",
     "video-edit"
    ],
-   "pricing": "在线推理：输入不含视频原价23.00元/百万token；输入包含视频原价14.00元/百万token，限时4折。",
+   "pricing": "在线推理：输出480p、输入不含视频原价23.00元/百万token，限时4折；官方示例 1.16元/个、0.23元/s。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.23,
    "comparison_price_type": "official-fixed-example",
    "comparison_group": "cny-480p-audio",
-   "price_basis": "doubao-seedance-2.0-mini，输入不含视频，480p、16:9、5秒、有声默认档；官网原价示例0.23元/秒。实际按token用量结算。",
+   "price_basis": "doubao-seedance-2.0-mini，输入不含视频，16:9、5秒、480p；默认生成有声视频。官方示例0.23元/s，实际按token用量结算。",
    "resolution": "480p",
-   "duration": "[4, 15] 秒；或 -1 智能选择",
+   "duration": "[4, 15] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -311,7 +311,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "北京时间UTC+8 2026-08-07 14:00至2026-10-07 14:00限时4折；仅成功生成计费。"
+   "note": "480p/720p限时4折：2026-08-07 14:00至2026-10-07 14:00 UTC+8。"
   },
   {
    "name": "doubao-seedance-2.0-mini",
@@ -324,15 +324,15 @@
     "reference-to-video",
     "video-edit"
    ],
-   "pricing": "在线推理：输入不含视频原价23.00元/百万token；输入包含视频原价14.00元/百万token，限时4折。",
+   "pricing": "在线推理：输出720p、输入不含视频原价23.00元/百万token，限时4折；官方示例 2.48元/个、0.50元/s。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.5,
    "comparison_price_type": "official-fixed-example",
    "comparison_group": "cny-720p-audio",
-   "price_basis": "doubao-seedance-2.0-mini，输入不含视频，720p、16:9、5秒、有声默认档；官网原价示例0.50元/秒。实际按token用量结算。",
+   "price_basis": "doubao-seedance-2.0-mini，输入不含视频，16:9、5秒、720p；默认生成有声视频。官方示例0.50元/s，实际按token用量结算。",
    "resolution": "720p",
-   "duration": "[4, 15] 秒；或 -1 智能选择",
+   "duration": "[4, 15] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -340,7 +340,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "北京时间UTC+8 2026-08-07 14:00至2026-10-07 14:00限时4折；仅成功生成计费。"
+   "note": "480p/720p限时4折：2026-08-07 14:00至2026-10-07 14:00 UTC+8。"
   },
   {
    "name": "doubao-seedance-1.5-pro",
@@ -351,15 +351,15 @@
     "image-to-video",
     "first-last-frame"
    ],
-   "pricing": "在线推理有声视频16.00元/百万token；离线推理有声视频8.00元/百万token。",
+   "pricing": "在线推理有声视频16.00元/百万token；官方示例5秒480p有声视频0.80元/个。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.16,
    "comparison_price_type": "fixed-duration-derived",
    "comparison_group": "cny-480p-audio",
-   "price_basis": "doubao-seedance-1.5-pro，480p、16:9、5秒、有声、在线推理；官网0.80元/个，按5秒机械换算为0.16元/秒。",
+   "price_basis": "doubao-seedance-1.5-pro，16:9、5秒、480p、有声、非Draft；0.80元/个除以5秒。实际按token用量结算。",
    "resolution": "480p",
-   "duration": "[4, 12] 秒；或 -1 智能选择",
+   "duration": "[4, 12] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -367,7 +367,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "离线推理价格为在线推理50%；仅成功生成计费。"
+   "note": "有声为同步音频；仅成功生成计费。"
   },
   {
    "name": "doubao-seedance-1.5-pro",
@@ -378,15 +378,15 @@
     "image-to-video",
     "first-last-frame"
    ],
-   "pricing": "在线推理无声视频8.00元/百万token；离线推理无声视频4.00元/百万token。",
+   "pricing": "在线推理无声视频8.00元/百万token；官方示例5秒480p无声视频0.40元/个。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.08,
    "comparison_price_type": "fixed-duration-derived",
    "comparison_group": "cny-480p-silent",
-   "price_basis": "doubao-seedance-1.5-pro，480p、16:9、5秒、无声、在线推理；官网0.40元/个，按5秒机械换算为0.08元/秒。",
+   "price_basis": "doubao-seedance-1.5-pro，16:9、5秒、480p、无声、非Draft；0.40元/个除以5秒。实际按token用量结算。",
    "resolution": "480p",
-   "duration": "[4, 12] 秒；或 -1 智能选择",
+   "duration": "[4, 12] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": false,
@@ -394,7 +394,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "离线推理价格为在线推理50%；仅成功生成计费。"
+   "note": "仅成功生成计费。"
   },
   {
    "name": "doubao-seedance-1.5-pro",
@@ -405,15 +405,15 @@
     "image-to-video",
     "first-last-frame"
    ],
-   "pricing": "Draft有声视频：480p、16:9、5秒，0.48元/个。",
+   "pricing": "官方示例：5秒480p Draft有声视频0.48元/个。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.096,
    "comparison_price_type": "fixed-duration-derived",
    "comparison_group": "cny-480p-audio",
-   "price_basis": "doubao-seedance-1.5-pro，Draft样片模式，480p、16:9、5秒、有声；官网0.48元/个，按5秒机械换算为0.096元/秒。",
+   "price_basis": "doubao-seedance-1.5-pro，16:9、5秒、480p、有声、Draft；0.48元/个除以5秒。Draft按token折算系数0.6结算。",
    "resolution": "480p",
-   "duration": "[4, 12] 秒；或 -1 智能选择",
+   "duration": "[4, 12] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -421,7 +421,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "Draft仅480p，不支持返回尾帧和离线推理；有声token折算系数0.6。"
+   "note": "Draft仅支持480p，不支持返回尾帧和离线推理。"
   },
   {
    "name": "doubao-seedance-1.5-pro",
@@ -432,15 +432,15 @@
     "image-to-video",
     "first-last-frame"
    ],
-   "pricing": "Draft无声视频：480p、16:9、5秒，0.28元/个。",
+   "pricing": "官方示例：5秒480p Draft无声视频0.28元/个。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.056,
    "comparison_price_type": "fixed-duration-derived",
    "comparison_group": "cny-480p-silent",
-   "price_basis": "doubao-seedance-1.5-pro，Draft样片模式，480p、16:9、5秒、无声；官网0.28元/个，按5秒机械换算为0.056元/秒。",
+   "price_basis": "doubao-seedance-1.5-pro，16:9、5秒、480p、无声、Draft；0.28元/个除以5秒。Draft按token折算系数0.7结算。",
    "resolution": "480p",
-   "duration": "[4, 12] 秒；或 -1 智能选择",
+   "duration": "[4, 12] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": false,
@@ -448,7 +448,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "Draft仅480p，不支持返回尾帧和离线推理；无声token折算系数0.7。"
+   "note": "Draft仅支持480p，不支持返回尾帧和离线推理。"
   },
   {
    "name": "doubao-seedance-1.5-pro",
@@ -459,15 +459,15 @@
     "image-to-video",
     "first-last-frame"
    ],
-   "pricing": "在线推理有声视频16.00元/百万token；离线推理有声视频8.00元/百万token。",
+   "pricing": "官方示例：5秒720p有声视频1.73元/个。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.346,
    "comparison_price_type": "fixed-duration-derived",
    "comparison_group": "cny-720p-audio",
-   "price_basis": "doubao-seedance-1.5-pro，720p、16:9、5秒、有声、在线推理；官网1.73元/个，按5秒机械换算为0.346元/秒。",
+   "price_basis": "doubao-seedance-1.5-pro，16:9、5秒、720p、有声、非Draft；1.73元/个除以5秒。实际按token用量结算。",
    "resolution": "720p",
-   "duration": "[4, 12] 秒；或 -1 智能选择",
+   "duration": "[4, 12] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -475,7 +475,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "Draft模式不支持720p；离线推理价格为在线推理50%。"
+   "note": "720p不支持Draft；仅成功生成计费。"
   },
   {
    "name": "doubao-seedance-1.5-pro",
@@ -486,15 +486,15 @@
     "image-to-video",
     "first-last-frame"
    ],
-   "pricing": "在线推理无声视频8.00元/百万token；离线推理无声视频4.00元/百万token。",
+   "pricing": "官方示例：5秒720p无声视频0.86元/个。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.172,
    "comparison_price_type": "fixed-duration-derived",
    "comparison_group": "cny-720p-silent",
-   "price_basis": "doubao-seedance-1.5-pro，720p、16:9、5秒、无声、在线推理；官网0.86元/个，按5秒机械换算为0.172元/秒。",
+   "price_basis": "doubao-seedance-1.5-pro，16:9、5秒、720p、无声、非Draft；0.86元/个除以5秒。实际按token用量结算。",
    "resolution": "720p",
-   "duration": "[4, 12] 秒；或 -1 智能选择",
+   "duration": "[4, 12] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": false,
@@ -502,7 +502,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "Draft模式不支持720p；离线推理价格为在线推理50%。"
+   "note": "720p不支持Draft；仅成功生成计费。"
   },
   {
    "name": "doubao-seedance-1.5-pro",
@@ -513,15 +513,15 @@
     "image-to-video",
     "first-last-frame"
    ],
-   "pricing": "在线推理有声视频16.00元/百万token；离线推理有声视频8.00元/百万token。",
+   "pricing": "官方示例：5秒1080p有声视频3.89元/个。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.778,
    "comparison_price_type": "fixed-duration-derived",
    "comparison_group": "cny-1080p-audio",
-   "price_basis": "doubao-seedance-1.5-pro，1080p、16:9、5秒、有声、在线推理；官网3.89元/个，按5秒机械换算为0.778元/秒。",
+   "price_basis": "doubao-seedance-1.5-pro，16:9、5秒、1080p、有声、非Draft；3.89元/个除以5秒。实际按token用量结算。",
    "resolution": "1080p",
-   "duration": "[4, 12] 秒；或 -1 智能选择",
+   "duration": "[4, 12] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": true,
@@ -529,7 +529,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "Draft模式不支持1080p；离线推理价格为在线推理50%。"
+   "note": "1080p不支持Draft；仅成功生成计费。"
   },
   {
    "name": "doubao-seedance-1.5-pro",
@@ -540,15 +540,15 @@
     "image-to-video",
     "first-last-frame"
    ],
-   "pricing": "在线推理无声视频8.00元/百万token；离线推理无声视频4.00元/百万token。",
+   "pricing": "官方示例：5秒1080p无声视频1.94元/个。",
    "currency": "CNY",
    "region": "domestic",
    "price_per_second": 0.388,
    "comparison_price_type": "fixed-duration-derived",
    "comparison_group": "cny-1080p-silent",
-   "price_basis": "doubao-seedance-1.5-pro，1080p、16:9、5秒、无声、在线推理；官网1.94元/个，按5秒机械换算为0.388元/秒。",
+   "price_basis": "doubao-seedance-1.5-pro，16:9、5秒、1080p、无声、非Draft；1.94元/个除以5秒。实际按token用量结算。",
    "resolution": "1080p",
-   "duration": "[4, 12] 秒；或 -1 智能选择",
+   "duration": "[4, 12] s；或 -1（智能选择）",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9、adaptive",
    "native_audio": false,
@@ -556,7 +556,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "Draft模式不支持1080p；离线推理价格为在线推理50%。"
+   "note": "1080p不支持Draft；仅成功生成计费。"
   },
   {
    "name": "doubao-seedance-1.0-pro",
@@ -573,9 +573,9 @@
    "price_per_second": null,
    "comparison_price_type": null,
    "comparison_group": null,
-   "price_basis": "doubao-seedance-1.0-pro，按token用量计费；官网未提供固定场景元/秒示例。",
+   "price_basis": "doubao-seedance-1.0-pro按token单价与实际token用量结算；官网未列固定场景元/秒示例。",
    "resolution": "480p、720p、1080p",
-   "duration": "[2, 12] 秒",
+   "duration": "[2, 12] s",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9",
    "native_audio": null,
@@ -583,7 +583,7 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "离线推理价格为在线推理50%；仅成功生成计费。"
+   "note": "支持在线及价格为在线50%的离线推理。"
   },
   {
    "name": "doubao-seedance-1.0-pro-fast",
@@ -599,9 +599,9 @@
    "price_per_second": null,
    "comparison_price_type": null,
    "comparison_group": null,
-   "price_basis": "doubao-seedance-1.0-pro-fast，按token用量计费；官网未提供固定场景元/秒示例。",
+   "price_basis": "doubao-seedance-1.0-pro-fast按token单价与实际token用量结算；官网未列固定场景元/秒示例。",
    "resolution": "480p、720p、1080p",
-   "duration": "[2, 12] 秒",
+   "duration": "[2, 12] s",
    "frame_rate": "24 FPS",
    "aspect_ratios": "16:9、4:3、1:1、3:4、9:16、21:9",
    "native_audio": null,
@@ -609,22 +609,20 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "离线推理价格为在线推理50%；仅成功生成计费。"
+   "note": "支持在线及价格为在线50%的离线推理。"
   }
  ],
- "fetched_at": "2026-09-15T01:17:10Z",
+ "fetched_at": "2026-09-15T10:20:03Z",
  "has_video_generation": true,
  "configured_source_urls": [
   "https://docs.volcengine.com/docs/82379/1544106?lang=zh",
   "https://docs.volcengine.com/docs/82379/1520757",
   "https://seed.bytedance.com/en/seedance2_5"
  ],
- "last_fetch_ts": "2026-09-15T09:19:44Z",
+ "last_fetch_ts": "2026-09-15T10:20:03Z",
  "source_warnings": [],
  "videogen_hash": "a74bab91ccfe4641f44a7b541874febd4ac36fd6dae7da024f3ad2e802509b92",
- "status_note": "官网生视频抽取覆盖项由 21 变为 20，等待下轮同语义结果确认",
- "last_error": "官网生视频抽取覆盖项由 21 变为 20，等待下轮同语义结果确认",
- "videogen_excerpt_hash": "7643ed545bd300710a989e86e2ac0b9fac46419ad6b893290c2c5a3dd32397eb",
- "videogen_pending_shrink_hash": "4f978c35dc6cf839e10f0c37b691d0ebdd796f6aa8b829e3e5a94a3a05bd36f5",
- "videogen_pending_shrink_count": 20
+ "status_note": null,
+ "last_error": null,
+ "videogen_excerpt_hash": "8c7735c9dea55520cf5e0bd932e1f48535d2406f7813fb64e4b31a452a158dba"
 }

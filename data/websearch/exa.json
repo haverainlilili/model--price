@@ -16,36 +16,25 @@
    "price_per_1k_usd": 7.0,
    "price_basis": "PAYG /search，基础价（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Standard search results: URLs and page contents; highlights, structured outputs, and AI Summary.",
-   "cites_sources": null,
+   "output_type": "标准搜索结果、URLs和页面内容；可提供 highlights、structured outputs、AI Summary",
+   "cites_sources": true,
    "default_on": null,
-   "note": "Additional results and Exa-generated page summaries are billed on top."
+   "note": "超过10个结果按$1/1k results收费；AI页面摘要按$1/1k pages收费。"
   },
   {
    "name": "Deep Search",
-   "pricing": "deep-lite $12 / 1k requests; deep $12 / 1k requests; deep-reasoning $15 / 1k requests.",
+   "pricing": "deep-lite: $12 / 1k requests; deep: $12 / 1k requests; deep-reasoning: $15 / 1k requests.",
    "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG deep-lite / deep，/search type，基础价（每请求最多10个结果）",
+   "price_basis": "PAYG deep-lite/deep，/search type，基础价（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Multi-step research with structured outputs and citations.",
+   "output_type": "多步骤研究，带 structured outputs and citations",
    "cites_sources": true,
    "default_on": null,
-   "note": "deep-lite ~4 seconds；deep 4–15 seconds；deep-reasoning 12–40 seconds。"
-  },
-  {
-   "name": "Deep Search",
-   "pricing": "deep-reasoning $15 / 1k requests.",
-   "price_per_1k_usd": 15.0,
-   "price_basis": "PAYG deep-reasoning，/search type，基础价（每请求最多10个结果）",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Multi-step research with structured outputs and citations.",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "Latency 12–40 seconds；additional results and AI page summaries cost the same as standard search."
+   "note": "deep-reasoning为$15/1k requests；额外结果和AI页面摘要与标准搜索同价。"
   },
   {
    "name": "Answer",
-   "pricing": "$5 / 1k requests.",
+   "pricing": "$5 / 1k requests",
    "price_per_1k_usd": 5.0,
    "price_basis": "PAYG /answer",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
@@ -56,30 +45,30 @@
   },
   {
    "name": "Monitors",
-   "pricing": "$15 / 1k requests；each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
+   "pricing": "$15 / 1k requests；base price includes up to 10 results. Each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
    "price_per_1k_usd": 15.0,
    "price_basis": "PAYG /monitors，基础价（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "Scheduled searches that surface new events on the web.",
    "cites_sources": null,
    "default_on": null,
-   "note": "Base price includes up to 10 results."
+   "note": "超过10个结果按$1/1k results收费；AI页面摘要按$1/1k pages收费。"
   },
   {
-   "name": "Agent search tool calls",
-   "pricing": "$0.005 / search.",
+   "name": "Agent Search tool calls",
+   "pricing": "$0.005 / search",
    "price_per_1k_usd": 5.0,
    "price_basis": "Agent metered runs，Search tool calls",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "模型内置搜索工具调用",
+   "output_type": "Async deep research, list building, and enrichment.",
    "cites_sources": null,
    "default_on": null,
-   "note": "auto is the default metered mode; usage bills up to a default $5 cap per run."
+   "note": "auto为默认计量模式，默认每次运行$5上限；beta max默认$20上限。"
   }
  ],
- "fetched_at": "2026-09-15T07:14:03Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-16T16:15:18Z",
+ "status_note": null,
  "last_error": "HTTPSConnectionPool(host='exa.ai', port=443): Max retries exceeded with url: /docs/reference/pricing (Caused by ConnectTimeoutError(<HTTPSConnection(host='exa.ai', port=443) at 0x758999532c60>, 'Connection to exa.ai timed out. (connect timeout=30)'))",
- "last_fetch_ts": "2026-09-16T14:17:34Z",
+ "last_fetch_ts": "2026-09-16T16:15:18Z",
  "websearch_hash": "f9b38f365d061b722025bc2325433c19be5d93b8d34ed1718dacec67734475de"
 }

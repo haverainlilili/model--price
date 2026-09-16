@@ -1,624 +1,5 @@
 [
  {
-  "ts": "2026-09-15T11:06:36Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "deepseek-v4-flash预览版",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 3.0,
-    "new": 1.5
-   },
-   {
-    "field": "output_per_1m",
-    "old": 9.0,
-    "new": 4.5
-   },
-   {
-    "field": "note",
-    "old": "在线推理（常规）",
-    "new": "批量推理"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T11:06:36Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "new",
-  "model": "doubao-pro-32k",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 0.8
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 2.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T11:06:36Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-embedding-vision",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": 0.7,
-    "new": 1.8
-   },
-   {
-    "field": "note",
-    "old": "向量模型（embedding）；文本输入价格。图片输入 1.8 元/百万token。",
-    "new": "向量模型（embedding）；图片输入"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T11:06:36Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "removed",
-  "model": "doubao-1-5-pro-32k-250115",
-  "fields": []
- },
- {
-  "ts": "2026-09-15T11:06:36Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "removed",
-  "model": "doubao-1-5-lite-32k-250115",
-  "fields": []
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "new",
-  "model": "qwen3.8-max-0902",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 12.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 36.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3.7-max",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；0<Token≤1M；非思考和思考模式；当前能力等同于qwen3.7-max-2026-05-20",
-    "new": "华北2（北京）；0<Token≤1M；当前能力等同于qwen3.7-max-2026-05-20"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "new",
-  "model": "qwen3.7-max-2026-06-08",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 12.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 36.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "new",
-  "model": "qwen3.7-max-2026-05-20",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 12.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 36.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "new",
-  "model": "qwen3.7-max-preview",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 12.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 36.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "new",
-  "model": "qwen3.7-max-2026-05-17",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 12.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 36.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3.6-max-preview",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；阶梯：128K<Token≤256K；非思考和思考模式",
-    "new": "华北2（北京）；128K<Token≤256K；非思考和思考模式"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3-max",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；阶梯：128K<Token≤256K；非思考和思考模式；当前能力等同于qwen3-max-2026-01-23",
-    "new": "华北2（北京）；128K<Token≤256K；非思考和思考模式；当前能力等同于qwen3-max-2026-01-23"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "new",
-  "model": "qwen3-max-2026-01-23",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 7.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 28.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3.7-plus-2026-05-26",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；阶梯：256K<Token≤1M；非思考和思考模式",
-    "new": "华北2（北京）；256K<Token≤1M"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3.6-plus",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；阶梯：256K<Token≤1M；非思考和思考模式；当前能力等同于qwen3.6-plus-2026-04-02",
-    "new": "华北2（北京）；256K<Token≤1M；当前能力等同于qwen3.6-plus-2026-04-02"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3.5-plus",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；阶梯：256K<Token≤1M；非思考和思考模式；当前能力等同于qwen3.5-plus-2026-02-15",
-    "new": "华北2（北京）；256K<Token≤1M；当前能力等同于qwen3.5-plus-2026-02-15"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen-plus",
-  "fields": [
-   {
-    "field": "output_per_1m",
-    "old": 48.0,
-    "new": 64.0
-   },
-   {
-    "field": "note",
-    "old": "华北2（北京）；阶梯：256K<Token≤1M；非思考模式；当前能力等同于qwen-plus-2025-12-01",
-    "new": "华北2（北京）；256K<Token≤1M；思考模式；当前能力等同于qwen-plus-2025-12-01"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen-turbo",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；思考模式（思维链+回答）",
-    "new": "华北2（北京）；思考模式"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3.7-flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；阶梯：256K<Token≤1M；非思考和思考模式；当前能力等同于qwen3.7-flash-2026-07-15",
-    "new": "华北2（北京）；256K<Token≤1M；当前能力等同于qwen3.7-flash-2026-07-15"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3.6-flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；阶梯：256K<Token≤1M；非思考和思考模式；当前能力等同于qwen3.6-flash-2026-04-16",
-    "new": "华北2（北京）；256K<Token≤1M；当前能力等同于qwen3.6-flash-2026-04-16"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3.5-flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；阶梯：256K<Token≤1M；非思考和思考模式；当前能力等同于qwen3.5-flash-2026-02-23",
-    "new": "华北2（北京）；256K<Token≤1M；当前能力等同于qwen3.5-flash-2026-02-23"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen-flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；阶梯：256K<Token≤1M；非思考和思考模式；当前能力等同于qwen-flash-2025-07-28",
-    "new": "华北2（北京）；256K<Token≤1M；当前能力等同于qwen-flash-2025-07-28"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "new",
-  "model": "qwen-long-2025-01-25",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 0.5
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 2.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3-vl-plus",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；视觉语言模型；阶梯：128K<Token≤256K",
-    "new": "华北2（北京）；视觉语言模型；128K<Token≤256K"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3-vl-flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；视觉语言模型；阶梯：128K<Token≤256K",
-    "new": "华北2（北京）；视觉语言模型；128K<Token≤256K"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "new",
-  "model": "qwen-vl-ocr-latest",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 0.3
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 0.5
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3-coder-plus",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；代码模型；阶梯：256K<Token≤1M",
-    "new": "华北2（北京）；代码模型；256K<Token≤1M"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3-coder-flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；代码模型；阶梯：256K<Token≤1M",
-    "new": "华北2（北京）；代码模型；256K<Token≤1M"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "new",
-  "model": "qwen-deep-research-2025-12-15",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 79.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 236.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "tongyi-xiaomi-analysis-flash",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；通义晓蜜对话分析模型",
-    "new": "华北2（北京）；对话分析模型"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "tongyi-xiaomi-analysis-pro",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；通义晓蜜对话分析模型",
-    "new": "华北2（北京）；对话分析模型"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3.8-2.4t-a95b",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；开源版；0<Token≤1M；非思考和思考模式",
-    "new": "华北2（北京）；开源版；0<Token≤1M"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3.8-27b",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；开源版；0<Token≤1M；非思考和思考模式",
-    "new": "华北2（北京）；开源版；0<Token≤1M"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3.6-35b-a3b",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；开源版；0<Token≤256K；非思考和思考模式",
-    "new": "华北2（北京）；开源版；0<Token≤256K"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "change",
-  "model": "qwen3.6-27b",
-  "fields": [
-   {
-    "field": "note",
-    "old": "华北2（北京）；开源版；0<Token≤256K；非思考和思考模式",
-    "new": "华北2（北京）；开源版；0<Token≤256K"
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "new",
-  "model": "qwen3-235b-a22b-thinking-2507",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 2.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 20.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "new",
-  "model": "qwen3-235b-a22b-instruct-2507",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 2.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 8.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-15T12:06:30Z",
-  "provider": "qwen",
-  "provider_name": "阿里云百炼 (Qwen)",
-  "kind": "new",
-  "model": "qwen3-30b-a3b-thinking-2507",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 0.75
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 7.5
-   }
-  ]
- },
- {
   "ts": "2026-09-15T12:06:30Z",
   "provider": "qwen",
   "provider_name": "阿里云百炼 (Qwen)",
@@ -6516,5 +5897,565 @@
   "kind": "removed",
   "model": "doubao-seedance-1.0-pro-fast",
   "fields": []
+ },
+ {
+  "ts": "2026-09-16T16:06:14Z",
+  "provider": "mistral",
+  "provider_name": "Mistral",
+  "kind": "new",
+  "model": "Z.ai GLM 5.3",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": null,
+    "new": 1.4
+   },
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 4.4
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:14Z",
+  "provider": "mistral",
+  "provider_name": "Mistral",
+  "kind": "removed",
+  "model": "Mistral Moderation 2",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-16T16:06:14Z",
+  "provider": "mistral",
+  "provider_name": "Mistral",
+  "kind": "removed",
+  "model": "Leanstral 1.5",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-evolving",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 [0, 1024]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 [0, 1024]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.1-pro",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 6.0,
+    "new": 3.0
+   },
+   {
+    "field": "output_per_1m",
+    "old": 30.0,
+    "new": 15.0
+   },
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 [0, 1024]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（低优）；输入长度 [0, 1024]；仅支持隐式缓存，无额外缓存存储费用"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.1-turbo",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 3.0,
+    "new": 1.5
+   },
+   {
+    "field": "output_per_1m",
+    "old": 15.0,
+    "new": 7.5
+   },
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 [0, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（低优）；输入长度 [0, 256]；仅支持隐式缓存，无额外缓存存储费用"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-pro",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": 9.6,
+    "new": 28.8
+   },
+   {
+    "field": "output_per_1m",
+    "old": 48.0,
+    "new": 144.0
+   },
+   {
+    "field": "cached_input_per_1m",
+    "old": 1.92,
+    "new": 5.76
+   },
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（低延迟）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-lite",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；音频输入 27 元/百万token，音频缓存命中 5.4 元/百万token；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]；音频输入 27，音频缓存命中 5.4 元/百万tokens"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-mini",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；音频输入 12 元/百万token，音频缓存命中 2.4 元/百万token；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]；音频输入 12，音频缓存命中 2.4 元/百万tokens"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-2.0-code",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-1.8",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-character",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (32, 128]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (32, 128]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-code",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-1.6",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-1.6-lite",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-1.6-flash",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-seed-1.6-vision",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (128, 256]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (128, 256]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-1.5-pro-32k",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-1.5-lite-32k",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "glm-5.3-flash",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "glm-5.2",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "glm-4.7",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；输入长度 (32, 200]；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；输入长度 (32, 200]"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "deepseek-v4-1-flash",
+  "fields": [
+   {
+    "field": "note",
+    "old": "在线推理（常规）；高峰时段；缓存存储 0.017 元/百万token/小时",
+    "new": "在线推理（常规）；高峰时段。高峰时段：北京时间周一至周五 09:00–12:00、14:00–18:00；空闲时段：除上述高峰时段外，其余均为空闲时段。"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "deepseek-v4-pro",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": null,
+    "new": 4.5
+   },
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 13.5
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "deepseek-v4-flash",
+  "fields": [
+   {
+    "field": "input_per_1m",
+    "old": null,
+    "new": 1.5
+   },
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 4.5
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "change",
+  "model": "doubao-embedding-vision",
+  "fields": [
+   {
+    "field": "note",
+    "old": "向量模型（embedding）；文本输入价格。图片输入 1.8 元/百万token",
+    "new": "向量模型（embedding）；文本输入价格。图片输入价格为 1.8 元/百万tokens"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-2.5",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 33.12
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-2.0",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 28.0
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-2.0-fast",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 16.5
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-2.0-mini",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 5.6
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-1.5-pro",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 4.0
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-1.0-pro",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 7.5
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "new",
+  "model": "doubao-seedance-1.0-pro-fast",
+  "fields": [
+   {
+    "field": "output_per_1m",
+    "old": null,
+    "new": 2.1
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "removed",
+  "model": "deepseek-v4-pro正式版",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "removed",
+  "model": "deepseek-v4-flash正式版",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "removed",
+  "model": "deepseek-v4-pro预览版",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-16T16:06:50Z",
+  "provider": "doubao",
+  "provider_name": "火山方舟 (豆包)",
+  "kind": "removed",
+  "model": "deepseek-v4-flash预览版",
+  "fields": []
+ },
+ {
+  "ts": "2026-09-16T16:09:06Z",
+  "provider": "minimax",
+  "provider_name": "MiniMax",
+  "kind": "change",
+  "model": "MiniMax-M3",
+  "fields": [
+   {
+    "field": "note",
+    "old": "优先服务，> 512k 输入 tokens；永久五折，原价输入 ¥12.60/百万 tokens、输出 ¥50.40/百万 tokens、缓存读取 ¥2.52/百万 tokens。优先服务可让请求获得优先准入，从而更快响应并降低失败率",
+    "new": "优先档位；> 512k 输入 tokens；永久五折，原价输入 ¥12.60/百万 tokens、输出 ¥50.40/百万 tokens、缓存读取 ¥2.52/百万 tokens；调用时将 service_tier 设为 priority，按标准价格的 1.5 倍计费"
+   }
+  ]
+ },
+ {
+  "ts": "2026-09-16T16:09:06Z",
+  "provider": "minimax",
+  "provider_name": "MiniMax",
+  "kind": "change",
+  "model": "MiniMax-H3-Context-IR",
+  "fields": [
+   {
+    "field": "note",
+    "old": "H3-Context-IR 任务，视频相关多模态模型",
+    "new": "视频 H3-Context-IR 任务"
+   }
+  ]
  }
 ]

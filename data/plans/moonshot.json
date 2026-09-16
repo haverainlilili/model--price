@@ -2,15 +2,10 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥49/月",
    "billing": "连续包月",
    "quotas": [
-    {
-     "label": "Agent 用量",
-     "value": "约 30 个",
-     "window": "月额度"
-    },
     {
      "label": "Agent 优先生成队列",
      "value": "4 倍速",
@@ -23,22 +18,17 @@
     }
    ],
    "models": [],
-   "note": "Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除。",
+   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。官网称 Agent 用量约 30 个，基于常见任务 token 消耗估算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥99/月",
    "billing": "连续包月",
    "quotas": [
     {
-     "label": "Agent 用量",
-     "value": "约 60 个",
-     "window": "月额度"
-    },
-    {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群",
      "value": "25 次",
      "window": null
     },
@@ -49,22 +39,17 @@
     }
    ],
    "models": [],
-   "note": "Agent 集群为 2 个子任务并行。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除。",
+   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。官网称 Agent 用量约 60 个，基于常见任务 token 消耗估算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥199/月",
    "billing": "连续包月",
    "quotas": [
     {
-     "label": "Agent 用量",
-     "value": "约 150 个",
-     "window": "月额度"
-    },
-    {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群",
      "value": "50 次",
      "window": null
     },
@@ -75,22 +60,17 @@
     }
    ],
    "models": [],
-   "note": "Agent 集群为 4 个子任务并行。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除。",
+   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。官网称 Agent 用量约 150 个，基于常见任务 token 消耗估算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥699/月",
    "billing": "连续包月",
    "quotas": [
     {
-     "label": "Agent 用量",
-     "value": "约 360 个",
-     "window": "月额度"
-    },
-    {
-     "label": "Agent 集群可用次数",
+     "label": "Agent 集群",
      "value": "120 次",
      "window": null
     },
@@ -106,18 +86,18 @@
     }
    ],
    "models": [],
-   "note": "Agent 集群为 8 个子任务并行。Agent 用量数值基于常见任务 token 消耗估算，是将月额度用于同一功能时的参考值；所有会员功能共享一个额度池，按实际 token 消耗扣除。",
+   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度按月刷新。官网称 Agent 用量约 360 个，基于常见任务 token 消耗估算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-16T10:10:10Z",
+ "last_fetch_ts": "2026-09-16T11:09:59Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "2c031909b189e176e75480b758d174ab8892c202feeece52a8b6a2dd0d362d27",
- "fetched_at": "2026-09-16T10:10:10Z",
+ "plans_hash": "0a7c5ab0bd51467953d37f5a9a1459580e8c56bf8c87427d6b835580e5dc181b",
+ "fetched_at": "2026-09-16T11:09:59Z",
  "status_note": null
 }

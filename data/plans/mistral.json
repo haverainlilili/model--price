@@ -1,26 +1,10 @@
 {
  "plans": [
   {
-   "name": "Free",
-   "plan_type": "聊天会员",
-   "price": "Free",
-   "billing": null,
-   "quotas": [
-    {
-     "label": "API credits",
-     "value": "$10 /mo in API credits",
-     "window": "每月"
-    }
-   ],
-   "models": [],
-   "note": "Limited messages and web searches; limited coding sessions.",
-   "source_url": "https://mistral.ai/pricing"
-  },
-  {
    "name": "Pro",
    "plan_type": "聊天会员",
    "price": "$14.99 /mo",
-   "billing": "/mo",
+   "billing": "每月",
    "quotas": [
     {
      "label": "API credits",
@@ -38,26 +22,42 @@
      "window": null
     },
     {
+     "label": "Task scheduling",
+     "value": "Unlimited",
+     "window": null
+    },
+    {
      "label": "Image generation",
      "value": "Up to 40x free",
      "window": null
     }
    ],
    "models": [],
-   "note": "Excluding taxes. 官网以相对 Free 的倍数标注部分使用额度。",
+   "note": "官网以 Free 方案为相对基准标注消息、网页搜索和图像生成额度；价格不含税。",
+   "source_url": "https://mistral.ai/pricing"
+  },
+  {
+   "name": "Education plan",
+   "plan_type": "聊天会员",
+   "price": "$5.99 / month",
+   "billing": "每月",
+   "quotas": [
+    {
+     "label": "API credits",
+     "value": "$15 /mo in API credits",
+     "window": "每月"
+    }
+   ],
+   "models": [],
+   "note": "官网 FAQ 标注：经验证的学生可获 Mistral Pro $5.99 / month（通常为 $14.99）；页面教育方案区域标注 $15 /mo in API credits。",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Team",
-   "plan_type": "团队工作区",
+   "plan_type": "团队会员",
    "price": "$24.99 /user/mo",
-   "billing": "/user/mo",
+   "billing": "每用户每月",
    "quotas": [
-    {
-     "label": "Storage",
-     "value": "Up to 30GB of storage /user",
-     "window": null
-    },
     {
      "label": "Task scheduling",
      "value": "Unlimited",
@@ -65,18 +65,18 @@
     }
    ],
    "models": [],
-   "note": "Excluding taxes。",
+   "note": "价格不含税。官网另标注存储为“Up to 30GB of storage /user”，但存储容量不属于本次允许抽取的额度单位。",
    "source_url": "https://mistral.ai/pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-16T07:09:15Z",
+ "last_fetch_ts": "2026-09-16T08:09:50Z",
  "source": "official",
  "source_urls": [
   "https://mistral.ai/pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "4bc323609114fc80b404babfcf19eb5095686115ac71b1c7826acdff90c882f3",
- "fetched_at": "2026-09-15T16:11:23Z",
- "status_note": "页面无变化"
+ "plans_hash": "8e2978a7c35d1d42102c38176254ba134cdb3632fe780274ea9654aa7702eac4",
+ "fetched_at": "2026-09-16T08:09:50Z",
+ "status_note": null
 }

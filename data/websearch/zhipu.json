@@ -11,41 +11,41 @@
  "offerings": [
   {
    "name": "Web Search API",
-   "pricing": "search_std 0.01 元/次；search_pro 0.03 元/次；search_pro_sogou 0.05 元/次；search_pro_quark 0.05 元/次。",
+   "pricing": "search_std 基础版（智谱自研）：0.01 元/次；search_pro 高级版（智谱自研）：0.03 元/次；search_pro_sogou 搜狗：0.05 元/次；search_pro_quark 夸克：0.05 元/次",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
    "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "支持1-50条结果，默认10；可指定域名、时间范围及摘要长度。"
+   "note": "支持指定结果数、域名、时间范围及摘要字数；结果数范围1-50，默认10。"
   },
   {
-   "name": "Web Search in Chat",
-   "pricing": "search_std 0.01 元/次；search_pro 0.03 元/次；search_pro_sogou 0.05 元/次；search_pro_quark 0.05 元/次。",
+   "name": "对话中的网络搜索（Web Search in Chat）",
+   "pricing": "search_std 基础版（智谱自研）：0.01 元/次；search_pro 高级版（智谱自研）：0.03 元/次；search_pro_sogou 搜狗：0.05 元/次；search_pro_quark 夸克：0.05 元/次",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "将实时网络检索结果融入 GLM 生成回答",
+   "output_type": "将实时网络检索结果融入 GLM 生成回答，并标注网页结果来源",
    "cites_sources": true,
    "default_on": false,
-   "note": "通过 Completions API 的 web_search 工具启用；回答标注网页结果来源。"
+   "note": "通过 Completions API 的 web_search 工具调用，示例中需设置 enable=True。"
   },
   {
-   "name": "Search Agent",
-   "pricing": "search_std 0.01 元/次；search_pro 0.03 元/次；search_pro_sogou 0.05 元/次；search_pro_quark 0.05 元/次。",
+   "name": "搜索智能体（Search Agent）",
+   "pricing": "search_std 基础版（智谱自研）：0.01 元/次；search_pro 高级版（智谱自研）：0.03 元/次；search_pro_sogou 搜狗：0.05 元/次；search_pro_quark 夸克：0.05 元/次",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "综合网页内容生成全面的模型回答",
+   "output_type": "拆解多个搜索查询、检索网页内容并生成全面的模型回答",
    "cites_sources": null,
    "default_on": null,
-   "note": "基于搜索意图拆解多个搜索查询，并检索及综合对应网页内容。"
+   "note": "基于搜索意图进行 query 拆解、对话状态管理与智能路由。"
   }
  ],
- "fetched_at": "2026-09-16T06:12:47Z",
+ "fetched_at": "2026-09-16T07:11:58Z",
  "status_note": null,
  "last_error": "官网页未解析出联网搜索信息，已保留上次 6 条",
- "last_fetch_ts": "2026-09-16T06:12:47Z",
+ "last_fetch_ts": "2026-09-16T07:11:58Z",
  "websearch_hash": "1d23fe3abcc3cc70fbc612c4c9d8fa0e7fb37f089582873fb6e78d2196d82d8d"
 }

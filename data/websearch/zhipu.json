@@ -10,75 +10,42 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Web Search API（search_std）",
-   "pricing": "0.01 元/次",
+   "name": "Web Search API",
+   "pricing": "search_std 0.01 元/次；search_pro 0.03 元/次；search_pro_sogou 0.05 元/次；search_pro_quark 0.05 元/次",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
    "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "基础版（智谱自研）；支持指定结果数、域名、时间范围等。"
-  },
-  {
-   "name": "Web Search API（search_pro）",
-   "pricing": "0.03 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "结构化搜索结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "高级版（智谱自研）：多引擎协作。"
-  },
-  {
-   "name": "Web Search API（search_pro_sogou）",
-   "pricing": "0.05 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "结构化搜索结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "搜狗：覆盖腾讯生态和知乎内容。"
-  },
-  {
-   "name": "Web Search API（search_pro_quark）",
-   "pricing": "0.05 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "结构化搜索结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "夸克：精准触达垂直内容。"
+   "note": "支持指定结果数、域名、时间范围；结果条数范围1-50，默认10。"
   },
   {
    "name": "Web Search in Chat",
-   "pricing": null,
+   "pricing": "search_std 0.01 元/次；search_pro 0.03 元/次；search_pro_sogou 0.05 元/次；search_pro_quark 0.05 元/次",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "将实时网络检索结果融入 GLM 生成回答，并标注网页结果来源",
+   "output_type": "将搜索结果融入大模型生成回答并标注网页结果来源",
    "cites_sources": true,
    "default_on": false,
-   "note": "通过 Completions API 的 web_search 工具调用；示例中需设置 enable=\"True\"。"
+   "note": "需在 Completions API 的 tools 中配置 type: web_search 及 enable: True。"
   },
   {
    "name": "Search Agent",
-   "pricing": null,
+   "pricing": "search_std 0.01 元/次；search_pro 0.03 元/次；search_pro_sogou 0.05 元/次；search_pro_quark 0.05 元/次",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "基于多个搜索查询和网页内容生成全面的模型回答",
+   "output_type": "多查询检索并综合网页内容生成模型回答",
    "cites_sources": null,
    "default_on": null,
-   "note": "根据搜索意图进行 query 拆解、对话状态管理与智能路由。"
+   "note": "基于搜索意图分解多个搜索查询，检索并生成全面回答。"
   }
  ],
- "fetched_at": "2026-09-16T20:12:35Z",
+ "fetched_at": "2026-09-16T21:12:53Z",
  "status_note": null,
  "last_error": "官网页未解析出联网搜索信息，已保留上次 6 条",
- "last_fetch_ts": "2026-09-16T20:12:35Z",
+ "last_fetch_ts": "2026-09-16T21:12:53Z",
  "websearch_hash": "1d23fe3abcc3cc70fbc612c4c9d8fa0e7fb37f089582873fb6e78d2196d82d8d"
 }

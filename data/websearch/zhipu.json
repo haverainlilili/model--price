@@ -7,51 +7,51 @@
  "source_urls": [
   "https://docs.bigmodel.cn/cn/guide/tools/web-search"
  ],
- "has_search": false,
+ "has_search": true,
  "offerings": [
   {
-   "name": "search_std",
+   "name": "Web Search API（search_std）",
    "pricing": "0.01 元/次",
    "price_per_1k_usd": null,
-   "price_basis": "基础版（智谱自研），按次计费",
+   "price_basis": null,
    "free_quota": null,
-   "output_type": "结构化搜索结果（标题、网页 URL、摘要、网站名称、网站图标等）",
+   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "满足日常查询需求；可自定义结果数量、域名、时间范围和摘要字数。"
+   "note": "基础版（智谱自研）；可自定义结果数、域名、时间范围，count 范围1-50，默认10。"
   },
   {
-   "name": "search_pro",
+   "name": "Web Search API（search_pro）",
    "pricing": "0.03 元/次",
    "price_per_1k_usd": null,
-   "price_basis": "高级版（智谱自研），按次计费",
+   "price_basis": null,
    "free_quota": null,
-   "output_type": "结构化搜索结果（标题、网页 URL、摘要、网站名称、网站图标等）",
+   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "多引擎协作；返回结果范围1-50，默认10。"
+   "note": "高级版（智谱自研）：多引擎协作降低空结果率。"
   },
   {
-   "name": "search_pro_sogou",
+   "name": "Web Search API（search_pro_sogou）",
    "pricing": "0.05 元/次",
    "price_per_1k_usd": null,
-   "price_basis": "搜狗搜索引擎，按次计费",
+   "price_basis": null,
    "free_quota": null,
-   "output_type": "结构化搜索结果（标题、网页 URL、摘要、网站名称、网站图标等）",
+   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "覆盖腾讯生态和知乎内容，在百科、医疗等垂直领域提供检索。"
+   "note": "搜狗：覆盖腾讯生态和知乎内容。"
   },
   {
-   "name": "search_pro_quark",
+   "name": "Web Search API（search_pro_quark）",
    "pricing": "0.05 元/次",
    "price_per_1k_usd": null,
-   "price_basis": "夸克搜索引擎，按次计费",
+   "price_basis": null,
    "free_quota": null,
-   "output_type": "结构化搜索结果（标题、网页 URL、摘要、网站名称、网站图标等）",
+   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "精准触达垂直内容。"
+   "note": "夸克：精准触达垂直内容。"
   },
   {
    "name": "Web Search in Chat",
@@ -59,10 +59,10 @@
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "将实时网络检索结果融入大模型生成回答并标注网页结果来源",
+   "output_type": "将搜索结果融入大模型生成回答并标注网页结果来源",
    "cites_sources": true,
-   "default_on": null,
-   "note": "通过 Completions API 的 web_search 工具调用搜索引擎。"
+   "default_on": false,
+   "note": "需在 Completions API 的 tools 中设置 type 为 web_search 且 enable 为 True。"
   },
   {
    "name": "Search Agent",
@@ -70,15 +70,15 @@
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "综合多个搜索查询的网页内容生成模型回答",
+   "output_type": "综合网页内容生成模型回答",
    "cites_sources": null,
    "default_on": null,
-   "note": "根据搜索意图拆解查询，并提供对话状态管理、智能路由和上下文管理。"
+   "note": "根据搜索意图拆解多个查询，进行对话状态管理与智能路由。"
   }
  ],
- "fetched_at": "2026-09-08T04:12:53Z",
- "status_note": "官网页未解析出联网搜索信息，已保留上次 6 条",
+ "fetched_at": "2026-09-16T02:13:00Z",
+ "status_note": null,
  "last_error": "官网页未解析出联网搜索信息，已保留上次 6 条",
- "last_fetch_ts": "2026-09-16T01:12:54Z",
- "websearch_hash": "be21f1686b71cdf5ff4c42afe7c97d1bc16e641e4a647e66412c94bd7b321d5e"
+ "last_fetch_ts": "2026-09-16T02:13:00Z",
+ "websearch_hash": "1d23fe3abcc3cc70fbc612c4c9d8fa0e7fb37f089582873fb6e78d2196d82d8d"
 }

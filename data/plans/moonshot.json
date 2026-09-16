@@ -2,7 +2,7 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥49/月",
    "billing": "连续包月",
    "quotas": [
@@ -18,17 +18,22 @@
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新。",
+   "note": "所有会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新，未使用的额度到期清零。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥99/月",
    "billing": "连续包月",
    "quotas": [
     {
-     "label": "Agent 集群",
+     "label": "Agent 优先生成队列",
+     "value": "4 倍速",
+     "window": null
+    },
+    {
+     "label": "Agent 集群可用",
      "value": "25 次",
      "window": null
     },
@@ -39,17 +44,22 @@
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新。",
+   "note": "在 Andante 基础上。所有会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新，未使用的额度到期清零。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥199/月",
    "billing": "连续包月",
    "quotas": [
     {
-     "label": "Agent 集群",
+     "label": "Agent 优先生成队列",
+     "value": "4 倍速",
+     "window": null
+    },
+    {
+     "label": "Agent 集群可用",
      "value": "50 次",
      "window": null
     },
@@ -60,17 +70,22 @@
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新。",
+   "note": "在 Andante 基础上。所有会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新，未使用的额度到期清零。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "会员计划",
+   "plan_type": "会员订阅",
    "price": "¥699/月",
    "billing": "连续包月",
    "quotas": [
     {
-     "label": "Agent 集群",
+     "label": "Agent 优先生成队列",
+     "value": "4 倍速",
+     "window": null
+    },
+    {
+     "label": "Agent 集群可用",
      "value": "120 次",
      "window": null
     },
@@ -86,18 +101,18 @@
     }
    ],
    "models": [],
-   "note": "所有 Kimi 会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新。",
+   "note": "在 Andante 基础上。所有会员功能共享一个额度池，按实际 token 消耗计算；额度在每个计费周期自动刷新，未使用的额度到期清零。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-16T18:10:08Z",
+ "last_fetch_ts": "2026-09-16T19:10:09Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "349a783ad803352581dfea8976ff67de0a8c9fad4f982a1c7ddd208af2ca1a61",
- "fetched_at": "2026-09-16T18:10:08Z",
+ "plans_hash": "08eef67cf7e1f0739f45aa38d7297c6dbbf02ed807daeb0f2afddd759a1896a1",
+ "fetched_at": "2026-09-16T19:10:09Z",
  "status_note": null
 }

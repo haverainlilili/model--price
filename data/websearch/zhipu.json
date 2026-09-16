@@ -10,75 +10,42 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Web Search API（search_std）",
-   "pricing": "0.01 元/次",
+   "name": "Web Search API",
+   "pricing": "search_std 基础版（智谱自研）0.01 元/次；search_pro 高级版（智谱自研）0.03 元/次；search_pro_sogou 搜狗 0.05 元/次；search_pro_quark 夸克 0.05 元/次",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
    "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
-   "cites_sources": true,
+   "cites_sources": null,
    "default_on": null,
-   "note": "基础版（智谱自研）；可自定义结果数、域名、时间范围，count 范围1-50，默认10。"
+   "note": "可设置结果数1-50（默认10）、域名、时间范围及摘要长度。"
   },
   {
-   "name": "Web Search API（search_pro）",
-   "pricing": "0.03 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "高级版（智谱自研）：多引擎协作降低空结果率。"
-  },
-  {
-   "name": "Web Search API（search_pro_sogou）",
-   "pricing": "0.05 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "搜狗：覆盖腾讯生态和知乎内容。"
-  },
-  {
-   "name": "Web Search API（search_pro_quark）",
-   "pricing": "0.05 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "夸克：精准触达垂直内容。"
-  },
-  {
-   "name": "Web Search in Chat",
-   "pricing": null,
+   "name": "Web Search in Chat（对话中的网络搜索）",
+   "pricing": "search_std 基础版（智谱自研）0.01 元/次；search_pro 高级版（智谱自研）0.03 元/次；search_pro_sogou 搜狗 0.05 元/次；search_pro_quark 夸克 0.05 元/次",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
    "output_type": "将搜索结果融入大模型生成回答并标注网页结果来源",
    "cites_sources": true,
    "default_on": false,
-   "note": "需在 Completions API 的 tools 中设置 type 为 web_search 且 enable 为 True。"
+   "note": "需在 Completions API 的 tools 中设置 type: web_search 及 enable: True。"
   },
   {
-   "name": "Search Agent",
-   "pricing": null,
+   "name": "Search Agent（搜索智能体）",
+   "pricing": "search_std 基础版（智谱自研）0.01 元/次；search_pro 高级版（智谱自研）0.03 元/次；search_pro_sogou 搜狗 0.05 元/次；search_pro_quark 夸克 0.05 元/次",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "综合网页内容生成模型回答",
+   "output_type": "多查询检索并综合网页内容生成模型回答",
    "cites_sources": null,
    "default_on": null,
-   "note": "根据搜索意图拆解多个查询，进行对话状态管理与智能路由。"
+   "note": "基于搜索意图分解多个搜索查询，检索并生成全面回答。"
   }
  ],
- "fetched_at": "2026-09-16T02:13:00Z",
+ "fetched_at": "2026-09-16T03:13:20Z",
  "status_note": null,
  "last_error": "官网页未解析出联网搜索信息，已保留上次 6 条",
- "last_fetch_ts": "2026-09-16T02:13:00Z",
+ "last_fetch_ts": "2026-09-16T03:13:20Z",
  "websearch_hash": "1d23fe3abcc3cc70fbc612c4c9d8fa0e7fb37f089582873fb6e78d2196d82d8d"
 }

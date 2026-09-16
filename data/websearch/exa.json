@@ -12,42 +12,31 @@
  "offerings": [
   {
    "name": "Search",
-   "pricing": "$7 / 1k requests; base price includes up to 10 results. Each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
+   "pricing": "$7 / 1k requests；base price includes up to 10 results. Each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
    "price_per_1k_usd": 7.0,
-   "price_basis": "Search /search base price（up to 10 results）",
+   "price_basis": "PAYG /search base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "Standard search results with URLs and page contents; highlights, structured outputs, and AI summary.",
    "cites_sources": true,
    "default_on": null,
-   "note": "Additional results and Exa-generated page summaries are billed on top."
+   "note": "请求超过10个结果另计费；AI page summaries另计费。"
   },
   {
-   "name": "Deep Search (deep-lite / deep)",
-   "pricing": "$12 / 1k requests; additional results and AI page summaries cost the same as standard search.",
+   "name": "Deep Search",
+   "pricing": "deep-lite: $12 / 1k requests; deep: $12 / 1k requests; deep-reasoning: $15 / 1k requests.",
    "price_per_1k_usd": 12.0,
-   "price_basis": "Deep Search type deep-lite or deep，base price（up to 10 results）",
+   "price_basis": "PAYG /search type=deep-lite 或 deep（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "Multi-step research with structured outputs and citations.",
    "cites_sources": true,
    "default_on": null,
-   "note": "deep-lite latency ~4 seconds; deep latency 4–15 seconds."
-  },
-  {
-   "name": "Deep Search (deep-reasoning)",
-   "pricing": "$15 / 1k requests; additional results and AI page summaries cost the same as standard search.",
-   "price_per_1k_usd": 15.0,
-   "price_basis": "Deep Search type deep-reasoning，base price（up to 10 results）",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Multi-step research with structured outputs and citations.",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "Latency 12–40 seconds; best for harder research tasks."
+   "note": "deep-reasoning为$15/1k requests；额外结果和AI page summaries与标准搜索同价。"
   },
   {
    "name": "Answer",
-   "pricing": "$5 / 1k requests",
+   "pricing": "$5 / 1k requests.",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Answer /answer base price",
+   "price_basis": "PAYG /answer base price",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "An LLM answer to a question, with citations.",
    "cites_sources": true,
@@ -56,30 +45,19 @@
   },
   {
    "name": "Monitors",
-   "pricing": "$15 / 1k requests; base price includes up to 10 results. Each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
+   "pricing": "$15 / 1k requests；each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
    "price_per_1k_usd": 15.0,
-   "price_basis": "Monitors /monitors base price（up to 10 results）",
+   "price_basis": "PAYG /monitors base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "Scheduled searches that surface new events on the web.",
    "cites_sources": null,
    "default_on": null,
-   "note": "Additional results and AI page summaries are billed on top."
-  },
-  {
-   "name": "Agent search tool calls",
-   "pricing": "$0.005 / search",
-   "price_per_1k_usd": 5.0,
-   "price_basis": "Agent metered runs，Search tool calls",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Async deep research, list building, and enrichment.",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "auto is the default metered mode; auto defaults to a $5 per-run cap."
+   "note": "请求超过10个结果及AI page summaries另计费。"
   }
  ],
- "fetched_at": "2026-09-16T17:13:36Z",
+ "fetched_at": "2026-09-16T18:13:20Z",
  "status_note": null,
  "last_error": "HTTPSConnectionPool(host='exa.ai', port=443): Max retries exceeded with url: /docs/reference/pricing (Caused by ConnectTimeoutError(<HTTPSConnection(host='exa.ai', port=443) at 0x758999532c60>, 'Connection to exa.ai timed out. (connect timeout=30)'))",
- "last_fetch_ts": "2026-09-16T17:13:36Z",
+ "last_fetch_ts": "2026-09-16T18:13:20Z",
  "websearch_hash": "f9b38f365d061b722025bc2325433c19be5d93b8d34ed1718dacec67734475de"
 }

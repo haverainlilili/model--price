@@ -11,52 +11,19 @@
  "offerings": [
   {
    "name": "Google Search API",
-   "pricing": "Starter: $50* for 50k credits ($1.00/1k); no monthly subscriptions, top-up model.",
+   "pricing": "Starter: $50* for 50k credits ($1.00/1k); Standard: $375* for 500k credits ($0.75/1k); Scale: $1250* for 2.5M credits ($0.50/1k); Ultimate: $3750* for 12.5M credits ($0.30/1k). No monthly subscriptions; credits valid for 6 months.",
    "price_per_1k_usd": 1.0,
    "price_basis": "Starter，50k credits / 50,000 queries",
    "free_quota": "Get 2,500 free queries. No credit card required.",
-   "output_type": "结构化 Google SERP 搜索结果（JSON），包括 organic、knowledgeGraph、peopleAlsoAsk、relatedSearches 等",
+   "output_type": "实时 Google SERP 的结构化 JSON 搜索结果",
    "cites_sources": true,
    "default_on": null,
-   "note": "每次成功查询扣除 credits；实时直接查询 Google，不缓存；credits 有效期 6 个月。"
-  },
-  {
-   "name": "Google Search API",
-   "pricing": "Standard: $375* for 500k credits ($0.75/1k).",
-   "price_per_1k_usd": 0.75,
-   "price_basis": "Standard，500k credits / 500,000 queries",
-   "free_quota": null,
-   "output_type": "结构化 Google SERP 搜索结果（JSON）",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "100 queries per second；实时结果；credits 有效期 6 个月。"
-  },
-  {
-   "name": "Google Search API",
-   "pricing": "Scale: $1250* for 2.5M credits ($0.50/1k).",
-   "price_per_1k_usd": 0.5,
-   "price_basis": "Scale，2.5M credits / 2,500,000 queries",
-   "free_quota": null,
-   "output_type": "结构化 Google SERP 搜索结果（JSON）",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "200 queries per second；实时结果；credits 有效期 6 个月。"
-  },
-  {
-   "name": "Google Search API",
-   "pricing": "Ultimate: $3750* for 12.5M credits ($0.30/1k).",
-   "price_per_1k_usd": 0.3,
-   "price_basis": "Ultimate，12.5M credits / 12,500,000 queries",
-   "free_quota": null,
-   "output_type": "结构化 Google SERP 搜索结果（JSON）",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "300 queries per second；实时结果；credits 有效期 6 个月。"
+   "note": "成功响应时扣除 credits；每次 API 调用直接查询 Google，不缓存；可设置国家和语言。"
   }
  ],
- "fetched_at": "2026-09-16T23:15:02Z",
+ "fetched_at": "2026-09-17T00:15:14Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-16T23:15:02Z",
- "websearch_hash": "7ecfb001061fa29536ce899e89627426cbbd6145d2329b65176e7dc2e415f757"
+ "last_fetch_ts": "2026-09-17T00:15:14Z",
+ "websearch_hash": "6a5fcaf5708a68e357dbcf79b9ccbd2491deefe68ebc751aa96165d2e3212233"
 }

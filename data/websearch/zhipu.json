@@ -11,85 +11,41 @@
  "offerings": [
   {
    "name": "Web Search API",
-   "pricing": "search_std：0.01 元/次；search_pro：0.03 元/次；search_pro_sogou：0.05 元/次；search_pro_quark：0.05 元/次。",
+   "pricing": "search_std 基础版（智谱自研）：0.01 元/次；search_pro 高级版（智谱自研）：0.03 元/次；search_pro_sogou：0.05 元/次；search_pro_quark：0.05 元/次",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
    "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "可设置结果数量（1-50，默认10）、域名、时间范围及摘要字数。"
-  },
-  {
-   "name": "Web Search in Chat",
-   "pricing": null,
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "将实时网络检索结果融入 GLM 生成回答",
    "cites_sources": true,
    "default_on": null,
-   "note": "页面称“提供最新且可验证的答案”，并“标注网页结果来源”。"
+   "note": "支持指定结果数、域名、时间范围及摘要字数；结果数范围1-50，默认10。"
   },
   {
-   "name": "Search Agent",
-   "pricing": null,
+   "name": "Web Search in Chat（对话中的网络搜索）",
+   "pricing": "search_std 基础版（智谱自研）：0.01 元/次；search_pro 高级版（智谱自研）：0.03 元/次；search_pro_sogou：0.05 元/次；search_pro_quark：0.05 元/次",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "综合网页内容生成全面的模型回答",
+   "output_type": "将搜索结果融入大模型生成回答",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "需在 Completions API 的 tools 中配置 type=web_search 且 enable=True。"
+  },
+  {
+   "name": "Search Agent（搜索智能体）",
+   "pricing": "search_std 基础版（智谱自研）：0.01 元/次；search_pro 高级版（智谱自研）：0.03 元/次；search_pro_sogou：0.05 元/次；search_pro_quark：0.05 元/次",
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": null,
+   "output_type": "多搜索查询检索并综合网页内容生成模型回答",
    "cites_sources": null,
    "default_on": null,
    "note": "基于搜索意图拆解多个搜索查询，并进行对话状态管理与智能路由。"
-  },
-  {
-   "name": "search_std",
-   "pricing": "0.01 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "基础版搜索引擎结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "基础版（智谱自研）：满足日常查询需求。"
-  },
-  {
-   "name": "search_pro",
-   "pricing": "0.03 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "高级版搜索引擎结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "高级版（智谱自研）：多引擎协作。"
-  },
-  {
-   "name": "search_pro_sogou",
-   "pricing": "0.05 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "搜狗搜索引擎结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "覆盖腾讯生态和知乎内容。"
-  },
-  {
-   "name": "search_pro_quark",
-   "pricing": "0.05 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "夸克搜索引擎结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "精准触达垂直内容。"
   }
  ],
- "fetched_at": "2026-09-16T23:13:07Z",
+ "fetched_at": "2026-09-17T00:13:21Z",
  "status_note": null,
  "last_error": "官网页未解析出联网搜索信息，已保留上次 6 条",
- "last_fetch_ts": "2026-09-16T23:13:07Z",
+ "last_fetch_ts": "2026-09-17T00:13:21Z",
  "websearch_hash": "1d23fe3abcc3cc70fbc612c4c9d8fa0e7fb37f089582873fb6e78d2196d82d8d"
 }

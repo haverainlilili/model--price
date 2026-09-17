@@ -59,11 +59,13 @@
   "https://docs.dev.runwayml.com/guides/pricing/",
   "https://docs.dev.runwayml.com/guides/using-models/"
  ],
- "last_fetch_ts": "2026-09-17T06:15:16Z",
+ "last_fetch_ts": "2026-09-17T11:17:12Z",
  "source_warnings": [
   "https://docs.dev.runwayml.com/guides/using-models/: HTTP 404"
  ],
  "videogen_hash": "25d5601eb7b0b47050e73c508089f803fc93d9d6fe2912977d5108150b9a4d02",
- "status_note": "官网生视频抽取失败: 请求被拒绝(400), 检查 OPENAI_MODEL 是否为该端点支持的模型",
- "last_error": "官网生视频抽取失败: 请求被拒绝(400), 检查 OPENAI_MODEL 是否为该端点支持的模型"
+ "status_note": "官网生视频抽取失败: API 错误(403): Error code: 403 - {'error': {'message': '用户额度不足, 剩余额度: ¥-0.127546 (request id: 202609171117202866022938268d9d6hRY2HoN2)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}",
+ "last_error": "官网生视频抽取失败: API 错误(403): Error code: 403 - {'error': {'message': '用户额度不足, 剩余额度: ¥-0.127546 (request id: 202609171117202866022938268d9d6hRY2HoN2)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}",
+ "videogen_excerpt_hash": "5f8980ac2d806002ffc1f120499723235b98f05f0376ffeb6396bcb617e6716f",
+ "videogen_retry_after": "2026-09-17T17:17:20Z"
 }

@@ -928,6 +928,57 @@ class ProcessGenerationTests(unittest.TestCase):
         self.assertEqual(saved["offerings"], previous["offerings"])
         self.assertIn("抽取失败", saved["last_error"])
         self.assertIn("bad JSON", saved["last_error"])
+        self.assertEqual(saved["imagegen_hash"], run._sha("new page"))
+        self.assertEqual(saved["imagegen_excerpt_hash"], run._sha("new page"))
+        self.assertIn("imagegen_retry_after", saved)
+
+    def test_unchanged_page_with_previous_failure_backs_off(self):
+        previous = {
+            "offerings": [{"name": "Existing"}],
+            "imagegen_hash": run._sha("same page"),
+            "last_error": "官网生图抽取失败: API 错误(503)",
+            "imagegen_retry_after": run._cooldown_until(),
+        }
+        cfg = {"id": "example", "name": "Example",
+               "imagegen_url": "https://example.com/image"}
+        with patch.object(run.history, "load_imagegen", return_value=previous), \
+                patch.object(run.history, "save_imagegen") as save, \
+                patch.object(run, "_fetch_imagegen_text", return_value=(
+                    "https://example.com/image", "same page")), \
+                patch.object(run.extract, "extract_imagegen") as extract:
+            invoked = run.process_imagegen(cfg)
+
+        self.assertFalse(invoked)
+        extract.assert_not_called()
+        self.assertEqual(
+            save.call_args.args[1]["status_note"],
+            "页面无变化且上次处理未成功，冷却期内暂不重试")
+
+    def test_unchanged_page_retries_after_cooldown_expires(self):
+        previous = {
+            "offerings": [{"name": "Existing"}],
+            "imagegen_hash": run._sha("same page"),
+            "last_error": "官网生图抽取失败: API 错误(503)",
+            "imagegen_retry_after": "2000-01-01T00:00:00Z",
+        }
+        page = SimpleNamespace(
+            has_image_generation=True,
+            offerings=[SimpleNamespace(model_dump=lambda: {
+                "name": "Existing", "api_available": True,
+            })],
+        )
+        cfg = {"id": "example", "name": "Example",
+               "imagegen_url": "https://example.com/image"}
+        with patch.object(run.history, "load_imagegen", return_value=previous), \
+                patch.object(run.history, "save_imagegen"), \
+                patch.object(run, "_fetch_imagegen_text", return_value=(
+                    "https://example.com/image", "same page")), \
+                patch.object(run.extract, "has_api_key", return_value=True), \
+                patch.object(run.extract, "extract_imagegen", return_value=page) as extract:
+            invoked = run.process_imagegen(cfg)
+
+        self.assertTrue(invoked)
+        extract.assert_called_once()
 
     def test_missing_key_does_not_clear_retry_error_before_key_returns(self):
         previous = {

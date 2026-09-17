@@ -16,7 +16,7 @@ import json
 import os
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
@@ -32,6 +32,13 @@ IMAGEGEN_YAML = Path(__file__).resolve().parent.parent / "imagegen.yaml"
 VIDEOGEN_YAML = Path(__file__).resolve().parent.parent / "videogen.yaml"
 GENERATION_TEXT_BUDGET = 220_000
 GENERATION_FETCH_MAX_CHARS = None  # hash complete cleaned source; bound only the LLM excerpt
+GENERATION_RETRY_COOLDOWN_HOURS = 6
+
+
+def _cooldown_until(hours: float = GENERATION_RETRY_COOLDOWN_HOURS) -> str:
+    """抽取失败的退避截止时间(ISO UTC)，避免页面无变化时每小时重试。"""
+    return (datetime.now(timezone.utc) + timedelta(hours=hours)).strftime(
+        "%Y-%m-%dT%H:%M:%SZ")
 
 
 def load_providers() -> list:
@@ -815,11 +822,18 @@ def _process_generation(cfg: dict, key: str) -> bool:
         settings["save"](pid, record)
         print(f"[{pid}/{key}] {message}")
         return True
-    if prev.get(hash_field) == page_hash and not prev.get("last_error"):
-        record["status_note"] = "页面无变化"
-        settings["save"](pid, record)
-        print(f"[{pid}/{key}] 页面无变化, 跳过抽取")
-        return False
+    retry_after_field = f"{key}_retry_after"
+    if prev.get(hash_field) == page_hash and not prev.get(f"{key}_pending_shrink_hash"):
+        if not prev.get("last_error"):
+            record["status_note"] = "页面无变化"
+            settings["save"](pid, record)
+            print(f"[{pid}/{key}] 页面无变化, 跳过抽取")
+            return False
+        if prev.get(retry_after_field) and prev.get(retry_after_field) > now:
+            record["status_note"] = "页面无变化且上次处理未成功，冷却期内暂不重试"
+            settings["save"](pid, record)
+            print(f"[{pid}/{key}] 页面无变化，冷却期内暂不重试")
+            return False
     if not extract.has_api_key():
         record["status_note"] = "等待 OPENAI_API_KEY"
         settings["save"](pid, record)
@@ -831,7 +845,13 @@ def _process_generation(cfg: dict, key: str) -> bool:
         message = f"官网{settings['label']}抽取失败: {exc}"
         record.pop(f"{key}_pending_shrink_hash", None)
         record.pop(f"{key}_pending_shrink_count", None)
-        record.update({"last_error": message[:300], "status_note": message[:300]})
+        record.update({
+            hash_field: page_hash,
+            excerpt_hash_field: excerpt_hash,
+            retry_after_field: _cooldown_until(),
+            "last_error": message[:300],
+            "status_note": message[:300],
+        })
         settings["save"](pid, record)
         print(f"[{pid}/{key}] {message}")
         return True
@@ -854,6 +874,7 @@ def _process_generation(cfg: dict, key: str) -> bool:
         record.pop(f"{key}_pending_shrink_count", None)
         record.update({
             hash_field: page_hash,
+            retry_after_field: _cooldown_until(),
             "status_note": message,
             "last_error": message,
         })
@@ -868,6 +889,7 @@ def _process_generation(cfg: dict, key: str) -> bool:
         record.pop(f"{key}_pending_shrink_count", None)
         record.update({
             hash_field: page_hash,
+            retry_after_field: _cooldown_until(),
             "status_note": message,
             "last_error": message,
         })
@@ -887,8 +909,8 @@ def _process_generation(cfg: dict, key: str) -> bool:
                    "来源恢复后再更新")
         record.pop(pending_field, None)
         record.pop(pending_count_field, None)
-        record.update({hash_field: page_hash, "status_note": message,
-                       "last_error": message})
+        record.update({hash_field: page_hash, retry_after_field: _cooldown_until(),
+                       "status_note": message, "last_error": message})
         settings["save"](pid, record)
         print(f"[{pid}/{key}] {message}")
         return True
@@ -897,8 +919,8 @@ def _process_generation(cfg: dict, key: str) -> bool:
         message = f"官网{settings['label']}抽取出现重复条目，保留上次数据并重试"
         record.pop(pending_field, None)
         record.pop(pending_count_field, None)
-        record.update({hash_field: page_hash, "status_note": message,
-                       "last_error": message})
+        record.update({hash_field: page_hash, retry_after_field: _cooldown_until(),
+                       "status_note": message, "last_error": message})
         settings["save"](pid, record)
         print(f"[{pid}/{key}] {message}")
         return True

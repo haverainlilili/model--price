@@ -11,54 +11,54 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search API",
-   "pricing": "$7 / 1k requests；base price includes up to 10 results. Each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
+   "name": "Search",
+   "pricing": "$7 / 1k requests",
    "price_per_1k_usd": 7.0,
-   "price_basis": "Pay-as-you-go /search，base price（up to 10 results）",
+   "price_basis": "PAYG /search，基础价（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Standard search results. URLs and page contents; highlights, structured outputs, and AI Summary.",
+   "output_type": "Standard search results. URLs and page contents.",
    "cites_sources": true,
    "default_on": null,
-   "note": "AI summary and structured outputs work out of the box."
+   "note": "超过10个结果为$1/1k results；AI page summaries为$1/1k pages。"
   },
   {
    "name": "Deep Search (deep-lite)",
-   "pricing": "$12 / 1k requests；additional results and AI page summaries cost the same as standard search.",
+   "pricing": "$12 / 1k requests",
    "price_per_1k_usd": 12.0,
-   "price_basis": "Pay-as-you-go /search，type: deep-lite，base price（up to 10 results）",
+   "price_basis": "PAYG /search，type=deep-lite，基础价（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Lightweight synthesis.",
+   "output_type": "Lightweight synthesis with structured outputs and citations.",
    "cites_sources": true,
    "default_on": null,
-   "note": "Latency: ~4 seconds."
+   "note": "延迟约4秒；额外结果和AI页面摘要按标准搜索收费。"
   },
   {
    "name": "Deep Search (deep)",
-   "pricing": "$12 / 1k requests；additional results and AI page summaries cost the same as standard search.",
+   "pricing": "$12 / 1k requests",
    "price_per_1k_usd": 12.0,
-   "price_basis": "Pay-as-you-go /search，type: deep，base price（up to 10 results）",
+   "price_basis": "PAYG /search，type=deep，基础价（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Multi-step research with structured outputs and citations.",
+   "output_type": "Multi-step reasoning with structured outputs and citations.",
    "cites_sources": true,
    "default_on": null,
-   "note": "Latency: 4–15 seconds."
+   "note": "延迟4–15秒；额外结果和AI页面摘要按标准搜索收费。"
   },
   {
    "name": "Deep Search (deep-reasoning)",
-   "pricing": "$15 / 1k requests；additional results and AI page summaries cost the same as standard search.",
+   "pricing": "$15 / 1k requests",
    "price_per_1k_usd": 15.0,
-   "price_basis": "Pay-as-you-go /search，type: deep-reasoning，base price（up to 10 results）",
+   "price_basis": "PAYG /search，type=deep-reasoning，基础价（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Multi-step research with structured outputs and citations.",
+   "output_type": "Harder research tasks with structured outputs and citations.",
    "cites_sources": true,
    "default_on": null,
-   "note": "Latency: 12–40 seconds; for harder research tasks."
+   "note": "延迟12–40秒；额外结果和AI页面摘要按标准搜索收费。"
   },
   {
    "name": "Answer",
-   "pricing": "$5 / 1k requests.",
+   "pricing": "$5 / 1k requests",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Pay-as-you-go /answer，base price（up to 10 results）",
+   "price_basis": "PAYG /answer，基础价（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "An LLM answer to a question, with citations.",
    "cites_sources": true,
@@ -67,30 +67,19 @@
   },
   {
    "name": "Monitors",
-   "pricing": "$15 / 1k requests；each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
+   "pricing": "$15 / 1k requests",
    "price_per_1k_usd": 15.0,
-   "price_basis": "Pay-as-you-go /monitors，base price（up to 10 results）",
+   "price_basis": "PAYG /monitors，基础价（每请求最多10个结果）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "Scheduled searches that surface new events on the web.",
    "cites_sources": null,
    "default_on": null,
-   "note": null
-  },
-  {
-   "name": "Search tool calls",
-   "pricing": "$0.005 / search.",
-   "price_per_1k_usd": 5.0,
-   "price_basis": "Agent metered runs，Search tool calls",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Async deep research, list building, and enrichment.",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "auto is the default metered mode; auto defaults to a $5 cap."
+   "note": "超过10个结果为$1/1k results；AI page summaries为$1/1k pages。"
   }
  ],
- "fetched_at": "2026-09-17T02:14:34Z",
+ "fetched_at": "2026-09-17T03:16:27Z",
  "status_note": null,
  "last_error": "HTTPSConnectionPool(host='exa.ai', port=443): Max retries exceeded with url: /docs/reference/pricing (Caused by ConnectTimeoutError(<HTTPSConnection(host='exa.ai', port=443) at 0x758999532c60>, 'Connection to exa.ai timed out. (connect timeout=30)'))",
- "last_fetch_ts": "2026-09-17T02:14:34Z",
+ "last_fetch_ts": "2026-09-17T03:16:27Z",
  "websearch_hash": "3d198dd9eedd88baa44ef88f9c799b77dd934ec8fef666d5b35856a9d9d9d254"
 }

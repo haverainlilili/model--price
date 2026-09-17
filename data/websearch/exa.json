@@ -12,53 +12,53 @@
  "offerings": [
   {
    "name": "Search",
-   "pricing": "$7 / 1k requests",
+   "pricing": "$7 / 1k requests；base price includes up to 10 results. Each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
    "price_per_1k_usd": 7.0,
-   "price_basis": "Pay-as-you-go /search，base price up to 10 results",
+   "price_basis": "PAYG /search，base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Standard search results; URLs and page contents.",
+   "output_type": "Standard search results, URLs and page contents; AI summary and structured outputs.",
    "cites_sources": true,
    "default_on": null,
-   "note": "Additional results above 10: $1 / 1k results; AI page summaries: $1 / 1k pages."
+   "note": "Up to 1,000 results per search is listed for Enterprise."
   },
   {
    "name": "Deep Search (deep-lite)",
    "pricing": "$12 / 1k requests",
    "price_per_1k_usd": 12.0,
-   "price_basis": "Pay-as-you-go /search，type: deep-lite，base price up to 10 results",
+   "price_basis": "PAYG /search type: deep-lite，base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "Multi-step research with structured outputs and citations.",
    "cites_sources": true,
    "default_on": null,
-   "note": "~4 seconds latency; additional results and AI page summaries cost the same as standard search."
+   "note": "~4 seconds; additional results and AI page summaries cost the same as standard search."
   },
   {
    "name": "Deep Search (deep)",
    "pricing": "$12 / 1k requests",
    "price_per_1k_usd": 12.0,
-   "price_basis": "Pay-as-you-go /search，type: deep，base price up to 10 results",
+   "price_basis": "PAYG /search type: deep，base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "Multi-step research with structured outputs and citations.",
    "cites_sources": true,
    "default_on": null,
-   "note": "4–15 seconds latency; additional results and AI page summaries cost the same as standard search."
+   "note": "4–15 seconds; additional results and AI page summaries cost the same as standard search."
   },
   {
    "name": "Deep Search (deep-reasoning)",
    "pricing": "$15 / 1k requests",
    "price_per_1k_usd": 15.0,
-   "price_basis": "Pay-as-you-go /search，type: deep-reasoning，base price up to 10 results",
+   "price_basis": "PAYG /search type: deep-reasoning，base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "Multi-step research with structured outputs and citations.",
    "cites_sources": true,
    "default_on": null,
-   "note": "12–40 seconds latency; additional results and AI page summaries cost the same as standard search."
+   "note": "12–40 seconds; additional results and AI page summaries cost the same as standard search."
   },
   {
    "name": "Answer",
    "pricing": "$5 / 1k requests",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Pay-as-you-go /answer，base price up to 10 results",
+   "price_basis": "PAYG /answer，base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "An LLM answer to a question, with citations.",
    "cites_sources": true,
@@ -67,30 +67,30 @@
   },
   {
    "name": "Monitors",
-   "pricing": "$15 / 1k requests",
+   "pricing": "$15 / 1k requests；each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages.",
    "price_per_1k_usd": 15.0,
-   "price_basis": "Pay-as-you-go /monitors，base price up to 10 results",
+   "price_basis": "PAYG /monitors，base price（up to 10 results）",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
    "output_type": "Scheduled searches that surface new events on the web.",
    "cites_sources": null,
    "default_on": null,
-   "note": "Additional results above 10: $1 / 1k results; AI page summaries: $1 / 1k pages."
+   "note": null
   },
   {
    "name": "Search tool calls",
    "pricing": "$0.005 / search",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Metered Agent runs；per search tool call",
+   "price_basis": "Agent API metered runs，Search tool calls",
    "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Agent tool calls for async deep research, list building, and enrichment.",
+   "output_type": "Agent API tool calls for async deep research, list building, and enrichment.",
    "cites_sources": null,
    "default_on": null,
-   "note": "Metered runs also bill Agent Compute Units at $0.10 / ACU; auto cap defaults to $5."
+   "note": "auto is the default metered mode; auto defaults to a $5 cap."
   }
  ],
- "fetched_at": "2026-09-17T04:14:48Z",
+ "fetched_at": "2026-09-17T05:15:00Z",
  "status_note": null,
  "last_error": "HTTPSConnectionPool(host='exa.ai', port=443): Max retries exceeded with url: /docs/reference/pricing (Caused by ConnectTimeoutError(<HTTPSConnection(host='exa.ai', port=443) at 0x758999532c60>, 'Connection to exa.ai timed out. (connect timeout=30)'))",
- "last_fetch_ts": "2026-09-17T04:14:48Z",
+ "last_fetch_ts": "2026-09-17T05:15:00Z",
  "websearch_hash": "3d198dd9eedd88baa44ef88f9c799b77dd934ec8fef666d5b35856a9d9d9d254"
 }

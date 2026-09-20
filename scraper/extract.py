@@ -9,6 +9,9 @@
   不用 json_schema 严格模式: 它要求所有字段必填, 与本 schema 的大量
   Optional 字段冲突, 且不少兼容端点不支持。
 - 抽取模型由 OPENAI_MODEL 指定, 默认 gpt-5.6-sol。
+- 网关要求的额外请求头由 OPENAI_EXTRA_HEADERS 指定(逗号分隔的 `名称:值`);
+  部分网关靠自定义头做路由, 例如 OpenCode Go 需要
+  `x-opencode-session`, 缺失时会返回 MissingSessionID 而拒绝服务。
 - 需要 OPENAI_API_KEY; 没有密钥时上层(run.py)直接跳过抽取。
 """
 from __future__ import annotations
@@ -139,11 +142,32 @@ def has_api_key() -> bool:
     return bool(os.environ.get("OPENAI_API_KEY"))
 
 
+def _extra_headers() -> dict:
+    """解析 OPENAI_EXTRA_HEADERS: 逗号分隔的 `名称:值`, 供网关要求的自定义头使用。
+
+    例: OPENAI_EXTRA_HEADERS=x-opencode-session:model-price-scraper
+    值内部允许出现冒号(只按首个冒号切分); 缺少名称或值的片段会被忽略。
+    """
+    headers: dict[str, str] = {}
+    for item in (os.environ.get("OPENAI_EXTRA_HEADERS") or "").split(","):
+        item = item.strip()
+        if ":" not in item:
+            continue
+        name, value = item.split(":", 1)
+        name, value = name.strip(), value.strip()
+        if name and value:
+            headers[name] = value
+    return headers
+
+
 def _client() -> openai.OpenAI:
     kwargs = {"timeout": 240.0}
     base = (os.environ.get("OPENAI_BASE_URL") or "").strip()
     if base:
         kwargs["base_url"] = base
+    headers = _extra_headers()
+    if headers:
+        kwargs["default_headers"] = headers
     return openai.OpenAI(**kwargs)
 
 

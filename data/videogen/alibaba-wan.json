@@ -293,13 +293,11 @@
   "https://help.aliyun.com/zh/model-studio/wan3-0-video",
   "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
  ],
- "last_fetch_ts": "2026-09-20T21:20:01Z",
+ "last_fetch_ts": "2026-09-20T22:22:16Z",
  "source_warnings": [],
  "videogen_hash": "22902abbb5aa1c2cfac018669b8a84fba363db5ce6e351abc074d8854a427eb6",
- "status_note": "官网生视频抽取覆盖项由 9 变为 6，等待下轮同语义结果确认",
- "last_error": "官网生视频抽取覆盖项由 9 变为 6，等待下轮同语义结果确认",
+ "status_note": "官网生视频抽取失败: 结构化输出校验失败: 11 validation errors for VideoGenerationPage\nofferings.0\n  Value error, temporary chart price requires official start and end dates [type=value_error, input_value={'name': 'wan3.0-video', ...期24小时；RPM 300'}, input_type=dict]\n    For further information visit https://errors.pyda",
+ "last_error": "官网生视频抽取失败: 结构化输出校验失败: 11 validation errors for VideoGenerationPage\nofferings.0\n  Value error, temporary chart price requires official start and end dates [type=value_error, input_value={'name': 'wan3.0-video', ...期24小时；RPM 300'}, input_type=dict]\n    For further information visit https://errors.pyda",
  "videogen_excerpt_hash": "3240f333bb36d3cf210c2f176783c3dbc5784ecf2c5e5dd50f078b2582a6e5ba",
- "videogen_retry_after": "2026-09-20T20:40:36Z",
- "videogen_pending_shrink_hash": "d5572e3468b3c5da0352ac0b4caff60205f73a13d5f39d1d1ed7403d4583e691",
- "videogen_pending_shrink_count": 6
+ "videogen_retry_after": "2026-09-21T04:25:30Z"
 }

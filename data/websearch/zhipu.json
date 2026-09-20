@@ -11,74 +11,41 @@
  "offerings": [
   {
    "name": "Web Search API",
-   "pricing": "search_std 0.01 元/次",
+   "pricing": "search_std 0.01 元/次; search_pro 0.03 元/次; search_pro_sogou 0.05 元/次; search_pro_quark 0.05 元/次",
    "price_per_1k_usd": null,
-   "price_basis": null,
+   "price_basis": "按次计费, 官网以人民币/次报价, 未给出美元换算",
    "free_quota": null,
-   "output_type": "结构化搜索结果",
+   "output_type": "结构化搜索结果（标题/URL/摘要/网站名/图标）",
    "cites_sources": true,
    "default_on": null,
-   "note": "返回网页标题、URL、摘要、网站名、图标等；count 1-50 默认10，支持域名/时间筛选、摘要字数控制；基于智谱自研引擎"
+   "note": "count 1-50 默认10，支持域名过滤、时间范围、摘要字数控制；含搜狗/夸克等引擎。"
   },
   {
-   "name": "Web Search API (search_pro)",
-   "pricing": "0.03 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "结构化搜索结果",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "高级版（智谱自研）：多引擎协作显著降低空结果率，召回率和准确率大幅提升"
-  },
-  {
-   "name": "Web Search API (search_pro_sogou)",
-   "pricing": "0.05 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "结构化搜索结果",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "搜狗：覆盖腾讯生态（新闻/企鹅号）和知乎内容，在百科、医疗等垂直领域权威性强"
-  },
-  {
-   "name": "Web Search API (search_pro_quark)",
-   "pricing": "0.05 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "结构化搜索结果",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "夸克：精准触达垂直内容"
-  },
-  {
-   "name": "Web Search in Chat (对话中的网络搜索)",
+   "name": "对话中的网络搜索 (Web Search in Chat)",
    "pricing": null,
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "带引用答案",
+   "output_type": "搜索结果融入大模型回答并标注网页结果来源",
    "cites_sources": true,
    "default_on": null,
-   "note": "Completions API 工具（type: web_search），将实时网络检索结果与 GLM 生成结合并标注网页结果来源；可指定 search_engine、count 等"
+   "note": "Completions API 中以 web_search 工具调用，需配置 enable、search_engine 等，示例引擎 search_pro。"
   },
   {
-   "name": "Search Agent (搜索智能体)",
+   "name": "搜索智能体 (Search Agent)",
    "pricing": null,
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "带引用答案",
+   "output_type": "query 拆解后综合网页内容生成回答",
    "cites_sources": null,
    "default_on": null,
-   "note": "根据搜索意图进行 query 拆解、对话状态管理与智能路由，综合网页内容生成回答"
+   "note": "根据搜索意图拆解查询与智能路由，API 文档:智能体搜索。"
   }
  ],
- "fetched_at": "2026-09-20T21:13:17Z",
+ "fetched_at": "2026-09-20T22:12:32Z",
  "status_note": null,
  "last_error": "官网页未解析出联网搜索信息，已保留上次 6 条",
- "last_fetch_ts": "2026-09-20T21:13:17Z",
+ "last_fetch_ts": "2026-09-20T22:12:32Z",
  "websearch_hash": "964c4679984ed72c2d621c80c3ed93edb0a38356befb67c213aa2960548bea30"
 }

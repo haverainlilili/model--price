@@ -619,13 +619,11 @@
   "https://docs.volcengine.com/docs/82379/1520757",
   "https://seed.bytedance.com/en/seedance2_5"
  ],
- "last_fetch_ts": "2026-09-20T21:18:00Z",
+ "last_fetch_ts": "2026-09-20T22:17:47Z",
  "source_warnings": [],
- "videogen_hash": "2be3e4163d6c140cdc2dbd35b6c2f8e390486f61826351dfa82c4abe51541cc3",
- "status_note": "官网生视频完整页面已变化但安全摘录无变化；保留旧事实且不接受本次网页哈希",
- "last_error": "官网生视频完整页面已变化但安全摘录无变化；保留旧事实且不接受本次网页哈希",
- "videogen_excerpt_hash": "4a3394579d5c506c9255a595992125f0d728c5bebf3c0d644d1b32dd59c53ce7",
- "videogen_retry_after": "2026-09-21T01:25:25Z",
- "videogen_pending_shrink_hash": "29f2955ab24f8dface39d260b040a762121d87484d36741718111a1ed3a8d823",
- "videogen_pending_shrink_count": 19
+ "videogen_hash": "50465865be4f0f37fb9198498f7a74376bad46639f07ce6756c0374dadf731ad",
+ "status_note": "官网生视频抽取失败: 结构化输出校验失败: 1 validation error for VideoGenerationPage\nofferings.3\n  Input should be a valid dictionary or instance of VideoGenerationOffering [type=model_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.13/v/model_type",
+ "last_error": "官网生视频抽取失败: 结构化输出校验失败: 1 validation error for VideoGenerationPage\nofferings.3\n  Input should be a valid dictionary or instance of VideoGenerationOffering [type=model_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.13/v/model_type",
+ "videogen_excerpt_hash": "43a41bb4013d936874f334797967c41d1b1bb1b27ad5750b1104e73b74bde451",
+ "videogen_retry_after": "2026-09-21T04:22:16Z"
 }

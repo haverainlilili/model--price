@@ -10,75 +10,42 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Web Search API (search_std 基础版)",
-   "pricing": "0.01 元/次",
+   "name": "Web Search API",
+   "pricing": "search_std 基础版 0.01 元/次；search_pro 高级版 0.03 元/次；search_pro_sogou 0.05 元/次；search_pro_quark 0.05 元/次",
    "price_per_1k_usd": null,
-   "price_basis": "按次计费，基础版（智谱自研）",
+   "price_basis": "官网按中文报价（元/次），未给美元价",
    "free_quota": null,
-   "output_type": "结构化搜索结果（网页标题、URL、摘要、网站名称、图标等）",
-   "cites_sources": null,
+   "output_type": "结构化搜索结果（标题/URL/摘要/网站名/图标）",
+   "cites_sources": true,
    "default_on": null,
-   "note": "返回条数范围1-50默认10；可指定域名、时间范围、摘要字数（content_size）；整合自研引擎及搜狗/夸克。"
-  },
-  {
-   "name": "Web Search API (search_pro 高级版)",
-   "pricing": "0.03 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": "按次计费，高级版（智谱自研）",
-   "free_quota": null,
-   "output_type": "结构化搜索结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "多引擎协作显著降低空结果率，召回率和准确率大幅提升。"
-  },
-  {
-   "name": "Web Search API (search_pro_sogou 搜狗)",
-   "pricing": "0.05 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": "按次计费，搜狗引擎",
-   "free_quota": null,
-   "output_type": "结构化搜索结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "覆盖腾讯生态（新闻/企鹅号）和知乎内容，在百科、医疗等垂直领域权威性强。"
-  },
-  {
-   "name": "Web Search API (search_pro_quark 夸克)",
-   "pricing": "0.05 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": "按次计费，夸克引擎",
-   "free_quota": null,
-   "output_type": "结构化搜索结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "精准触达垂直内容。"
+   "note": "多引擎支持（智谱自研/搜狗/夸克）；count 范围1-50默认10，可指定域名、时间范围、摘要字数。"
   },
   {
    "name": "Web Search in Chat（对话中的网络搜索）",
-   "pricing": null,
+   "pricing": "官网本页未单列价格",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
    "output_type": "将搜索结果融入大模型生成回答并标注网页结果来源",
    "cites_sources": true,
-   "default_on": false,
-   "note": "Completions API 通过 tools 参数以 web_search 工具启用，需手动 enable: True；可选 search_result 返回结果、指定搜索引擎与条数。"
+   "default_on": null,
+   "note": "Completions API 通过 web_search 工具启用，需在 tools 中配置 enable。"
   },
   {
    "name": "Search Agent（搜索智能体）",
-   "pricing": null,
+   "pricing": "官网本页未单列价格",
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "根据搜索意图拆解多查询并综合网页内容生成模型回答",
+   "output_type": "query拆解后综合网页内容生成模型回答",
    "cites_sources": null,
    "default_on": null,
-   "note": "对话状态管理与智能路由，意图理解增强上下文管理。"
+   "note": "根据搜索意图拆解多个查询，对话状态管理与智能路由。"
   }
  ],
- "fetched_at": "2026-09-20T19:14:14Z",
+ "fetched_at": "2026-09-20T20:14:09Z",
  "status_note": null,
  "last_error": "官网页未解析出联网搜索信息，已保留上次 6 条",
- "last_fetch_ts": "2026-09-20T19:14:14Z",
+ "last_fetch_ts": "2026-09-20T20:14:09Z",
  "websearch_hash": "964c4679984ed72c2d621c80c3ed93edb0a38356befb67c213aa2960548bea30"
 }

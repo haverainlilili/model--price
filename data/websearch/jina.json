@@ -11,20 +11,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Reader API (s.jina.ai / SERP)",
-   "pricing": "按 token 计费 — \"Every request costs a fixed number of tokens, starting from 10,000 tokens\"; 标准 key \"$50 / 0.050 / 1M tokens\"（1B tokens），Premium key \"$500 / 0.045 / 1M tokens\"（11B tokens）",
+   "name": "Reader API (s.jina.ai) — Search the web and get SERP",
+   "pricing": "API pricing is based on the token usage. Every request costs a fixed number of tokens, starting from 10,000 tokens. 档位：Free 10M tokens；Prototype Development 1B tokens $50 (0.050/1M tokens)；Production Deployment 11B tokens $500 (0.045/1M tokens)。",
    "price_per_1k_usd": 0.5,
-   "price_basis": "Standard key（$0.050/1M tokens，每次搜索固定消耗 10,000 tokens → $0.0005/次）",
-   "free_quota": "Every new API key comes with 10M free tokens (Toy Experiment, 10 Million tokens, non-commercial use only, CC-BY-NC)",
-   "output_type": "结构化搜索结果（LLM-friendly text block：top 5 结果，各含 URL、title、content）",
+   "price_basis": "Prototype Development（Standard key, 0.050/1M tokens, 固定 10,000 tokens/次）",
+   "free_quota": "Every new API key comes with 10M free tokens!（Toy Experiment 10 Million tokens, Non-commercial use only CC-BY-NC）",
+   "output_type": "结构化搜索结果（top five results with URLs and contents, LLM-friendly text）",
    "cites_sources": true,
    "default_on": null,
-   "note": "返回 top five results with their URLs and contents；平均延迟 2.5s；限速 100 RPM（w/o 或 free key）、1000 RPM（premium key）；定价基于 token usage，API pricing is based on the token usage；2025-05-06 新定价模型。"
+   "note": "Search mode returns a list of five entries；每请求固定消耗从 10,000 tokens 起，略计费口粮数可为浮动。RPM：无 key 100 / free 100 / premium 1000，平均延迟 2.5s。"
   }
  ],
- "fetched_at": "2026-09-20T19:15:52Z",
+ "fetched_at": "2026-09-20T20:15:36Z",
  "status_note": null,
  "last_error": "渲染后页面为空",
- "last_fetch_ts": "2026-09-20T19:15:52Z",
+ "last_fetch_ts": "2026-09-20T20:15:36Z",
  "websearch_hash": "b6f065e3b0e5040a68fad5578bc9f5757b7e1e1d9aa0cb2c0058744ea6485528"
 }

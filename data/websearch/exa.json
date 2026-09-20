@@ -12,63 +12,74 @@
  "offerings": [
   {
    "name": "Search (/search)",
-   "pricing": "$7 / 1k requests",
+   "pricing": "$7 / 1k requests (up to 10 results); each result above 10 adds $1 / 1k results; AI page summaries $1 / 1k pages",
    "price_per_1k_usd": 7.0,
-   "price_basis": "PAYG base price (up to 10 results)",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "实时搜索结果（标准结果/Highlights/Structured outputs/AI Summary）",
+   "price_basis": "PAYG（按请求计费，无订阅、无最低消费）",
+   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month",
+   "output_type": "结构化搜索结果（URLs、page contents、highlights、structured outputs、AI summary）",
    "cites_sources": true,
    "default_on": null,
-   "note": "超过10个结果按$1/1k results加收；AI page summaries $1/1k pages；另有 Instant/Fast/Auto/Deep 等延迟档。"
+   "note": "Base price includes up to 10 results; Enterprise offers up to 1,000 results per search and custom indexes."
   },
   {
-   "name": "Deep Search (type=deep)",
-   "pricing": "deep-lite $12 / 1k requests; deep $12 / 1k requests; deep-reasoning $15 / 1k requests",
+   "name": "Deep Search (type: deep-lite / deep / deep-reasoning)",
+   "pricing": "$12–15 / 1k requests (deep-lite $12, deep $12, deep-reasoning $15 per 1k requests)",
    "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG deep-lite / deep（up to 10 results）",
+   "price_basis": "PAYG，/search 的 type 参数档位，最高公开基础档为 deep-reasoning $15/1k",
    "free_quota": null,
-   "output_type": "多步研究，结构化输出带引用",
+   "output_type": "带引用的多步研究结构化输出",
    "cites_sources": true,
    "default_on": null,
-   "note": "deep-reasoning $15/1k；deep-lite ~4s, deep 4-15s, deep-reasoning 12-40s；额外结果与摘要同标准搜索。"
+   "note": "deep-lite ~4s; deep 4–15s; deep-reasoning 12–40s. Additional results and AI summaries cost same as standard search."
   },
   {
    "name": "Answer (/answer)",
    "pricing": "$5 / 1k requests",
    "price_per_1k_usd": 5.0,
-   "price_basis": "PAYG base price",
+   "price_basis": "PAYG",
    "free_quota": null,
    "output_type": "带引用的 LLM 答案",
    "cites_sources": true,
    "default_on": null,
-   "note": "An LLM answer to a question, with citations."
+   "note": null
+  },
+  {
+   "name": "Contents (/contents)",
+   "pricing": "$1 / 1k pages, per content type; AI page summaries $1 / 1k pages",
+   "price_per_1k_usd": 1.0,
+   "price_basis": "PAYG",
+   "free_quota": null,
+   "output_type": "整页文本、highlights、summaries",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "每个 content type（text/highlights/summary）单独计费。"
   },
   {
    "name": "Monitors (/monitors)",
-   "pricing": "$15 / 1k requests",
+   "pricing": "$15 / 1k requests; each result above 10 adds $1 / 1k results; AI summaries $1 / 1k pages",
    "price_per_1k_usd": 15.0,
-   "price_basis": "PAYG base price (up to 10 results)",
+   "price_basis": "PAYG",
    "free_quota": null,
-   "output_type": "定时搜索，捕捉新事件",
+   "output_type": "Scheduled searches that surface new events on the web",
    "cites_sources": null,
    "default_on": null,
-   "note": "超过10个结果加 $1/1k results；AI 摘要 $1/1k pages。"
+   "note": null
   },
   {
    "name": "Agent API",
-   "pricing": "固定 effort: minimal $0.012, low $0.025, medium $0.10, high $0.50, xhigh $1.00 / request；计量: ACU $0.10, search tool call $0.005/次, auto 默认 $5 cap, beta max $20 cap",
+   "pricing": "$0.012–$1.00 / fixed-effort run (minimal $0.012, low $0.025, medium $0.10, high $0.50, xhigh $1.00); metered: $0.10/ACU, search tool calls $0.005/search; auto 默认 $5 cap, beta max $20 cap",
    "price_per_1k_usd": null,
-   "price_basis": null,
+   "price_basis": "PAYG 固定 effort 按次，或计量计费",
    "free_quota": null,
-   "output_type": "异步深度研究、列表构建、enrichment",
+   "output_type": "Async deep research, list building, and enrichment",
    "cites_sources": null,
    "default_on": null,
-   "note": "Connect provider 调用另计费（如 Fiber.ai $0.02/credit、Baselayer $0.15-$4.00/order）。"
+   "note": "auto is the default metered mode. Contact enrichment: email $0.02, phone $0.07. Connect provider calls billed additionally (e.g. Fiber.ai $0.02/credit)."
   }
  ],
- "fetched_at": "2026-09-20T13:14:05Z",
+ "fetched_at": "2026-09-20T14:16:51Z",
  "status_note": null,
  "last_error": "HTTPSConnectionPool(host='exa.ai', port=443): Max retries exceeded with url: /docs/reference/pricing (Caused by ConnectTimeoutError(<HTTPSConnection(host='exa.ai', port=443) at 0x758999532c60>, 'Connection to exa.ai timed out. (connect timeout=30)'))",
- "last_fetch_ts": "2026-09-20T13:14:05Z",
+ "last_fetch_ts": "2026-09-20T14:16:51Z",
  "websearch_hash": "caff037688ca0d1bc7f2e2a51f875b75515b229ee9f2628b15f2cbc1044c7a23"
 }

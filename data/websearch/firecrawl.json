@@ -13,30 +13,19 @@
  "offerings": [
   {
    "name": "Web Search API (/search)",
-   "pricing": "Search costs 2 credits per 10 results, rounded up (1–10 results = 2 credits, 11–20 = 4 credits)。Credits 共享：Hobby $16/month (年付) 含 5,000 credits ≈ 2,500 searches；Standard $83/month (年付) 含 100,000 credits ≈ 50,000 searches；Free $0 含 1,000 credits ≈ 500 searches",
-   "price_per_1k_usd": null,
-   "price_basis": "按 credit 计费，随套餐与每次返回结果数浮动，官网未给出固定美元/千次请求价",
-   "free_quota": "1,000 credits / month（≈500 searches or 1,000 pages scraped），每月刷新，无需信用卡；另有 keyless free tier，Scrape、Search、Interact 可无 API key 使用，按 IP 每日限速",
-   "output_type": "结构化搜索结果（web/news/images，含 title、description、url，默认含 query-relevant Highlights；可用 scrapeOptions 附加正文 markdown/HTML 等）",
+   "pricing": "Search costs 2 credits per 10 results, rounded up per 10 results (e.g., 11 results = 4 credits). Credits shared across all endpoints. Pay-as-you-go adds credits in 5 USD increments (e.g., Standard: 2,000 credits per $5). Plans: Free $0/1,000 credits; Hobby $16/mo (annual) 5,000 credits; Standard $83/mo (annual) 100,000 credits; Growth $333/mo 500,000; Scale $599/mo 1,000,000.",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "Standard plan pay-as-you-go ($5 per 2,000 credits, 2 credits = 1 search of 10 results)",
+   "free_quota": "1,000 credits every month refreshed monthly, no credit card required; covers 500 searches; Scrape/Search/Interact also work keyless with per-IP daily caps",
+   "output_type": "结构化搜索结果（返回 titles, descriptions, and URLs，可加 scrapeOptions 取每个结果的全文 markdown/HTML/截图；支持 web/news/images 源与 research/pdf/developer 类别）",
    "cites_sources": true,
-   "default_on": null,
-   "note": "支持 web/news/images 源、research/pdf/developer 类别、域名过滤、时间过滤(tbs)、SafeSearch、位置自定义。开启 scrapeOptions 按页另计费：基础 scrape 1 credit/页，JSON 等格式 +4 credits/页。credits 费率各套餐相同。"
-  },
-  {
-   "name": "Search with Zero Data Retention (ZDR)",
-   "pricing": "End-to-End ZDR：10 credits per 10 results；Anonymized ZDR：2 credits per 10 results",
-   "price_per_1k_usd": null,
-   "price_basis": "Enterprise 套餐功能，credit 计费",
-   "free_quota": null,
-   "output_type": "结构化搜索结果（零数据保留管道）",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "通过 enterprise 参数启用，仅适用于 Enterprise 套餐；end-to-end ZDR 表示 Firecrawl 与上游搜索供应商均不存储数据，anonymized ZDR 仅 Firecrawl 侧零保留。"
+   "default_on": false,
+   "note": "ZDR search: end-to-end ZDR 10 credits per 10 results（企业参数）; anonymized ZDR 2 credits per 10 results. X.com URLs 走 Grok API，+29 credits/request。搜索含 Highlights 默认开启。"
   }
  ],
- "fetched_at": "2026-09-20T07:33:34Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-20T14:18:09Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-20T13:15:11Z",
- "websearch_hash": "86dab1648975f4548c880d3512bee013b5f24932bd15f71ef480f1f9ba23fa36"
+ "last_fetch_ts": "2026-09-20T14:18:09Z",
+ "websearch_hash": "03c21a3099f57e4bacefb9a583cfdad73b0ea35d8429b65966ea8cc728037255"
 }

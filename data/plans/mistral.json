@@ -1,14 +1,14 @@
 {
  "plans": [
   {
-   "name": "Pro",
-   "plan_type": "聊天会员",
-   "price": "$14.99 /mo",
-   "billing": "每月",
+   "name": "Free",
+   "plan_type": "聊天会员 / Vibe",
+   "price": "Free",
+   "billing": null,
    "quotas": [
     {
-     "label": "API credits",
-     "value": "$30 /mo in API credits",
+     "label": "Mistral Studio API credits",
+     "value": "$10 /mo",
      "window": "每月"
     },
     {
@@ -22,8 +22,100 @@
      "window": null
     },
     {
+     "label": "Image generation",
+     "value": "Up to 40x free",
+     "window": null
+    },
+    {
+     "label": "Task scheduling",
+     "value": "Up to 5",
+     "window": null
+    },
+    {
+     "label": "Project folders",
+     "value": "Up to 1,000",
+     "window": null
+    },
+    {
+     "label": "Libraries and document upload",
+     "value": "Limited",
+     "window": null
+    }
+   ],
+   "models": [],
+   "note": "官网标注为「Limited messages and web searches / Limited coding sessions」，未给出消息与编程会话的具体数值；6x/5x/40x 为官网相对 Free 基准的倍数表述。Messages、Web searches、Image generation 各项 Free 与 Pro 均标注 Up to 6x/5x/40x free。",
+   "source_url": "https://mistral.ai/pricing"
+  },
+  {
+   "name": "Pro",
+   "plan_type": "聊天会员 / Vibe",
+   "price": "$14.99 /mo（Excluding taxes）",
+   "billing": "每月",
+   "quotas": [
+    {
+     "label": "API credits",
+     "value": "$30 /mo",
+     "window": "每月"
+    },
+    {
+     "label": "Messages",
+     "value": "Up to 6x free",
+     "window": null
+    },
+    {
+     "label": "Web searches",
+     "value": "Up to 5x free",
+     "window": null
+    },
+    {
+     "label": "Image generation",
+     "value": "Up to 40x free",
+     "window": null
+    },
+    {
      "label": "Task scheduling",
      "value": "Unlimited",
+     "window": null
+    },
+    {
+     "label": "Project folders",
+     "value": "Up to 1,000",
+     "window": null
+    },
+    {
+     "label": "Libraries and document upload",
+     "value": "Up to 15GB",
+     "window": null
+    },
+    {
+     "label": "Flash answers",
+     "value": "150 / day",
+     "window": "每天"
+    }
+   ],
+   "models": [],
+   "note": "官网 FAQ 提到 Pro 有更高上限（如图片生成最多 40 倍）及「Flash answers: 150 / day on Pro」；倍数表述为官网相对 Free 的口径。已验证学生可享 $5.99 / month（原价 $14.99）。",
+   "source_url": "https://mistral.ai/pricing"
+  },
+  {
+   "name": "Pro（Education plan / 学生）",
+   "plan_type": "聊天会员 / Vibe（学生教育版）",
+   "price": "$5.99 / month（normally $14.99）",
+   "billing": "每月",
+   "quotas": [
+    {
+     "label": "API credits",
+     "value": "$15 /mo",
+     "window": "每月"
+    },
+    {
+     "label": "Messages",
+     "value": "Up to 6x free",
+     "window": null
+    },
+    {
+     "label": "Web searches",
+     "value": "Up to 5x free",
      "window": null
     },
     {
@@ -33,31 +125,25 @@
     }
    ],
    "models": [],
-   "note": "官网以 Free 方案为相对基准标注消息、网页搜索和图像生成额度；价格不含税。",
-   "source_url": "https://mistral.ai/pricing"
-  },
-  {
-   "name": "Education plan",
-   "plan_type": "聊天会员",
-   "price": "$5.99 / month",
-   "billing": "每月",
-   "quotas": [
-    {
-     "label": "API credits",
-     "value": "$15 /mo in API credits",
-     "window": "每月"
-    }
-   ],
-   "models": [],
-   "note": "官网 FAQ 标注：经验证的学生可获 Mistral Pro $5.99 / month（通常为 $14.99）；页面教育方案区域标注 $15 /mo in API credits。",
+   "note": "价格来自官网 FAQ：「Verified students can get Mistral Pro for $5.99 / month (normally $14.99)」；$15 /mo API credits 来自页面 Pro 教育版分支。其余额度沿用 Pro 对比表标注。",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Team",
-   "plan_type": "团队会员",
-   "price": "$24.99 /user/mo",
-   "billing": "每用户每月",
+   "plan_type": "团队协作工作区",
+   "price": "$24.99 /user/mo（Excluding taxes）",
+   "billing": "每月，按用户计费",
    "quotas": [
+    {
+     "label": "Libraries and document upload（存储）",
+     "value": "Up to 30GB / user",
+     "window": null
+    },
+    {
+     "label": "Flash answers",
+     "value": "200 / day",
+     "window": "每天"
+    },
     {
      "label": "Task scheduling",
      "value": "Unlimited",
@@ -65,18 +151,18 @@
     }
    ],
    "models": [],
-   "note": "价格不含税。官网另标注存储为“Up to 30GB of storage /user”，但存储容量不属于本次允许抽取的额度单位。",
+   "note": "页面另有「$50 /mo Users」字样，含义未明（疑似按用户扩展费用），未计入额度。Flash answers 200/day 来自官网 FAQ 对 Team 套餐的说明。",
    "source_url": "https://mistral.ai/pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-18T09:10:19Z",
+ "last_fetch_ts": "2026-09-20T08:11:51Z",
  "source": "official",
  "source_urls": [
   "https://mistral.ai/pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "8e2978a7c35d1d42102c38176254ba134cdb3632fe780274ea9654aa7702eac4",
- "fetched_at": "2026-09-16T08:09:50Z",
+ "plans_hash": "96a612c93d2ce0ed42a9e0a337dbc0f22cf17eb56ac117c96685d00e9aa6ea2a",
+ "fetched_at": "2026-09-20T07:28:37Z",
  "status_note": "页面无变化"
 }

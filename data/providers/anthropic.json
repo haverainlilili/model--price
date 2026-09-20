@@ -2,45 +2,50 @@
  "url": "https://platform.claude.com/docs/en/models/overview.md",
  "source": "claude",
  "currency": "USD",
- "promotions": "Batch API requests are 50% off; prompt cache reads cost 10% of the base input price (2.5% on Claude Fable 5.1 and Claude Mythos 5.1).",
+ "promotions": "Batch API requests are 50% off; prompt cache reads cost 10% of the base input price (2.5% on Claude Fable 5.1 and Claude Mythos 5.1). See Pricing for cache writes, long-context, and per-platform pricing.",
  "models": [
   {
-   "model": "Claude Fable 5.1",
+   "model": "claude-fable-5-1",
+   "display_name": "Claude Fable 5.1",
    "input_per_1m": 10.0,
    "output_per_1m": 50.0,
    "cached_input_per_1m": 0.25,
    "currency": "USD",
-   "note": "Prompt cache reads cost 2.5% of the base input price. Batch API requests are 50% off."
+   "note": "页面标注 $10/MTok 输入、$50/MTok 输出；缓存读取为基准输入价的 2.5%（页面注明 Fable 5.1 与 Claude Mythos 5.1 为 2.5%，2.5% × $10 = $0.25）；Batch API 请求为基准价 5 折"
   },
   {
-   "model": "Claude Opus 5",
+   "model": "claude-opus-5",
+   "display_name": "Claude Opus 5",
    "input_per_1m": 5.0,
    "output_per_1m": 25.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Prompt cache reads cost 10% of the base input price. Batch API requests are 50% off."
+   "note": "页面标注 $5/MTok 输入、$25/MTok 输出；缓存读取为基准输入价的 10%（10% × $5 = $0.50）；Batch API 请求为基准价 5 折"
   },
   {
-   "model": "Claude Sonnet 5",
+   "model": "claude-sonnet-5",
+   "display_name": "Claude Sonnet 5",
    "input_per_1m": 2.0,
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "Prompt cache reads cost 10% of the base input price. Batch API requests are 50% off."
+   "note": "页面标注 $2/MTok 输入、$10/MTok 输出；缓存读取为基准输入价的 10%（10% × $2 = $0.20）；Batch API 请求为基准价 5 折"
   },
   {
-   "model": "Claude Haiku 4.5",
+   "model": "claude-haiku-4-5-20251001",
+   "display_name": "Claude Haiku 4.5",
    "input_per_1m": 1.0,
    "output_per_1m": 5.0,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "Prompt cache reads cost 10% of the base input price. Batch API requests are 50% off."
+   "note": "页面标注 $1/MTok 输入、$5/MTok 输出；缓存读取为基准输入价的 10%（10% × $1 = $0.10）；Batch API 请求为基准价 5 折；另有日期别名 claude-haiku-4-5"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "42b17ba9c570384398af013b95b0f6e1fa7687145ede01c6f1acf3c97a5f11d6",
- "fetched_at": "2026-09-03T01:59:26Z",
+ "price_hash": "e9452325ff367e32a1208e08b0b683c9d2a1d2d3713f8f1b8d6c07d012c89215",
+ "fetched_at": "2026-09-20T07:23:16Z",
  "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-09-17T21:05:45Z"
+ "last_fetch_ts": "2026-09-20T08:05:47Z",
+ "pricing_extraction_revision": 1
 }

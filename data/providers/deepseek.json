@@ -11,7 +11,7 @@
    "output_per_1m": 4.0,
    "cached_input_per_1m": 0.02,
    "currency": "CNY",
-   "note": "空闲时段价格；高峰时段为北京时间周一至周五 9:00-12:00、14:00-18:00，其余为空闲时段"
+   "note": "空闲时段价格（高峰时段价格的一半）：输入(缓存命中)0.02元、输入(缓存未命中)1元、输出4元/百万tokens"
   },
   {
    "model": "deepseek-flash",
@@ -20,7 +20,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.04,
    "currency": "CNY",
-   "note": "高峰时段价格；高峰时段为北京时间周一至周五 9:00-12:00、14:00-18:00"
+   "note": "高峰时段价格：输入(缓存命中)0.04元、输入(缓存未命中)2元、输出8元/百万tokens；高峰时段为北京时间周一至周五（不含法定节假日）9:00-12:00、14:00-18:00"
   },
   {
    "model": "deepseek-v4-pro",
@@ -29,7 +29,7 @@
    "output_per_1m": 13.5,
    "cached_input_per_1m": 0.15,
    "currency": "CNY",
-   "note": "空闲时段价格；高峰时段为北京时间周一至周五 9:00-12:00、14:00-18:00，其余为空闲时段"
+   "note": "空闲时段价格（高峰时段价格的一半）：输入(缓存命中)0.15元、输入(缓存未命中)4.5元、输出13.5元/百万tokens"
   },
   {
    "model": "deepseek-v4-pro",
@@ -38,14 +38,14 @@
    "output_per_1m": 27.0,
    "cached_input_per_1m": 0.3,
    "currency": "CNY",
-   "note": "高峰时段价格；高峰时段为北京时间周一至周五 9:00-12:00、14:00-18:00"
+   "note": "高峰时段价格：输入(缓存命中)0.30元、输入(缓存未命中)9.0元、输出27.0元/百万tokens；高峰时段为北京时间周一至周五（不含法定节假日）9:00-12:00、14:00-18:00"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "cc8e1ae942c237447b134854547bfb3a44e66160daed3dc5dc4547626f7e2b1f",
- "fetched_at": "2026-09-11T11:06:33Z",
+ "price_hash": "dd45fa6cbb08f6c9c225b0d14e8c35ccb8c892d3e2c5faa59d53f101205bf52b",
+ "fetched_at": "2026-09-20T07:23:51Z",
  "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-09-19T05:05:54Z",
+ "last_fetch_ts": "2026-09-20T08:06:40Z",
  "pricing_extraction_revision": 2
 }

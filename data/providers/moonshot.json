@@ -11,7 +11,7 @@
    "output_per_1m": 100.0,
    "cached_input_per_1m": 2.0,
    "currency": "CNY",
-   "note": null
+   "note": "缓存写入单独计费：TTL 5min 档 ¥20.00/百万 tokens，TTL 1h 档 ¥40.00/百万 tokens，不指定 TTL 默认按 5min 档；缓存命中后有效期自动续期，不再收取缓存写入费用。上下文窗口 1,048,576 tokens。"
   },
   {
    "model": "kimi-k2.7-code",
@@ -20,7 +20,7 @@
    "output_per_1m": 27.0,
    "cached_input_per_1m": 1.3,
    "currency": "CNY",
-   "note": null
+   "note": "上下文窗口 262,144 tokens。"
   },
   {
    "model": "kimi-k2.7-code-highspeed",
@@ -29,7 +29,7 @@
    "output_per_1m": 54.0,
    "cached_input_per_1m": 2.6,
    "currency": "CNY",
-   "note": null
+   "note": "高速版模型，输出速度约 180 Tokens/s；上下文窗口 262,144 tokens。"
   },
   {
    "model": "kimi-k2.6",
@@ -38,14 +38,14 @@
    "output_per_1m": 27.0,
    "cached_input_per_1m": 1.1,
    "currency": "CNY",
-   "note": null
+   "note": "上下文窗口 262,144 tokens。"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "f5d7fb1f20973548f498a1db926de6bb6d04f54f6b87f3c73e6e8cfae7c63d0b",
- "fetched_at": "2026-09-15T06:08:22Z",
+ "price_hash": "cd6dea2614a7a95adc00814c0b2f123bf0717198feb9474473727c8ee059a409",
+ "fetched_at": "2026-09-20T07:26:42Z",
  "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-09-19T13:08:14Z",
+ "last_fetch_ts": "2026-09-20T08:09:34Z",
  "pricing_extraction_revision": 1
 }

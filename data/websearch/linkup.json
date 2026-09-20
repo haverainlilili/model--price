@@ -12,97 +12,42 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search（flash / fast / standard，searchResults）",
-   "pricing": "\"flash\" / \"fast\" / \"standard\" + \"searchResults\": $0.005 per call",
+   "name": "Search (flash / fast / standard)",
+   "pricing": "\"flash\" / \"fast\" / \"standard\" + \"searchResults\": $0.005 per call; \"sourcedAnswer\" / \"structured\": $0.006 per call",
    "price_per_1k_usd": 5.0,
-   "price_basis": "flash / fast / standard，searchResults，按次调用",
-   "free_quota": "Run 4,000 queries for free.",
-   "output_type": "结构化搜索结果：排名后的 URL 和内容片段",
+   "price_basis": "PAYG prepaid credit, flash/fast/standard depth, searchResults outputType",
+   "free_quota": "Run 4,000 queries for free. When you first sign up with a professional email address, your account is automatically credited with $20. We will top up eligible accounts back to $20 each month.",
+   "output_type": "结构化搜索结果 (searchResults: array of {name, url, content}) / 带引用答案 (sourcedAnswer) / 结构化 JSON (structured)",
    "cites_sources": true,
    "default_on": null,
-   "note": "flash 延迟低于 200ms；fast 约 1s；standard 约 1–3s。"
+   "note": "flash <200ms, fast ~1s, standard 1-3s; standard 可解释查询、并行子搜索、抓取一个 URL; flash/fast 不调用 LLM。可用域名/日期过滤，maxResults 上限。"
   },
   {
-   "name": "Search（flash / fast / standard，sourcedAnswer / structured）",
-   "pricing": "\"flash\" / \"fast\" / \"standard\" + \"sourcedAnswer\" / \"structured\": $0.006 per call",
-   "price_per_1k_usd": 6.0,
-   "price_basis": "flash / fast / standard，sourcedAnswer 或 structured，按次调用",
-   "free_quota": "Run 4,000 queries for free.",
-   "output_type": "带内联引用的自然语言答案，或符合 JSON schema 的结构化结果",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "sourcedAnswer 和 structured 调用 LLM，较 searchResults 有小额溢价。"
-  },
-  {
-   "name": "Search（deep，searchResults）",
-   "pricing": "\"deep\" + \"searchResults\": $0.05 per call",
+   "name": "Search (deep)",
+   "pricing": "\"deep\" + \"searchResults\": $0.05 per call; \"sourcedAnswer\" / \"structured\": $0.055 per call",
    "price_per_1k_usd": 50.0,
-   "price_basis": "deep，searchResults，按次调用",
-   "free_quota": "Run 4,000 queries for free.",
-   "output_type": "结构化搜索结果：排名后的 URL 和内容片段",
+   "price_basis": "PAYG prepaid credit, deep depth",
+   "free_quota": "Run 4,000 queries for free. 账户自动获赠 $20，每月补足至 $20。",
+   "output_type": "结构化搜索结果 / 带引用答案 / 结构化 JSON",
    "cites_sources": true,
    "default_on": null,
-   "note": "多轮 agentic 搜索与抓取链，延迟 5–30 秒。"
+   "note": "Multi-iteration agentic search-and-scrape chaining with evaluation, 5-30s。"
   },
   {
-   "name": "Search（deep，sourcedAnswer / structured）",
-   "pricing": "\"deep\" + \"sourcedAnswer\" / \"structured\": $0.055 per call",
-   "price_per_1k_usd": 55.0,
-   "price_basis": "deep，sourcedAnswer 或 structured，按次调用",
-   "free_quota": "Run 4,000 queries for free.",
-   "output_type": "带内联引用的自然语言答案，或符合 JSON schema 的结构化结果",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "deep 模式多轮搜索、抓取并评估结果；两种输出类型调用 LLM。"
-  },
-  {
-   "name": "Research（S）",
-   "pricing": "Research reasoningDepth \"S\": $0.25 per call",
+   "name": "Research",
+   "pricing": "Cost depends on reasoningDepth: \"S\" $0.25, \"M\" $0.50, \"L\" $1.50, \"XL\" $2.50 per call",
    "price_per_1k_usd": 250.0,
-   "price_basis": "reasoningDepth S，按次调用",
+   "price_basis": "PAYG prepaid credit, reasoningDepth \"S\" (最低档)",
    "free_quota": null,
-   "output_type": "异步深度研究结果",
+   "output_type": "Asynchronous deep research",
    "cites_sources": null,
    "default_on": null,
-   "note": "Research 用于 asynchronous deep research；延迟 1–10 分钟。"
-  },
-  {
-   "name": "Research（M）",
-   "pricing": "Research reasoningDepth \"M\": $0.50 per call",
-   "price_per_1k_usd": 500.0,
-   "price_basis": "reasoningDepth M，按次调用",
-   "free_quota": null,
-   "output_type": "异步深度研究结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Research 用于 asynchronous deep research；延迟 1–10 分钟。"
-  },
-  {
-   "name": "Research（L）",
-   "pricing": "Research reasoningDepth \"L\": $1.50 per call",
-   "price_per_1k_usd": 1500.0,
-   "price_basis": "reasoningDepth L，按次调用",
-   "free_quota": null,
-   "output_type": "异步深度研究结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Research 用于 asynchronous deep research；延迟 1–10 分钟。"
-  },
-  {
-   "name": "Research（XL）",
-   "pricing": "Research reasoningDepth \"XL\": $2.50 per call",
-   "price_per_1k_usd": 2500.0,
-   "price_basis": "reasoningDepth XL，按次调用",
-   "free_quota": null,
-   "output_type": "异步深度研究结果",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Research 用于 asynchronous deep research；延迟 1–10 分钟。"
+   "note": "Latency 1-10min / asynchronous, best for asynchronous deep research。Tasks endpoint 按对应直接调用同价计费。x402 (USDC on Base) 按相同单次价付费，每请求最低收费 $0.01。错误请求不扣费。"
   }
  ],
- "fetched_at": "2026-09-11T14:13:30Z",
+ "fetched_at": "2026-09-20T07:32:41Z",
  "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-09-17T14:13:26Z",
- "websearch_hash": "ab1dcb2f3898c8f44ef6e44324d226dd7a97f8260be8ae8dc0763e8d45272f08"
+ "last_fetch_ts": "2026-09-20T08:15:24Z",
+ "websearch_hash": "298ee40f0ab3acac2792c11cb50423e578eb2f282044e6b1f7d2c133e8ab7f18"
 }

@@ -11,64 +11,75 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search",
-   "pricing": "$7 / 1k requests (up to 10 results); each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages",
+   "name": "Search (/search)",
+   "pricing": "$7 / 1k requests（base price，最多 10 results；超过 10 个每个 $1/1k results，AI page summaries $1/1k pages）",
    "price_per_1k_usd": 7.0,
-   "price_basis": "PAYG /search 基础价（最多 10 results）",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "结构化搜索结果（results、highlights、structured outputs、AI summary）",
+   "price_basis": "PAYG base（up to 10 results）",
+   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month",
+   "output_type": "结构化搜索结果（Results/HHighlights/Structured outputs/AI Summary）",
    "cites_sources": true,
    "default_on": null,
-   "note": "Real-time, token-efficient page contents；Enterprise 可至 1000 results/次。"
+   "note": "PAYG，无订阅无最低消费；Enterprise 可至 1,000 results/search 与量折扣。"
   },
   {
    "name": "Deep Search",
-   "pricing": "deep-lite $12 / 1k requests; deep $12 / 1k requests; deep-reasoning $15 / 1k requests",
+   "pricing": "deep-lite $12/1k；deep $12/1k；deep-reasoning $15/1k",
    "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG /search type=deep-lite（基础档），最多 10 results",
+   "price_basis": "PAYG base（up to 10 results）；deep-reasoning $15",
    "free_quota": null,
-   "output_type": "多步研究，structured outputs and citations",
+   "output_type": "多步研究，结构化输出与引用",
    "cites_sources": true,
    "default_on": null,
-   "note": "Latency: deep-lite ~4s, deep 4–15s, deep-reasoning 12–40s；额外结果与 AI summary 计费同标准搜索。"
+   "note": "延迟：deep-lite ~4s，deep 4–15s，deep-reasoning 12–40s；额外结果与摘要与标准搜索同价。"
   },
   {
-   "name": "Answer",
+   "name": "Answer (/answer)",
    "pricing": "$5 / 1k requests",
    "price_per_1k_usd": 5.0,
-   "price_basis": "PAYG /answer",
+   "price_basis": "PAYG",
    "free_quota": null,
-   "output_type": "An LLM answer to a question, with citations",
+   "output_type": "LLM 回答，带 citations",
    "cites_sources": true,
    "default_on": null,
    "note": null
   },
   {
-   "name": "Monitors",
-   "pricing": "$15 / 1k requests; each result above 10: $1 / 1k results; AI summaries: $1 / 1k pages",
+   "name": "Monitors (/monitors)",
+   "pricing": "$15 / 1k requests（超 10 结果 $1/1k results，AI 摘要 $1/1k pages）",
    "price_per_1k_usd": 15.0,
-   "price_basis": "PAYG /monitors 基础价（最多 10 results）",
+   "price_basis": "PAYG base（up to 10 results）",
    "free_quota": null,
-   "output_type": "Scheduled searches that surface new events on the web",
+   "output_type": "定时搜索网络新事件",
    "cites_sources": null,
    "default_on": null,
    "note": null
   },
   {
-   "name": "Agent",
-   "pricing": "Fixed effort: minimal $0.012, low $0.025, medium $0.10, high $0.50, xhigh $1.00 per request; metered: $0.10/ACU, $0.005/search tool call",
+   "name": "Agent API",
+   "pricing": "固定 effort：minimal $0.012 / low $0.025 / medium $0.10 / high $0.50 / xhigh $1.00 每请求；metered：ACU $0.10、search tool call $0.005，cap $5（auto）/$20（beta max）",
    "price_per_1k_usd": null,
-   "price_basis": "PAYG Agent API 固定 effort 档与 metered 用量计费",
+   "price_basis": "固定 effort 按次或 metered 按 ACU+工具调用",
    "free_quota": null,
    "output_type": "Async deep research, list building, and enrichment",
    "cites_sources": null,
    "default_on": null,
-   "note": "auto defaults to a $5 cap; beta max defaults to a $20 cap；Connect providers 额外按 provider 费率计费。"
+   "note": "auto 为默认 metered 模式；Contact enrichment $0.02/email、$0.07/phone。"
+  },
+  {
+   "name": "Contents (/contents)",
+   "pricing": "$1 / 1k pages, per content type（AI 摘要另 $1/1k pages）",
+   "price_per_1k_usd": 1.0,
+   "price_basis": "PAYG per content type",
+   "free_quota": null,
+   "output_type": "Full page text, highlights, and summaries for known URLs",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "每个 content type（text/highlights/summary）分别计费。"
   }
  ],
- "fetched_at": "2026-09-20T18:13:27Z",
+ "fetched_at": "2026-09-20T19:15:19Z",
  "status_note": null,
  "last_error": "HTTPSConnectionPool(host='exa.ai', port=443): Max retries exceeded with url: /docs/reference/pricing (Caused by ConnectTimeoutError(<HTTPSConnection(host='exa.ai', port=443) at 0x758999532c60>, 'Connection to exa.ai timed out. (connect timeout=30)'))",
- "last_fetch_ts": "2026-09-20T18:13:27Z",
+ "last_fetch_ts": "2026-09-20T19:15:19Z",
  "websearch_hash": "caff037688ca0d1bc7f2e2a51f875b75515b229ee9f2628b15f2cbc1044c7a23"
 }

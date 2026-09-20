@@ -11,20 +11,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Reader API (s.jina.ai) — Search the web and get SERP",
-   "pricing": "API pricing is based on the token usage; \"Every request costs a fixed number of tokens, starting from 10,000 tokens\". Token packages: $50 / 1 Billion tokens (0.050 / 1M tokens), $500 / 11 Billion tokens (0.045 / 1M tokens)",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": "Every new API key comes with 10M free tokens (Toy Experiment, 10 Million Tokens, Non-commercial use only (CC-BY-NC))",
-   "output_type": "Search the web and convert results to LLM-friendly text block; returns top five results with URLs and contents in clean, LLM-friendly text",
+   "name": "Reader API (s.jina.ai / SERP)",
+   "pricing": "按 token 计费 — \"Every request costs a fixed number of tokens, starting from 10,000 tokens\"; 标准 key \"$50 / 0.050 / 1M tokens\"（1B tokens），Premium key \"$500 / 0.045 / 1M tokens\"（11B tokens）",
+   "price_per_1k_usd": 0.5,
+   "price_basis": "Standard key（$0.050/1M tokens，每次搜索固定消耗 10,000 tokens → $0.0005/次）",
+   "free_quota": "Every new API key comes with 10M free tokens (Toy Experiment, 10 Million tokens, non-commercial use only, CC-BY-NC)",
+   "output_type": "结构化搜索结果（LLM-friendly text block：top 5 结果，各含 URL、title、content）",
    "cites_sources": true,
    "default_on": null,
-   "note": "Rate limits: w/o key 100 RPM, free key 100 RPM, premium 1000 RPM; average latency 2.5s. In Search mode JSON response returns a list of five entries. Pricing model introduced May 6th, 2025."
+   "note": "返回 top five results with their URLs and contents；平均延迟 2.5s；限速 100 RPM（w/o 或 free key）、1000 RPM（premium key）；定价基于 token usage，API pricing is based on the token usage；2025-05-06 新定价模型。"
   }
  ],
- "fetched_at": "2026-09-20T18:14:02Z",
+ "fetched_at": "2026-09-20T19:15:52Z",
  "status_note": null,
  "last_error": "渲染后页面为空",
- "last_fetch_ts": "2026-09-20T18:14:02Z",
+ "last_fetch_ts": "2026-09-20T19:15:52Z",
  "websearch_hash": "b6f065e3b0e5040a68fad5578bc9f5757b7e1e1d9aa0cb2c0058744ea6485528"
 }

@@ -329,11 +329,13 @@
   "https://dev.pika.art/pricing",
   "https://dev.pika.art/models/pika/pika-2.5"
  ],
- "last_fetch_ts": "2026-09-20T20:25:18Z",
+ "last_fetch_ts": "2026-09-20T21:20:44Z",
  "source_warnings": [],
  "videogen_hash": "19efb86fba73138bd7e0b524d4d66b9db131524d5343334bac0e77a0bb124278",
- "status_note": "页面无变化且上次处理未成功，冷却期内暂不重试",
- "last_error": "官网生视频抽取失败: 结构化输出校验失败: 6 validation errors for VideoGenerationPage\nofferings.1.day\n  Extra inputs are not permitted [type=extra_forbidden, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden\nofferings.1.粘 duration\n  Extra inputs ",
+ "status_note": "官网生视频抽取覆盖项由 12 变为 17，等待下轮同语义结果确认",
+ "last_error": "官网生视频抽取覆盖项由 12 变为 17，等待下轮同语义结果确认",
  "videogen_excerpt_hash": "71363dda445266e25952cb9b293010258f10e92833d057c6ed9c3627e070a28a",
- "videogen_retry_after": "2026-09-20T20:27:47Z"
+ "videogen_retry_after": "2026-09-20T20:27:47Z",
+ "videogen_pending_shrink_hash": "0cbfe9ceb4e9cb973a7bd7e6eb64fc1664db9ae0fcfd64310372bb6371de249c",
+ "videogen_pending_shrink_count": 17
 }

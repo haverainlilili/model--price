@@ -2,14 +2,14 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "聊天会员 / Agent 会员",
+   "plan_type": "聊天会员/订阅",
    "price": "¥49/月",
    "billing": "连续包月 / 连续包年（年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "每月（按计费周期刷新）"
+     "window": "每月（额度按计费周期刷新）"
     },
     {
      "label": "Agent 优先生成队列",
@@ -22,48 +22,38 @@
      "window": null
     },
     {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时 / 周",
-     "window": "每周"
-    },
-    {
-     "label": "小组件任务",
-     "value": "6 个",
+     "label": "定制化看板任务",
+     "value": "小组件任务 6 个、定时任务 6 个",
      "window": null
     },
     {
-     "label": "定时任务",
-     "value": "6 个",
+     "label": "项目数/存储",
+     "value": "项目 20 个，存储 20GB",
      "window": null
     },
     {
-     "label": "项目数",
-     "value": "20 个",
-     "window": null
-    },
-    {
-     "label": "项目存储空间",
-     "value": "20GB",
-     "window": null
+     "label": "Kimi Code 限额",
+     "value": "5 小时 / 周使用限额",
+     "window": "每 5 小时 / 每周"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "官网注明：Agent 用量数值基于常见任务 token 消耗估算，仅为将月额度用于同一功能时的参考值；所有会员功能共享一个按 token 消耗计费的额度池。",
+   "note": "官网原文：Agent 用量数值基于常见任务 token 消耗估算，将月额度用于同一功能时的参考值；所有会员功能共享一个按 token 消耗计算的额度池。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "聊天会员 / Agent 会员",
+   "plan_type": "聊天会员/订阅",
    "price": "¥99/月",
    "billing": "连续包月 / 连续包年（年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "每月（按计费周期刷新）"
+     "window": "每月（额度按计费周期刷新）"
     },
     {
      "label": "Agent 任务并行",
@@ -72,7 +62,12 @@
     },
     {
      "label": "Agent 集群",
-     "value": "25 次（2 个子任务并行）",
+     "value": "可用 25 次（2 个子任务并行）",
+     "window": null
+    },
+    {
+     "label": "定时任务/小组件任务",
+     "value": "各 10 个",
      "window": null
     },
     {
@@ -81,38 +76,28 @@
      "window": null
     },
     {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时 / 周",
-     "window": "每周"
-    },
-    {
-     "label": "定时任务",
-     "value": "10 个",
-     "window": null
-    },
-    {
-     "label": "小组件任务",
-     "value": "10 个",
-     "window": null
+     "label": "Kimi Code 限额",
+     "value": "5 小时 / 周使用限额",
+     "window": "每 5 小时 / 每周"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "额度同源于共享额度池，Agent 用量为官网估算参考值。",
+   "note": "官网原文：Agent 用量数值基于常见任务 token 消耗估算；共享额度池按 token 消耗计算。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "聊天会员 / Agent 会员",
+   "plan_type": "聊天会员/订阅",
    "price": "¥199/月",
    "billing": "连续包月 / 连续包年（年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "每月（按计费周期刷新）"
+     "window": "每月（额度按计费周期刷新）"
     },
     {
      "label": "Agent 任务并行",
@@ -121,7 +106,12 @@
     },
     {
      "label": "Agent 集群",
-     "value": "50 次（4 个子任务并行）",
+     "value": "可用 50 次（4 个子任务并行）",
+     "window": null
+    },
+    {
+     "label": "定时任务/小组件任务",
+     "value": "各 15 个",
      "window": null
     },
     {
@@ -130,43 +120,33 @@
      "window": null
     },
     {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时 / 周",
-     "window": "每周"
-    },
-    {
-     "label": "定时任务",
-     "value": "15 个",
-     "window": null
-    },
-    {
-     "label": "小组件任务",
-     "value": "15 个",
-     "window": null
-    },
-    {
      "label": "Kimi Claw 群聊",
-     "value": "10 个",
+     "value": "支持 10 个 Kimi Claw 群聊",
      "window": null
+    },
+    {
+     "label": "Kimi Code 限额",
+     "value": "5 小时 / 周使用限额",
+     "window": "每 5 小时 / 每周"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "额度同源于共享额度池，Agent 用量为官网估算参考值。",
+   "note": "官网原文：Agent 用量数值基于常见任务 token 消耗估算；含专属 Kimi Claw、目标模式、梦境记忆、自进化技能。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "聊天会员 / Agent 会员",
+   "plan_type": "聊天会员/订阅",
    "price": "¥699/月",
    "billing": "连续包月 / 连续包年（年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "每月（按计费周期刷新）"
+     "window": "每月（额度按计费周期刷新）"
     },
     {
      "label": "Agent 任务并行",
@@ -175,7 +155,17 @@
     },
     {
      "label": "Agent 集群",
-     "value": "120 次（8 个子任务并行）",
+     "value": "可用 120 次（8 个子任务并行）",
+     "window": null
+    },
+    {
+     "label": "定时任务/小组件任务",
+     "value": "各 20 个",
+     "window": null
+    },
+    {
+     "label": "项目数/存储",
+     "value": "项目 100 个，存储 50GB",
      "window": null
     },
     {
@@ -184,57 +174,37 @@
      "window": null
     },
     {
-     "label": "Kimi Code 使用限额",
-     "value": "5 小时 / 周",
-     "window": "每周"
-    },
-    {
-     "label": "定时任务",
-     "value": "20 个",
-     "window": null
-    },
-    {
-     "label": "小组件任务",
-     "value": "20 个",
-     "window": null
-    },
-    {
-     "label": "对话容量",
-     "value": "百万 Tokens 超长对话",
-     "window": null
-    },
-    {
-     "label": "项目数",
-     "value": "100 个",
-     "window": null
-    },
-    {
-     "label": "项目存储空间",
-     "value": "50GB",
+     "label": "超长对话容量",
+     "value": "支持百万 Tokens 超长对话容量",
      "window": null
     },
     {
      "label": "Kimi Claw 群聊",
-     "value": "10 个",
+     "value": "支持 10 个 Kimi Claw 群聊",
      "window": null
+    },
+    {
+     "label": "Kimi Code 限额",
+     "value": "5 小时 / 周使用限额",
+     "window": "每 5 小时 / 每周"
     }
    ],
    "models": [
     "K2.6",
     "K3"
    ],
-   "note": "额度同源于共享额度池，Agent 用量为官网估算参考值。",
+   "note": "官网原文：Agent 用量数值基于常见任务 token 消耗估算；「百万 Tokens」为官网对话容量表述，未标注总月度 Token 额度。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-20T12:14:48Z",
+ "last_fetch_ts": "2026-09-20T13:10:24Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "2bd3a08071b10ff2fec0587ddabc668e9cb30ee974463df703d92fdc45144b35",
- "fetched_at": "2026-09-20T12:14:48Z",
+ "plans_hash": "626dd9a07776f14ecb2d347a81309aea9d2d33a48bde35b91be275082d7bc9f4",
+ "fetched_at": "2026-09-20T13:10:24Z",
  "status_note": null
 }

@@ -1,15 +1,15 @@
 {
  "plans": [
   {
-   "name": "Lite",
+   "name": "Coding Plan Lite",
    "plan_type": "Coding Plan",
-   "price": "首购优惠价 9.9元/月（叠加推荐优惠券首月低至8.9元，约2.2折）",
-   "billing": "每月（首购一次性下单三个月可享5折）",
+   "price": "首购优惠价 9.9元/月（首月叠加优惠券低至 8.9元）",
+   "billing": "按月订阅，首购一次性下单三个月可享5折",
    "quotas": [
     {
      "label": "请求次数",
-     "value": "最多约1200次",
-     "window": "每5小时"
+     "value": "每 5 小时最多约 1200 次请求",
+     "window": "每 5 小时"
     }
    ],
    "models": [
@@ -19,24 +19,19 @@
     "Kimi-K2-Thinking",
     "Auto 模式"
    ],
-   "note": "官网标注「每5小时最多约1200次请求」，为官网约数口径；高峰期不降速；推荐好友优惠券叠加规则以官网为准",
+   "note": "官网口径为「约1200次」，含「最多」「约」限定词；支持 Claude Code、Cursor、Cline、Codex CLI、Kilo Code、Roo Code、OpenCode 等工具",
    "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
   },
   {
-   "name": "Pro",
+   "name": "Coding Plan Pro",
    "plan_type": "Coding Plan",
    "price": "首购优惠价 49.9元/月",
-   "billing": "每月（首购一次性下单三个月可享5折）",
+   "billing": "按月订阅，首购一次性下单三个月可享5折",
    "quotas": [
     {
      "label": "请求次数",
-     "value": "最多约6000次",
-     "window": "每5小时"
-    },
-    {
-     "label": "相对 Lite 的用量倍数",
-     "value": "5倍",
-     "window": null
+     "value": "每 5 小时最多约 6000 次请求（为 Lite 的5倍）",
+     "window": "每 5 小时"
     }
    ],
    "models": [
@@ -46,18 +41,18 @@
     "Kimi-K2-Thinking",
     "Auto 模式"
    ],
-   "note": "官网标注「每5小时最多约6000次请求」，为官网约数口径；Pro 套餐用量为 Lite 的5倍",
+   "note": "官网口径为「约6000次」，含「最多」「约」限定词",
    "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-20T16:14:56Z",
+ "last_fetch_ts": "2026-09-20T17:10:24Z",
  "source": "official",
  "source_urls": [
   "https://developer.volcengine.com/articles/7595502342175195187"
  ],
  "page_has_plans": true,
- "plans_hash": "748882e3be6f80bfd07f65206b60b754511960c2e392b64b5148ebc44201b8ee",
- "fetched_at": "2026-09-20T16:14:56Z",
+ "plans_hash": "2a7f84983f7cd6cf04fbf6a9fdf6bc83054f46cb8b64ce3975c8eb7b0b544a19",
+ "fetched_at": "2026-09-20T17:10:24Z",
  "status_note": null
 }

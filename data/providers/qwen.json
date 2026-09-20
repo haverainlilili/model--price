@@ -2,7 +2,7 @@
  "url": "https://help.aliyun.com/zh/model-studio/model-pricing.md",
  "source": "claude",
  "currency": "CNY",
- "promotions": "本文仅展示模型调用原价，请前往百炼控制台查看活动优惠。部分模型支持上下文缓存（显式缓存创建按标准输入单价的125%计费、命中按10%计费）。若模型支持Batch调用，其输入和输出Token单价均按实时推理价格的50%计费。以下模型仅在华北2（北京）地域下有免费额度（有效期：自开通百炼/模型发布/申请通过之日起90天内，以较晚者为准），其他地域均无免费额度。qwen3.7-plus 限时8折：0<Token≤256K 输入原价2元、输出原价8元；256K<Token≤1M 输入原价6元、输出原价24元（北京/法兰克福/东京地域；美国/新加坡/日本地域原价为2.998元/11.991元、8.993元/35.972元）。",
+ "promotions": "本文仅展示模型调用原价，请前往百炼控制台查看活动优惠。部分模型仅在华北2（北京）地域下有免费额度，有效期：自开通百炼/模型发布/申请通过之日起90天内（以较晚者为准）。qwen3.7-plus 限时8折：0<Token≤256K 输入原价2元、输出原价8元；256K<Token≤1M 输入原价6元、输出原价24元（北京/全球部署为原价2/6/8/24元，美国/新加坡/日本等地为原价2.998/8.993/11.991/35.972元）。qwen-audio-turbo 系列目前仅供免费体验，免费额度用完后不可调用。注：本页含多地域价格，以下抽取以华北2（北京）地域为准。",
  "models": [
   {
    "model": "qwen3.8-max-prime",
@@ -11,7 +11,7 @@
    "output_per_1m": 72.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "优速模式（Prime），非思考和思考模式，0<Token≤1M，无免费额度"
+   "note": "优速模式(Prime)；无免费额度；北京地域"
   },
   {
    "model": "qwen3.8-max",
@@ -20,7 +20,7 @@
    "output_per_1m": 36.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "支持上下文缓存折扣、Batch半价，0<Token≤1M"
+   "note": "Batch半价；上下文缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.8-max-0902",
@@ -29,7 +29,7 @@
    "output_per_1m": 36.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "支持上下文缓存折扣，0<Token≤1M"
+   "note": "上下文缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.7-max",
@@ -38,7 +38,7 @@
    "output_per_1m": 36.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "当前能力等同于qwen3.7-max-2026-05-20，支持Batch半价、上下文缓存折扣，0<Token≤1M"
+   "note": "能力等同qwen3.7-max-2026-05-20；Batch半价；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.7-max-2026-06-08",
@@ -47,7 +47,7 @@
    "output_per_1m": 36.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": null
+   "note": "免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.7-max-2026-05-20",
@@ -56,7 +56,7 @@
    "output_per_1m": 36.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": null
+   "note": "免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.7-max-preview",
@@ -65,7 +65,7 @@
    "output_per_1m": 36.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "仅思考模式，能力等同于qwen3.7-max-2026-05-17"
+   "note": "仅思考模式；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.7-max-2026-05-17",
@@ -74,7 +74,7 @@
    "output_per_1m": 36.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "仅思考模式"
+   "note": "仅思考模式；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.6-max-preview",
@@ -83,7 +83,7 @@
    "output_per_1m": 54.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤128K；128K<Token≤256K 为15元/90元；支持上下文缓存折扣"
+   "note": "0<Token≤128K；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.6-max-preview",
@@ -92,7 +92,7 @@
    "output_per_1m": 90.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；缓存折扣；北京地域"
   },
   {
    "model": "qwen3-max",
@@ -101,7 +101,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "能力等同于qwen3-max-2026-01-23；阶梯计费 0<Token≤32K；32K-128K为4元/16元，128K-256K为7元/28元；Batch半价、上下文缓存折扣"
+   "note": "0<Token≤32K；能力等同qwen3-max-2026-01-23；Batch半价；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3-max",
@@ -110,7 +110,7 @@
    "output_per_1m": 16.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；Batch半价；缓存折扣；北京地域"
   },
   {
    "model": "qwen3-max",
@@ -119,7 +119,7 @@
    "output_per_1m": 28.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；Batch半价；缓存折扣；北京地域"
   },
   {
    "model": "qwen3-max-2026-01-23",
@@ -128,7 +128,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤32K；32K-128K为4元/16元，128K-256K为7元/28元"
+   "note": "0<Token≤32K；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3-max-2026-01-23",
@@ -137,7 +137,7 @@
    "output_per_1m": 16.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；北京地域"
   },
   {
    "model": "qwen3-max-2026-01-23",
@@ -146,7 +146,7 @@
    "output_per_1m": 28.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3-max-2025-09-23",
@@ -155,7 +155,7 @@
    "output_per_1m": 24.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "仅非思考模式；阶梯计费 0<Token≤32K；32K-128K为10元/40元，128K-256K为15元/60元"
+   "note": "0<Token≤32K；仅非思考模式；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3-max-2025-09-23",
@@ -164,7 +164,7 @@
    "output_per_1m": 40.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；仅非思考模式；北京地域"
   },
   {
    "model": "qwen3-max-2025-09-23",
@@ -173,7 +173,7 @@
    "output_per_1m": 60.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；仅非思考模式；北京地域"
   },
   {
    "model": "qwen3-max-preview",
@@ -182,7 +182,7 @@
    "output_per_1m": 24.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤32K；32K-128K为10元/40元，128K-256K为15元/60元；上下文缓存折扣"
+   "note": "0<Token≤32K；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3-max-preview",
@@ -191,7 +191,7 @@
    "output_per_1m": 40.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；缓存折扣；北京地域"
   },
   {
    "model": "qwen3-max-preview",
@@ -200,7 +200,7 @@
    "output_per_1m": 60.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；缓存折扣；北京地域"
   },
   {
    "model": "qwen-max",
@@ -209,7 +209,7 @@
    "output_per_1m": 9.6,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "无阶梯计价，仅非思考模式"
+   "note": "无阶梯计价；仅非思考模式；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.7-plus",
@@ -218,7 +218,7 @@
    "output_per_1m": 6.4,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "限时8折，原价 输入2元/输出8元；阶梯计费 0<Token≤256K，256K-1M原价6元/24元；Batch半价、上下文缓存折扣；能力等同于qwen3.7-plus-2026-05-26"
+   "note": "限时8折，原价2元(输入)/8元(输出)；0<Token≤256K；Batch半价；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.7-plus",
@@ -227,7 +227,7 @@
    "output_per_1m": 19.2,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "限时8折，原价 输入6元/输出24元；阶梯计费档位 256K<Token≤1M"
+   "note": "限时8折，原价6元(输入)/24元(输出)；256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3.7-plus-2026-05-26",
@@ -236,7 +236,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤256K，256K-1M为6元/24元；上下文缓存折扣"
+   "note": "0<Token≤256K；非思考/思考输出同价；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.7-plus-2026-05-26",
@@ -245,7 +245,7 @@
    "output_per_1m": 24.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；非思考/思考输出同价；北京地域"
   },
   {
    "model": "qwen3.6-plus",
@@ -254,7 +254,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "能力等同于qwen3.6-plus-2026-04-02；阶梯计费 0<Token≤256K，256K-1M为8元/48元"
+   "note": "0<Token≤256K；能力等同qwen3.6-plus-2026-04-02；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.6-plus",
@@ -263,7 +263,7 @@
    "output_per_1m": 48.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3.6-plus-2026-04-02",
@@ -272,7 +272,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤256K，256K-1M为8元/48元"
+   "note": "0<Token≤256K；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.6-plus-2026-04-02",
@@ -281,7 +281,7 @@
    "output_per_1m": 48.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-plus",
@@ -290,7 +290,7 @@
    "output_per_1m": 4.8,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "能力等同于qwen3.5-plus-2026-02-15；阶梯计费 0<Token≤128K；128K-256K为2元/12元，256K-1M为4元/24元"
+   "note": "0<Token≤128K；能力等同qwen3.5-plus-2026-02-15；非思考/思考输出同价；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.5-plus",
@@ -299,7 +299,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-plus",
@@ -308,7 +308,7 @@
    "output_per_1m": 24.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-plus-2026-04-20",
@@ -317,7 +317,7 @@
    "output_per_1m": 4.8,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤128K；128K-256K为2元/12元，256K-1M为4元/24元"
+   "note": "0<Token≤128K；北京地域"
   },
   {
    "model": "qwen3.5-plus-2026-04-20",
@@ -326,7 +326,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-plus-2026-04-20",
@@ -335,7 +335,7 @@
    "output_per_1m": 24.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-plus-2026-02-15",
@@ -344,7 +344,7 @@
    "output_per_1m": 4.8,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤128K；128K-256K为2元/12元，256K-1M为4元/24元"
+   "note": "0<Token≤128K；北京地域"
   },
   {
    "model": "qwen3.5-plus-2026-02-15",
@@ -353,7 +353,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-plus-2026-02-15",
@@ -362,7 +362,7 @@
    "output_per_1m": 24.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen-plus",
@@ -371,7 +371,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "非思考输出2元/思考输出8元；能力等同于qwen-plus-2025-12-01；阶梯计费 0<Token≤128K（128K-256K输入2.4元、输出20元/24元；256K-1M输入4.8元、输出48元/64元）；Batch半价"
+   "note": "0<Token≤128K；能力等同qwen-plus-2025-12-01；非思考输出2元、思考模式输出8元；Batch半价；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen-plus",
@@ -380,7 +380,7 @@
    "output_per_1m": 20.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K；非思考输出20元/思考输出24元"
+   "note": "128K<Token≤256K 阶梯；非思考输出20元、思考输出24元；北京地域"
   },
   {
    "model": "qwen-plus",
@@ -389,7 +389,7 @@
    "output_per_1m": 48.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M；非思考输出48元/思考输出64元"
+   "note": "256K<Token≤1M 阶梯；非思考输出48元、思考输出64元；北京地域"
   },
   {
    "model": "qwen-plus-latest",
@@ -398,7 +398,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "非思考输出2元/思考输出8元；阶梯计费 0<Token≤128K（128K-256K输入2.4元、输出20元/24元；256K-1M输入4.8元、输出48元/64元）；Batch半价"
+   "note": "0<Token≤128K；非思考输出2元、思考输出8元；Batch半价；北京地域"
   },
   {
    "model": "qwen-plus-latest",
@@ -407,7 +407,7 @@
    "output_per_1m": 20.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K；非思考输出20元/思考输出24元"
+   "note": "128K<Token≤256K 阶梯；非思考输出20元、思考输出24元；北京地域"
   },
   {
    "model": "qwen-plus-latest",
@@ -416,7 +416,7 @@
    "output_per_1m": 48.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M；非思考输出48元/思考输出64元"
+   "note": "256K<Token≤1M 阶梯；非思考输出48元、思考输出64元；北京地域"
   },
   {
    "model": "qwen-plus-2025-12-01",
@@ -425,7 +425,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "非思考输出2元/思考输出8元；阶梯计费 0<Token≤128K；128K-256K输入2.4元、输出20元/24元；256K-1M输入4.8元、输出48元/64元"
+   "note": "0<Token≤128K；非思考输出2元、思考输出8元；北京地域"
   },
   {
    "model": "qwen-plus-2025-12-01",
@@ -434,7 +434,7 @@
    "output_per_1m": 20.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；非思考输出20元、思考输出24元；北京地域"
   },
   {
    "model": "qwen-plus-2025-12-01",
@@ -443,7 +443,7 @@
    "output_per_1m": 48.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；非思考输出48元、思考输出64元；北京地域"
   },
   {
    "model": "qwen-plus-2025-09-11",
@@ -452,7 +452,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "非思考输出2元/思考输出8元；阶梯计费 0<Token≤128K；128K-256K输入2.4元、输出20元/24元；256K-1M输入4.8元、输出48元/64元"
+   "note": "0<Token≤128K；非思考输出2元、思考输出8元；北京地域"
   },
   {
    "model": "qwen-plus-2025-09-11",
@@ -461,7 +461,7 @@
    "output_per_1m": 20.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；非思考输出20元、思考输出24元；北京地域"
   },
   {
    "model": "qwen-plus-2025-09-11",
@@ -470,7 +470,7 @@
    "output_per_1m": 48.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；非思考输出48元、思考输出64元；北京地域"
   },
   {
    "model": "qwen-plus-2025-07-28",
@@ -479,7 +479,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "非思考输出2元/思考输出8元；阶梯计费 0<Token≤128K；128K-256K输入2.4元、输出20元/24元；256K-1M输入4.8元、输出48元/64元"
+   "note": "0<Token≤128K；非思考输出2元、思考输出8元；北京地域"
   },
   {
    "model": "qwen-plus-2025-07-28",
@@ -488,7 +488,7 @@
    "output_per_1m": 20.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；非思考输出20元、思考输出24元；北京地域"
   },
   {
    "model": "qwen-plus-2025-07-28",
@@ -497,7 +497,7 @@
    "output_per_1m": 48.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；非思考输出48元、思考输出64元；北京地域"
   },
   {
    "model": "qwen-plus-2025-07-14",
@@ -506,7 +506,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "无阶梯计价，非思考输出2元/思考输出8元"
+   "note": "无阶梯计价；非思考输出2元、思考输出8元；北京地域"
   },
   {
    "model": "qwen-plus-2025-04-28",
@@ -515,7 +515,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "无阶梯计价，非思考输出2元/思考输出8元"
+   "note": "无阶梯计价；非思考输出2元、思考输出8元；北京地域"
   },
   {
    "model": "qwen-plus-2025-01-25",
@@ -524,7 +524,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "无阶梯计价"
+   "note": "无阶梯计价；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen-plus-2025-01-12",
@@ -533,7 +533,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "无阶梯计价"
+   "note": "无阶梯计价；北京地域"
   },
   {
    "model": "qwen-plus-2024-12-20",
@@ -542,7 +542,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "无阶梯计价"
+   "note": "无阶梯计价；北京地域"
   },
   {
    "model": "qwen3.8-flash",
@@ -551,7 +551,7 @@
    "output_per_1m": 2.7,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "上下文缓存折扣，0<Token≤1M"
+   "note": "0<Token≤1M；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.7-flash",
@@ -560,7 +560,7 @@
    "output_per_1m": 0.8,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "能力等同于qwen3.7-flash-2026-07-15；阶梯计费 0<Token≤32K；32K-256K为0.6元/2.4元，256K-1M为1.2元/4.8元；Batch半价、上下文缓存折扣"
+   "note": "0<Token≤32K；能力等同qwen3.7-flash-2026-07-15；Batch半价；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.7-flash",
@@ -569,7 +569,7 @@
    "output_per_1m": 2.4,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤256K"
+   "note": "32K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3.7-flash",
@@ -578,7 +578,7 @@
    "output_per_1m": 4.8,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3.7-flash-2026-07-15",
@@ -587,7 +587,7 @@
    "output_per_1m": 0.8,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤32K；32K-256K为0.6元/2.4元，256K-1M为1.2元/4.8元"
+   "note": "0<Token≤32K；北京地域"
   },
   {
    "model": "qwen3.7-flash-2026-07-15",
@@ -596,7 +596,7 @@
    "output_per_1m": 2.4,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤256K"
+   "note": "32K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3.7-flash-2026-07-15",
@@ -605,7 +605,7 @@
    "output_per_1m": 4.8,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3.6-flash",
@@ -614,7 +614,7 @@
    "output_per_1m": 7.2,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "能力等同于qwen3.6-flash-2026-04-16；阶梯计费 0<Token≤256K；256K-1M为4.8元/28.8元；Batch半价、上下文缓存折扣"
+   "note": "0<Token≤256K；能力等同qwen3.6-flash-2026-04-16；Batch半价；缓存折扣；北京地域"
   },
   {
    "model": "qwen3.6-flash",
@@ -623,7 +623,7 @@
    "output_per_1m": 28.8,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3.6-flash-2026-04-16",
@@ -632,7 +632,7 @@
    "output_per_1m": 7.2,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤256K；256K-1M为4.8元/28.8元"
+   "note": "0<Token≤256K；北京地域"
   },
   {
    "model": "qwen3.6-flash-2026-04-16",
@@ -641,7 +641,7 @@
    "output_per_1m": 28.8,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-flash",
@@ -650,7 +650,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "能力等同于qwen3.5-flash-2026-02-23；阶梯计费 0<Token≤128K；128K-256K为0.8元/8元，256K-1M为1.2元/12元；Batch半价、上下文缓存折扣"
+   "note": "0<Token≤128K；能力等同qwen3.5-flash-2026-02-23；Batch半价；缓存折扣；北京地域"
   },
   {
    "model": "qwen3.5-flash",
@@ -659,7 +659,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-flash",
@@ -668,7 +668,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-flash-2026-02-23",
@@ -677,7 +677,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤128K；128K-256K为0.8元/8元，256K-1M为1.2元/12元"
+   "note": "0<Token≤128K；北京地域"
   },
   {
    "model": "qwen3.5-flash-2026-02-23",
@@ -686,7 +686,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-flash-2026-02-23",
@@ -695,7 +695,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen-flash",
@@ -704,7 +704,7 @@
    "output_per_1m": 1.5,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "能力等同于qwen-flash-2025-07-28；阶梯计费 0<Token≤128K；128K-256K为0.6元/6元，256K-1M为1.2元/12元；Batch半价、上下文缓存折扣"
+   "note": "0<Token≤128K；能力等同qwen-flash-2025-07-28；Batch半价；缓存折扣；北京地域"
   },
   {
    "model": "qwen-flash",
@@ -713,7 +713,7 @@
    "output_per_1m": 6.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen-flash",
@@ -722,7 +722,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen-flash-2025-07-28",
@@ -731,7 +731,7 @@
    "output_per_1m": 1.5,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤128K；128K-256K为0.6元/6元，256K-1M为1.2元/12元"
+   "note": "0<Token≤128K；北京地域"
   },
   {
    "model": "qwen-flash-2025-07-28",
@@ -740,7 +740,7 @@
    "output_per_1m": 6.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen-flash-2025-07-28",
@@ -749,7 +749,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen-turbo",
@@ -758,7 +758,7 @@
    "output_per_1m": 0.6,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "非思考输出0.6元/思考输出3元，无阶梯计价"
+   "note": "非思考输出0.6元、思考模式输出3元；免费额度100万Token；北京地域"
   },
   {
    "model": "qwq-plus",
@@ -767,7 +767,7 @@
    "output_per_1m": 4.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "仅思考模式"
+   "note": "仅思考模式；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen-long",
@@ -776,7 +776,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Batch半价"
+   "note": "Batch半价；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen-long-latest",
@@ -785,7 +785,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": null
+   "note": "北京地域"
   },
   {
    "model": "qwen-long-2025-01-25",
@@ -794,7 +794,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": null
+   "note": "北京地域"
   },
   {
    "model": "qwen3.8-omni-flash",
@@ -803,7 +803,7 @@
    "output_per_1m": 2.7,
    "cached_input_per_1m": 0.1,
    "currency": "CNY",
-   "note": "Omni多模态，中国内地部署"
+   "note": "全模态Omni；中国内地部署；北京地域"
   },
   {
    "model": "qwen3.5-omni-plus",
@@ -812,7 +812,7 @@
    "output_per_1m": 40.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Omni多模态；输入为文本/图片/视频价，音频输入53元；输出为文本价，文本+音频输出213元；能力等同于qwen3.5-omni-plus-2026-03-15"
+   "note": "全模态；输入：文本/图片/视频7元、音频53元；输出：文本(多模态输入)40元、文本+音频213元；能力等同qwen3.5-omni-plus-2026-03-15；北京地域"
   },
   {
    "model": "qwen3.5-omni-plus-2026-03-15",
@@ -821,7 +821,7 @@
    "output_per_1m": 40.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Omni多模态；音频输入53元，文本+音频输出213元"
+   "note": "输入：文本/图片/视频7元、音频53元；输出：文本(多模态输入)40元、文本+音频213元；北京地域"
   },
   {
    "model": "qwen3.5-omni-flash",
@@ -830,7 +830,7 @@
    "output_per_1m": 13.3,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Omni多模态；音频输入18元，文本+音频输出72元；能力等同于qwen3.5-omni-flash-2026-03-15"
+   "note": "输入：文本/图片/视频2.2元、音频18元；输出：文本(多模态输入)13.3元、文本+音频72元；北京地域"
   },
   {
    "model": "qwen3.5-omni-flash-2026-03-15",
@@ -839,7 +839,7 @@
    "output_per_1m": 13.3,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Omni多模态；音频输入18元，文本+音频输出72元"
+   "note": "输入：文本/图片/视频2.2元、音频18元；输出：文本(多模态输入)13.3元、文本+音频72元；北京地域"
   },
   {
    "model": "qwen3-omni-flash",
@@ -848,7 +848,7 @@
    "output_per_1m": 6.9,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Omni多模态；输入为文本价（音频15.8元、图片/视频3.3元），输出为纯文本价（多模态输入12.7元、文本+音频62.6元）；能力等同于qwen3-omni-flash-2025-12-01"
+   "note": "输入：文本1.8元、音频15.8元、图片/视频3.3元；输出：文本(纯文本输入)6.9元、文本(多模态输入)12.7元、文本+音频62.6元；能力等同qwen3-omni-flash-2025-12-01；北京地域"
   },
   {
    "model": "qwen3-omni-flash-2025-12-01",
@@ -857,7 +857,7 @@
    "output_per_1m": 6.9,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Omni多模态；音频输入15.8元、图片/视频3.3元；多模态输入输出12.7元、文本+音频62.6元"
+   "note": "输入：文本1.8元、音频15.8元、图片/视频3.3元；输出：6.9元(纯文本)/12.7元(多模态)/62.6元(音频)；北京地域"
   },
   {
    "model": "qwen3-omni-flash-2025-09-15",
@@ -866,7 +866,7 @@
    "output_per_1m": 6.9,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Omni多模态；同qwen3-omni-flash-2025-12-01分模态价格"
+   "note": "输入：文本1.8元、音频15.8元、图片/视频3.3元；输出：6.9元(纯文本)/12.7元(多模态)/62.6元(音频)；北京地域"
   },
   {
    "model": "qwen-omni-turbo",
@@ -875,7 +875,7 @@
    "output_per_1m": 1.6,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "非思考模式；音频输入25元、图片/视频1.5元；输出纯文本1.6元、多模态4.5元、文本+音频50元；能力等同于qwen-omni-turbo-2025-03-26"
+   "note": "输入：文本0.4元、音频25元、图片/视频1.5元；输出：文本(纯文本输入)1.6元、文本(多模态输入)4.5元、文本+音频50元；能力等同qwen-omni-turbo-2025-03-26；北京地域"
   },
   {
    "model": "qwen-omni-turbo-latest",
@@ -884,7 +884,7 @@
    "output_per_1m": 1.6,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "同qwen-omni-turbo分模态价格"
+   "note": "输入：文本0.4元、音频25元、图片/视频1.5元；输出：1.6元(纯文本)/4.5元(多模态)/50元(音频)；北京地域"
   },
   {
    "model": "qwen-omni-turbo-2025-03-26",
@@ -893,7 +893,7 @@
    "output_per_1m": 1.6,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "同qwen-omni-turbo分模态价格"
+   "note": "输入：文本0.4元、音频25元、图片/视频1.5元；输出：1.6元(纯文本)/4.5元(多模态)/50元(音频)；北京地域"
   },
   {
    "model": "qwen-omni-turbo-2025-01-19",
@@ -902,7 +902,7 @@
    "output_per_1m": 1.6,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "同qwen-omni-turbo分模态价格"
+   "note": "输入：文本0.4元、音频25元、图片/视频1.5元；输出：1.6元(纯文本)/4.5元(多模态)/50元(音频)；北京地域"
   },
   {
    "model": "qwen3.5-omni-plus-realtime",
@@ -911,7 +911,7 @@
    "output_per_1m": 60.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Realtime；输入为文本/图片价，音频输入80元；输出为多模态输入文本价，文本+音频输出300元"
+   "note": "全模态Realtime；输入：文本/图片10元、音频80元；输出：文本(多模态输入)60元、文本+音频300元；能力等同qwen3.5-omni-plus-realtime-2026-03-15；北京地域"
   },
   {
    "model": "qwen3.5-omni-plus-realtime-2026-03-15",
@@ -920,7 +920,7 @@
    "output_per_1m": 60.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Realtime；音频输入80元，文本+音频输出300元"
+   "note": "输入：文本/图片10元、音频80元；输出：文本(多模态)60元、文本+音频300元；北京地域"
   },
   {
    "model": "qwen3.5-omni-flash-realtime",
@@ -929,7 +929,7 @@
    "output_per_1m": 20.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Realtime；音频输入27元，文本+音频输出107元"
+   "note": "输入：文本/图片3.3元、音频27元；输出：文本(多模态)20元、文本+音频107元；能力等同qwen3.5-omni-flash-realtime-2026-03-15；北京地域"
   },
   {
    "model": "qwen3.5-omni-flash-realtime-2026-03-15",
@@ -938,7 +938,7 @@
    "output_per_1m": 20.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Realtime；音频输入27元，文本+音频输出107元"
+   "note": "输入：文本/图片3.3元、音频27元；输出：文本(多模态)20元、文本+音频107元；北京地域"
   },
   {
    "model": "qwen3-omni-flash-realtime",
@@ -947,7 +947,7 @@
    "output_per_1m": 8.3,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Realtime；输入为文本价（音频18.9元、图片3.9元），输出为纯文本价（多模态15.2元、文本+音频75.1元）"
+   "note": "输入：文本2.2元、音频18.9元、图片3.9元；输出：文本(纯文本输入)8.3元、文本(多模态)15.2元、文本+音频75.1元；能力等同qwen3-omni-flash-realtime-2025-12-01；北京地域"
   },
   {
    "model": "qwen3-omni-flash-realtime-2025-12-01",
@@ -956,7 +956,7 @@
    "output_per_1m": 8.3,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "同qwen3-omni-flash-realtime分模态价格"
+   "note": "输入：文本2.2元、音频18.9元、图片3.9元；输出：8.3元(纯文本)/15.2元(多模态)/75.1元(音频)；北京地域"
   },
   {
    "model": "qwen3-omni-flash-realtime-2025-09-15",
@@ -965,7 +965,7 @@
    "output_per_1m": 8.3,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "同qwen3-omni-flash-realtime分模态价格"
+   "note": "输入：文本2.2元、音频18.9元、图片3.9元；输出：8.3元(纯文本)/15.2元(多模态)/75.1元(音频)；北京地域"
   },
   {
    "model": "qwen-omni-turbo-realtime",
@@ -974,7 +974,7 @@
    "output_per_1m": 6.4,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Realtime；音频输入25元、图片6元；输出纯文本6.4元、多模态18元、文本+音频50元"
+   "note": "输入：文本1.6元、音频25元、图片6元；输出：文本(纯文本输入)6.4元、文本(多模态)18元、文本+音频50元；能力等同qwen-omni-turbo-realtime-2025-05-08；北京地域"
   },
   {
    "model": "qwen-omni-turbo-realtime-latest",
@@ -983,7 +983,7 @@
    "output_per_1m": 6.4,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "同qwen-omni-turbo-realtime分模态价格"
+   "note": "输入：文本1.6元、音频25元、图片6元；输出：6.4元(纯文本)/18元(多模态)/50元(音频)；北京地域"
   },
   {
    "model": "qwen-omni-turbo-realtime-2025-05-08",
@@ -992,7 +992,7 @@
    "output_per_1m": 6.4,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "同qwen-omni-turbo-realtime分模态价格"
+   "note": "输入：文本1.6元、音频25元、图片6元；输出：6.4元(纯文本)/18元(多模态)/50元(音频)；北京地域"
   },
   {
    "model": "qvq-max",
@@ -1001,7 +1001,7 @@
    "output_per_1m": 32.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视觉推理模型"
+   "note": "视觉推理；免费额度100万Token；北京地域"
   },
   {
    "model": "qvq-plus",
@@ -1010,7 +1010,7 @@
    "output_per_1m": 5.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视觉推理模型"
+   "note": "视觉推理；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3-vl-plus",
@@ -1019,7 +1019,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "VL多模态；能力等同于qwen3-vl-plus-2025-12-19；阶梯计费 0<Token≤32K；32K-128K为1.5元/15元，128K-256K为3元/30元；Batch半价、上下文缓存折扣"
+   "note": "0<Token≤32K；能力等同qwen3-vl-plus-2025-12-19；Batch半价；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3-vl-plus",
@@ -1028,7 +1028,7 @@
    "output_per_1m": 15.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；北京地域"
   },
   {
    "model": "qwen3-vl-plus",
@@ -1037,7 +1037,7 @@
    "output_per_1m": 30.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3-vl-plus-2025-12-19",
@@ -1046,7 +1046,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤32K；32K-128K为1.5元/15元，128K-256K为3元/30元"
+   "note": "0<Token≤32K；北京地域"
   },
   {
    "model": "qwen3-vl-plus-2025-12-19",
@@ -1055,7 +1055,7 @@
    "output_per_1m": 15.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；北京地域"
   },
   {
    "model": "qwen3-vl-plus-2025-12-19",
@@ -1064,7 +1064,7 @@
    "output_per_1m": 30.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3-vl-plus-2025-09-23",
@@ -1073,7 +1073,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤32K；32K-128K为1.5元/15元，128K-256K为3元/30元"
+   "note": "0<Token≤32K；北京地域"
   },
   {
    "model": "qwen3-vl-plus-2025-09-23",
@@ -1082,7 +1082,7 @@
    "output_per_1m": 15.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；北京地域"
   },
   {
    "model": "qwen3-vl-plus-2025-09-23",
@@ -1091,7 +1091,7 @@
    "output_per_1m": 30.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3-vl-flash",
@@ -1100,7 +1100,7 @@
    "output_per_1m": 1.5,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "VL多模态；能力等同于qwen3-vl-flash-2026-01-22；阶梯计费 0<Token≤32K；32K-128K为0.3元/3元，128K-256K为0.6元/6元；Batch半价、上下文缓存折扣"
+   "note": "0<Token≤32K；能力等同qwen3-vl-flash-2026-01-22；Batch半价；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3-vl-flash",
@@ -1109,7 +1109,7 @@
    "output_per_1m": 3.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；北京地域"
   },
   {
    "model": "qwen3-vl-flash",
@@ -1118,7 +1118,7 @@
    "output_per_1m": 6.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3-vl-flash-2026-01-22",
@@ -1127,7 +1127,7 @@
    "output_per_1m": 1.5,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤32K；32K-128K为0.3元/3元，128K-256K为0.6元/6元"
+   "note": "0<Token≤32K；北京地域"
   },
   {
    "model": "qwen3-vl-flash-2026-01-22",
@@ -1136,7 +1136,7 @@
    "output_per_1m": 3.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；北京地域"
   },
   {
    "model": "qwen3-vl-flash-2026-01-22",
@@ -1145,7 +1145,7 @@
    "output_per_1m": 6.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3-vl-flash-2025-10-15",
@@ -1154,7 +1154,7 @@
    "output_per_1m": 1.5,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤32K；32K-128K为0.3元/3元，128K-256K为0.6元/6元"
+   "note": "0<Token≤32K；北京地域"
   },
   {
    "model": "qwen3-vl-flash-2025-10-15",
@@ -1163,7 +1163,7 @@
    "output_per_1m": 3.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；北京地域"
   },
   {
    "model": "qwen3-vl-flash-2025-10-15",
@@ -1172,7 +1172,7 @@
    "output_per_1m": 6.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen-vl-max",
@@ -1181,7 +1181,7 @@
    "output_per_1m": 4.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "VL多模态，无阶梯计价，上下文缓存折扣"
+   "note": "无阶梯计价；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen-vl-plus",
@@ -1190,7 +1190,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "VL多模态，无阶梯计价，上下文缓存折扣"
+   "note": "无阶梯计价；缓存折扣；北京地域"
   },
   {
    "model": "qwen3.5-ocr",
@@ -1199,7 +1199,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "OCR模型"
+   "note": "OCR；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen-vl-ocr",
@@ -1208,7 +1208,7 @@
    "output_per_1m": 0.5,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "OCR模型，能力等同于qwen-vl-ocr-2025-11-20，Batch半价"
+   "note": "OCR；能力等同qwen-vl-ocr-2025-11-20；Batch半价；北京地域"
   },
   {
    "model": "qwen-vl-ocr-latest",
@@ -1217,7 +1217,7 @@
    "output_per_1m": 0.5,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "OCR模型，Batch半价"
+   "note": "OCR；Batch半价；北京地域"
   },
   {
    "model": "qwen-vl-ocr-2025-11-20",
@@ -1226,7 +1226,7 @@
    "output_per_1m": 0.5,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "OCR模型"
+   "note": "OCR；北京地域"
   },
   {
    "model": "qwen-vl-ocr-2025-08-28",
@@ -1235,7 +1235,7 @@
    "output_per_1m": 5.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "OCR模型"
+   "note": "OCR；北京地域"
   },
   {
    "model": "qwen-vl-ocr-2025-04-13",
@@ -1244,7 +1244,7 @@
    "output_per_1m": 5.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "OCR模型"
+   "note": "OCR；北京地域"
   },
   {
    "model": "qwen-vl-ocr-2024-10-28",
@@ -1253,7 +1253,7 @@
    "output_per_1m": 5.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "OCR模型"
+   "note": "OCR；北京地域"
   },
   {
    "model": "qwen-math-plus",
@@ -1262,7 +1262,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "数学模型"
+   "note": "数学模型；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen-math-turbo",
@@ -1271,7 +1271,7 @@
    "output_per_1m": 6.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "数学模型"
+   "note": "数学模型；北京地域"
   },
   {
    "model": "qwen3-coder-plus",
@@ -1280,7 +1280,7 @@
    "output_per_1m": 16.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Coder模型；能力等同于qwen3-coder-plus-2025-09-23；阶梯计费 0<Token≤32K；32K-128K为6元/24元，128K-256K为10元/40元，256K-1M为20元/200元；上下文缓存折扣"
+   "note": "0<Token≤32K；能力等同qwen3-coder-plus-2025-09-23；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3-coder-plus",
@@ -1289,7 +1289,7 @@
    "output_per_1m": 24.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-plus",
@@ -1298,7 +1298,7 @@
    "output_per_1m": 40.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-plus",
@@ -1307,7 +1307,7 @@
    "output_per_1m": 200.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-plus-2025-09-23",
@@ -1316,7 +1316,7 @@
    "output_per_1m": 16.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤32K；32K-128K为6元/24元，128K-256K为10元/40元，256K-1M为20元/200元"
+   "note": "0<Token≤32K；北京地域"
   },
   {
    "model": "qwen3-coder-plus-2025-09-23",
@@ -1325,7 +1325,7 @@
    "output_per_1m": 24.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-plus-2025-09-23",
@@ -1334,7 +1334,7 @@
    "output_per_1m": 40.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-plus-2025-09-23",
@@ -1343,7 +1343,7 @@
    "output_per_1m": 200.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-plus-2025-07-22",
@@ -1352,7 +1352,7 @@
    "output_per_1m": 16.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤32K；32K-128K为6元/24元，128K-256K为10元/40元，256K-1M为20元/200元"
+   "note": "0<Token≤32K；北京地域"
   },
   {
    "model": "qwen3-coder-plus-2025-07-22",
@@ -1361,7 +1361,7 @@
    "output_per_1m": 24.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-plus-2025-07-22",
@@ -1370,7 +1370,7 @@
    "output_per_1m": 40.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-plus-2025-07-22",
@@ -1379,7 +1379,7 @@
    "output_per_1m": 200.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-flash",
@@ -1388,7 +1388,7 @@
    "output_per_1m": 4.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Coder模型；能力等同于qwen3-coder-flash-2025-07-28；阶梯计费 0<Token≤32K；32K-128K为1.5元/6元，128K-256K为2.5元/10元，256K-1M为5元/25元"
+   "note": "0<Token≤32K；能力等同qwen3-coder-flash-2025-07-28；北京地域"
   },
   {
    "model": "qwen3-coder-flash",
@@ -1397,7 +1397,7 @@
    "output_per_1m": 6.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-flash",
@@ -1406,7 +1406,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-flash",
@@ -1415,7 +1415,7 @@
    "output_per_1m": 25.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-flash-2025-07-28",
@@ -1424,7 +1424,7 @@
    "output_per_1m": 4.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费 0<Token≤32K；32K-128K为1.5元/6元，128K-256K为2.5元/10元，256K-1M为5元/25元"
+   "note": "0<Token≤32K；北京地域"
   },
   {
    "model": "qwen3-coder-flash-2025-07-28",
@@ -1433,7 +1433,7 @@
    "output_per_1m": 6.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 32K<Token≤128K"
+   "note": "32K<Token≤128K 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-flash-2025-07-28",
@@ -1442,7 +1442,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3-coder-flash-2025-07-28",
@@ -1451,7 +1451,7 @@
    "output_per_1m": 25.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 256K<Token≤1M"
+   "note": "256K<Token≤1M 阶梯；北京地域"
   },
   {
    "model": "qwen-coder-plus",
@@ -1460,7 +1460,7 @@
    "output_per_1m": 7.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Coder模型，无阶梯计价"
+   "note": "无阶梯计价；北京地域"
   },
   {
    "model": "qwen-coder-turbo",
@@ -1469,7 +1469,7 @@
    "output_per_1m": 6.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "Coder模型，无阶梯计价"
+   "note": "无阶梯计价；北京地域"
   },
   {
    "model": "qwen-mt-uni",
@@ -1478,7 +1478,7 @@
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "翻译多模态模型，仅按input_tokens计费；输入价分模态：文本65元/文档20元/图片32元/音频400元"
+   "note": "翻译模型(按输入token计费)；输入分模态：文本65元、文档20元、图片32元、音频400元；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen-mt-plus",
@@ -1487,7 +1487,7 @@
    "output_per_1m": 5.4,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "翻译模型"
+   "note": "翻译模型；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen-mt-flash",
@@ -1496,7 +1496,7 @@
    "output_per_1m": 1.95,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "翻译模型"
+   "note": "翻译模型；北京地域"
   },
   {
    "model": "qwen-mt-lite",
@@ -1505,7 +1505,7 @@
    "output_per_1m": 1.6,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "翻译模型"
+   "note": "翻译模型；北京地域"
   },
   {
    "model": "qwen-mt-turbo",
@@ -1514,7 +1514,7 @@
    "output_per_1m": 1.95,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "翻译模型"
+   "note": "翻译模型；北京地域"
   },
   {
    "model": "qwen-doc-turbo",
@@ -1523,7 +1523,7 @@
    "output_per_1m": 1.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "数据挖掘模型，无免费额度"
+   "note": "数据挖掘模型；无免费额度；北京地域"
   },
   {
    "model": "qwen-deep-research",
@@ -1532,7 +1532,7 @@
    "output_per_1m": 163.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "深入研究模型，无免费额度"
+   "note": "深入研究模型；无免费额度；北京地域"
   },
   {
    "model": "qwen-deep-research-2025-12-15",
@@ -1541,7 +1541,7 @@
    "output_per_1m": 236.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "深入研究模型，无免费额度"
+   "note": "深入研究模型；无免费额度；北京地域"
   },
   {
    "model": "tongyi-xiaomi-analysis-flash",
@@ -1550,7 +1550,7 @@
    "output_per_1m": 0.4,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "通义晓蜜对话分析模型，上下文缓存折扣"
+   "note": "通义晓蜜对话分析；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "tongyi-xiaomi-analysis-pro",
@@ -1559,7 +1559,7 @@
    "output_per_1m": 2.7,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "通义晓蜜对话分析模型，上下文缓存折扣"
+   "note": "通义晓蜜对话分析；缓存折扣；北京地域"
   },
   {
    "model": "qwen3.8-2.4t-a95b",
@@ -1568,7 +1568,7 @@
    "output_per_1m": 36.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "千问开源版，0<Token≤1M，上下文缓存折扣"
+   "note": "开源版Qwen3.8；缓存折扣；免费额度100万Token；北京地域"
   },
   {
    "model": "qwen3.8-27b",
@@ -1577,7 +1577,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "千问开源版，0<Token≤1M，上下文缓存折扣"
+   "note": "开源版Qwen3.8；缓存折扣；北京地域"
   },
   {
    "model": "qwen3.6-35b-a3b",
@@ -1586,7 +1586,7 @@
    "output_per_1m": 10.8,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "千问开源版，0<Token≤256K，非思考/思考输出同价"
+   "note": "开源版Qwen3.6；0<Token≤256K；非思考/思考输出同价；北京地域"
   },
   {
    "model": "qwen3.6-27b",
@@ -1595,7 +1595,7 @@
    "output_per_1m": 18.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "千问开源版，0<Token≤256K，非思考/思考输出同价"
+   "note": "开源版Qwen3.6；0<Token≤256K；非思考/思考输出同价；北京地域"
   },
   {
    "model": "qwen3.5-397b-a17b",
@@ -1604,7 +1604,7 @@
    "output_per_1m": 7.2,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "千问开源版，阶梯计费 0<Token≤128K；128K-256K为3元/18元"
+   "note": "开源版Qwen3.5；0<Token≤128K；非思考/思考输出同价；北京地域"
   },
   {
    "model": "qwen3.5-397b-a17b",
@@ -1613,7 +1613,7 @@
    "output_per_1m": 18.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "开源版Qwen3.5；128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-122b-a10b",
@@ -1622,7 +1622,7 @@
    "output_per_1m": 6.4,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "千问开源版，阶梯计费 0<Token≤128K；128K-256K为2元/16元"
+   "note": "开源版Qwen3.5；0<Token≤128K；非思考/思考输出同价；北京地域"
   },
   {
    "model": "qwen3.5-122b-a10b",
@@ -1631,7 +1631,7 @@
    "output_per_1m": 16.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "开源版Qwen3.5；128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-27b",
@@ -1640,7 +1640,7 @@
    "output_per_1m": 4.8,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "千问开源版，阶梯计费 0<Token≤128K；128K-256K为1.8元/14.4元"
+   "note": "开源版Qwen3.5；0<Token≤128K；非思考/思考输出同价；北京地域"
   },
   {
    "model": "qwen3.5-27b",
@@ -1649,7 +1649,7 @@
    "output_per_1m": 14.4,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "开源版Qwen3.5；128K<Token≤256K 阶梯；北京地域"
   },
   {
    "model": "qwen3.5-35b-a3b",
@@ -1658,7 +1658,7 @@
    "output_per_1m": 3.2,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "千问开源版，阶梯计费 0<Token≤128K；128K-256K为1.6元/12.8元"
+   "note": "开源版Qwen3.5；0<Token≤128K；非思考/思考输出同价；北京地域"
   },
   {
    "model": "qwen3.5-35b-a3b",
@@ -1667,14 +1667,14 @@
    "output_per_1m": 12.8,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "阶梯计费档位 128K<Token≤256K"
+   "note": "开源版Qwen3.5；128K<Token≤256K 阶梯；北京地域"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "cc2ca5901160fa69743d515e79b53ec04e340e887a784f0994370a1149f5d7fc",
- "fetched_at": "2026-09-20T07:23:58Z",
- "status_note": "页面无变化",
+ "price_hash": "c376a44833f96a6b403b5f2bd68b9b9a0b04cc99a5796395d5d19eb4d1e3ffcc",
+ "fetched_at": "2026-09-20T09:06:34Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-20T08:06:42Z",
+ "last_fetch_ts": "2026-09-20T09:06:34Z",
  "pricing_extraction_revision": 1
 }

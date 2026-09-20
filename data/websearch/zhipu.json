@@ -15,10 +15,10 @@
    "price_per_1k_usd": null,
    "price_basis": "基础版（智谱自研）按次计费",
    "free_quota": null,
-   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
+   "output_type": "结构化搜索结果（含网页标题、URL、摘要、网站名称、网站图标等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "官网以人民币计价，页面未给出美元价。特性：满足日常查询需求，性价比极高。支持 count 范围1-50默认10，content_size 默认 medium。"
+   "note": "满足日常查询需求；支持自定义返回结果数量（1-50，默认10）、域名、时间范围及摘要字数（content_size）。价格为人民币计价，页面未给出美元换算。"
   },
   {
    "name": "Web Search API (search_pro)",
@@ -29,32 +29,32 @@
    "output_type": "结构化搜索结果",
    "cites_sources": true,
    "default_on": null,
-   "note": "多引擎协作显著降低空结果率，召回率和准确率大幅提升。"
+   "note": "多引擎协作显著降低空结果率，召回率和准确率大幅提升；整合智谱自研引擎及搜狗/夸克。价格为人民币计价。"
   },
   {
    "name": "Web Search API (search_pro_sogou)",
    "pricing": "0.05 元/次",
    "price_per_1k_usd": null,
-   "price_basis": "搜狗引擎按次计费",
+   "price_basis": "搜狗引擎档按次计费",
    "free_quota": null,
    "output_type": "结构化搜索结果",
    "cites_sources": true,
    "default_on": null,
-   "note": "覆盖腾讯生态（新闻/企鹅号）和知乎内容，在百科、医疗等垂直领域权威性强。"
+   "note": "覆盖腾讯生态（新闻/企鹅号）和知乎内容，在百科、医疗等垂直领域权威性强。价格为人民币计价。"
   },
   {
    "name": "Web Search API (search_pro_quark)",
    "pricing": "0.05 元/次",
    "price_per_1k_usd": null,
-   "price_basis": "夸克引擎按次计费",
+   "price_basis": "夸克引擎档按次计费",
    "free_quota": null,
    "output_type": "结构化搜索结果",
    "cites_sources": true,
    "default_on": null,
-   "note": "精准触达垂直内容。"
+   "note": "精准触达垂直内容。价格为人民币计价。"
   },
   {
-   "name": "Web Search in Chat",
+   "name": "对话中的网络搜索 (Web Search in Chat)",
    "pricing": null,
    "price_per_1k_usd": null,
    "price_basis": null,
@@ -62,23 +62,23 @@
    "output_type": "带引用答案（将搜索结果融入大模型生成回答并标注网页结果来源）",
    "cites_sources": true,
    "default_on": null,
-   "note": "允许 Completions API 调用搜索引擎（tools 中 web_search，需 enable），结合 GLM 生成能力，页面未单独给出定价。"
+   "note": "允许 Completions API 调用搜索引擎（tools 中 web_search.enable），将实时网络检索结果与 GLM 生成能力结合；需在工具参数中手动启用。"
   },
   {
-   "name": "Search Agent（搜索智能体）",
+   "name": "搜索智能体 (Search Agent)",
    "pricing": null,
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "带引用答案（综合多个查询的网页内容生成全面回答）",
+   "output_type": "综合网页内容生成的模型回答",
    "cites_sources": null,
    "default_on": null,
-   "note": "根据搜索意图进行 query 拆解、对话状态管理与智能路由，意图理解增强上下文管理；页面未给出定价。"
+   "note": "根据搜索意图进行 query 拆解、对话状态管理与智能路由，意图理解增强上下文管理。页面未给出单独定价。"
   }
  ],
- "fetched_at": "2026-09-20T08:14:13Z",
+ "fetched_at": "2026-09-20T09:15:59Z",
  "status_note": null,
  "last_error": "官网页未解析出联网搜索信息，已保留上次 6 条",
- "last_fetch_ts": "2026-09-20T08:14:13Z",
+ "last_fetch_ts": "2026-09-20T09:15:59Z",
  "websearch_hash": "964c4679984ed72c2d621c80c3ed93edb0a38356befb67c213aa2960548bea30"
 }

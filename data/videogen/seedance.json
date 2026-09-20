@@ -619,13 +619,11 @@
   "https://docs.volcengine.com/docs/82379/1520757",
   "https://seed.bytedance.com/en/seedance2_5"
  ],
- "last_fetch_ts": "2026-09-20T08:18:47Z",
+ "last_fetch_ts": "2026-09-20T09:20:26Z",
  "source_warnings": [],
- "videogen_hash": "19ec35f4e969193a6b21303410439aa265a5d3ff5da1ba837b1966b7563b73dd",
- "status_note": "官网生视频抽取覆盖项由 21 变为 7，等待下轮同语义结果确认",
- "last_error": "官网生视频抽取覆盖项由 21 变为 7，等待下轮同语义结果确认",
- "videogen_excerpt_hash": "0b56b681331c8f4adc1ee31a0a17397dee121bc4807e4da871e6c3553752cf74",
- "videogen_retry_after": "2026-09-20T13:37:35Z",
- "videogen_pending_shrink_hash": "cfc03909aaf97f1364aff0a0e310e3a064747fbfaf9827edeb3315ee65eb39c8",
- "videogen_pending_shrink_count": 7
+ "videogen_hash": "1f7d375b40fe13a933aa2bb4540831ba32a670d04d084a82eaa89e60ab6a60e7",
+ "status_note": "官网生视频抽取失败: 结构化输出校验失败: 1 validation error for VideoGenerationPage\nofferings.6\n  Value error, temporary chart price requires official start and end dates [type=value_error, input_value={'name': 'doubao-seedance...；无限时折扣。'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev",
+ "last_error": "官网生视频抽取失败: 结构化输出校验失败: 1 validation error for VideoGenerationPage\nofferings.6\n  Value error, temporary chart price requires official start and end dates [type=value_error, input_value={'name': 'doubao-seedance...；无限时折扣。'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev",
+ "videogen_excerpt_hash": "56819b785feeb048d33351764bec486a3e596aea212c748e999452f1a3ed32c7",
+ "videogen_retry_after": "2026-09-20T15:28:09Z"
 }

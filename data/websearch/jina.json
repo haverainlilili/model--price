@@ -11,20 +11,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "s.jina.ai (Reader as SERP API)",
-   "pricing": "按 token 计费：每次请求消耗固定 token，starting from 10,000 tokens；token 单价 $0.050/1M（Prototype 标准键）或 $0.045/1M（Production 高级键）",
+   "name": "Reader API (s.jina.ai) — Search the web and convert results to LLM-friendly text block",
+   "pricing": "基于 token 计费；『Every request costs a fixed number of tokens, starting from 10,000 tokens』；Prototype Development 档 $50 / 1 Billion tokens（0.050/1M tokens），Production Deployment 档 $500 / 11 Billion tokens（0.045/1M tokens）",
    "price_per_1k_usd": 0.5,
-   "price_basis": "PAYG/充值 token 制，按最低 10,000 tokens/次 × $0.050/1M 充值单价机械换算",
-   "free_quota": "Don't panic! Every new API key comes with 10M free tokens!",
-   "output_type": "结构化搜索结果：返回前 5 条结果的 URL 和内容，clean, LLM-friendly text",
+   "price_basis": "按固定 10,000 tokens/次请求机械换算至 Prototype Development（Standard）档 0.050/1M tokens，得 $0.50/1k 请求；Premium 档 0.045/1M tokens 为 $0.45/1k 请求",
+   "free_quota": "Every new API key comes with 10 million free tokens（Toy Experiment: 10 Million tokens, Non-commercial use only CC-BY-NC）",
+   "output_type": "结构化搜索结果（返回 top 5 条结果的 URL、标题与内容，LLM-friendly 文本/JSON）",
    "cites_sources": true,
    "default_on": null,
-   "note": "速率限制：无 key 100 RPM，免费 key 100 RPM，付费 500 RPM，高级付费 1000 RPM；平均延迟 2.5s。Reader API (r.jina.ai) 为 URL 转 LLM 文本，非搜索引擎。"
+   "note": "『Search the web and return the top five results with their URLs and contents』；无 key 100 RPM / Free key 100 RPM / Premium 1000 RPM；平均延迟 2.5s；计费按输出响应 token 计数（搜索请求固定起价 10,000 tokens）"
   }
  ],
- "fetched_at": "2026-09-20T11:14:08Z",
+ "fetched_at": "2026-09-20T12:18:22Z",
  "status_note": null,
  "last_error": "渲染后页面为空",
- "last_fetch_ts": "2026-09-20T11:14:08Z",
- "websearch_hash": "e92b368241f758e996776e13a15bc114c28e20a4ae32bafeeb3483bbcbe97317"
+ "last_fetch_ts": "2026-09-20T12:18:22Z",
+ "websearch_hash": "b6f065e3b0e5040a68fad5578bc9f5757b7e1e1d9aa0cb2c0058744ea6485528"
 }

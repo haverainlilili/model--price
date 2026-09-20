@@ -1,58 +1,56 @@
 {
  "plans": [
   {
-   "name": "Coding Plan Lite",
+   "name": "Lite",
    "plan_type": "Coding Plan",
    "price": "9.9元/月（首购优惠价）",
-   "billing": "每月",
+   "billing": "按月订阅",
    "quotas": [
     {
      "label": "请求次数",
-     "value": "最多约 1200 次",
-     "window": "每 5 小时"
+     "value": "最多约1200次",
+     "window": "每5小时"
     }
    ],
    "models": [
     "Doubao-Seed-Code",
     "GLM-4.7",
     "DeepSeek-V3.2",
-    "Kimi-K2-Thinking",
-    "Kimi-K2"
+    "Kimi-K2-Thinking"
    ],
-   "note": "「Pro 套餐用量是 Lite 套餐的5倍」。叠加推荐优惠券首月低至 8.9 元；首购一次性下单三个月可享5折。支持 Claude Code、Cursor、Cline、Codex CLI 等工具。",
+   "note": "叠加推荐优惠券首月低至8.9元（2.2折）；「最多约」为官网原文口径",
    "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
   },
   {
-   "name": "Coding Plan Pro",
+   "name": "Pro",
    "plan_type": "Coding Plan",
    "price": "49.9元/月（首购优惠价）",
-   "billing": "每月",
+   "billing": "按月订阅",
    "quotas": [
     {
      "label": "请求次数",
-     "value": "最多约 6000 次",
-     "window": "每 5 小时"
+     "value": "最多约6000次",
+     "window": "每5小时"
     }
    ],
    "models": [
     "Doubao-Seed-Code",
     "GLM-4.7",
     "DeepSeek-V3.2",
-    "Kimi-K2-Thinking",
-    "Kimi-K2"
+    "Kimi-K2-Thinking"
    ],
-   "note": "官网口径：Pro 用量为 Lite 的5倍，每5小时请求次数为约数（「最多约」）。",
+   "note": "官网称Pro用量约为Lite的5倍；首购一次性下单三个月可享5折",
    "source_url": "https://developer.volcengine.com/articles/7595502342175195187"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-20T14:12:56Z",
+ "last_fetch_ts": "2026-09-20T15:12:53Z",
  "source": "official",
  "source_urls": [
   "https://developer.volcengine.com/articles/7595502342175195187"
  ],
  "page_has_plans": true,
- "plans_hash": "2a7f84983f7cd6cf04fbf6a9fdf6bc83054f46cb8b64ce3975c8eb7b0b544a19",
- "fetched_at": "2026-09-20T13:10:07Z",
- "status_note": "页面无变化"
+ "plans_hash": "b7251cbb5c1d3f3ede5d5597752ffe6727b5c86197348fceb148a3a75635c2c3",
+ "fetched_at": "2026-09-20T15:12:53Z",
+ "status_note": null
 }

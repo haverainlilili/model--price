@@ -11,85 +11,41 @@
  "offerings": [
   {
    "name": "Web Search API",
-   "pricing": "search_std 0.01 元/次；search_pro 0.03 元/次",
+   "pricing": "search_std 0.01 元/次；search_pro 0.03 元/次；search_pro_sogou 0.05 元/次；search_pro_quark 0.05 元/次",
    "price_per_1k_usd": null,
-   "price_basis": null,
+   "price_basis": "按次计费，四档搜索引擎（search_std/search_pro/search_pro_sogou/search_pro_quark），人民币计价",
    "free_quota": null,
-   "output_type": "结构化搜索结果（网页标题、URL、摘要、网站名称、图标等）",
+   "output_type": "结构化搜索结果（网页标题、URL、摘要、网站名称、网站图标等）",
    "cites_sources": null,
    "default_on": null,
-   "note": "count 范围1-50默认10；支持域名过滤、时间范围、摘要字数（content_size）控制"
+   "note": "返回结果条数范围1-50，默认10；可指定域名、时间范围、摘要字数（content_size）；整合智谱自研引擎及搜狗/夸克。"
   },
   {
-   "name": "Web Search in Chat（对话中的网络搜索）",
+   "name": "对话中的网络搜索 (Web Search in Chat)",
    "pricing": null,
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "带引用答案（搜索结果融入大模型生成回答）",
+   "output_type": "搜索结果融入大模型生成回答并标注网页结果来源",
    "cites_sources": true,
    "default_on": null,
-   "note": "通过 Completions API 的 web_search 工具调用，可将搜索结果融合回答"
+   "note": "Completions API 通过 tools 参数启用 web_search，需设置 enable，并将实时检索结果与 GLM 生成能力结合。"
   },
   {
-   "name": "Search Agent（搜索智能体）",
+   "name": "搜索智能体 (Search Agent)",
    "pricing": null,
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "综合多个搜索查询生成的模型回答",
+   "output_type": "多查询意图拆解、综合网页内容生成模型回答",
    "cites_sources": null,
    "default_on": null,
-   "note": "根据搜索意图拆解为多个查询，综合网页内容生成全面回答"
-  },
-  {
-   "name": "search_std",
-   "pricing": "0.01 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": "基础版（智谱自研）",
-   "free_quota": null,
-   "output_type": null,
-   "cites_sources": null,
-   "default_on": null,
-   "note": "满足日常查询需求，性价比极高"
-  },
-  {
-   "name": "search_pro",
-   "pricing": "0.03 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": "高级版（智谱自研）",
-   "free_quota": null,
-   "output_type": null,
-   "cites_sources": null,
-   "default_on": null,
-   "note": "多引擎协作显著降低空结果率，召回率和准确率大幅提升"
-  },
-  {
-   "name": "search_pro_sogou",
-   "pricing": "0.05 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": "搜狗引擎",
-   "free_quota": null,
-   "output_type": null,
-   "cites_sources": null,
-   "default_on": null,
-   "note": "覆盖腾讯生态（新闻/企鹅号）和知乎内容"
-  },
-  {
-   "name": "search_pro_quark",
-   "pricing": "0.05 元/次",
-   "price_per_1k_usd": null,
-   "price_basis": "夸克引擎",
-   "free_quota": null,
-   "output_type": null,
-   "cites_sources": null,
-   "default_on": null,
-   "note": "精准触达垂直内容"
+   "note": "根据搜索意图进行 query 拆解，对话状态管理与智能路由，意图理解增强上下文管理。"
   }
  ],
- "fetched_at": "2026-09-20T14:15:46Z",
+ "fetched_at": "2026-09-20T15:15:11Z",
  "status_note": null,
  "last_error": "官网页未解析出联网搜索信息，已保留上次 6 条",
- "last_fetch_ts": "2026-09-20T14:15:46Z",
+ "last_fetch_ts": "2026-09-20T15:15:11Z",
  "websearch_hash": "964c4679984ed72c2d621c80c3ed93edb0a38356befb67c213aa2960548bea30"
 }

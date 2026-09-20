@@ -11,20 +11,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Reader API (s.jina.ai) — Search the web and convert results to LLM-friendly text block",
-   "pricing": "Token-based: Prototype Development 10亿 tokens $50 (0.050 / 1M tokens)；Production Deployment 11B tokens $500 (0.045 / 1M tokens)；『Every request costs a fixed number of tokens, starting from 10,000 tokens』",
-   "price_per_1k_usd": null,
-   "price_basis": "按 token 计费，基础档 Prototype 0.050/1M tokens；每次搜索消耗 token 起步 10,000 且可能浮动，无法精确换算每千次价格",
-   "free_quota": "Every new API key comes with 10M free tokens; Toy Experiment 10 Million tokens, non-commercial use only (CC-BY-NC)",
-   "output_type": "Web search + SERP：『search the web and return the top five results with their URLs and contents, each in clean, LLM-friendly text』；JSON 返回五个条目，各含 URL、title、content、timestamp",
+   "name": "Reader API (s.jina.ai) - Search the web and convert results to LLM-friendly text",
+   "pricing": "按 token 计费；搜索请求 \"Every request costs a fixed number of tokens, starting from 10,000 tokens\"；token 售价 $50 / 1B tokens（0.050/1M tokens，Standard key）或 $500 / 11B tokens（0.045/1M tokens，Premium key）",
+   "price_per_1k_usd": 0.5,
+   "price_basis": "PAYG token 包（Standard key，0.050/1M tokens）× 每次搜索固定 10,000 tokens 机械换算；Premium 档 0.045/1M tokens 换算约 $0.45/1k 次；实际消耗可能高于 10,000 tokens 基数",
+   "free_quota": "Every new API key comes with 10M free tokens（Toy Experiment: 10 Million tokens, Non-commercial use only CC-BY-NC）",
+   "output_type": "结构化搜索结果（top five results with URLs and contents，LLM-friendly text/JSON）",
    "cites_sources": true,
    "default_on": null,
-   "note": "速率限制：无 key 100 RPM，Free key 100 RPM，Premium key 1000 RPM；平均延迟 2.5s。新定价模型 2025-05-06 生效，之前 auto-recharge 用户按旧价继续。"
+   "note": "\"Reader will search the web and return the top five results with their URLs and contents\"；速率 100 RPM（免费 key），1000 RPM（Premium）；平均延迟 2.5s；价格模型为 2025 年 5 月 6 日引入的新定价。"
   }
  ],
- "fetched_at": "2026-09-20T22:13:39Z",
+ "fetched_at": "2026-09-20T23:13:06Z",
  "status_note": null,
  "last_error": "渲染后页面为空",
- "last_fetch_ts": "2026-09-20T22:13:39Z",
+ "last_fetch_ts": "2026-09-20T23:13:06Z",
  "websearch_hash": "b6f065e3b0e5040a68fad5578bc9f5757b7e1e1d9aa0cb2c0058744ea6485528"
 }

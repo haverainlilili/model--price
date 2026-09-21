@@ -255,7 +255,7 @@ def _fetch_pricing_text(cfg: dict) -> tuple[str, str]:
         body = (fetch_rendered(u, language=language)
                 if cfg.get("render") else fetch(u, language=language))
         texts.append(f"===== 页面: {u} =====\n{body}")
-    return urls[0], "\n\n".join(texts)
+    return urls[0], _dedupe_repeated_lines("\n\n".join(texts))
 
 
 def _fetch_news_text(cfg: dict) -> str:

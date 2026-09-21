@@ -113,6 +113,27 @@ class FetchWebSearchTextTests(unittest.TestCase):
             "https://example.com/search", language="zh-CN")
 
 
+
+class FetchPricingTextTests(unittest.TestCase):
+    @patch.object(run, "fetch",
+                  return_value="Pricing\n导航\n导航\n导航\n导航\n$5 per 1M tokens")
+    def test_repeated_boilerplate_runs_are_collapsed(self, _fetch):
+        # 规则: 只有"上一行 + 本行"整体重复才丢弃, 所以连续重复会收敛到最多两条。
+        # 样板不该白占 token, 也不该让"内容没变"的页面被判成有变化。
+        _url, text = run._fetch_pricing_text({
+            "pricing_url": "https://example.com/pricing"})
+        self.assertLess(text.count("导航"), 4)
+        self.assertIn("$5 per 1M tokens", text)
+
+    @patch.object(run, "fetch",
+                  return_value="price 0.04\nprice 0.04\nprice 0.04")
+    def test_repeated_lines_with_numbers_are_always_kept(self, _fetch):
+        # 含数字的行可能是不同产品的同一价格, 绝不能合并。
+        _url, text = run._fetch_pricing_text({
+            "pricing_url": "https://example.com/pricing"})
+        self.assertEqual(text.count("price 0.04"), 3)
+
+
 class FetchGenerationTextTests(unittest.TestCase):
     @patch.object(run, "fetch", side_effect=["model specs", "pricing facts"])
     def test_combines_multiple_image_generation_sources(self, fetch):

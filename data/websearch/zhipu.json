@@ -10,42 +10,53 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Web Search API",
-   "pricing": "search_std 0.01 元/次；search_pro 0.03 元/次；search_pro_sogou 0.05 元/次；search_pro_quark 0.05 元/次",
+   "name": "search_std",
+   "pricing": "0.01 元/次",
    "price_per_1k_usd": null,
-   "price_basis": "PAYG，按次计费（官网报价单位为元/次，非美元）",
+   "price_basis": "Web Search API 搜索引擎，search_std 基础版按次计费（人民币计价，官网未给出美元价）",
    "free_quota": null,
-   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "返回结果条数范围1-50，默认10；可指定域名、时间范围、摘要字数（content_size）。"
-  },
-  {
-   "name": "Web Search in Chat（对话中的网络搜索）",
-   "pricing": null,
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "带引用答案：将搜索结果融入大模型生成回答并标注网页结果来源",
+   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标）",
    "cites_sources": true,
    "default_on": null,
-   "note": "Completions API 通过 tools 参数开启 web_search，示例使用 search_pro 引擎。"
+   "note": "基础版（智谱自研）：满足日常查询需求，性价比极高；count 范围 1-50、默认 10，支持域名/时间范围过滤与摘要字数控制"
   },
   {
-   "name": "Search Agent（搜索智能体）",
-   "pricing": null,
+   "name": "search_pro",
+   "pricing": "0.03 元/次",
    "price_per_1k_usd": null,
-   "price_basis": null,
+   "price_basis": "Web Search API 搜索引擎，search_pro 高级版按次计费（人民币计价，官网未给出美元价）",
    "free_quota": null,
-   "output_type": "根据搜索意图拆解 query，综合网页内容生成模型回答",
-   "cites_sources": null,
+   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标）",
+   "cites_sources": true,
    "default_on": null,
-   "note": null
+   "note": "高级版（智谱自研）：多引擎协作显著降低空结果率，召回率和准确率大幅提升"
+  },
+  {
+   "name": "search_pro_sogou",
+   "pricing": "0.05 元/次",
+   "price_per_1k_usd": null,
+   "price_basis": "Web Search API 搜索引擎，search_pro_sogou（搜狗）按次计费（人民币计价，官网未给出美元价）",
+   "free_quota": null,
+   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标）",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "搜狗：覆盖腾讯生态（新闻/企鹅号）和知乎内容，在百科、医疗等垂直领域权威性强"
+  },
+  {
+   "name": "search_pro_quark",
+   "pricing": "0.05 元/次",
+   "price_per_1k_usd": null,
+   "price_basis": "Web Search API 搜索引擎，search_pro_quark（夸克）按次计费（人民币计价，官网未给出美元价）",
+   "free_quota": null,
+   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标）",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "夸克：精准触达垂直内容"
   }
  ],
- "fetched_at": "2026-09-21T01:13:57Z",
+ "fetched_at": "2026-09-21T01:41:51Z",
  "status_note": null,
  "last_error": "官网页未解析出联网搜索信息，已保留上次 6 条",
- "last_fetch_ts": "2026-09-21T01:13:57Z",
+ "last_fetch_ts": "2026-09-21T01:41:51Z",
  "websearch_hash": "964c4679984ed72c2d621c80c3ed93edb0a38356befb67c213aa2960548bea30"
 }

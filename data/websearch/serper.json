@@ -11,19 +11,19 @@
  "offerings": [
   {
    "name": "Google Search API (SERP API)",
-   "pricing": "Starter $50 / 50k credits ($1.00/1k); Standard $375 / 500k credits ($0.75/1k); Scale $1250 / 2.5M credits ($0.50/1k); Ultimate $3750 / 12.5M credits ($0.30/1k)",
+   "pricing": "Starter $50 / 50k credits ($1.00/1k); Standard $375 / 500k credits ($0.75/1k); Scale $1250 / 2.5M credits ($0.50/1k); Ultimate $3750 / 12.5M credits ($0.30/1k). Top-up model, no monthly subscriptions; 价格不含销售税/VAT/GST。",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Starter（最低公开档，$1.00/千次查询）",
-   "free_quota": "Get 2,500 free queries (No credit card required)",
-   "output_type": "结构化搜索结果 JSON（organic/results 等）",
+   "price_basis": "Starter（50,000 credits，$1.00/1k）；量级越大单价越低，最低 $0.30/1k",
+   "free_quota": "Get 2,500 free queries / Try 2,500 queries for free。No credit card required",
+   "output_type": "结构化 Google SERP 结果（Search / Images / News / Maps / Places / Videos / Shopping / Scholar / Patents / Autocomplete 等 JSON 输出）",
    "cites_sources": true,
    "default_on": null,
-   "note": "响应 1-2 秒，实时查询 Google 不缓存；可自定义国家/语言； welche支持 Search/Images/News/Maps/Places/Videos/Shopping/Scholar/Patents/Autocomplete；credits 有效期 6 个月；QPS 各档 50-300；价格不含税。"
+   "note": "每次成功响应扣 1 credit，credit 有效期 6 个月；速率 50–300 queries per second；实时查询不缓存，1–2 秒返回；7 天内且用量未超 20% 可全额退款。"
   }
  ],
- "fetched_at": "2026-09-21T01:17:02Z",
+ "fetched_at": "2026-09-21T01:43:44Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-21T01:17:02Z",
- "websearch_hash": "b99cc57e7bd09758cd7674b862706f893d7f2b7fa069569caa7a9828c99fca83"
+ "last_fetch_ts": "2026-09-21T01:43:44Z",
+ "websearch_hash": "31a5dc60bf59e26bfe4b93cae5091ae019dac4cf9a1cc3bc4873a3ecd784f2d9"
 }

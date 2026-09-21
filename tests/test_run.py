@@ -215,6 +215,53 @@ class FetchGenerationTextTests(unittest.TestCase):
         self.assertEqual(run._generation_source_excerpt(text, 220_000),
                          run.LIFECYCLE_EXCERPT_OVERFLOW)
 
+    def test_price_budget_compresses_instead_of_dumping_the_page(self):
+        rows = [f"model-{i:04d} price ${i}.99 per image resolution 1024x1024 "
+                + "filler " * 60 for i in range(400)]
+        text = "".join(rows)
+        self.assertGreater(len(text), 150_000)
+        excerpt = run._generation_source_excerpt(text, 30_000)
+        self.assertLess(len(excerpt), 45_000)
+        self.assertIn("per image", excerpt)
+
+    def test_lifecycle_evidence_survives_a_small_price_budget(self):
+        rows = [f"MODEL-{i:04d} deprecated sunset 2026-09-30 " + "x" * 600
+                for i in range(200)]
+        excerpt = run._generation_source_excerpt("".join(rows), 8_000)
+        self.assertNotIn(run.LIFECYCLE_EXCERPT_OVERFLOW, excerpt)
+        self.assertIn("MODEL-0000", excerpt)
+        self.assertIn("MODEL-0199", excerpt)
+
+    def test_lifecycle_cap_does_not_shrink_with_the_price_budget(self):
+        # 预算变小不应让更多页面被判成"生命周期证据过多"而拒绝抽取。
+        text = "".join(f"deprecated MODEL-{i:05d} EOL 2026-09-30 " + "x" * 200
+                       for i in range(900))
+        self.assertNotEqual(run._generation_source_excerpt(text, 8_000),
+                            run.LIFECYCLE_EXCERPT_OVERFLOW)
+
+    @patch.object(run, "fetch",
+                  return_value=("price $0.10 per image " + "x" * 500) * 160)
+    def test_evidence_budget_is_shared_across_sources_by_size(self, _fetch):
+        cfg = {"id": "example", "name": "Example",
+               "imagegen_urls": ["https://o.example/a", "https://o.example/b"]}
+        with patch.object(run, "GENERATION_EVIDENCE_BUDGET", 20_000):
+            _url, text, warnings, _hash = run._fetch_imagegen_text(cfg)
+        self.assertEqual(warnings, [])
+        self.assertGreater(len(text), 8_000)
+        self.assertLess(len(text), 30_000)
+
+    @patch.object(run, "fetch", return_value="price $0.10 per image " + "x" * 300)
+    def test_pages_within_budget_are_sent_untouched(self, _fetch):
+        # 多来源但总量在预算内: 一个字都不能动, 否则会误丢价格行。
+        cfg = {"id": "example", "name": "Example",
+               "imagegen_urls": ["https://o.example/a", "https://o.example/b",
+                                 "https://o.example/c"]}
+        with patch.object(run, "GENERATION_EVIDENCE_BUDGET", 5_000):
+            _url, text, warnings, _hash = run._fetch_imagegen_text(cfg)
+        self.assertEqual(warnings, [])
+        self.assertNotIn("本来源证据窗口", text)
+        self.assertEqual(text.count("price $0.10 per image"), 3)
+
     @patch.object(run, "fetch")
     def test_long_first_source_cannot_hide_later_official_pages(self, fetch):
         first = "FIRST_HEAD" + ("x" * 249_980) + "FIRST_TAIL"

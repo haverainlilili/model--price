@@ -160,6 +160,40 @@ def _extra_headers() -> dict:
     return headers
 
 
+# --- 用量计量: 每次优化的前后对比都要有真实数字, 而不是靠估 ----------------
+_USAGE: dict[str, dict[str, int]] = {}
+
+
+def reset_usage() -> None:
+    """开始新一轮统计。"""
+    _USAGE.clear()
+
+
+def record_usage(label: str, input_chars: int, output_chars: int) -> None:
+    bucket = _USAGE.setdefault(
+        label, {"calls": 0, "input_chars": 0, "output_chars": 0})
+    bucket["calls"] += 1
+    bucket["input_chars"] += input_chars
+    bucket["output_chars"] += output_chars
+
+
+def usage_summary() -> str:
+    """本轮按类型汇总的模型用量(字符数; 中英混排约 2.5~3.5 字符/token)。"""
+    if not _USAGE:
+        return "[计量] 本轮未调用模型"
+    calls = sum(b["calls"] for b in _USAGE.values())
+    total_in = sum(b["input_chars"] for b in _USAGE.values())
+    total_out = sum(b["output_chars"] for b in _USAGE.values())
+    lines = [f"[计量] 模型调用 {calls} 次, 输入 {total_in} 字符, 输出 {total_out} 字符"]
+    for label in sorted(_USAGE):
+        bucket = _USAGE[label]
+        lines.append(
+            f"  {label:<10} {bucket['calls']:>3} 次  "
+            f"输入 {bucket['input_chars']:>9} 字符  "
+            f"输出 {bucket['output_chars']:>8} 字符")
+    return "\n".join(lines)
+
+
 def _client() -> openai.OpenAI:
     kwargs = {"timeout": 240.0}
     base = (os.environ.get("OPENAI_BASE_URL") or "").strip()
@@ -183,24 +217,36 @@ def _loads_json(text: str):
     raise ValueError("输出中找不到 JSON 对象")
 
 
-def _create(client: openai.OpenAI, messages: list):
+def _call(client: openai.OpenAI, messages: list, label: str, **kwargs):
+    """唯一的出站调用入口, 顺带累计用量。"""
+    response = client.chat.completions.create(
+        model=MODEL, messages=messages, **kwargs)
+    content = ""
+    try:
+        content = response.choices[0].message.content or ""
+    except (AttributeError, IndexError, TypeError):
+        pass
+    record_usage(label,
+                 sum(len(str(m.get("content") or "")) for m in messages),
+                 len(content))
+    return response
+
+
+def _create(client: openai.OpenAI, messages: list, label: str = "unknown"):
     global _MINIMAL_PARAMS
     try:
         if _MINIMAL_PARAMS:
-            return client.chat.completions.create(model=MODEL, messages=messages)
-        return client.chat.completions.create(
-            model=MODEL,
-            messages=messages,
-            response_format={"type": "json_object"},
-            max_completion_tokens=MAX_OUTPUT_TOKENS,
-        )
+            return _call(client, messages, label)
+        return _call(client, messages, label,
+                     response_format={"type": "json_object"},
+                     max_completion_tokens=MAX_OUTPUT_TOKENS)
     except openai.BadRequestError:
         # 端点不认 response_format / max_completion_tokens: 降级为最小参数集
         if _MINIMAL_PARAMS:
             raise ExtractionError("请求被拒绝(400), 检查 OPENAI_MODEL 是否为该端点支持的模型") from None
         _MINIMAL_PARAMS = True
         try:
-            return client.chat.completions.create(model=MODEL, messages=messages)
+            return _call(client, messages, label)
         except Exception as exc:
             raise ExtractionError(f"请求被拒绝(400): {exc}") from exc
     except openai.RateLimitError as exc:
@@ -218,7 +264,7 @@ def _create(client: openai.OpenAI, messages: list):
 
 
 def _parse(client: openai.OpenAI, system: str, user_text: str,
-           output_type: type[BaseModel]) -> BaseModel:
+           output_type: type[BaseModel], label: str = "unknown") -> BaseModel:
     schema = json.dumps(output_type.model_json_schema(), ensure_ascii=False)
     messages = [
         {"role": "system", "content":
@@ -228,7 +274,7 @@ def _parse(client: openai.OpenAI, system: str, user_text: str,
     ]
     last_err: Exception = ValueError("no output")
     for _ in range(2):
-        resp = _create(client, messages)
+        resp = _create(client, messages, label)
         text = (resp.choices[0].message.content or "").strip()
         try:
             return output_type.model_validate(_loads_json(text))
@@ -254,7 +300,7 @@ def extract_pricing(provider: str, url: str, page_text: str) -> PricingPage:
     """抽取一个厂商价格页。失败抛 ExtractionError。"""
     client = _client()
     user_text = _page_text_header(provider, url, page_text) + "\n请抽取价格表。"
-    parsed = _parse(client, PRICING_SYSTEM, user_text, PricingPage)
+    parsed = _parse(client, PRICING_SYSTEM, user_text, PricingPage, "pricing")
     # 清洗明显异常的行: 空名, 或输入输出都没价(通常是表头/误识别)
     parsed.models = [
         m for m in parsed.models
@@ -268,14 +314,14 @@ def extract_news(provider: str, url: str, page_text: str) -> NewsPage:
     """抽取一个厂商公告页。失败抛 ExtractionError。"""
     client = _client()
     user_text = _page_text_header(provider, url, page_text) + "\n请抽取公告条目。"
-    return _parse(client, NEWS_SYSTEM, user_text, NewsPage)
+    return _parse(client, NEWS_SYSTEM, user_text, NewsPage, "news")
 
 
 def extract_plans(provider: str, url: str, page_text: str) -> PlansPage:
     """抽取官网明示价格与额度的套餐，失败抛 ExtractionError。"""
     client = _client()
     user_text = _page_text_header(provider, url, page_text) + "\n请抽取套餐与额度。"
-    parsed = _parse(client, PLANS_SYSTEM, user_text, PlansPage)
+    parsed = _parse(client, PLANS_SYSTEM, user_text, PlansPage, "plans")
     parsed.plans = [p for p in parsed.plans if p.name.strip() and p.quotas]
     return parsed
 
@@ -284,7 +330,7 @@ def extract_websearch(provider: str, url: str, page_text: str) -> WebSearchPage:
     """抽取官网联网搜索能力与定价的客观事实，失败抛 ExtractionError。"""
     client = _client()
     user_text = _page_text_header(provider, url, page_text) + "\n请抽取联网搜索能力与定价。"
-    parsed = _parse(client, WEBSEARCH_SYSTEM, user_text, WebSearchPage)
+    parsed = _parse(client, WEBSEARCH_SYSTEM, user_text, WebSearchPage, "websearch")
     parsed.offerings = [o for o in parsed.offerings if o.name and o.name.strip()]
     return parsed
 
@@ -293,7 +339,7 @@ def extract_imagegen(provider: str, url: str, page_text: str) -> ImageGeneration
     """抽取官网生图能力、规格与可比价格，失败抛 ExtractionError。"""
     client = _client()
     user_text = _page_text_header(provider, url, page_text) + "\n请抽取生图 API 事实。"
-    parsed = _parse(client, IMAGEGEN_SYSTEM, user_text, ImageGenerationPage)
+    parsed = _parse(client, IMAGEGEN_SYSTEM, user_text, ImageGenerationPage, "imagegen")
     parsed.offerings = [o for o in parsed.offerings if o.name and o.name.strip()]
     return parsed
 
@@ -302,6 +348,6 @@ def extract_videogen(provider: str, url: str, page_text: str) -> VideoGeneration
     """抽取官网生视频能力、规格与可比价格，失败抛 ExtractionError。"""
     client = _client()
     user_text = _page_text_header(provider, url, page_text) + "\n请抽取生视频 API 事实。"
-    parsed = _parse(client, VIDEOGEN_SYSTEM, user_text, VideoGenerationPage)
+    parsed = _parse(client, VIDEOGEN_SYSTEM, user_text, VideoGenerationPage, "videogen")
     parsed.offerings = [o for o in parsed.offerings if o.name and o.name.strip()]
     return parsed

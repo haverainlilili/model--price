@@ -30,7 +30,11 @@ PROVIDERS_YAML = Path(__file__).resolve().parent.parent / "providers.yaml"
 WEBSEARCH_YAML = Path(__file__).resolve().parent.parent / "websearch.yaml"
 IMAGEGEN_YAML = Path(__file__).resolve().parent.parent / "imagegen.yaml"
 VIDEOGEN_YAML = Path(__file__).resolve().parent.parent / "videogen.yaml"
-GENERATION_TEXT_BUDGET = 220_000
+# 送进模型的证据预算(字符), 按"去重后的体积"判断: 只有超过才抽样。
+# 抽样会丢价格行(coverage_probe.py 实测), 所以默认 220k = 与改造前一致,
+# 只额外做无损去重; 想更省 token 可调小, 但要用探针确认覆盖率没有下降。
+GENERATION_EVIDENCE_BUDGET = int(
+    os.environ.get("GENERATION_EVIDENCE_BUDGET") or 220_000)
 GENERATION_FETCH_MAX_CHARS = None  # hash complete cleaned source; bound only the LLM excerpt
 GENERATION_RETRY_COOLDOWN_HOURS = 6
 
@@ -294,9 +298,46 @@ def _fetch_websearch_text(cfg: dict) -> tuple[str, str]:
 
 LIFECYCLE_EXCERPT_OVERFLOW = "[生命周期证据过多，拒绝不完整抽取]"
 
+# 生命周期(停用/下线)证据必须完整送给模型: 它决定产品是否还在售, 截断会导致
+# 错误结论。超过这个量就明确拒绝本轮抽取, 而不是静默采样。
+# 该阈值与价格证据预算解耦, 因此调小预算不会让更多页面被拒绝。
+LIFECYCLE_EVIDENCE_MAX = 180_000
+
+
+_FACT_BEARING_LINE = re.compile(r"\d")
+
+
+def _dedupe_repeated_lines(text: str) -> str:
+    """丢掉重复样板块(导航/页脚/重复区块), 但保留不同上下文里的相同行。
+
+    只有"上一行 + 本行"整体重复时才丢弃: 同一个价格行出现在不同产品下面
+    属于不同事实(例如两行 "$0.04 per image" 分属两个模型), 不能合并。
+    重复块不携带新事实, 却会挤满关键词命中位置, 让抽样把预算浪费在样板
+    而不是不同的价格行上。
+    """
+    seen = set()
+    kept = []
+    previous = ""
+    for line in text.split("\n"):
+        stripped = line.strip()
+        # 含数字的行一律保留: 价格/规格/额度一定带数字, 宁可少省也不能丢事实。
+        if stripped and not _FACT_BEARING_LINE.search(stripped):
+            key = (previous, stripped)
+            if key in seen:
+                continue
+            seen.add(key)
+        kept.append(line)
+        previous = stripped
+    return "\n".join(kept)
+
 
 def _generation_source_excerpt(text: str, limit: int) -> str:
-    """Keep all lifecycle snippets when bounded, then sample price/spec evidence."""
+    """保留全部生命周期证据, 再按 limit 采样价格/规格证据窗口。
+
+    limit 只约束价格/规格证据部分: 真实官网页面常在 2 万~16 万字符,
+    全量发送会让单次输入达到数万 token。先做去重, 仍超预算才抽样。
+    """
+    text = _dedupe_repeated_lines(text)
     if len(text) <= limit:
         return text
     lifecycle_pattern = re.compile(
@@ -317,12 +358,12 @@ def _generation_source_excerpt(text: str, limit: int) -> str:
         re.sub(r"\s+", " ", text[left:right]).strip()
         for left, right in lifecycle_intervals]
     lifecycle_text = "\n".join(snippet for snippet in lifecycle_snippets if snippet)
-    head_budget = limit // 20
-    tail_budget = limit // 20
-    evidence_budget = limit - head_budget - tail_budget - 160
-    if len(lifecycle_text) > int(evidence_budget * 0.92):
+    if len(lifecycle_text) > LIFECYCLE_EVIDENCE_MAX:
         return LIFECYCLE_EXCERPT_OVERFLOW
-    general_budget = evidence_budget - len(lifecycle_text)
+    head_budget = max(400, limit // 20)
+    tail_budget = max(400, limit // 20)
+    general_budget = max(
+        0, limit - len(lifecycle_text) - head_budget - tail_budget - 160)
     positions = []
     for match in general_pattern.finditer(text):
         position = match.start()
@@ -345,9 +386,11 @@ def _generation_source_excerpt(text: str, limit: int) -> str:
     evidence_text += general_text
     if not evidence_text:
         middle = len(text) // 2
-        evidence_text = text[middle - evidence_budget // 2:middle + evidence_budget // 2]
+        span = max(1, general_budget)
+        evidence_text = text[middle - span // 2:middle + span // 2]
+    # 整体不再按 limit 截断: 生命周期证据必须完整, 价格部分已各自受限。
     return (text[:head_budget] + "\n… [本来源证据窗口] …\n" + evidence_text
-            + "\n… [本来源尾部] …\n" + text[-tail_budget:])[:limit]
+            + "\n… [本来源尾部] …\n" + text[-tail_budget:])
 
 
 def _fetch_generation_text(cfg: dict, key: str) -> tuple[str, str, list[str]]:
@@ -360,7 +403,7 @@ def _fetch_generation_text(cfg: dict, key: str) -> tuple[str, str, list[str]]:
     texts = []
     warnings = []
     fingerprint_parts = []
-    per_source_budget = max(1, GENERATION_TEXT_BUDGET // len(urls))
+    fetched: list[tuple[str, str]] = []
     for index, url in enumerate(urls):
         try:
             final_url_validator = lambda final_url: _official_generation_url_allowed(
@@ -379,7 +422,22 @@ def _fetch_generation_text(cfg: dict, key: str) -> tuple[str, str, list[str]]:
             warnings.append(f"{url}: {exc}")
             continue
         fingerprint_parts.append(f"{url}\0{body}")
-        excerpt = _generation_source_excerpt(body, per_source_budget)
+        fetched.append((url, body))
+    # 先做无损去重, 再拿"去重后的体积"判断预算: 否则页脚/导航的重复样板
+    # 会把体积顶过预算, 让本来装得下的页面也被抽样, 白白丢证据。
+    prepared = [(url, _dedupe_repeated_lines(body))
+                for url, body in fetched]
+    total_chars = sum(len(body) for _url, body in prepared)
+    for url, body in prepared:
+        if total_chars <= GENERATION_EVIDENCE_BUDGET:
+            # 去重后仍在预算内: 不抽样, 不存在丢证据的风险。
+            excerpt = body
+        else:
+            # 按来源体量分配预算, 而不是按来源数量平分:
+            # 否则多来源厂商的短页面也会被误砍, 丢掉价格行。
+            share = max(1, int(GENERATION_EVIDENCE_BUDGET
+                               * len(body) / total_chars))
+            excerpt = _generation_source_excerpt(body, share)
         texts.append(f"===== 官网媒体生成页: {url} =====\n{excerpt}")
     complete_hash = _sha("\0\0".join(fingerprint_parts))
     return urls[0], "\n\n".join(texts), warnings, complete_hash
@@ -1063,6 +1121,7 @@ def main(argv=None) -> int:
     ap.add_argument("--only", help="只处理指定 provider id (调试用)")
     args = ap.parse_args(argv)
 
+    extract.reset_usage()
     providers = load_providers()
     websearch_providers = load_websearch_providers()
     imagegen_providers = load_imagegen_providers()
@@ -1112,6 +1171,8 @@ def main(argv=None) -> int:
                     extracted += int(processor(cfg))
                 except Exception as exc:
                     print(f"[{cfg['id']}/{key}] 处理出错: {exc}", file=sys.stderr)
+
+        print(extract.usage_summary())
 
         from .fx import update_fx
         meta = history.load_meta()

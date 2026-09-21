@@ -5,7 +5,8 @@
 """
 import os
 import unittest
-from unittest.mock import patch
+from types import SimpleNamespace
+from unittest.mock import MagicMock, patch
 
 from scraper import extract
 
@@ -65,6 +66,52 @@ class ClientHeaderWiringTests(unittest.TestCase):
         self.assertEqual(client.call_args.kwargs["timeout"], 240.0)
         self.assertEqual(client.call_args.kwargs["base_url"],
                          "https://gw.example/v1")
+
+
+class UsageMeteringTests(unittest.TestCase):
+    """每次调用都记账, 优化前后的 token 对比才有真实依据。"""
+
+    def setUp(self):
+        extract.reset_usage()
+
+    def tearDown(self):
+        extract.reset_usage()
+
+    def test_summary_reports_no_calls_when_idle(self):
+        self.assertEqual(extract.usage_summary(), "[计量] 本轮未调用模型")
+
+    def test_summary_aggregates_per_label(self):
+        extract.record_usage("pricing", 1_000, 200)
+        extract.record_usage("pricing", 500, 100)
+        extract.record_usage("imagegen", 20_000, 900)
+        summary = extract.usage_summary()
+        self.assertIn("模型调用 3 次", summary)
+        self.assertIn("输入 21500 字符", summary)
+        self.assertIn("输出 1200 字符", summary)
+        self.assertIn("imagegen", summary)
+
+    def test_call_records_input_and_output_sizes(self):
+        response = SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(content="{}"))])
+        client = MagicMock()
+        client.chat.completions.create.return_value = response
+        extract._call(client, [{"role": "user", "content": "12345"}], "plans")
+        summary = extract.usage_summary()
+        self.assertIn("plans", summary)
+        self.assertIn("输入 5 字符", summary)
+
+    def test_reset_usage_clears_previous_totals(self):
+        extract.record_usage("news", 10, 1)
+        extract.reset_usage()
+        self.assertEqual(extract.usage_summary(), "[计量] 本轮未调用模型")
+
+    def test_call_survives_response_without_content(self):
+        response = SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(content=None))])
+        client = MagicMock()
+        client.chat.completions.create.return_value = response
+        extract._call(client, [{"role": "user", "content": "x"}], "news")
+        self.assertIn("输出 0 字符", extract.usage_summary())
 
 
 if __name__ == "__main__":

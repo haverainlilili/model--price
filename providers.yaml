@@ -127,3 +127,12 @@ providers:
     official_news_url: https://www.minimaxi.com/news
     plan_url: https://platform.minimaxi.com/subscribe/token-plan
     plan_render: true
+  - id: mimo
+    name: Xiaomi MiMo
+    name_cn: 小米 MiMo
+    region: 国内
+    # docs 源对爬虫友好, 页面直接给出人民币与美元两套价格表;
+    # 同一路径的 .md 变体不含价格, 因此用 HTML 版本。
+    pricing_url: https://mimo.mi.com/docs/zh-CN/price/pay-as-you-go
+    news_url: https://mimo.mi.com/docs/zh-CN/news/previous-news/billing
+    official_news_url: https://mimo.mi.com/

@@ -2,9 +2,9 @@
  "plans": [
   {
    "name": "Plus",
-   "plan_type": "Token Plan（订阅套餐）",
-   "price": "￥490 / 每年，按年订阅（连续包年，原价￥588，立省￥98）；对比表标注 ¥49 / 月",
-   "billing": "每年，按年订阅（连续包年）；另有连续包月选项",
+   "plan_type": "Token Plan（连续包年订阅）",
+   "price": "￥490/年（原价￥588，立省￥98；对比表标注 ¥49/月）",
+   "billing": "连续包年，按年订阅",
    "quotas": [
     {
      "label": "M3 用量",
@@ -12,40 +12,35 @@
      "window": "每月"
     },
     {
-     "label": "日常编程调用",
+     "label": "日常编程调用（按 M3 单次 ~50K token 估算）",
      "value": "约 12,000 次",
      "window": "月度"
     },
     {
-     "label": "M2.7 调用(参考)",
+     "label": "M2.7 调用（参考，与 M3 共用配额）",
      "value": "1,500 次",
      "window": "5 小时"
     },
     {
-     "label": "M2.7-highspeed 调用(参考)",
+     "label": "M2.7-highspeed 调用（参考，与 M3 共用配额）",
      "value": "750 次",
      "window": "5 小时"
-    },
-    {
-     "label": "OpenClaw Agent 并发",
-     "value": "3-4 个",
-     "window": null
     }
    ],
    "models": [
     "MiniMax M3",
     "MiniMax M2.7",
-    "图像模型",
-    "语音模型"
+    "图像",
+    "语音"
    ],
-   "note": "编程调用次数为官网按 M3 单次 ~50K token 的月度估算口径；M2.7 调用次数为与 M3 共用配额、5 小时窗口仅调用 M2.7 时的估算量；套餐内额度受 5 小时固定窗口和周窗口控制，未用完不结转；文本/图像/语音共享同一额度；支持 Hailuo2.3 视频生成 ×；支持 1M 长上下文",
+   "note": "全模态共享同一额度；约支持 3-4 个 Agent 并发；1M 长上下文；额度受 5 小时固定窗口和周窗口控制，不结转；编程调用次数为官网按 M3 单次 ~50K token 的估算口径。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
    "name": "Max",
-   "plan_type": "Token Plan（订阅套餐）",
-   "price": "￥1,190 / 每年，按年订阅（原价￥1,490）；对比表标注 ¥119 / 月",
-   "billing": "每年，按年订阅（连续包年）；另有连续包月选项",
+   "plan_type": "Token Plan（连续包年订阅）",
+   "price": "￥1,190/年（原价￥1,490；对比表标注 ¥119/月）",
+   "billing": "连续包年，按年订阅",
    "quotas": [
     {
      "label": "M3 用量",
@@ -53,46 +48,41 @@
      "window": "每月"
     },
     {
-     "label": "日常编程调用",
+     "label": "日常编程调用（按 M3 单次 ~50K token 估算）",
      "value": "约 36,000 次",
      "window": "月度"
     },
     {
-     "label": "M2.7 调用(参考)",
+     "label": "M2.7 调用（参考，与 M3 共用配额）",
      "value": "4,500 次",
      "window": "5 小时"
     },
     {
-     "label": "M2.7-highspeed 调用(参考)",
+     "label": "M2.7-highspeed 调用（参考，与 M3 共用配额）",
      "value": "2,250 次",
      "window": "5 小时"
     },
     {
-     "label": "OpenClaw Agent 并发",
-     "value": "4-5 个",
-     "window": null
-    },
-    {
      "label": "Hailuo2.3 视频生成",
-     "value": "3 条 / 日",
+     "value": "3 条",
      "window": "每日"
     }
    ],
    "models": [
     "MiniMax M3",
     "MiniMax M2.7",
-    "图像模型",
-    "语音模型",
-    "Hailuo2.3（视频生成）"
+    "图像",
+    "语音",
+    "Hailuo2.3 视频生成"
    ],
-   "note": "编程调用次数为官网按 M3 单次 ~50K token 的月度估算口径；M2.7 调用次数为与 M3 共用配额、5 小时窗口仅调用 M2.7 时的估算量；套餐内额度受 5 小时固定窗口和周窗口控制，未用完不结转；文本/图像/语音共享同一额度；支持 1M 长上下文",
+   "note": "全模态共享同一额度；约支持 4-5 个 Agent 并发；1M 长上下文；编程调用次数为官网估算口径；M2.7 调用次数为仅调用该模型时的估算量。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
    "name": "Ultra",
-   "plan_type": "Token Plan（订阅套餐）",
-   "price": "￥4,690 / 每年，按年订阅（原价￥5,628，立省￥938）；对比表标注 ¥469 / 月",
-   "billing": "每年，按年订阅（连续包年）；另有连续包月选项",
+   "plan_type": "Token Plan（连续包年订阅）",
+   "price": "￥4,690/年（原价￥5,628，立省￥938；对比表标注 ¥469/月）",
+   "billing": "连续包年，按年订阅",
    "quotas": [
     {
      "label": "M3 用量",
@@ -100,43 +90,38 @@
      "window": "每月"
     },
     {
-     "label": "日常编程调用",
+     "label": "日常编程调用（按 M3 单次 ~50K token 估算）",
      "value": "约 140,000 次",
      "window": "月度"
     },
     {
-     "label": "M2.7 调用(参考)",
+     "label": "M2.7 调用（参考，与 M3 共用配额）",
      "value": "15,000 次",
      "window": "5 小时"
     },
     {
-     "label": "M2.7-highspeed 调用(参考)",
+     "label": "M2.7-highspeed 调用（参考，与 M3 共用配额）",
      "value": "7,500 次",
      "window": "5 小时"
     },
     {
-     "label": "OpenClaw Agent 并发",
-     "value": "6-7 个",
-     "window": null
-    },
-    {
      "label": "Hailuo2.3 视频生成",
-     "value": "5 条 / 日",
+     "value": "5 条",
      "window": "每日"
     }
    ],
    "models": [
     "MiniMax M3",
     "MiniMax M2.7",
-    "图像模型",
-    "语音模型",
-    "Hailuo2.3（视频生成）"
+    "图像",
+    "语音",
+    "Hailuo2.3 视频生成"
    ],
-   "note": "编程调用次数为官网按 M3 单次 ~50K token 的月度估算口径；M2.7 调用次数为与 M3 共用配额、5 小时窗口仅调用 M2.7 时的估算量；套餐内额度受 5 小时固定窗口和周窗口控制，未用完不结转；文本/图像/语音共享同一额度；支持 1M 长上下文",
+   "note": "全模态共享同一额度；约支持 6-7 个 Agent 并发；1M 长上下文；编程调用次数为官网估算口径。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
-   "name": "入门版（积分购买）",
+   "name": "入门版",
    "plan_type": "积分资源包",
    "price": "¥30",
    "billing": "购买之日起 1 年内有效",
@@ -148,11 +133,11 @@
     }
    ],
    "models": [],
-   "note": "积分为一次性购买资源包，可用于 Token Plan 覆盖范围内用量在套餐额度耗尽后自动补充支付",
+   "note": null,
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
-   "name": "进阶版（积分购买）",
+   "name": "进阶版",
    "plan_type": "积分资源包",
    "price": "¥150",
    "billing": "购买之日起 1 年内有效",
@@ -164,11 +149,11 @@
     }
    ],
    "models": [],
-   "note": "积分为一次性购买资源包，可用于 Token Plan 覆盖范围内用量在套餐额度耗尽后自动补充支付",
+   "note": null,
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
-   "name": "高级版（积分购买）",
+   "name": "高级版",
    "plan_type": "积分资源包",
    "price": "¥500",
    "billing": "购买之日起 1 年内有效",
@@ -180,18 +165,18 @@
     }
    ],
    "models": [],
-   "note": "积分为一次性购买资源包，可用于 Token Plan 覆盖范围内用量在套餐额度耗尽后自动补充支付",
+   "note": null,
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-21T04:10:10Z",
+ "last_fetch_ts": "2026-09-21T06:40:28Z",
  "source": "official",
  "source_urls": [
   "https://platform.minimaxi.com/subscribe/token-plan"
  ],
  "page_has_plans": true,
- "plans_hash": "233d526fe67f9be26bab430f3dcccc5466b2ed035f4188ca9e802e6af50694ae",
- "fetched_at": "2026-09-20T07:29:58Z",
- "status_note": "页面无变化"
+ "plans_hash": "7644c8357a36eca17c7310947881020c3b718816892a8dee37afcf62c9e7a86e",
+ "fetched_at": "2026-09-21T06:40:28Z",
+ "status_note": null
 }

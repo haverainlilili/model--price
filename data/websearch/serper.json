@@ -11,20 +11,19 @@
  "offerings": [
   {
    "name": "Google Search API (SERP API)",
-   "pricing": "Starter $50 / 50k credits ($1.00/1k); Standard $375 / 500k credits ($0.75/1k); Scale $1250 / 2.5M credits ($0.50/1k); Ultimate $3750 / 12.5M credits ($0.30/1k). Top-up model, no monthly subscriptions; 价格不含销售税/VAT/GST。",
+   "pricing": "Top-up model: Starter $50 / 50k credits ($1.00/1k); Standard $375 / 500k credits ($0.75/1k); Scale $1250 / 2.5M credits ($0.50/1k); Ultimate $3750 / 12.5M credits ($0.30/1k)。无月度订阅，按查询扣 credits，credits 有效期 6 个月。",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Starter（50,000 credits，$1.00/1k）；量级越大单价越低，最低 $0.30/1k",
-   "free_quota": "Get 2,500 free queries / Try 2,500 queries for free。No credit card required",
-   "output_type": "结构化 Google SERP 结果（Search / Images / News / Maps / Places / Videos / Shopping / Scholar / Patents / Autocomplete 等 JSON 输出）",
+   "price_basis": "Starter 公开入门档（50k credits，$1.00/1k queries）",
+   "free_quota": "Get 2,500 free queries; No credit card required",
+   "output_type": "结构化搜索结果(JSON: organic/images/news/videos/places/shopping/scholar/patents/autocomplete 等)",
    "cites_sources": true,
    "default_on": null,
-   "note": "每次成功响应扣 1 credit，credit 有效期 6 个月；速率 50–300 queries per second；实时查询不缓存，1–2 秒返回；7 天内且用量未超 20% 可全额退款。"
+   "note": "结果实时、不缓存，1-2 秒返回；支持自定义国家/语言查询位置；QPS 随档位 50→300；定价不含 sales tax/VAT/GST。"
   }
  ],
- "fetched_at": "2026-09-21T01:43:44Z",
- "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-09-21T06:13:33Z",
- "websearch_hash": "edfe2581820a61098ba0ab9905714976e723659db51c3078128a34b8f367ec6b",
- "websearch_retry_after": "2026-09-21T12:13:35Z"
+ "fetched_at": "2026-09-21T06:48:47Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-09-21T06:48:47Z",
+ "websearch_hash": "7706e5907e80181c832184d15409220677cd314f118f53485a3808eaaaaef015"
 }

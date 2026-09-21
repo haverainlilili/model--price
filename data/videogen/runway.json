@@ -59,13 +59,13 @@
   "https://docs.dev.runwayml.com/guides/pricing/",
   "https://docs.dev.runwayml.com/guides/using-models/"
  ],
- "last_fetch_ts": "2026-09-21T06:15:02Z",
+ "last_fetch_ts": "2026-09-21T06:55:03Z",
  "source_warnings": [
   "https://docs.dev.runwayml.com/guides/using-models/: HTTP 404"
  ],
  "videogen_hash": "eca64f3d2046e14b7a30c68cfb7488d1b87aad3b65ca947abce5d8b73635a5dc",
- "status_note": "页面无变化且上次处理未成功，冷却期内暂不重试",
- "last_error": "官网生视频抽取失败: 结构化输出校验失败: 12 validation errors for VideoGenerationPage\nofferings.0\n  Value error, video comparison_group facts are incomplete or inconsistent [type=value_error, input_value={'name': 'wan3', 'variant...ta': None, 'note': None}, input_type=dict]\n    For further information visit https://er",
- "videogen_excerpt_hash": "092c000b7d576f87dd6cc7736c50f8ce516bed5337613a70f08293d28dd3303b",
- "videogen_retry_after": "2026-09-21T06:24:22Z"
+ "status_note": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
+ "last_error": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
+ "videogen_excerpt_hash": "0212591892f89116d320a1aef5aa14649d4c8a4f73d9329c8d77c53987f79b16",
+ "videogen_retry_after": "2026-09-21T13:02:48Z"
 }

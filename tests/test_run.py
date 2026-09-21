@@ -778,6 +778,91 @@ class ProcessWebSearchTests(unittest.TestCase):
     @patch.object(run.extract, "extract_websearch")
     @patch.object(run.extract, "has_api_key", return_value=True)
     @patch.object(run, "_fetch_websearch_text",
+                  return_value=("https://example.com/search", "same search"))
+    @patch.object(run.history, "load_websearch")
+    def test_unchanged_page_in_cooldown_skips_extraction(
+            self, load_websearch, _fetch, _has_key,
+            extract_websearch, save_websearch):
+        # 永久性失败(页面确实没有可用信息)不能每小时都白烧一次调用。
+        load_websearch.return_value = {
+            "offerings": [{"name": "seed"}],
+            "websearch_hash": run._sha("same search"),
+            "last_error": "官网页未解析出联网搜索信息",
+            run.WEBSEARCH_RETRY_FIELD: run._cooldown_until(),
+        }
+
+        run.process_websearch({
+            "id": "example",
+            "name": "Example",
+            "websearch_url": "https://example.com/search",
+        })
+
+        extract_websearch.assert_not_called()
+        self.assertEqual(
+            save_websearch.call_args.args[1]["status_note"],
+            "页面无变化且上次处理未成功，冷却期内暂不重试")
+
+    @patch.object(run.history, "save_websearch")
+    @patch.object(run.extract, "extract_websearch")
+    @patch.object(run.extract, "has_api_key", return_value=True)
+    @patch.object(run, "_fetch_websearch_text",
+                  return_value=("https://example.com/search", "changed search"))
+    @patch.object(run.history, "load_websearch")
+    def test_success_clears_previous_error_and_cooldown(
+            self, load_websearch, _fetch, _has_key,
+            extract_websearch, save_websearch):
+        # 成功后不清错误标记, 下一小时页面没变也会继续重抽。
+        load_websearch.return_value = {
+            "offerings": [{"name": "seed"}],
+            "websearch_hash": run._sha("old search"),
+            "last_error": "old failure",
+            run.WEBSEARCH_RETRY_FIELD: "2000-01-01T00:00:00Z",
+        }
+        extract_websearch.return_value = SimpleNamespace(
+            has_search=True,
+            offerings=[SimpleNamespace(model_dump=lambda: {"name": "Search API"})],
+        )
+
+        run.process_websearch({
+            "id": "example",
+            "name": "Example",
+            "websearch_url": "https://example.com/search",
+        })
+
+        saved = save_websearch.call_args.args[1]
+        self.assertIsNone(saved["last_error"])
+        self.assertNotIn(run.WEBSEARCH_RETRY_FIELD, saved)
+
+    @patch.object(run.history, "save_websearch")
+    @patch.object(run.extract, "extract_websearch")
+    @patch.object(run.extract, "has_api_key", return_value=True)
+    @patch.object(run, "_fetch_websearch_text",
+                  return_value=("https://example.com/search", "changed search"))
+    @patch.object(run.history, "load_websearch")
+    def test_empty_result_sets_cooldown(
+            self, load_websearch, _fetch, _has_key,
+            extract_websearch, save_websearch):
+        load_websearch.return_value = {
+            "offerings": [{"name": "seed"}],
+            "websearch_hash": run._sha("old search"),
+        }
+        extract_websearch.return_value = SimpleNamespace(
+            has_search=True, offerings=[])
+
+        run.process_websearch({
+            "id": "example",
+            "name": "Example",
+            "websearch_url": "https://example.com/search",
+        })
+
+        saved = save_websearch.call_args.args[1]
+        self.assertIn(run.WEBSEARCH_RETRY_FIELD, saved)
+        self.assertIn("未解析出联网搜索信息", saved["last_error"])
+
+    @patch.object(run.history, "save_websearch")
+    @patch.object(run.extract, "extract_websearch")
+    @patch.object(run.extract, "has_api_key", return_value=True)
+    @patch.object(run, "_fetch_websearch_text",
                   return_value=("https://example.com/search", "changed search"))
     @patch.object(run.history, "load_websearch", return_value={})
     def test_saves_comparable_official_search_price(

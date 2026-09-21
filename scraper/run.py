@@ -795,6 +795,9 @@ def process_plans(cfg: dict) -> None:
     print(f"[{pid}/plans] 抽取到 {len(plans)} 个官网套餐")
 
 
+WEBSEARCH_RETRY_FIELD = "websearch_retry_after"
+
+
 def process_websearch(cfg: dict) -> None:
     if not (cfg.get("websearch_url") or cfg.get("websearch_urls")):
         return
@@ -814,18 +817,38 @@ def process_websearch(cfg: dict) -> None:
 
     record["last_fetch_ts"] = now
     page_hash = _sha(text)
-    if (prev.get("websearch_hash") == page_hash
-            and not prev.get("last_error")):
-        record["status_note"] = "页面无变化"
-        history.save_websearch(pid, record)
-        print(f"[{pid}/websearch] 页面无变化, 跳过抽取")
-        return
+    # 页面没变时: 上次成功过就跳过; 上次失败过则等冷却结束再试。
+    # 不能只看 last_error 就无条件重抽 —— 永久性失败(页面确实没有可用信息)
+    # 会因此每小时都白烧一次调用。
+    if prev.get("websearch_hash") == page_hash:
+        if not prev.get("last_error"):
+            record["status_note"] = "页面无变化"
+            history.save_websearch(pid, record)
+            print(f"[{pid}/websearch] 页面无变化, 跳过抽取")
+            return
+        if prev.get(WEBSEARCH_RETRY_FIELD) and prev[WEBSEARCH_RETRY_FIELD] > now:
+            record["status_note"] = "页面无变化且上次处理未成功，冷却期内暂不重试"
+            history.save_websearch(pid, record)
+            print(f"[{pid}/websearch] 页面无变化，冷却期内暂不重试")
+            return
     if not extract.has_api_key():
         record["status_note"] = "等待 OPENAI_API_KEY"
         history.save_websearch(pid, record)
         return
 
-    page = extract.extract_websearch(name, source_url, text)
+    try:
+        page = extract.extract_websearch(name, source_url, text)
+    except Exception as exc:
+        message = f"官网联网搜索抽取失败: {exc}"
+        record.update({
+            "websearch_hash": page_hash,
+            WEBSEARCH_RETRY_FIELD: _cooldown_until(),
+            "status_note": message[:300],
+            "last_error": message[:300],
+        })
+        history.save_websearch(pid, record)
+        print(f"[{pid}/websearch] {message}")
+        return
     offerings = [o.model_dump() for o in page.offerings]
     if not offerings and prev.get("offerings"):
         message = f"官网页未解析出联网搜索信息，已保留上次 {len(prev['offerings'])} 条"
@@ -834,6 +857,7 @@ def process_websearch(cfg: dict) -> None:
             "has_search": page.has_search,
             "status_note": message,
             "last_error": message,
+            WEBSEARCH_RETRY_FIELD: _cooldown_until(),
         })
         history.save_websearch(pid, record)
         print(f"[{pid}/websearch] {message}")
@@ -848,7 +872,10 @@ def process_websearch(cfg: dict) -> None:
         "websearch_hash": page_hash,
         "fetched_at": now,
         "status_note": None,
+        # 成功必须清掉上次的错误与冷却, 否则下一小时页面没变也会继续重抽。
+        "last_error": None,
     })
+    record.pop(WEBSEARCH_RETRY_FIELD, None)
     history.save_websearch(pid, record)
     print(f"[{pid}/websearch] 抽取到 {len(offerings)} 条")
 

@@ -31,10 +31,11 @@ WEBSEARCH_YAML = Path(__file__).resolve().parent.parent / "websearch.yaml"
 IMAGEGEN_YAML = Path(__file__).resolve().parent.parent / "imagegen.yaml"
 VIDEOGEN_YAML = Path(__file__).resolve().parent.parent / "videogen.yaml"
 # 送进模型的证据预算(字符), 按"去重后的体积"判断: 只有超过才抽样。
-# 抽样会丢价格行(coverage_probe.py 实测), 所以默认 220k = 与改造前一致,
-# 只额外做无损去重; 想更省 token 可调小, 但要用探针确认覆盖率没有下降。
+# 抽样会丢价格行(coverage_probe.py 实测: 70k 下 seedance 少 2 个型号、
+# alibaba-wan 少 3 个价格), 所以配了自动升级兜底: 压缩摘录抽出来的条目
+# 比已收录的少时, 会自动用完整正文重抽一次。默认 70k 可省约一半输入。
 GENERATION_EVIDENCE_BUDGET = int(
-    os.environ.get("GENERATION_EVIDENCE_BUDGET") or 220_000)
+    os.environ.get("GENERATION_EVIDENCE_BUDGET") or 70_000)
 GENERATION_FETCH_MAX_CHARS = None  # hash complete cleaned source; bound only the LLM excerpt
 GENERATION_RETRY_COOLDOWN_HOURS = 6
 
@@ -298,6 +299,25 @@ def _fetch_websearch_text(cfg: dict) -> tuple[str, str]:
 
 LIFECYCLE_EXCERPT_OVERFLOW = "[生命周期证据过多，拒绝不完整抽取]"
 
+# 摘录被抽样压缩时留下的标记。抽样只保留证据窗口, 实测会丢价格行,
+# 所以一旦它出现, 结果里"条目变少"就必须先怀疑是压缩造成的。
+EXCERPT_WINDOW_MARKER = "… [本来源证据窗口] …"
+
+
+def _excerpt_was_sampled(text: str) -> bool:
+    return EXCERPT_WINDOW_MARKER in text
+
+
+def _generation_coverage_would_lose(previous: list, candidate: list) -> bool:
+    """候选结果是否比已收录事实"少"(条目数变少或有的条目不见了)。"""
+    if not previous:
+        return False
+    if len(candidate) < len(previous):
+        return True
+    previous_ids = {_generation_offering_identity(item) for item in previous}
+    candidate_ids = {_generation_offering_identity(item) for item in candidate}
+    return not previous_ids.issubset(candidate_ids)
+
 # 生命周期(停用/下线)证据必须完整送给模型: 它决定产品是否还在售, 截断会导致
 # 错误结论。超过这个量就明确拒绝本轮抽取, 而不是静默采样。
 # 该阈值与价格证据预算解耦, 因此调小预算不会让更多页面被拒绝。
@@ -389,7 +409,7 @@ def _generation_source_excerpt(text: str, limit: int) -> str:
         span = max(1, general_budget)
         evidence_text = text[middle - span // 2:middle + span // 2]
     # 整体不再按 limit 截断: 生命周期证据必须完整, 价格部分已各自受限。
-    return (text[:head_budget] + "\n… [本来源证据窗口] …\n" + evidence_text
+    return (text[:head_budget] + f"\n{EXCERPT_WINDOW_MARKER}\n" + evidence_text
             + "\n… [本来源尾部] …\n" + text[-tail_budget:])
 
 
@@ -449,6 +469,29 @@ def _fetch_imagegen_text(cfg: dict) -> tuple[str, str, list[str], str]:
 
 def _fetch_videogen_text(cfg: dict) -> tuple[str, str, list[str], str]:
     return _fetch_generation_text(cfg, "videogen")
+
+
+def _fetch_generation_text_full(cfg: dict, key: str) -> tuple:
+    """升级路径: 临时关掉抽样, 重新取完整正文。
+
+    只在"压缩摘录抽出来的条目比已收录的少"时调用, 用来确认变少是真的
+    还是抽样造成的。会多花一次抓取, 但这种情况很少见。
+    """
+    global GENERATION_EVIDENCE_BUDGET
+    original = GENERATION_EVIDENCE_BUDGET
+    GENERATION_EVIDENCE_BUDGET = 10 ** 9
+    try:
+        return _fetch_generation_text(cfg, key)
+    finally:
+        GENERATION_EVIDENCE_BUDGET = original
+
+
+def _fetch_imagegen_text_full(cfg: dict) -> tuple:
+    return _fetch_generation_text_full(cfg, "imagegen")
+
+
+def _fetch_videogen_text_full(cfg: dict) -> tuple:
+    return _fetch_generation_text_full(cfg, "videogen")
 
 
 def _absolute_news_url(source_url: str, candidate) -> str | None:
@@ -817,6 +860,7 @@ def _process_generation(cfg: dict, key: str) -> bool:
             "load": history.load_imagegen,
             "save": history.save_imagegen,
             "fetch": _fetch_imagegen_text,
+            "fetch_full": _fetch_imagegen_text_full,
             "extract": extract.extract_imagegen,
             "hash": "imagegen_hash",
             "has": "has_image_generation",
@@ -826,6 +870,7 @@ def _process_generation(cfg: dict, key: str) -> bool:
             "load": history.load_videogen,
             "save": history.save_videogen,
             "fetch": _fetch_videogen_text,
+            "fetch_full": _fetch_videogen_text_full,
             "extract": extract.extract_videogen,
             "hash": "videogen_hash",
             "has": "has_video_generation",
@@ -913,6 +958,31 @@ def _process_generation(cfg: dict, key: str) -> bool:
         settings["save"](pid, record)
         print(f"[{pid}/{key}] {message}")
         return True
+
+    # 摘录被抽样压缩过时, "条目变少"可能只是压缩造成的。先用完整正文重抽一次,
+    # 只有完整正文也确认变少, 才继续走"等待下轮同语义确认"那条路。
+    if _excerpt_was_sampled(text) and _generation_coverage_would_lose(
+            prev.get("offerings") or [],
+            [item.model_dump() for item in page.offerings]):
+        full_fetched = None
+        try:
+            full_fetched = settings["fetch_full"](cfg)
+        except FetchError as exc:
+            print(f"[{pid}/{key}] 取完整正文失败, 沿用压缩摘录结果: {exc}",
+                  file=sys.stderr)
+        if full_fetched and not _excerpt_was_sampled(full_fetched[1]):
+            try:
+                upgraded = settings["extract"](
+                    name, source_url, full_fetched[1])
+            except Exception as exc:
+                print(f"[{pid}/{key}] 完整正文重抽失败, 沿用压缩摘录结果: {exc}",
+                      file=sys.stderr)
+            else:
+                page = upgraded
+                text = full_fetched[1]
+                excerpt_hash = _sha(text)
+                print(f"[{pid}/{key}] 压缩摘录疑似丢条目, 已用完整正文重抽")
+
     offerings = [item.model_dump() for item in page.offerings]
     has_value = getattr(page, settings["has"])
     page_healthy = getattr(page, "page_has_relevant_content", True)
@@ -982,12 +1052,8 @@ def _process_generation(cfg: dict, key: str) -> bool:
         settings["save"](pid, record)
         print(f"[{pid}/{key}] {message}")
         return True
-    previous_identities = {
-        _generation_offering_identity(item) for item in previous_offerings}
-    candidate_identities = set(new_identities)
-    coverage_loss = bool(previous_offerings) and (
-        len(offerings) < len(previous_offerings)
-        or not previous_identities.issubset(candidate_identities))
+    coverage_loss = _generation_coverage_would_lose(
+        previous_offerings, offerings)
     lifecycle_change = _generation_lifecycle_changed(previous_offerings, offerings)
     facts_shrink = _generation_facts_shrunk(previous_offerings, offerings)
     product_values = {

@@ -3,12 +3,13 @@
 有些网关靠请求头做路由: 例如 OpenCode Go 要求每次对话带稳定的
 `x-opencode-session`, 缺失时直接返回 MissingSessionID 拒绝服务。
 """
+import json
 import os
 import unittest
 from types import SimpleNamespace
 from unittest.mock import MagicMock, patch
 
-from scraper import extract
+from scraper import extract, models
 
 
 class ExtraHeadersTests(unittest.TestCase):
@@ -66,6 +67,27 @@ class ClientHeaderWiringTests(unittest.TestCase):
         self.assertEqual(client.call_args.kwargs["timeout"], 240.0)
         self.assertEqual(client.call_args.kwargs["base_url"],
                          "https://gw.example/v1")
+
+
+class CompactSchemaTests(unittest.TestCase):
+    """固定开销里 Pydantic 的 title 与属性名重复, 删掉零语义损失。"""
+
+    def test_titles_are_dropped_but_descriptions_kept(self):
+        schema = extract._compact_schema(models.PricingPage)
+        self.assertNotIn('"title"', schema)
+        # description 里带着抽取规则("不能机械换算则 null"等), 不能删
+        self.assertIn("每百万 tokens", schema)
+
+    def test_compact_schema_is_smaller_than_the_raw_one(self):
+        raw = json.dumps(models.PricingPage.model_json_schema(),
+                         ensure_ascii=False)
+        self.assertLess(len(extract._compact_schema(models.PricingPage)),
+                        len(raw))
+
+    def test_compact_schema_stays_valid_json(self):
+        parsed = json.loads(
+            extract._compact_schema(models.VideoGenerationPage))
+        self.assertIn("properties", parsed)
 
 
 class UsageMeteringTests(unittest.TestCase):

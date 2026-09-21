@@ -263,9 +263,27 @@ def _create(client: openai.OpenAI, messages: list, label: str = "unknown"):
         raise ExtractionError(f"{type(exc).__name__}: {exc}") from exc
 
 
+def _compact_schema(output_type: type[BaseModel]) -> str:
+    """Pydantic 生成的 title 与属性名重复, 删掉可省每次调用 300~750 字符。
+
+    description 必须保留: 里面写着"不能机械换算则 null""严格可比组"这类
+    抽取规则, 删了会直接影响事实准确性。只删纯冗余的 title。
+    """
+    def strip(node):
+        if isinstance(node, dict):
+            return {key: strip(value) for key, value in node.items()
+                    if key != "title"}
+        if isinstance(node, list):
+            return [strip(item) for item in node]
+        return node
+
+    return json.dumps(strip(output_type.model_json_schema()),
+                      ensure_ascii=False)
+
+
 def _parse(client: openai.OpenAI, system: str, user_text: str,
            output_type: type[BaseModel], label: str = "unknown") -> BaseModel:
-    schema = json.dumps(output_type.model_json_schema(), ensure_ascii=False)
+    schema = _compact_schema(output_type)
     messages = [
         {"role": "system", "content":
             f"{system}\n\n只输出一个 JSON 对象, 结构必须符合下面的 JSON Schema"

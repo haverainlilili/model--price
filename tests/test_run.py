@@ -262,6 +262,17 @@ class FetchGenerationTextTests(unittest.TestCase):
         self.assertNotIn("本来源证据窗口", text)
         self.assertEqual(text.count("price $0.10 per image"), 3)
 
+    @patch.object(run, "fetch",
+                  return_value=("price $0.10 per image " + "x" * 500) * 160)
+    def test_full_fetch_ignores_the_evidence_budget(self, _fetch):
+        # 升级路径必须真的关掉抽样, 否则用"完整正文重抽"毫无意义。
+        cfg = {"id": "example", "name": "Example",
+               "imagegen_urls": ["https://o.example/a", "https://o.example/b"]}
+        with patch.object(run, "GENERATION_EVIDENCE_BUDGET", 5_000):
+            _url, text, _warnings, _hash = run._fetch_imagegen_text_full(cfg)
+        self.assertNotIn(run.EXCERPT_WINDOW_MARKER, text)
+        self.assertGreater(len(text), 100_000)
+
     @patch.object(run, "fetch")
     def test_long_first_source_cannot_hide_later_official_pages(self, fetch):
         first = "FIRST_HEAD" + ("x" * 249_980) + "FIRST_TAIL"
@@ -852,6 +863,66 @@ class ProcessGenerationTests(unittest.TestCase):
         self.assertEqual(saved["imagegen_hash"], previous["imagegen_hash"])
         self.assertEqual(saved["offerings"], previous["offerings"])
         self.assertIn("安全摘录无变化", saved["last_error"])
+
+    def test_sampled_excerpt_losing_offerings_escalates_to_full_text(self):
+        # 抽样压缩会丢价格行: 一旦条目变少, 必须用完整正文复核, 不能直接当真。
+        stored = [{"name": f"M{i}", "api_available": True} for i in range(5)]
+        previous = {"offerings": stored}
+        sampled = f"head\n{run.EXCERPT_WINDOW_MARKER}\ntail"
+        full = "the complete page text"
+        short_page = SimpleNamespace(
+            has_image_generation=True,
+            offerings=[SimpleNamespace(model_dump=lambda i=i: stored[i])
+                       for i in range(2)],
+        )
+        full_page = SimpleNamespace(
+            has_image_generation=True,
+            offerings=[SimpleNamespace(model_dump=lambda i=i: stored[i])
+                       for i in range(5)],
+        )
+        cfg = {"id": "example", "name": "Example",
+               "imagegen_url": "https://example.com/image"}
+        with patch.object(run.history, "load_imagegen", return_value=previous), \
+                patch.object(run.history, "save_imagegen") as save, \
+                patch.object(run, "_fetch_imagegen_text",
+                             return_value=(cfg["imagegen_url"], sampled, [],
+                                           run._sha(sampled))), \
+                patch.object(run, "_fetch_imagegen_text_full",
+                             return_value=(cfg["imagegen_url"], full, [],
+                                           run._sha(full))), \
+                patch.object(run.extract, "has_api_key", return_value=True), \
+                patch.object(run.extract, "extract_imagegen",
+                             side_effect=[short_page, full_page]) as extract:
+            self.assertTrue(run.process_imagegen(cfg))
+
+        self.assertEqual(extract.call_count, 2)
+        self.assertEqual(extract.call_args.args[2], full)
+        self.assertEqual(save.call_args.args[1]["offerings"], stored)
+
+    def test_unsampled_excerpt_does_not_escalate(self):
+        stored = [{"name": f"M{i}", "api_available": True} for i in range(5)]
+        previous = {"offerings": stored}
+        unsampled = "head tail"  # 无抽样标记 = 没被压缩, 变少就是真的
+        short_page = SimpleNamespace(
+            has_image_generation=True,
+            offerings=[SimpleNamespace(model_dump=lambda i=i: stored[i])
+                       for i in range(2)],
+        )
+        cfg = {"id": "example", "name": "Example",
+               "imagegen_url": "https://example.com/image"}
+        with patch.object(run.history, "load_imagegen", return_value=previous), \
+                patch.object(run.history, "save_imagegen"), \
+                patch.object(run, "_fetch_imagegen_text",
+                             return_value=(cfg["imagegen_url"], unsampled, [],
+                                           run._sha(unsampled))), \
+                patch.object(run, "_fetch_imagegen_text_full") as full_fetch, \
+                patch.object(run.extract, "has_api_key", return_value=True), \
+                patch.object(run.extract, "extract_imagegen",
+                             return_value=short_page) as extract:
+            self.assertTrue(run.process_imagegen(cfg))
+
+        extract.assert_called_once()
+        full_fetch.assert_not_called()
 
     def test_catalog_targets_refresh_without_relabeling_old_fact_provenance(self):
         previous = {"source": "official", "source_url": "https://old.example/",

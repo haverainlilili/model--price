@@ -11,20 +11,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Reader API (s.jina.ai) - Search the web and convert results to LLM-friendly text",
-   "pricing": "按 token 计费；搜索请求 \"Every request costs a fixed number of tokens, starting from 10,000 tokens\"；token 售价 $50 / 1B tokens（0.050/1M tokens，Standard key）或 $500 / 11B tokens（0.045/1M tokens，Premium key）",
+   "name": "Reader API (s.jina.ai) — Search the web and get SERP",
+   "pricing": "API pricing is based on the token usage; \"Every request costs a fixed number of tokens, starting from 10,000 tokens\"；Prototype Development $50 / 0.050 per 1M tokens；Production Deployment $500 / 0.045 per 1M tokens",
    "price_per_1k_usd": 0.5,
-   "price_basis": "PAYG token 包（Standard key，0.050/1M tokens）× 每次搜索固定 10,000 tokens 机械换算；Premium 档 0.045/1M tokens 换算约 $0.45/1k 次；实际消耗可能高于 10,000 tokens 基数",
-   "free_quota": "Every new API key comes with 10M free tokens（Toy Experiment: 10 Million tokens, Non-commercial use only CC-BY-NC）",
-   "output_type": "结构化搜索结果（top five results with URLs and contents，LLM-friendly text/JSON）",
+   "price_basis": "基础档 Prototype Development（10,000 tokens/次 × $0.050/1M tokens 换算）; Premium 档为 $0.45/千次（$0.045/1M tokens）",
+   "free_quota": "Every new API key comes with 10M free tokens（Toy Experiment 10 Million Tokens, Non-commercial use only CC-BY-NC）",
+   "output_type": "结构化搜索结果（top five results with URLs and contents, in clean, LLM-friendly text / JSON entries）",
    "cites_sources": true,
    "default_on": null,
-   "note": "\"Reader will search the web and return the top five results with their URLs and contents\"；速率 100 RPM（免费 key），1000 RPM（Premium）；平均延迟 2.5s；价格模型为 2025 年 5 月 6 日引入的新定价。"
+   "note": "\"Reader will search the web and return the top five results with their URLs and contents\"; RPM: 100 (free key), 1000 (premium key); latency ~2.5s。换算基于固定 10,000 tokens/次起始值。"
   }
  ],
- "fetched_at": "2026-09-20T23:13:06Z",
+ "fetched_at": "2026-09-21T00:15:31Z",
  "status_note": null,
  "last_error": "渲染后页面为空",
- "last_fetch_ts": "2026-09-20T23:13:06Z",
+ "last_fetch_ts": "2026-09-21T00:15:31Z",
  "websearch_hash": "b6f065e3b0e5040a68fad5578bc9f5757b7e1e1d9aa0cb2c0058744ea6485528"
 }

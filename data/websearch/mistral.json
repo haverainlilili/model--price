@@ -1,29 +1,29 @@
 {
  "provider_name": "Mistral",
  "category": "model",
- "source": "seed",
+ "source": "official",
  "seed_verified": false,
  "source_url": "https://docs.mistral.ai/capabilities/web-search/",
  "source_urls": [
   "https://docs.mistral.ai/capabilities/web-search/"
  ],
- "has_search": false,
+ "has_search": true,
  "offerings": [
   {
-   "name": "Mistral Web search",
+   "name": "web-search",
    "pricing": null,
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "模型内置搜索工具",
+   "output_type": "模型内置工具",
    "cites_sources": null,
    "default_on": null,
-   "note": "等待官网自动抓取补全价格与来源字段"
+   "note": "官网能力页返回 404（Page not found），无定价及配置说明可抽取。"
   }
  ],
- "fetched_at": null,
- "status_note": "官网页未解析出联网搜索信息，已保留上次 1 条",
+ "fetched_at": "2026-09-21T00:13:27Z",
+ "status_note": null,
  "last_error": "官网页未解析出联网搜索信息，已保留上次 1 条",
- "last_fetch_ts": "2026-09-20T23:10:57Z",
+ "last_fetch_ts": "2026-09-21T00:13:27Z",
  "websearch_hash": "0f83717359640927fb3395aceaa3a48eee73f43f406a44817495ce8b579b22a9"
 }

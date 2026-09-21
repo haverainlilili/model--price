@@ -13,12 +13,12 @@
    "name": "Web Search API",
    "pricing": "search_std 0.01 元/次；search_pro 0.03 元/次；search_pro_sogou 0.05 元/次；search_pro_quark 0.05 元/次",
    "price_per_1k_usd": null,
-   "price_basis": null,
+   "price_basis": "按次计费，人民币报价，官网未给出美元价",
    "free_quota": null,
-   "output_type": "结构化搜索结果（网页标题、URL、摘要、网站名称、图标等）",
-   "cites_sources": true,
+   "output_type": "结构化搜索结果",
+   "cites_sources": null,
    "default_on": null,
-   "note": "count 范围1-50默认10；支持域名过滤、时间范围、摘要字数(content_size)控制；多引擎（智谱自研/搜狗/夸克）。价格按单次调用计价（人民币）。"
+   "note": "返回网页标题/URL/摘要/网站名/图标；count 范围1-50默认10；支持域名过滤、时间范围、摘要字数(content_size)；整合自研引擎及搜狗/夸克"
   },
   {
    "name": "Web Search in Chat（对话中的网络搜索）",
@@ -26,10 +26,10 @@
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "带引用答案（将搜索结果融入大模型生成回答并标注网页结果来源）",
+   "output_type": "带引用答案",
    "cites_sources": true,
    "default_on": null,
-   "note": "通过 Completions API 的 web_search 工具调用，需手动 enable，可指定 search_engine、count 等。"
+   "note": "Completions API 经 tools 参数调用（\"type\": \"web_search\"），将搜索结果融入 GLM 生成回答并标注网页结果来源；可选 search_engine=search_pro 等"
   },
   {
    "name": "Search Agent（搜索智能体）",
@@ -37,15 +37,15 @@
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "综合多个搜索结果的模型回答",
+   "output_type": "带引用答案",
    "cites_sources": null,
    "default_on": null,
-   "note": "根据搜索意图进行query拆解、对话状态管理与智能路由，检索多个查询并综合生成回答。"
+   "note": "根据搜索意图进行 query 拆解、对话状态管理与智能路由，综合网页内容生成回答；官网此页未给出定价"
   }
  ],
- "fetched_at": "2026-09-20T23:11:56Z",
+ "fetched_at": "2026-09-21T00:14:27Z",
  "status_note": null,
  "last_error": "官网页未解析出联网搜索信息，已保留上次 6 条",
- "last_fetch_ts": "2026-09-20T23:11:56Z",
+ "last_fetch_ts": "2026-09-21T00:14:27Z",
  "websearch_hash": "964c4679984ed72c2d621c80c3ed93edb0a38356befb67c213aa2960548bea30"
 }

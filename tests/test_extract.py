@@ -90,6 +90,55 @@ class CompactSchemaTests(unittest.TestCase):
         self.assertIn("properties", parsed)
 
 
+class ThrottleAndRetryTests(unittest.TestCase):
+    """自建网关在连续请求下会重置连接, 需要能拉开间隔并在失败后退避重试。"""
+
+    def _response(self):
+        return SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(content="{}"))])
+
+    def test_throttle_is_off_by_default(self):
+        with patch.object(extract, "MIN_CALL_INTERVAL_SECONDS", 0), \
+                patch.object(extract.time, "sleep") as sleep:
+            extract._wait_for_turn()
+        sleep.assert_not_called()
+
+    def test_throttle_sleeps_for_the_remaining_interval(self):
+        with patch.object(extract, "MIN_CALL_INTERVAL_SECONDS", 3), \
+                patch.object(extract.time, "monotonic", return_value=1.0), \
+                patch.object(extract.time, "sleep") as sleep:
+            extract._last_call_started = 0.0
+            extract._wait_for_turn()
+        sleep.assert_called_once()
+        self.assertAlmostEqual(sleep.call_args.args[0], 2.0)
+
+    def test_connection_error_is_retried_then_succeeds(self):
+        client = MagicMock()
+        client.chat.completions.create.side_effect = [
+            extract.openai.APIConnectionError(request=MagicMock()),
+            self._response(),
+        ]
+        with patch.object(extract, "MIN_CALL_INTERVAL_SECONDS", 0), \
+                patch.object(extract, "CONNECTION_RETRIES", 2), \
+                patch.object(extract, "CONNECTION_BACKOFF_SECONDS", 0), \
+                patch.object(extract.time, "sleep"):
+            extract._call(client, [{"role": "user", "content": "x"}], "pricing")
+        self.assertEqual(client.chat.completions.create.call_count, 2)
+
+    def test_connection_error_gives_up_after_configured_retries(self):
+        client = MagicMock()
+        client.chat.completions.create.side_effect = (
+            extract.openai.APIConnectionError(request=MagicMock()))
+        with patch.object(extract, "MIN_CALL_INTERVAL_SECONDS", 0), \
+                patch.object(extract, "CONNECTION_RETRIES", 1), \
+                patch.object(extract, "CONNECTION_BACKOFF_SECONDS", 0), \
+                patch.object(extract.time, "sleep"):
+            with self.assertRaises(extract.openai.APIConnectionError):
+                extract._call(client, [{"role": "user", "content": "x"}],
+                              "pricing")
+        self.assertEqual(client.chat.completions.create.call_count, 2)
+
+
 class UsageMeteringTests(unittest.TestCase):
     """每次调用都记账, 优化前后的 token 对比才有真实依据。"""
 

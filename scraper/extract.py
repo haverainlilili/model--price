@@ -18,6 +18,8 @@ from __future__ import annotations
 
 import json
 import os
+import sys
+import time
 
 import openai
 from pydantic import BaseModel, ValidationError
@@ -28,6 +30,15 @@ from .models import (ImageGenerationPage, NewsPage, PlansPage, PricingPage,
 MODEL = os.environ.get("OPENAI_MODEL") or "gpt-5.6-sol"
 MAX_PAGE_CHARS = 250_000
 MAX_OUTPUT_TOKENS = 24000
+
+# 网关节流适配(默认全部关闭, 官方 API 无需设置):
+# 自建网关在连续请求下可能重置连接, 这时需要拉开调用间隔并在连接失败后重试。
+MIN_CALL_INTERVAL_SECONDS = float(
+    os.environ.get("OPENAI_MIN_INTERVAL_SECONDS") or 0)
+CONNECTION_RETRIES = int(os.environ.get("OPENAI_CONNECTION_RETRIES") or 2)
+CONNECTION_BACKOFF_SECONDS = float(
+    os.environ.get("OPENAI_CONNECTION_BACKOFF_SECONDS") or 10)
+_last_call_started = 0.0
 
 # 端点不支持 response_format / max_completion_tokens 时置 True, 之后走最小参数集
 _MINIMAL_PARAMS = False
@@ -217,10 +228,36 @@ def _loads_json(text: str):
     raise ValueError("输出中找不到 JSON 对象")
 
 
+def _wait_for_turn() -> None:
+    """网关节流: 部分自建网关在连续请求下会直接重置连接(实测零间隔连发全挂,
+    间隔 2 秒全通)。官方 API 不需要, 默认 0 即关闭。"""
+    global _last_call_started
+    if MIN_CALL_INTERVAL_SECONDS > 0:
+        idle = time.monotonic() - _last_call_started
+        if idle < MIN_CALL_INTERVAL_SECONDS:
+            time.sleep(MIN_CALL_INTERVAL_SECONDS - idle)
+    _last_call_started = time.monotonic()
+
+
 def _call(client: openai.OpenAI, messages: list, label: str, **kwargs):
     """唯一的出站调用入口, 顺带累计用量。"""
-    response = client.chat.completions.create(
-        model=MODEL, messages=messages, **kwargs)
+    attempt = 0
+    while True:
+        _wait_for_turn()
+        try:
+            response = client.chat.completions.create(
+                model=MODEL, messages=messages, **kwargs)
+            break
+        except openai.APIConnectionError as exc:
+            # SDK 自带的退避只有一两秒, 限流触发的拒绝需要更长时间才恢复。
+            if attempt >= CONNECTION_RETRIES:
+                raise
+            attempt += 1
+            delay = CONNECTION_BACKOFF_SECONDS * attempt
+            print(f"[模型] 连接失败, {delay:.0f}s 后重试 "
+                  f"({attempt}/{CONNECTION_RETRIES}): {str(exc)[:80]}",
+                  file=sys.stderr)
+            time.sleep(delay)
     content = ""
     try:
         content = response.choices[0].message.content or ""

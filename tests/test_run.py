@@ -930,6 +930,33 @@ class SingleWriterTests(unittest.TestCase):
                     self.assertEqual(run.main(["--build-only"]), 75)
                 load.assert_not_called()
 
+    def test_only_flag_still_builds_the_complete_site(self):
+        # --only 只该决定"抓谁", 不该决定"站点包含谁":
+        # 否则调试性地跑一次就会把线上站点缩成一家厂商。
+        with tempfile.TemporaryDirectory() as directory, \
+                patch.object(run.history, "DATA", Path(directory)), \
+                patch.object(run, "load_providers",
+                             return_value=[{"id": "a"}, {"id": "b"}]), \
+                patch.object(run, "load_websearch_providers", return_value=[]), \
+                patch.object(run, "load_imagegen_providers", return_value=[]), \
+                patch.object(run, "load_videogen_providers", return_value=[]), \
+                patch.object(run, "process_provider") as process_provider, \
+                patch.object(run, "process_news"), \
+                patch.object(run, "process_plans"), \
+                patch.object(run, "process_websearch"), \
+                patch.object(run, "extract") as extract_mock, \
+                patch("scraper.fx.update_fx", return_value={}), \
+                patch("scraper.build_site.build") as build:
+            extract_mock.usage_summary.return_value = "用量"
+            self.assertEqual(run.main(["--only", "a"]), 0)
+
+        self.assertEqual(
+            [call.args[0]["id"] for call in process_provider.call_args_list],
+            ["a"])
+        self.assertEqual(
+            [provider["id"] for provider in build.call_args.args[0]],
+            ["a", "b"])
+
 
 class MediaExtractionBudgetTests(unittest.TestCase):
     def test_budget_accepts_zero_and_falls_back_on_invalid_value(self):

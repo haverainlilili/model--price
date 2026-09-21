@@ -1215,10 +1215,16 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
 
     extract.reset_usage()
-    providers = load_providers()
-    websearch_providers = load_websearch_providers()
-    imagegen_providers = load_imagegen_providers()
-    videogen_providers = load_videogen_providers()
+    # 完整目录: 建站永远用它。--only 只影响"抓谁", 绝不能影响"站点包含谁" ——
+    # 否则调试性地跑一次 --only 就会把线上站点缩成一家厂商。
+    all_providers = load_providers()
+    all_websearch = load_websearch_providers()
+    all_imagegen = load_imagegen_providers()
+    all_videogen = load_videogen_providers()
+    providers = all_providers
+    websearch_providers = all_websearch
+    imagegen_providers = all_imagegen
+    videogen_providers = all_videogen
     if args.only:
         providers = [p for p in providers if p["id"] == args.only]
         websearch_providers = [
@@ -1275,7 +1281,7 @@ def main(argv=None) -> int:
 
     from . import build_site
     out = build_site.build(
-        providers, websearch_providers, imagegen_providers, videogen_providers)
+        all_providers, all_websearch, all_imagegen, all_videogen)
     print(f"站点已生成: {out}")
     return 0
 

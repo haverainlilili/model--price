@@ -26,7 +26,7 @@ acquire_deploy_locks() {
     mkdir -p "$DEPLOY_DIR/data"
     exec 9>"$DEPLOY_DIR/.git/model-price-cron.lock"
     if ! flock -n 9; then
-        echo "✗ 每小时任务正在运行，稍后重试部署"
+        echo "✗ 定时任务正在运行，稍后重试部署"
         exit 75
     fi
     exec 8>"$DEPLOY_DIR/data/.scraper.lock"
@@ -159,20 +159,20 @@ else
     exit 1
 fi
 
-# 7. 配置 cron 每小时运行。锁覆盖整轮抓取+构建，50 分钟硬超时，
+# 7. 配置 cron 每 12 小时运行。锁覆盖整轮抓取+构建，90 分钟硬超时，
 # 避免慢页面让相邻小时任务并发写 JSON/site 文件。
 if ! command -v flock &>/dev/null || ! command -v timeout &>/dev/null; then
     echo "安装 cron 单实例/超时工具..."
     sudo apt-get update && sudo apt-get install -y util-linux coreutils
 fi
 CRON_BEGIN="# BEGIN model-price hourly updater"
-CRON_COMMENT="# 大模型价格看板 - 每小时更新（单实例，50 分钟超时）"
+CRON_COMMENT="# 大模型价格看板 - 每 12 小时更新（单实例，90 分钟超时）"
 CRON_END="# END model-price hourly updater"
 CRON_LOCK="$DEPLOY_DIR/.git/model-price-cron.lock"
-CRON_CMD="0 * * * * cd \"$DEPLOY_DIR\" && /usr/bin/flock -n \"$CRON_LOCK\" /usr/bin/timeout --signal=TERM --kill-after=30s 50m \"$VENV/bin/python\" -m scraper >> \"$DEPLOY_DIR/cron.log\" 2>&1"
+CRON_CMD="5 0,12 * * * cd \"$DEPLOY_DIR\" && /usr/bin/flock -n \"$CRON_LOCK\" /usr/bin/timeout --signal=TERM --kill-after=30s 90m \"$VENV/bin/python\" -m scraper >> \"$DEPLOY_DIR/cron.log\" 2>&1"
 
 echo
-echo "安装/升级 cron 任务（每小时整点运行）..."
+echo "安装/升级 cron 任务（每天 00:05 与 12:05 运行）..."
 CURRENT_CRON="$(crontab -l 2>/dev/null || true)"
 # 只删除本脚本自己的标记块；兼容旧版“注释 + 下一行命令”和曾发布的锁路径，
 # 绝不按 Python 解释器路径删除用户的其它维护任务。
@@ -181,7 +181,7 @@ CLEAN_CRON="$(printf '%s\n' "$CURRENT_CRON" | awk \
     $0 == begin { in_block=1; next }
     in_block && $0 == end { in_block=0; next }
     in_block { next }
-    /^# 大模型价格看板 - 每小时更新/ { legacy=1; next }
+    /^# 大模型价格看板 - (每|每时|每小时|每 12 小时)更新/ { legacy=1; next }
     legacy { legacy=0; if (index($0, "-m scraper")) next }
     index($0, lock) { next }
     { print }

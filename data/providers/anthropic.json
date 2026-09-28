@@ -2,7 +2,7 @@
  "url": "https://platform.claude.com/docs/en/models/overview.md",
  "source": "claude",
  "currency": "USD",
- "promotions": "Batch API requests are 50% off; prompt cache reads cost 10% of the base input price (2.5% on Claude Fable 5.1 and Claude Mythos 5.1). See Pricing for cache writes, long-context, and per-platform pricing.",
+ "promotions": null,
  "models": [
   {
    "model": "claude-fable-5-1",
@@ -11,16 +11,16 @@
    "output_per_1m": 50.0,
    "cached_input_per_1m": 0.25,
    "currency": "USD",
-   "note": "页面标注 $10/MTok 输入、$50/MTok 输出；缓存读取为基准输入价的 2.5%（页面注明 Fable 5.1 与 Claude Mythos 5.1 为 2.5%，2.5% × $10 = $0.25）；Batch API 请求为基准价 5 折"
+   "note": "Batch API 50% off; prompt cache reads 2.5% of base input price"
   },
   {
-   "model": "claude-opus-5",
-   "display_name": "Claude Opus 5",
-   "input_per_1m": 5.0,
-   "output_per_1m": 25.0,
-   "cached_input_per_1m": 0.5,
+   "model": "claude-opus-5-5",
+   "display_name": "Claude Opus 5.5",
+   "input_per_1m": 4.0,
+   "output_per_1m": 20.0,
+   "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "页面标注 $5/MTok 输入、$25/MTok 输出；缓存读取为基准输入价的 10%（10% × $5 = $0.50）；Batch API 请求为基准价 5 折"
+   "note": "Batch API 50% off; prompt cache reads 5% of base input price"
   },
   {
    "model": "claude-sonnet-5",
@@ -29,7 +29,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "页面标注 $2/MTok 输入、$10/MTok 输出；缓存读取为基准输入价的 10%（10% × $2 = $0.20）；Batch API 请求为基准价 5 折"
+   "note": "Batch API 50% off; prompt cache reads 10% of base input price"
   },
   {
    "model": "claude-haiku-4-5-20251001",
@@ -38,14 +38,14 @@
    "output_per_1m": 5.0,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "页面标注 $1/MTok 输入、$5/MTok 输出；缓存读取为基准输入价的 10%（10% × $1 = $0.10）；Batch API 请求为基准价 5 折；另有日期别名 claude-haiku-4-5"
+   "note": "alias claude-haiku-4-5; Batch API 50% off; prompt cache reads 10% of base input price"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "e9452325ff367e32a1208e08b0b683c9d2a1d2d3713f8f1b8d6c07d012c89215",
- "fetched_at": "2026-09-20T07:23:16Z",
- "status_note": "页面无变化",
+ "price_hash": "d08ddf910bad59eafc14c21100c6640c5c20769996ca86e37d19bbc405d2d61c",
+ "fetched_at": "2026-09-28T02:15:35Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-22T12:05:47Z",
+ "last_fetch_ts": "2026-09-28T02:15:35Z",
  "pricing_extraction_revision": 1
 }

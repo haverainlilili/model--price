@@ -1,92 +1,92 @@
 {
  "entries": [
   {
-   "date": "Sep 10",
-   "title": "You can now set expiration dates when creating project API keys.",
+   "date": "Sep 25",
+   "title": "Fixed a bug in image encoding that degraded image understanding in GPT-6 Sol and GPT-6 Luna",
+   "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+   "summary": "修复 GPT-6 Sol 和 Luna 图像编码缺陷,改善 API 与 Codex 中的视觉理解,建议重跑相关评估。",
+   "first_seen": "2026-09-28T02:24:43Z"
+  },
+  {
+   "date": "Sep 22",
+   "title": "Released GPT-6 Sol and GPT-6 Luna",
+   "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+   "summary": "发布推理模型 GPT-6 Sol($2/$10 每百万 token)与 GPT-6 Luna($0.10/$0.50),支持文本与图像输入。",
+   "first_seen": "2026-09-28T02:24:43Z"
+  },
+  {
+   "date": "Sep 15",
+   "title": "Added API key creation governance controls at the organization and project levels",
    "url": "https://developers.openai.com/api/docs/guides/production-best-practices#api-keys",
-   "summary": "项目 API 密钥现可设置过期时间并强制密钥最长生命周期。",
-   "first_seen": "2026-09-10T22:09:06Z"
+   "summary": "新增组织与项目级 API 密钥创建治理控制,可限制仅服务账号密钥或禁用新建密钥。",
+   "first_seen": "2026-09-28T02:24:43Z"
   },
   {
    "date": "Sep 10",
-   "title": "Released the Agents API in public beta.",
+   "title": "You can now set expiration dates when creating project API keys",
+   "url": "https://developers.openai.com/api/docs/guides/production-best-practices#api-keys",
+   "summary": "项目 API 密钥支持设置过期日期,管理员可强制密钥最长有效期。",
+   "first_seen": "2026-09-28T02:24:43Z"
+  },
+  {
+   "date": "Sep 10",
+   "title": "Released the Agents API in public beta",
    "url": "https://developers.openai.com/api/docs/guides/agents-api/overview",
-   "summary": "Agents API 公测发布，支持托管 Codex harness、持久会话和自定义工具。",
-   "first_seen": "2026-09-10T20:09:17Z"
+   "summary": "Agents API 公测发布,提供托管 Codex 保持、持久会话、流式进度与沙箱运行能力。",
+   "first_seen": "2026-09-28T02:24:43Z"
   },
   {
    "date": "Sep 10",
-   "title": "GPT-Live 1 is now generally available in the API.",
+   "title": "GPT-Live 1 is now generally available in the API",
    "url": "https://developers.openai.com/api/docs/models/gpt-live-1",
-   "summary": "GPT-Live 1 正式上线，支持全双工语音对话和后端推理协作。",
-   "first_seen": "2026-09-10T20:09:17Z"
+   "summary": "GPT-Live 1 全量可用,支持全双工语音会话,每分钟 $0.05 按秒计费。",
+   "first_seen": "2026-09-28T02:24:43Z"
   },
   {
    "date": "Sep 8",
-   "title": "Prompt Cache Diagnostics is now generally available in the Responses API for GPT-5.6 and later supported models.",
+   "title": "Prompt Cache Diagnostics is now generally available",
    "url": "https://developers.openai.com/api/docs/guides/prompt-caching/diagnostics",
-   "summary": "Responses API 正式支持提示缓存诊断，帮助分析缓存复用和未命中原因。",
-   "first_seen": "2026-09-10T20:09:17Z"
+   "summary": "Responses API 的提示缓存诊断正式可用,可对比缓存命中并排查缓存未命中原因。",
+   "first_seen": "2026-09-28T02:24:43Z"
   },
   {
    "date": "Sep 8",
    "title": "Released GPT Image 2.5 Sunburst and GPT Image 2.5 Flare",
    "url": "https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst",
-   "summary": "发布 GPT Image 2.5 Sunburst 与 Flare，支持图像生成和编辑。",
+   "summary": "发布两款图像模型:Sunburst 侧重编辑精度,Flare 主打快速高质量生成,支持 xhigh/max 质量档。",
    "first_seen": "2026-09-11T20:08:51Z"
   },
   {
    "date": "Sep 8",
-   "title": "GPT-Rosalind (gpt-rosalind-research) is now generally available through the trusted-access program",
-   "url": "https://help.openai.com/en/articles/20001193-gpt-rosalind-for-life-sciences-research",
-   "summary": "GPT-Rosalind 通过受信访问计划面向获批生命科学研究开放。",
-   "first_seen": "2026-09-11T20:08:51Z"
+   "title": "GPT-Rosalind is now generally available through the trusted-access program",
+   "url": "https://developers.openai.com/api/docs/models/gpt-rosalind-research",
+   "summary": "生命科学研究模型 GPT-Rosalind 通过受信任访问计划开放,定价 $5/$0.50/$25 每百万 token。",
+   "first_seen": "2026-09-28T02:24:43Z"
   },
   {
    "date": "Sep 3",
-   "title": "Released GPT-6 Astra",
+   "title": "Released GPT-6 Astra, our most capable model",
    "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-   "summary": "发布 GPT-6 Astra，面向推理、编码、研究和计算机操作等复杂任务。",
-   "first_seen": "2026-09-11T20:08:51Z"
+   "summary": "发布最强模型 GPT-6 Astra,面向推理、编码、计算机操作等,支持异步监控与迁移注意事项。",
+   "first_seen": "2026-09-28T02:24:43Z"
   },
   {
    "date": "Sep 3",
    "title": "Added new controls for long-running work with GPT-6 Astra in the Responses API",
    "url": "https://developers.openai.com/api/docs/guides/async-tool-calling",
-   "summary": "Responses API 为 GPT-6 Astra 增加异步工具调用和中途引导等控制能力。",
+   "summary": "Responses API 新增异步工具调用、对话中转向与中途调整推理强度等长任务控制。",
    "first_seen": "2026-09-11T20:08:51Z"
   },
   {
-   "date": "Aug 26",
-   "title": "Announced the deprecation of whisper-1, gpt-4o-transcribe, gpt-4o-mini-transcribe, and gpt-4o-transcribe-diarize.",
-   "url": "https://developers.openai.com/api/docs/deprecations",
-   "summary": "宣布多款转录模型弃用，将于 2027 年 2 月 26 日停止服务。",
-   "first_seen": "2026-09-11T20:08:51Z"
-  },
-  {
-   "date": "Aug 21",
-   "title": "API customers can now select regional processing for an individual request",
-   "url": "https://developers.openai.com/api/docs/guides/your-data#select-a-processing-region-per-request",
-   "summary": "API 客户可为单个请求选择区域处理，需满足既有资格与模型要求。",
-   "first_seen": "2026-09-11T20:08:51Z"
-  },
-  {
-   "date": "Aug 21",
-   "title": "GPT-5.6 Sol now costs $4 per million input tokens and $20 per million output tokens",
-   "url": "https://developers.openai.com/api/docs/pricing",
-   "summary": "GPT-5.6 Sol 输入价格降至每百万 4 美元，输出价格降至 20 美元。",
-   "first_seen": "2026-09-11T20:08:51Z"
-  },
-  {
-   "date": "Aug 20",
-   "title": "Released the Prompt Caching dashboard",
-   "url": "https://platform.openai.com/usage?usage_section=prompt-caching",
-   "summary": "发布提示缓存仪表板，可按模型和服务层级查看缓存效率指标。",
-   "first_seen": "2026-09-11T20:08:51Z"
+   "date": "Sep 2",
+   "title": "Updated API errors to distinguish rate of increase from model overload",
+   "url": "https://developers.openai.com/api/docs/guides/error-codes",
+   "summary": "区分 429 slow_down(流量增长过快)与 503 server_is_overloaded 两种错误并支持 Retry-After。",
+   "first_seen": "2026-09-28T02:24:43Z"
   }
  ],
- "news_hash": "888e00ceae0f2ebf7e4676d95052fdf5a5cfa9b34b65b8a11223e78108eed73e",
- "fetched_at": "2026-09-11T20:08:51Z",
+ "news_hash": "7bb208a81bd9fea421cfcffbc7bae4bb354798e4063e063222a66407b6a13fb8",
+ "fetched_at": "2026-09-28T02:24:43Z",
  "status_note": null,
  "last_error": null
 }

@@ -11,20 +11,19 @@
  "offerings": [
   {
    "name": "Google Search API (SERP API)",
-   "pricing": "Top-up model: Starter $50 / 50k credits ($1.00/1k); Standard $375 / 500k credits ($0.75/1k); Scale $1250 / 2.5M credits ($0.50/1k); Ultimate $3750 / 12.5M credits ($0.30/1k)。无月度订阅，按查询扣 credits，credits 有效期 6 个月。",
+   "pricing": "Top-up model, no monthly subscriptions: Starter $50 / 50k credits ($1.00/1k)；Standard $375 / 500k credits ($0.75/1k)；Scale $1250 / 2.5M credits ($0.50/1k)；Ultimate $3750 / 12.5M credits ($0.30/1k)，不含销售税/VAT",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Starter 公开入门档（50k credits，$1.00/1k queries）",
-   "free_quota": "Get 2,500 free queries; No credit card required",
-   "output_type": "结构化搜索结果(JSON: organic/images/news/videos/places/shopping/scholar/patents/autocomplete 等)",
+   "price_basis": "Starter（50k credits, $50, 50 QPS）",
+   "free_quota": "Get 2,500 free queries（No credit card required）",
+   "output_type": "结构化搜索结果 JSON（organic/results, knowledgeGraph, peopleAlsoAsk 等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "结果实时、不缓存，1-2 秒返回；支持自定义国家/语言查询位置；QPS 随档位 50→300；定价不含 sales tax/VAT/GST。"
+   "note": "支持 Search/Images/News/Maps/Places/Videos/Shopping/Scholar/Patents/Autocomplete；1-2秒实时返回，不缓存； credits 6个月有效；查询成功才扣费"
   }
  ],
- "fetched_at": "2026-09-21T06:48:47Z",
- "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-09-28T00:33:47Z",
- "websearch_hash": "52b2716ade137978d25ad24576366a7a6718a5682b6027fcf997b21a09e97e17",
- "websearch_retry_after": "2026-09-28T06:34:22Z"
+ "fetched_at": "2026-09-28T02:30:09Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-09-28T02:30:09Z",
+ "websearch_hash": "655d64678773e7a168b0d36d876332f6f4227aa20ebd77df260856170ca97d3f"
 }

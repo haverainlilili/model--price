@@ -1,231 +1,179 @@
 {
  "plans": [
   {
-   "name": "AI 通用型节省计划",
-   "plan_type": "节省计划（承诺消费换折扣）",
-   "price": "每月承诺消费金额 1,000 元起（自定义，以 10 元为单位调整，不设上限；全预付或零预付）",
-   "billing": "承诺周期可选 3 个月、6 个月、1 年、2 年；按动态月每月发放额度，当月未用完清零",
-   "quotas": [
-    {
-     "label": "每月承诺消费抵扣额度",
-     "value": "自定义金额（1,000 元起，不设上限），按对应折扣抵扣模型调用费用",
-     "window": "每月（动态月，非自然月）"
-    }
-   ],
-   "models": [
-    "A 类：千问（不含 qwen3.6-max-preview）、千问-开源、文本向量、多模态向量、排序模型、行业模型、模型原生工具调用",
-    "B 类：图像生成、语音合成、语音识别与翻译、视频生成与编辑",
-    "C 类：qwen3.6-max-preview、DeepSeek、Kimi、GLM、MiniMax、HappyHorse（仅阿里直供版本）"
-   ],
-   "note": "官网口径：承诺消费金额越高、周期越长折扣越大，最高可享 5.3 折（如 12 个月、月承诺 10,000 元全预付，A 类享 8 折）。按月承诺金额分档（1,000-1,000,000+ 元）给出 A/B/C 类折扣表，具体折扣以折扣信息表为准。抵扣顺序：免费额度 > 资源包 > 其他模型节省计划 > AI 通用型节省计划 > 按量付费。",
-   "source_url": "https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package"
-  },
-  {
-   "name": "入门型 AI 通用节省计划",
-   "plan_type": "新客专享活动套餐",
-   "price": "10 元抵 20 元、27 元抵 60 元、135 元抵 300 元（档位以购买页为准）",
-   "billing": "每月额度按动态月独立发放，包季套餐（如 27 元抵 60 元）总额度分 3 个月按月发放（每月 20 元）",
-   "quotas": [
-    {
-     "label": "抵扣额度",
-     "value": "20 元（10 元档）",
-     "window": "每月（动态月），当月未用完清零"
-    },
-    {
-     "label": "抵扣额度",
-     "value": "60 元（27 元档，分 3 个月按月发放，每月 20 元）",
-     "window": "每月（动态月），当月未用完清零"
-    },
-    {
-     "label": "抵扣额度",
-     "value": "300 元（135 元档）",
-     "window": "每月（动态月），当月未用完清零"
-    }
-   ],
-   "models": [
-    "与 AI 通用型节省计划支持的模型范围基本相同，仅支持抵扣阿里直供模型"
-   ],
-   "note": "官网口径：新客专享，活动价格仅限首购，不支持退订；按量计费无按量付费折扣；月承诺金额 1000 元以下（不含）档位不支持抵扣 kimi-k3。",
-   "source_url": "https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package"
-  },
-  {
-   "name": "大语言模型推理节省计划",
-   "plan_type": "其他模型节省计划",
-   "price": "档位：20元、100元、1,000元、5,000元、10,000元、20,000元、50,000元、100,000元、200,000元、300,000元、500,000元",
-   "billing": "20元档有效期1个月；100元档有效期3个月；1,000元档有效期6个月；5,000元及以上八档有效期1年",
-   "quotas": [
-    {
-     "label": "抵扣额度（等额，无折扣，按模型调用价格扣费）",
-     "value": "购买档位对应等额金额（20元 - 500,000元）",
-     "window": null
-    }
-   ],
-   "models": [
-    "千问 Max、千问 Plus、千问 Flash、千问 Turbo、QwQ、千问 Long",
-    "Qwen3.5、Qwen3、QwQ、QwQ-Preview、Qwen2.5、Qwen-Math、Qwen-Coder",
-    "DeepSeek、GLM、Kimi、MiniMax",
-    "千问Omni、千问Omni-Realtime、QVQ、千问VL、千问OCR",
-    "Qwen-Omni、Qwen3-Omni-Captioner、Qwen-VL、QVQ",
-    "千问Coder、千问翻译模型、千问数据挖掘模型、千问深入研究模型"
-   ],
-   "note": "官网口径：适用于以 Token 计费的文本生成模型，不支持向量模型（embedding）和排序模型（rerank），仅华北2（北京）地域。",
-   "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference_spn_public_cn"
-  },
-  {
-   "name": "千问语音模型节省计划",
-   "plan_type": "其他模型节省计划",
-   "price": "档位：20元（9.8折）、100元（9.6折）、500元（9折）、1,000元（8.5折）、5,000元（8折）",
-   "billing": "20元、100元两档有效期6个月；500元、1,000元、5,000元三档有效期可选 6 个月或 12 个月",
-   "quotas": [
-    {
-     "label": "抵扣额度（按折扣抵扣）",
-     "value": "购买档位对应金额（20元 - 5,000元），如 1,000元 档消费 1 元实际抵扣 0.85 元",
-     "window": null
-    }
-   ],
-   "models": [
-    "cosyvoice-v3-plus、cosyvoice-v3-flash、cosyvoice-v2、cosyvoice-v1",
-    "qwen3-tts-flash、qwen-tts 等 Qwen-TTS / Qwen-TTS-Realtime",
-    "paraformer-realtime-v2、paraformer-v2 等 Paraformer",
-    "fun-asr-realtime、fun-asr 等 Fun-ASR",
-    "qwen3-asr-flash、qwen3-asr-flash-realtime、qwen3-asr-flash-filetrans 等 Qwen-ASR"
-   ],
-   "note": "官网口径：ASR 模型按秒计费，TTS 模型按字符计费；适用模型因地域而异（华北2（北京）/新加坡）。",
-   "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_VoiceModel_spn_cn"
-  },
-  {
-   "name": "向量及排序模型节省计划",
-   "plan_type": "其他模型节省计划",
-   "price": "档位：100元（无折扣）、500元（9折）、2,000元（8折）、5,000元（7.5折）、10,000元（7折）",
-   "billing": "100元、500元档有效期3个月；2,000元档有效期6个月；5,000元、10,000元档有效期12个月",
-   "quotas": [
-    {
-     "label": "抵扣额度（按折扣抵扣）",
-     "value": "购买档位对应金额（100元 - 10,000元），如 5,000元 档消费 1 元实际抵扣 0.75 元",
-     "window": null
-    }
-   ],
-   "models": [
-    "text-embedding-v4、text-embedding-v3、text-embedding-v2、text-embedding-v1、text-embedding-async-v2、text-embedding-async-v1",
-    "qwen2.5-vl-embedding、tongyi-embedding-vision-plus、tongyi-embedding-vision-flash、multimodal-embedding-v1",
-    "qwen3-rerank、gte-rerank-v2"
-   ],
-   "note": "官网口径：仅华北2（北京）地域。",
-   "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_embeddingrerank_spn_cn"
-  },
-  {
-   "name": "万相模型节省计划",
-   "plan_type": "其他模型节省计划",
-   "price": "档位：20元（无折扣）、100元（无折扣）、1,000元（9.8折）、10,000元（9.5折）、30,000元（9折）",
-   "billing": "20元、100元两档有效期3个月；1,000元、10,000元、30,000元三档有效期6个月",
-   "quotas": [
-    {
-     "label": "抵扣额度（按折扣抵扣）",
-     "value": "购买档位对应金额（20元 - 30,000元），如 1,000元 档生成视频消费 1 元实际抵扣 0.98 元",
-     "window": null
-    }
-   ],
-   "models": [
-    "wan2.6-image、wan2.6-t2i、wan2.5-t2i-preview、wan2.5-i2i-preview、wan2.2-t2i-plus、wan2.2-t2i-flash、wanx2.0-t2i-turbo、wanx2.1-t2i-plus、wanx2.1-imageedit、wanx-sketch-to-image-lite、wanx-v1",
-    "wan2.6-t2v、wan2.6-i2v、wan2.6-r2v、wan2.5-t2v-preview、wan2.5-i2v-preview、wan2.2-t2v-plus、wan2.2-i2v-flash、wan2.2-t2v-flash、wan2.2-i2v-plus、wan2.1-vace-plus、wan2.1-kf2v-plus、wan2.1-t2v-turbo、wanx2.1-t2v-plus、wanx2.1-i2v-turbo、wanx2.1-i2v-plus"
-   ],
-   "note": "官网口径：以上模型属于「百炼大模型推理」商品；wan2.7-r2v 等属于「百炼大模型-万相模型」商品，不在本节省计划抵扣范围内。",
-   "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_VideoAndImage_spn_cn"
-  },
-  {
    "name": "大语言模型推理资源包 qwen-plus",
-   "plan_type": "Token 资源包",
+   "plan_type": "API 资源包",
    "price": "11.66 元 / 114.4 元",
    "billing": "自购买日起生效，有效期可选 3 个月、6 个月或 1 年",
    "quotas": [
     {
      "label": "包含输入和输出总 Tokens",
-     "value": "1,200万 Tokens（11.66 元档）",
-     "window": null
-    },
-    {
-     "label": "包含输入和输出总 Tokens",
-     "value": "1.1亿 Tokens（114.4 元档）",
-     "window": null
+     "value": "1,200万 / 1.1亿 Tokens",
+     "window": "有效期内"
     }
    ],
    "models": [
     "qwen-plus",
     "qwen-plus-latest"
    ],
-   "note": "官网口径：仅支持抵扣单次请求输入在 0<Token≤128K 阶梯范围内的实时推理费用（非思考模式，包含输入和输出）；不支持抵扣 Token>128K、Batch调用、上下文缓存、模型调优、模型部署费用；仅华北2（北京）地域。",
+   "note": "仅支持抵扣单次请求输入在 0<Token≤128K 阶梯范围内的实时推理费用（非思考模式）；不支持 Batch调用、上下文缓存、模型调优、模型部署费用。",
    "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference_dp_cn#/buy"
   },
   {
    "name": "大语言模型推理资源包 qwen-max",
-   "plan_type": "Token 资源包",
-   "price": "57.6 / 125 / 1250 / 3750 / 6250 元",
+   "plan_type": "API 资源包",
+   "price": "57.6 元 / 125 元 / 1,250 元 / 3,750 元 / 6,250 元",
    "billing": "自购买之日起有效期为 1 年",
    "quotas": [
     {
      "label": "包含输入和输出总 Tokens",
-     "value": "1,800万 / 3,900万 / 3.9亿 / 11.7亿 / 19.5亿 Tokens（分别对应 57.6 / 125 / 1250 / 3750 / 6250 元档）",
-     "window": null
+     "value": "1,800万 / 3,900万 / 3.9亿 / 11.7亿 / 19.5亿 Tokens（与上述价格档位一一对应）",
+     "window": "1 年有效期内"
     }
    ],
    "models": [
     "qwen-max"
    ],
-   "note": "官网口径：仅支持抵扣 qwen-max 实时推理产生的费用（非思考模式，包含输入和输出），不支持抵扣 Batch调用、上下文缓存、模型调优、模型部署费用；仅华北2（北京）地域。",
+   "note": "仅支持抵扣 qwen-max 实时推理（非思考模式）费用，不支持 Batch调用、上下文缓存、模型调优、模型部署费用。",
    "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference2_dp_cn#/buy"
   },
   {
    "name": "千问图像生成模型资源包 qwen-image",
-   "plan_type": "图像生成资源包",
-   "price": "20 / 100 元",
+   "plan_type": "API 资源包",
+   "price": "20 元 / 100 元",
    "billing": "自购买之日起有效期为 3 个月",
    "quotas": [
     {
      "label": "资源包容量（生成图片张数）",
-     "value": "80 张（20 元档）",
-     "window": null
-    },
-    {
-     "label": "资源包容量（生成图片张数）",
-     "value": "400 张（100 元档）",
-     "window": null
+     "value": "80 张 / 400 张（与价格档位一一对应）",
+     "window": "3 个月有效期内"
     }
    ],
    "models": [
-    "qwen-image（文生图）",
-    "qwen-image-edit（图像编辑）"
+    "qwen-image",
+    "qwen-image-edit"
    ],
-   "note": "官网口径：使用文生图模型生成一张图片消耗 1 张额度，使用图片编辑模型编辑一张图片消耗 1.2 张额度；容量耗尽后自动转为按量付费；仅华北2（北京）地域。",
+   "note": "文生图消耗 1 张额度/图，图像编辑消耗 1.2 张额度/图；耗尽后自动转按量付费。",
    "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_qwenimage_dp_cn"
   },
   {
    "name": "千问图像生成模型资源包 qwen-image-plus",
-   "plan_type": "图像生成资源包",
-   "price": "20 / 196（9.8折）/ 1,900（9.5折）/ 18,000（9折）/ 85,000（8.5折）元",
-   "billing": "100、1,000张档位有效期3个月；10,000、100,000张档位有效期6个月；500,000张档位有效期12个月",
+   "plan_type": "API 资源包",
+   "price": "20 元 / 196 元（9.8折）/ 1,900 元（9.5折）/ 18,000 元（9折）/ 85,000 元（8.5折）",
+   "billing": "100、1,000 张档 3 个月；10,000、100,000 张档 6 个月；500,000 张档 12 个月",
    "quotas": [
     {
      "label": "资源包容量（生成图片张数）",
-     "value": "100 / 1,000 / 10,000 / 100,000 / 500,000 张（分别对应 20 / 196 / 1,900 / 18,000 / 85,000 元档）",
-     "window": null
+     "value": "100 / 1,000 / 10,000 / 100,000 / 500,000 张（与价格档位一一对应）",
+     "window": "按档位 3/6/12 个月"
     }
    ],
    "models": [
-    "qwen-image-plus（文生图）",
-    "qwen-image-edit-plus（图像编辑）"
+    "qwen-image-plus",
+    "qwen-image-edit-plus"
    ],
-   "note": "官网口径：生成或编辑一张图片消耗 1 张额度；容量耗尽后自动转为按量付费；仅华北2（北京）地域。",
+   "note": "生成或编辑一张图片消耗 1 张额度；耗尽后自动转按量付费。",
    "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_qwenimageplus_dp_cn"
+  },
+  {
+   "name": "入门型 AI 通用节省计划",
+   "plan_type": "Token Plan",
+   "price": "例如 10 元抵 20 元、27 元抵 60 元、135 元抵 300 元（档位以购买页为准）",
+   "billing": "按动态月发放额度，包季套餐（如 27 元抵 60 元）总额度分 3 个月按月发放（每月 20 元）",
+   "quotas": [
+    {
+     "label": "抵扣额度（credits 金额）",
+     "value": "约 20 元 / 60 元（每月 20 元）/ 300 元 等，档位以购买页为准",
+     "window": "每月（动态月，未用完清零）"
+    }
+   ],
+   "models": [
+    "阿里直供模型（与 AI 通用型节省计划范围基本相同；月承诺金额 1000 元以下档位不支持抵扣 kimi-k3）"
+   ],
+   "note": "新客专享，仅限首购优惠；按量计费、无按量折扣；一经支付不支持退订。额度为可抵扣金额而非 Token 数，官网按元标注。",
+   "source_url": "https://www.aliyun.com/benefit/scene/ai-discount"
+  },
+  {
+   "name": "AI 通用型节省计划",
+   "plan_type": "节省计划",
+   "price": "月承诺消费 1,000 元起（以 10 元为单位自定义，不设上限）；例如包季 27 元抵 60 元",
+   "billing": "承诺周期 3 个月、6 个月、1 年或 2 年；额度按动态月分配，当月未用完清零",
+   "quotas": [
+    {
+     "label": "每月承诺抵扣额度",
+     "value": "月承诺消费金额（自定义，1,000 元起），按档位享 5.3 折~8.8折 阶梯折扣（最高 5.3 折）",
+     "window": "动态月（每月独立发放，不累积）"
+    }
+   ],
+   "models": [
+    "千问（不含 qwen3.6-max-preview）、千问-开源、文本向量、多模态向量、排序模型、行业模型、模型原生工具调用（A 类）；图像/语音/视频（B 类）；qwen3.6-max-preview、DeepSeek、Kimi、GLM、MiniMax、HappyHorse（C 类，仅阿里直供）"
+   ],
+   "note": " MIT承诺月消费金额换取阶梯折扣，按量付费灵活性保留；全预付折扣更大，零预付需联系商务开通。官网未给每档固定用量额度，额度为承诺消费金额本身。",
+   "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_GenAI_spn_cn"
+  },
+  {
+   "name": "大语言模型推理节省计划",
+   "plan_type": "节省计划",
+   "price": "档位：20 元 / 100 元 / 1,000 元 / 5,000 元 / 10,000 元 / 20,000 元 / 50,000 元 / 100,000 元 / 200,000 元 / 300,000 元 / 500,000 元",
+   "billing": "20 元档 1 个月；100 元档 3 个月；1,000 元档 6 个月；5,000 元及以上 1 年",
+   "quotas": [
+    {
+     "label": "一次性购买抵扣金额",
+     "value": "与购买档位等额（20 元~500,000 元），无折扣，按模型调用价格扣费",
+     "window": "按档位 1 个月~1 年有效期内"
+    }
+   ],
+   "models": [
+    "千问 Max、千问 Plus、千问 Flash、千问 Turbo、QwQ、千问 Long、Qwen3.5、Qwen3、Qwen2.5、Qwen-Math、Qwen-Coder、DeepSeek、GLM、Kimi、MiniMax、千问Omni、QVQ、千问VL、千问OCR、千问Coder 等 Token 计费的文本生成模型"
+   ],
+   "note": "仅适用华北2（北京）；不支持向量/排序模型；不支持工具调用、上下文缓存、批量推理抵扣。",
+   "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_llminference_spn_public_cn"
+  },
+  {
+   "name": "千问语音模型节省计划",
+   "plan_type": "节省计划",
+   "price": "20 元（9.8折）/ 100 元（9.6折）/ 500 元（9折）/ 1,000 元（8.5折）/ 5,000 元（8折）",
+   "billing": "20、100 元档 6 个月；500、1,000、5,000 元档可选 6 或 12 个月",
+   "quotas": [
+    {
+     "label": "一次性购买抵扣金额",
+     "value": "与购买档位等额（20~5,000 元），按对应折扣扣费",
+     "window": "6 或 12 个月有效期内"
+    }
+   ],
+   "models": [
+    "cosyvoice-v3-plus/flash/v2/v1、qwen3-tts-flash、qwen-tts、paraformer-realtime-v2/v1、fun-asr、qwen3-asr-flash 等"
+   ],
+   "note": "ASR 按秒计费、TTS 按字符计费，价格见百炼控制台；适用于华北2（北京）及新加坡部分模型。",
+   "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_VoiceModel_spn_cn"
+  },
+  {
+   "name": "万相模型节省计划",
+   "plan_type": "节省计划",
+   "price": "20 元（无折扣）/ 100 元（无折扣）/ 1,000 元（9.8折）/ 10,000 元（9.5折）/ 30,000 元（9折)",
+   "billing": "20、100 元档 3 个月；1,000、10,000、30,000 元档 6 个月",
+   "quotas": [
+    {
+     "label": "一次性购买抵扣金额",
+     "value": "与购买档位等额（20~30,000 元），按对应折扣扣费",
+     "window": "3 或 6 个月有效期内"
+    }
+   ],
+   "models": [
+    "wan2.6-image、wan2.6-t2i、wan2.5-t2i-preview、wan2.2-t2i-plus、wanx2.1 系列图像；wan2.6-t2v、wan2.5-i2v-preview、wan2.2-t2v/i2v 系列视频等（wan2.7-r2v 等不适用）"
+   ],
+   "note": "仅抵扣「百炼大模型推理」商品下的万相图像/视频模型；如需全量模型建议 AI 通用型节省计划。",
+   "source_url": "https://common-buy.aliyun.com/?commodityCode=sfm_VideoAndImage_spn_cn"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-09-21T10:14:50Z",
+ "last_fetch_ts": "2026-09-28T02:27:17Z",
  "source": "official",
  "source_urls": [
   "https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package"
  ],
  "page_has_plans": true,
- "plans_hash": "83bb8a18facc0ac68017a5d539579862dedfa2286b63a0bc83e4775e13552a33",
- "fetched_at": "2026-09-20T10:11:59Z",
- "status_note": "页面无变化"
+ "plans_hash": "91b4048876c3e3c19d9d19fa38b3eaada1e9a8634c253b59611d99c8d933c999",
+ "fetched_at": "2026-09-28T02:27:17Z",
+ "status_note": null
 }

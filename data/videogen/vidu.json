@@ -110,11 +110,11 @@
   "https://platform.vidu.com/docs/pricing",
   "https://platform.vidu.com/docs/model-map"
  ],
- "last_fetch_ts": "2026-09-29T12:46:01Z",
+ "last_fetch_ts": "2026-09-30T06:15:55Z",
  "source_warnings": [],
  "videogen_hash": "74bd898576e882c8e71cdab222272e092a872c4f7f719720442ba11018b6b81b",
- "status_note": "官网生视频抽取失败: 结构化输出校验失败: 9 validation errors for VideoGenerationPage\npage_has_relevant_content\n  Field required [type=missing, input_value={'$defs': {'VideoGenerati...ion'], 'type': 'object'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nproduct_status\n ",
- "last_error": "官网生视频抽取失败: 结构化输出校验失败: 9 validation errors for VideoGenerationPage\npage_has_relevant_content\n  Field required [type=missing, input_value={'$defs': {'VideoGenerati...ion'], 'type': 'object'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nproduct_status\n ",
+ "status_note": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
+ "last_error": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
  "videogen_excerpt_hash": "a1ab787f218662288e58570cb648ee934e41cf443d7304634fde9082743b85da",
- "videogen_retry_after": "2026-09-29T19:02:04Z"
+ "videogen_retry_after": "2026-09-30T12:32:10Z"
 }

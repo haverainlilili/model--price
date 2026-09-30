@@ -329,13 +329,11 @@
   "https://dev.pika.art/pricing",
   "https://dev.pika.art/models/pika/pika-2.5"
  ],
- "last_fetch_ts": "2026-09-29T13:17:47Z",
+ "last_fetch_ts": "2026-09-30T06:41:13Z",
  "source_warnings": [],
- "videogen_hash": "1c18aad5f9b0a1f6637b6c55b8e50548de4c4fa0890a4d1f0337726d44a48442",
- "status_note": "官网生视频抽取覆盖项由 12 变为 27，等待下轮同语义结果确认",
- "last_error": "官网生视频抽取覆盖项由 12 变为 27，等待下轮同语义结果确认",
- "videogen_excerpt_hash": "af6c4a982ba80c50e035201244482626209ede52e6ad2a3a421ffd0d28ab4937",
- "videogen_retry_after": "2026-09-28T06:44:01Z",
- "videogen_pending_shrink_hash": "c01e4c597e24e9281e1f83b5d2ff21674bc16dbc4bdf88ebba9b13355785f390",
- "videogen_pending_shrink_count": 27
+ "videogen_hash": "41d17e766534d3ee209b04879f57212df91b70b1fd53d207db7bf44129b72ecb",
+ "status_note": "官网生视频抽取失败: 结构化输出校验失败: 6 validation errors for VideoGenerationPage\nofferings.0\n  Value error, video comparison_group facts are incomplete or inconsistent [type=value_error, input_value={'name': 'Pika 2.5', 'var...价格含 5% 平台费'}, input_type=dict]\n    For further information visit https://errors.pydantic",
+ "last_error": "官网生视频抽取失败: 结构化输出校验失败: 6 validation errors for VideoGenerationPage\nofferings.0\n  Value error, video comparison_group facts are incomplete or inconsistent [type=value_error, input_value={'name': 'Pika 2.5', 'var...价格含 5% 平台费'}, input_type=dict]\n    For further information visit https://errors.pydantic",
+ "videogen_excerpt_hash": "1191f4b36b54cb1ac58bba7c37d87bb1f1ec826ee3600e2d232595f4c01eedce",
+ "videogen_retry_after": "2026-09-30T12:42:05Z"
 }

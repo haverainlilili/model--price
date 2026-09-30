@@ -12,42 +12,31 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Web Search API（/search）",
-   "pricing": "Search costs 2 credits per 10 results（向上取整，11 条=4 credits）。按 credits 计费，各套餐费率相同：Free 1,000 credits/月=$0；Hobby 5,000 credits/月=$16/月（年付）或 $19/月；Standard 100,000=$83/月（年付）；Growth 500,000=$333/月（年付）；Scale 1,000,000=$599/月（年付）；Enterprise 定制。Pay-as-you-go 每 5 USD 追加 credits（Hobby 1,000、Standard 2,000、Growth 2,500、Scale 5,000 credits/5USD）",
-   "price_per_1k_usd": 6.4,
-   "price_basis": "Hobby 年付 $16/月（5,000 credits = 2,500 searches），2 credits/10 results，即 $6.40/1000 次 10 条结果的搜索；同档 pay-as-you-go 为 $5/1,000 credits≈$10/1000 次",
-   "free_quota": "Free plan: 1,000 credits / month（500 searches or 1,000 pages scraped），无需信用卡；另有 keyless 免费层（无 API key，按 IP 每日限流，具体额度未公布）",
-   "output_type": "结构化 JSON 搜索结果，按来源分组 data.web / data.news / data.images，含 url、title、description、position、category；可用 scrapeOptions 一步返回每条结果的 markdown/HTML/links/截图",
+   "name": "Web Search API (/search)",
+   "pricing": "按 credit 计费：Search 2 credits / 10 results（按 10 条结果向上取整，1–10 条=2 credits，11–20 条=4 credits）；所有套餐 credit 单价相同",
+   "price_per_1k_usd": 4.0,
+   "price_basis": "Hobby 档 PAYG（$5 = 1,000 credits → $5/1000 credits；2 credits/10 results 即 200 次搜索 = 400 credits ≈ $2/100 次搜索 → 约 $4/千次搜索）",
+   "free_quota": "Free 套餐 1,000 credits/月（≈500 次搜索或 1,000 页抓取），每月刷新，无需信用卡；另有 keyless 无 API key 免费层（按 IP 每日限额）",
+   "output_type": "结构化搜索结果（JSON：title/description/url/position，按 web、news、images 分组），可加 scrapeOptions 返回 markdown/HTML/links/screenshot；默认含 query-relevant Highlights",
    "cites_sources": true,
    "default_on": null,
-   "note": "支持 categories(research/pdf/developer)、includeDomains/excludeDomains、location、tbs 时间过滤、safe；highlights 默认返回，可设为 false；限速 10 次/分(Free)–10,000 次/分(Scale)"
+   "note": "支持 sources(web/news/images)、categories(research/pdf/developer)、includeDomains/excludeDomains、location、tbs 时间过滤、safe；结果上限按 limit 每来源；Enterprise ZDR 10 credits/10 results，anonymized ZDR 2 credits/10 results；无文档返回不收费"
   },
   {
-   "name": "Search with end-to-end Zero Data Retention（enterprise: [\"zdr\"]，Enterprise 计划）",
-   "pricing": "Cost: 10 credits per 10 results（企业定制计划，credits 数量与价格 Custom）",
+   "name": "Firecrawl Agent (Preview) — Autonomous web research agent",
+   "pricing": "Dynamic pricing（动态定价，官网未给具体单价）",
    "price_per_1k_usd": null,
    "price_basis": null,
-   "free_quota": null,
-   "output_type": "同 /search 结果结构；Firecrawl 与上游搜索供应商均不留存查询或结果数据",
-   "cites_sources": true,
+   "free_quota": "5 daily runs free（每日 5 次免费运行）",
+   "output_type": null,
+   "cites_sources": null,
    "default_on": null,
-   "note": "仅 Enterprise 计划可用；匿名 ZDR（enterprise: [\"anon\"]）为 2 credits/10 results；enterprise 参数仅作用于请求的搜索部分"
-  },
-  {
-   "name": "Research Index paper search（GET /search/research/papers）",
-   "pricing": "The Firecrawl Research Index paper endpoints are free across every category, including AI/ML and life sciences",
-   "price_per_1k_usd": 0.0,
-   "price_basis": "所有计划免费（含 Free）",
-   "free_quota": "免费（含在所有套餐中）",
-   "output_type": "论文记录 paperId、primaryId、ids、title、abstract、score",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "检索 PubMed、bioRxiv、medRxiv、arXiv 摘要；categories=[\"research\"] 于 2026-11-16 起切换到该索引，结果从 data.web 移到 data.research"
+   "note": "Preview 阶段；所有套餐（免费与付费）Research Index 论文端点免费"
   }
  ],
- "fetched_at": "2026-09-30T00:14:43Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-30T12:14:19Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-30T03:46:58Z",
- "websearch_hash": "be4c57796f2d0d31430cc441febbd83220510f9efa7bbcee4403a5cd03d32619"
+ "last_fetch_ts": "2026-09-30T12:14:19Z",
+ "websearch_hash": "72761ddb08eaed1b743d5a0a269aebf0a8b360d78d74362cb6568437a350ace0"
 }

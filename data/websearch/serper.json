@@ -10,20 +10,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Google Search API (SERP API)",
-   "pricing": "Top-up credits model, no monthly subscriptions: Starter $50 (50k credits, $1.00/1k); Standard $375 (500k credits, $0.75/1k); Scale $1250 (2.5M credits, $0.50/1k); Ultimate $3750 (12.5M credits, $0.30/1k). * Excluding sales tax/VAT/GST",
+   "name": "Google Search API (SERP API) — Search/Images/News/Maps/Places/Videos/Shopping/Scholar/Patents/Autocomplete",
+   "pricing": "Top-up credits, no monthly subscriptions: Starter $50 for 50k credits ($1.00/1k, 50 queries/s); Standard $375 for 500k credits ($0.75/1k, 100 q/s); Scale $1250 for 2.5M credits ($0.50/1k, 200 q/s); Ultimate $3750 for 12.5M credits ($0.30/1k, 300 q/s) — excluding sales tax/VAT/GST",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Starter 档（$50 买 50k credits，$1.00/1k queries）；批量加购更高档降至 $0.75/1k、$0.50/1k、$0.30/1k",
-   "free_quota": "Get 2,500 free queries / No credit card required",
-   "output_type": "JSON 结构化搜索结果（knowledgeGraph、organic、peopleAlsoAsk、relatedSearches 等）",
+   "price_basis": "Starter 入门公开档（$50 / 50k credits；1 credit = 1 次查询）；同一 API 大额档位降至 $0.30/1k",
+   "free_quota": "Get 2,500 free queries — No credit card required / Try 2,500 queries for free",
+   "output_type": "结构化 JSON 搜索结果（knowledgeGraph、organic 含 title/link/snippet/position、peopleAlsoAsk、relatedSearches，以及 images/news/places/videos/shopping/scholar/patents/suggestions 数组）",
    "cites_sources": true,
    "default_on": null,
-   "note": "支持 Search/Images/News/Maps/Places/Videos/Shopping/Scholar/Patents/Autocomplete；结果含 link/googleUrl 等来源链接；实时查询不缓存；1-2 秒返回；50-300 QPS；credits 有效期 6 个月；可指定国家与语言"
+   "note": "大额档 $0.30–1.00/1k；仅成功响应扣 credit，余额为 0 停止接收查询；额度 6 个月有效；实时查 Google、不缓存；可按国家/语言指定地区；结果约 1–2 秒（重试时 2–4 秒）；提供 LangChain/Haystack/Jan AI/CrewAI 集成"
   }
  ],
- "fetched_at": "2026-09-30T03:47:00Z",
+ "fetched_at": "2026-09-30T12:14:29Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-30T03:47:00Z",
- "websearch_hash": "85281242fca393d0409d91c5077edab9780505351a1d868b8d404b2fd73b4867"
+ "last_fetch_ts": "2026-09-30T12:14:29Z",
+ "websearch_hash": "7eebf72000ac60991b82d5345a10d3e319d7aa2db13e41c88181f17ae1f4de91"
 }

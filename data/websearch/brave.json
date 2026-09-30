@@ -11,31 +11,42 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Brave Search API — Search (LLM Context / web, news, images, videos search)",
-   "pricing": "$5.00 per 1,000 requests (Prepaid)",
+   "name": "Brave Search API — Search (LLM Context, agentic search)",
+   "pricing": "$5 per 1,000 requests; $4 per 1,000 queries for Answers; $5 per 10,000 requests for Spellcheck/Autosuggest (prepaid credits)",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Prepaid Search plan, $5.00 per 1,000 requests",
-   "free_quota": "Includes $5 in free credits every month. Credits are automatically applied to your account.",
-   "output_type": "结构化搜索结果(URLs、文本、news、images 等, 另有面向 LLM/agent 优化的 LLM context, 最多 5 个实时 snippets、Schema-enriched 结果)",
+   "price_basis": "Search plan, Prepaid（$5.00 per 1,000 requests）",
+   "free_quota": "Includes $5 in free credits every month; credits are automatically applied to your account",
+   "output_type": "结构化 JSON 搜索结果（URLs、text snippets、news、images 等，含 LLM context 优化输出与 sources 映射）",
    "cites_sources": true,
    "default_on": null,
-   "note": "容量 50 requests per second; 索引超 300 亿页面、每日超 1 亿次页面更新; 特殊能力含 Goggles 自定义重排与结果过滤。"
+   "note": "容量 50 queries per second；可选端点 Answers/Image/Video/News/Web/LLM Context；Goggles 自定义重排与过滤；Extra snippets 最多五条；Schema-enriched 结果；索引超 300 亿页面、每日超 1 亿次页面更新；SOC 2 Type II；Enterprise 提供 Zero Data Retention。"
   },
   {
    "name": "Brave Search API — Answers",
-   "pricing": "$4.00 per 1,000 queries + $5.00 per 1,000,000 input tokens + $5.00 per 1,000,000 output tokens (Prepaid)",
+   "pricing": "$4 per 1,000 queries + $5 per 1,000,000 input tokens + $5 per 1,000,000 output tokens",
    "price_per_1k_usd": 4.0,
-   "price_basis": "Prepaid Answers plan, 基础 $4.00 per 1,000 queries(另按 token 加价)",
-   "free_quota": "Includes $5 in free credits every month. Credits are automatically applied to your account.",
-   "output_type": "带引用的生成式答案(Grounding supported by citations), 支持 streaming, OpenAI SDK 兼容, 模型名 brave-pro",
+   "price_basis": "Answers 计划, Prepaid（$4.00 per 1,000 queries，另加每百万输入/输出 token $5.00）",
+   "free_quota": "Includes free $5 in credits every month; credits are automatically applied to your account",
+   "output_type": "LLM 生成的完整答案，OpenAI SDK 兼容的 chat completions 响应，支持流式",
    "cites_sources": true,
    "default_on": null,
-   "note": "容量 2 requests per second; 基于单次或多���搜索 grounding 以提升准确度、减少幻觉; 除每次查询费外还按输入/输出 token 收取 $5/百万。"
+   "note": "Grounding supported by citations；基于单次或多次搜索生成以减少幻觉；容量 2 queries per second；另计每百万输入 token $5、每百万输出 token $5。"
+  },
+  {
+   "name": "Brave Search API — Enterprise",
+   "pricing": "Contact us about bespoke plans for large-scale deployments（需定制条款、容量或端点）",
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": null,
+   "output_type": null,
+   "cites_sources": null,
+   "default_on": null,
+   "note": "提供 Full-funnel Zero Data Retention、Custom agreements & NDAs、Invoicing & enterprise-grade support；需联系销售。"
   }
  ],
- "fetched_at": "2026-09-30T00:13:59Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-09-30T12:13:28Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-09-30T03:46:25Z",
- "websearch_hash": "5fa9ce0a22ede043d69fbd1d38ee26f77170ea39e0eda4de5d02d07dc408bf78"
+ "last_fetch_ts": "2026-09-30T12:13:28Z",
+ "websearch_hash": "37f986f957f9c790faf5081cf0fde1ce60d72c63731f0dd7fa161d27778627ae"
 }

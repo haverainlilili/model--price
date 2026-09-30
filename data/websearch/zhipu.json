@@ -10,54 +10,86 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "search_std",
+   "name": "Web Search API — search_std（基础版，智谱自研）",
    "pricing": "0.01 元/次",
    "price_per_1k_usd": null,
-   "price_basis": "Web Search API 搜索引擎，search_std 基础版按次计费（人民币计价，官网未给出美元价）",
+   "price_basis": "search_std 基础版，按次计费（人民币计价）",
    "free_quota": null,
-   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标）",
+   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "基础版（智谱自研）：满足日常查询需求，性价比极高；count 范围 1-50、默认 10，支持域名/时间范围过滤与摘要字数控制"
+   "note": "满足日常查询需求；支持意图识别、域名/时间范围过滤、摘要字数(content_size)控制；count 范围 1-50，默认 10"
   },
   {
-   "name": "search_pro",
+   "name": "Web Search API — search_pro（高级版，智谱自研）",
    "pricing": "0.03 元/次",
    "price_per_1k_usd": null,
-   "price_basis": "Web Search API 搜索引擎，search_pro 高级版按次计费（人民币计价，官网未给出美元价）",
+   "price_basis": "search_pro 高级版，按次计费（人民币计价）",
    "free_quota": null,
-   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标）",
+   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "高级版（智谱自研）：多引擎协作显著降低空结果率，召回率和准确率大幅提升"
+   "note": "多引擎协作，降低空结果率，召回率和准确率大幅提升；count 范围 1-50，默认 10"
   },
   {
-   "name": "search_pro_sogou",
+   "name": "Web Search API — search_pro_sogou（搜狗）",
    "pricing": "0.05 元/次",
    "price_per_1k_usd": null,
-   "price_basis": "Web Search API 搜索引擎，search_pro_sogou（搜狗）按次计费（人民币计价，官网未给出美元价）",
+   "price_basis": "search_pro_sogou，按次计费（人民币计价）",
    "free_quota": null,
-   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标）",
+   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "搜狗：覆盖腾讯生态（新闻/企鹅号）和知乎内容，在百科、医疗等垂直领域权威性强"
+   "note": "覆盖腾讯生态（新闻/企鹅号）和知乎内容，在百科、医疗等垂直领域权威性强"
   },
   {
-   "name": "search_pro_quark",
+   "name": "Web Search API — search_pro_quark（夸克）",
    "pricing": "0.05 元/次",
    "price_per_1k_usd": null,
-   "price_basis": "Web Search API 搜索引擎，search_pro_quark（夸克）按次计费（人民币计价，官网未给出美元价）",
+   "price_basis": "search_pro_quark，按次计费（人民币计价）",
    "free_quota": null,
-   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标）",
+   "output_type": "结构化搜索结果（网页标题、网页 URL、网页摘要、网站名称、网站图标等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "夸克：精准触达垂直内容"
+   "note": "精准触达垂直内容"
+  },
+  {
+   "name": "Web Search in Chat（对话中的网络搜索 / 模型工具 web_search）",
+   "pricing": null,
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": null,
+   "output_type": "将搜索结果融入大模型生成回答并标注网页结果来源",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "通过 Completions API 的 tools 传入 type=web_search，需设置 enable=True；可指定 search_engine、count、域名过滤、时间范围、content_size；示例模型 glm-4-air"
+  },
+  {
+   "name": "Search Agent（搜索智能体）",
+   "pricing": null,
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": null,
+   "output_type": "模型综合多网页内容生成的长答案",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "按搜索意图进行 query 拆解，对话状态管理与智能路由；示例场景为风险评估报告生成"
+  },
+  {
+   "name": "MCP Server（Web Search API 的 MCP 服务）",
+   "pricing": null,
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": null,
+   "output_type": "通过 MCP 协议调用搜索能力",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "提供 MCP Server 配置指南，详见官方 MCP 文档"
   }
  ],
- "fetched_at": "2026-09-21T01:41:51Z",
- "status_note": "页面无变化且上次处理未成功，冷却期内暂不重试",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-09-28T02:29:03Z",
- "websearch_hash": "964c4679984ed72c2d621c80c3ed93edb0a38356befb67c213aa2960548bea30",
- "websearch_retry_after": "2026-09-28T06:28:06Z"
+ "fetched_at": "2026-09-28T12:10:39Z",
+ "status_note": "页面无变化",
+ "last_error": null,
+ "last_fetch_ts": "2026-09-30T03:45:56Z",
+ "websearch_hash": "964c4679984ed72c2d621c80c3ed93edb0a38356befb67c213aa2960548bea30"
 }

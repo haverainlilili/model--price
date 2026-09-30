@@ -12,64 +12,74 @@
  "offerings": [
   {
    "name": "Web Search API",
-   "pricing": "$5.00 /1k calls",
+   "pricing": "$5.00 /1k calls, 1-100 results per call（PAYG，无最低消费）",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Web Search API（up to 100 results per call）",
-   "free_quota": "100 queries per day；$100 free credit",
-   "output_type": "结构化 web 和 news 搜索结果（JSON，含 URL、标题、描述、snippets/metadata）",
-   "cites_sources": true,
+   "price_basis": "PAYG Web Search API（按调用计费，单次最多 100 条结果）",
+   "free_quota": "$100 free credit；另有 Free 档 100 queries/day（No api key required）",
+   "output_type": "结构化 JSON 搜索结果（results.web / results.news / results.knowledge，含 url、title、description、snippets、page_age、thumbnail、favicon 等元数据）",
+   "cites_sources": null,
    "default_on": null,
-   "note": "News endpoint included at no extra cost；up to 100 URLs per call included。"
+   "note": "单次请求同时返回 web 与 news 结果，news 不额外收费；knowledge 授权数据结果亦不额外收费（横幅：live 股价、加密、天气、预测市场，同为 $5 CPM）；参数含 count（max 100）、freshness、country、language、offset、safesearch、include/exclude/boost_domains（最多 500 个）。"
   },
   {
-   "name": "Web Search API full page extraction add-on",
-   "pricing": "$1.00 per 1,000 pages fetched live",
+   "name": "Web Search API — Full page extraction add-on（extraction_mode: full_page）",
+   "pricing": "$1.00 per 1,000 pages fetched live（与基础搜索费率分开计费）",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Full page extraction，按 live-fetched pages",
-   "free_quota": "$100 free credit",
-   "output_type": "每个搜索结果的完整 Markdown 或 raw HTML 页面内容",
-   "cites_sources": true,
+   "price_basis": "实时抓取页面数（$1/1k pages），仅对 live 抓取的页面计费",
+   "free_quota": null,
+   "output_type": "contents.markdown / contents.html（整页内容）或 contents.highlights",
+   "cites_sources": null,
    "default_on": null,
-   "note": "仅 live crawls 计费；cache 不收 extraction 费，blend 仅对缓存未命中的页面收费。"
+   "note": "extraction_source: blend（默认，仅对未命中缓存的页面收费）、cache（不产生抓取费）、fetch（每条结果都抓取）。示例：count=10 一次调用共 20 页，blend 下 18 页实抓约 $0.023。"
+  },
+  {
+   "name": "Contents API",
+   "pricing": "$1.00 /1k pages，Batch multiple URLs per request",
+   "price_per_1k_usd": 1.0,
+   "price_basis": "PAYG Contents API（按抓取页数）",
+   "free_quota": "$100 free credit",
+   "output_type": "每页返回 clean Markdown 或 raw HTML，含页面文本、摘要与元数据",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "可通过 Search API 的 livecrawl 参数访问；支持 Python SDK、MCP Server 与 REST API。"
   },
   {
    "name": "Answer API",
-   "pricing": "$5.00 /1k calls",
+   "pricing": "$5.00 /1k calls（new）",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Answer API",
+   "price_basis": "PAYG Answer API（按调用）",
    "free_quota": "$100 free credit",
-   "output_type": "单次 web search and synthesis 的实时 citation-grounded answer",
+   "output_type": "单次调用返回带引用的合成答案（citation-grounded answer）",
    "cites_sources": true,
    "default_on": null,
-   "note": "Answer generated only from retrieved passages；Synthesized response with citations。"
+   "note": "答案仅由检索到的 passages 生成；支持与 Web Search 相同的 operators；SimpleQA 准确率 93.48%。"
   },
   {
    "name": "Research API",
-   "pricing": "Lite: $12.00 /1k calls",
+   "pricing": "$12.00 /1k calls（页面档位选择器：Lite / Standard / Deep / Exhaustive / Frontier）",
    "price_per_1k_usd": 12.0,
-   "price_basis": "Research API Lite",
+   "price_basis": "PAYG Research API（页面显示 $12.00/1k calls，档位切换下未列出各档不同价格）",
    "free_quota": "$100 free credit",
-   "output_type": "source-backed answers with citations",
+   "output_type": "跨开放网络的多步检索与综合，输出带来源支撑的答案",
    "cites_sources": true,
    "default_on": null,
-   "note": "页面列出 Lite、Standard、Deep、Exhaustive、Frontier tiers；Lite 为 Fast retrieval for simple factual lookups。"
+   "note": "所有档位均含内联引用的答案、多步搜索与综合流程、AAAI 最佳论文方法；DeepSearchQA 排名第 1；Lite 档描述为「Fast retrieval for simple factual lookups」。"
   },
   {
    "name": "Finance Research API",
-   "pricing": "Deep: $110.00 /1k calls",
+   "pricing": "$110.00 /1k calls（档位：Deep / Exhaustive）",
    "price_per_1k_usd": 110.0,
-   "price_basis": "Finance Research API Deep",
+   "price_basis": "PAYG Finance Research API（按调用）",
    "free_quota": null,
-   "output_type": "Cited answers with traceable [[n]] source references",
+   "output_type": "多源研究综合结果，含 [[n]] 形式的可追溯来源引用",
    "cites_sources": true,
    "default_on": null,
-   "note": "页面列出 Deep、Exhaustive tiers；覆盖 filings、macro data、markets 和 derived calculations。"
+   "note": "面向金融工作流，覆盖财报、宏观数据、行情与派生计算；强调避免财年、单位与期间错误；多源结构化研究，超越一般 web search。"
   }
  ],
- "fetched_at": "2026-09-15T16:15:19Z",
- "status_note": "页面无变化且上次处理未成功，冷却期内暂不重试",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-09-28T02:29:29Z",
- "websearch_hash": "1bcc768c317a3a2ce3f42a2ae7b9910813bd1b7642bd270d585a2b50fd0bdb93",
- "websearch_retry_after": "2026-09-28T06:31:21Z"
+ "fetched_at": "2026-09-29T12:16:00Z",
+ "status_note": "页面无变化",
+ "last_error": null,
+ "last_fetch_ts": "2026-09-30T03:46:27Z",
+ "websearch_hash": "a21120ca9e308549e131dc6674e5a6e9a211f85b3807b186b92b0ef9f1b77520"
 }

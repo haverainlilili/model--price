@@ -10,21 +10,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Web search tool",
+   "name": "Web search tool (web_search_20250305 / web_search_20260209 / web_search_20260318)",
    "pricing": "$10 per 1,000 searches, plus standard token costs for search-generated content",
    "price_per_1k_usd": 10.0,
-   "price_basis": "Claude API；每次 web search 计一次 use，与返回结果数量无关",
+   "price_basis": "Claude API, per 1,000 searches (每次搜索计一次使用，与结果数量无关)；Batches API 中价格相同",
    "free_quota": null,
-   "output_type": "实时网页搜索结果及带来源引用的最终回答",
+   "output_type": "带引用来源的模型回答；响应含 server_tool_use 搜索查询块、web_search_tool_result 结果块（url/title/page_age/encrypted_content）及 citations",
    "cites_sources": true,
-   "default_on": false,
-   "note": "需在 API 请求中添加工具；错误搜索不计费。支持域名过滤、结果本地化及 max_uses。"
+   "default_on": null,
+   "note": "引用始终启用（citations always enabled）；max_uses 可限制每请求搜索次数；web_search_20260209+ 支持 dynamic filtering；搜索失败不计费。组织级默认启用但需管理员在 Claude Console 关闭；工具需在 API 请求 tools 中提供。Claude API、AWS、Microsoft Foundry 可用，Google Cloud 仅基础版，Amazon Bedrock 不可用。"
   }
  ],
- "fetched_at": "2026-09-05T12:11:29Z",
- "status_note": "页面无变化且上次处理未成功，冷却期内暂不重试",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-09-28T02:28:13Z",
- "websearch_hash": "dbb63f38603ce7bae689c0988eff6fbdf724309c0bd5312b9ca0fc80ae815e11",
- "websearch_retry_after": "2026-09-28T06:22:37Z"
+ "fetched_at": "2026-09-29T00:33:14Z",
+ "status_note": "页面无变化",
+ "last_error": null,
+ "last_fetch_ts": "2026-09-30T03:45:07Z",
+ "websearch_hash": "0ce557abc0843f3e9ff5f267d07e22b3cab76d2a38eed40aaecbf9c52a26a9a3"
 }

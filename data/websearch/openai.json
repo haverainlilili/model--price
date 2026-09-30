@@ -11,65 +11,64 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Web search (all models)",
-   "pricing": "$10.00 / 1k calls + Search content tokens billed at model rates.",
+   "name": "Web search tool (Responses API, tools: [{ type: \"web_search\" }], all models)",
+   "pricing": "$10.00 / 1k calls + Search content tokens billed at model rates",
    "price_per_1k_usd": 10.0,
-   "price_basis": "PAYG 内置工具按 1k 调用计费",
+   "price_basis": "标准（Standard，all models）按 web_search 工具调用次数计，每 1000 次调用 $10；搜索内容 token 另按模型费率计",
    "free_quota": null,
-   "output_type": "模型内置工具；返回带 url_citation 内联引用的消息及 web_search_call",
+   "output_type": "web_search_call 搜索调用项 + 带 inline citations 的 message 文本；可返回结构化 sources URL 列表与 image_result（含 image_url/thumbnail_url/caption）",
    "cites_sources": true,
    "default_on": false,
-   "note": "支持 filters（最多100 allowed/blocked domains）、search_context_size low/medium/high、return_token_budget、user_location、图像结果；search context 128k；gpt-4o-mini/4.1-mini 非预览工具按每次固定 8000 input tokens 计费。"
+   "note": "需在 tools 数组显式启用；tool_choice 为 auto 时模型可选择不搜索。搜索上下文上限 128k；支持 filters 最多 100 个 allowed/blocked domains、search_context_size(low/medium/high)、external_web_access、return_token_budget=unlimited。另有非推理快速搜索、推理模型 agentic 搜索与 deep research 三种模式。"
   },
   {
    "name": "Image Web search (all models)",
-   "pricing": "$10.00 / 1k calls + Search content tokens billed at model rates.",
+   "pricing": "$10.00 / 1k calls + Search content tokens billed at model rates",
    "price_per_1k_usd": 10.0,
-   "price_basis": "PAYG 内置工具按 1k 调用计费",
+   "price_basis": "标准（Standard，all models）按图片搜索调用次数计，每 1000 次调用 $10",
    "free_quota": null,
-   "output_type": "结构化图像结果（image_url/thumbnail_url/source_website_url/caption）",
+   "output_type": "web_search_call.results 中的 image_result 数组（image_url、source_website_url、thumbnail_url、caption）",
    "cites_sources": true,
    "default_on": false,
-   "note": "需设 search_content_types 含 image，用 image_settings 控制 max_results 与 caption；可通过 web_search_call.results 读取。"
+   "note": "通过 search_content_types 含 image 启用，image_settings 可设 max_results 与 caption；结果与助手消息分开返回"
   },
   {
-   "name": "Web search preview (reasoning models, including `gpt-5`, `o-series`)",
-   "pricing": "$10.00 / 1k calls + Search content tokens billed at model rates.",
+   "name": "Web search preview (reasoning models, including gpt-5, o-series) — 旧版 web_search_preview 工具",
+   "pricing": "$10.00 / 1k calls + Search content tokens billed at model rates",
    "price_per_1k_usd": 10.0,
-   "price_basis": "PAYG 内置工具按 1k 调用计费",
+   "price_basis": "标准（Standard，reasoning 模型路径）每 1000 次调用 $10",
    "free_quota": null,
-   "output_type": "模型内置工具",
-   "cites_sources": null,
+   "output_type": "带 url_citation 注释的文本答案与 sources 列表",
+   "cites_sources": true,
    "default_on": false,
-   "note": "legacy 工具；不支持 filters、return_token_budget、external_web_access 等新控制。"
+   "note": "legacy 路径，不支持 filters 与 return_token_budget，忽略 external_web_access；官方建议迁移到 web_search"
   },
   {
    "name": "Web search preview (non-reasoning models)",
-   "pricing": "$25.00 / 1k calls + Search content tokens are free.",
+   "pricing": "$25.00 / 1k calls + Search content tokens are free",
    "price_per_1k_usd": 25.0,
-   "price_basis": "PAYG 内置工具按 1k 调用计费",
+   "price_basis": "标准（Standard，非推理模型旧版预览路径）每 1000 次调用 $25，搜索内容 token 免费",
    "free_quota": null,
-   "output_type": "模型内置工具",
-   "cites_sources": null,
+   "output_type": "带 inline citations 的文本答案",
+   "cites_sources": true,
    "default_on": false,
-   "note": "search content tokens 免费，但单次调用价格更高。"
+   "note": "非推理模型的旧版搜索路径，搜索内容 token 不额外收费；官方建议迁移至 Responses web_search"
   },
   {
-   "name": "gpt-5-search-api",
-   "pricing": "Input $1.25 / Cached input $0.125 / Output $10.00 per 1M tokens",
+   "name": "gpt-5-search-api (Chat Completions search model)",
+   "pricing": "按 token 计费（Standard）：输入 $1.25 / 1M tokens，cached input $0.125，输出 $10.00 / 1M tokens",
    "price_per_1k_usd": null,
-   "price_basis": null,
+   "price_basis": "Specialized models 表 gpt-5-search-api，按 1M tokens 计，无法换算为每千次请求价",
    "free_quota": null,
-   "output_type": "搜索专用模型（Chat Completions，总是先搜索再回答）",
+   "output_type": "Chat Completions 搜索模型回复，模型始终先搜索再回答；不支持域名过滤、完整来源列表等 Responses 功能",
    "cites_sources": true,
-   "default_on": null,
-   "note": "200k context；用于保留 Chat Completions 集成；不支持 domain filters、完整 source 列表、live-access control、returned-token budget。"
+   "default_on": true,
+   "note": "Chat Completions 专用搜索模型路径，模型总是搜索；web search 工具调用另按上述工具价格计费（见 pricing#built-in-tools）。gpt-4o-search-preview 与 gpt-4o-mini-search-preview 已弃用，2026-07-23 停用。"
   }
  ],
- "fetched_at": "2026-09-20T14:13:44Z",
- "status_note": "页面无变化且上次处理未成功，冷却期内暂不重试",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-09-28T02:28:13Z",
- "websearch_hash": "afa86ed78bca2e3eebb97ce55fb37a9c3a28cb7cf65df6339299e3f48a53edb8",
- "websearch_retry_after": "2026-09-28T06:23:13Z"
+ "fetched_at": "2026-09-30T00:11:06Z",
+ "status_note": "页面无变化",
+ "last_error": null,
+ "last_fetch_ts": "2026-09-30T03:45:07Z",
+ "websearch_hash": "313511927e9d589a7fc385018a51193c965642e4d56c558052333838aca6dd3c"
 }

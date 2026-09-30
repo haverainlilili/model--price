@@ -521,11 +521,11 @@
   "https://www.recraft.ai/docs/api-reference/pricing",
   "https://www.recraft.ai/docs/api-reference/getting-started"
  ],
- "last_fetch_ts": "2026-09-28T02:30:48Z",
+ "last_fetch_ts": "2026-09-30T00:48:30Z",
  "source_warnings": [],
  "imagegen_hash": "14926d40a52fb232d643b1f68e47d2fade64c96ae3e6ad11238c5c660dccde29",
- "status_note": "页面无变化且上次处理未成功，冷却期内暂不重试",
- "last_error": "官网生图抽取失败: 网络错误: Connection error.",
+ "status_note": "官网生图抽取失败: 结构化输出校验失败: 7 validation errors for ImageGenerationPage\nofferings.0\n  Value error, image comparison_group facts are incomplete or inconsistent [type=value_error, input_value={'name': 'Recraft V4.1 Fl...不过期不可退。'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev",
+ "last_error": "官网生图抽取失败: 结构化输出校验失败: 7 validation errors for ImageGenerationPage\nofferings.0\n  Value error, image comparison_group facts are incomplete or inconsistent [type=value_error, input_value={'name': 'Recraft V4.1 Fl...不过期不可退。'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev",
  "imagegen_excerpt_hash": "00546e8bf500a444e51ea432fb547874b4eb21ff5c9bfd0d5b296cd3651e0b00",
- "imagegen_retry_after": "2026-09-28T06:39:22Z"
+ "imagegen_retry_after": "2026-09-30T06:50:07Z"
 }

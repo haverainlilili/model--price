@@ -11,65 +11,86 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search",
-   "pricing": "$7 / 1k requests",
+   "name": "Search (/search, instant)",
+   "pricing": "$4 / 1k requests（基础价含最多 10 条结果；超过 10 条每条 $1 / 1k results；AI page summary $1 / 1k pages）",
+   "price_per_1k_usd": 4.0,
+   "price_basis": "PAYG /search (instant) 基础价，含最多 10 条结果",
+   "free_quota": "Free Tier：注册当日赠送 $10 credits（最多 2,500 次 Instant 搜索），每月 1 日余额重置为 $10，无需信用卡；完成 onboarding 首个团队另有一次性 $10 奖励",
+   "output_type": "结构化搜索结果：URL 与页面内容（Results）、Highlights、Structured outputs、可流式 AI Summary",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "标注 \"Real-time search with token-efficient page contents\"；latency 约 323ms；Enterprise 支持每次最多 1,000 条结果"
+  },
+  {
+   "name": "Search (/search, fast, auto)",
+   "pricing": "$7 / 1k requests（基础价含最多 10 条结果；超过 10 条每条 $1 / 1k results；AI page summary $1 / 1k pages）",
    "price_per_1k_usd": 7.0,
-   "price_basis": "PAYG /search base price (up to 10 results)",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Real-time search with token-efficient page contents; standard search results with URLs and page contents, plus AI summary and structured outputs",
+   "price_basis": "PAYG /search (fast, auto) 基础价，含最多 10 条结果",
+   "free_quota": "Free Tier：注册当日赠送 $10 credits（最多 2,500 次 Instant 搜索），每月 1 日重置为 $10；该档位未单独说明免费次数",
+   "output_type": "结构化搜索结果 + Highlights / Structured outputs / AI Summary",
    "cites_sources": true,
    "default_on": null,
-   "note": "Additional results above 10: $1 / 1k results; AI page summaries: $1 / 1k pages. Enterprise supports up to 1,000 results per search."
+   "note": "fast 约 450ms（\"Low latency at default quality\"）；auto 约 1s，为 \"the best general-purpose default\"，按 query 自动选择模式"
   },
   {
-   "name": "Deep Search (deep-lite, deep)",
-   "pricing": "$12 / 1k requests",
+   "name": "Deep Search (type: deep-lite / deep / deep-reasoning)",
+   "pricing": "deep-lite $12 / 1k requests；deep $12 / 1k requests；deep-reasoning $15 / 1k requests（均含最多 10 条结果；额外结果与 AI summary 与标准搜索同价）",
    "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG /search type=deep-lite or deep base price (up to 10 results)",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Multi-step research with structured outputs and citations",
+   "price_basis": "PAYG /search type=deep-lite 与 deep 基础价；deep-reasoning 为 $15/1k",
+   "free_quota": null,
+   "output_type": "多步研究，结构化输出与引用（multi-step research with structured outputs and citations）",
    "cites_sources": true,
-   "default_on": null,
-   "note": "Latency ~4 seconds for deep-lite, 4–15 seconds for deep. Additional results and AI page summaries cost the same as standard search."
+   "default_on": false,
+   "note": "通过 /search 的 type 参数设置；延迟 deep-lite ~4s、deep 4–15s、deep-reasoning 12–40s"
   },
   {
-   "name": "Deep Search (deep-reasoning)",
-   "pricing": "$15 / 1k requests",
-   "price_per_1k_usd": 15.0,
-   "price_basis": "PAYG /search type=deep-reasoning base price (up to 10 results)",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Multi-step research with structured outputs and citations",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "Latency 12–40 seconds; best for harder research tasks. Additional results and AI page summaries cost the same as standard search."
-  },
-  {
-   "name": "Answer",
-   "pricing": "$5 / 1k requests",
+   "name": "Answer (/answer)",
+   "pricing": "$5 / 1k requests（含最多 10 条结果，无额外结果或 summary 计费）",
    "price_per_1k_usd": 5.0,
-   "price_basis": "PAYG /answer base price",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "An LLM answer to a question, with citations",
+   "price_basis": "PAYG /answer 基础价，含最多 10 条结果",
+   "free_quota": null,
+   "output_type": "带引用的 LLM 答案（An LLM answer to a question, with citations）",
    "cites_sources": true,
    "default_on": null,
-   "note": "No per-result charge listed for /answer."
+   "note": "对问题返回含引用的 LLM 答案"
   },
   {
-   "name": "Monitors",
-   "pricing": "$15 / 1k requests",
+   "name": "Monitors (/monitors)",
+   "pricing": "$15 / 1k requests（基础价含最多 10 条结果；超过 10 条每条 $1 / 1k results；AI page summary $1 / 1k pages）",
    "price_per_1k_usd": 15.0,
-   "price_basis": "PAYG /monitors base price (up to 10 results)",
-   "free_quota": "New accounts get $20 in free credits (around 2,800 searches) and the Free Tier adds $10 in credits every month.",
-   "output_type": "Scheduled searches that surface new events on the web",
+   "price_basis": "PAYG /monitors 基础价，含最多 10 条结果",
+   "free_quota": null,
+   "output_type": "定时搜索，产出网页上的新事件（Scheduled searches that surface new events on the web）",
    "cites_sources": null,
    "default_on": null,
-   "note": "Each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages."
+   "note": "需显式创建 monitor 定时任务，非默认开启"
+  },
+  {
+   "name": "Agent (fixed effort: minimal / low / medium / high / xhigh)",
+   "pricing": "minimal $0.012/次；low $0.025/次；medium $0.10/次；high $0.50/次；xhigh $1.00/次",
+   "price_per_1k_usd": 12.0,
+   "price_basis": "PAYG fixed effort = minimal 档按每次 $0.012 换算（1k 次 = $12）；low 档 1k 次 = $25",
+   "free_quota": null,
+   "output_type": "异步深度研究、名单构建与数据补全（Async deep research, list building, and enrichment）",
+   "cites_sources": null,
+   "default_on": true,
+   "note": "auto 为默认计费模式（按用量，封顶默认 $5）；ultra 同费率、默认封顶 $20。计费项：ACU $0.10/ACU、搜索工具调用 $0.005/次、邮箱补全 $0.02/个、电话补全 $0.07/个；Exa Connect provider 另计费（Fiber.ai $0.02/credit，Baselayer $0.15–$4.00/order）"
+  },
+  {
+   "name": "Agent (metered: auto / ultra)",
+   "pricing": "按用量计费至每次运行上限：Agent Compute Units $0.10 / ACU；Search tool calls $0.005 / search；auto 默认 $5 封顶，ultra 默认 $20 封顶",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "PAYG auto 档每次运行的封顶价（$5/run）折合 1k 次运行 $5,000；单次价格由实际用量决定，非固定",
+   "free_quota": null,
+   "output_type": "异步深度研究、名单构建与数据补全",
+   "cites_sources": null,
+   "default_on": true,
+   "note": "Agent 默认 effort 为 auto（metered）；运行越久、input.data 越大、推理步越多消耗 ACU 越多"
   }
  ],
- "fetched_at": "2026-09-21T01:42:38Z",
- "status_note": "页面无变化且上次处理未成功，冷却期内暂不重试",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-09-28T02:29:28Z",
- "websearch_hash": "2cd82f4e4181df8649e80d6f7dce24a5d36dc09a0fa47bd5a6d9bb21b39c8a8b",
- "websearch_retry_after": "2026-09-28T06:30:10Z"
+ "fetched_at": "2026-09-30T00:13:41Z",
+ "status_note": "页面无变化",
+ "last_error": null,
+ "last_fetch_ts": "2026-09-30T03:46:24Z",
+ "websearch_hash": "253ce1d001d46bacc959b6b547722c5d8ba67c0a1eab36ba47e05031d185d8d5"
 }

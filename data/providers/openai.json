@@ -2,7 +2,7 @@
  "url": "https://developers.openai.com/api/docs/pricing",
  "source": "claude",
  "currency": "USD",
- "promotions": "GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026. | OpenAI is winding down the fine-tuning platform. The platform is no longer accessible to new users, but existing users of the fine-tuning platform will be able to create training jobs for the coming months. All fine-tuned models will remain available for inference until their base models are deprecated.",
+ "promotions": "Short context: ≤272K input tokens. Long context: >272K input tokens. Regional processing (data residency) endpoints are charged a 10% uplift for models released on or after March 5, 2026. FedRAMP endpoints are also charged a 10% uplift. Priority processing was renamed Fast mode on July 30, 2026. GPT-5.6 Sol's promotional pricing is available at least through November 21, 2026. | Cached input rates for GPT Image 2 and GPT Image 2.5 only apply to images generated with the Responses API. | Billing for gpt-rosalind-research begins on October 5, 2026. Cache-write pricing does not apply to this model. Access is limited to approved internal research through the trusted-access program. All eligible organizations will continue to get access to the latest GPT-Rosalind models as they're released. | Finetuning: OpenAI is winding down the fine-tuning platform. The platform is no longer accessible to new users, but existing users of the fine-tuning platform will be able to create training jobs for the coming months. All fine-tuned models will remain available for inference until their base models are deprecated. | Tokens used for model grading in reinforcement fine-tuning are billed at that model's per-token rate. Inference discounts are available if you enable data sharing when creating the fine-tune job. | File search storage $0.10 / GB per day (1 GB free). | OpenAI models on Amazon Bedrock and Microsoft Azure are billed through those services.",
  "models": [
   {
    "model": "gpt-6-astra",
@@ -11,34 +11,16 @@
    "output_per_1m": 50.0,
    "cached_input_per_1m": 1.0,
    "currency": "USD",
-   "note": "Standard 档, 短上下文; 另列 cache writes $12.50/百万"
+   "note": "标准档, 短上下文(≤272K input tokens); 缓存写入 $12.50; 长上下文(>272K)输入 $20.00 / 缓存输入 $2.00 / 缓存写入 $25.00 / 输出 $75.00; 另有 Batch、Flex(输入 $5.00, 输出 $25.00)、Fast(输入 $20.00, 输出 $100.00)、Ultrafast(输入 $60.00, 输出 $300.00, 仅短上下文)档位"
   },
   {
-   "model": "gpt-6-astra",
-   "display_name": null,
-   "input_per_1m": 20.0,
-   "output_per_1m": 75.0,
-   "cached_input_per_1m": 2.0,
-   "currency": "USD",
-   "note": "Standard 档, 长上下文; cache writes $25.00/百万"
-  },
-  {
-   "model": "gpt-6-sol",
+   "model": "gpt-6.1-sol",
    "display_name": null,
    "input_per_1m": 2.0,
    "output_per_1m": 10.0,
-   "cached_input_per_1m": 0.2,
+   "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "Standard 档, 短上下文; cache writes $2.50/百万"
-  },
-  {
-   "model": "gpt-6-sol",
-   "display_name": null,
-   "input_per_1m": 4.0,
-   "output_per_1m": 15.0,
-   "cached_input_per_1m": 0.4,
-   "currency": "USD",
-   "note": "Standard 档, 长上下文; cache writes $5.00/百万"
+   "note": "标准档, 短上下文(≤272K); 缓存写入 $2.50; 长上下文(>272K)输入 $4.00 / 缓存输入 $0.20 / 缓存写入 $5.00 / 输出 $15.00; Batch 与 Flex 同价(输入 $1.00, 缓存输入 $0.05, 缓存写入 $1.25, 输出 $5.00); Fast 档(输入 $4.00, 输出 $20.00)"
   },
   {
    "model": "gpt-6-luna",
@@ -47,16 +29,16 @@
    "output_per_1m": 0.5,
    "cached_input_per_1m": 0.01,
    "currency": "USD",
-   "note": "Standard 档, 短上下文; cache writes $0.125/百万"
+   "note": "标准档, 短上下文(≤272K); 缓存写入 $0.125; 长上下文(>272K)输入 $0.20 / 缓存输入 $0.02 / 缓存写入 $0.25 / 输出 $0.75; Batch 与 Flex 同价(输入 $0.05, 缓存输入 $0.005, 缓存写入 $0.0625, 输出 $0.25); Fast 档(输入 $0.20, 输出 $1.00)"
   },
   {
-   "model": "gpt-6-luna",
+   "model": "gpt-6-sol",
    "display_name": null,
-   "input_per_1m": 0.2,
-   "output_per_1m": 0.75,
-   "cached_input_per_1m": 0.02,
+   "input_per_1m": 2.0,
+   "output_per_1m": 10.0,
+   "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "Standard 档, 长上下文; cache writes $0.25/百万"
+   "note": "标准档, 短上下文(≤272K); 缓存写入 $2.50; 长上下文(>272K)输入 $4.00 / 缓存输入 $0.40 / 缓存写入 $5.00 / 输出 $15.00; Batch 与 Flex 同价(输入 $1.00, 缓存输入 $0.10, 缓存写入 $1.25, 输出 $5.00); Fast 档(输入 $4.00, 输出 $20.00)"
   },
   {
    "model": "gpt-5.6-sol",
@@ -65,16 +47,7 @@
    "output_per_1m": 20.0,
    "cached_input_per_1m": 0.4,
    "currency": "USD",
-   "note": "Standard 档, 短上下文; 官网注明 GPT-5.6 Sol 促销价至少持续到 2026-11-21; cache writes $5.00/百万"
-  },
-  {
-   "model": "gpt-5.6-sol",
-   "display_name": null,
-   "input_per_1m": 8.0,
-   "output_per_1m": 30.0,
-   "cached_input_per_1m": 0.8,
-   "currency": "USD",
-   "note": "Standard 档, 长上下文; cache writes $10.00/百万"
+   "note": "促销价, 官网注明 GPT-5.6 Sol 的促销定价至少延续到 2026 年 11 月 21 日; 短上下文(≤272K), 缓存写入 $5.00; 长上下文(>272K)输入 $8.00 / 缓存输入 $0.80 / 缓存写入 $10.00 / 输出 $30.00; Batch 与 Flex(输入 $2.00, 缓存输入 $0.20, 缓存写入 $2.50, 输出 $10.00); Fast 档(输入 $8.00, 输出 $40.00)"
   },
   {
    "model": "gpt-5.6-terra",
@@ -83,16 +56,7 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "Standard 档, 短上下文; cache writes $2.50/百万"
-  },
-  {
-   "model": "gpt-5.6-terra",
-   "display_name": null,
-   "input_per_1m": 4.0,
-   "output_per_1m": 18.0,
-   "cached_input_per_1m": 0.4,
-   "currency": "USD",
-   "note": "Standard 档, 长上下文; cache writes $5.00/百万"
+   "note": "标准档, 短上下文(≤272K); 缓存写入 $2.50; 长上下文(>272K)输入 $4.00 / 缓存输入 $0.40 / 缓存写入 $5.00 / 输出 $18.00; Batch 与 Flex(输入 $1.00, 缓存输入 $0.10, 缓存写入 $1.25, 输出 $6.00); Fast 档(输入 $4.00, 输出 $24.00)"
   },
   {
    "model": "gpt-5.6-luna",
@@ -101,16 +65,7 @@
    "output_per_1m": 1.2,
    "cached_input_per_1m": 0.02,
    "currency": "USD",
-   "note": "Standard 档, 短上下文; cache writes $0.25/百万"
-  },
-  {
-   "model": "gpt-5.6-luna",
-   "display_name": null,
-   "input_per_1m": 0.4,
-   "output_per_1m": 1.8,
-   "cached_input_per_1m": 0.04,
-   "currency": "USD",
-   "note": "Standard 档, 长上下文; cache writes $0.50/百万"
+   "note": "标准档, 短上下文(≤272K); 缓存写入 $0.25; 长上下文(>272K)输入 $0.40 / 缓存输入 $0.04 / 缓存写入 $0.50 / 输出 $1.80; Batch 与 Flex(输入 $0.10, 缓存输入 $0.01, 缓存写入 $0.125, 输出 $0.60); Fast 档(输入 $0.40, 输出 $2.40)"
   },
   {
    "model": "gpt-5.5",
@@ -119,16 +74,7 @@
    "output_per_1m": 30.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "短上下文(<272K)"
-  },
-  {
-   "model": "gpt-5.5",
-   "display_name": null,
-   "input_per_1m": 10.0,
-   "output_per_1m": 45.0,
-   "cached_input_per_1m": 1.0,
-   "currency": "USD",
-   "note": "长上下文"
+   "note": "标准档, 短上下文(≤272K); 长上下文(>272K)输入 $10.00 / 缓存输入 $1.00 / 输出 $45.00; Batch 与 Flex(短上下文输入 $2.50, 缓存输入 $0.25, 输出 $15.00; 长上下文输入 $5.00, 缓存输入 $0.50, 输出 $22.50); Fast 档(仅短上下文, 输入 $12.50, 缓存输入 $1.25, 输出 $75.00)"
   },
   {
    "model": "gpt-5.5-pro",
@@ -137,16 +83,7 @@
    "output_per_1m": 180.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "短上下文(<272K)"
-  },
-  {
-   "model": "gpt-5.5-pro",
-   "display_name": null,
-   "input_per_1m": 60.0,
-   "output_per_1m": 270.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "长上下文"
+   "note": "标准档, 短上下文(<272K); 长上下文(>272K)输入 $60.00 / 输出 $270.00; Batch 与 Flex 档(仅短上下文)输入 $15.00 / 输出 $90.00"
   },
   {
    "model": "gpt-5.4",
@@ -155,16 +92,7 @@
    "output_per_1m": 15.0,
    "cached_input_per_1m": 0.25,
    "currency": "USD",
-   "note": "短上下文(<272K)"
-  },
-  {
-   "model": "gpt-5.4",
-   "display_name": null,
-   "input_per_1m": 5.0,
-   "output_per_1m": 22.5,
-   "cached_input_per_1m": 0.5,
-   "currency": "USD",
-   "note": "长上下文"
+   "note": "标准档, 短上下文(<272K); 长上下文(>272K)输入 $5.00 / 缓存输入 $0.50 / 输出 $22.50; Batch 与 Flex(短上下文输入 $1.25, 缓存输入 $0.13, 输出 $7.50; 长上下文输入 $2.50, 缓存输入 $0.25, 输出 $11.25); Fast 档(仅短上下文, 输入 $5.00, 缓存输入 $0.50, 输出 $30.00)"
   },
   {
    "model": "gpt-5.4-mini",
@@ -173,7 +101,7 @@
    "output_per_1m": 4.5,
    "cached_input_per_1m": 0.075,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 与 Flex 档输入 $0.375 / 缓存输入 $0.0375 / 输出 $2.25; Fast 档输入 $1.50 / 缓存输入 $0.15 / 输出 $9.00"
   },
   {
    "model": "gpt-5.4-nano",
@@ -182,7 +110,7 @@
    "output_per_1m": 1.25,
    "cached_input_per_1m": 0.02,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 与 Flex 档输入 $0.10 / 缓存输入 $0.01 / 输出 $0.625"
   },
   {
    "model": "gpt-5.4-pro",
@@ -191,16 +119,7 @@
    "output_per_1m": 180.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "短上下文(<272K)"
-  },
-  {
-   "model": "gpt-5.4-pro",
-   "display_name": null,
-   "input_per_1m": 60.0,
-   "output_per_1m": 270.0,
-   "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "长上下文"
+   "note": "标准档, 短上下文(<272K); 长上下文(>272K)输入 $60.00 / 输出 $270.00; Batch 与 Flex(短上下文输入 $15.00, 输出 $90.00; 长上下文输入 $30.00, 输出 $135.00)"
   },
   {
    "model": "gpt-5.2",
@@ -209,7 +128,7 @@
    "output_per_1m": 14.0,
    "cached_input_per_1m": 0.175,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 与 Flex 档输入 $0.875 / 缓存输入 $0.0875 / 输出 $7.00; Fast 档输入 $3.50 / 缓存输入 $0.35 / 输出 $28.00"
   },
   {
    "model": "gpt-5.2-pro",
@@ -218,7 +137,7 @@
    "output_per_1m": 168.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $10.50 / 输出 $84.00"
   },
   {
    "model": "gpt-5.1",
@@ -227,7 +146,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.125,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 与 Flex 档输入 $0.625 / 缓存输入 $0.0625 / 输出 $5.00; Fast 档输入 $2.50 / 缓存输入 $0.25 / 输出 $20.00"
   },
   {
    "model": "gpt-5",
@@ -236,7 +155,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.125,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 与 Flex 档输入 $0.625 / 缓存输入 $0.0625 / 输出 $5.00; Fast 档输入 $2.50 / 缓存输入 $0.25 / 输出 $20.00"
   },
   {
    "model": "gpt-5-mini",
@@ -245,7 +164,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": 0.025,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 与 Flex 档输入 $0.125 / 缓存输入 $0.0125 / 输出 $1.00; Fast 档输入 $0.45 / 缓存输入 $0.045 / 输出 $3.60"
   },
   {
    "model": "gpt-5-nano",
@@ -254,7 +173,7 @@
    "output_per_1m": 0.4,
    "cached_input_per_1m": 0.005,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 与 Flex 档输入 $0.025 / 缓存输入 $0.0025 / 输出 $0.20"
   },
   {
    "model": "gpt-5-pro",
@@ -263,7 +182,7 @@
    "output_per_1m": 120.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $7.50 / 输出 $60.00"
   },
   {
    "model": "gpt-4.1",
@@ -272,7 +191,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $1.00 / 输出 $4.00(缓存输入未列); Fast 档输入 $3.50 / 缓存输入 $0.875 / 输出 $14.00"
   },
   {
    "model": "gpt-4.1-mini",
@@ -281,7 +200,7 @@
    "output_per_1m": 1.6,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $0.20 / 输出 $0.80(缓存输入未列); Fast 档输入 $0.70 / 缓存输入 $0.175 / 输出 $2.80"
   },
   {
    "model": "gpt-4.1-nano",
@@ -290,7 +209,7 @@
    "output_per_1m": 0.4,
    "cached_input_per_1m": 0.025,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $0.05 / 输出 $0.20(缓存输入未列); Fast 档输入 $0.20 / 缓存输入 $0.05 / 输出 $0.80"
   },
   {
    "model": "gpt-4o",
@@ -299,7 +218,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $1.25 / 输出 $5.00(缓存输入未列); Fast 档输入 $4.25 / 缓存输入 $2.125 / 输出 $17.00"
   },
   {
    "model": "gpt-4o-2024-05-13",
@@ -308,7 +227,7 @@
    "output_per_1m": 15.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $2.50 / 输出 $7.50; Fast 档输入 $8.75 / 输出 $26.25"
   },
   {
    "model": "gpt-4o-mini",
@@ -317,7 +236,7 @@
    "output_per_1m": 0.6,
    "cached_input_per_1m": 0.075,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $0.075 / 输出 $0.30(缓存输入未列); Fast 档输入 $0.25 / 缓存输入 $0.125 / 输出 $1.00"
   },
   {
    "model": "o1",
@@ -326,7 +245,7 @@
    "output_per_1m": 60.0,
    "cached_input_per_1m": 7.5,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $7.50 / 输出 $30.00(缓存输入未列)"
   },
   {
    "model": "o1-pro",
@@ -335,7 +254,7 @@
    "output_per_1m": 600.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $75.00 / 输出 $300.00"
   },
   {
    "model": "o3-pro",
@@ -344,7 +263,7 @@
    "output_per_1m": 80.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $10.00 / 输出 $40.00"
   },
   {
    "model": "o3",
@@ -353,7 +272,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $1.00 / 输出 $4.00(缓存输入未列); Flex 档输入 $1.00 / 缓存输入 $0.25 / 输出 $4.00; Fast 档输入 $3.50 / 缓存输入 $0.875 / 输出 $14.00"
   },
   {
    "model": "o4-mini",
@@ -362,7 +281,7 @@
    "output_per_1m": 4.4,
    "cached_input_per_1m": 0.275,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $0.55 / 输出 $2.20(缓存输入未列); Flex 档输入 $0.55 / 缓存输入 $0.138 / 输出 $2.20; Fast 档输入 $2.00 / 缓存输入 $0.50 / 输出 $8.00"
   },
   {
    "model": "o3-mini",
@@ -371,7 +290,7 @@
    "output_per_1m": 4.4,
    "cached_input_per_1m": 0.55,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $0.55 / 输出 $2.20(缓存输入未列)"
   },
   {
    "model": "gpt-4-turbo-2024-04-09",
@@ -380,7 +299,7 @@
    "output_per_1m": 30.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $5.00 / 输出 $15.00"
   },
   {
    "model": "gpt-4-0613",
@@ -389,7 +308,7 @@
    "output_per_1m": 60.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $15.00 / 输出 $30.00"
   },
   {
    "model": "gpt-3.5-turbo",
@@ -398,7 +317,7 @@
    "output_per_1m": 1.5,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档(Batch 表中无独立 gpt-3.5-turbo 行, 仅 gpt-3.5-turbo-0125 / 1106)"
   },
   {
    "model": "gpt-3.5-turbo-0125",
@@ -407,7 +326,7 @@
    "output_per_1m": 1.5,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $0.25 / 输出 $0.75"
   },
   {
    "model": "gpt-3.5-turbo-1106",
@@ -416,7 +335,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档同价 $1.00 / $2.00"
   },
   {
    "model": "gpt-3.5-turbo-instruct",
@@ -425,7 +344,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档"
   },
   {
    "model": "davinci-002",
@@ -434,7 +353,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $1.00 / 输出 $1.00"
   },
   {
    "model": "babbage-002",
@@ -443,7 +362,7 @@
    "output_per_1m": 0.4,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": null
+   "note": "标准档; Batch 档输入 $0.20 / 输出 $0.20"
   },
   {
    "model": "gpt-5.6-cyber",
@@ -452,7 +371,7 @@
    "output_per_1m": 75.0,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Cyber 模型; cache writes $15.625/百万"
+   "note": "Cyber 模型(Daybreak 系列), 短上下文; 缓存写入 $15.625; 无长上下文档位"
   },
   {
    "model": "gpt-5.5-cyber",
@@ -461,16 +380,88 @@
    "output_per_1m": 75.0,
    "cached_input_per_1m": 1.25,
    "currency": "USD",
-   "note": "Cyber 模型"
+   "note": "Cyber 模型(Daybreak 系列), 短上下文; 无缓存写入价; 无长上下文档位"
+  },
+  {
+   "model": "gpt-realtime-2.1",
+   "display_name": null,
+   "input_per_1m": 32.0,
+   "output_per_1m": 64.0,
+   "cached_input_per_1m": 0.4,
+   "currency": "USD",
+   "note": "Realtime 模型, 音频输入/输出档; 同模型文本档输入 $4.00 / 缓存输入 $0.40 / 输出 $24.00; 图像档输入 $5.00 / 缓存输入 $0.50"
+  },
+  {
+   "model": "gpt-realtime-2.1-mini",
+   "display_name": null,
+   "input_per_1m": 10.0,
+   "output_per_1m": 20.0,
+   "cached_input_per_1m": 0.3,
+   "currency": "USD",
+   "note": "Realtime 模型, 音频输入/输出档; 同模型文本档输入 $0.60 / 缓存输入 $0.06 / 输出 $2.40; 图像档输入 $0.80 / 缓存输入 $0.08"
+  },
+  {
+   "model": "gpt-realtime-2",
+   "display_name": null,
+   "input_per_1m": 32.0,
+   "output_per_1m": 64.0,
+   "cached_input_per_1m": 0.4,
+   "currency": "USD",
+   "note": "Realtime 模型, 音频输入/输出档; 同模型文本档输入 $4.00 / 缓存输入 $0.40 / 输出 $24.00; 图像档输入 $5.00 / 缓存输入 $0.50"
+  },
+  {
+   "model": "gpt-realtime-1.5",
+   "display_name": null,
+   "input_per_1m": 32.0,
+   "output_per_1m": 64.0,
+   "cached_input_per_1m": 0.4,
+   "currency": "USD",
+   "note": "Realtime 模型, 音频输入/输出档; 同模型文本档输入 $4.00 / 缓存输入 $0.40 / 输出 $16.00; 图像档输入 $5.00 / 缓存输入 $0.50"
+  },
+  {
+   "model": "gpt-realtime-mini",
+   "display_name": null,
+   "input_per_1m": 10.0,
+   "output_per_1m": 20.0,
+   "cached_input_per_1m": 0.3,
+   "currency": "USD",
+   "note": "Realtime 模型, 音频输入/输出档; 同模型文本档输入 $0.60 / 缓存输入 $0.06 / 输出 $2.40; 图像档输入 $0.80 / 缓存输入 $0.08"
+  },
+  {
+   "model": "gpt-realtime",
+   "display_name": null,
+   "input_per_1m": 32.0,
+   "output_per_1m": 64.0,
+   "cached_input_per_1m": 0.4,
+   "currency": "USD",
+   "note": "Realtime 模型, 音频输入/输出档; 同模型文本档输入 $4.00 / 缓存输入 $0.40 / 输出 $16.00; 图像档输入 $5.00 / 缓存输入 $0.50"
   },
   {
    "model": "gpt-audio-1.5",
    "display_name": null,
-   "input_per_1m": 2.5,
-   "output_per_1m": 10.0,
+   "input_per_1m": 32.0,
+   "output_per_1m": 64.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Realtime/Audio 模型, 文本 token 价格; Audio 模态价格 $32.00 输入 / $64.00 输出"
+   "note": "音频生成模型, 音频输入/输出档; 同模型文本档输入 $2.50 / 输出 $10.00"
+  },
+  {
+   "model": "gpt-audio-mini",
+   "display_name": null,
+   "input_per_1m": 10.0,
+   "output_per_1m": 20.0,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "音频生成模型, 音频输入/输出档; 同模型文本档输入 $0.60 / 输出 $2.40"
+  },
+  {
+   "model": "gpt-audio",
+   "display_name": null,
+   "input_per_1m": 32.0,
+   "output_per_1m": 64.0,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "音频生成模型, 音频输入/输出档; 同模型文本档输入 $2.50 / 输出 $10.00"
   },
   {
    "model": "gpt-4o-mini-tts",
@@ -479,7 +470,70 @@
    "output_per_1m": 12.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Realtime/Audio 模型, Audio 模态(输出)"
+   "note": "TTS 模型, 按输入 $0.60(文本)/输出 $12.00(音频)计"
+  },
+  {
+   "model": "gpt-image-2.5-sunburst",
+   "display_name": null,
+   "input_per_1m": 8.0,
+   "output_per_1m": 30.0,
+   "cached_input_per_1m": 2.0,
+   "currency": "USD",
+   "note": "图像生成模型, 图像输入/输出档; 同模型文本档输入 $5.00 / 缓存输入 $1.25 / 无输出价; 缓存输入价仅适用于通过 Responses API 生成的图像"
+  },
+  {
+   "model": "gpt-image-2.5-flare",
+   "display_name": null,
+   "input_per_1m": 8.0,
+   "output_per_1m": 30.0,
+   "cached_input_per_1m": 2.0,
+   "currency": "USD",
+   "note": "图像生成模型, 图像输入/输出档; 同模型文本档输入 $5.00 / 缓存输入 $1.25 / 无输出价; 缓存输入价仅适用于通过 Responses API 生成的图像"
+  },
+  {
+   "model": "gpt-image-2",
+   "display_name": null,
+   "input_per_1m": 8.0,
+   "output_per_1m": 30.0,
+   "cached_input_per_1m": 2.0,
+   "currency": "USD",
+   "note": "图像生成模型, 图像输入/输出档; 同模型文本档输入 $5.00 / 缓存输入 $1.25 / 无输出价; Batch 档图像输入 $4.00 / 缓存输入 $1.00 / 输出 $15.00, 文本档输入 $2.50 / 缓存输入 $0.625"
+  },
+  {
+   "model": "gpt-image-1.5",
+   "display_name": null,
+   "input_per_1m": 8.0,
+   "output_per_1m": 32.0,
+   "cached_input_per_1m": 2.0,
+   "currency": "USD",
+   "note": "图像生成模型, 图像输入/输出档; 同模型文本档输入 $5.00 / 缓存输入 $1.25 / 输出 $10.00; Batch 档图像输入 $4.00 / 缓存输入 $1.00 / 输出 $16.00, 文本档输入 $2.50 / 缓存输入 $0.63 / 输出 $5.00"
+  },
+  {
+   "model": "gpt-image-1-mini",
+   "display_name": null,
+   "input_per_1m": 2.5,
+   "output_per_1m": 8.0,
+   "cached_input_per_1m": 0.25,
+   "currency": "USD",
+   "note": "图像生成模型, 图像输入/输出档; 同模型文本档输入 $2.00 / 缓存输入 $0.20 / 无输出价; Batch 档图像输入 $1.25 / 缓存输入 $0.13 / 输出 $4.00, 文本档输入 $1.00 / 缓存输入 $0.10"
+  },
+  {
+   "model": "gpt-image-1",
+   "display_name": null,
+   "input_per_1m": 10.0,
+   "output_per_1m": 40.0,
+   "cached_input_per_1m": 2.5,
+   "currency": "USD",
+   "note": "图像生成模型, 图像输入/输出档; 同模型文本档输入 $5.00 / 缓存输入 $1.25 / 无输出价; Batch 档图像输入 $5.00 / 缓存输入 $1.25 / 输出 $20.00, 文本档输入 $2.50 / 缓存输入 $0.63"
+  },
+  {
+   "model": "chatgpt-image-latest",
+   "display_name": null,
+   "input_per_1m": 8.0,
+   "output_per_1m": 32.0,
+   "cached_input_per_1m": 2.0,
+   "currency": "USD",
+   "note": "图像生成模型, 图像输入/输出档; 同模型文本档输入 $5.00 / 缓存输入 $1.25 / 输出 $10.00; Batch 档图像输入 $4.00 / 缓存输入 $1.00 / 输出 $16.00, 文本档输入 $2.50 / 缓存输入 $0.63 / 输出 $5.00"
   },
   {
    "model": "gpt-4o-transcribe",
@@ -488,7 +542,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Transcription 模型"
+   "note": "转写模型; 另按分钟计费 $0.006 / minute"
   },
   {
    "model": "gpt-4o-mini-transcribe",
@@ -497,7 +551,16 @@
    "output_per_1m": 5.0,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Transcription 模型"
+   "note": "转写模型; 另按分钟计费 $0.003 / minute"
+  },
+  {
+   "model": "gpt-4o-transcribe-diarize",
+   "display_name": null,
+   "input_per_1m": 2.5,
+   "output_per_1m": 10.0,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "转写+说话人分离模型; 另按分钟计费 $0.006 / minute"
   },
   {
    "model": "chat-latest",
@@ -506,7 +569,7 @@
    "output_per_1m": 30.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Specialized models, ChatGPT 类"
+   "note": "专用模型 - ChatGPT 类别"
   },
   {
    "model": "gpt-5.3-codex",
@@ -515,7 +578,7 @@
    "output_per_1m": 14.0,
    "cached_input_per_1m": 0.175,
    "currency": "USD",
-   "note": "Specialized models, Codex"
+   "note": "专用模型 - Codex 类别; Fast 档输入 $3.50 / 缓存输入 $0.35 / 输出 $28.00"
   },
   {
    "model": "gpt-rosalind-research",
@@ -524,7 +587,7 @@
    "output_per_1m": 25.0,
    "cached_input_per_1m": 0.5,
    "currency": "USD",
-   "note": "Specialized models, Life Sciences; 计费自 2026-10-05 开始, 限 trusted-access 计划"
+   "note": "专用模型 - Life Sciences 类别; 计费自 2026 年 10 月 5 日开始, 不适用缓存写入价, 仅限 trusted-access 计划内获批的内部研究使用"
   },
   {
    "model": "gpt-5-search-api",
@@ -533,7 +596,7 @@
    "output_per_1m": 10.0,
    "cached_input_per_1m": 0.125,
    "currency": "USD",
-   "note": "Specialized models, Search"
+   "note": "专用模型 - Search 类别"
   },
   {
    "model": "text-embedding-3-small",
@@ -542,7 +605,7 @@
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "embedding 类型"
+   "note": "embedding 模型, 页面仅列输入价, 无输出价"
   },
   {
    "model": "text-embedding-3-large",
@@ -551,7 +614,7 @@
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "embedding 类型"
+   "note": "embedding 模型, 页面仅列输入价, 无输出价"
   },
   {
    "model": "text-embedding-ada-002",
@@ -560,7 +623,7 @@
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "embedding 类型"
+   "note": "embedding 模型, 页面仅列输入价, 无输出价"
   },
   {
    "model": "omni-moderation-latest",
@@ -569,14 +632,104 @@
    "output_per_1m": null,
    "cached_input_per_1m": null,
    "currency": "USD",
-   "note": "Moderation 模型, 免费"
+   "note": "moderation 模型, 页面标注 Free(免费), 无输出价"
+  },
+  {
+   "model": "o4-mini-2025-04-16",
+   "display_name": null,
+   "input_per_1m": 4.0,
+   "output_per_1m": 16.0,
+   "cached_input_per_1m": 1.0,
+   "currency": "USD",
+   "note": "微调模型推理价(标准档); 训练 $100.00 / hour; Batch 档输入 $2.00 / 缓存输入 $0.50 / 输出 $8.00"
+  },
+  {
+   "model": "o4-mini-2025-04-16 (data sharing)",
+   "display_name": null,
+   "input_per_1m": 2.0,
+   "output_per_1m": 8.0,
+   "cached_input_per_1m": 0.5,
+   "currency": "USD",
+   "note": "微调模型推理价(标准档, 数据共享折扣); 训练 $100.00 / hour; Batch 档输入 $1.00 / 缓存输入 $0.25 / 输出 $4.00"
+  },
+  {
+   "model": "gpt-4.1-2025-04-14",
+   "display_name": null,
+   "input_per_1m": 3.0,
+   "output_per_1m": 12.0,
+   "cached_input_per_1m": 0.75,
+   "currency": "USD",
+   "note": "微调模型推理价(标准档); 训练 $25.00; Batch 档输入 $1.50 / 缓存输入 $0.50 / 输出 $6.00"
+  },
+  {
+   "model": "gpt-4.1-mini-2025-04-14",
+   "display_name": null,
+   "input_per_1m": 0.8,
+   "output_per_1m": 3.2,
+   "cached_input_per_1m": 0.2,
+   "currency": "USD",
+   "note": "微调模型推理价(标准档); 训练 $5.00; Batch 档输入 $0.40 / 缓存输入 $0.10 / 输出 $1.60"
+  },
+  {
+   "model": "gpt-4.1-nano-2025-04-14",
+   "display_name": null,
+   "input_per_1m": 0.2,
+   "output_per_1m": 0.8,
+   "cached_input_per_1m": 0.05,
+   "currency": "USD",
+   "note": "微调模型推理价(标准档); 训练 $1.50; Batch 档输入 $0.10 / 缓存输入 $0.025 / 输出 $0.40"
+  },
+  {
+   "model": "gpt-4o-2024-08-06",
+   "display_name": null,
+   "input_per_1m": 3.75,
+   "output_per_1m": 15.0,
+   "cached_input_per_1m": 1.875,
+   "currency": "USD",
+   "note": "微调模型推理价(标准档); 训练 $25.00; Batch 档输入 $2.225 / 缓存输入 $0.90 / 输出 $12.50"
+  },
+  {
+   "model": "gpt-4o-mini-2024-07-18",
+   "display_name": null,
+   "input_per_1m": 0.3,
+   "output_per_1m": 1.2,
+   "cached_input_per_1m": 0.15,
+   "currency": "USD",
+   "note": "微调模型推理价(标准档); 训练 $3.00; Batch 档输入 $0.15 / 缓存输入 $0.075 / 输出 $0.60"
+  },
+  {
+   "model": "gpt-3.5-turbo (legacy)",
+   "display_name": null,
+   "input_per_1m": 3.0,
+   "output_per_1m": 6.0,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "微调模型推理价(标准档, legacy); 训练 $8.00; Batch 档输入 $1.50 / 输出 $3.00"
+  },
+  {
+   "model": "davinci-002 (legacy)",
+   "display_name": null,
+   "input_per_1m": 12.0,
+   "output_per_1m": 12.0,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "微调模型推理价(标准档, legacy); 训练 $6.00; Batch 档输入 $6.00 / 输出 $6.00"
+  },
+  {
+   "model": "babbage-002 (legacy)",
+   "display_name": null,
+   "input_per_1m": 1.6,
+   "output_per_1m": 1.6,
+   "cached_input_per_1m": null,
+   "currency": "USD",
+   "note": "微调模型推理价(标准档, legacy); 训练 $0.40; Batch 档输入 $0.80 / 输出 $0.90"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "0b7ec202a8ccfd8abd82959c2053804724cd55c743304d82ec158e125f62da5b",
- "fetched_at": "2026-09-28T02:15:59Z",
- "status_note": null,
+ "price_hash": "2e0c2ecda852712e6cd9bbf07fec1eaee71b9041d7a232031e65e3bd585c0db3",
+ "fetched_at": "2026-09-30T00:05:47Z",
+ "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-09-28T02:15:59Z",
+ "last_fetch_ts": "2026-09-30T03:39:24Z",
  "pricing_extraction_revision": 1
 }

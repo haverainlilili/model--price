@@ -12,97 +12,74 @@
  "offerings": [
   {
    "name": "Search API",
-   "pricing": "$5.00 per 1K requests; there are no additional token-based charges.",
+   "pricing": "$5.00 per 1K requests",
    "price_per_1k_usd": 5.0,
-   "price_basis": "每个成功的 POST /search 请求；最多包含 5 个查询仍计为一个计费单位",
+   "price_basis": "Search API 基础档（每 1K 成功请求）",
    "free_quota": null,
-   "output_type": "实时、排序后的结构化原始网页搜索结果",
+   "output_type": "结构化搜索结果（ranked results 含 title/url/snippet/date）",
    "cites_sources": true,
    "default_on": null,
-   "note": "结果含 title、url、snippet 等；max_results 为 1–20，默认 10。"
+   "note": "计费单位为每个成功的 POST /search 请求，非请求内每个 query；一次请求最多 5 个 query 算 1 个计费单位。max_results 取值 1-20，默认 10。无额外 token 费用。"
   },
   {
-   "name": "web_search",
-   "pricing": "$0.0025 per invocation",
+   "name": "Search API with Fast Search",
+   "pricing": "$1.00 per 1K requests",
+   "price_per_1k_usd": 1.0,
+   "price_basis": "Search API 设置 search_type: \"fast\"（每 1K 请求）",
+   "free_quota": null,
+   "output_type": "低延迟结构化搜索结果（ranked results 含 url）",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "Lower-latency web search results。需在请求体中设置 search_type: \"fast\"。"
+  },
+  {
+   "name": "web_search (standard)",
+   "pricing": "$0.0025 per invocation; $2.50 per 1,000 invocations",
    "price_per_1k_usd": 2.5,
-   "price_basis": "Agent API web_search 工具，每次调用",
+   "price_basis": "Agent API 工具调用（standard web search，search_type: \"web\"，每次调用）",
    "free_quota": null,
-   "output_type": "模型工具；检索当前网页信息并生成带引用答案",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "工具费用与模型 token 费用分开计算。"
-  },
-  {
-   "name": "Sonar",
-   "pricing": "Input $1/1M tokens; output $1/1M tokens; request fee $5 / $8 / $12 per 1K for Low / Medium / High context.",
-   "price_per_1k_usd": null,
-   "price_basis": "Low / Medium / High search context；另收输入和输出 token 费",
-   "free_quota": null,
-   "output_type": "检索网页信息的模型生成响应",
+   "output_type": "模型内置工具（Agent API 工具调用，结果供模型使用）",
    "cites_sources": null,
    "default_on": null,
-   "note": "Low context 为默认；更高 context 检索更全面。"
+   "note": "Standard web search with search_type: \"web\"。工具费用与模型 token 费用分开计。"
   },
   {
-   "name": "Sonar Pro",
-   "pricing": "Input $3/1M tokens; output $15/1M tokens; request fee $6 / $10 / $14 per 1K for Low / Medium / High context.",
-   "price_per_1k_usd": null,
-   "price_basis": "Low / Medium / High search context；另收输入和输出 token 费",
+   "name": "web_search (Fast Search)",
+   "pricing": "$0.001 per invocation; $1.00 per 1,000 invocations",
+   "price_per_1k_usd": 1.0,
+   "price_basis": "Agent API 工具调用（同一工具，search_type: \"fast\"，每次调用）",
    "free_quota": null,
-   "output_type": "检索网页信息的模型生成响应",
+   "output_type": "模型内置工具（Agent API 工具调用）",
    "cites_sources": null,
    "default_on": null,
-   "note": "Low context 为默认；Pro Search 的 fast 类型采用此请求费。"
+   "note": "The same tool with search_type: \"fast\"。"
   },
   {
-   "name": "Sonar Reasoning Pro",
-   "pricing": "Input $2/1M tokens; output $8/1M tokens; request fee $6 / $10 / $14 per 1K for Low / Medium / High context.",
-   "price_per_1k_usd": null,
-   "price_basis": "Low / Medium / High search context；另收输入和输出 token 费",
+   "name": "people_search",
+   "pricing": "$0.005 per invocation; $5 per 1,000 tool invocations",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "Agent API 工具调用（每次调用）",
    "free_quota": null,
-   "output_type": "带推理能力、检索网页信息的模型生成响应",
+   "output_type": "模型内置工具（人物/职业信息查询）",
    "cites_sources": null,
    "default_on": null,
-   "note": "Low context 为默认；更高 context 检索更全面。"
+   "note": "Looks up professionals, employees, and people."
   },
   {
-   "name": "Sonar Deep Research",
-   "pricing": "Input $2/1M tokens; output $8/1M; citation $2/1M; reasoning $3/1M; search queries $5/1K.",
-   "price_per_1k_usd": null,
-   "price_basis": "按 token 及模型自动执行的搜索查询数计费",
+   "name": "finance_search",
+   "pricing": "$0.005 per invocation; $5 per 1,000 tool invocations",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "Agent API 工具调用（每次调用）",
    "free_quota": null,
-   "output_type": "深度研究模型响应，包含搜索结果和参考资料",
-   "cites_sources": true,
+   "output_type": "模型内置工具（金融数据与市场信息）",
+   "cites_sources": null,
    "default_on": null,
-   "note": "搜索次数由模型自动决定，无法精确控制；reasoning_effort 会影响搜索次数。"
-  },
-  {
-   "name": "Pro Search for Sonar Pro — pro",
-   "pricing": "Request fee $14 / $18 / $22 per 1K for Low / Medium / High context; token pricing remains $3/1M input and $15/1M output.",
-   "price_per_1k_usd": null,
-   "price_basis": "search_type=pro；Low / Medium / High context，另收 token 费",
-   "free_quota": null,
-   "output_type": "多步骤工具调用、网页搜索和 URL 内容抓取生成的模型响应",
-   "cites_sources": null,
-   "default_on": false,
-   "note": "要求 stream:true，并通过 web_search_options 中的 search_type 参数启用。"
-  },
-  {
-   "name": "Pro Search for Sonar Pro — auto",
-   "pricing": "Varies by classification; token pricing remains $3/1M input and $15/1M output.",
-   "price_per_1k_usd": null,
-   "price_basis": "search_type=auto；根据查询复杂度自动分类",
-   "free_quota": null,
-   "output_type": "按查询复杂度自动选择搜索方式的模型响应",
-   "cites_sources": null,
-   "default_on": false,
-   "note": "要求 stream:true，并通过 web_search_options 中的 search_type 参数启用。"
+   "note": "Retrieves financial data and market information."
   }
  ],
- "fetched_at": "2026-09-05T12:15:51Z",
- "status_note": "页面无变化且上次处理未成功，冷却期内暂不重试",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-09-28T02:29:29Z",
- "websearch_hash": "08bbb5991514f490b01dbaf2b08ccccc4a9f392fa2eb1538571f6bca7c2c2173",
- "websearch_retry_after": "2026-09-28T06:30:46Z"
+ "fetched_at": "2026-09-29T00:35:17Z",
+ "status_note": "页面无变化",
+ "last_error": null,
+ "last_fetch_ts": "2026-09-30T03:46:26Z",
+ "websearch_hash": "6a2806b461a23c64ffa28d552cc42cdd4231472029ca0a1ae31d1fc86391e513"
 }

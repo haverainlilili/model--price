@@ -11,31 +11,31 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search",
-   "pricing": "$5.00 per 1,000 requests",
+   "name": "Brave Search API — Search (LLM Context / web, news, images, videos search)",
+   "pricing": "$5.00 per 1,000 requests (Prepaid)",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Prepaid（1,000 requests）",
-   "free_quota": "Includes free $5 in credits every month. Credits are automatically applied to your account.",
-   "output_type": "完整结构化搜索结果，包含 URLs、文本、新闻、图片等，并提供面向模型和代理优化的 LLM context",
+   "price_basis": "Prepaid Search plan, $5.00 per 1,000 requests",
+   "free_quota": "Includes $5 in free credits every month. Credits are automatically applied to your account.",
+   "output_type": "结构化搜索结果(URLs、文本、news、images 等, 另有面向 LLM/agent 优化的 LLM context, 最多 5 个实时 snippets、Schema-enriched 结果)",
    "cites_sources": true,
    "default_on": null,
-   "note": "Capacity 50 requests per second；支持 Web、新闻、视频、图片等搜索。"
+   "note": "容量 50 requests per second; 索引超 300 亿页面、每日超 1 亿次页面更新; 特殊能力含 Goggles 自定义重排与结果过滤。"
   },
   {
-   "name": "Answers",
-   "pricing": "$4.00 per 1,000 queries + $5.00 per 1,000,000 input tokens + $5.00 per 1,000,000 output tokens",
-   "price_per_1k_usd": null,
-   "price_basis": "Prepaid；按查询量并额外按输入、输出 token 计费",
-   "free_quota": "Includes free $5 in credits every month. Credits are automatically applied to your account.",
-   "output_type": "基于单次或多次搜索生成的摘要式完整答案",
+   "name": "Brave Search API — Answers",
+   "pricing": "$4.00 per 1,000 queries + $5.00 per 1,000,000 input tokens + $5.00 per 1,000,000 output tokens (Prepaid)",
+   "price_per_1k_usd": 4.0,
+   "price_basis": "Prepaid Answers plan, 基础 $4.00 per 1,000 queries(另按 token 加价)",
+   "free_quota": "Includes $5 in free credits every month. Credits are automatically applied to your account.",
+   "output_type": "带引用的生成式答案(Grounding supported by citations), 支持 streaming, OpenAI SDK 兼容, 模型名 brave-pro",
    "cites_sources": true,
    "default_on": null,
-   "note": "Grounding supported by citations；Capacity 2 requests per second。"
+   "note": "容量 2 requests per second; 基于单次或多���搜索 grounding 以提升准确度、减少幻觉; 除每次查询费外还按输入/输出 token 收取 $5/百万。"
   }
  ],
- "fetched_at": "2026-09-07T08:13:53Z",
+ "fetched_at": "2026-09-30T00:13:59Z",
  "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-09-28T02:29:28Z",
- "websearch_hash": "280d29766af531a097fd47e5d22419304c803d6bebbdbe38ebb57c98a9892f90"
+ "last_fetch_ts": "2026-09-30T03:46:25Z",
+ "websearch_hash": "5fa9ce0a22ede043d69fbd1d38ee26f77170ea39e0eda4de5d02d07dc408bf78"
 }

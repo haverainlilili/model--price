@@ -5,7 +5,7 @@
  "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
- "product_status_note": null,
+ "product_status_note": "百炼在售模型页：万相2.7-图像生成与编辑旗舰版模型，华北2（北京）与新加坡两个部署范围均列出调用原价与限流。",
  "source_url": "https://help.aliyun.com/zh/model-studio/wan2-7-image-pro",
  "source_urls": [
   "https://help.aliyun.com/zh/model-studio/wan2-7-image-pro",
@@ -27,7 +27,7 @@
  "offerings": [
   {
    "name": "wan2.7-image-pro",
-   "variant_key": "domestic",
+   "variant_key": "cn-beijing",
    "api_available": true,
    "modes": [
     "text-to-image",
@@ -35,12 +35,12 @@
     "image-edit",
     "reference"
    ],
-   "pricing": "华北2（北京）：图片生成 0.5 元/张。",
+   "pricing": "图片生成 0.5 元/每张（模型调用原价，不含限时优惠）",
    "currency": "CNY",
    "region": "domestic",
    "price_per_image": 0.5,
    "comparison_group": null,
-   "price_basis": "wan2.7-image-pro，华北2（北京），图片生成，按每张计费。",
+   "price_basis": "wan2.7-image-pro，图片生成计费项，按张计费，单一档位原价，未标注分辨率/质量档",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -50,11 +50,11 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "支持文生图、文生组图、图生组图、图像编辑、多图参考生成和交互式编辑。"
+   "note": "华北2（北京）；国际站对应价为$0.068761/张；页面仅展示原价不含活动优惠；RPM 300。"
   },
   {
    "name": "wan2.7-image-pro",
-   "variant_key": "intl",
+   "variant_key": "intl-singapore",
    "api_available": true,
    "modes": [
     "text-to-image",
@@ -62,12 +62,12 @@
     "image-edit",
     "reference"
    ],
-   "pricing": "新加坡（部署范围：国际）：图片生成 0.562065 元/张。",
+   "pricing": "图片生成 0.562065 元/每张（模型调用原价，不含限时优惠）",
    "currency": "CNY",
    "region": "intl",
    "price_per_image": 0.562065,
    "comparison_group": null,
-   "price_basis": "wan2.7-image-pro，新加坡国际部署，图片生成，按每张计费。",
+   "price_basis": "wan2.7-image-pro，图片生成计费项，按张计费，单一档位原价，未标注分辨率/质量档",
    "resolution": null,
    "aspect_ratios": null,
    "output_formats": null,
@@ -76,22 +76,22 @@
    "quality_tier": null,
    "lifecycle_status": "unknown",
    "sunset_at": null,
-   "free_quota": null,
-   "note": "支持文生图、文生组图、图生组图、图像编辑、多图参考生成和交互式编辑。"
+   "free_quota": "50 images（国际站新加坡区域，激活后 90 天内有效，其他区域无免费额度）",
+   "note": "新加坡，部署范围国际；国际站价为$0.075/张；页面仅展示原价不含活动优惠；RPM 300。"
   }
  ],
- "fetched_at": "2026-09-15T13:16:58Z",
+ "fetched_at": "2026-09-30T00:50:33Z",
  "has_image_generation": true,
  "configured_source_urls": [
   "https://help.aliyun.com/zh/model-studio/wan2-7-image-pro",
   "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
   "https://www.alibabacloud.com/help/en/model-studio/new-free-quota"
  ],
- "last_fetch_ts": "2026-09-28T02:31:11Z",
+ "last_fetch_ts": "2026-09-30T00:50:33Z",
  "source_warnings": [],
- "imagegen_hash": "51e4eddc5c385a4e0f1b089e8ccc24fd606d8fbfdbdce6b931b66e827dc6fea2",
- "status_note": "页面无变化且上次处理未成功，冷却期内暂不重试",
- "last_error": "官网生图抽取失败: 网络错误: Connection error.",
- "imagegen_excerpt_hash": "6ee9a20e964a910c96b54e1f239c4072f838868169fe6a73afb3d2afd37fa8fe",
+ "imagegen_hash": "20c2e0f156acbce5876e76a03487d940d8a422550f388019b16f906cfaffe8f7",
+ "status_note": null,
+ "last_error": null,
+ "imagegen_excerpt_hash": "d06507777e3c9836e7eb71a8df87438c7aa7fdfb6d21690bf9900bf03f1494b0",
  "imagegen_retry_after": "2026-09-28T06:40:52Z"
 }

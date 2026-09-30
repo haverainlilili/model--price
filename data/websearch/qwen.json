@@ -10,65 +10,75 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "联网搜索（turbo 策略，模型内置）",
-   "pricing": "2026年2月27日 00:00 起：正式计费。每调用 1000 次的费用为：turbo 策略 3元。该标准仅适用于华北2（北京）地域。",
+   "name": "联网搜索（search_strategy: turbo，默认策略）",
+   "pricing": "turbo 与 max 策略：2026年2月27日 00:00 起正式计费。每调用 1000 次的费用为：turbo 策略 3元，max 策略 4元。该标准仅适用于华北2（北京）地域。",
    "price_per_1k_usd": null,
-   "price_basis": "turbo 策略（默认），3元/1000次，仅华北2（北京）地域；价格以人民币计",
+   "price_basis": "turbo 策略，华北2（北京）地域，人民币计价，每调用 1000 次",
    "free_quota": "本身不提供免费调用额度",
-   "output_type": "带引用答案（可返回搜索来源链接与角标标注）",
+   "output_type": "模型内置联网搜索，DashScope 协议下 search_info 字段返回 search_results（title/url/site_name/index），可开启角标引用 [1]/[ref_1]",
    "cites_sources": true,
    "default_on": false,
-   "note": "通过 enable_search:true 启用；另有模型调用费用（搜索网页内容拼入提示词按模型标准价计 token）。限流 15 RPS。支持强制搜索、垂域搜索、时效性、限定站点等。"
+   "note": "需 enable_search: true 启用；支持 forced_search、freshness、assigned_site_list（最多25站点）、prompt_intervene、垂域搜索、提前返回搜索来源；限流 15 RPS。"
   },
   {
-   "name": "联网搜索（max 策略，模型内置）",
-   "pricing": "每调用 1000 次的费用为：max 策略 4元。",
+   "name": "联网搜索（search_strategy: max）",
+   "pricing": "turbo 与 max 策略：2026年2月27日 00:00 起正式计费。每调用 1000 次的费用为：turbo 策略 3元，max 策略 4元。该标准仅适用于华北2（北京）地域。",
    "price_per_1k_usd": null,
-   "price_basis": "max 策略，4元/1000次，仅华北2（北京）地域；价格以人民币计",
+   "price_basis": "max 策略，华北2（北京）地域，人民币计价，每调用 1000 次",
    "free_quota": "本身不提供免费调用额度",
-   "output_type": "带引用答案（可返回搜索来源链接与角标标注）",
+   "output_type": "模型内置联网搜索，支持开启 enable_source 返回搜索来源列表（OpenAI 兼容协议不支持）",
    "cites_sources": true,
    "default_on": false,
-   "note": "更全面的搜索策略，可调用多源搜索引擎，响应时间可能更长。2026年2月27日起正式计费。"
+   "note": "max 可调用多源搜索引擎，获取更详尽结果但响应时间可能更长；启用该策略时仅支持 enable_source: true，其他联网搜索功能不可用。"
   },
   {
-   "name": "联网搜索（agent 策略，模型内置）",
-   "pricing": "每调用 1000 次的费用为：华北2（北京）、美国（弗吉尼亚）、中国香港、日本（东京）、德国（法兰克福）地域：4元；新加坡地域 73.392381元。",
+   "name": "联网搜索（search_strategy: agent）",
+   "pricing": "agent 策略每调用 1000 次的费用为：华北2（北京）、美国（弗吉尼亚）、中国香港、日本（东京）、德国（法兰克福）地域：4元；新加坡地域 73.392381元。",
    "price_per_1k_usd": null,
-   "price_basis": "agent 策略，4元/1000次（多地域）/73.392381元（新加坡）；价格以人民币计",
+   "price_basis": "agent 策略，人民币计价，每调用 1000 次（分地域）",
    "free_quota": "本身不提供免费调用额度",
-   "output_type": "带引用答案",
+   "output_type": "模型多次调用联网搜索工具与大模型，多轮信息检索与内容整合；DashScope 协议可返回搜索来源",
    "cites_sources": true,
    "default_on": false,
-   "note": "可多次调用联网搜索工具与大模型，实现多轮信息检索与内容整合。启用时仅支持返回搜索来源，其他联网搜索功能不可用；需流式调用。"
+   "note": "适用于 Qwen3-Max、Qwen3.5/3.6/3.7 系列等，text 端点需流式；qwen3.8 系列不支持该策略；每次调用额外收费。"
   },
   {
-   "name": "联网搜索（agent_max 策略，模型内置）",
-   "pricing": "联网搜索工具每 1000 次调用费用：华北2（北京）、美国（弗吉尼亚）、中国香港、日本（东京）、德国（法兰克福）地域：4元；新加坡地域：73.392381元。网页抓取工具限时免费。",
+   "name": "联网搜索（search_strategy: agent_max，限时优惠）",
+   "pricing": "agent_max 策略包含联网搜索与网页抓取的费用。联网搜索工具每 1000 次调用费用：华北2（北京）、美国（弗吉尼亚）、中国香港、日本（东京）、德国（法兰克福）地域：4元；新加坡地域：73.392381元。网页抓取工具限时免费。",
    "price_per_1k_usd": null,
-   "price_basis": "agent_max 策略（限时优惠），4元/1000次（多地域）/73.392381元（新加坡）；价格以人民币计",
+   "price_basis": "agent_max 策略（限时优惠），人民币计价，联网搜索每 1000 次调用",
    "free_quota": "网页抓取工具限时免费",
-   "output_type": "带引用答案",
+   "output_type": "在 agent 策略基础上支持网页抓取；仅支持返回搜索来源（enable_source: true）",
    "cites_sources": true,
    "default_on": false,
-   "note": "在 agent 策略基础上支持网页抓取；仅适用于 qwen3-max、qwen3-max-2026-01-23 的思考模式。启用时仅支持返回搜索来源。"
+   "note": "仅适用于 qwen3-max、qwen3-max-2026-01-23 的思考模式；启用后其他联网搜索功能不可用。"
   },
   {
-   "name": "联网搜索 MCP（百炼 MCP 广场）",
-   "pricing": "免费额度用尽后按 29 元/千次计费。",
+   "name": "Responses API web_search 工具",
+   "pricing": "使用 Responses API 方式时，联网搜索工具的计费和 agent 策略相同。",
    "price_per_1k_usd": null,
-   "price_basis": "联网搜索 MCP，29元/1000次；价格以人民币计",
+   "price_basis": "按 agent 策略计价（4元/千次，新加坡 73.392381元/千次）",
+   "free_quota": "本身不提供免费调用额度",
+   "output_type": "模型内置工具：output 数组中 type 为 web_search_call 的元素，action.sources 返回搜索来源链接；usage.x_tools.web_search.count 记录次数",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "通过 tools 数组挂载 web_search/web_extractor/code_interpreter；不支持 search_strategy、enable_source、enable_citation，不插入 [1] 角标；仅部分模型支持。"
+  },
+  {
+   "name": "联网搜索 MCP（bailian_web_search）",
+   "pricing": "联网搜索 MCP 全部用户前 2000 次调用免费，免费额度用尽后按 29 元/千次计费",
+   "price_per_1k_usd": null,
+   "price_basis": "MCP 服务，人民币计价，每 1000 次调用（独立于模型内置联网搜索）",
    "free_quota": "全部用户前 2000 次调用免费",
-   "output_type": "MCP 工具（供智能体应用通过 MCP 服务调用）",
+   "output_type": null,
    "cites_sources": null,
    "default_on": null,
-   "note": "与模型内置联网搜索相互独立、计费独立。Kimi 系列模型不支持内置联网搜索，需通过该 MCP 工具（如 bailian_web_search）实现。"
+   "note": "与百炼模型内置联网搜索是相互独立的两个功能，计费也相互独立；可在智能体应用通过工具>MCP 服务添加。"
   }
  ],
- "fetched_at": "2026-09-20T07:30:58Z",
- "status_note": "页面无变化且上次处理未成功，冷却期内暂不重试",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-09-28T02:28:38Z",
- "websearch_hash": "f4018c6f0a15381bb227c266ce262e2f47aff840a6b5b2d215e25ef130e2b9b5",
- "websearch_retry_after": "2026-09-28T06:26:12Z"
+ "fetched_at": "2026-09-28T12:09:52Z",
+ "status_note": "页面无变化",
+ "last_error": null,
+ "last_fetch_ts": "2026-09-30T03:45:31Z",
+ "websearch_hash": "2279f61e821496e912757dcd9420f22a8cf5a1331bceb76aec04d32a3ddcf3ea"
 }

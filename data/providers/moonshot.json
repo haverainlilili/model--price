@@ -11,7 +11,7 @@
    "output_per_1m": 100.0,
    "cached_input_per_1m": 2.0,
    "currency": "CNY",
-   "note": "缓存写入: TTL 5min ¥20/百万, TTL 1h ¥40/百万; 缓存命中后自动续期不再收写入费; 上下文 1,048,576 tokens"
+   "note": "输入价格为缓存未命中价；缓存命中 ¥2.00/百万 tokens；缓存写入单独计费：TTL 5min ¥20.00/百万 tokens，TTL 1h ¥40.00/百万 tokens；上下文窗口 1,048,576 tokens"
   },
   {
    "model": "kimi-k2.7-code",
@@ -20,7 +20,7 @@
    "output_per_1m": 27.0,
    "cached_input_per_1m": 1.3,
    "currency": "CNY",
-   "note": "上下文 262,144 tokens"
+   "note": "输入价格为缓存未命中价；缓存命中 ¥1.30/百万 tokens；上下文窗口 262,144 tokens"
   },
   {
    "model": "kimi-k2.7-code-highspeed",
@@ -29,7 +29,7 @@
    "output_per_1m": 54.0,
    "cached_input_per_1m": 2.6,
    "currency": "CNY",
-   "note": "K2.7 Code 高速版; 上下文 262,144 tokens"
+   "note": "输入价格为缓存未命中价；缓存命中 ¥2.60/百万 tokens；上下文窗口 262,144 tokens；K2.7 Code 高速版，输出速度约 180 Tokens/s"
   },
   {
    "model": "kimi-k2.6",
@@ -38,14 +38,14 @@
    "output_per_1m": 27.0,
    "cached_input_per_1m": 1.1,
    "currency": "CNY",
-   "note": "上下文 262,144 tokens"
+   "note": "输入价格为缓存未命中价；缓存命中 ¥1.10/百万 tokens；上下文窗口 262,144 tokens"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "ce9200a7f964510c81f72b2a2ce7bfb6add16c0aac82469006341a835a80695a",
- "fetched_at": "2026-09-28T02:23:51Z",
- "status_note": null,
+ "price_hash": "10f9a4de27dde398b25fd7d412c3f4d9368a4407b75a734c84fa5dd9ed4410ca",
+ "fetched_at": "2026-09-29T00:29:19Z",
+ "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-09-28T02:23:51Z",
+ "last_fetch_ts": "2026-09-30T03:40:30Z",
  "pricing_extraction_revision": 1
 }

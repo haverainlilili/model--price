@@ -1,92 +1,92 @@
 {
  "entries": [
   {
+   "date": "September 28, 2026",
+   "title": "We've launched Claude Sonnet 5.5 (`claude-sonnet-5-5`)",
+   "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+   "summary": "发布 Claude Sonnet 5.5，上线 Claude API、Bedrock、Google Cloud 与 Microsoft Foundry。",
+   "first_seen": "2026-09-29T12:09:12Z"
+  },
+  {
    "date": "September 24, 2026",
-   "title": "Billing resumed for pre-output refusals in bio/frontier_llm/reasoning_extraction categories",
-   "url": null,
-   "summary": "恢复对特定类别、无任何输出即拒绝的请求计费，其他类别保持不收费。",
-   "first_seen": "2026-09-28T02:24:33Z"
+   "title": "We're resuming billing for refusals that arrive before any output when `stop_details.category` is `\"bio\"`, `\"frontier_llm\"`, or `\"reasoning_extraction\"`",
+   "url": "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback#how-refusals-are-billed",
+   "summary": "恢复对 bio、frontier_llm、reasoning_extraction 等类别前置拒答的计费；Compliance API 活动流不再返回文件名。",
+   "first_seen": "2026-09-29T12:09:12Z"
   },
   {
    "date": "September 23, 2026",
-   "title": "Cache diagnostics is out of beta",
+   "title": "Cache diagnostics is out of beta on the Claude API and no longer requires the `cache-diagnosis-2026-04-07` beta header",
    "url": "https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics",
-   "summary": "缓存诊断正式发布，无需 beta header,响应始终包含 diagnostics 字段。",
-   "first_seen": "2026-09-28T02:24:33Z"
+   "summary": "缓存诊断正式退出 beta，无需 beta 头，Messages 响应始终含 diagnostics 字段。",
+   "first_seen": "2026-09-29T12:09:12Z"
   },
   {
    "date": "September 22, 2026",
-   "title": "Claude Opus 5.5 launch",
+   "title": "We've launched Claude Opus 5.5 (`claude-opus-5-5`), a model for long-running agentic coding and knowledge work",
    "url": "https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5",
-   "summary": "发布 Opus 5.5:默认 1M 上下文、128k 输出、自适应思考，定价 $4/$20 每百万 token。",
-   "first_seen": "2026-09-28T02:24:33Z"
-  },
-  {
-   "date": "September 22, 2026",
-   "title": "API changes on Claude Opus 5.5",
-   "url": "https://platform.claude.com/docs/en/models/opus-5-5/migration-guide#migrating-from-claude-opus-5",
-   "summary": "Opus 5.5 禁止关闭 thinking、不支持 tool_choice any/tool,computer use 需新工具集。",
-   "first_seen": "2026-09-28T02:24:33Z"
-  },
-  {
-   "date": "September 22, 2026",
-   "title": "Fast mode available for Claude Opus 5.5",
-   "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
-   "summary": "Opus 5.5 在 Claude API 上支持研究预览版快速模式。",
-   "first_seen": "2026-09-28T02:24:33Z"
-  },
-  {
-   "date": "September 22, 2026",
-   "title": "Define tools in mid-conversation system messages (beta)",
-   "url": "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages#define-tools-in-a-message-beta",
-   "summary": "可在对话中段系统消息内定义工具，beta 头 inline-tools-2026-09-15。",
-   "first_seen": "2026-09-28T02:24:33Z"
+   "summary": "发布 Claude Opus 5.5：1M 上下文、128k 输出、$4/$20 每百万 token，思考不可关闭。",
+   "first_seen": "2026-09-29T12:09:12Z"
   },
   {
    "date": "September 18, 2026",
-   "title": "Cache diagnostics responses always include diagnostics field",
+   "title": "For cache diagnostics, a response to a request that sends the `cache-diagnosis-2026-04-07` beta header now always includes the `diagnostics` field",
    "url": "https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics",
-   "summary": "缓存诊断响应始终包含 diagnostics 字段，未传对象时为 null。",
-   "first_seen": "2026-09-28T02:24:33Z"
+   "summary": "缓存诊断响应始终返回 diagnostics 字段，未请求时为 null；Compliance API 增返 Chrome 会话记录。",
+   "first_seen": "2026-09-29T12:09:12Z"
   },
   {
    "date": "September 14, 2026",
-   "title": "Compaction on demand (beta)",
+   "title": "The Messages API can now compact a conversation on demand",
    "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand",
-   "summary": "Messages API 支持按需压缩对话，返回带签名的 compaction 块。",
-   "first_seen": "2026-09-28T02:24:33Z"
+   "summary": "Messages API 支持按需压缩对话（compact-2026-09-04 beta），并新增 thinking 前缀失配报告。",
+   "first_seen": "2026-09-29T12:09:12Z"
   },
   {
    "date": "September 10, 2026",
-   "title": "Managed Agents permission policies add auto",
+   "title": "Claude Managed Agents permission policies now include `auto`",
    "url": "https://platform.claude.com/docs/en/managed-agents/permission-policies#let-the-server-evaluate-each-call-with-auto",
-   "summary": "权限策略新增 auto:服务器自动评估每次工具调用，可运行、拒绝或暂停待批。",
-   "first_seen": "2026-09-28T02:24:33Z"
+   "summary": "Managed Agents 权限策略新增 auto，由服务端逐次评估每次工具调用；ant CLI 1.32.0 支持连接会话。",
+   "first_seen": "2026-09-29T12:09:12Z"
+  },
+  {
+   "date": "September 9, 2026",
+   "title": "For cache diagnostics, the API now stores a request's fingerprint only when the request includes the `diagnostics` object",
+   "url": "https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics",
+   "summary": "仅当请求含 diagnostics 对象时保存指纹，否则后续 previous_message_id 会报未找到。",
+   "first_seen": "2026-09-29T12:09:12Z"
   },
   {
    "date": "September 3, 2026",
-   "title": "ant CLI 1.30.0 adds ant apply",
+   "title": "Version 1.30.0 of the `ant` CLI adds `ant apply`",
    "url": "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/apply",
-   "summary": "ant apply 支持以代码文件方式创建和更新代理、技能等资源。",
-   "first_seen": "2026-09-28T02:24:33Z"
+   "summary": "ant CLI 1.30.0 新增 ant apply，以仓库文件声明式管理代理、环境与部署；每消息 effort 扩展到 Google Cloud。",
+   "first_seen": "2026-09-29T12:09:12Z"
   },
   {
    "date": "September 1, 2026",
-   "title": "Claude Fable 5.1 and Claude Mythos 5.1 launch",
+   "title": "We've launched Claude Fable 5.1 (`claude-fable-5-1`) ... alongside Claude Mythos 5.1 (`claude-mythos-5-1`)",
    "url": "https://platform.claude.com/docs/en/models/fable-5-1/whats-new-fable-5-1",
-   "summary": "发布 Fable 5.1 与 Mythos 5.1:1M 上下文、$10/$50 每百万 token,缓存读取降至 $0.25。",
-   "first_seen": "2026-09-28T02:24:33Z"
+   "summary": "发布 Fable 5.1 与 Mythos 5.1，1M 上下文，$10/$50，缓存读取降至 $0.25/百万 token。",
+   "first_seen": "2026-09-29T12:09:12Z"
   },
   {
-   "date": "September 1, 2026",
-   "title": "Prompt cache reads cut to $0.25/MTok on Fable 5.1 and Mythos 5.1",
-   "url": "https://platform.claude.com/docs/en/about-claude/pricing#prompt-caching",
-   "summary": "两新模型缓存读取价格为基准输入的 0.025 倍。",
-   "first_seen": "2026-09-28T02:24:33Z"
+   "date": "August 27, 2026",
+   "title": "In Python SDK 1.2.0, TypeScript SDK 0.122.0, Go SDK 1.68.0, Java SDK 2.59.0, Ruby SDK 1.67.0, and C# SDK 12.44.0, `client.beta.files` and `client.beta.skills` no longer send the `files-api-2025-04-14` and `skills-2025-10-02` beta headers",
+   "url": "https://platform.claude.com/docs/en/build-with-claude/files#migrate-from-files-api-2025-04-14",
+   "summary": "多语言 SDK 的 beta.files/skills 不再发 beta 头；控制台新增个人密钥与服务账号密钥。",
+   "first_seen": "2026-09-29T12:09:12Z"
+  },
+  {
+   "date": "August 26, 2026",
+   "title": "The Compliance API session endpoints are out of beta for Cowork and Claude Code sessions",
+   "url": "https://platform.claude.com/docs/en/manage-claude/compliance-sessions",
+   "summary": "Compliance API 会话接口正式发布并新增 Claude Science 与 M365 会话；Admin API 进入 ant CLI 与各 SDK。",
+   "first_seen": "2026-09-29T12:09:12Z"
   }
  ],
- "news_hash": "2b1d01c3c7fec4de726d373eb14939e82571fe96bb7c058541926f1b933749bb",
- "fetched_at": "2026-09-28T02:24:33Z",
+ "news_hash": "82a1fb7a99800929ff7235365147a81cf6aa243a6e3d3db25fb6c2b0dcf23673",
+ "fetched_at": "2026-09-29T12:09:12Z",
  "status_note": null,
  "last_error": null
 }

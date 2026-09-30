@@ -2,7 +2,7 @@
  "url": "https://platform.minimaxi.com/docs/guides/pricing-paygo.md",
  "source": "claude",
  "currency": "CNY",
- "promotions": null,
+ "promotions": "MiniMax-M3 永久五折（≤ 512k 输入 tokens：原价 ¥4.20/¥16.80/¥0.84，折后 ¥2.10/¥8.40/¥0.42；> 512k 输入 tokens：原价 ¥8.40/¥33.60/¥1.68，折后 ¥4.20/¥16.80/¥0.84；优先服务同为永久五折）",
  "models": [
   {
    "model": "MiniMax-M3",
@@ -11,7 +11,7 @@
    "output_per_1m": 8.4,
    "cached_input_per_1m": 0.42,
    "currency": "CNY",
-   "note": "≤512k 输入 tokens 档, 标准层级; 永久五折, 原价 输入¥4.20/输出¥16.80/缓存¥0.84"
+   "note": "标准（standard）服务；档位：≤ 512k 输入 tokens；永久五折，原价 ¥4.20 / ¥16.80 / ¥0.84 每百万 tokens"
   },
   {
    "model": "MiniMax-M3",
@@ -20,7 +20,7 @@
    "output_per_1m": 16.8,
    "cached_input_per_1m": 0.84,
    "currency": "CNY",
-   "note": ">512k 输入 tokens 档, 标准层级; 永久五折, 原价 输入¥8.40/输出¥33.60/缓存¥1.68"
+   "note": "标准（standard）服务；档位：> 512k 输入 tokens；永久五折，原价 ¥8.40 / ¥33.60 / ¥1.68 每百万 tokens"
   },
   {
    "model": "MiniMax-M3",
@@ -29,7 +29,7 @@
    "output_per_1m": 12.6,
    "cached_input_per_1m": 0.63,
    "currency": "CNY",
-   "note": "≤512k 输入 tokens 档, 优先层级(service_tier=priority, 按标准价1.5倍); 永久五折, 原价 输入¥6.30/输出¥25.20/缓存¥1.26"
+   "note": "优先（priority，service_tier=priority，按标准价 1.5 倍计费）服务；档位：≤ 512k 输入 tokens；永久五折，原价 ¥6.30 / ¥25.20 / ¥1.26 每百万 tokens"
   },
   {
    "model": "MiniMax-M3",
@@ -38,7 +38,7 @@
    "output_per_1m": 25.2,
    "cached_input_per_1m": 1.26,
    "currency": "CNY",
-   "note": ">512k 输入 tokens 档, 优先层级(service_tier=priority, 按标准价1.5倍); 永久五折, 原价 输入¥12.60/输出¥50.40/缓存¥2.52"
+   "note": "优先（priority，service_tier=priority，按标准价 1.5 倍计费）服务；档位：> 512k 输入 tokens；永久五折，原价 ¥12.60 / ¥50.40 / ¥2.52 每百万 tokens"
   },
   {
    "model": "MiniMax-M2.7",
@@ -65,7 +65,7 @@
    "output_per_1m": 8.4,
    "cached_input_per_1m": 0.21,
    "currency": "CNY",
-   "note": "历史模型; 缓存写入 ¥2.625/百万 tokens"
+   "note": "历史模型；缓存写入 ¥2.625/百万 tokens"
   },
   {
    "model": "MiniMax-M2.5-highspeed",
@@ -74,7 +74,7 @@
    "output_per_1m": 16.8,
    "cached_input_per_1m": 0.21,
    "currency": "CNY",
-   "note": "历史模型; 缓存写入 ¥2.625/百万 tokens"
+   "note": "历史模型；缓存写入 ¥2.625/百万 tokens"
   },
   {
    "model": "MiniMax-M2.1",
@@ -83,7 +83,7 @@
    "output_per_1m": 8.4,
    "cached_input_per_1m": 0.21,
    "currency": "CNY",
-   "note": "历史模型; 缓存写入 ¥2.625/百万 tokens"
+   "note": "历史模型；缓存写入 ¥2.625/百万 tokens"
   },
   {
    "model": "MiniMax-M2.1-highspeed",
@@ -92,7 +92,7 @@
    "output_per_1m": 16.8,
    "cached_input_per_1m": 0.21,
    "currency": "CNY",
-   "note": "历史模型; 缓存写入 ¥2.625/百万 tokens"
+   "note": "历史模型；缓存写入 ¥2.625/百万 tokens"
   },
   {
    "model": "MiniMax-M2",
@@ -101,7 +101,7 @@
    "output_per_1m": 8.4,
    "cached_input_per_1m": 0.21,
    "currency": "CNY",
-   "note": "历史模型; 缓存写入 ¥2.625/百万 tokens"
+   "note": "历史模型；缓存写入 ¥2.625/百万 tokens"
   },
   {
    "model": "MiniMax-H3-Context-IR",
@@ -110,14 +110,14 @@
    "output_per_1m": 23.0,
    "cached_input_per_1m": null,
    "currency": "CNY",
-   "note": "视频理解/上下文检索类模型, 按 token 计费"
+   "note": "视频栏目下的 H3-Context-IR 任务价格，按百万 tokens 计费"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "d4580df1de7b788cc584359246d8a0fd1b97779de20033a4ac6567a42e915d63",
- "fetched_at": "2026-09-28T02:24:04Z",
- "status_note": null,
+ "price_hash": "7a082a7d578e5e04d39abeca272b3e0403f8bebe56b09f0482734988b9166ddf",
+ "fetched_at": "2026-09-29T00:29:32Z",
+ "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-09-28T02:24:04Z",
+ "last_fetch_ts": "2026-09-30T03:40:40Z",
  "pricing_extraction_revision": 1
 }

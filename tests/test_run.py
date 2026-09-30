@@ -958,6 +958,34 @@ class SingleWriterTests(unittest.TestCase):
             ["a", "b"])
 
 
+    def test_split_modes_publish_complete_catalog(self):
+        for mode in ("--skip-media", "--media-only"):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as directory, \
+                    patch.object(run.history, "DATA", Path(directory)), \
+                    patch.object(run, "load_providers", return_value=[{"id": "a"}]), \
+                    patch.object(run, "load_websearch_providers", return_value=[{"id": "search"}]), \
+                    patch.object(run, "load_imagegen_providers", return_value=[{"id": "image"}]), \
+                    patch.object(run, "load_videogen_providers", return_value=[{"id": "video"}]), \
+                    patch.object(run, "process_provider") as pricing, \
+                    patch.object(run, "process_news") as news, \
+                    patch.object(run, "process_plans") as plans, \
+                    patch.object(run, "process_websearch") as websearch, \
+                    patch.object(run, "process_imagegen") as imagegen, \
+                    patch.object(run, "process_videogen") as videogen, \
+                    patch.object(run, "extract"), \
+                    patch("scraper.fx.update_fx", return_value={}), \
+                    patch("scraper.build_site.build") as build:
+                self.assertEqual(run.main([mode]), 0)
+                for processor in (pricing, news, plans, websearch):
+                    self.assertEqual(processor.call_count, int(mode == "--skip-media"))
+                for processor in (imagegen, videogen):
+                    self.assertEqual(processor.call_count, int(mode == "--media-only"))
+                self.assertEqual([[p["id"] for p in catalog]
+                                  for catalog in build.call_args.args],
+                                 [["a"], ["search"], ["image"], ["video"]])
+
+
+
 class MediaExtractionBudgetTests(unittest.TestCase):
     def test_budget_accepts_zero_and_falls_back_on_invalid_value(self):
         with patch.dict(run.os.environ, {"MEDIA_EXTRACT_BUDGET": "0"}):

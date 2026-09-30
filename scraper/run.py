@@ -1212,7 +1212,13 @@ def main(argv=None) -> int:
     ap.add_argument("--build-only", action="store_true",
                     help="跳过抓取与抽取, 只用现有数据重建站点")
     ap.add_argument("--only", help="只处理指定 provider id (调试用)")
+    ap.add_argument("--skip-media", action="store_true",
+                    help="只处理价格、公告、套餐和联网搜索")
+    ap.add_argument("--media-only", action="store_true",
+                    help="只处理生图和生视频")
     args = ap.parse_args(argv)
+    if args.skip_media and args.media_only:
+        ap.error("--skip-media 与 --media-only 不能同时使用")
 
     extract.reset_usage()
     # 完整目录: 建站永远用它。--only 只影响"抓谁", 绝不能影响"站点包含谁" ——
@@ -1235,31 +1241,32 @@ def main(argv=None) -> int:
             p for p in videogen_providers if p["id"] == args.only]
 
     if not args.build_only:
-        for cfg in providers:
-            try:
-                process_provider(cfg)
-            except Exception as exc:  # 单厂商失败不拖垮整体
-                print(f"[{cfg['id']}] 处理出错: {exc}", file=sys.stderr)
-        for cfg in providers:
-            try:
-                process_news(cfg)
-            except Exception as exc:
-                print(f"[{cfg['id']}/news] 处理出错: {exc}", file=sys.stderr)
-        for cfg in providers:
-            try:
-                process_plans(cfg)
-            except Exception as exc:
-                print(f"[{cfg['id']}/plans] 处理出错: {exc}", file=sys.stderr)
-        for cfg in websearch_providers:
-            try:
-                process_websearch(cfg)
-            except Exception as exc:
-                print(f"[{cfg['id']}/websearch] 处理出错: {exc}", file=sys.stderr)
+        if not args.media_only:
+            for cfg in providers:
+                try:
+                    process_provider(cfg)
+                except Exception as exc:  # 单厂商失败不拖垮整体
+                    print(f"[{cfg['id']}] 处理出错: {exc}", file=sys.stderr)
+            for cfg in providers:
+                try:
+                    process_news(cfg)
+                except Exception as exc:
+                    print(f"[{cfg['id']}/news] 处理出错: {exc}", file=sys.stderr)
+            for cfg in providers:
+                try:
+                    process_plans(cfg)
+                except Exception as exc:
+                    print(f"[{cfg['id']}/plans] 处理出错: {exc}", file=sys.stderr)
+            for cfg in websearch_providers:
+                try:
+                    process_websearch(cfg)
+                except Exception as exc:
+                    print(f"[{cfg['id']}/websearch] 处理出错: {exc}", file=sys.stderr)
 
         media_budget = _media_extract_budget()
-        for key, catalog, processor in (
+        for key, catalog, processor in (() if args.skip_media else (
                 ("imagegen", imagegen_providers, process_imagegen),
-                ("videogen", videogen_providers, process_videogen)):
+                ("videogen", videogen_providers, process_videogen))):
             extracted = 0
             ordered_catalog = _rotate_generation_catalog(catalog, key)
             for cfg in ordered_catalog:
@@ -1273,11 +1280,12 @@ def main(argv=None) -> int:
 
         print(extract.usage_summary())
 
-        from .fx import update_fx
-        meta = history.load_meta()
-        meta["fx"] = update_fx()
-        meta["generated_at"] = utcnow()
-        history.save_meta(meta)
+        if not args.media_only:
+            from .fx import update_fx
+            meta = history.load_meta()
+            meta["fx"] = update_fx()
+            meta["generated_at"] = utcnow()
+            history.save_meta(meta)
 
     from . import build_site
     out = build_site.build(

@@ -10,21 +10,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Google Search API (SERP API) — Search/Images/News/Maps/Places/Videos/Shopping/Scholar/Patents/Autocomplete",
-   "pricing": "Top-up credits, no monthly subscriptions: Starter $50 for 50k credits ($1.00/1k, 50 queries/s); Standard $375 for 500k credits ($0.75/1k, 100 q/s); Scale $1250 for 2.5M credits ($0.50/1k, 200 q/s); Ultimate $3750 for 12.5M credits ($0.30/1k, 300 q/s) — excluding sales tax/VAT/GST",
+   "name": "Google Search API (SERP API)",
+   "pricing": "Top-up credits 模型，无月订阅：Starter $50 (50k credits, $1.00/1k)、Standard $375 (500k credits, $0.75/1k)、Scale $1250 (2.5M credits, $0.50/1k)、Ultimate $3750 (12.5M credits, $0.30/1k)；不含销售税/VAT/GST",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Starter 入门公开档（$50 / 50k credits；1 credit = 1 次查询）；同一 API 大额档位降至 $0.30/1k",
-   "free_quota": "Get 2,500 free queries — No credit card required / Try 2,500 queries for free",
-   "output_type": "结构化 JSON 搜索结果（knowledgeGraph、organic 含 title/link/snippet/position、peopleAlsoAsk、relatedSearches，以及 images/news/places/videos/shopping/scholar/patents/suggestions 数组）",
+   "price_basis": "Starter（$50/50k credits，$1.00 per 1k queries）",
+   "free_quota": "Get 2,500 free queries / Try 2,500 queries for free — No credit card required",
+   "output_type": "结构化 JSON 搜索结果（knowledgeGraph、organic、peopleAlsoAsk、relatedSearches、images、news、places、videos、shopping、scholar、patents、autocomplete 等）",
    "cites_sources": true,
    "default_on": null,
-   "note": "大额档 $0.30–1.00/1k；仅成功响应扣 credit，余额为 0 停止接收查询；额度 6 个月有效；实时查 Google、不缓存；可按国家/语言指定地区；结果约 1–2 秒（重试时 2–4 秒）；提供 LangChain/Haystack/Jan AI/CrewAI 集成"
+   "note": "按 credit 预充值，credit 有效期 6 个月；实时查询不缓存；1-2 秒返回；可按国家/语言定制位置；限速 50→300 QPS；量越大越便宜（$1.00→$0.30/1k）"
   }
  ],
- "fetched_at": "2026-09-30T12:14:29Z",
- "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-10-02T13:13:21Z",
- "websearch_hash": "2343da22a8036f6e3c4e28053a1cb4b74f17ac1ad99a3dd4ec8e63ac89e047b4",
- "websearch_retry_after": "2026-10-02T19:13:55Z"
+ "fetched_at": "2026-10-03T00:37:29Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-03T00:37:29Z",
+ "websearch_hash": "808a1ee9bc5a436e7cb0213175d5b26eda302009fee2d6998d71ce8ad2e66151"
 }

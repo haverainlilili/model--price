@@ -13,31 +13,52 @@
  "offerings": [
   {
    "name": "Web Search API (/search)",
-   "pricing": "按 credit 计费：Search 2 credits / 10 results（按 10 条结果向上取整，1–10 条=2 credits，11–20 条=4 credits）；所有套餐 credit 单价相同",
-   "price_per_1k_usd": 4.0,
-   "price_basis": "Hobby 档 PAYG（$5 = 1,000 credits → $5/1000 credits；2 credits/10 results 即 200 次搜索 = 400 credits ≈ $2/100 次搜索 → 约 $4/千次搜索）",
-   "free_quota": "Free 套餐 1,000 credits/月（≈500 次搜索或 1,000 页抓取），每月刷新，无需信用卡；另有 keyless 无 API key 免费层（按 IP 每日限额）",
-   "output_type": "结构化搜索结果（JSON：title/description/url/position，按 web、news、images 分组），可加 scrapeOptions 返回 markdown/HTML/links/screenshot；默认含 query-relevant Highlights",
+   "pricing": "Credit-based: Search costs 2 credits per 10 results (rounded up per 10 results, e.g. 11 results = 4 credits); rates are the same on every plan. Plans: Free1,000 credits/month $0; Hobby $16/month billed yearly ($19 monthly) 5,000 credits; Standard $83/month billed yearly 100,000 credits; Growth $333/month billed yearly 500,000 credits; Scale $599/month billed yearly 1,000,000 credits; Enterprise custom. Pay-as-you-go: 5 USD increments (1,000 credits on Hobby, 2,000 Standard, 2,500 Growth, 5,000 Scale), paid plans only",
+   "price_per_1k_usd": 12.8,
+   "price_basis": "Hobby entry plan, $16/month annual (5,000 credits = 2,500 searches) ≈ $6.40/1,000 searches; derived via 2 credits/10 results => 100 credits/1,000 results, 5,000 credits ≈ 50,000 results",
+   "free_quota": "1,000 credits every month, refreshed monthly, no credit card required (about 500 searches)",
+   "output_type": "结构化搜索结果, 按来源类型分组 (web/news/images/alexandria), 含 title/description/url/position; 可选 scrapeOptions 一并返回 markdown/HTML/links/截图; 默认返回 query-relevant Highlights",
    "cites_sources": true,
-   "default_on": null,
-   "note": "支持 sources(web/news/images)、categories(research/pdf/developer)、includeDomains/excludeDomains、location、tbs 时间过滤、safe；结果上限按 limit 每来源；Enterprise ZDR 10 credits/10 results，anonymized ZDR 2 credits/10 results；无文档返回不收费"
+   "default_on": true,
+   "note": "Search results include query-relevant Highlights by default (set highlights:false for plain snippet). Supports includeDomains/excludeDomains, categories (research/pdf/developer), location, tbs time filters, safe search, custom timeout. Scrape options add credits (basic 1/page, JSON 4/page). Free plan rate limit 10 req/min on /search; paid plans up to 10,000/min. Enterprise ZDR search costs 10 credits/10 results (end-to-end) or 2 credits/10 results (anonymized). Search feedback can refund 1 credit."
   },
   {
-   "name": "Firecrawl Agent (Preview) — Autonomous web research agent",
-   "pricing": "Dynamic pricing（动态定价，官网未给具体单价）",
+   "name": "Enterprise ZDR Search (end-to-end Zero Data Retention)",
+   "pricing": "10 credits per 10 results (parameter enterprise: [\"zdr\"]); Enterprise plans only",
    "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": "5 daily runs free（每日 5 次免费运行）",
-   "output_type": null,
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Preview 阶段；所有套餐（免费与付费）Research Index 论文端点免费"
+   "price_basis": "Enterprise ZDR credits, no public USD price (Enterprise is custom / contact sales)",
+   "free_quota": null,
+   "output_type": "结构化搜索结果 + 抓取内容 (同 /search)",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "Both Firecrawl and upstream search provider enforce zero data retention; no query or result data stored anywhere in pipeline. Available on Enterprise plans."
+  },
+  {
+   "name": "Anonymized ZDR Search",
+   "pricing": "2 credits per 10 results (parameter enterprise: [\"anon\"])",
+   "price_per_1k_usd": null,
+   "price_basis": "Anonymized ZDR variant of /search, no separate public USD price",
+   "free_quota": null,
+   "output_type": "结构化搜索结果 + 抓取内容 (同 /search)",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "Firecrawl enforces full zero data retention on its side; upstream search provider may cache the query but fully anonymized."
+  },
+  {
+   "name": "Keyless free tier (no API key)",
+   "pricing": "Free, no API key required for Scrape, Search and Interact",
+   "price_per_1k_usd": null,
+   "price_basis": "Keyless tier, capped per IP address per day rather than by credit allotment; no public per-request price",
+   "free_quota": "Keyless free tier capped per IP address per day (not a fixed credit amount)",
+   "output_type": "结构化搜索结果",
+   "cites_sources": true,
+   "default_on": true,
+   "note": "No API key needed to get started; lower rate limits than keyed requests. Free plan /search rate limit is 10 requests/min."
   }
  ],
- "fetched_at": "2026-09-30T12:14:19Z",
- "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-10-02T13:12:44Z",
- "websearch_hash": "32bff53e13a9ed35b2ede8608b0826d7a7f273cfbd5944d28df6ab1f8c1ef432",
- "websearch_retry_after": "2026-10-02T19:13:20Z"
+ "fetched_at": "2026-10-03T00:37:04Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-03T00:37:04Z",
+ "websearch_hash": "64b546f3a9e405dbe4bcbfd9c63cd76b593d3008972d4059b4fa54bb054038e7"
 }

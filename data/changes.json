@@ -1,90 +1,5 @@
 [
  {
-  "ts": "2026-09-20T21:06:36Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "new",
-  "model": "doubao-seedance-1.5-pro",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 16.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 16.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-20T21:06:36Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "new",
-  "model": "doubao-seedance-1.0-pro",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 15.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 15.0
-   }
-  ]
- },
- {
-  "ts": "2026-09-20T21:06:36Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "new",
-  "model": "doubao-seedance-1.0-pro-fast",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 4.2
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 4.2
-   }
-  ]
- },
- {
-  "ts": "2026-09-20T21:06:36Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-embedding-vision",
-  "fields": [
-   {
-    "field": "note",
-    "old": "embedding 类型；文本输入0.70元/百万token，图片输入1.80元/百万token；按输入tokens计费",
-    "new": "embedding/向量模型，文本输入0.70、图片输入1.80 元/百万token"
-   }
-  ]
- },
- {
-  "ts": "2026-09-20T22:06:31Z",
-  "provider": "doubao",
-  "provider_name": "火山方舟 (豆包)",
-  "kind": "change",
-  "model": "doubao-seed-evolving",
-  "fields": [
-   {
-    "field": "note",
-    "old": "在线推理(常规)，输入长度[0,1024]；缓存存储 0.017 元/百万token/小时",
-    "new": "输入长度[0,1024]；缓存存储0.017元/百万token/小时"
-   }
-  ]
- },
- {
   "ts": "2026-09-20T22:06:31Z",
   "provider": "doubao",
   "provider_name": "火山方舟 (豆包)",
@@ -6267,6 +6182,76 @@
     "field": "note",
     "old": "视频栏目下的 H3-Context-IR 任务价格，按百万 tokens 计费",
     "new": "视频上下文理解/多模态任务，按 token 计费"
+   }
+  ]
+ },
+ {
+  "ts": "2026-10-03T12:05:47Z",
+  "provider": "anthropic",
+  "provider_name": "Anthropic (Claude)",
+  "kind": "change",
+  "model": "claude-fable-5-1",
+  "fields": [
+   {
+    "field": "note",
+    "old": "prompt cache reads 2.5% of base input price; Batch API 50% off",
+    "new": "缓存命中输入价为基准输入价的 2.5%($10 × 2.5% = $0.25/百万), 由页面 Pricing 注释规则折算; Batch API 请求 5 折(约 $5/$25/百万); 1M 上下文"
+   }
+  ]
+ },
+ {
+  "ts": "2026-10-03T12:05:47Z",
+  "provider": "anthropic",
+  "provider_name": "Anthropic (Claude)",
+  "kind": "change",
+  "model": "claude-opus-5-5",
+  "fields": [
+   {
+    "field": "note",
+    "old": "prompt cache reads 5% of base input price; Batch API 50% off",
+    "new": "缓存命中输入价为基准输入价的 5%($4 × 5% = $0.20/百万), 由页面 Pricing 注释规则折算; Batch API 请求 5 折(约 $2/$10/百万); 1M 上下文"
+   }
+  ]
+ },
+ {
+  "ts": "2026-10-03T12:05:47Z",
+  "provider": "anthropic",
+  "provider_name": "Anthropic (Claude)",
+  "kind": "change",
+  "model": "claude-sonnet-5-5",
+  "fields": [
+   {
+    "field": "note",
+    "old": "prompt cache reads 10% of base input price; Batch API 50% off",
+    "new": "缓存命中输入价为基准输入价的 10%($2 × 10% = $0.20/百万), 由页面 Pricing 注释规则折算; Batch API 请求 5 折(约 $1/$5/百万); 1M 上下文"
+   }
+  ]
+ },
+ {
+  "ts": "2026-10-03T12:05:47Z",
+  "provider": "anthropic",
+  "provider_name": "Anthropic (Claude)",
+  "kind": "change",
+  "model": "claude-haiku-4-5-20251001",
+  "fields": [
+   {
+    "field": "note",
+    "old": "alias claude-haiku-4-5; prompt cache reads 10% of base input price; Batch API 50% off",
+    "new": "缓存命中输入价为基准输入价的 10%($1 × 10% = $0.10/百万), 由页面 Pricing 注释规则折算; Batch API 请求 5 折(约 $0.50/$2.50/百万); 别名 claude-haiku-4-5, 200K 上下文"
+   }
+  ]
+ },
+ {
+  "ts": "2026-10-03T12:15:14Z",
+  "provider": "xai",
+  "provider_name": "xAI (Grok)",
+  "kind": "change",
+  "model": "grok-4.7",
+  "fields": [
+   {
+    "field": "note",
+    "old": "旗舰模型, 上下文 500k tokens; 另有语音 API 按 Agent $0.08/min、TTS $15.00/1M chars、STT $0.10-0.20/hour 计费(非 token 计价)",
+    "new": "旗舰文本/推理模型, 上下文 500k tokens, 推理强度可配置; 页面未列出缓存输入价"
    }
   ]
  }

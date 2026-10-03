@@ -12,85 +12,96 @@
  "offerings": [
   {
    "name": "Search (/search, instant)",
-   "pricing": "$4 / 1k requests（基础价含最多 10 条结果；超过 10 条每条 $1 / 1k results；AI page summary $1 / 1k pages）",
+   "pricing": "From $4 / 1k requests. $4 / 1k requests (up to 10 results); each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages",
    "price_per_1k_usd": 4.0,
-   "price_basis": "PAYG /search (instant) 基础价，含最多 10 条结果",
-   "free_quota": "Free Tier：注册当日赠送 $10 credits（最多 2,500 次 Instant 搜索），每月 1 日余额重置为 $10，无需信用卡；完成 onboarding 首个团队另有一次性 $10 奖励",
-   "output_type": "结构化搜索结果：URL 与页面内容（Results）、Highlights、Structured outputs、可流式 AI Summary",
+   "price_basis": "PAYG /search (instant) base price, includes up to 10 results",
+   "free_quota": "Free Tier gives you $10 in credits (up to 2,500 Instant searches) the day you sign up, and your free balance resets to $10 on the first of every month. No payment method required. Complete onboarding in the dashboard and your first team earns a one-time $10 bonus.",
+   "output_type": "Real-time search with token-efficient page contents;标准搜索结果(URLs and page contents)、Highlights、Structured outputs、streaming AI Summary",
    "cites_sources": true,
    "default_on": null,
-   "note": "标注 \"Real-time search with token-efficient page contents\"；latency 约 323ms；Enterprise 支持每次最多 1,000 条结果"
+   "note": "Exa Instant 63.6% accuracy / 323ms latency on Web Walker QA. Enterprise: up to 1,000 results per search, custom indexes, SLAs, Zero Data Retention, volume discounts (custom pricing)."
   },
   {
    "name": "Search (/search, fast, auto)",
-   "pricing": "$7 / 1k requests（基础价含最多 10 条结果；超过 10 条每条 $1 / 1k results；AI page summary $1 / 1k pages）",
+   "pricing": "$7 / 1k requests (up to 10 results); each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages",
    "price_per_1k_usd": 7.0,
-   "price_basis": "PAYG /search (fast, auto) 基础价，含最多 10 条结果",
-   "free_quota": "Free Tier：注册当日赠送 $10 credits（最多 2,500 次 Instant 搜索），每月 1 日重置为 $10；该档位未单独说明免费次数",
-   "output_type": "结构化搜索结果 + Highlights / Structured outputs / AI Summary",
+   "price_basis": "PAYG /search (fast, auto) base price, includes up to 10 results",
+   "free_quota": null,
+   "output_type": "fast 450ms 低延迟默认质量；auto ~1s 自动选择最佳模式；AI Summary (streamable)",
    "cites_sources": true,
    "default_on": null,
-   "note": "fast 约 450ms（\"Low latency at default quality\"）；auto 约 1s，为 \"the best general-purpose default\"，按 query 自动选择模式"
+   "note": "auto is an adaptive search type that picks the best mode for each query; described as \"The best general-purpose default.\" Exa Fast 69.6% / 454ms, Exa Auto 67.8% / ~1.2s (Web Walker QA)."
   },
   {
-   "name": "Deep Search (type: deep-lite / deep / deep-reasoning)",
-   "pricing": "deep-lite $12 / 1k requests；deep $12 / 1k requests；deep-reasoning $15 / 1k requests（均含最多 10 条结果；额外结果与 AI summary 与标准搜索同价）",
+   "name": "Deep Search",
+   "pricing": "deep-lite $12 / 1k requests; deep $12 / 1k requests; deep-reasoning $15 / 1k requests (each up to 10 results)",
    "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG /search type=deep-lite 与 deep 基础价；deep-reasoning 为 $15/1k",
+   "price_basis": "PAYG deep-lite / deep (base price up to 10 results); deep-reasoning $15 / 1k",
    "free_quota": null,
-   "output_type": "多步研究，结构化输出与引用（multi-step research with structured outputs and citations）",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "通过 /search 的 type 参数设置；延迟 deep-lite ~4s、deep 4–15s、deep-reasoning 12–40s"
-  },
-  {
-   "name": "Answer (/answer)",
-   "pricing": "$5 / 1k requests（含最多 10 条结果，无额外结果或 summary 计费）",
-   "price_per_1k_usd": 5.0,
-   "price_basis": "PAYG /answer 基础价，含最多 10 条结果",
-   "free_quota": null,
-   "output_type": "带引用的 LLM 答案（An LLM answer to a question, with citations）",
+   "output_type": "Multi-step research with structured outputs and citations",
    "cites_sources": true,
    "default_on": null,
-   "note": "对问题返回含引用的 LLM 答案"
+   "note": "Set with type on /search. Latency: deep-lite ~4s; deep 4–15s; deep-reasoning 12–40s. Additional results and AI page summaries cost the same as standard search. Exa Deep 80.0% / 4.3s avg (Web Walker QA)."
   },
   {
-   "name": "Monitors (/monitors)",
-   "pricing": "$15 / 1k requests（基础价含最多 10 条结果；超过 10 条每条 $1 / 1k results；AI page summary $1 / 1k pages）",
+   "name": "Answer",
+   "pricing": "$5 / 1k requests",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "PAYG /answer base price, includes up to 10 results",
+   "free_quota": null,
+   "output_type": "An LLM answer to a question, with citations",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "Endpoint /answer. No per-extra-result or AI page summary surcharge listed."
+  },
+  {
+   "name": "Monitors",
+   "pricing": "$15 / 1k requests (up to 10 results); each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages",
    "price_per_1k_usd": 15.0,
-   "price_basis": "PAYG /monitors 基础价，含最多 10 条结果",
+   "price_basis": "PAYG /monitors base price, includes up to 10 results",
    "free_quota": null,
-   "output_type": "定时搜索，产出网页上的新事件（Scheduled searches that surface new events on the web）",
+   "output_type": "Scheduled searches that surface new events on the web",
    "cites_sources": null,
    "default_on": null,
-   "note": "需显式创建 monitor 定时任务，非默认开启"
+   "note": "Endpoint /monitors. Scheduled search monitoring."
   },
   {
-   "name": "Agent (fixed effort: minimal / low / medium / high / xhigh)",
-   "pricing": "minimal $0.012/次；low $0.025/次；medium $0.10/次；high $0.50/次；xhigh $1.00/次",
-   "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG fixed effort = minimal 档按每次 $0.012 换算（1k 次 = $12）；low 档 1k 次 = $25",
+   "name": "Contents",
+   "pricing": "$1 / 1k pages, per content type; AI page summaries $1 / 1k pages",
+   "price_per_1k_usd": 1.0,
+   "price_basis": "PAYG /contents per page, billed per content type (text, highlights, summary each billed separately)",
    "free_quota": null,
-   "output_type": "异步深度研究、名单构建与数据补全（Async deep research, list building, and enrichment）",
+   "output_type": "Full page text, highlights, and summaries for known URLs",
    "cites_sources": null,
-   "default_on": true,
-   "note": "auto 为默认计费模式（按用量，封顶默认 $5）；ultra 同费率、默认封顶 $20。计费项：ACU $0.10/ACU、搜索工具调用 $0.005/次、邮箱补全 $0.02/个、电话补全 $0.07/个；Exa Connect provider 另计费（Fiber.ai $0.02/credit，Baselayer $0.15–$4.00/order）"
+   "default_on": null,
+   "note": "Not a discovery search endpoint: operates on known URLs. One page with text and highlights counts as two content types."
   },
   {
-   "name": "Agent (metered: auto / ultra)",
-   "pricing": "按用量计费至每次运行上限：Agent Compute Units $0.10 / ACU；Search tool calls $0.005 / search；auto 默认 $5 封顶，ultra 默认 $20 封顶",
-   "price_per_1k_usd": 5.0,
-   "price_basis": "PAYG auto 档每次运行的封顶价（$5/run）折合 1k 次运行 $5,000；单次价格由实际用量决定，非固定",
+   "name": "Agent",
+   "pricing": "$0.012–$1.00 / fixed-effort run, or usage-based. minimal $0.012/request; low $0.025/request; medium $0.10/request; high $0.50/request; xhigh $1.00/request. Metered: Agent Compute Units $0.10 / ACU; Search tool calls $0.005 / search; Email contact enrichment $0.02 / email; Phone contact enrichment $0.07 / phone number",
+   "price_per_1k_usd": null,
+   "price_basis": null,
    "free_quota": null,
-   "output_type": "异步深度研究、名单构建与数据补全",
+   "output_type": "Async deep research, list building, and enrichment",
    "cites_sources": null,
-   "default_on": true,
-   "note": "Agent 默认 effort 为 auto（metered）；运行越久、input.data 越大、推理步越多消耗 ACU 越多"
+   "default_on": null,
+   "note": "No flat per-1k-request rate; billed per ACU/tool call/enrichment unit. auto defaults to a $5 cap, ultra to a $20 cap. Connect providers bill extra (Fiber.ai $0.02/credit; Baselayer $0.15–$4.00/order)."
+  },
+  {
+   "name": "Enterprise plan",
+   "pricing": "Custom pricing — volume discounts and postpaid invoice billing (talk to us)",
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": null,
+   "output_type": "Powerful search: up to 1,000 results per search; custom indexes",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "Includes SLAs/MSAs, 1:1 onboarding, Zero Data Retention, custom rate limits (QPS), tailored moderation, custom datasets. No subscription and no minimum spend for PAYG."
   }
  ],
- "fetched_at": "2026-09-30T00:13:41Z",
- "status_note": "页面无变化",
- "last_error": "HTTPSConnectionPool(host='exa.ai', port=443): Max retries exceeded with url: /docs/reference/pricing (Caused by ConnectTimeoutError(<HTTPSConnection(host='exa.ai', port=443) at 0x7322ed0f1a00>, 'Connection to exa.ai timed out. (connect timeout=30)'))",
- "last_fetch_ts": "2026-10-03T00:32:09Z",
- "websearch_hash": "253ce1d001d46bacc959b6b547722c5d8ba67c0a1eab36ba47e05031d185d8d5"
+ "fetched_at": "2026-10-03T12:40:16Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-03T12:40:16Z",
+ "websearch_hash": "6c0f3a805ce9be8eefe4f60e71caffec71aa052889c52d5f26cd2eb871fa052a"
 }

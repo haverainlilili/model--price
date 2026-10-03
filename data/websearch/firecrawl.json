@@ -13,52 +13,30 @@
  "offerings": [
   {
    "name": "Web Search API (/search)",
-   "pricing": "Credit-based: Search costs 2 credits per 10 results (rounded up per 10 results, e.g. 11 results = 4 credits); rates are the same on every plan. Plans: Free1,000 credits/month $0; Hobby $16/month billed yearly ($19 monthly) 5,000 credits; Standard $83/month billed yearly 100,000 credits; Growth $333/month billed yearly 500,000 credits; Scale $599/month billed yearly 1,000,000 credits; Enterprise custom. Pay-as-you-go: 5 USD increments (1,000 credits on Hobby, 2,000 Standard, 2,500 Growth, 5,000 Scale), paid plans only",
-   "price_per_1k_usd": 12.8,
-   "price_basis": "Hobby entry plan, $16/month annual (5,000 credits = 2,500 searches) ≈ $6.40/1,000 searches; derived via 2 credits/10 results => 100 credits/1,000 results, 5,000 credits ≈ 50,000 results",
-   "free_quota": "1,000 credits every month, refreshed monthly, no credit card required (about 500 searches)",
-   "output_type": "结构化搜索结果, 按来源类型分组 (web/news/images/alexandria), 含 title/description/url/position; 可选 scrapeOptions 一并返回 markdown/HTML/links/截图; 默认返回 query-relevant Highlights",
-   "cites_sources": true,
-   "default_on": true,
-   "note": "Search results include query-relevant Highlights by default (set highlights:false for plain snippet). Supports includeDomains/excludeDomains, categories (research/pdf/developer), location, tbs time filters, safe search, custom timeout. Scrape options add credits (basic 1/page, JSON 4/page). Free plan rate limit 10 req/min on /search; paid plans up to 10,000/min. Enterprise ZDR search costs 10 credits/10 results (end-to-end) or 2 credits/10 results (anonymized). Search feedback can refund 1 credit."
-  },
-  {
-   "name": "Enterprise ZDR Search (end-to-end Zero Data Retention)",
-   "pricing": "10 credits per 10 results (parameter enterprise: [\"zdr\"]); Enterprise plans only",
-   "price_per_1k_usd": null,
-   "price_basis": "Enterprise ZDR credits, no public USD price (Enterprise is custom / contact sales)",
-   "free_quota": null,
-   "output_type": "结构化搜索结果 + 抓取内容 (同 /search)",
+   "pricing": "Credit-based: Search costs 2 credits per 10 results (rounded up). Free 1,000 credits/month ($0, 500 searches or 1,000 pages scraped); Hobby $16/month billed yearly ($19 monthly) for 5,000 credits = 2,500 searches; Standard $83/mo annual (100,000 credits = 50,000 searches); Growth $333/mo; Scale $599/mo; Enterprise custom. Pay-as-you-go: Hobby 1,000 credits per $5, Standard 2,000/$5, Growth 2,500/$5, Scale 5,000/$5. Prices in USD, effective September 4, 2026.",
+   "price_per_1k_usd": 6.4,
+   "price_basis": "Hobby entry plan, $16/month billed annually, 2,500 searches/month (= $6.4 per 1,000 searches); monthly billing $19 = $7.6/1k; pay-as-you-go marginal rate on Hobby = 1,000 credits per $5 = $10/1k",
+   "free_quota": "Free plan: 1,000 credits / month, $0, refreshed monthly, no credit card required — 500 searches or 1,000 pages scraped, 2 concurrent requests, 10 req/min on /search",
+   "output_type": "结构化搜索结果（url、title、description、position，按 web / news / images / alexandria 分组），可用 scrapeOptions 一次调用同时返回每条结果的 markdown、HTML、links、screenshot；结果默认附带 query-relevant Highlights",
    "cites_sources": true,
    "default_on": false,
-   "note": "Both Firecrawl and upstream search provider enforce zero data retention; no query or result data stored anywhere in pipeline. Available on Enterprise plans."
+   "note": "每 10 条结果 2 credits（向上取整），PDF 解析 +1 credit/页、JSON 模式 +4 credits/页；Enterprise ZDR：end-to-end 10 credits/10 results，anonymized 2 credits/10 results；/search 限速 Free 10/分、Hobby 100、Standard 500、Growth 5,000、Scale 10,000"
   },
   {
-   "name": "Anonymized ZDR Search",
-   "pricing": "2 credits per 10 results (parameter enterprise: [\"anon\"])",
+   "name": "Research Index / Developer Index (Search categories: research, developer)",
+   "pricing": "The Firecrawl Research Index paper endpoints are free across every category, including AI/ML and life sciences.",
    "price_per_1k_usd": null,
-   "price_basis": "Anonymized ZDR variant of /search, no separate public USD price",
-   "free_quota": null,
-   "output_type": "结构化搜索结果 + 抓取内容 (同 /search)",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "Firecrawl enforces full zero data retention on its side; upstream search provider may cache the query but fully anonymized."
-  },
-  {
-   "name": "Keyless free tier (no API key)",
-   "pricing": "Free, no API key required for Scrape, Search and Interact",
-   "price_per_1k_usd": null,
-   "price_basis": "Keyless tier, capped per IP address per day rather than by credit allotment; no public per-request price",
-   "free_quota": "Keyless free tier capped per IP address per day (not a fixed credit amount)",
-   "output_type": "结构化搜索结果",
-   "cites_sources": true,
-   "default_on": true,
-   "note": "No API key needed to get started; lower rate limits than keyed requests. Free plan /search rate limit is 10 requests/min."
+   "price_basis": null,
+   "free_quota": "免费（Research Index 论文检索端点在所有类别免费）",
+   "output_type": "developer 类别返回标准 web 结果并带 category:\"developer\"；research 类别自 2026-11-16 起从 data.web 移到 data.research，返回论文记录：paperId、primaryId、ids、title、abstract、score",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "research 类别 2026-11-16 由“限定 14 个学术网站”切换为检索 Research Index（PubMed、bioRxiv、medRxiv、arXiv）；过渡期响应带 warnings 字段"
   }
  ],
- "fetched_at": "2026-10-03T00:37:04Z",
+ "fetched_at": "2026-10-03T12:42:49Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-03T00:37:04Z",
- "websearch_hash": "64b546f3a9e405dbe4bcbfd9c63cd76b593d3008972d4059b4fa54bb054038e7"
+ "last_fetch_ts": "2026-10-03T12:42:49Z",
+ "websearch_hash": "287231058aeaad7e68bd036917612a5048a70a9ea93201a6aaed92c9063b83f8"
 }

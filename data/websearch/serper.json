@@ -10,20 +10,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Google Search API (SERP API)",
-   "pricing": "Top-up credits 模型，无月订阅：Starter $50 (50k credits, $1.00/1k)、Standard $375 (500k credits, $0.75/1k)、Scale $1250 (2.5M credits, $0.50/1k)、Ultimate $3750 (12.5M credits, $0.30/1k)；不含销售税/VAT/GST",
+   "name": "Google Search API",
+   "pricing": "按 credits 充值计费，无月度订阅：Starter $50*（50k credits，$1.00/1k）、Standard $375*（500k credits，$0.75/1k）、Scale $1250*（2.5M credits，$0.50/1k）、Ultimate $3750*（12.5M credits，$0.30/1k）；*不含 sales tax/VAT/GST",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Starter（$50/50k credits，$1.00 per 1k queries）",
-   "free_quota": "Get 2,500 free queries / Try 2,500 queries for free — No credit card required",
-   "output_type": "结构化 JSON 搜索结果（knowledgeGraph、organic、peopleAlsoAsk、relatedSearches、images、news、places、videos、shopping、scholar、patents、autocomplete 等）",
+   "price_basis": "Starter 档（$50 / 50,000 credits，即 $1.00/1k 次查询，官方最低公开档）",
+   "free_quota": "Get 2,500 free queries — No credit card required",
+   "output_type": "JSON 结构化 Google SERP 结果（knowledgeGraph、organic 含 title/link/snippet/position、peopleAlsoAsk、relatedSearches；另有 Images、News、Maps/Places、Videos、Shopping、Scholar、Patents、Autocomplete 端点）",
    "cites_sources": true,
    "default_on": null,
-   "note": "按 credit 预充值，credit 有效期 6 个月；实时查询不缓存；1-2 秒返回；可按国家/语言定制位置；限速 50→300 QPS；量越大越便宜（$1.00→$0.30/1k）"
+   "note": "实时直查 Google、不做缓存；每次成功返回扣 credit；credits 有效期 6 个月；速率 50/100/200/300 QPS（Ultimate 300 QPS，可申请提高）；一般 1-2 秒返回；可指定国家与语言；7 天内使用未超 20% 可全额退款。"
   }
  ],
- "fetched_at": "2026-10-03T00:37:29Z",
+ "fetched_at": "2026-10-03T12:43:15Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-03T00:37:29Z",
- "websearch_hash": "808a1ee9bc5a436e7cb0213175d5b26eda302009fee2d6998d71ce8ad2e66151"
+ "last_fetch_ts": "2026-10-03T12:43:15Z",
+ "websearch_hash": "7a2d266118da687979bd5314c210c500084a568af138a7dbcd5661a6f5bb869e"
 }

@@ -2,14 +2,14 @@
  "plans": [
   {
    "name": "Andante",
-   "plan_type": "聊天会员（Kimi 会员计划）",
+   "plan_type": "聊天会员",
    "price": "¥49/月",
-   "billing": "连续包月；亦支持连续包年（年付更优惠，全档最高立省 ¥1,680）",
+   "billing": "连续包月（另有连续包年，年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 30 个",
-     "window": "每月（按月刷新，未使用额度到期清零）"
+     "window": "每月"
     },
     {
      "label": "Agent 优先生成队列",
@@ -17,119 +17,217 @@
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "小组件任务",
+     "value": "6 个",
+     "window": null
+    },
+    {
+     "label": "定时任务",
+     "value": "6 个",
+     "window": null
+    },
+    {
+     "label": "精选插件",
+     "value": "15+ 种可调用",
+     "window": null
+    },
+    {
+     "label": "专业数据库",
      "value": "1000 次调用",
      "window": null
+    },
+    {
+     "label": "项目数",
+     "value": "20 个",
+     "window": null
+    },
+    {
+     "label": "项目存储空间",
+     "value": "20GB",
+     "window": null
+    },
+    {
+     "label": "Kimi Code 使用限额",
+     "value": "5 小时 / 周使用限额",
+     "window": "每周"
     }
    ],
-   "models": [
-    "Kimi K3",
-    "K2.6"
-   ],
-   "note": "Agent 用量数值为官网基于常见任务 token 消耗估算的月额度参考值，非 Token 原文标注；所有会员功能共享一个额度池，按实际 token 消耗扣除；Kimi Code 可调用但另有 5 小时 / 周使用限额（官网未标注具体数值），仅作用于 Kimi Code；其他权益：定时任务 6 个、小组件任务 6 个、项目数 20 个、项目存储空间 20GB、精选插件 15+ 种可调用。",
+   "models": [],
+   "note": "官网说明：所有 Kimi 会员功能共享一个额度池，按实际 token 消耗扣除，额度在每个计费周期自动刷新，未使用的额度到期清零；Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code，不影响其他会员功能；Agent 用量数值基于常见任务 token 消耗估算，为参考值，5 小时及周频控以页面提示为准。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Moderato",
-   "plan_type": "聊天会员（Kimi 会员计划）",
+   "plan_type": "聊天会员",
    "price": "¥99/月",
-   "billing": "连续包月；亦支持连续包年（年付更优惠，全档最高立省 ¥1,680）",
+   "billing": "连续包月（另有连续包年，年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 60 个",
-     "window": "每月（按月刷新，未使用额度到期清零）"
+     "window": "每月"
+    },
+    {
+     "label": "Agent 任务并行",
+     "value": "2 个",
+     "window": null
     },
     {
      "label": "Agent 集群可用",
-     "value": "25 次",
+     "value": "25 次（2 个子任务并行）",
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "定时任务",
+     "value": "10 个",
+     "window": null
+    },
+    {
+     "label": "小组件任务",
+     "value": "10 个",
+     "window": null
+    },
+    {
+     "label": "专业数据库",
      "value": "2000 次调用",
      "window": null
+    },
+    {
+     "label": "Kimi Code 使用限额",
+     "value": "5 小时 / 周使用限额",
+     "window": "每周"
     }
    ],
-   "models": [
-    "Kimi K3",
-    "K2.6"
-   ],
-   "note": "在 Andante 基础上升级；Agent 用量数值为官网基于常见任务 token 消耗估算的月额度参考值，非 Token 原文标注；所有会员功能共享一个额度池，按实际 token 消耗扣除；Kimi Code 可调用但另有 5 小时 / 周使用限额（官网未标注具体数值）；其他权益：Agent 任务并行 2 个（2 个子任务并行）、定时任务与小组件任务各 10 个、梦境记忆、自进化技能。",
+   "models": [],
+   "note": "官网说明：在 Andante 基础上升级；所有会员功能共享一个额度池，按实际 token 消耗扣除，额度在每个计费周期自动刷新，未使用的额度到期清零；Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；Agent 用量数值基于常见任务 token 消耗估算，为参考值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegretto",
-   "plan_type": "聊天会员（Kimi 会员计划）",
+   "plan_type": "聊天会员",
    "price": "¥199/月",
-   "billing": "连续包月；亦支持连续包年（年付更优惠，全档最高立省 ¥1,680）",
+   "billing": "连续包月（另有连续包年，年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 150 个",
-     "window": "每月（按月刷新，未使用额度到期清零）"
+     "window": "每月"
+    },
+    {
+     "label": "Agent 任务并行",
+     "value": "2 个",
+     "window": null
     },
     {
      "label": "Agent 集群可用",
-     "value": "50 次",
+     "value": "50 次（4 个子任务并行）",
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专属 Kimi Claw",
+     "value": "支持 10 个 Kimi Claw 群聊",
+     "window": null
+    },
+    {
+     "label": "定时任务",
+     "value": "15 个",
+     "window": null
+    },
+    {
+     "label": "小组件任务",
+     "value": "15 个",
+     "window": null
+    },
+    {
+     "label": "专业数据库",
      "value": "5000 次调用",
      "window": null
+    },
+    {
+     "label": "Kimi Code 使用限额",
+     "value": "5 小时 / 周使用限额",
+     "window": "每周"
     }
    ],
-   "models": [
-    "Kimi K3",
-    "K2.6"
-   ],
-   "note": "在 Andante 基础上升级；Agent 用量数值为官网基于常见任务 token 消耗估算的月额度参考值，非 Token 原文标注；所有会员功能共享一个额度池，按实际 token 消耗扣除；Kimi Code 可调用但另有 5 小时 / 周使用限额（官网未标注具体数值）；其他权益：Agent 任务并行 2 个（4 个子任务并行）、专属 Kimi Claw 支持 10 个群聊、定时任务与小组件任务各 15 个、梦境记忆、自进化技能、目标模式。",
+   "models": [],
+   "note": "官网说明：在 Andante 基础上升级；所有会员功能共享一个额度池，按实际 token 消耗扣除，额度在每个计费周期自动刷新，未使用的额度到期清零；Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；Agent 用量数值基于常见任务 token 消耗估算，为参考值。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   },
   {
    "name": "Allegro",
-   "plan_type": "聊天会员（Kimi 会员计划）",
+   "plan_type": "聊天会员",
    "price": "¥699/月",
-   "billing": "连续包月；亦支持连续包年（年付更优惠，全档最高立省 ¥1,680）",
+   "billing": "连续包月（另有连续包年，年付更优惠）",
    "quotas": [
     {
      "label": "Agent 用量",
      "value": "约 360 个",
-     "window": "每月（按月刷新，未使用额度到期清零）"
+     "window": "每月"
+    },
+    {
+     "label": "Agent 任务并行",
+     "value": "4 个",
+     "window": null
     },
     {
      "label": "Agent 集群可用",
-     "value": "120 次",
+     "value": "120 次（8 个子任务并行）",
      "window": null
     },
     {
      "label": "超长对话容量",
-     "value": "百万 Tokens",
+     "value": "支持百万 Tokens 超长对话容量",
      "window": null
     },
     {
-     "label": "专业数据库调用",
+     "label": "专属 Kimi Claw",
+     "value": "支持 10 个 Kimi Claw 群聊",
+     "window": null
+    },
+    {
+     "label": "定时任务",
+     "value": "20 个",
+     "window": null
+    },
+    {
+     "label": "小组件任务",
+     "value": "20 个",
+     "window": null
+    },
+    {
+     "label": "项目数",
+     "value": "100 个",
+     "window": null
+    },
+    {
+     "label": "项目存储空间",
+     "value": "50GB",
+     "window": null
+    },
+    {
+     "label": "专业数据库",
      "value": "12000 次调用",
      "window": null
+    },
+    {
+     "label": "Kimi Code 使用限额",
+     "value": "5 小时 / 周使用限额",
+     "window": "每周"
     }
    ],
-   "models": [
-    "Kimi K3",
-    "K2.6"
-   ],
-   "note": "在 Andante 基础上升级；Agent 用量数值为官网基于常见任务 token 消耗估算的月额度参考值，非 Token 原文标注；所有会员功能共享一个额度池，按实际 token 消耗扣除；Kimi Code 可调用但另有 5 小时 / 周使用限额（官网未标注具体数值）；其他权益：Agent 任务并行 4 个（8 个子任务并行）、专属 Kimi Claw 支持 10 个群聊、定时任务与小组件任务各 20 个、项目数 100 个、项目存储空间 50GB、梦境记忆、自进化技能、目标模式。",
+   "models": [],
+   "note": "官网说明：在 Andante 基础上升级；所有会员功能共享一个额度池，按实际 token 消耗扣除，额度在每个计费周期自动刷新，未使用的额度到期清零；Kimi Code 另有 5 小时 / 周使用限额，仅作用于 Kimi Code；Agent 用量数值基于常见任务 token 消耗估算，为参考值；另有 Kimi Claw 云主机约会员额度 0.6%/天、Agent 网站云服务约会员额度 0.08% 的扣费。",
    "source_url": "https://www.kimi.com/help/membership/membership-pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-10-03T00:27:12Z",
+ "last_fetch_ts": "2026-10-03T12:35:22Z",
  "source": "official",
  "source_urls": [
   "https://www.kimi.com/help/membership/membership-pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "072546bb674b9a2aaca132a5ae9d97c264af121ef676534fb572fbe0e1e8bc16",
- "fetched_at": "2026-09-30T12:08:56Z",
- "status_note": "页面无变化"
+ "plans_hash": "8ff8ab7d4c6d8b606027f287e6ef9e52bceb1ee499e3a8285275376f8e3b0e8d",
+ "fetched_at": "2026-10-03T12:35:22Z",
+ "status_note": null
 }

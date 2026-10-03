@@ -12,65 +12,97 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search endpoint (depth: flash / fast / standard, outputType: searchResults)",
+   "name": "Search endpoint — depth \"flash\" / \"fast\" / \"standard\", outputType \"searchResults\"",
    "pricing": "$0.005 per call",
    "price_per_1k_usd": 5.0,
-   "price_basis": "PAYG（预付余额扣费），depth=flash/fast/standard 且 outputType=searchResults",
-   "free_quota": "官网定价页：“Run 4,000 queries for free.”；文档：使用专业邮箱注册自动赠送 $20 额度，符合条件账户每月补足至 $20",
-   "output_type": "结构化搜索结果：searchResults 返回 {name, url, content} 数组（排序后的来源与内容片段）",
+   "price_basis": "PAYG（预付余额计费）flash/fast/standard depth + searchResults outputType",
+   "free_quota": "Run 4,000 queries for free. / 首次使用专业邮箱注册自动到账 $20，并每月补足至 $20",
+   "output_type": "searchResults：Array of {name, url, content}，排序后的 URL 与内容片段",
    "cites_sources": true,
    "default_on": null,
-   "note": "同步端点；flash<200ms（不调用LLM），fast~1s（不做查询改写），standard 1–3s（单轮 agentic，可并行子搜索、爬取1个URL）"
+   "note": "flash <200ms（无 LLM、不改写查询）；fast ~1s（原样查询）；standard 1-3s（单轮 agentic）；flash/fast 不调用 LLM"
   },
   {
-   "name": "Search endpoint (depth: flash / fast / standard, outputType: sourcedAnswer / structured)",
+   "name": "Search endpoint — depth \"flash\" / \"fast\" / \"standard\", outputType \"sourcedAnswer\" / \"structured\"",
    "pricing": "$0.006 per call",
    "price_per_1k_usd": 6.0,
-   "price_basis": "PAYG（预付余额扣费），depth=flash/fast/standard 且 outputType=sourcedAnswer 或 structured",
-   "free_quota": "同上：新账户 $20 额度，符合条件账户每月补足至 $20",
-   "output_type": "sourcedAnswer=搜索结果+带内联引用的自然语言答案；structured=按 structuredOutputSchema 返回的 JSON",
+   "price_basis": "PAYG（预付余额计费）flash/fast/standard depth + sourcedAnswer/structured 输出",
+   "free_quota": "Run 4,000 queries for free. / 注册自动到账 $20 并每月补足至 $20",
+   "output_type": "sourcedAnswer：搜索结果 + 带 inline citations 的自然语言答案；structured：符合 structuredOutputSchema 的 JSON",
    "cites_sources": true,
    "default_on": null,
-   "note": "文档说明 sourcedAnswer/structured 会调用 LLM，相对 searchResults 有小额溢价"
+   "note": "sourcedAnswer/structured 会调用 LLM，相对 searchResults 有小幅溢价；响应含 sources 数组含 url 与 snippet"
   },
   {
-   "name": "Search endpoint (depth: deep, outputType: searchResults)",
+   "name": "Search endpoint — depth \"deep\", outputType \"searchResults\"",
    "pricing": "$0.05 per call",
    "price_per_1k_usd": 50.0,
-   "price_basis": "PAYG（预付余额扣费），depth=deep 且 outputType=searchResults",
-   "free_quota": null,
-   "output_type": "结构化搜索结果：searchResults（{name, url, content}）",
+   "price_basis": "PAYG（预付余额计费）deep depth + searchResults",
+   "free_quota": "Run 4,000 queries for free. / 注册自动到账 $20 并每月补足至 $20",
+   "output_type": "searchResults：排序后的来源与内容片段",
    "cites_sources": true,
    "default_on": null,
-   "note": "深度模式为多轮 agentic 搜索+抓取+评估，延迟 5–30s"
+   "note": "deep 为多轮 agentic 搜索-抓取链式并带评估，延迟 5–30s"
   },
   {
-   "name": "Search endpoint (depth: deep, outputType: sourcedAnswer / structured)",
+   "name": "Search endpoint — depth \"deep\", outputType \"sourcedAnswer\" / \"structured\"",
    "pricing": "$0.055 per call",
    "price_per_1k_usd": 55.0,
-   "price_basis": "PAYG（预付余额扣费），depth=deep 且 outputType=sourcedAnswer 或 structured",
-   "free_quota": null,
-   "output_type": "带引用答案或结构化 JSON",
+   "price_basis": "PAYG（预付余额计费）deep depth + sourcedAnswer/structured",
+   "free_quota": "Run 4,000 queries for free. / 注册自动到账 $20 并每月补足至 $20",
+   "output_type": "sourcedAnswer（带引用的答案）或 structured（JSON schema 输出）",
    "cites_sources": true,
    "default_on": null,
-   "note": "延迟 5–30s；支持 includeDomains/excludeDomains（最多100个）、fromDate/toDate、maxResults、includeImages"
+   "note": "deep 延迟 5–30s；官网价格页 Search 档位标注 Price per request $0.005 - $0.006"
   },
   {
-   "name": "Research endpoint（异步深度研究）",
-   "pricing": "$0.25 (S) / $0.50 (M) / $1.50 (L) / $2.50 (XL) 每次；官网定价页标注 $0.25 - $2.50 per request",
-   "price_per_1k_usd": 250.0,
-   "price_basis": "PAYG 异步，reasoningDepth=\"S\" 档（$0.25/次）；L 档为 $1500/千次，XL 档 $2500/千次",
-   "free_quota": null,
-   "output_type": "异步深度研究结果（1–10 分钟延迟）",
+   "name": "Research endpoint (asynchronous deep research)",
+   "pricing": "S $0.25 / M $0.50 / L $1.50 / XL $2.50 per call",
+   "price_per_1k_usd": null,
+   "price_basis": "reasoningDepth 参数：S/M/L/XL",
+   "free_quota": "Run 4,000 queries for free. / 注册自动到账 $20 并每月补足至 $20",
+   "output_type": null,
    "cites_sources": null,
    "default_on": null,
-   "note": "按 reasoningDepth 参数计费；Tasks 端点与对应直接调用同价；错误不扣费，余额耗尽返回 HTTP 429"
+   "note": "异步，延迟 1–10min；官网价格页标注 Price per request $0.25 - $2.50"
+  },
+  {
+   "name": "Fetch endpoint (URL content extraction)",
+   "pricing": "standard 模式 $0.001/call（renderJs=false）至 $0.01/call（pro, renderJs=true）；加 structured schema 额外 +$0.001",
+   "price_per_1k_usd": 1.0,
+   "price_basis": "standard mode + Markdown only（无 schema、无 renderJs）",
+   "free_quota": "Run 4,000 queries for free. / 注册自动到账 $20 并每月补足至 $20",
+   "output_type": null,
+   "cites_sources": null,
+   "default_on": null,
+   "note": "延迟 <2s/同步；属 URL 内容抓取而非搜索，官网价格页标注 $0.001 - $0.006"
+  },
+  {
+   "name": "x402 payment protocol",
+   "pricing": "按上述相同的单次请求价格用 USDC on Base 结算，每请求最低 $0.01",
+   "price_per_1k_usd": null,
+   "price_basis": "x402 每请求链上结算（含最低 $0.01/请求限制）",
+   "free_quota": null,
+   "output_type": null,
+   "cites_sources": null,
+   "default_on": null,
+   "note": "无需账户；API Key 方式为 USD 预付余额计费"
+  },
+  {
+   "name": "Enterprise",
+   "pricing": "Custom pricing models（定制定价）",
+   "price_per_1k_usd": null,
+   "price_basis": "Enterprise 询价",
+   "free_quota": "Apply for $5000 in free credits for startups",
+   "output_type": null,
+   "cites_sources": null,
+   "default_on": null,
+   "note": "个性化索引、专属刷新率、私有环境、IP 白名单；SOC 2 Type II 全档位含，ZDR 仅 Enterprise"
   }
  ],
- "fetched_at": "2026-09-28T12:12:28Z",
- "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-10-03T00:35:31Z",
- "websearch_hash": "fd03b90acf86ba202a54b0da25f9dd2c8d195b16e9ae12d571d18188e83fd9a6",
- "websearch_retry_after": "2026-10-03T06:36:07Z"
+ "fetched_at": "2026-10-03T12:41:27Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-03T12:41:27Z",
+ "websearch_hash": "fd03b90acf86ba202a54b0da25f9dd2c8d195b16e9ae12d571d18188e83fd9a6"
 }

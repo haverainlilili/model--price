@@ -11,43 +11,53 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Brave Search API — Search (LLM Context, agentic search)",
-   "pricing": "$5 per 1,000 requests; $4 per 1,000 queries for Answers; $5 per 10,000 requests for Spellcheck/Autosuggest (prepaid credits)",
+   "name": "Search (LLM Context / Web search)",
+   "pricing": "$5.00 per 1,000 requests (Prepaid — buy credits upfront and draw them down as you use the API)",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Search plan, Prepaid（$5.00 per 1,000 requests）",
-   "free_quota": "Includes $5 in free credits every month; credits are automatically applied to your account",
-   "output_type": "结构化 JSON 搜索结果（URLs、text snippets、news、images 等，含 LLM context 优化输出与 sources 映射）",
+   "price_basis": "Prepaid Search plan, per 1,000 requests",
+   "free_quota": "Includes $5 in free credits every month. Credits are automatically applied to your account.",
+   "output_type": "JSON 搜索结果（URLs、text snippets、news、images、videos 等），LLM Context 端点返回 grounding 上下文 + sources 映射",
    "cites_sources": true,
    "default_on": null,
-   "note": "容量 50 queries per second；可选端点 Answers/Image/Video/News/Web/LLM Context；Goggles 自定义重排与过滤；Extra snippets 最多五条；Schema-enriched 结果；索引超 300 亿页面、每日超 1 亿次页面更新；SOC 2 Type II；Enterprise 提供 Zero Data Retention。"
+   "note": "容量 50 requests per second；支持 Goggles 自定义重排与过滤、最多 5 条 extra snippets、schema-enriched results；索引 40+ billion pages"
   },
   {
-   "name": "Brave Search API — Answers",
-   "pricing": "$4 per 1,000 queries + $5 per 1,000,000 input tokens + $5 per 1,000,000 output tokens",
+   "name": "Answers",
+   "pricing": "$4.00 per 1,000 queries + $5.00 per 1,000,000 input tokens + $5.00 per 1,000,000 output tokens (Prepaid)",
    "price_per_1k_usd": 4.0,
-   "price_basis": "Answers 计划, Prepaid（$4.00 per 1,000 queries，另加每百万输入/输出 token $5.00）",
-   "free_quota": "Includes free $5 in credits every month; credits are automatically applied to your account",
-   "output_type": "LLM 生成的完整答案，OpenAI SDK 兼容的 chat completions 响应，支持流式",
+   "price_basis": "Prepaid Answers plan, 每 1,000 queries 的基础费用（不含 token 计费）",
+   "free_quota": "Includes $5 in free credits every month. Credits are automatically applied to your account.",
+   "output_type": "LLM 生成的完整答案（OpenAI SDK 兼容的 chat/completions 接口，支持 streaming），基于单次或多次搜索 grounding",
    "cites_sources": true,
    "default_on": null,
-   "note": "Grounding supported by citations；基于单次或多次搜索生成以减少幻觉；容量 2 queries per second；另计每百万输入 token $5、每百万输出 token $5。"
+   "note": "容量 2 requests per second；Grounding supported by citations；token 另按 $5/百万输入与 $5/百万输出计费"
   },
   {
-   "name": "Brave Search API — Enterprise",
-   "pricing": "Contact us about bespoke plans for large-scale deployments（需定制条款、容量或端点）",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": null,
+   "name": "Spellcheck",
+   "pricing": "$5.00 per 10,000 requests (Prepaid)",
+   "price_per_1k_usd": 0.5,
+   "price_basis": "Prepaid Spellcheck plan, per 1,000 requests 换算",
+   "free_quota": "Includes free $5 in credits every month.",
+   "output_type": "拼写纠错结果（附 enriched autosuggest）",
    "cites_sources": null,
    "default_on": null,
-   "note": "提供 Full-funnel Zero Data Retention、Custom agreements & NDAs、Invoicing & enterprise-grade support；需联系销售。"
+   "note": "容量 100 requests per second；属搜索辅助端点"
+  },
+  {
+   "name": "Autosuggest",
+   "pricing": "$5.00 per 10,000 requests (Prepaid)",
+   "price_per_1k_usd": 0.5,
+   "price_basis": "Prepaid Autosuggest plan, per 1,000 requests 换算",
+   "free_quota": "Includes free $5 in credits every month.",
+   "output_type": "查询建议列表",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "容量 100 requests per second；含 spellcheck 与 enriched autosuggest"
   }
  ],
- "fetched_at": "2026-09-30T12:13:28Z",
- "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-10-03T00:33:45Z",
- "websearch_hash": "e0359d3adb95351d5eb45edc810a55bbdaf2a40e2c4d603c5e26d20353895972",
- "websearch_retry_after": "2026-10-03T06:34:20Z"
+ "fetched_at": "2026-10-03T12:40:40Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-03T12:40:40Z",
+ "websearch_hash": "e0359d3adb95351d5eb45edc810a55bbdaf2a40e2c4d603c5e26d20353895972"
 }

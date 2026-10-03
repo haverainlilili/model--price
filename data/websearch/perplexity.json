@@ -12,75 +12,52 @@
  "offerings": [
   {
    "name": "Search API",
-   "pricing": "$5.00 per 1K requests",
+   "pricing": "$5.00 per 1K requests（Raw web search results with advanced filtering）",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Search API 基础档（每 1K 成功请求）",
+   "price_basis": "PAYG，按成功的 POST /search 请求计费（PAYG basic，$5.00 / 1,000 requests）",
    "free_quota": null,
-   "output_type": "结构化搜索结果（ranked results 含 title/url/snippet/date）",
+   "output_type": "结构化搜索结果（JSON：results[].title / url / snippet / date / last_updated）",
    "cites_sources": true,
    "default_on": null,
-   "note": "计费单位为每个成功的 POST /search 请求，非请求内每个 query；一次请求最多 5 个 query 算 1 个计费单位。max_results 取值 1-20，默认 10。无额外 token 费用。"
+   "note": "按成功请求计费，一次请求最多含 5 个 query 记 1 个计费单位；无效/限流/上游失败不计费；无额外 token 费用。max_results 1–20（默认 10），支持 domain/language/date 过滤与 search_context_size（low/medium/high，默认 high）。"
   },
   {
    "name": "Search API with Fast Search",
-   "pricing": "$1.00 per 1K requests",
+   "pricing": "$1.00 per 1K requests（Lower-latency web search results，需设置 search_type: \"fast\"）",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Search API 设置 search_type: \"fast\"（每 1K 请求）",
+   "price_basis": "PAYG，Search API + search_type:\"fast\"（$1.00 / 1,000 requests）",
    "free_quota": null,
-   "output_type": "低延迟结构化搜索结果（ranked results 含 url）",
+   "output_type": "结构化搜索结果（同 Search API 的 JSON 结果格式）",
    "cites_sources": true,
    "default_on": null,
-   "note": "Lower-latency web search results。需在请求体中设置 search_type: \"fast\"。"
+   "note": "官方说明为低延迟、低成本选项：\"Need lower latency or lower cost? Set search_type: \\\"fast\\\"\"；计费口径与 Search API 相同（按成功请求，无 token 附加费）。"
   },
   {
-   "name": "web_search (standard)",
-   "pricing": "$0.0025 per invocation; $2.50 per 1,000 invocations",
+   "name": "web_search (standard) — Agent API tool",
+   "pricing": "$0.0025 per invocation，即 $2.50 per 1,000 invocations（search_type: \"web\"）",
    "price_per_1k_usd": 2.5,
-   "price_basis": "Agent API 工具调用（standard web search，search_type: \"web\"，每次调用）",
+   "price_basis": "Agent API 工具费，按调用次数（invocation）计（PAYG，$2.50 / 1,000 invocations）",
    "free_quota": null,
-   "output_type": "模型内置工具（Agent API 工具调用，结果供模型使用）",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Standard web search with search_type: \"web\"。工具费用与模型 token 费用分开计。"
+   "output_type": "模型内置工具（Tool）调用结果，作为搜索上下文注入 Agent API 响应",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "文档：需在请求中启用工具，工具费与模型 token 费分别计；需带引用的 LLM 生成式答案官方推荐使用 Agent API。"
   },
   {
-   "name": "web_search (Fast Search)",
-   "pricing": "$0.001 per invocation; $1.00 per 1,000 invocations",
+   "name": "web_search (Fast Search) — Agent API tool",
+   "pricing": "$0.001 per invocation，即 $1.00 per 1,000 invocations（同一工具设 search_type: \"fast\"）",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Agent API 工具调用（同一工具，search_type: \"fast\"，每次调用）",
+   "price_basis": "Agent API 工具费，按调用次数计（PAYG，$1.00 / 1,000 invocations）",
    "free_quota": null,
-   "output_type": "模型内置工具（Agent API 工具调用）",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "The same tool with search_type: \"fast\"。"
-  },
-  {
-   "name": "people_search",
-   "pricing": "$0.005 per invocation; $5 per 1,000 tool invocations",
-   "price_per_1k_usd": 5.0,
-   "price_basis": "Agent API 工具调用（每次调用）",
-   "free_quota": null,
-   "output_type": "模型内置工具（人物/职业信息查询）",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Looks up professionals, employees, and people."
-  },
-  {
-   "name": "finance_search",
-   "pricing": "$0.005 per invocation; $5 per 1,000 tool invocations",
-   "price_per_1k_usd": 5.0,
-   "price_basis": "Agent API 工具调用（每次调用）",
-   "free_quota": null,
-   "output_type": "模型内置工具（金融数据与市场信息）",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Retrieves financial data and market information."
+   "output_type": "模型内置工具（Tool）调用结果，作为搜索上下文注入 Agent API 响应",
+   "cites_sources": true,
+   "default_on": false,
+   "note": "同一 web_search 工具的 fast 档，官方描述为更低延迟 / 更低成本；sandbox 内的 SDK 搜索查询按 $0.0025/次（同 web_search）计费。"
   }
  ],
- "fetched_at": "2026-09-29T00:35:17Z",
- "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-10-03T00:34:20Z",
- "websearch_hash": "4a2915b5e5eb8d3b6147bae3de99ccd8e31d5780b7f9df7696235e1eb3bd2e70",
- "websearch_retry_after": "2026-10-03T06:34:55Z"
+ "fetched_at": "2026-10-03T12:40:56Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-03T12:40:56Z",
+ "websearch_hash": "4a2915b5e5eb8d3b6147bae3de99ccd8e31d5780b7f9df7696235e1eb3bd2e70"
 }

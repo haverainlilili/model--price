@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-10-06T12:54:38Z",
+ "generated_at": "2026-10-07T01:00:19Z",
  "fx": {
   "usd_cny": 6.7046,
   "source": "frankfurter.dev",
-  "fetched_at": "2026-10-06T12:54:38Z"
+  "fetched_at": "2026-10-07T01:00:19Z"
  },
  "providers": {
   "anthropic": {
@@ -1808,7 +1808,7 @@
     "fetched_at": "2026-09-04T10:05:36Z",
     "status_note": "页面无变化",
     "last_error": "官网重定向次数超过 10 次",
-    "last_fetch_ts": "2026-10-06T12:34:38Z"
+    "last_fetch_ts": "2026-10-07T00:22:22Z"
    }
   },
   "xai": {
@@ -2008,7 +2008,7 @@
     "fetched_at": "2026-09-28T02:21:56Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-10-06T12:39:23Z",
+    "last_fetch_ts": "2026-10-07T00:23:52Z",
     "pricing_extraction_revision": 2
    }
   },
@@ -3978,7 +3978,7 @@
     "fetched_at": "2026-09-29T00:06:31Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-10-06T12:40:04Z",
+    "last_fetch_ts": "2026-10-07T00:24:29Z",
     "pricing_extraction_revision": 1
    }
   },
@@ -4144,7 +4144,7 @@
     "fetched_at": "2026-09-28T02:23:27Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-10-06T12:40:30Z",
+    "last_fetch_ts": "2026-10-07T00:24:54Z",
     "pricing_extraction_revision": 1
    }
   },
@@ -4201,8 +4201,8 @@
     "price_hash": "10f9a4de27dde398b25fd7d412c3f4d9368a4407b75a734c84fa5dd9ed4410ca",
     "fetched_at": "2026-09-29T00:29:19Z",
     "status_note": "页面无变化",
-    "last_error": null,
-    "last_fetch_ts": "2026-10-06T12:40:44Z",
+    "last_error": "HTTPSConnectionPool(host='platform.kimi.com', port=443): Read timed out. (read timeout=30)",
+    "last_fetch_ts": "2026-10-07T00:25:08Z",
     "pricing_extraction_revision": 1
    }
   },
@@ -4332,7 +4332,7 @@
     "fetched_at": "2026-09-30T12:06:51Z",
     "status_note": "页面无变化",
     "last_error": null,
-    "last_fetch_ts": "2026-10-06T12:41:00Z",
+    "last_fetch_ts": "2026-10-07T00:28:51Z",
     "pricing_extraction_revision": 1
    }
   },
@@ -4345,7 +4345,7 @@
    "record": {
     "url": "https://mimo.mi.com/docs/zh-CN/price/pay-as-you-go",
     "last_error": null,
-    "last_fetch_ts": "2026-10-06T12:41:02Z",
+    "last_fetch_ts": "2026-10-07T00:28:54Z",
     "source": "claude",
     "currency": "CNY",
     "promotions": "缓存写入：限时免费；mimo-v2.5-tts、mimo-v2.5-tts-voiceclone、mimo-v2.5-tts-voicedesign 限时免费；mimo-v2.5-pro、mimo-v2.5 模型将于北京时间 2026.10.21 10:00 正式下线，建议尽快切换至新版模型。",
@@ -11698,7 +11698,7 @@
     }
    ],
    "last_error": "HTTP 404",
-   "last_fetch_ts": "2026-10-06T12:44:28Z",
+   "last_fetch_ts": "2026-10-07T00:31:44Z",
    "source": "official",
    "source_urls": [
     "https://support.claude.com/en/articles/11049762-choose-a-claude-plan",
@@ -11946,7 +11946,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:45:26Z",
+   "last_fetch_ts": "2026-10-07T00:32:41Z",
    "source": "official",
    "source_urls": [
     "https://help.aliyun.com/zh/model-studio/savings-plan-and-resource-package"
@@ -12447,7 +12447,7 @@
     }
    ],
    "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:46:05Z",
+   "last_fetch_ts": "2026-10-07T00:33:55Z",
    "source": "official",
    "source_urls": [
     "https://platform.minimaxi.com/subscribe/token-plan"
@@ -12483,10 +12483,11 @@
     }
    ],
    "fetched_at": "2026-09-29T00:33:14Z",
-   "status_note": "页面无变化",
-   "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:46:19Z",
-   "websearch_hash": "0ce557abc0843f3e9ff5f267d07e22b3cab76d2a38eed40aaecbf9c52a26a9a3",
+   "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
+   "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
+   "last_fetch_ts": "2026-10-07T00:34:08Z",
+   "websearch_hash": "316504b06f3eab66037ad33cf3993c20e89e6af1079c9489939056f235b9ff99",
+   "websearch_retry_after": "2026-10-07T06:34:42Z",
    "name": "Anthropic (Claude)",
    "region": "国际"
   },
@@ -12561,7 +12562,7 @@
    "fetched_at": "2026-10-03T12:36:20Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:46:19Z",
+   "last_fetch_ts": "2026-10-07T00:34:42Z",
    "websearch_hash": "f7dc30f845bef5afc716284e78ea19e1cd0ead766188725f0cf4d50062707ba3",
    "name": "OpenAI",
    "region": "国际"
@@ -12604,7 +12605,7 @@
    "fetched_at": "2026-09-05T12:11:51Z",
    "status_note": "页面无变化",
    "last_error": "官网重定向次数超过 10 次",
-   "last_fetch_ts": "2026-10-06T12:46:19Z",
+   "last_fetch_ts": "2026-10-07T00:34:42Z",
    "websearch_hash": "955671ee8bb93d1fb1c9793d002b7b1063d96be98f6e602db5c4f638e14af82d",
    "name": "Google Gemini",
    "region": "国际"
@@ -12635,9 +12636,9 @@
    "fetched_at": null,
    "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
    "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
-   "last_fetch_ts": "2026-10-06T12:46:22Z",
+   "last_fetch_ts": "2026-10-07T00:34:44Z",
    "websearch_hash": "0b4c311e3ec7a92fd83db8e04e3fdaaa1a100941793b9edfef92bdacb77f2fe0",
-   "websearch_retry_after": "2026-10-06T18:47:09Z",
+   "websearch_retry_after": "2026-10-07T06:35:27Z",
    "name": "xAI (Grok)",
    "region": "国际"
   },
@@ -12667,9 +12668,9 @@
    "fetched_at": "2026-09-21T00:13:27Z",
    "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
    "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
-   "last_fetch_ts": "2026-10-06T12:47:09Z",
+   "last_fetch_ts": "2026-10-07T00:35:27Z",
    "websearch_hash": "0f83717359640927fb3395aceaa3a48eee73f43f406a44817495ce8b579b22a9",
-   "websearch_retry_after": "2026-10-06T18:47:52Z",
+   "websearch_retry_after": "2026-10-07T06:36:11Z",
    "name": "Mistral",
    "region": "国际"
   },
@@ -12699,9 +12700,9 @@
    "fetched_at": null,
    "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
    "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
-   "last_fetch_ts": "2026-10-06T12:47:52Z",
+   "last_fetch_ts": "2026-10-07T00:36:11Z",
    "websearch_hash": "dfe6cdbffa22ad76b2daf58004b36280dd0f85b027304140f51443978784d424",
-   "websearch_retry_after": "2026-10-06T18:48:28Z",
+   "websearch_retry_after": "2026-10-07T06:36:47Z",
    "name": "DeepSeek",
    "region": "国内"
   },
@@ -12786,7 +12787,7 @@
    "fetched_at": "2026-09-28T12:09:52Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:48:28Z",
+   "last_fetch_ts": "2026-10-07T00:36:47Z",
    "websearch_hash": "2279f61e821496e912757dcd9420f22a8cf5a1331bceb76aec04d32a3ddcf3ea",
    "name": "阿里云百炼 (Qwen)",
    "region": "国内"
@@ -12817,7 +12818,7 @@
    "fetched_at": "2026-09-28T02:28:40Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:48:30Z",
+   "last_fetch_ts": "2026-10-07T00:36:48Z",
    "websearch_hash": "a207902b3a567fc9df7b60a5518d147038dd0dfc47de0157c5b044f7311b7b95",
    "name": "火山方舟 (豆包)",
    "region": "国内"
@@ -12914,7 +12915,7 @@
    "fetched_at": "2026-09-28T12:10:39Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:48:53Z",
+   "last_fetch_ts": "2026-10-07T00:37:14Z",
    "websearch_hash": "964c4679984ed72c2d621c80c3ed93edb0a38356befb67c213aa2960548bea30",
    "name": "智谱 (GLM)",
    "region": "国内"
@@ -12944,8 +12945,8 @@
    ],
    "fetched_at": "2026-09-29T00:34:32Z",
    "status_note": "页面无变化",
-   "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:49:02Z",
+   "last_error": "HTTPSConnectionPool(host='platform.kimi.com', port=443): Read timed out. (read timeout=30)",
+   "last_fetch_ts": "2026-10-07T00:37:23Z",
    "websearch_hash": "d168ad9a3d11428e8f1bcbed921645c8e458f70564bf5eafb6fba95919596b49",
    "name": "月之暗面 (Kimi)",
    "region": "国内"
@@ -12976,9 +12977,9 @@
    "fetched_at": "2026-09-20T19:14:56Z",
    "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
    "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
-   "last_fetch_ts": "2026-10-06T12:49:07Z",
+   "last_fetch_ts": "2026-10-07T00:39:06Z",
    "websearch_hash": "34be97b0a397564582c6906b00fdddd56674266223036d9c1fcc3c0296246bb3",
-   "websearch_retry_after": "2026-10-06T18:50:01Z",
+   "websearch_retry_after": "2026-10-07T06:55:42Z",
    "name": "MiniMax",
    "region": "国内"
   },
@@ -13020,7 +13021,7 @@
    "fetched_at": "2026-10-03T12:39:54Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:50:01Z",
+   "last_fetch_ts": "2026-10-07T00:55:42Z",
    "websearch_hash": "88bb6ca990cf2817fa38a1564d3bcfb17837a59ecd1a128cf4e8e8af14b8e5c4",
    "name": "Tavily",
    "region": "国际"
@@ -13129,9 +13130,9 @@
    "fetched_at": "2026-10-03T12:40:16Z",
    "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
    "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
-   "last_fetch_ts": "2026-10-06T12:50:01Z",
-   "websearch_hash": "a64c1548ceb0e85ded1e884a3deb22b069a61dd29ba66846d82e32221c7c3aca",
-   "websearch_retry_after": "2026-10-06T18:50:37Z",
+   "last_fetch_ts": "2026-10-07T00:55:42Z",
+   "websearch_hash": "0bcfdc6f995cb5e5c80e50363bad8c6ff534d70d8a15aad4e40d8acdbf07581f",
+   "websearch_retry_after": "2026-10-07T06:56:18Z",
    "name": "Exa",
    "region": "国际"
   },
@@ -13195,7 +13196,7 @@
    "fetched_at": "2026-10-03T12:40:40Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:50:37Z",
+   "last_fetch_ts": "2026-10-07T00:56:18Z",
    "websearch_hash": "e0359d3adb95351d5eb45edc810a55bbdaf2a40e2c4d603c5e26d20353895972",
    "name": "Brave Search API",
    "region": "国际"
@@ -13260,9 +13261,9 @@
    "fetched_at": "2026-10-03T12:40:56Z",
    "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
    "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
-   "last_fetch_ts": "2026-10-06T12:50:37Z",
-   "websearch_hash": "029d0c934d9750a91872fae36d28cc0cdc652975e1f44c31559785fcb94b65a1",
-   "websearch_retry_after": "2026-10-06T18:51:12Z",
+   "last_fetch_ts": "2026-10-07T00:56:18Z",
+   "websearch_hash": "4b4195ff6b6b3c545a27b081461909622a68cedf91d8b83005ca32d77ef93f5b",
+   "websearch_retry_after": "2026-10-07T06:56:53Z",
    "name": "Perplexity",
    "region": "国际"
   },
@@ -13370,9 +13371,9 @@
    "fetched_at": "2026-10-03T12:41:11Z",
    "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
    "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
-   "last_fetch_ts": "2026-10-06T12:51:12Z",
-   "websearch_hash": "a9c1855462dcd90d04afa026303b9bf693c9934e2199e3bc67fe8c5fee7b5b1c",
-   "websearch_retry_after": "2026-10-06T18:51:48Z",
+   "last_fetch_ts": "2026-10-07T00:56:53Z",
+   "websearch_hash": "6d910ead84a543956308f4d11712cee050134bd91b40568496ed9969cd9e6739",
+   "websearch_retry_after": "2026-10-07T06:57:29Z",
    "name": "You.com",
    "region": "国际"
   },
@@ -13481,7 +13482,7 @@
    "fetched_at": "2026-10-03T12:41:27Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:51:48Z",
+   "last_fetch_ts": "2026-10-07T00:57:29Z",
    "websearch_hash": "fd03b90acf86ba202a54b0da25f9dd2c8d195b16e9ae12d571d18188e83fd9a6",
    "name": "Linkup",
    "region": "国际"
@@ -13513,9 +13514,9 @@
    "fetched_at": "2026-10-03T12:42:10Z",
    "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
    "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
-   "last_fetch_ts": "2026-10-06T12:51:49Z",
+   "last_fetch_ts": "2026-10-07T00:57:30Z",
    "websearch_hash": "b6f065e3b0e5040a68fad5578bc9f5757b7e1e1d9aa0cb2c0058744ea6485528",
-   "websearch_retry_after": "2026-10-06T18:52:45Z",
+   "websearch_retry_after": "2026-10-07T06:58:26Z",
    "name": "Jina AI Search",
    "region": "国际"
   },
@@ -13558,9 +13559,9 @@
    "fetched_at": "2026-10-03T12:42:49Z",
    "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
    "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
-   "last_fetch_ts": "2026-10-06T12:52:45Z",
-   "websearch_hash": "9bd42751cce98c6d8b1f8b252b9b4d7ee7e7d50f92ba6cade71ef08ad28b1390",
-   "websearch_retry_after": "2026-10-06T18:53:20Z",
+   "last_fetch_ts": "2026-10-07T00:58:26Z",
+   "websearch_hash": "04a9ff24ffeb49cd2cdcdc7abbe6b41f387f497b84ee4251da134225f9dc900f",
+   "websearch_retry_after": "2026-10-07T06:59:02Z",
    "name": "Firecrawl Search",
    "region": "国际"
   },
@@ -13590,7 +13591,7 @@
    "fetched_at": "2026-09-05T12:18:10Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:53:20Z",
+   "last_fetch_ts": "2026-10-07T00:59:02Z",
    "websearch_hash": "32b595bd27cdd7f9f75f9f8268815ccfa7015a647ae79eb788fcf72040d65d62",
    "name": "博查 AI Search API",
    "region": "国内"
@@ -13621,9 +13622,9 @@
    "fetched_at": "2026-10-06T00:52:26Z",
    "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
    "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
-   "last_fetch_ts": "2026-10-06T12:53:21Z",
-   "websearch_hash": "6a5fcaf5708a68e357dbcf79b9ccbd2491deefe68ebc751aa96165d2e3212233",
-   "websearch_retry_after": "2026-10-06T18:53:56Z",
+   "last_fetch_ts": "2026-10-07T00:59:03Z",
+   "websearch_hash": "f6b838e93ffc976065de8b2a2b3036e3f571bfebe32036615860325f65ced111",
+   "websearch_retry_after": "2026-10-07T06:59:37Z",
    "name": "Serper",
    "region": "国际"
   },
@@ -13653,7 +13654,7 @@
    "fetched_at": "2026-09-05T12:18:32Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:53:56Z",
+   "last_fetch_ts": "2026-10-07T00:59:37Z",
    "websearch_hash": "a9e52ac3c1d629f5f3701c626dec8fa7a3a9c3ec68af4e325a2be7ffad67f624",
    "name": "SerpApi",
    "region": "国际"
@@ -13684,7 +13685,7 @@
    "fetched_at": "2026-09-05T12:18:40Z",
    "status_note": "页面无变化",
    "last_error": null,
-   "last_fetch_ts": "2026-10-06T12:53:56Z",
+   "last_fetch_ts": "2026-10-07T00:59:37Z",
    "websearch_hash": "a154e899032153ed36e0025ebaa7b31cc7b5fb1f11c9cc12df975a6681190df8",
    "name": "Google Custom Search JSON API",
    "region": "国际"
@@ -13737,7 +13738,7 @@
    "fetched_at": "2026-09-05T12:18:45Z",
    "status_note": "页面无变化",
    "last_error": "HTTP 404",
-   "last_fetch_ts": "2026-10-06T12:53:56Z",
+   "last_fetch_ts": "2026-10-07T00:59:38Z",
    "websearch_hash": "83f1f9f967a24d40481c9c2dd56746100916d602f20a49c90669c4f559efc066",
    "name": "DataForSEO SERP API",
    "region": "国际"
@@ -13779,9 +13780,9 @@
    "fetched_at": "2026-10-06T00:53:17Z",
    "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
    "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
-   "last_fetch_ts": "2026-10-06T12:54:03Z",
-   "websearch_hash": "f1598dccc78071f4cceb67e01e39afeb2658b0e0920e1ade42f8c839a6f9ced4",
-   "websearch_retry_after": "2026-10-06T18:54:38Z",
+   "last_fetch_ts": "2026-10-07T00:59:45Z",
+   "websearch_hash": "023fe3b7be88f7c2565234094254615d20b4c39c664e5a69ea8afd8bd04cca14",
+   "websearch_retry_after": "2026-10-07T07:00:19Z",
    "name": "Bright Data SERP API",
    "region": "国际"
   }
@@ -14068,13 +14069,13 @@
     "https://docs.x.ai/developers/pricing",
     "https://docs.x.ai/developers/model-capabilities/images/generation"
    ],
-   "last_fetch_ts": "2026-10-05T06:22:46Z",
+   "last_fetch_ts": "2026-10-06T18:05:42Z",
    "source_warnings": [],
-   "imagegen_hash": "00d3910d379c679ea4b4c654e1dd567cedcc5d886eaa2f481f846172de7f20e4",
+   "imagegen_hash": "4ad044d74fa29b4e5b15f273116f5d9028a00f5174513e91132719cbf32e3074",
    "status_note": "官网生图抽取失败: 网络错误: Connection error.",
    "last_error": "官网生图抽取失败: 网络错误: Connection error.",
-   "imagegen_excerpt_hash": "3c7f9b445999e36d941ebb5e8e399f87e395c666219993692e2500f60ebecd80",
-   "imagegen_retry_after": "2026-10-05T12:23:22Z",
+   "imagegen_excerpt_hash": "18b1dcb27c0a9845e0dbd3c27192d46422f60e252fbcca633c3ca86ed190e15e",
+   "imagegen_retry_after": "2026-10-07T00:22:13Z",
    "name": "xAI Grok Imagine",
    "region": "国际"
   },
@@ -14140,13 +14141,13 @@
     "https://docs.bfl.ai/quick_start/pricing",
     "https://docs.bfl.ai/flux_2"
    ],
-   "last_fetch_ts": "2026-10-05T06:23:22Z",
+   "last_fetch_ts": "2026-10-06T18:22:13Z",
    "source_warnings": [],
    "imagegen_hash": "17530519929fa097394e7cd1b7226b8a14596a866598f40cfc31930f9e0688e6",
    "status_note": "官网生图抽取失败: 网络错误: Connection error.",
    "last_error": "官网生图抽取失败: 网络错误: Connection error.",
    "imagegen_excerpt_hash": "a00b7ba39ca9fb7d47b10646983a04d26b2630c48729db72227e5512d54cd6a9",
-   "imagegen_retry_after": "2026-10-05T12:23:57Z",
+   "imagegen_retry_after": "2026-10-07T00:22:48Z",
    "name": "Black Forest Labs",
    "region": "国际"
   },
@@ -14328,13 +14329,13 @@
     "https://platform.stability.ai/pricing",
     "https://stability.ai/stable-image"
    ],
-   "last_fetch_ts": "2026-10-04T18:22:42Z",
+   "last_fetch_ts": "2026-10-06T18:22:48Z",
    "source_warnings": [],
    "imagegen_hash": "d543f6977859b3d861242f4132858744d9282998c9fdecc4d6b545b981ea1a2e",
    "status_note": "官网生图抽取失败: 网络错误: Connection error.",
    "last_error": "官网生图抽取失败: 网络错误: Connection error.",
    "imagegen_excerpt_hash": "2c4575f6fbe4a6455f61511414ac43eddc944087235da8bda7d691d1a38862bb",
-   "imagegen_retry_after": "2026-10-05T00:23:18Z",
+   "imagegen_retry_after": "2026-10-07T00:23:24Z",
    "name": "Stability AI",
    "region": "国际"
   },
@@ -14450,7 +14451,7 @@
     "https://developer.adobe.com/firefly-services/docs/firefly-api/guides/concepts/credits/",
     "https://developer.adobe.com/firefly-services/docs/firefly-api/guides/how-tos/cm-generate-image/feature-guide"
    ],
-   "last_fetch_ts": "2026-10-04T18:23:18Z",
+   "last_fetch_ts": "2026-10-06T18:23:24Z",
    "source_warnings": [
     "https://developer.adobe.com/firefly-services/docs/firefly-api/guides/concepts/credits/: HTTP 404"
    ],
@@ -14458,7 +14459,7 @@
    "status_note": "官网生图抽取失败: 网络错误: Connection error.",
    "last_error": "官网生图抽取失败: 网络错误: Connection error.",
    "imagegen_excerpt_hash": "efe4ad606d6ec51ccc716e73b77a3725250d46a7e34323ad3ee1d560110f9243",
-   "imagegen_retry_after": "2026-10-05T00:23:58Z",
+   "imagegen_retry_after": "2026-10-07T00:24:04Z",
    "name": "Adobe Firefly",
    "region": "国际"
   },
@@ -14552,7 +14553,7 @@
     "https://developer.ideogram.ai/"
    ],
    "last_error": "https://ideogram.ai/api-pricing/: 重定向到非允许官网: http://ideogram.ai/pricing/?pricing_tab=api",
-   "last_fetch_ts": "2026-10-06T06:05:45Z",
+   "last_fetch_ts": "2026-10-06T18:24:04Z",
    "name": "Ideogram",
    "region": "国际"
   },
@@ -15079,13 +15080,13 @@
     "https://www.recraft.ai/docs/api-reference/pricing",
     "https://www.recraft.ai/docs/api-reference/getting-started"
    ],
-   "last_fetch_ts": "2026-10-06T06:05:46Z",
+   "last_fetch_ts": "2026-10-06T18:24:04Z",
    "source_warnings": [],
    "imagegen_hash": "02a00656d6c613be02e45f62e7c0018c6f697887f65c222bd04bc117c6fa21a0",
    "status_note": "官网生图抽取失败: 网络错误: Connection error.",
    "last_error": "官网生图抽取失败: 网络错误: Connection error.",
    "imagegen_excerpt_hash": "291f7b48a19307a48d09962d5b0d3dc69b3db69e0f49cbb943d98cfd9027c2bb",
-   "imagegen_retry_after": "2026-10-06T12:22:04Z",
+   "imagegen_retry_after": "2026-10-07T00:24:40Z",
    "name": "Recraft",
    "region": "国际"
   },
@@ -16861,7 +16862,7 @@
     "https://docs.dev.runwayml.com/guides/pricing/",
     "https://docs.dev.runwayml.com/guides/using-models/"
    ],
-   "last_fetch_ts": "2026-10-05T18:26:03Z",
+   "last_fetch_ts": "2026-10-06T18:24:40Z",
    "source_warnings": [
     "https://docs.dev.runwayml.com/guides/using-models/: HTTP 404"
    ],
@@ -16869,7 +16870,7 @@
    "status_note": "官网生视频抽取失败: 网络错误: Connection error.",
    "last_error": "官网生视频抽取失败: 网络错误: Connection error.",
    "videogen_excerpt_hash": "b3aaa63a3eb5cf02810e05ebd67bb44eba34e5b11d9fbed532b97da907b52133",
-   "videogen_retry_after": "2026-10-06T00:26:44Z",
+   "videogen_retry_after": "2026-10-07T00:25:20Z",
    "name": "Runway",
    "region": "国际"
   },
@@ -16927,7 +16928,7 @@
     "https://developer.adobe.com/firefly-services/docs/firefly-api/",
     "https://developer.adobe.com/firefly-services/docs/firefly-api/getting-started/usage-notes/"
    ],
-   "last_fetch_ts": "2026-10-05T18:26:44Z",
+   "last_fetch_ts": "2026-10-06T18:25:20Z",
    "source_warnings": [],
    "videogen_hash": "e512ce6f89cf6ea202cc7d638a68a1053acac8cf80534000e7d4f4ebf58a2c01",
    "status_note": "页面无变化",
@@ -17748,13 +17749,13 @@
     "https://docs.agents.lumalabs.ai/guides/pricing/",
     "https://docs.agents.lumalabs.ai/guides/videos/generation/"
    ],
-   "last_fetch_ts": "2026-10-05T18:26:44Z",
+   "last_fetch_ts": "2026-10-06T18:25:20Z",
    "source_warnings": [],
    "videogen_hash": "9dc1fcd72e81f64fd6937ee0f906d535a4d75b88c8a6442d2846088da45d4216",
    "status_note": "官网生视频抽取失败: 网络错误: Connection error.",
    "last_error": "官网生视频抽取失败: 网络错误: Connection error.",
    "videogen_excerpt_hash": "77ca75952fe7b969752847aedba18558d6bd14477a954b155fad92972d9cc86c",
-   "videogen_retry_after": "2026-10-06T00:27:19Z",
+   "videogen_retry_after": "2026-10-07T00:25:56Z",
    "name": "Luma Ray",
    "region": "国际"
   },
@@ -17815,7 +17816,7 @@
     "https://klingai.com/document-api/guides/capability-map/video",
     "https://klingai.com/document-api/api/video/video-generation"
    ],
-   "last_fetch_ts": "2026-10-05T18:27:19Z",
+   "last_fetch_ts": "2026-10-06T18:25:56Z",
    "source_warnings": [],
    "videogen_hash": "abb4237327b19b032a6b769505e9f891f2f7ebd653f4858fd757b1b7e92368a6",
    "status_note": "页面无变化",
@@ -18243,13 +18244,13 @@
     "https://platform.minimax.io/docs/guides/pricing-paygo",
     "https://platform.minimax.io/docs/api-reference/video-generation-v2-create"
    ],
-   "last_fetch_ts": "2026-10-05T18:27:23Z",
+   "last_fetch_ts": "2026-10-06T18:25:58Z",
    "source_warnings": [],
    "videogen_hash": "ffd707d0786bd210635e2e3bc90f2ea6a6365d9f790a4a404989317b6559c328",
    "status_note": "官网生视频抽取失败: 网络错误: Connection error.",
    "last_error": "官网生视频抽取失败: 网络错误: Connection error.",
    "videogen_excerpt_hash": "54c193b93b79cba8d9af65572207792acadef6f1a7800fb410227c105206081b",
-   "videogen_retry_after": "2026-10-06T00:27:58Z",
+   "videogen_retry_after": "2026-10-07T00:26:33Z",
    "name": "MiniMax Hailuo",
    "region": "国内"
   },
@@ -18874,11 +18875,11 @@
     "https://docs.volcengine.com/docs/82379/1520757",
     "https://seed.bytedance.com/en/seedance2_5"
    ],
-   "last_fetch_ts": "2026-10-05T06:25:51Z",
+   "last_fetch_ts": "2026-10-06T18:26:33Z",
    "source_warnings": [],
    "videogen_hash": "43b8af5bdd0514a0285d296ed75ba33c89532f43d4fdef9c8e7136bba5d180f7",
    "status_note": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
-   "last_error": "https://docs.volcengine.com/docs/82379/1544106?lang=zh: 渲染失败: BrowserType.launch: EROFS: read-only file system, mkdtemp '/tmp/playwright-artifacts-xuWDyl'",
+   "last_error": "https://docs.volcengine.com/docs/82379/1544106?lang=zh: 渲染失败: BrowserType.launch: EROFS: read-only file system, mkdtemp '/tmp/playwright-artifacts-bFXX7d'",
    "videogen_excerpt_hash": "3d44a9690423559de3b646e6463778c64ff743d3a38689410313847f22ff16ca",
    "videogen_retry_after": "2026-09-30T07:16:55Z",
    "name": "火山方舟 Seedance",
@@ -19179,13 +19180,13 @@
     "https://help.aliyun.com/zh/model-studio/wan3-0-video",
     "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
    ],
-   "last_fetch_ts": "2026-10-06T06:24:48Z",
+   "last_fetch_ts": "2026-10-06T18:26:42Z",
    "source_warnings": [],
    "videogen_hash": "e013042ef2a549b15746362fbb427bcb4b03f205f9a716361a604f49c190f7a5",
    "status_note": "官网生视频抽取失败: 网络错误: Connection error.",
    "last_error": "官网生视频抽取失败: 网络错误: Connection error.",
    "videogen_excerpt_hash": "3232847d30b4b589d0bf7ea18d4133a9a75c1fb8bfb7760ad9fb1b10a128dd9a",
-   "videogen_retry_after": "2026-10-06T12:25:58Z",
+   "videogen_retry_after": "2026-10-07T00:27:20Z",
    "name": "阿里云百炼 Wan Video",
    "region": "国内"
   },
@@ -19301,13 +19302,13 @@
     "https://platform.vidu.com/docs/pricing",
     "https://platform.vidu.com/docs/model-map"
    ],
-   "last_fetch_ts": "2026-10-06T06:25:58Z",
+   "last_fetch_ts": "2026-10-06T18:27:20Z",
    "source_warnings": [],
    "videogen_hash": "74bd898576e882c8e71cdab222272e092a872c4f7f719720442ba11018b6b81b",
    "status_note": "官网生视频抽取失败: 网络错误: Connection error.",
    "last_error": "官网生视频抽取失败: 网络错误: Connection error.",
    "videogen_excerpt_hash": "a1ab787f218662288e58570cb648ee934e41cf443d7304634fde9082743b85da",
-   "videogen_retry_after": "2026-10-06T12:26:39Z",
+   "videogen_retry_after": "2026-10-07T00:28:02Z",
    "name": "Vidu API",
    "region": "国内"
   },

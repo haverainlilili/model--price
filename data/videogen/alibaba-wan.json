@@ -293,13 +293,11 @@
   "https://help.aliyun.com/zh/model-studio/wan3-0-video",
   "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
  ],
- "last_fetch_ts": "2026-10-08T06:36:35Z",
+ "last_fetch_ts": "2026-10-09T18:57:39Z",
  "source_warnings": [],
- "videogen_hash": "e013042ef2a549b15746362fbb427bcb4b03f205f9a716361a604f49c190f7a5",
- "status_note": "官网生视频抽取覆盖项由 9 变为 6，等待下轮同语义结果确认",
- "last_error": "官网生视频抽取覆盖项由 9 变为 6，等待下轮同语义结果确认",
- "videogen_excerpt_hash": "3232847d30b4b589d0bf7ea18d4133a9a75c1fb8bfb7760ad9fb1b10a128dd9a",
- "videogen_retry_after": "2026-10-08T00:26:17Z",
- "videogen_pending_shrink_hash": "386d7ef9e6528cd924fa34b75d8b1d30e594102670f348fee16004874635e22c",
- "videogen_pending_shrink_count": 6
+ "videogen_hash": "eea2f1a48aba598dd08cfa874960a2452a9a22caa9a6aa41ca365d14464b2a79",
+ "status_note": "官网生视频抽取失败: 结构化输出校验失败: 3 validation errors for VideoGenerationPage\nofferings.0\n  Value error, temporary chart price requires official start and end dates [type=value_error, input_value={'name': 'wan3.0-video', ...扣起止日期）。'}, input_type=dict]\n    For further information visit https://errors.pydantic.de",
+ "last_error": "官网生视频抽取失败: 结构化输出校验失败: 3 validation errors for VideoGenerationPage\nofferings.0\n  Value error, temporary chart price requires official start and end dates [type=value_error, input_value={'name': 'wan3.0-video', ...扣起止日期）。'}, input_type=dict]\n    For further information visit https://errors.pydantic.de",
+ "videogen_excerpt_hash": "d8dc209fa34f23475c97cb2758555099ea6598f43e1b14bf6f756932e3346d41",
+ "videogen_retry_after": "2026-10-10T01:07:15Z"
 }

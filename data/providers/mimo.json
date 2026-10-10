@@ -1,10 +1,10 @@
 {
  "url": "https://mimo.mi.com/docs/zh-CN/price/pay-as-you-go",
  "last_error": null,
- "last_fetch_ts": "2026-10-08T00:25:48Z",
+ "last_fetch_ts": "2026-10-10T12:26:59Z",
  "source": "claude",
  "currency": "CNY",
- "promotions": "缓存写入：限时免费；mimo-v2.5-tts、mimo-v2.5-tts-voiceclone、mimo-v2.5-tts-voicedesign 限时免费；mimo-v2.5-pro、mimo-v2.5 模型将于北京时间 2026.10.21 10:00 正式下线，建议尽快切换至新版模型。",
+ "promotions": "缓存写入：限时免费；TTS 系列限时免费：mimo-v2.5-tts、mimo-v2.5-tts-voiceclone、mimo-v2.5-tts-voicedesign；MiMo-V2.5-Pro、MiMo-V2.5 于 2026.10.14 18:00（UTC+8）自动转发至 V2.6 系列，最终于 2026.10.21 10:00（UTC+8）正式下线，届时原模型名称将失效，请及时核对并完成 V2.6 系列的切换。",
  "models": [
   {
    "model": "mimo-v2.6-pro",
@@ -13,7 +13,7 @@
    "output_per_1m": 6.0,
    "cached_input_per_1m": 0.025,
    "currency": "CNY",
-   "note": "国内实时推理定价；mimo-v2.5-pro（即将下线）与 mimo-v2.6-pro 同价同行"
+   "note": "国内定价；实时推理档位（价格列旁标注 mimo-v2.5-pro（即将下线））"
   },
   {
    "model": "mimo-v2.6-flash",
@@ -22,7 +22,7 @@
    "output_per_1m": 2.0,
    "cached_input_per_1m": 0.02,
    "currency": "CNY",
-   "note": "国内实时推理定价；mimo-v2.5（即将下线）与 mimo-v2.6-flash 同价同行"
+   "note": "国内定价；实时推理档位（价格列旁标注 mimo-v2.5（即将下线））"
   },
   {
    "model": "mimo-v2.6-pro-ultraspeed",
@@ -31,7 +31,7 @@
    "output_per_1m": 60.0,
    "cached_input_per_1m": 0.25,
    "currency": "CNY",
-   "note": "国内实时推理定价；不支持批量推理"
+   "note": "国内定价；实时推理档位；不支持批量推理"
   },
   {
    "model": "mimo-v2.6-pro",
@@ -40,7 +40,7 @@
    "output_per_1m": 3.0,
    "cached_input_per_1m": 0.0125,
    "currency": "CNY",
-   "note": "国内批量推理定价"
+   "note": "国内定价；批量推理档位"
   },
   {
    "model": "mimo-v2.6-flash",
@@ -49,16 +49,7 @@
    "output_per_1m": 1.0,
    "cached_input_per_1m": 0.01,
    "currency": "CNY",
-   "note": "国内批量推理定价"
-  },
-  {
-   "model": "mimo-v2.5-tts",
-   "display_name": null,
-   "input_per_1m": 0.0,
-   "output_per_1m": 0.0,
-   "cached_input_per_1m": null,
-   "currency": "CNY",
-   "note": "限时免费（国内定价）；mimo-v2.5-tts-voiceclone、mimo-v2.5-tts-voicedesign 同为限时免费"
+   "note": "国内定价；批量推理档位"
   },
   {
    "model": "mimo-v2.6-pro",
@@ -67,7 +58,7 @@
    "output_per_1m": 0.87,
    "cached_input_per_1m": 0.0036,
    "currency": "USD",
-   "note": "海外实时推理定价；mimo-v2.5-pro（即将下线）与 mimo-v2.6-pro 同价同行；海外定价表未列出未命中缓存列，三列依次按 命中缓存/输出 前后顺序对齐"
+   "note": "海外定价；实时推理档位（价格列旁标注 mimo-v2.5-pro（即将下线））"
   },
   {
    "model": "mimo-v2.6-flash",
@@ -76,7 +67,7 @@
    "output_per_1m": 0.28,
    "cached_input_per_1m": 0.0028,
    "currency": "USD",
-   "note": "海外实时推理定价；mimo-v2.5（即将下线）与 mimo-v2.6-flash 同价同行"
+   "note": "海外定价；实时推理档位（价格列旁标注 mimo-v2.5（即将下线））"
   },
   {
    "model": "mimo-v2.6-pro-ultraspeed",
@@ -85,7 +76,7 @@
    "output_per_1m": 8.7,
    "cached_input_per_1m": 0.036,
    "currency": "USD",
-   "note": "海外实时推理定价；不支持批量推理"
+   "note": "海外定价；实时推理档位；不支持批量推理"
   },
   {
    "model": "mimo-v2.6-pro",
@@ -94,7 +85,7 @@
    "output_per_1m": 0.435,
    "cached_input_per_1m": 0.0018,
    "currency": "USD",
-   "note": "海外批量推理定价"
+   "note": "海外定价；批量推理档位"
   },
   {
    "model": "mimo-v2.6-flash",
@@ -103,7 +94,7 @@
    "output_per_1m": 0.14,
    "cached_input_per_1m": 0.0014,
    "currency": "USD",
-   "note": "海外批量推理定价"
+   "note": "海外定价；批量推理档位"
   },
   {
    "model": "mimo-v2.5-tts",
@@ -111,13 +102,31 @@
    "input_per_1m": 0.0,
    "output_per_1m": 0.0,
    "cached_input_per_1m": null,
-   "currency": "USD",
-   "note": "限时免费（海外定价）；mimo-v2.5-tts-voiceclone、mimo-v2.5-tts-voicedesign 同为限时免费"
+   "currency": "CNY",
+   "note": "TTS 系列，限时免费"
+  },
+  {
+   "model": "mimo-v2.5-tts-voiceclone",
+   "display_name": null,
+   "input_per_1m": 0.0,
+   "output_per_1m": 0.0,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "TTS 系列，限时免费"
+  },
+  {
+   "model": "mimo-v2.5-tts-voicedesign",
+   "display_name": null,
+   "input_per_1m": 0.0,
+   "output_per_1m": 0.0,
+   "cached_input_per_1m": null,
+   "currency": "CNY",
+   "note": "TTS 系列，限时免费"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "948a044e92041d73e23c82271d0ffc38929d5a93f7ab263a73efd0430ee589a6",
+ "price_hash": "f0a08632b82d3538632a43c7dba2a32e50fe4a2956cc7cb81fc24c0dca54549a",
  "pricing_extraction_revision": 1,
- "fetched_at": "2026-09-28T02:24:15Z",
+ "fetched_at": "2026-10-09T13:10:58Z",
  "status_note": "页面无变化"
 }

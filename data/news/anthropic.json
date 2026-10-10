@@ -1,92 +1,92 @@
 {
  "entries": [
   {
-   "date": "September 28, 2026",
-   "title": "We've launched Claude Sonnet 5.5 (`claude-sonnet-5-5`)",
-   "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
-   "summary": "发布 Claude Sonnet 5.5，上线 Claude API、Bedrock、Google Cloud 与 Microsoft Foundry。",
-   "first_seen": "2026-09-29T12:09:12Z"
+   "date": "October 9, 2026",
+   "title": "You can now let a Claude Managed Agents agent use dynamic workflows, in beta with the `managed-agents-2026-04-01` beta header",
+   "url": "https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration#dynamic-workflows",
+   "summary": "Managed Agents 智能体可启用动态工作流（beta），后台分阶段运行多智能体并汇总结果。",
+   "first_seen": "2026-10-10T12:27:00Z"
   },
   {
-   "date": "September 24, 2026",
-   "title": "We're resuming billing for refusals that arrive before any output when `stop_details.category` is `\"bio\"`, `\"frontier_llm\"`, or `\"reasoning_extraction\"`",
-   "url": "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback#how-refusals-are-billed",
-   "summary": "恢复对 bio、frontier_llm、reasoning_extraction 等类别前置拒答的计费；Compliance API 活动流不再返回文件名。",
-   "first_seen": "2026-09-29T12:09:12Z"
+   "date": "October 8, 2026",
+   "title": "The Compliance API chat endpoints now also return chats from the unified Claude experience",
+   "url": "https://platform.claude.com/docs/en/manage-claude/compliance-api",
+   "summary": "Compliance API 聊天端点现也返回统一 Claude 体验的聊天记录（beta，企业版）。",
+   "first_seen": "2026-10-09T13:11:14Z"
   },
   {
-   "date": "September 23, 2026",
-   "title": "Cache diagnostics is out of beta on the Claude API and no longer requires the `cache-diagnosis-2026-04-07` beta header",
-   "url": "https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics",
-   "summary": "缓存诊断正式退出 beta，无需 beta 头，Messages 响应始终含 diagnostics 字段。",
-   "first_seen": "2026-09-29T12:09:12Z"
+   "date": "October 8, 2026",
+   "title": "The Compliance API can now download Claude Docs documents as Word files, in beta",
+   "url": "https://platform.claude.com/docs/en/manage-claude/compliance-api",
+   "summary": "Compliance API 现可将 Claude Docs 文档下载为 Word 文件（beta）。",
+   "first_seen": "2026-10-10T12:27:00Z"
   },
   {
-   "date": "September 22, 2026",
-   "title": "We've launched Claude Opus 5.5 (`claude-opus-5-5`), a model for long-running agentic coding and knowledge work",
-   "url": "https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5",
-   "summary": "发布 Claude Opus 5.5：1M 上下文、128k 输出、$4/$20 每百万 token，思考不可关闭。",
-   "first_seen": "2026-09-29T12:09:12Z"
+   "date": "October 7, 2026",
+   "title": "We've lowered the price of prompt cache reads on Claude Sonnet 5.5 from $0.20 USD to $0.10 USD per million tokens",
+   "url": "https://platform.claude.com/docs/en/about-claude/pricing#prompt-caching",
+   "summary": "Sonnet 5.5 提示缓存读取价由每百万 token 0.20 美元降至 0.10 美元。",
+   "first_seen": "2026-10-09T13:11:14Z"
   },
   {
-   "date": "September 18, 2026",
-   "title": "For cache diagnostics, a response to a request that sends the `cache-diagnosis-2026-04-07` beta header now always includes the `diagnostics` field",
-   "url": "https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics",
-   "summary": "缓存诊断响应始终返回 diagnostics 字段，未请求时为 null；Compliance API 增返 Chrome 会话记录。",
-   "first_seen": "2026-09-29T12:09:12Z"
+   "date": "October 7, 2026",
+   "title": "We've launched Claude Haiku 5.5 (`claude-haiku-5-5`)",
+   "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5",
+   "summary": "发布 Claude Haiku 5.5，1M 上下文、128k 输出、自适应思考，多平台可用。",
+   "first_seen": "2026-10-10T12:27:00Z"
   },
   {
-   "date": "September 14, 2026",
-   "title": "The Messages API can now compact a conversation on demand",
-   "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand",
-   "summary": "Messages API 支持按需压缩对话（compact-2026-09-04 beta），并新增 thinking 前缀失配报告。",
-   "first_seen": "2026-09-29T12:09:12Z"
+   "date": "October 7, 2026",
+   "title": "Code written for Claude Haiku 4.5 can break on Claude Haiku 5.5",
+   "url": "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide",
+   "summary": "为 Haiku 4.5 编写的代码在 Haiku 5.5 上可能报错，需按迁移指南调整。",
+   "first_seen": "2026-10-09T13:11:14Z"
   },
   {
-   "date": "September 10, 2026",
-   "title": "Claude Managed Agents permission policies now include `auto`",
-   "url": "https://platform.claude.com/docs/en/managed-agents/permission-policies#let-the-server-evaluate-each-call-with-auto",
-   "summary": "Managed Agents 权限策略新增 auto，由服务端逐次评估每次工具调用；ant CLI 1.32.0 支持连接会话。",
-   "first_seen": "2026-09-29T12:09:12Z"
+   "date": "October 7, 2026",
+   "title": "The Python and TypeScript SDKs now include classes, in beta, for the browser use tool and the computer use tool",
+   "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk",
+   "summary": "Python/TypeScript SDK 新增浏览器使用与计算机使用工具的 beta 类。",
+   "first_seen": "2026-10-09T13:11:14Z"
   },
   {
-   "date": "September 9, 2026",
-   "title": "For cache diagnostics, the API now stores a request's fingerprint only when the request includes the `diagnostics` object",
-   "url": "https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics",
-   "summary": "仅当请求含 diagnostics 对象时保存指纹，否则后续 previous_message_id 会报未找到。",
-   "first_seen": "2026-09-29T12:09:12Z"
+   "date": "October 7, 2026",
+   "title": "Claude Max and Team plans now include monthly API credits",
+   "url": "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers",
+   "summary": "Claude Max 与 Team 套餐现包含每月 API 额度。",
+   "first_seen": "2026-10-09T13:11:14Z"
   },
   {
-   "date": "September 3, 2026",
-   "title": "Version 1.30.0 of the `ant` CLI adds `ant apply`",
-   "url": "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/apply",
-   "summary": "ant CLI 1.30.0 新增 ant apply，以仓库文件声明式管理代理、环境与部署；每消息 effort 扩展到 Google Cloud。",
-   "first_seen": "2026-09-29T12:09:12Z"
+   "date": "October 7, 2026",
+   "title": "In Claude Managed Agents, a cloud environment with `limited` networking now also applies its `allowed_hosts` to the `web_search` and `web_fetch` tools",
+   "url": "https://platform.claude.com/docs/en/managed-agents/environments#networking",
+   "summary": "受限网络环境的 allowed_hosts 现同样约束 web_search 与 web_fetch 工具。",
+   "first_seen": "2026-10-10T12:27:00Z"
   },
   {
-   "date": "September 1, 2026",
-   "title": "We've launched Claude Fable 5.1 (`claude-fable-5-1`) ... alongside Claude Mythos 5.1 (`claude-mythos-5-1`)",
-   "url": "https://platform.claude.com/docs/en/models/fable-5-1/whats-new-fable-5-1",
-   "summary": "发布 Fable 5.1 与 Mythos 5.1，1M 上下文，$10/$50，缓存读取降至 $0.25/百万 token。",
-   "first_seen": "2026-09-29T12:09:12Z"
+   "date": "October 7, 2026",
+   "title": "With `limited` networking, creating a session fails with a 400 error when an enabled web tool's `allowed_domains` has an entry not within `allowed_hosts`",
+   "url": "https://platform.claude.com/docs/en/managed-agents/tools-web-restrictions",
+   "summary": "受限网络下 allowed_domains 超出 allowed_hosts 会使创建会话报 400 错误。",
+   "first_seen": "2026-10-10T12:27:00Z"
   },
   {
-   "date": "August 27, 2026",
-   "title": "In Python SDK 1.2.0, TypeScript SDK 0.122.0, Go SDK 1.68.0, Java SDK 2.59.0, Ruby SDK 1.67.0, and C# SDK 12.44.0, `client.beta.files` and `client.beta.skills` no longer send the `files-api-2025-04-14` and `skills-2025-10-02` beta headers",
-   "url": "https://platform.claude.com/docs/en/build-with-claude/files#migrate-from-files-api-2025-04-14",
-   "summary": "多语言 SDK 的 beta.files/skills 不再发 beta 头；控制台新增个人密钥与服务账号密钥。",
-   "first_seen": "2026-09-29T12:09:12Z"
+   "date": "October 7, 2026",
+   "title": "In Claude Managed Agents, the `web_fetch` tool now fetches only URLs that have already appeared in the session",
+   "url": "https://platform.claude.com/docs/en/managed-agents/tools#available-tools",
+   "summary": "Managed Agents 的 web_fetch 仅能抓取会话中已出现过的 URL，以防数据外泄。",
+   "first_seen": "2026-10-10T12:27:00Z"
   },
   {
-   "date": "August 26, 2026",
-   "title": "The Compliance API session endpoints are out of beta for Cowork and Claude Code sessions",
-   "url": "https://platform.claude.com/docs/en/manage-claude/compliance-sessions",
-   "summary": "Compliance API 会话接口正式发布并新增 Claude Science 与 M365 会话；Admin API 进入 ant CLI 与各 SDK。",
-   "first_seen": "2026-09-29T12:09:12Z"
+   "date": "October 6, 2026",
+   "title": "We've added `capabilities.server_tools` to the Models API",
+   "url": "https://platform.claude.com/docs/en/api/models/list",
+   "summary": "Models API 新增 capabilities.server_tools，报告模型是否支持网络搜索与代码执行工具。",
+   "first_seen": "2026-10-10T12:27:00Z"
   }
  ],
- "news_hash": "82a1fb7a99800929ff7235365147a81cf6aa243a6e3d3db25fb6c2b0dcf23673",
- "fetched_at": "2026-09-29T12:09:12Z",
+ "news_hash": "b072d3d78da397687793fd22b8a2f281085bf09c766323e6073fedf5fb65ecfb",
+ "fetched_at": "2026-10-10T12:27:00Z",
  "status_note": null,
  "last_error": null
 }

@@ -11,7 +11,7 @@
    "output_per_1m": 50.0,
    "cached_input_per_1m": 0.25,
    "currency": "USD",
-   "note": "缓存命中输入价为基准输入价的 2.5%($10 × 2.5% = $0.25/百万), 由页面 Pricing 注释规则折算; Batch API 请求 5 折(约 $5/$25/百万); 1M 上下文"
+   "note": "基础价 $10/输入 MTok、$50/输出 MTok; Batch API 请求 5 折; 提示缓存读取为基础输入价的 2.5%($0.25/MTok); 上下文窗口 1M, 最大输出 128K"
   },
   {
    "model": "claude-opus-5-5",
@@ -20,32 +20,32 @@
    "output_per_1m": 20.0,
    "cached_input_per_1m": 0.2,
    "currency": "USD",
-   "note": "缓存命中输入价为基准输入价的 5%($4 × 5% = $0.20/百万), 由页面 Pricing 注释规则折算; Batch API 请求 5 折(约 $2/$10/百万); 1M 上下文"
+   "note": "基础价 $4/输入 MTok、$20/输出 MTok; Batch API 请求 5 折; 提示缓存读取为基础输入价的 5%($0.20/MTok); 上下文窗口 1M, 最大输出 128K"
   },
   {
    "model": "claude-sonnet-5-5",
    "display_name": "Claude Sonnet 5.5",
    "input_per_1m": 2.0,
    "output_per_1m": 10.0,
-   "cached_input_per_1m": 0.2,
-   "currency": "USD",
-   "note": "缓存命中输入价为基准输入价的 10%($2 × 10% = $0.20/百万), 由页面 Pricing 注释规则折算; Batch API 请求 5 折(约 $1/$5/百万); 1M 上下文"
-  },
-  {
-   "model": "claude-haiku-4-5-20251001",
-   "display_name": "Claude Haiku 4.5",
-   "input_per_1m": 1.0,
-   "output_per_1m": 5.0,
    "cached_input_per_1m": 0.1,
    "currency": "USD",
-   "note": "缓存命中输入价为基准输入价的 10%($1 × 10% = $0.10/百万), 由页面 Pricing 注释规则折算; Batch API 请求 5 折(约 $0.50/$2.50/百万); 别名 claude-haiku-4-5, 200K 上下文"
+   "note": "基础价 $2/输入 MTok、$10/输出 MTok; Batch API 请求 5 折; 提示缓存读取为基础输入价的 5%($0.10/MTok); 上下文窗口 1M, 最大输出 128K"
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "display_name": "Claude Haiku 5.5",
+   "input_per_1m": 0.1,
+   "output_per_1m": 0.5,
+   "cached_input_per_1m": 0.01,
+   "currency": "USD",
+   "note": "页面标价 \"From $0.10 / input MTok, From $0.50 / output MTok\"(起价); Batch API 请求 5 折; 提示缓存读取为基础输入价的 10%($0.01/MTok); 上下文窗口 1M, 最大输出 128K"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "f17f2fddebd8566ac230ea1b0baf0f65bcaea20d5372eaa61d6bdcf821a27644",
- "fetched_at": "2026-10-03T12:05:47Z",
+ "price_hash": "64b3a5200ed9cd861a35002dca1eac5926c9f8ca4fba5e94f73a27501647aeb5",
+ "fetched_at": "2026-10-10T00:05:45Z",
  "status_note": "页面无变化",
  "last_error": null,
- "last_fetch_ts": "2026-10-05T12:05:46Z",
+ "last_fetch_ts": "2026-10-10T12:05:46Z",
  "pricing_extraction_revision": 1
 }

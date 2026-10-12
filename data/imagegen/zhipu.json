@@ -112,11 +112,13 @@
   "https://docs.z.ai/guides/overview/pricing",
   "https://docs.z.ai/api-reference/image/generate-image"
  ],
- "last_fetch_ts": "2026-10-11T18:09:53Z",
+ "last_fetch_ts": "2026-10-12T06:18:39Z",
  "source_warnings": [],
  "imagegen_hash": "dda476849de230a773c9cd6d8d9933e6a3803b9978ae130331a5ad5f3964f573",
- "status_note": "官网生图抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_error": "官网生图抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
+ "status_note": "官网生图抽取覆盖项由 3 变为 4，等待下轮同语义结果确认",
+ "last_error": "官网生图抽取覆盖项由 3 变为 4，等待下轮同语义结果确认",
  "imagegen_excerpt_hash": "28c0cc1dc44e6b3cf8f2953e8727ac0abdcd10227d121c10acd4a2f92e15ea0a",
- "imagegen_retry_after": "2026-10-12T00:09:56Z"
+ "imagegen_retry_after": "2026-10-12T00:09:56Z",
+ "imagegen_pending_shrink_hash": "4ecbebff4f2bcb96338da91e7d49277ad83c29aa7ac273bcdbb894c2be86d3c1",
+ "imagegen_pending_shrink_count": 4
 }

@@ -11,20 +11,19 @@
  "offerings": [
   {
    "name": "Google Search API",
-   "pricing": "Starter $50* (50k credits, $1.00/1k); Standard $375* (500k credits, $0.75/1k); Scale $1250* (2.5M credits, $0.50/1k); Ultimate $3750* (12.5M credits, $0.30/1k). *Excluding sales tax/VAT/GST",
+   "pricing": "Starter: $50* / 50k credits ($1.00/1k)；Standard: $375* / 500k credits ($0.75/1k)；Scale: $1250* / 2.5M credits ($0.50/1k)；Ultimate: $3750* / 12.5M credits ($0.30/1k)。* Excluding sales tax/VAT/GST",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Starter（50k credits）",
-   "free_quota": "Get 2,500 free queries. No credit card required.",
-   "output_type": "结构化搜索结果（JSON），包含 organic、images、news、places、videos、shopping、scholar、patents、autocomplete、knowledgeGraph、peopleAlsoAsk、relatedSearches 等",
+   "price_basis": "Starter（50k credits，$50，按量付费无月订阅）",
+   "free_quota": "Get 2,500 free queries / Try 2,500 queries for free / No credit card required",
+   "output_type": "结构化搜索结果（JSON，含 organic/images/news/places/videos/shopping/scholar/patents/autocomplete/knowledgeGraph/peopleAlsoAsk/relatedSearches）",
    "cites_sources": true,
-   "default_on": false,
-   "note": "实时查询 Google，无缓存；1-2 秒返回；credits 有效期 6 个月；无月订阅，按量付费；支持自定义查询位置（国家/语言）"
+   "default_on": null,
+   "note": "实时查询 Google 无缓存，1-2 秒返回；credits 有效期 6 个月；支持自定义国家/语言位置；批量折扣阶梯：Standard $0.75/1k、Scale $0.50/1k、Ultimate $0.30/1k；7 天内未用超 20% 可全额退款"
   }
  ],
- "fetched_at": "2026-10-10T13:26:36Z",
- "status_note": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_error": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_fetch_ts": "2026-10-12T12:46:42Z",
- "websearch_hash": "8868a35b492893f1195987c294c540d00037ae4fa11c0eddcc1bdd7dbe17713f",
- "websearch_retry_after": "2026-10-12T18:46:45Z"
+ "fetched_at": "2026-10-13T00:38:37Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-13T00:38:37Z",
+ "websearch_hash": "2ea773884d709ed43ba3d78d58d2b340a9523de184871b14446eb7ea8fa5604e"
 }

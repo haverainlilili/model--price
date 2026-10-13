@@ -3,25 +3,6 @@
   "ts": "2026-09-28T02:15:59Z",
   "provider": "openai",
   "provider_name": "OpenAI",
-  "kind": "new",
-  "model": "gpt-5.4",
-  "fields": [
-   {
-    "field": "input_per_1m",
-    "old": null,
-    "new": 5.0
-   },
-   {
-    "field": "output_per_1m",
-    "old": null,
-    "new": 22.5
-   }
-  ]
- },
- {
-  "ts": "2026-09-28T02:15:59Z",
-  "provider": "openai",
-  "provider_name": "OpenAI",
   "kind": "change",
   "model": "gpt-5.4-mini",
   "fields": [
@@ -5696,6 +5677,20 @@
     "field": "note",
     "old": "向量模型（embedding）；文本输入 0.70 元/百万token，图片输入 1.80 元/百万token；费用 = 文本输入 tokens × 文本输入单价 + min((width × height)/784, 1312) × 图片输入单价",
     "new": "向量模型(embedding)，按输入 tokens 计费：文本输入 0.70 元/百万token，图片输入 1.80 元/百万token"
+   }
+  ]
+ },
+ {
+  "ts": "2026-10-13T00:11:48Z",
+  "provider": "xai",
+  "provider_name": "xAI (Grok)",
+  "kind": "change",
+  "model": "grok-4.7",
+  "fields": [
+   {
+    "field": "note",
+    "old": "500k token context; configurable reasoning",
+    "new": "Context: 500k tokens; Reasoning: Configurable"
    }
   ]
  }

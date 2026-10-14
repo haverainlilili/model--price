@@ -12,20 +12,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search API",
-   "pricing": "Search costs 2 credits per 10 results; credits shared across endpoints; free plan 1,000 credits/month; paid plans 5,000–1,000,000 credits/month; pay-as-you-go in $5 increments",
+   "name": "Search / Web Search API",
+   "pricing": "Search costs 2 credits per 10 results (rounded up); plans: Free 1,000 credits/mo $0, Hobby 5,000 credits/mo $16/mo billed annually ($19/mo monthly), Standard 100,000 credits/mo $83/mo, Growth 500,000 credits/mo $333/mo, Scale 1,000,000 credits/mo $599/mo; pay-as-you-go extra credits: Hobby 1,000 credits/$5, Standard 2,000 credits/$5, Growth 2,500 credits/$5, Scale 5,000 credits/$5.",
    "price_per_1k_usd": 10.0,
-   "price_basis": "PAYG Hobby extra credits (1,000 credits per $5); other paid plans give 2,000/2,500/5,000 credits per $5",
-   "free_quota": "Free plan: 1,000 credits/month (500 searches or 1,000 pages scraped)",
-   "output_type": "结构化搜索结果（web/news/images/tools），可选抓取全文内容",
+   "price_basis": "Hobby pay-as-you-go extra credits (1,000 credits per $5; search costs 2 credits per 10 results)",
+   "free_quota": "Free Plan: 1,000 credits / month",
+   "output_type": "结构化搜索结果（标题、描述、URL；可含图片/新闻结果；可选 scrapeOptions 抓取全文 markdown/HTML/links）",
    "cites_sources": true,
    "default_on": null,
-   "note": "2 credits/10 results (rounded up); gov category adds no search credits; ZDR enterprise costs 10 credits/10 or 2 credits/10; optional scraping adds per-page costs"
+   "note": "gov 类别搜索不计搜索 credits；ZDR：匿名 2 credits/10 结果，端到端 10 credits/10 结果；scrapeOptions 另计 credits；限额与并发依套餐。"
   }
  ],
- "fetched_at": "2026-10-14T00:45:46Z",
+ "fetched_at": "2026-10-14T12:13:55Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-14T00:45:46Z",
- "websearch_hash": "e61ce031d009802019f00ec4659d1940d686ac29b43b43fc8ba0c6457dad5624"
+ "last_fetch_ts": "2026-10-14T12:13:55Z",
+ "websearch_hash": "97e7806f217513ab89b65128a91524effe4ae307bb00978ec69164b580d95c21"
 }

@@ -12,118 +12,129 @@
  "offerings": [
   {
    "name": "Web Search API Free",
-   "pricing": "Free",
-   "price_per_1k_usd": null,
-   "price_basis": "Free tier via MCP",
+   "pricing": "Free (No API key, no account, no credit card)",
+   "price_per_1k_usd": 0.0,
+   "price_basis": "Free tier via MCP (up to 100 queries/day)",
    "free_quota": "100 Web Search API queries/day via MCP",
-   "output_type": "Live web and news search results",
+   "output_type": "实时网络与新闻搜索结果（MCP）",
    "cites_sources": true,
    "default_on": null,
-   "note": "No API key, account, or credit card; up to 100 queries/day."
+   "note": "No API key, account, or credit card required; up to 100 queries/day via MCP."
   },
   {
    "name": "Web Search API Standard",
-   "pricing": "$5 per 1,000 calls",
+   "pricing": "$5 /1k calls",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Pay as you go (no minimums, no seats, no platform fee)",
-   "free_quota": "$10 free credit = 2,000 searches",
-   "output_type": "Structured web and news results JSON",
+   "price_basis": "PAYG Web Search API Standard",
+   "free_quota": "$100 free credit = 20,000 searches",
+   "output_type": "结构化网络与新闻搜索结果（JSON）",
    "cites_sources": true,
    "default_on": null,
-   "note": "Up to 100 results/call; full-page extraction costs $1/1,000 pages."
+   "note": "Full endpoint access: Highlights, Knowledge, extraction, domain filters; full page extraction add-on $1.00/1,000 live pages; up to 100 results/call."
+  },
+  {
+   "name": "Contents API",
+   "pricing": "$1 /1k Pages",
+   "price_per_1k_usd": 1.0,
+   "price_basis": "PAYG Contents API",
+   "free_quota": null,
+   "output_type": "clean Markdown or HTML per page",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "Give URLs you already have; returns clean Markdown or HTML per page; latency 1-10s per page; billed per page returned."
   },
   {
    "name": "Answer API",
-   "pricing": "$5 per 1,000 calls",
+   "pricing": "$5 /1k calls",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Pay as you go",
+   "price_basis": "PAYG Answer API",
    "free_quota": null,
-   "output_type": "Cited answer with sources",
+   "output_type": "cited answer with sources",
    "cites_sources": true,
    "default_on": null,
-   "note": "One call turns a question into a cited answer; p50 ~2.7s."
+   "note": "One call turns a question into a cited answer; latency p50 ~2.7s."
   },
   {
    "name": "Research API ResearchLite",
-   "pricing": "$12 per 1,000 calls",
+   "pricing": "$12 /1k calls",
    "price_per_1k_usd": 12.0,
-   "price_basis": "Research API effort tier ResearchLite",
+   "price_basis": "Research API ResearchLite",
    "free_quota": null,
-   "output_type": "Research answer from the open web",
+   "output_type": "multi-step research answer",
    "cites_sources": null,
    "default_on": null,
-   "note": "Simple factual lookups, single pass, no structured output; under 2s."
+   "note": "Simple factual lookups in a single pass; no structured output; latency under 2s."
   },
   {
    "name": "Research API ResearchStandard",
-   "pricing": "$50 per 1,000 calls",
+   "pricing": "$50 /1k calls",
    "price_per_1k_usd": 50.0,
-   "price_basis": "Research API effort tier ResearchStandard",
+   "price_basis": "Research API ResearchStandard",
    "free_quota": null,
-   "output_type": "Research answer from the open web",
+   "output_type": "multi-step research answer",
    "cites_sources": null,
    "default_on": null,
-   "note": "Balanced depth for most production research; 10-30s."
+   "note": "Balanced depth for most production research; latency 10-30s."
   },
   {
    "name": "Research API ResearchDeep",
-   "pricing": "$100 per 1,000 calls",
+   "pricing": "$100 /1k calls",
    "price_per_1k_usd": 100.0,
-   "price_basis": "Research API effort tier ResearchDeep",
+   "price_basis": "Research API ResearchDeep",
    "free_quota": null,
-   "output_type": "Research answer from the open web",
+   "output_type": "multi-step research answer",
    "cites_sources": null,
    "default_on": null,
-   "note": "Complex questions spanning several sources; under 2min."
+   "note": "Complex questions spanning several sources; latency under 2min."
   },
   {
    "name": "Research API ResearchExhaustive",
-   "pricing": "$450 per 1,000 calls",
+   "pricing": "$450 /1k calls",
    "price_per_1k_usd": 450.0,
-   "price_basis": "Research API effort tier ResearchExhaustive",
+   "price_basis": "Research API ResearchExhaustive",
    "free_quota": null,
-   "output_type": "Research answer from the open web",
+   "output_type": "multi-step research answer",
    "cites_sources": null,
    "default_on": null,
-   "note": "High-stakes verification across dozens of sources; under 5min."
+   "note": "High-stakes verification across dozens of sources; latency under 5min."
   },
   {
    "name": "Research API ResearchFrontier",
-   "pricing": "$1,200 per 1,000 calls",
+   "pricing": "$1,200 /1k calls",
    "price_per_1k_usd": 1200.0,
-   "price_basis": "Research API effort tier ResearchFrontier",
+   "price_basis": "Research API ResearchFrontier",
    "free_quota": null,
-   "output_type": "Research answer from the open web",
+   "output_type": "multi-step research answer",
    "cites_sources": null,
    "default_on": null,
-   "note": "Background mode only; ~5min."
+   "note": "Long research; background mode only; latency ~5min."
   },
   {
    "name": "Finance Research API Deep",
-   "pricing": "$110 per 1,000 calls",
+   "pricing": "$110 /1k calls",
    "price_per_1k_usd": 110.0,
-   "price_basis": "Finance Research API tier Deep",
+   "price_basis": "Finance Research API Deep",
    "free_quota": null,
-   "output_type": "Financial research answer",
+   "output_type": "financial research answer",
    "cites_sources": null,
    "default_on": null,
-   "note": "Earnings summaries, benchmarking, multi-quarter trends; under 2min."
+   "note": "Earnings summaries, competitive benchmarking, multi-quarter trends; latency under 2min."
   },
   {
    "name": "Finance Research API Exhaustive",
-   "pricing": "$500 per 1,000 calls",
+   "pricing": "$500 /1k calls",
    "price_per_1k_usd": 500.0,
-   "price_basis": "Finance Research API tier Exhaustive",
+   "price_basis": "Finance Research API Exhaustive",
    "free_quota": null,
-   "output_type": "Financial research answer",
+   "output_type": "financial research answer",
    "cites_sources": null,
    "default_on": null,
-   "note": "Full 10-K analysis, due diligence, cross-market; under 5min."
+   "note": "Full 10-K analysis, due diligence, cross-market research; latency under 5min."
   }
  ],
- "fetched_at": "2026-10-14T00:44:50Z",
+ "fetched_at": "2026-10-14T12:13:15Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-14T00:44:50Z",
- "websearch_hash": "5b5c3ff35e0a18ba402d16e65efcd4f26b27137018824127539879f619de1046"
+ "last_fetch_ts": "2026-10-14T12:13:15Z",
+ "websearch_hash": "0c25e8b08cc6e7cce75558bb19f55bf0133d421e3491215a340b5f786570bf06"
 }

@@ -417,11 +417,13 @@
   "https://platform.minimax.io/docs/guides/pricing-paygo",
   "https://platform.minimax.io/docs/api-reference/video-generation-v2-create"
  ],
- "last_fetch_ts": "2026-10-13T06:16:49Z",
+ "last_fetch_ts": "2026-10-14T06:28:12Z",
  "source_warnings": [],
  "videogen_hash": "ffd707d0786bd210635e2e3bc90f2ea6a6365d9f790a4a404989317b6559c328",
- "status_note": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_error": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
+ "status_note": "官网生视频抽取型号生命周期或停用日期发生变化，等待下轮同语义结果确认",
+ "last_error": "官网生视频抽取型号生命周期或停用日期发生变化，等待下轮同语义结果确认",
  "videogen_excerpt_hash": "54c193b93b79cba8d9af65572207792acadef6f1a7800fb410227c105206081b",
- "videogen_retry_after": "2026-10-13T12:16:53Z"
+ "videogen_retry_after": "2026-10-13T12:16:53Z",
+ "videogen_pending_shrink_hash": "e2f65b9f40126bd48d0b4ba71cb7b6e30aeb55cea71e5c242e4a3cad7f32ed30",
+ "videogen_pending_shrink_count": 17
 }

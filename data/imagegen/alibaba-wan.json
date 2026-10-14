@@ -87,11 +87,13 @@
   "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
   "https://www.alibabacloud.com/help/en/model-studio/new-free-quota"
  ],
- "last_fetch_ts": "2026-10-13T18:06:15Z",
+ "last_fetch_ts": "2026-10-14T06:06:33Z",
  "source_warnings": [],
  "imagegen_hash": "cff13a67bb6486f8acbf4a2ac11a8061963043118b7d2ebf932a5b4131bbc903",
- "status_note": "官网生图抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_error": "官网生图抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
+ "status_note": "官网生图抽取覆盖项由 2 变为 2，等待下轮同语义结果确认",
+ "last_error": "官网生图抽取覆盖项由 2 变为 2，等待下轮同语义结果确认",
  "imagegen_excerpt_hash": "164b84c3210940bdcfc1036a48eb46bcc4a044b841ab8c151601a32534cab8ee",
- "imagegen_retry_after": "2026-10-14T00:08:00Z"
+ "imagegen_retry_after": "2026-10-14T00:08:00Z",
+ "imagegen_pending_shrink_hash": "f24c1a8c341e5b3d81d40a6433cd3e4c2d7c734a22480c84aad91b8276f14554",
+ "imagegen_pending_shrink_count": 2
 }

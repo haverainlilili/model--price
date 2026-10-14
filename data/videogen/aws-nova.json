@@ -57,11 +57,13 @@
   "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
   "https://docs.aws.amazon.com/nova/latest/userguide/video-generation.html"
  ],
- "last_fetch_ts": "2026-10-11T18:10:35Z",
+ "last_fetch_ts": "2026-10-13T06:08:04Z",
  "source_warnings": [],
  "videogen_hash": "a3c0813ea2733ee14517b89fa2be3fac7c3cb03243533ea0fe09077ddf0039db",
- "status_note": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_error": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
+ "status_note": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
+ "last_error": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
  "videogen_excerpt_hash": "41344aa163bbf9bfc636df2bbd0616ba106136566531a90119ec16b6bd4708a3",
- "videogen_retry_after": "2026-10-12T00:16:42Z"
+ "videogen_retry_after": "2026-10-12T00:16:42Z",
+ "videogen_pending_shrink_hash": "edc1407799aa59321e849210a90a68ffb495bbbc772b7ba9e36833dc6e66e241",
+ "videogen_pending_shrink_count": 1
 }

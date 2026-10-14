@@ -1,149 +1,46 @@
 {
  "plans": [
   {
-   "name": "M Plan Go",
-   "plan_type": "AI 订阅（Token Plan）",
-   "price": "连续包年 ￥490/年（原价 ￥588，立省2月）",
-   "billing": "连续包月 / 连续包年",
+   "name": "Explore",
+   "plan_type": "Token Plan",
+   "price": "￥490 每年（页面显示原价 ￥588）",
+   "billing": "按年订阅",
    "quotas": [
     {
-     "label": "用量",
-     "value": "基础档位（页面未标注具体数值）",
-     "window": null
-    },
-    {
-     "label": "定时任务",
-     "value": "5",
-     "window": null
-    },
-    {
-     "label": "网站部署",
-     "value": "20",
-     "window": null
-    },
-    {
-     "label": "项目",
-     "value": "20",
-     "window": null
-    },
-    {
-     "label": "文本模型 M3.1 Flash Preview",
-     "value": "有限可用",
-     "window": null
-    },
-    {
-     "label": "图像和声音模型",
-     "value": "有限可用",
-     "window": null
-    }
-   ],
-   "models": [
-    "MiniMax M3.1 Flash Preview"
-   ],
-   "note": "含 MiniMax Code 网页版；可 API Key 接入 Claude Code、Codex、Workbuddy、Cursor、OpenCode 等；不含 H3 视频模型；套餐用量可在套餐用量页面、MiniMax CLI（mmx quota）或 API 查询",
-   "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
-  },
-  {
-   "name": "M Plan Explore",
-   "plan_type": "AI 订阅（Token Plan）",
-   "price": "连续包年 ￥1,190/年（原价 ￥1,490）",
-   "billing": "连续包月 / 连续包年",
-   "quotas": [
-    {
-     "label": "用量",
+     "label": "M Plan 用量",
      "value": "Go 的 3 倍用量",
      "window": null
-    },
-    {
-     "label": "定时任务",
-     "value": "15",
-     "window": null
-    },
-    {
-     "label": "网站部署",
-     "value": "50",
-     "window": null
-    },
-    {
-     "label": "项目",
-     "value": "50",
-     "window": null
-    },
-    {
-     "label": "文本模型 M3.1 Flash Preview",
-     "value": "有限可用",
-     "window": null
-    },
-    {
-     "label": "视频模型 H3",
-     "value": "支持",
-     "window": null
-    },
-    {
-     "label": "图像和声音模型",
-     "value": "有限可用",
-     "window": null
     }
    ],
    "models": [
-    "MiniMax M3.1 Flash Preview",
-    "MiniMax H3"
+    "M3.1 Flash Preview",
+    "H3"
    ],
-   "note": "含 MiniMax Code 网页端、桌面端、TUI、iOS 和 Android；可 API Key 接入 AI Agent 和编程工具；官网以相对倍数「Go 的 3 倍用量」标注额度，未给出绝对数值",
+   "note": "包含文本模型（如 M3.1 Flash Preview）、视频模型（如 H3）、图像和声音模型、联网搜索与多模态理解、MiniMax Code 全端及 API Key 接入 AI Agent 和编程工具。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
-   "name": "M Plan Build",
-   "plan_type": "AI 订阅（Token Plan）",
-   "price": "连续包年 ￥4,690/年（原价 ￥5,628）",
-   "billing": "连续包月 / 连续包年",
+   "name": "Build",
+   "plan_type": "Token Plan",
+   "price": "￥4,690 每年（页面显示原价 ￥5,628）",
+   "billing": "按年订阅",
    "quotas": [
     {
-     "label": "用量",
+     "label": "M Plan 用量",
      "value": "Go 的 12 倍用量",
-     "window": null
-    },
-    {
-     "label": "定时任务",
-     "value": "20",
-     "window": null
-    },
-    {
-     "label": "网站部署",
-     "value": "100",
-     "window": null
-    },
-    {
-     "label": "项目",
-     "value": "100",
-     "window": null
-    },
-    {
-     "label": "文本模型 M3.1 Flash Preview",
-     "value": "有限可用",
-     "window": null
-    },
-    {
-     "label": "视频模型 H3",
-     "value": "支持",
-     "window": null
-    },
-    {
-     "label": "图像和声音模型",
-     "value": "有限可用",
      "window": null
     }
    ],
    "models": [
-    "MiniMax M3.1 Flash Preview",
-    "MiniMax H3"
+    "M3.1 Flash Preview",
+    "H3"
    ],
-   "note": "含 MiniMax Code 网页端、桌面端、TUI、iOS 和 Android；高峰时段优先通行、抢先体验新功能；官网以相对倍数「Go 的 12 倍用量」标注额度，未给出绝对数值",
+   "note": "包含文本模型（如 M3.1 Flash Preview）、视频模型（如 H3）、图像和声音模型、联网搜索与多模态理解、MiniMax Code 全端及 API Key 接入 AI Agent 和编程工具；高峰时段优先通行，抢先体验新功能。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
-   "name": "积分包 入门版",
-   "plan_type": "积分购买（API 资源包）",
+   "name": "入门版",
+   "plan_type": "积分包",
    "price": "¥30",
    "billing": "购买之日起 1 年内有效",
    "quotas": [
@@ -154,15 +51,15 @@
     }
    ],
    "models": [
-    "MiniMax M3.1 Flash Preview",
-    "MiniMax H3"
+    "M3.1 Flash Preview",
+    "H3"
    ],
-   "note": "积分包支持文本模型 M3.1 Flash Preview、视频模型 H3，以及图像与音频生成、联网搜索和多模态理解；不会因套餐额度窗口刷新而重置有效期",
+   "note": "支持 M3.1 Flash Preview 文本模型、H3 视频模型，以及图像与音频生成、网络搜索和多模态理解能力。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
-   "name": "积分包 进阶版",
-   "plan_type": "积分购买（API 资源包）",
+   "name": "进阶版",
+   "plan_type": "积分包",
    "price": "¥150",
    "billing": "购买之日起 1 年内有效",
    "quotas": [
@@ -173,15 +70,15 @@
     }
    ],
    "models": [
-    "MiniMax M3.1 Flash Preview",
-    "MiniMax H3"
+    "M3.1 Flash Preview",
+    "H3"
    ],
-   "note": "积分包支持文本模型 M3.1 Flash Preview、视频模型 H3，以及图像与音频生成、联网搜索和多模态理解；不会因套餐额度窗口刷新而重置有效期",
+   "note": "支持 M3.1 Flash Preview 文本模型、H3 视频模型，以及图像与音频生成、网络搜索和多模态理解能力。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   },
   {
-   "name": "积分包 高级版",
-   "plan_type": "积分购买（API 资源包）",
+   "name": "高级版",
+   "plan_type": "积分包",
    "price": "¥500",
    "billing": "购买之日起 1 年内有效",
    "quotas": [
@@ -192,21 +89,21 @@
     }
    ],
    "models": [
-    "MiniMax M3.1 Flash Preview",
-    "MiniMax H3"
+    "M3.1 Flash Preview",
+    "H3"
    ],
-   "note": "积分包支持文本模型 M3.1 Flash Preview、视频模型 H3，以及图像与音频生成、联网搜索和多模态理解；不会因套餐额度窗口刷新而重置有效期",
+   "note": "支持 M3.1 Flash Preview 文本模型、H3 视频模型，以及图像与音频生成、网络搜索和多模态理解能力。",
    "source_url": "https://platform.minimaxi.com/subscribe/token-plan"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-10-12T00:28:04Z",
+ "last_fetch_ts": "2026-10-14T00:41:57Z",
  "source": "official",
  "source_urls": [
   "https://platform.minimaxi.com/subscribe/token-plan"
  ],
  "page_has_plans": true,
- "plans_hash": "649d3575dec964c282229aa05bbcaba957603260272ff54a56b6919042159220",
- "fetched_at": "2026-09-30T12:09:18Z",
- "status_note": "页面无变化"
+ "plans_hash": "1596ee0837ed1b73b2566943ac5faebd28c5e8cfa6ad35f2fe444ab0477d1336",
+ "fetched_at": "2026-10-14T00:41:57Z",
+ "status_note": null
 }

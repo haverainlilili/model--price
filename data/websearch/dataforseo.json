@@ -10,42 +10,108 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "SERP API — Standard Queue",
-   "pricing": "Price per 1 SERP (10 search results): $0.0006; Price per 1K SERPs: $0.6.",
+   "name": "Google SERP API",
+   "pricing": null,
+   "price_per_1k_usd": null,
+   "price_basis": null,
+   "free_quota": null,
+   "output_type": "Search engine results from Google, Bing, YouTube and other engines",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "本页仅链接到定价页，未展示价格。"
+  },
+  {
+   "name": "YouTube SERP API",
+   "pricing": "Starting price $0.0006 per 20 results/per task",
    "price_per_1k_usd": 0.6,
-   "price_basis": "Standard Queue，1 SERP 含 10 条搜索结果",
-   "free_quota": "Unlimited trial period with a free $1 credit; Sandbox feature for free.",
-   "output_type": "JSON、HTML 格式的实时 SERP 数据",
+   "price_basis": "Starting price (per task; 20 results)",
+   "free_quota": null,
+   "output_type": "YouTube search results and platform-specific search data for videos, channels, and related results",
    "cites_sources": null,
    "default_on": null,
-   "note": "队列式 POST/GET；平均周转约5分钟，目标周转时间45分钟；额外参数可能增加费用。"
+   "note": "Exact rates & rules"
   },
   {
-   "name": "SERP API — Priority Queue",
-   "pricing": "Price per 1 SERP (10 search results): $0.0012; Price per 1K SERPs: $1.2.",
-   "price_per_1k_usd": 1.2,
-   "price_basis": "Priority Queue，1 SERP 含 10 条搜索结果",
-   "free_quota": "Unlimited trial period with a free $1 credit; Sandbox feature for free.",
-   "output_type": "JSON、HTML 格式的实时 SERP 数据",
+   "name": "Bing SERP API",
+   "pricing": "Starting price $0.0006 per SERP · 10 results",
+   "price_per_1k_usd": 0.6,
+   "price_basis": "Starting price (per SERP; 10 results)",
+   "free_quota": null,
+   "output_type": "Bing organic search results (ranked pages and SERP elements for a search query)",
    "cites_sources": null,
    "default_on": null,
-   "note": "队列式 POST/GET；平均周转时间最长约1分钟；额外参数可能增加费用。"
+   "note": "Exact rates & rules"
   },
   {
-   "name": "SERP API — Live Mode",
-   "pricing": "Price per 1 SERP (10 search results): $0.002; Price per 1K SERPs: $2.",
-   "price_per_1k_usd": 2.0,
-   "price_basis": "Live Mode，1 SERP 含 10 条搜索结果",
-   "free_quota": "Unlimited trial period with a free $1 credit; Sandbox feature for free.",
-   "output_type": "JSON、HTML 格式的实时 SERP 数据",
+   "name": "Yahoo SERP API",
+   "pricing": "Starting price $0.0006 per SERP · 6 results",
+   "price_per_1k_usd": 0.6,
+   "price_basis": "Starting price (per SERP; 6 results)",
+   "free_quota": null,
+   "output_type": "Yahoo search engine results for keyword, location, language, and device-specific search requests",
    "cites_sources": null,
    "default_on": null,
-   "note": "单次 POST 请求实时返回，平均最长约6秒；额外参数可能增加费用。"
+   "note": "Exact rates & rules"
+  },
+  {
+   "name": "Baidu SERP API",
+   "pricing": "Starting price $0.0006 per SERP · 10 results",
+   "price_per_1k_usd": 0.6,
+   "price_basis": "Starting price (per SERP; 10 results)",
+   "free_quota": null,
+   "output_type": "Baidu organic search results for monitoring and analysing search visibility in the Chinese search market",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "Exact rates & rules"
+  },
+  {
+   "name": "Naver SERP API",
+   "pricing": "Starting price $0.0006 per SERP · 15 results",
+   "price_per_1k_usd": 0.6,
+   "price_basis": "Starting price (per SERP; 15 results)",
+   "free_quota": null,
+   "output_type": "Naver search results for analysing search visibility and ranked content in the South Korean market",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "Exact rates & rules"
+  },
+  {
+   "name": "Seznam SERP API",
+   "pricing": "Starting price $0.0006 per SERP · 10 results",
+   "price_per_1k_usd": 0.6,
+   "price_basis": "Starting price (per SERP; 10 results)",
+   "free_quota": null,
+   "output_type": "Seznam organic search results for keyword tracking and search analysis in the Czech market",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "Exact rates & rules"
+  },
+  {
+   "name": "Dataset Search",
+   "pricing": "Starting price $0.0006 per SERP · 20 results",
+   "price_per_1k_usd": 0.6,
+   "price_basis": "Starting price (per SERP; 20 results)",
+   "free_quota": null,
+   "output_type": "Dataset search SERP results",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "Exact rates & rules"
+  },
+  {
+   "name": "Dataset Info",
+   "pricing": "Starting price $0.0006 per task · 1 result",
+   "price_per_1k_usd": 0.6,
+   "price_basis": "Starting price (per task; 1 result)",
+   "free_quota": null,
+   "output_type": "Dataset info result",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "Exact rates & rules"
   }
  ],
- "fetched_at": "2026-09-05T12:18:45Z",
- "status_note": "页面无变化",
- "last_error": "HTTP 404",
- "last_fetch_ts": "2026-10-13T00:39:39Z",
- "websearch_hash": "83f1f9f967a24d40481c9c2dd56746100916d602f20a49c90669c4f559efc066"
+ "fetched_at": "2026-10-14T00:46:19Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-14T00:46:19Z",
+ "websearch_hash": "5267f31879af3a15e0e4647a646d9aa25c08bc00f2b43ead603c677e266d1dec"
 }

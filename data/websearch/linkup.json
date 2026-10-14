@@ -12,98 +12,53 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search endpoint — depth \"flash\" / \"fast\" / \"standard\", outputType \"searchResults\"",
+   "name": "Search endpoint (depth: flash/fast/standard, outputType: searchResults)",
    "pricing": "$0.005 per call",
    "price_per_1k_usd": 5.0,
-   "price_basis": "PAYG（预付余额计费）flash/fast/standard depth + searchResults outputType",
-   "free_quota": "Run 4,000 queries for free. / 首次使用专业邮箱注册自动到账 $20，并每月补足至 $20",
-   "output_type": "searchResults：Array of {name, url, content}，排序后的 URL 与内容片段",
+   "price_basis": "PAYG Search (flash/fast/standard, searchResults)",
+   "free_quota": "Run 4,000 queries for free; eligible professional-email accounts credited $20 monthly.",
+   "output_type": "Array of {name, url, content}; ranked URLs and content snippets for grounding.",
    "cites_sources": true,
    "default_on": null,
-   "note": "flash <200ms（无 LLM、不改写查询）；fast ~1s（原样查询）；standard 1-3s（单轮 agentic）；flash/fast 不调用 LLM"
+   "note": "flash <200ms, fast ~1s, standard 1–3s; flash/fast pass query as-is, standard does single-iteration agentic search."
   },
   {
-   "name": "Search endpoint — depth \"flash\" / \"fast\" / \"standard\", outputType \"sourcedAnswer\" / \"structured\"",
+   "name": "Search endpoint (depth: flash/fast/standard, outputType: sourcedAnswer/structured)",
    "pricing": "$0.006 per call",
    "price_per_1k_usd": 6.0,
-   "price_basis": "PAYG（预付余额计费）flash/fast/standard depth + sourcedAnswer/structured 输出",
-   "free_quota": "Run 4,000 queries for free. / 注册自动到账 $20 并每月补足至 $20",
-   "output_type": "sourcedAnswer：搜索结果 + 带 inline citations 的自然语言答案；structured：符合 structuredOutputSchema 的 JSON",
+   "price_basis": "PAYG Search (flash/fast/standard, sourcedAnswer/structured)",
+   "free_quota": "Run 4,000 queries for free; eligible professional-email accounts credited $20 monthly.",
+   "output_type": "Search results plus a natural-language answer with inline citations, or JSON matching caller schema.",
    "cites_sources": true,
    "default_on": null,
-   "note": "sourcedAnswer/structured 会调用 LLM，相对 searchResults 有小幅溢价；响应含 sources 数组含 url 与 snippet"
+   "note": "Invokes an LLM to compose/shape the response; adds a small premium over raw searchResults."
   },
   {
-   "name": "Search endpoint — depth \"deep\", outputType \"searchResults\"",
+   "name": "Search endpoint (depth: deep, outputType: searchResults)",
    "pricing": "$0.05 per call",
    "price_per_1k_usd": 50.0,
-   "price_basis": "PAYG（预付余额计费）deep depth + searchResults",
-   "free_quota": "Run 4,000 queries for free. / 注册自动到账 $20 并每月补足至 $20",
-   "output_type": "searchResults：排序后的来源与内容片段",
+   "price_basis": "PAYG Search (deep, searchResults)",
+   "free_quota": "Run 4,000 queries for free; eligible professional-email accounts credited $20 monthly.",
+   "output_type": "Array of {name, url, content}; ranked URLs and content snippets for grounding.",
    "cites_sources": true,
    "default_on": null,
-   "note": "deep 为多轮 agentic 搜索-抓取链式并带评估，延迟 5–30s"
+   "note": "Multi-iteration agentic search-and-scrape chaining with evaluation; latency 5–30s."
   },
   {
-   "name": "Search endpoint — depth \"deep\", outputType \"sourcedAnswer\" / \"structured\"",
+   "name": "Search endpoint (depth: deep, outputType: sourcedAnswer/structured)",
    "pricing": "$0.055 per call",
    "price_per_1k_usd": 55.0,
-   "price_basis": "PAYG（预付余额计费）deep depth + sourcedAnswer/structured",
-   "free_quota": "Run 4,000 queries for free. / 注册自动到账 $20 并每月补足至 $20",
-   "output_type": "sourcedAnswer（带引用的答案）或 structured（JSON schema 输出）",
+   "price_basis": "PAYG Search (deep, sourcedAnswer/structured)",
+   "free_quota": "Run 4,000 queries for free; eligible professional-email accounts credited $20 monthly.",
+   "output_type": "Search results plus a natural-language answer with inline citations, or JSON matching caller schema.",
    "cites_sources": true,
    "default_on": null,
-   "note": "deep 延迟 5–30s；官网价格页 Search 档位标注 Price per request $0.005 - $0.006"
-  },
-  {
-   "name": "Research endpoint (asynchronous deep research)",
-   "pricing": "S $0.25 / M $0.50 / L $1.50 / XL $2.50 per call",
-   "price_per_1k_usd": null,
-   "price_basis": "reasoningDepth 参数：S/M/L/XL",
-   "free_quota": "Run 4,000 queries for free. / 注册自动到账 $20 并每月补足至 $20",
-   "output_type": null,
-   "cites_sources": null,
-   "default_on": null,
-   "note": "异步，延迟 1–10min；官网价格页标注 Price per request $0.25 - $2.50"
-  },
-  {
-   "name": "Fetch endpoint (URL content extraction)",
-   "pricing": "standard 模式 $0.001/call（renderJs=false）至 $0.01/call（pro, renderJs=true）；加 structured schema 额外 +$0.001",
-   "price_per_1k_usd": 1.0,
-   "price_basis": "standard mode + Markdown only（无 schema、无 renderJs）",
-   "free_quota": "Run 4,000 queries for free. / 注册自动到账 $20 并每月补足至 $20",
-   "output_type": null,
-   "cites_sources": null,
-   "default_on": null,
-   "note": "延迟 <2s/同步；属 URL 内容抓取而非搜索，官网价格页标注 $0.001 - $0.006"
-  },
-  {
-   "name": "x402 payment protocol",
-   "pricing": "按上述相同的单次请求价格用 USDC on Base 结算，每请求最低 $0.01",
-   "price_per_1k_usd": null,
-   "price_basis": "x402 每请求链上结算（含最低 $0.01/请求限制）",
-   "free_quota": null,
-   "output_type": null,
-   "cites_sources": null,
-   "default_on": null,
-   "note": "无需账户；API Key 方式为 USD 预付余额计费"
-  },
-  {
-   "name": "Enterprise",
-   "pricing": "Custom pricing models（定制定价）",
-   "price_per_1k_usd": null,
-   "price_basis": "Enterprise 询价",
-   "free_quota": "Apply for $5000 in free credits for startups",
-   "output_type": null,
-   "cites_sources": null,
-   "default_on": null,
-   "note": "个性化索引、专属刷新率、私有环境、IP 白名单；SOC 2 Type II 全档位含，ZDR 仅 Enterprise"
+   "note": "Multi-iteration agentic search-and-scrape chaining; LLM-composed answer/structured output carries a premium."
   }
  ],
- "fetched_at": "2026-10-03T12:41:27Z",
- "status_note": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_error": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_fetch_ts": "2026-10-13T00:32:01Z",
- "websearch_hash": "5cc8d5ea92400c1ab9322ba7159cc55cee53af9859d52ee35958715b95581fce",
- "websearch_retry_after": "2026-10-13T06:32:04Z"
+ "fetched_at": "2026-10-14T00:45:06Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-14T00:45:06Z",
+ "websearch_hash": "5cc8d5ea92400c1ab9322ba7159cc55cee53af9859d52ee35958715b95581fce"
 }

@@ -11,98 +11,64 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search (/search, instant)",
-   "pricing": "From $4 / 1k requests. $4 / 1k requests (up to 10 results); each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages",
+   "name": "/search (instant)",
+   "pricing": "$4 / 1k requests (base, up to 10 results); each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages",
    "price_per_1k_usd": 4.0,
-   "price_basis": "PAYG /search (instant) base price, includes up to 10 results",
-   "free_quota": "Free Tier gives you $10 in credits (up to 2,500 Instant searches) the day you sign up, and your free balance resets to $10 on the first of every month. No payment method required. Complete onboarding in the dashboard and your first team earns a one-time $10 bonus.",
-   "output_type": "Real-time search with token-efficient page contents;标准搜索结果(URLs and page contents)、Highlights、Structured outputs、streaming AI Summary",
+   "price_basis": "PAYG /search instant, base price up to 10 results",
+   "free_quota": "Free Tier: $10 credits on signup (up to 2,500 Instant searches), resets to $10 on the first of every month; one-time $10 bonus for first team after onboarding",
+   "output_type": "结构化搜索结果（URLs and page contents）",
    "cites_sources": true,
    "default_on": null,
-   "note": "Exa Instant 63.6% accuracy / 323ms latency on Web Walker QA. Enterprise: up to 1,000 results per search, custom indexes, SLAs, Zero Data Retention, volume discounts (custom pricing)."
+   "note": "实时搜索，token-efficient page contents；额外结果与 AI 页面摘要单独计费。"
   },
   {
-   "name": "Search (/search, fast, auto)",
-   "pricing": "$7 / 1k requests (up to 10 results); each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages",
+   "name": "/search (fast, auto)",
+   "pricing": "$7 / 1k requests (base, up to 10 results); each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages",
    "price_per_1k_usd": 7.0,
-   "price_basis": "PAYG /search (fast, auto) base price, includes up to 10 results",
-   "free_quota": null,
-   "output_type": "fast 450ms 低延迟默认质量；auto ~1s 自动选择最佳模式；AI Summary (streamable)",
+   "price_basis": "PAYG /search fast or auto, base price up to 10 results",
+   "free_quota": "Free Tier: $10 credits on signup (up to 2,500 Instant searches), resets to $10 on the first of every month; one-time $10 bonus for first team after onboarding",
+   "output_type": "结构化搜索结果（URLs and page contents）",
    "cites_sources": true,
    "default_on": null,
-   "note": "auto is an adaptive search type that picks the best mode for each query; described as \"The best general-purpose default.\" Exa Fast 69.6% / 454ms, Exa Auto 67.8% / ~1.2s (Web Walker QA)."
+   "note": "auto 为自适应搜索模式；额外结果与 AI 页面摘要单独计费。"
   },
   {
-   "name": "Deep Search",
-   "pricing": "deep-lite $12 / 1k requests; deep $12 / 1k requests; deep-reasoning $15 / 1k requests (each up to 10 results)",
+   "name": "deep-lite",
+   "pricing": "$12 / 1k requests (up to 10 results); additional results and AI page summaries cost the same as standard search",
    "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG deep-lite / deep (base price up to 10 results); deep-reasoning $15 / 1k",
-   "free_quota": null,
-   "output_type": "Multi-step research with structured outputs and citations",
+   "price_basis": "PAYG Deep Search, deep-lite",
+   "free_quota": "Free Tier: $10 credits on signup (up to 2,500 Instant searches), resets to $10 on the first of every month; one-time $10 bonus for first team after onboarding",
+   "output_type": "多步研究，结构化输出与引用",
    "cites_sources": true,
    "default_on": null,
-   "note": "Set with type on /search. Latency: deep-lite ~4s; deep 4–15s; deep-reasoning 12–40s. Additional results and AI page summaries cost the same as standard search. Exa Deep 80.0% / 4.3s avg (Web Walker QA)."
+   "note": "Latency ~4 seconds; lightweight synthesis; set via type on /search."
   },
   {
-   "name": "Answer",
-   "pricing": "$5 / 1k requests",
-   "price_per_1k_usd": 5.0,
-   "price_basis": "PAYG /answer base price, includes up to 10 results",
-   "free_quota": null,
-   "output_type": "An LLM answer to a question, with citations",
+   "name": "deep",
+   "pricing": "$12 / 1k requests (up to 10 results); additional results and AI page summaries cost the same as standard search",
+   "price_per_1k_usd": 12.0,
+   "price_basis": "PAYG Deep Search, deep",
+   "free_quota": "Free Tier: $10 credits on signup (up to 2,500 Instant searches), resets to $10 on the first of every month; one-time $10 bonus for first team after onboarding",
+   "output_type": "多步研究，结构化输出与引用",
    "cites_sources": true,
    "default_on": null,
-   "note": "Endpoint /answer. No per-extra-result or AI page summary surcharge listed."
+   "note": "Latency 4–15 seconds; multi-step reasoning with structured outputs."
   },
   {
-   "name": "Monitors",
-   "pricing": "$15 / 1k requests (up to 10 results); each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages",
+   "name": "deep-reasoning",
+   "pricing": "$15 / 1k requests (up to 10 results); additional results and AI page summaries cost the same as standard search",
    "price_per_1k_usd": 15.0,
-   "price_basis": "PAYG /monitors base price, includes up to 10 results",
-   "free_quota": null,
-   "output_type": "Scheduled searches that surface new events on the web",
-   "cites_sources": null,
+   "price_basis": "PAYG Deep Search, deep-reasoning",
+   "free_quota": "Free Tier: $10 credits on signup (up to 2,500 Instant searches), resets to $10 on the first of every month; one-time $10 bonus for first team after onboarding",
+   "output_type": "多步研究，结构化输出与引用",
+   "cites_sources": true,
    "default_on": null,
-   "note": "Endpoint /monitors. Scheduled search monitoring."
-  },
-  {
-   "name": "Contents",
-   "pricing": "$1 / 1k pages, per content type; AI page summaries $1 / 1k pages",
-   "price_per_1k_usd": 1.0,
-   "price_basis": "PAYG /contents per page, billed per content type (text, highlights, summary each billed separately)",
-   "free_quota": null,
-   "output_type": "Full page text, highlights, and summaries for known URLs",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Not a discovery search endpoint: operates on known URLs. One page with text and highlights counts as two content types."
-  },
-  {
-   "name": "Agent",
-   "pricing": "$0.012–$1.00 / fixed-effort run, or usage-based. minimal $0.012/request; low $0.025/request; medium $0.10/request; high $0.50/request; xhigh $1.00/request. Metered: Agent Compute Units $0.10 / ACU; Search tool calls $0.005 / search; Email contact enrichment $0.02 / email; Phone contact enrichment $0.07 / phone number",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "Async deep research, list building, and enrichment",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "No flat per-1k-request rate; billed per ACU/tool call/enrichment unit. auto defaults to a $5 cap, ultra to a $20 cap. Connect providers bill extra (Fiber.ai $0.02/credit; Baselayer $0.15–$4.00/order)."
-  },
-  {
-   "name": "Enterprise plan",
-   "pricing": "Custom pricing — volume discounts and postpaid invoice billing (talk to us)",
-   "price_per_1k_usd": null,
-   "price_basis": null,
-   "free_quota": null,
-   "output_type": "Powerful search: up to 1,000 results per search; custom indexes",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Includes SLAs/MSAs, 1:1 onboarding, Zero Data Retention, custom rate limits (QPS), tailored moderation, custom datasets. No subscription and no minimum spend for PAYG."
+   "note": "Latency 12–40 seconds; harder research tasks; set via type on /search."
   }
  ],
- "fetched_at": "2026-10-03T12:40:16Z",
- "status_note": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_error": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_fetch_ts": "2026-10-13T00:30:19Z",
- "websearch_hash": "023bd97650d3cede162a965b05ba3e8deb40dd84fd59840d74f0152399228d2b",
- "websearch_retry_after": "2026-10-13T06:31:53Z"
+ "fetched_at": "2026-10-14T00:44:17Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-14T00:44:17Z",
+ "websearch_hash": "023bd97650d3cede162a965b05ba3e8deb40dd84fd59840d74f0152399228d2b"
 }

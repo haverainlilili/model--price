@@ -12,53 +12,85 @@
  "offerings": [
   {
    "name": "Search API",
-   "pricing": "$5.00 per 1K requests（Raw web search results with advanced filtering）",
+   "pricing": "$5.00 per 1K requests",
    "price_per_1k_usd": 5.0,
-   "price_basis": "PAYG，按成功的 POST /search 请求计费（PAYG basic，$5.00 / 1,000 requests）",
+   "price_basis": "Search API public pricing per successful POST /search request",
    "free_quota": null,
-   "output_type": "结构化搜索结果（JSON：results[].title / url / snippet / date / last_updated）",
+   "output_type": "结构化网页搜索结果",
    "cites_sources": true,
    "default_on": null,
-   "note": "按成功请求计费，一次请求最多含 5 个 query 记 1 个计费单位；无效/限流/上游失败不计费；无额外 token 费用。max_results 1–20（默认 10），支持 domain/language/date 过滤与 search_context_size（low/medium/high，默认 high）。"
+   "note": "多查询数组最多 5 个查询仍计作一个计费单位；成功响应即使无结果也计费"
   },
   {
    "name": "Search API with Fast Search",
-   "pricing": "$1.00 per 1K requests（Lower-latency web search results，需设置 search_type: \"fast\"）",
+   "pricing": "$1.00 per 1K requests",
    "price_per_1k_usd": 1.0,
-   "price_basis": "PAYG，Search API + search_type:\"fast\"（$1.00 / 1,000 requests）",
+   "price_basis": "Search API public pricing with search_type: fast",
    "free_quota": null,
-   "output_type": "结构化搜索结果（同 Search API 的 JSON 结果格式）",
+   "output_type": "结构化网页搜索结果",
    "cites_sources": true,
    "default_on": null,
-   "note": "官方说明为低延迟、低成本选项：\"Need lower latency or lower cost? Set search_type: \\\"fast\\\"\"；计费口径与 Search API 相同（按成功请求，无 token 附加费）。"
+   "note": "更低延迟网页搜索；设置 search_type: \"fast\""
   },
   {
-   "name": "web_search (standard) — Agent API tool",
-   "pricing": "$0.0025 per invocation，即 $2.50 per 1,000 invocations（search_type: \"web\"）",
+   "name": "web_search (standard)",
+   "pricing": "$0.0025 per invocation ($2.50 per 1,000 invocations)",
    "price_per_1k_usd": 2.5,
-   "price_basis": "Agent API 工具费，按调用次数（invocation）计（PAYG，$2.50 / 1,000 invocations）",
+   "price_basis": "Agent API tool pricing",
    "free_quota": null,
-   "output_type": "模型内置工具（Tool）调用结果，作为搜索上下文注入 Agent API 响应",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "文档：需在请求中启用工具，工具费与模型 token 费分别计；需带引用的 LLM 生成式答案官方推荐使用 Agent API。"
+   "output_type": "模型内置工具",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "Agent API web_search 工具；工具费用与模型 token 费用分开"
   },
   {
-   "name": "web_search (Fast Search) — Agent API tool",
-   "pricing": "$0.001 per invocation，即 $1.00 per 1,000 invocations（同一工具设 search_type: \"fast\"）",
+   "name": "web_search (Fast Search)",
+   "pricing": "$0.001 per invocation ($1.00 per 1,000 invocations)",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Agent API 工具费，按调用次数计（PAYG，$1.00 / 1,000 invocations）",
+   "price_basis": "Agent API tool pricing with search_type: \"fast\"",
    "free_quota": null,
-   "output_type": "模型内置工具（Tool）调用结果，作为搜索上下文注入 Agent API 响应",
-   "cites_sources": true,
-   "default_on": false,
-   "note": "同一 web_search 工具的 fast 档，官方描述为更低延迟 / 更低成本；sandbox 内的 SDK 搜索查询按 $0.0025/次（同 web_search）计费。"
+   "output_type": "模型内置工具",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "相同 web_search 工具启用 Fast Search；更低延迟"
+  },
+  {
+   "name": "image_search",
+   "pricing": "$0.0025 per successful invocation ($2.50 per 1,000 successful invocations)",
+   "price_per_1k_usd": 2.5,
+   "price_basis": "Agent API tool pricing",
+   "free_quota": null,
+   "output_type": "结构化图像搜索结果",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "支持域名、格式与安全搜索过滤"
+  },
+  {
+   "name": "people_search",
+   "pricing": "$0.005 per invocation ($5 per 1,000 tool invocations)",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "Agent API tool pricing",
+   "free_quota": null,
+   "output_type": "人物/职业搜索结果",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "查找专业人士、员工与人物信息"
+  },
+  {
+   "name": "finance_search",
+   "pricing": "$0.005 per invocation ($5 per 1,000 tool invocations)",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "Agent API tool pricing",
+   "free_quota": null,
+   "output_type": "金融数据/市场信息",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "检索金融数据与市场信息"
   }
  ],
- "fetched_at": "2026-10-03T12:40:56Z",
- "status_note": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_error": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_fetch_ts": "2026-10-13T00:31:53Z",
- "websearch_hash": "a07e141852aed8d8ec4b07e5b7878f1b43d7b756c9a86b7d90747a99d03fcbf5",
- "websearch_retry_after": "2026-10-13T06:31:57Z"
+ "fetched_at": "2026-10-14T00:44:35Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-14T00:44:35Z",
+ "websearch_hash": "a07e141852aed8d8ec4b07e5b7878f1b43d7b756c9a86b7d90747a99d03fcbf5"
 }

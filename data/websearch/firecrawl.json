@@ -12,21 +12,20 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search",
-   "pricing": "Search costs 2 credits per 10 results, rounded up (1–10 results = 2 credits, 11–20 = 4 credits). Pay-as-you-go: 5 USD increments give 1,000 credits on Hobby, 2,000 on Standard, 2,500 on Growth, and 5,000 on Scale.",
-   "price_per_1k_usd": 2.5,
-   "price_basis": "Standard plan pay-as-you-go (2,000 credits per $5; 2 credits per 10 results)",
-   "free_quota": "Free plan: 1,000 credits / month (500 searches or 1,000 pages scraped)",
-   "output_type": "结构化搜索结果（web/news/images/alexandria 分组，含 title、description、URL，默认带 Highlights；可加 scrapeOptions 抓取完整内容）",
+   "name": "Search API",
+   "pricing": "Search costs 2 credits per 10 results; credits shared across endpoints; free plan 1,000 credits/month; paid plans 5,000–1,000,000 credits/month; pay-as-you-go in $5 increments",
+   "price_per_1k_usd": 10.0,
+   "price_basis": "PAYG Hobby extra credits (1,000 credits per $5); other paid plans give 2,000/2,500/5,000 credits per $5",
+   "free_quota": "Free plan: 1,000 credits/month (500 searches or 1,000 pages scraped)",
+   "output_type": "结构化搜索结果（web/news/images/tools），可选抓取全文内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "gov 类别搜索不消耗搜索 credits；ZDR 搜索：anon 2 credits/10 results，end-to-end zdr 10 credits/10 results（Enterprise）；scrapeOptions 按页另计 1 credit/page。"
+   "note": "2 credits/10 results (rounded up); gov category adds no search credits; ZDR enterprise costs 10 credits/10 or 2 credits/10; optional scraping adds per-page costs"
   }
  ],
- "fetched_at": "2026-10-10T13:22:40Z",
- "status_note": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_error": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_fetch_ts": "2026-10-13T00:32:29Z",
- "websearch_hash": "d8927d92d509d6e8e449aa4258c180fddf32c19f08146a9e632c114340ba4e25",
- "websearch_retry_after": "2026-10-13T06:38:36Z"
+ "fetched_at": "2026-10-14T00:45:46Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-14T00:45:46Z",
+ "websearch_hash": "e61ce031d009802019f00ec4659d1940d686ac29b43b43fc8ba0c6457dad5624"
 }

@@ -5,7 +5,7 @@
  "page_has_relevant_content": true,
  "product_status": "active",
  "product_status_date": null,
- "product_status_note": null,
+ "product_status_note": "AWS 官方 Nova 定价页仍将 Nova Reel 列为视频生成模型；文档页说明其可通过 Bedrock API 使用。",
  "source_url": "https://aws.amazon.com/nova/pricing/",
  "source_urls": [
   "https://aws.amazon.com/nova/pricing/",
@@ -25,7 +25,7 @@
  ],
  "offerings": [
   {
-   "name": "Amazon Nova Reel",
+   "name": "amazon.nova-reel-v1:1",
    "variant_key": null,
    "api_available": true,
    "modes": [
@@ -36,6 +36,7 @@
    "currency": null,
    "region": null,
    "price_per_second": null,
+   "comparison_price_type": null,
    "comparison_group": null,
    "price_basis": null,
    "resolution": "1280x720",
@@ -47,23 +48,21 @@
    "lifecycle_status": "unknown",
    "sunset_at": null,
    "free_quota": null,
-   "note": "模型ID为 amazon.nova-reel-v1:1；支持异步调用API，不支持同步调用API；仅支持英语。"
+   "note": "仅支持 Async Invoke Model API；不支持 Invoke Model、微调及预置吞吐。Nova Reel 1.0 区域为 US East (N. Virginia)、Europe (Ireland)、Asia Pacific (Tokyo)；1.1 仅 US East (N. Virginia)。定价页未展示具体价格。"
   }
  ],
- "fetched_at": "2026-09-09T11:21:29Z",
+ "fetched_at": "2026-10-14T18:50:40Z",
  "has_video_generation": true,
  "configured_source_urls": [
   "https://aws.amazon.com/nova/pricing/",
   "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
   "https://docs.aws.amazon.com/nova/latest/userguide/video-generation.html"
  ],
- "last_fetch_ts": "2026-10-13T06:08:04Z",
+ "last_fetch_ts": "2026-10-14T18:50:40Z",
  "source_warnings": [],
  "videogen_hash": "a3c0813ea2733ee14517b89fa2be3fac7c3cb03243533ea0fe09077ddf0039db",
- "status_note": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
- "last_error": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
+ "status_note": null,
+ "last_error": null,
  "videogen_excerpt_hash": "41344aa163bbf9bfc636df2bbd0616ba106136566531a90119ec16b6bd4708a3",
- "videogen_retry_after": "2026-10-12T00:16:42Z",
- "videogen_pending_shrink_hash": "edc1407799aa59321e849210a90a68ffb495bbbc772b7ba9e36833dc6e66e241",
- "videogen_pending_shrink_count": 1
+ "videogen_retry_after": "2026-10-12T00:16:42Z"
 }

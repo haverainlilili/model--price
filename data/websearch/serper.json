@@ -11,20 +11,19 @@
  "offerings": [
   {
    "name": "Google Search API",
-   "pricing": "Top-up credits: Starter $50 for 50k credits ($1.00/1k), Standard $375 for 500k credits ($0.75/1k), Scale $1250 for 2.5M credits ($0.50/1k), Ultimate $3750 for 12.5M credits ($0.30/1k); excluding sales tax/VAT/GST",
+   "pricing": "Starter $50 for 50k credits ($1.00/1k); Standard $375 for 500k credits ($0.75/1k); Scale $1250 for 2.5M credits ($0.50/1k); Ultimate $3750 for 12.5M credits ($0.30/1k)",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Starter (50k credits, $1.00/1k)",
-   "free_quota": "Get 2,500 free queries",
+   "price_basis": "Starter top-up (50k credits; lowest published entry tier)",
+   "free_quota": "Get 2,500 free queries (no credit card required)",
    "output_type": "结构化搜索结果",
    "cites_sources": true,
    "default_on": null,
-   "note": "实时Google SERP JSON，1-2秒返回，无缓存；支持web/images/news/maps/places/videos/shopping/scholar/patents/autocomplete；credits valid for 6 months."
+   "note": "Credits valid for 6 months; real-time uncached results; rate limits 50-300 QPS by tier; customizable country/language; endpoints include Search, Images, News, Maps, Places, Videos, Shopping, Scholar, Patents, Autocomplete; credits deducted on successful responses."
   }
  ],
- "fetched_at": "2026-10-14T12:14:19Z",
- "status_note": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_error": "官网联网搜索抽取失败: 网络错误: Connection error.",
- "last_fetch_ts": "2026-10-15T00:44:59Z",
- "websearch_hash": "af83d0eeeebbb55286935021ecec64eea8d78290e7d4e8de8d9ef395ced31dca",
- "websearch_retry_after": "2026-10-15T07:05:11Z"
+ "fetched_at": "2026-10-15T12:16:30Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-15T12:16:30Z",
+ "websearch_hash": "e6e69f2d99352020e4087519866d7d24ece4ef305d907ddf5f51ff77cd906a77"
 }

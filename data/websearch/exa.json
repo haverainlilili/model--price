@@ -12,64 +12,74 @@
  "offerings": [
   {
    "name": "/search (instant)",
-   "pricing": "$4 / 1k requests (base, up to 10 results); each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages",
+   "pricing": "$4 / 1k requests",
    "price_per_1k_usd": 4.0,
-   "price_basis": "PAYG /search instant, base price up to 10 results",
-   "free_quota": "Free Tier: $10 credits on signup (up to 2,500 Instant searches), resets to $10 on the first of every month; one-time $10 bonus for first team after onboarding",
-   "output_type": "结构化搜索结果（URLs and page contents）",
+   "price_basis": "PAYG /search (instant), base price up to 10 results",
+   "free_quota": "$10 in credits (up to 2,500 Instant searches) on signup; free balance resets to $10 on the first of every month; no payment method required; one-time $10 bonus after dashboard onboarding",
+   "output_type": "结构化搜索结果（URLs、页面内容、highlights、summaries）",
    "cites_sources": true,
    "default_on": null,
-   "note": "实时搜索，token-efficient page contents；额外结果与 AI 页面摘要单独计费。"
+   "note": "实时搜索；额外结果 $1 / 1k results；AI page summaries $1 / 1k pages"
   },
   {
    "name": "/search (fast, auto)",
-   "pricing": "$7 / 1k requests (base, up to 10 results); each result above 10: $1 / 1k results; AI page summaries: $1 / 1k pages",
+   "pricing": "$7 / 1k requests",
    "price_per_1k_usd": 7.0,
-   "price_basis": "PAYG /search fast or auto, base price up to 10 results",
-   "free_quota": "Free Tier: $10 credits on signup (up to 2,500 Instant searches), resets to $10 on the first of every month; one-time $10 bonus for first team after onboarding",
-   "output_type": "结构化搜索结果（URLs and page contents）",
+   "price_basis": "PAYG /search (fast, auto), base price up to 10 results",
+   "free_quota": "$10 in credits (up to 2,500 Instant searches) on signup; free balance resets to $10 on the first of every month; no payment method required; one-time $10 bonus after dashboard onboarding",
+   "output_type": "结构化搜索结果（URLs、页面内容、highlights、summaries）",
    "cites_sources": true,
    "default_on": null,
-   "note": "auto 为自适应搜索模式；额外结果与 AI 页面摘要单独计费。"
+   "note": "fast/auto 模式；额外结果 $1 / 1k results；AI page summaries $1 / 1k pages"
   },
   {
-   "name": "deep-lite",
-   "pricing": "$12 / 1k requests (up to 10 results); additional results and AI page summaries cost the same as standard search",
-   "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG Deep Search, deep-lite",
-   "free_quota": "Free Tier: $10 credits on signup (up to 2,500 Instant searches), resets to $10 on the first of every month; one-time $10 bonus for first team after onboarding",
-   "output_type": "多步研究，结构化输出与引用",
+   "name": "/answer",
+   "pricing": "$5 / 1k requests",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "PAYG /answer",
+   "free_quota": "$10 in credits (up to 2,500 Instant searches) on signup; free balance resets to $10 on the first of every month; no payment method required; one-time $10 bonus after dashboard onboarding",
+   "output_type": "带引用的答案（LLM answer with citations）",
    "cites_sources": true,
    "default_on": null,
-   "note": "Latency ~4 seconds; lightweight synthesis; set via type on /search."
+   "note": "对问题给出 LLM 答案并附引用"
   },
   {
-   "name": "deep",
-   "pricing": "$12 / 1k requests (up to 10 results); additional results and AI page summaries cost the same as standard search",
-   "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG Deep Search, deep",
-   "free_quota": "Free Tier: $10 credits on signup (up to 2,500 Instant searches), resets to $10 on the first of every month; one-time $10 bonus for first team after onboarding",
-   "output_type": "多步研究，结构化输出与引用",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "Latency 4–15 seconds; multi-step reasoning with structured outputs."
-  },
-  {
-   "name": "deep-reasoning",
-   "pricing": "$15 / 1k requests (up to 10 results); additional results and AI page summaries cost the same as standard search",
+   "name": "/monitors",
+   "pricing": "$15 / 1k requests",
    "price_per_1k_usd": 15.0,
-   "price_basis": "PAYG Deep Search, deep-reasoning",
-   "free_quota": "Free Tier: $10 credits on signup (up to 2,500 Instant searches), resets to $10 on the first of every month; one-time $10 bonus for first team after onboarding",
+   "price_basis": "PAYG /monitors, base price up to 10 results",
+   "free_quota": "$10 in credits (up to 2,500 Instant searches) on signup; free balance resets to $10 on the first of every month; no payment method required; one-time $10 bonus after dashboard onboarding",
+   "output_type": "定时搜索与新事件发现（structured search results）",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "scheduled searches surfacing new web events; extra results $1 / 1k results; AI page summaries $1 / 1k pages"
+  },
+  {
+   "name": "Deep Search (deep-lite, deep)",
+   "pricing": "$12 / 1k requests",
+   "price_per_1k_usd": 12.0,
+   "price_basis": "PAYG Deep Search, deep-lite/deep, base price up to 10 results",
+   "free_quota": "$10 in credits (up to 2,500 Instant searches) on signup; free balance resets to $10 on the first of every month; no payment method required; one-time $10 bonus after dashboard onboarding",
    "output_type": "多步研究，结构化输出与引用",
    "cites_sources": true,
    "default_on": null,
-   "note": "Latency 12–40 seconds; harder research tasks; set via type on /search."
+   "note": "deep-lite 约 4s；deep 4-15s；额外结果与 AI page summaries 与标准搜索相同"
+  },
+  {
+   "name": "Deep Search (deep-reasoning)",
+   "pricing": "$15 / 1k requests",
+   "price_per_1k_usd": 15.0,
+   "price_basis": "PAYG Deep Search, deep-reasoning, base price up to 10 results",
+   "free_quota": "$10 in credits (up to 2,500 Instant searches) on signup; free balance resets to $10 on the first of every month; no payment method required; one-time $10 bonus after dashboard onboarding",
+   "output_type": "多步研究，结构化输出与引用",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "延迟 12-40s；更难研究任务；额外结果与 summaries 与标准搜索相同"
   }
  ],
- "fetched_at": "2026-10-14T00:44:17Z",
- "status_note": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_error": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_fetch_ts": "2026-10-15T00:43:38Z",
- "websearch_hash": "9a37e8eb8f8c795a0d008fe0a4bfb68c4a24d3d5d9407699f700cf4e0a633f6d",
- "websearch_retry_after": "2026-10-15T06:43:45Z"
+ "fetched_at": "2026-10-15T12:15:03Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-15T12:15:03Z",
+ "websearch_hash": "9a37e8eb8f8c795a0d008fe0a4bfb68c4a24d3d5d9407699f700cf4e0a633f6d"
 }

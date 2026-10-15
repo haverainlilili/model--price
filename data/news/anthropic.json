@@ -1,92 +1,92 @@
 {
  "entries": [
   {
+   "date": "October 14, 2026",
+   "title": "We've launched [OpenTelemetry export](https://platform.claude.com/docs/en/manage-claude/opentelemetry) in beta, so you can trace Messages API requests and Claude Managed Agents sessions in your observability backend. The Claude SDK emits spans in Python, TypeScript, C#, Go, Java, PHP, and Ruby. To get spans from the API, [add an OpenTelemetry destination](https://platform.claude.com/docs/en/manage-claude/opentelemetry/api#add-a-destination) in the Claude Console.",
+   "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry",
+   "summary": "发布OpenTelemetry导出beta，可在观测平台追踪Messages API与Managed Agents会话。",
+   "first_seen": "2026-10-15T12:10:15Z"
+  },
+  {
+   "date": "October 14, 2026",
+   "title": "Claude Managed Agents [scheduled deployments](https://platform.claude.com/docs/en/managed-agents/scheduled-deployments) are now available on [Claude Platform on AWS](https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws#claude-managed-agents).",
+   "url": "https://platform.claude.com/docs/en/managed-agents/scheduled-deployments",
+   "summary": "Managed Agents定时部署现已在Claude Platform on AWS可用。",
+   "first_seen": "2026-10-15T12:10:15Z"
+  },
+  {
    "date": "October 9, 2026",
-   "title": "You can now let a Claude Managed Agents agent use dynamic workflows, in beta with the `managed-agents-2026-04-01` beta header",
+   "title": "You can now let a Claude Managed Agents agent use [dynamic workflows](https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration#dynamic-workflows), in beta with the `managed-agents-2026-04-01` beta header. For work with many pieces, such as reviewing hundreds of documents, the agent can write a workflow. A workflow is a program that runs many agents in phases and combines their results. The server runs it in the background as a workflow run. To [turn dynamic workflows on](https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration#turn-on-dynamic-workflows), set the agent's `multiagent` field to `{\"type\": \"multiagent_20261001\", \"workflows\": {\"type\": \"enabled\"}}`. To guide the agent, tell it in its system prompt when to start a run. Follow each run through `workflow_run.*` events on the session's event stream. See [Workflow runs](https://platform.claude.com/docs/en/managed-agents/workflow-runs).",
    "url": "https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration#dynamic-workflows",
-   "summary": "Managed Agents 智能体可启用动态工作流（beta），后台分阶段运行多智能体并汇总结果。",
-   "first_seen": "2026-10-10T12:27:00Z"
+   "summary": "Managed Agents支持动态工作流beta，可编写程序并行运行多agent。",
+   "first_seen": "2026-10-15T12:10:15Z"
   },
   {
    "date": "October 8, 2026",
-   "title": "The Compliance API chat endpoints now also return chats from the unified Claude experience",
+   "title": "The [Compliance API](https://platform.claude.com/docs/en/manage-claude/compliance-api) chat endpoints now also return chats from the unified Claude experience, in beta for Claude Enterprise organizations, with your existing Compliance Access Key. See [Retrieve and delete chats, files, and projects](https://platform.claude.com/docs/en/manage-claude/compliance-content-data).",
    "url": "https://platform.claude.com/docs/en/manage-claude/compliance-api",
-   "summary": "Compliance API 聊天端点现也返回统一 Claude 体验的聊天记录（beta，企业版）。",
-   "first_seen": "2026-10-09T13:11:14Z"
+   "summary": "Compliance API聊天端点现也返回统一Claude体验聊天记录。",
+   "first_seen": "2026-10-15T12:10:15Z"
   },
   {
    "date": "October 8, 2026",
-   "title": "The Compliance API can now download Claude Docs documents as Word files, in beta",
-   "url": "https://platform.claude.com/docs/en/manage-claude/compliance-api",
-   "summary": "Compliance API 现可将 Claude Docs 文档下载为 Word 文件（beta）。",
-   "first_seen": "2026-10-10T12:27:00Z"
+   "title": "The Compliance API can now download Claude Docs documents as Word files, in beta. See [Retrieve files and artifacts](https://platform.claude.com/docs/en/manage-claude/compliance-content-data#retrieve-files-and-artifacts).",
+   "url": "https://platform.claude.com/docs/en/manage-claude/compliance-content-data#retrieve-files-and-artifacts",
+   "summary": "Compliance API现支持将Claude Docs文档下载为Word文件。",
+   "first_seen": "2026-10-15T12:10:15Z"
   },
   {
    "date": "October 7, 2026",
-   "title": "We've lowered the price of prompt cache reads on Claude Sonnet 5.5 from $0.20 USD to $0.10 USD per million tokens",
+   "title": "We've lowered the price of prompt cache reads on Claude Sonnet 5.5 from $0.20 USD to $0.10 USD per million tokens: 0.05x the base input price instead of 0.1x. Cache writes and all other prices are unchanged. See [Prompt caching pricing](https://platform.claude.com/docs/en/about-claude/pricing#prompt-caching).",
    "url": "https://platform.claude.com/docs/en/about-claude/pricing#prompt-caching",
-   "summary": "Sonnet 5.5 提示缓存读取价由每百万 token 0.20 美元降至 0.10 美元。",
-   "first_seen": "2026-10-09T13:11:14Z"
+   "summary": "Claude Sonnet 5.5提示缓存读取价从$0.20降至$0.10/百万token。",
+   "first_seen": "2026-10-15T12:10:15Z"
   },
   {
    "date": "October 7, 2026",
-   "title": "We've launched Claude Haiku 5.5 (`claude-haiku-5-5`)",
+   "title": "We've launched **Claude Haiku 5.5** (`claude-haiku-5-5`), our most capable model tuned for high-volume and latency-sensitive work. It has a [1M token context window](https://platform.claude.com/docs/en/build-with-claude/context-windows), 128k max output tokens, and [adaptive thinking](https://platform.claude.com/docs/en/build-with-claude/thinking) with the [effort parameter](https://platform.claude.com/docs/en/build-with-claude/effort). It's available on the Claude API, [Claude in Amazon Bedrock](https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock), [Claude Platform on AWS](https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws), [Claude on Google Cloud](https://platform.claude.com/docs/en/build-with-claude/claude-on-vertex-ai), and [Claude in Microsoft Foundry](https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry). See [What's new in Claude Haiku 5.5](https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5).",
    "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5",
-   "summary": "发布 Claude Haiku 5.5，1M 上下文、128k 输出、自适应思考，多平台可用。",
-   "first_seen": "2026-10-10T12:27:00Z"
+   "summary": "推出Claude Haiku 5.5，面向高并发低延迟，支持1M上下文与自适应思考。",
+   "first_seen": "2026-10-15T12:10:15Z"
   },
   {
    "date": "October 7, 2026",
-   "title": "Code written for Claude Haiku 4.5 can break on Claude Haiku 5.5",
+   "title": "Code written for Claude Haiku 4.5 can break on Claude Haiku 5.5. Manual extended thinking (`budget_tokens`), the sampling parameters `temperature`, `top_p`, and `top_k`, and assistant message prefill can each return a 400 error. `computer_20250124` also returns a 400 error: use the `computer_toolset_20260801` toolset on the Claude API and Google Cloud, or `computer_20251124` on Amazon Bedrock. A request that sends thinking blocks back after a change to `system`, `tools`, or earlier turns can also return a 400 error. On Amazon Bedrock, structured outputs aren't available for Claude Haiku 5.5. Adaptive thinking is on by default, so a response can begin with `thinking` blocks, and their text is omitted unless you set `thinking.display` to `\"summarized\"`. The same text also counts as more tokens. See the [migration guide](https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide) for each change. For model-specific prompting patterns, see [Prompting Claude Haiku 5.5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5).",
    "url": "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide",
-   "summary": "为 Haiku 4.5 编写的代码在 Haiku 5.5 上可能报错，需按迁移指南调整。",
-   "first_seen": "2026-10-09T13:11:14Z"
+   "summary": "Haiku 4.5代码迁移到Haiku 5.5可能报错，需按迁移指南调整参数与工具。",
+   "first_seen": "2026-10-15T12:10:15Z"
   },
   {
    "date": "October 7, 2026",
-   "title": "The Python and TypeScript SDKs now include classes, in beta, for the browser use tool and the computer use tool",
+   "title": "The Python and TypeScript SDKs now include classes, in beta, for the [browser use tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-tool) and the [computer use tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool). You subclass one and write one method per tool against your own browser or desktop automation. The SDK runs the tool loop, the URL and file policies you set for the browser, and your approval callback. See [Browser and computer use with the SDK toolsets](https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk).",
    "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk",
-   "summary": "Python/TypeScript SDK 新增浏览器使用与计算机使用工具的 beta 类。",
-   "first_seen": "2026-10-09T13:11:14Z"
+   "summary": "Python/TS SDK beta新增浏览器与计算机使用工具类，简化工具循环。",
+   "first_seen": "2026-10-15T12:10:15Z"
   },
   {
    "date": "October 7, 2026",
-   "title": "Claude Max and Team plans now include monthly API credits",
+   "title": "Claude Max and Team plans now include monthly API credits. To learn how to claim them, see [API credits for Max and Team plans](https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers).",
    "url": "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers",
-   "summary": "Claude Max 与 Team 套餐现包含每月 API 额度。",
-   "first_seen": "2026-10-09T13:11:14Z"
+   "summary": "Claude Max和Team计划现含每月API额度，可按说明领取。",
+   "first_seen": "2026-10-15T12:10:15Z"
   },
   {
    "date": "October 7, 2026",
-   "title": "In Claude Managed Agents, a cloud environment with `limited` networking now also applies its `allowed_hosts` to the `web_search` and `web_fetch` tools",
+   "title": "In Claude Managed Agents, a cloud environment with `limited` networking now also applies its `allowed_hosts` to the `web_search` and `web_fetch` tools. A `web_fetch` call for a URL on a host that `allowed_hosts` does not match returns a `url_not_allowed` error result to the agent. `web_search` omits results from such hosts. When `allowed_hosts` lists no hosts, neither tool returns a page or a search result. `allow_package_managers` and `allow_mcp_servers` add no hosts for these tools. To let the tools reach a host, add it to `allowed_hosts`, which also opens it to the sandbox. `unrestricted` networking and self-hosted environments do not limit these tools. See [Environment networking](https://platform.claude.com/docs/en/managed-agents/environments#networking).",
    "url": "https://platform.claude.com/docs/en/managed-agents/environments#networking",
-   "summary": "受限网络环境的 allowed_hosts 现同样约束 web_search 与 web_fetch 工具。",
-   "first_seen": "2026-10-10T12:27:00Z"
+   "summary": "Managed Agents受限网络下web_search/web_fetch受allowed_hosts限制。",
+   "first_seen": "2026-10-15T12:10:15Z"
   },
   {
    "date": "October 7, 2026",
-   "title": "With `limited` networking, creating a session fails with a 400 error when an enabled web tool's `allowed_domains` has an entry not within `allowed_hosts`",
+   "title": "With `limited` networking, creating a session fails with a 400 error when an enabled web tool's `allowed_domains` has an entry not within `allowed_hosts`. So does a session update that adds such an entry. An `allowed_hosts` entry matches one exact host unless it starts with `*.`, so `docs.example.com` is not within `[\"example.com\"]`. To fix the error, add the host to `allowed_hosts` or remove the entry from `allowed_domains`. See [Restrict web search and web fetch domains](https://platform.claude.com/docs/en/managed-agents/tools-web-restrictions).",
    "url": "https://platform.claude.com/docs/en/managed-agents/tools-web-restrictions",
-   "summary": "受限网络下 allowed_domains 超出 allowed_hosts 会使创建会话报 400 错误。",
-   "first_seen": "2026-10-10T12:27:00Z"
-  },
-  {
-   "date": "October 7, 2026",
-   "title": "In Claude Managed Agents, the `web_fetch` tool now fetches only URLs that have already appeared in the session",
-   "url": "https://platform.claude.com/docs/en/managed-agents/tools#available-tools",
-   "summary": "Managed Agents 的 web_fetch 仅能抓取会话中已出现过的 URL，以防数据外泄。",
-   "first_seen": "2026-10-10T12:27:00Z"
-  },
-  {
-   "date": "October 6, 2026",
-   "title": "We've added `capabilities.server_tools` to the Models API",
-   "url": "https://platform.claude.com/docs/en/api/models/list",
-   "summary": "Models API 新增 capabilities.server_tools，报告模型是否支持网络搜索与代码执行工具。",
-   "first_seen": "2026-10-10T12:27:00Z"
+   "summary": "受限网络下web工具allowed_domains超出allowed_hosts将返回400错误。",
+   "first_seen": "2026-10-15T12:10:15Z"
   }
  ],
- "news_hash": "b072d3d78da397687793fd22b8a2f281085bf09c766323e6073fedf5fb65ecfb",
- "fetched_at": "2026-10-10T12:27:00Z",
+ "news_hash": "96641eff225c9e4979eba5482ba167529885e0ad9273ed5936aa241d7f0e7e30",
+ "fetched_at": "2026-10-15T12:10:15Z",
  "status_note": null,
  "last_error": null
 }

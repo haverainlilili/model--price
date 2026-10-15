@@ -11,131 +11,119 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Web Search API Free",
-   "pricing": "Free (No API key, no account, no credit card)",
-   "price_per_1k_usd": 0.0,
-   "price_basis": "Free tier via MCP (up to 100 queries/day)",
+   "name": "Web Search API (Free)",
+   "pricing": "Free",
+   "price_per_1k_usd": null,
+   "price_basis": "Free tier via MCP",
    "free_quota": "100 Web Search API queries/day via MCP",
-   "output_type": "实时网络与新闻搜索结果（MCP）",
+   "output_type": "结构化搜索结果（Web/News）",
    "cites_sources": true,
    "default_on": null,
-   "note": "No API key, account, or credit card required; up to 100 queries/day via MCP."
+   "note": "No API key/account/credit card; p50 ~0.4s; live search for prototyping."
   },
   {
-   "name": "Web Search API Standard",
+   "name": "Web Search API (Standard)",
    "pricing": "$5 /1k calls",
    "price_per_1k_usd": 5.0,
-   "price_basis": "PAYG Web Search API Standard",
+   "price_basis": "Pay as you go",
    "free_quota": "$100 free credit = 20,000 searches",
-   "output_type": "结构化网络与新闻搜索结果（JSON）",
+   "output_type": "结构化搜索结果（Web/News）",
    "cites_sources": true,
    "default_on": null,
-   "note": "Full endpoint access: Highlights, Knowledge, extraction, domain filters; full page extraction add-on $1.00/1,000 live pages; up to 100 results/call."
-  },
-  {
-   "name": "Contents API",
-   "pricing": "$1 /1k Pages",
-   "price_per_1k_usd": 1.0,
-   "price_basis": "PAYG Contents API",
-   "free_quota": null,
-   "output_type": "clean Markdown or HTML per page",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Give URLs you already have; returns clean Markdown or HTML per page; latency 1-10s per page; billed per page returned."
+   "note": "Full endpoint access; p50 ~0.4s; up to 100 results/call; full-page extraction $1/1k pages."
   },
   {
    "name": "Answer API",
    "pricing": "$5 /1k calls",
    "price_per_1k_usd": 5.0,
-   "price_basis": "PAYG Answer API",
+   "price_basis": "Pay as you go",
    "free_quota": null,
-   "output_type": "cited answer with sources",
+   "output_type": "带引用答案",
    "cites_sources": true,
    "default_on": null,
-   "note": "One call turns a question into a cited answer; latency p50 ~2.7s."
+   "note": "One call turns a question into a cited answer; p50 ~2.7s."
   },
   {
-   "name": "Research API ResearchLite",
+   "name": "Research API (ResearchLite)",
    "pricing": "$12 /1k calls",
    "price_per_1k_usd": 12.0,
-   "price_basis": "Research API ResearchLite",
+   "price_basis": "ResearchLite",
    "free_quota": null,
-   "output_type": "multi-step research answer",
+   "output_type": "多步研究答案",
    "cites_sources": null,
    "default_on": null,
-   "note": "Simple factual lookups in a single pass; no structured output; latency under 2s."
+   "note": "Simple factual lookups in a single pass; under 2s; no structured output."
   },
   {
-   "name": "Research API ResearchStandard",
+   "name": "Research API (ResearchStandard)",
    "pricing": "$50 /1k calls",
    "price_per_1k_usd": 50.0,
-   "price_basis": "Research API ResearchStandard",
+   "price_basis": "ResearchStandard",
    "free_quota": null,
-   "output_type": "multi-step research answer",
+   "output_type": "多步研究答案",
    "cites_sources": null,
    "default_on": null,
-   "note": "Balanced depth for most production research; latency 10-30s."
+   "note": "Balanced depth for most production research; 10-30s."
   },
   {
-   "name": "Research API ResearchDeep",
+   "name": "Research API (ResearchDeep)",
    "pricing": "$100 /1k calls",
    "price_per_1k_usd": 100.0,
-   "price_basis": "Research API ResearchDeep",
+   "price_basis": "ResearchDeep",
    "free_quota": null,
-   "output_type": "multi-step research answer",
+   "output_type": "多步研究答案",
    "cites_sources": null,
    "default_on": null,
-   "note": "Complex questions spanning several sources; latency under 2min."
+   "note": "Complex cross-referenced questions; under 2min."
   },
   {
-   "name": "Research API ResearchExhaustive",
+   "name": "Research API (ResearchExhaustive)",
    "pricing": "$450 /1k calls",
    "price_per_1k_usd": 450.0,
-   "price_basis": "Research API ResearchExhaustive",
+   "price_basis": "ResearchExhaustive",
    "free_quota": null,
-   "output_type": "multi-step research answer",
+   "output_type": "多步研究答案",
    "cites_sources": null,
    "default_on": null,
-   "note": "High-stakes verification across dozens of sources; latency under 5min."
+   "note": "High-stakes verified claims across dozens sources; under 5min."
   },
   {
-   "name": "Research API ResearchFrontier",
+   "name": "Research API (ResearchFrontier)",
    "pricing": "$1,200 /1k calls",
    "price_per_1k_usd": 1200.0,
-   "price_basis": "Research API ResearchFrontier",
+   "price_basis": "ResearchFrontier",
    "free_quota": null,
-   "output_type": "multi-step research answer",
+   "output_type": "多步研究答案",
    "cites_sources": null,
    "default_on": null,
-   "note": "Long research; background mode only; latency ~5min."
+   "note": "Long-running background-mode research; ~5min."
   },
   {
-   "name": "Finance Research API Deep",
+   "name": "Finance Research API (Finance ResearchDeep)",
    "pricing": "$110 /1k calls",
    "price_per_1k_usd": 110.0,
-   "price_basis": "Finance Research API Deep",
+   "price_basis": "Finance ResearchDeep",
    "free_quota": null,
-   "output_type": "financial research answer",
+   "output_type": "金融研究答案",
    "cites_sources": null,
    "default_on": null,
-   "note": "Earnings summaries, competitive benchmarking, multi-quarter trends; latency under 2min."
+   "note": "Earnings summaries and competitive benchmarking; under 2min."
   },
   {
-   "name": "Finance Research API Exhaustive",
+   "name": "Finance Research API (Finance ResearchExhaustive)",
    "pricing": "$500 /1k calls",
    "price_per_1k_usd": 500.0,
-   "price_basis": "Finance Research API Exhaustive",
+   "price_basis": "Finance ResearchExhaustive",
    "free_quota": null,
-   "output_type": "financial research answer",
+   "output_type": "金融研究答案",
    "cites_sources": null,
    "default_on": null,
-   "note": "Full 10-K analysis, due diligence, cross-market research; latency under 5min."
+   "note": "Full 10-K analysis and cross-market research; under 5min."
   }
  ],
- "fetched_at": "2026-10-14T12:13:15Z",
- "status_note": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_error": "官网联网搜索抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_fetch_ts": "2026-10-15T00:43:46Z",
- "websearch_hash": "5b5c3ff35e0a18ba402d16e65efcd4f26b27137018824127539879f619de1046",
- "websearch_retry_after": "2026-10-15T06:43:50Z"
+ "fetched_at": "2026-10-15T12:15:27Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-15T12:15:27Z",
+ "websearch_hash": "0c25e8b08cc6e7cce75558bb19f55bf0133d421e3491215a340b5f786570bf06"
 }

@@ -14,72 +14,61 @@
    "name": "/search (instant)",
    "pricing": "$4 / 1k requests",
    "price_per_1k_usd": 4.0,
-   "price_basis": "PAYG /search (instant), base price up to 10 results",
-   "free_quota": "$10 in credits (up to 2,500 Instant searches) on signup; free balance resets to $10 on the first of every month; no payment method required; one-time $10 bonus after dashboard onboarding",
-   "output_type": "结构化搜索结果（URLs、页面内容、highlights、summaries）",
+   "price_basis": "PAYG /search (instant), base price (up to 10 results)",
+   "free_quota": "$10 in credits on signup (up to 2,500 Instant searches), resets to $10 on the first of every month; no payment method required; first team gets a one-time $10 onboarding bonus",
+   "output_type": "Real-time search results with page contents",
    "cites_sources": true,
    "default_on": null,
-   "note": "实时搜索；额外结果 $1 / 1k results；AI page summaries $1 / 1k pages"
+   "note": "Base price covers up to 10 results; each result above 10 adds $1/1k results; AI page summaries add $1/1k pages. Volume discounts via Enterprise."
   },
   {
    "name": "/search (fast, auto)",
    "pricing": "$7 / 1k requests",
    "price_per_1k_usd": 7.0,
-   "price_basis": "PAYG /search (fast, auto), base price up to 10 results",
-   "free_quota": "$10 in credits (up to 2,500 Instant searches) on signup; free balance resets to $10 on the first of every month; no payment method required; one-time $10 bonus after dashboard onboarding",
-   "output_type": "结构化搜索结果（URLs、页面内容、highlights、summaries）",
+   "price_basis": "PAYG /search (fast, auto), base price (up to 10 results)",
+   "free_quota": "$10 in credits on signup, resets to $10 on the first of every month; no payment method required; first team gets a one-time $10 onboarding bonus",
+   "output_type": "Real-time search results with page contents",
    "cites_sources": true,
    "default_on": null,
-   "note": "fast/auto 模式；额外结果 $1 / 1k results；AI page summaries $1 / 1k pages"
+   "note": "Base price covers up to 10 results; each result above 10 adds $1/1k results; AI page summaries add $1/1k pages. Volume discounts via Enterprise."
   },
   {
-   "name": "/answer",
-   "pricing": "$5 / 1k requests",
-   "price_per_1k_usd": 5.0,
-   "price_basis": "PAYG /answer",
-   "free_quota": "$10 in credits (up to 2,500 Instant searches) on signup; free balance resets to $10 on the first of every month; no payment method required; one-time $10 bonus after dashboard onboarding",
-   "output_type": "带引用的答案（LLM answer with citations）",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "对问题给出 LLM 答案并附引用"
-  },
-  {
-   "name": "/monitors",
-   "pricing": "$15 / 1k requests",
-   "price_per_1k_usd": 15.0,
-   "price_basis": "PAYG /monitors, base price up to 10 results",
-   "free_quota": "$10 in credits (up to 2,500 Instant searches) on signup; free balance resets to $10 on the first of every month; no payment method required; one-time $10 bonus after dashboard onboarding",
-   "output_type": "定时搜索与新事件发现（structured search results）",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "scheduled searches surfacing new web events; extra results $1 / 1k results; AI page summaries $1 / 1k pages"
-  },
-  {
-   "name": "Deep Search (deep-lite, deep)",
+   "name": "Deep Search (deep-lite)",
    "pricing": "$12 / 1k requests",
    "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG Deep Search, deep-lite/deep, base price up to 10 results",
-   "free_quota": "$10 in credits (up to 2,500 Instant searches) on signup; free balance resets to $10 on the first of every month; no payment method required; one-time $10 bonus after dashboard onboarding",
-   "output_type": "多步研究，结构化输出与引用",
+   "price_basis": "PAYG Deep Search type=deep-lite, base price (up to 10 results)",
+   "free_quota": "$10 in credits on signup, resets to $10 on the first of every month; no payment method required; first team gets a one-time $10 onboarding bonus",
+   "output_type": "Multi-step research with structured outputs and citations",
    "cites_sources": true,
    "default_on": null,
-   "note": "deep-lite 约 4s；deep 4-15s；额外结果与 AI page summaries 与标准搜索相同"
+   "note": "Latency ~4 seconds. Base price covers up to 10 results; extra results and AI summaries cost same as standard search. Volume discounts via Enterprise."
+  },
+  {
+   "name": "Deep Search (deep)",
+   "pricing": "$12 / 1k requests",
+   "price_per_1k_usd": 12.0,
+   "price_basis": "PAYG Deep Search type=deep, base price (up to 10 results)",
+   "free_quota": "$10 in credits on signup, resets to $10 on the first of every month; no payment method required; first team gets a one-time $10 onboarding bonus",
+   "output_type": "Multi-step research with structured outputs and citations",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "Latency 4-15 seconds. Base price covers up to 10 results; extra results and AI summaries cost same as standard search. Volume discounts via Enterprise."
   },
   {
    "name": "Deep Search (deep-reasoning)",
    "pricing": "$15 / 1k requests",
    "price_per_1k_usd": 15.0,
-   "price_basis": "PAYG Deep Search, deep-reasoning, base price up to 10 results",
-   "free_quota": "$10 in credits (up to 2,500 Instant searches) on signup; free balance resets to $10 on the first of every month; no payment method required; one-time $10 bonus after dashboard onboarding",
-   "output_type": "多步研究，结构化输出与引用",
+   "price_basis": "PAYG Deep Search type=deep-reasoning, base price (up to 10 results)",
+   "free_quota": "$10 in credits on signup, resets to $10 on the first of every month; no payment method required; first team gets a one-time $10 onboarding bonus",
+   "output_type": "Multi-step research with structured outputs and citations",
    "cites_sources": true,
    "default_on": null,
-   "note": "延迟 12-40s；更难研究任务；额外结果与 summaries 与标准搜索相同"
+   "note": "Latency 12-40 seconds. Base price covers up to 10 results; extra results and AI summaries cost same as standard search. Volume discounts via Enterprise."
   }
  ],
- "fetched_at": "2026-10-15T12:15:03Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-10-16T12:13:44Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-16T00:22:04Z",
- "websearch_hash": "9a37e8eb8f8c795a0d008fe0a4bfb68c4a24d3d5d9407699f700cf4e0a633f6d"
+ "last_fetch_ts": "2026-10-16T12:13:44Z",
+ "websearch_hash": "c2124894d6bd75e871387d37c59d3cbde539ad51549c5e4e6c88d0a851934ad9"
 }

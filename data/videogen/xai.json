@@ -173,11 +173,13 @@
   "https://docs.x.ai/developers/pricing",
   "https://docs.x.ai/developers/model-capabilities/video/generation"
  ],
- "last_fetch_ts": "2026-10-14T18:53:55Z",
+ "last_fetch_ts": "2026-10-16T06:09:02Z",
  "source_warnings": [],
- "videogen_hash": "7f4229d85dd8dad5f1a93ae4579b2a7566692b261cf8ad004f008b30feb1c3eb",
- "status_note": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
- "last_error": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
+ "videogen_hash": "0cfd0f4ef4470a403839885ba27f49851c251d363c5c9d0c96888b17a2904d48",
+ "status_note": "官网生视频抽取覆盖项由 5 变为 3，等待下轮同语义结果确认",
+ "last_error": "官网生视频抽取覆盖项由 5 变为 3，等待下轮同语义结果确认",
  "videogen_excerpt_hash": "2519c5e32b70c14efc2fb3c2d33756084293c8f4a9bf78ee165c83081d1c94ef",
- "videogen_retry_after": "2026-10-15T01:01:35Z"
+ "videogen_retry_after": "2026-10-15T01:01:35Z",
+ "videogen_pending_shrink_hash": "cfb41a69d7c1f621ca9c6036ba1fbd90fb8ff97cc473f96f13e1b1c4563fe56c",
+ "videogen_pending_shrink_count": 3
 }

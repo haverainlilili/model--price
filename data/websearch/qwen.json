@@ -10,53 +10,53 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "联网搜索",
-   "pricing": "turbo 策略每调用 1000 次 3 元（仅华北2北京）；max 策略每调用 1000 次 4 元（仅华北2北京）",
+   "name": "联网搜索（turbo 策略）",
+   "pricing": "搜索策略费用：3元/1000次（华北2北京）；另含模型调用费用（按 token 计费）",
    "price_per_1k_usd": null,
-   "price_basis": "turbo / max 策略（每 1000 次调用）",
-   "free_quota": "本身不提供免费调用额度",
-   "output_type": "带搜索来源的模型生成回答",
+   "price_basis": "华北2（北京）turbo 策略搜索费用",
+   "free_quota": "无（该功能本身不提供免费调用额度）",
+   "output_type": "模型回复（支持搜索来源与角标引用）",
    "cites_sources": true,
    "default_on": false,
-   "note": "limit 15 RPS by main account; web content added to prompt increases tokens; turbo/max formally billed from 2026-02-27 00:00"
+   "note": "限流 15 RPS；仅北京地域适用；历史 standard/pro 按 turbo 计费。"
   },
   {
-   "name": "联网搜索",
-   "pricing": "agent 策略每调用 1000 次：华北2北京/美国弗吉尼亚/中国香港/日本东京/德国法兰克福 4 元；新加坡 73.392381 元",
+   "name": "联网搜索（max 策略）",
+   "pricing": "搜索策略费用：4元/1000次（华北2北京）；另含模型调用费用（按 token 计费）",
    "price_per_1k_usd": null,
-   "price_basis": "agent 策略（每 1000 次调用，分地域）",
-   "free_quota": "本身不提供免费调用额度",
-   "output_type": "带搜索来源的模型生成回答",
+   "price_basis": "华北2（北京）max 策略搜索费用",
+   "free_quota": "无（该功能本身不提供免费调用额度）",
+   "output_type": "模型回复（支持搜索来源与角标引用）",
    "cites_sources": true,
    "default_on": false,
-   "note": "agent 策略仅支持返回搜索来源；Responses/Anthropic 兼容按同等 agent 计费；新加坡地域单独定价"
+   "note": "限流 15 RPS；仅北京地域适用；turbo 为 3元/1000次。"
   },
   {
-   "name": "联网搜索",
-   "pricing": "agent_max（限时优惠）：联网搜索每 1000 次调用费用同 agent 策略；网页抓取工具限时免费",
+   "name": "联网搜索（agent 策略）",
+   "pricing": "搜索策略费用：4元/1000次（北京/弗吉尼亚/香港/东京/法兰克福）；73.392381元/1000次（新加坡）；另含模型调用费用",
    "price_per_1k_usd": null,
-   "price_basis": "agent_max 策略（搜索每 1000 次调用 + 网页抓取免费）",
-   "free_quota": "本身不提供免费调用额度",
-   "output_type": "带搜索来源与网页抓取的模型生成回答",
+   "price_basis": "agent 策略搜索费用（按地域）",
+   "free_quota": "无（该功能本身不提供免费调用额度）",
+   "output_type": "模型回复（支持搜索来源与角标引用）",
    "cites_sources": true,
    "default_on": false,
-   "note": "agent_max 在 agent 基础上支持网页抓取；仅支持返回搜索来源；网页抓取限时免费"
+   "note": "agent 多轮检索；使用 Responses API/Anthropic 兼容时工具计费与 agent 相同。"
   },
   {
-   "name": "联网搜索 MCP",
-   "pricing": "免费额度用尽后按 29 元/千次",
+   "name": "联网搜索（agent_max 策略）",
+   "pricing": "联网搜索 4元/1000次（北京等）或 73.392381元/1000次（新加坡）；网页抓取限时免费；另含模型调用费用",
    "price_per_1k_usd": null,
-   "price_basis": "联网搜索 MCP（每 1000 次调用）",
-   "free_quota": "全部用户前 2000 次调用免费",
-   "output_type": "MCP 搜索结果",
-   "cites_sources": null,
+   "price_basis": "agent_max 策略搜索费用（按地域，限时优惠）",
+   "free_quota": "无（该功能本身不提供免费调用额度）",
+   "output_type": "模型回复（支持搜索来源与角标引用）",
+   "cites_sources": true,
    "default_on": false,
-   "note": "与百炼内置联网搜索相互独立，计费也相互独立"
+   "note": "含网页抓取；网页抓取工具限时免费；限流 15 RPS。"
   }
  ],
- "fetched_at": "2026-10-15T12:13:28Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-10-16T12:12:26Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-16T00:21:13Z",
- "websearch_hash": "3df72f8f882c69918ac098fb375c390b38d348e83ebfe3ae8a71be13a9699349"
+ "last_fetch_ts": "2026-10-16T12:12:26Z",
+ "websearch_hash": "55e55d77ac9ff6b7191f85737e95f27b9f586a2d3be5392bcacab6144de67d10"
 }

@@ -11,53 +11,64 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Search (LLM Context / Web search)",
-   "pricing": "$5.00 per 1,000 requests (Prepaid — buy credits upfront and draw them down as you use the API)",
+   "name": "Search",
+   "pricing": "$5.00 per 1,000 requests",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Prepaid Search plan, per 1,000 requests",
-   "free_quota": "Includes $5 in free credits every month. Credits are automatically applied to your account.",
-   "output_type": "JSON 搜索结果（URLs、text snippets、news、images、videos 等），LLM Context 端点返回 grounding 上下文 + sources 映射",
+   "price_basis": "Prepaid search plan",
+   "free_quota": "Includes free $5 in credits every month",
+   "output_type": "Structured search results (URLs, snippets, news, images, etc.)",
    "cites_sources": true,
    "default_on": null,
-   "note": "容量 50 requests per second；支持 Goggles 自定义重排与过滤、最多 5 条 extra snippets、schema-enriched results；索引 40+ billion pages"
+   "note": "50 requests per second; includes web/LLM context/news/video/image/place endpoints"
   },
   {
    "name": "Answers",
-   "pricing": "$4.00 per 1,000 queries + $5.00 per 1,000,000 input tokens + $5.00 per 1,000,000 output tokens (Prepaid)",
+   "pricing": "$4.00 per 1,000 queries; +$5.00 per 1,000,000 input tokens; +$5.00 per 1,000,000 output tokens",
    "price_per_1k_usd": 4.0,
-   "price_basis": "Prepaid Answers plan, 每 1,000 queries 的基础费用（不含 token 计费）",
-   "free_quota": "Includes $5 in free credits every month. Credits are automatically applied to your account.",
-   "output_type": "LLM 生成的完整答案（OpenAI SDK 兼容的 chat/completions 接口，支持 streaming），基于单次或多次搜索 grounding",
+   "price_basis": "Prepaid answers plan",
+   "free_quota": "Includes free $5 in credits every month",
+   "output_type": "Summarized answers with citations",
    "cites_sources": true,
    "default_on": null,
-   "note": "容量 2 requests per second；Grounding supported by citations；token 另按 $5/百万输入与 $5/百万输出计费"
+   "note": "2 requests per second; streaming and OpenAI SDK compatibility"
   },
   {
    "name": "Spellcheck",
-   "pricing": "$5.00 per 10,000 requests (Prepaid)",
+   "pricing": "$5.00 per 10,000 requests",
    "price_per_1k_usd": 0.5,
-   "price_basis": "Prepaid Spellcheck plan, per 1,000 requests 换算",
-   "free_quota": "Includes free $5 in credits every month.",
-   "output_type": "拼写纠错结果（附 enriched autosuggest）",
+   "price_basis": "Prepaid spellcheck endpoint",
+   "free_quota": "Includes free $5 in credits every month",
+   "output_type": "Spellcheck suggestions",
    "cites_sources": null,
    "default_on": null,
-   "note": "容量 100 requests per second；属搜索辅助端点"
+   "note": "100 requests per second"
   },
   {
    "name": "Autosuggest",
-   "pricing": "$5.00 per 10,000 requests (Prepaid)",
+   "pricing": "$5.00 per 10,000 requests",
    "price_per_1k_usd": 0.5,
-   "price_basis": "Prepaid Autosuggest plan, per 1,000 requests 换算",
-   "free_quota": "Includes free $5 in credits every month.",
-   "output_type": "查询建议列表",
+   "price_basis": "Prepaid autosuggest endpoint",
+   "free_quota": "Includes free $5 in credits every month",
+   "output_type": "Query completion suggestions",
    "cites_sources": null,
    "default_on": null,
-   "note": "容量 100 requests per second；含 spellcheck 与 enriched autosuggest"
+   "note": "100 requests per second"
+  },
+  {
+   "name": "Enterprise",
+   "pricing": "Contact us about bespoke plans for large-scale deployments",
+   "price_per_1k_usd": null,
+   "price_basis": "Custom enterprise terms",
+   "free_quota": null,
+   "output_type": null,
+   "cites_sources": null,
+   "default_on": null,
+   "note": "Custom terms, capacity, endpoints, ZDR, agreements/NDAs, invoicing, support"
   }
  ],
- "fetched_at": "2026-10-03T12:40:40Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-10-16T12:13:55Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-16T00:22:05Z",
- "websearch_hash": "e0359d3adb95351d5eb45edc810a55bbdaf2a40e2c4d603c5e26d20353895972"
+ "last_fetch_ts": "2026-10-16T12:13:55Z",
+ "websearch_hash": "34d66250b86f9f04db352f6a52dd0e8fe6687825a41600c85085958b39e738d5"
 }

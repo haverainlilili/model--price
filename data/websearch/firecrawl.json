@@ -13,19 +13,19 @@
  "offerings": [
   {
    "name": "Web Search API",
-   "pricing": "Credit-based. Search costs 2 credits per 10 results. Plans: Free 1,000 credits/mo $0; Hobby 5,000 credits/mo $16/mo billed yearly; Standard 100,000 credits/mo $83/mo billed yearly; Growth 500,000 credits/mo $333/mo billed yearly; Scale 1,000,000 credits/mo $599/mo billed yearly; Enterprise custom. Pay-as-you-go adds credits in $5 increments, credit amount varies by plan.",
+   "pricing": "Free: 1,000 credits/month; Hobby: $16/month (yearly) for 5,000 credits/month; Standard: $83/month (yearly) for 100,000 credits/month; Growth: $333/month (yearly) for 500,000 credits/month; Scale: $599/month (yearly) for 1,000,000 credits/month; Search costs 2 credits per 10 results (rounded up); PAYG adds $5 increments yielding 1,000/2,000/2,500/5,000 extra credits by plan.",
    "price_per_1k_usd": null,
-   "price_basis": "2 credits per 10 results; credit value varies by plan and pay-as-you-go tier",
-   "free_quota": "Free Plan: 1,000 credits / month, no credit card required",
-   "output_type": "结构化搜索结果（web/news/images，可选 scrapeOptions 获取 markdown/HTML/links/screenshots）",
+   "price_basis": null,
+   "free_quota": "1,000 credits every month, refreshed monthly, no credit card required.",
+   "output_type": "结构化搜索结果（web/news/images：标题、描述、URL 等），可选通过 scrapeOptions 抓取全文 markdown/HTML/links/screenshots",
    "cites_sources": true,
    "default_on": null,
-   "note": "搜索按10结果计费2 credits，向上取整；gov category不计搜索credits；ZDR企业搜索10或2 credits/10 results；Highlights默认；research category 2026-11-16变更。"
+   "note": "gov category 不收 search credits；ZDR anon 计 2 credits/10 results，end-to-end ZDR 计 10 credits/10 results；可选抓取按每页计费。"
   }
  ],
- "fetched_at": "2026-10-16T00:22:42Z",
+ "fetched_at": "2026-10-16T12:14:27Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-16T00:22:42Z",
- "websearch_hash": "afb6e0372ea2f5108c7db7e92e58e91e659514f3eecadb5d95395ba2e3e9cecd"
+ "last_fetch_ts": "2026-10-16T12:14:27Z",
+ "websearch_hash": "7ce15dd43f186590446a3ba1ebf1879dc8251d514f617b4e27b87eee28df901c"
 }

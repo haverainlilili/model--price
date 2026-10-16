@@ -1,92 +1,92 @@
 {
  "entries": [
   {
-   "date": "Oct 8",
+   "date": "Oct 15, 2026",
+   "title": "Added native Decisions integration in GPT-Live",
+   "url": "https://developers.openai.com/api/docs/guides/decisions-voice",
+   "summary": "新增GPT-Live原生Decisions集成，支持用户说话或模型回应时行动并调用Decisions。",
+   "first_seen": "2026-10-16T12:09:22Z"
+  },
+  {
+   "date": "Oct 8, 2026",
    "title": "Added Ultrafast mode for GPT-6.1 Sol in the Responses API",
    "url": "https://developers.openai.com/api/docs/guides/ultrafast-mode",
-   "summary": "GPT-6.1 Sol 在 Responses API 中新增 Ultrafast 模式,使用 service_tier ultrafast 降低生成延迟,所有 API 用户可用。",
+   "summary": "GPT-6.1 Sol新增Ultrafast模式，降低生成token间延迟，支持各区域处理。",
    "first_seen": "2026-10-09T13:11:28Z"
   },
   {
-   "date": "Oct 7",
+   "date": "Oct 7, 2026",
    "title": "Updated the chat-latest snapshot",
    "url": "https://developers.openai.com/api/docs/models/chat-latest",
-   "summary": "更新 chat-latest 快照,指向 Plus、Pro、Business 和 Enterprise 用户可用的最新 ChatGPT 模型。",
+   "summary": "更新chat-latest快照，指向ChatGPT最新模型，便于测试最新聊天改进。",
    "first_seen": "2026-10-09T13:11:28Z"
   },
   {
-   "date": "Oct 6",
+   "date": "Oct 6, 2026",
    "title": "Released the Decisions API in beta with gpt-6-luna",
    "url": "https://developers.openai.com/api/docs/guides/decisions",
-   "summary": "以 gpt-6-luna 发布 Decisions API 测试版,可将文本和图像转化为结构化输出,速度比 Responses API 快 10 倍。",
+   "summary": "Decisions API beta发布，gpt-6-luna把文本图像转为类型化答案，速度是Responses 10倍。",
    "first_seen": "2026-10-09T13:11:28Z"
   },
   {
-   "date": "Oct 6",
+   "date": "Oct 6, 2026",
    "title": "Simplified API usage tiers from five to three: Build, Launch, and Grow",
    "url": "https://developers.openai.com/api/docs/guides/rate-limits#usage-tiers",
-   "summary": "API 使用层级从五个简化为 Build、Launch 和 Grow 三个,组织根据总消费额度自动升级。",
+   "summary": "API使用层级从五档简化为Build、Launch、Grow，按累计购买自动升级。",
    "first_seen": "2026-10-09T13:11:28Z"
   },
   {
-   "date": "Oct 5",
-   "title": "Added an in-product flow for HIPAA compliance support in API Organization settings",
-   "url": "https://help.openai.com/en/articles/8660679-getting-a-business-associate-agreement-for-the-openai-api",
-   "summary": "在组织设置中新增 HIPAA 合规支持流程,符合条件的管理员可接受 BAA 并启用 HIPAA 合规支持。",
-   "first_seen": "2026-10-09T13:11:28Z"
+   "date": "Oct 5, 2026",
+   "title": "Added an in-product flow for HIPAA compliance support in API Organization settings > General",
+   "url": "https://platform.openai.com/settings/organization/general",
+   "summary": "平台组织设置新增HIPAA合规流程，符合条件管理员可签署BAA并启用支持。",
+   "first_seen": "2026-10-16T12:09:22Z"
   },
   {
-   "date": "Sep 29",
+   "date": "Sep 29, 2026",
    "title": "Added computer use to the Agents API",
    "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use",
-   "summary": "Agents API 新增计算机使用功能,代理可在 OpenAI 托管浏览器中完成任务。",
+   "summary": "Agents API新增computer use，Agent可在OpenAI托管浏览器完成任务。",
    "first_seen": "2026-10-09T13:11:28Z"
   },
   {
-   "date": "Sep 29",
-   "title": "Released GPT-6.1 Sol for complex coding and professional work",
+   "date": "Sep 29, 2026",
+   "title": "Released GPT-6.1 Sol (gpt-6.1-sol) for complex coding and professional work",
    "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
-   "summary": "发布 GPT-6.1 Sol,支持复杂编码和专业工作,价格低于 GPT-6 Astra,并支持多代理测试版。",
-   "first_seen": "2026-10-09T13:11:28Z"
+   "summary": "发布GPT-6.1 Sol，面向复杂编码与专业工作，成本低于GPT-6 Astra。",
+   "first_seen": "2026-10-16T12:09:22Z"
   },
   {
-   "date": "Sep 29",
+   "date": "Sep 29, 2026",
    "title": "Added Ultrafast mode for GPT-6 Astra in the Responses API",
    "url": "https://developers.openai.com/api/docs/guides/ultrafast-mode",
-   "summary": "GPT-6 Astra 在 Responses API 中新增 Ultrafast 模式,降低生成延迟,支持全球处理和 US 数据驻留。",
+   "summary": "GPT-6 Astra在Responses API新增Ultrafast模式，降低token间延迟。",
    "first_seen": "2026-10-09T13:11:28Z"
   },
   {
-   "date": "Sep 25",
+   "date": "Sep 25, 2026",
    "title": "Fixed a bug in image encoding that degraded image understanding in GPT-6 Sol and GPT-6 Luna",
-   "url": null,
-   "summary": "修复 GPT-6 Sol 和 GPT-6 Luna 图像编码中的缺陷,提升 API 和 Codex 中视觉任务的表现。",
+   "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+   "summary": "修复GPT-6 Sol/Luna图像编码bug，提升视觉任务与computer use效果。",
    "first_seen": "2026-10-09T13:11:28Z"
   },
   {
-   "date": "Sep 22",
-   "title": "Released GPT-6 Sol and GPT-6 Luna",
+   "date": "Sep 22, 2026",
+   "title": "Released GPT-6 Sol (gpt-6-sol) and GPT-6 Luna (gpt-6-luna)",
    "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
-   "summary": "发布 GPT-6 Sol 和 GPT-6 Luna 推理模型,支持文本和图像输入,价格分别为每百万 tokens 输入 $2 和 $0.10。",
-   "first_seen": "2026-09-28T02:24:43Z"
+   "summary": "发布GPT-6 Sol和GPT-6 Luna推理模型，支持文本图像，提供Responses/Chat。",
+   "first_seen": "2026-10-16T12:09:22Z"
   },
   {
-   "date": "Sep 15",
+   "date": "Sep 15, 2026",
    "title": "Added API key creation governance controls at the organization and project levels",
    "url": "https://developers.openai.com/api/docs/guides/production-best-practices#api-keys",
-   "summary": "新增 API 密钥创建治理控制,管理员可限制仅服务账户密钥、仅用户密钥或禁用新密钥创建。",
-   "first_seen": "2026-10-09T13:11:28Z"
-  },
-  {
-   "date": "Sep 10",
-   "title": "Released the Agents API in public beta",
-   "url": "https://developers.openai.com/api/docs/guides/agents-api/overview",
-   "summary": "Agents API 公测发布,通过托管的 Codex 工具构建代理,由 OpenAI 处理会话编排和上下文压缩。",
+   "summary": "新增组织/项目级API密钥创建治理控制，可限制或禁用新密钥创建。",
    "first_seen": "2026-10-09T13:11:28Z"
   }
  ],
- "news_hash": "f32b99c609b81b5b77a3d69b8a6d0f4439ca5feadafb206e3e88b6919ae8eb3d",
- "fetched_at": "2026-10-09T13:11:28Z",
+ "news_hash": "7a771cece7232a366e7de872f00f37d1ecd3f2b88cefff4d2e7755c65c4955f2",
+ "fetched_at": "2026-10-16T12:09:22Z",
  "status_note": null,
  "last_error": null
 }

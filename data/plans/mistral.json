@@ -2,12 +2,12 @@
  "plans": [
   {
    "name": "Pro",
-   "plan_type": "聊天会员",
-   "price": "$14.99",
+   "plan_type": "Vibe 会员",
+   "price": "$14.99 /mo",
    "billing": "/mo",
    "quotas": [
     {
-     "label": "Messages",
+     "label": "消息",
      "value": "Up to 6x free",
      "window": null
     },
@@ -22,28 +22,28 @@
      "window": null
     },
     {
-     "label": "Task scheduling",
-     "value": "Unlimited",
-     "window": null
-    },
-    {
      "label": "Flash answers",
      "value": "150 / day",
-     "window": null
+     "window": "每天"
+    },
+    {
+     "label": "API credits",
+     "value": "$25.5 /mo",
+     "window": "每月"
     }
    ],
    "models": [],
-   "note": "Relative multiples are versus the Free plan per the pricing feature table. Price excludes taxes. FAQ states Flash answers: 150 / day on Pro. API credits, storage, and connector counts are shown on the page but are not converted into allowed quota units.",
+   "note": "Excluding taxes；相对倍数以 Free 计划为基准；API credits 为月度额度；学生价见 FAQ：$5.99 / month（normally $14.99）。",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Team",
-   "plan_type": "聊天会员",
-   "price": "$24.99",
+   "plan_type": "Vibe 会员",
+   "price": "$24.99 /user/mo",
    "billing": "/user/mo",
    "quotas": [
     {
-     "label": "Messages",
+     "label": "消息",
      "value": "Up to 6x free",
      "window": null
     },
@@ -65,22 +65,22 @@
     {
      "label": "Flash answers",
      "value": "200 / day",
-     "window": null
+     "window": "每天"
     }
    ],
    "models": [],
-   "note": "Relative multiples are versus the Free plan per the pricing feature table. Price excludes taxes. FAQ states Flash answers: 200 / day on Team. Storage and connector counts are shown but are not treated as allowed quota units.",
+   "note": "Excluding taxes；相对倍数以 Free 计划为基准；FAQ 口径：Flash answers 200 / day on Team vs. 150 / day on Pro。另含 Up to 30GB of storage /user，未按存储单位列入额度。",
    "source_url": "https://mistral.ai/pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-10-16T00:19:12Z",
+ "last_fetch_ts": "2026-10-16T12:10:59Z",
  "source": "official",
  "source_urls": [
   "https://mistral.ai/pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "a6997b5d88c40ca220ed590d1d8fbb948b63d790b94c3b2f53d4479708d5c022",
- "fetched_at": "2026-10-16T00:19:12Z",
+ "plans_hash": "a9767487b09339c5d18861064b036308a1b91498c352e3aa2e85b4741fed87e0",
+ "fetched_at": "2026-10-16T12:10:59Z",
  "status_note": null
 }

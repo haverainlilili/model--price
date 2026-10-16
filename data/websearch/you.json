@@ -11,119 +11,31 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "Web Search API (Free)",
+   "name": "Web Search API Free",
    "pricing": "Free",
-   "price_per_1k_usd": null,
-   "price_basis": "Free tier via MCP",
+   "price_per_1k_usd": 0.0,
+   "price_basis": "Free tier via MCP (no API key, no account, no credit card)",
    "free_quota": "100 Web Search API queries/day via MCP",
-   "output_type": "结构化搜索结果（Web/News）",
+   "output_type": "结构化 web/news 搜索结果 JSON",
    "cites_sources": true,
    "default_on": null,
-   "note": "No API key/account/credit card; p50 ~0.4s; live search for prototyping."
+   "note": "Live search through MCP server; p50 ~0.4s; up to 100 results per call; includes web and news results with snippets and metadata."
   },
   {
-   "name": "Web Search API (Standard)",
+   "name": "Web Search API Standard",
    "pricing": "$5 /1k calls",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Pay as you go",
-   "free_quota": "$100 free credit = 20,000 searches",
-   "output_type": "结构化搜索结果（Web/News）",
+   "price_basis": "PAYG Standard",
+   "free_quota": null,
+   "output_type": "结构化 web/news 搜索结果 JSON",
    "cites_sources": true,
    "default_on": null,
-   "note": "Full endpoint access; p50 ~0.4s; up to 100 results/call; full-page extraction $1/1k pages."
-  },
-  {
-   "name": "Answer API",
-   "pricing": "$5 /1k calls",
-   "price_per_1k_usd": 5.0,
-   "price_basis": "Pay as you go",
-   "free_quota": null,
-   "output_type": "带引用答案",
-   "cites_sources": true,
-   "default_on": null,
-   "note": "One call turns a question into a cited answer; p50 ~2.7s."
-  },
-  {
-   "name": "Research API (ResearchLite)",
-   "pricing": "$12 /1k calls",
-   "price_per_1k_usd": 12.0,
-   "price_basis": "ResearchLite",
-   "free_quota": null,
-   "output_type": "多步研究答案",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Simple factual lookups in a single pass; under 2s; no structured output."
-  },
-  {
-   "name": "Research API (ResearchStandard)",
-   "pricing": "$50 /1k calls",
-   "price_per_1k_usd": 50.0,
-   "price_basis": "ResearchStandard",
-   "free_quota": null,
-   "output_type": "多步研究答案",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Balanced depth for most production research; 10-30s."
-  },
-  {
-   "name": "Research API (ResearchDeep)",
-   "pricing": "$100 /1k calls",
-   "price_per_1k_usd": 100.0,
-   "price_basis": "ResearchDeep",
-   "free_quota": null,
-   "output_type": "多步研究答案",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Complex cross-referenced questions; under 2min."
-  },
-  {
-   "name": "Research API (ResearchExhaustive)",
-   "pricing": "$450 /1k calls",
-   "price_per_1k_usd": 450.0,
-   "price_basis": "ResearchExhaustive",
-   "free_quota": null,
-   "output_type": "多步研究答案",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "High-stakes verified claims across dozens sources; under 5min."
-  },
-  {
-   "name": "Research API (ResearchFrontier)",
-   "pricing": "$1,200 /1k calls",
-   "price_per_1k_usd": 1200.0,
-   "price_basis": "ResearchFrontier",
-   "free_quota": null,
-   "output_type": "多步研究答案",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Long-running background-mode research; ~5min."
-  },
-  {
-   "name": "Finance Research API (Finance ResearchDeep)",
-   "pricing": "$110 /1k calls",
-   "price_per_1k_usd": 110.0,
-   "price_basis": "Finance ResearchDeep",
-   "free_quota": null,
-   "output_type": "金融研究答案",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Earnings summaries and competitive benchmarking; under 2min."
-  },
-  {
-   "name": "Finance Research API (Finance ResearchExhaustive)",
-   "pricing": "$500 /1k calls",
-   "price_per_1k_usd": 500.0,
-   "price_basis": "Finance ResearchExhaustive",
-   "free_quota": null,
-   "output_type": "金融研究答案",
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Full 10-K analysis and cross-market research; under 5min."
+   "note": "Full endpoint access including Highlights, Knowledge, extraction, and domain filters; p50 ~0.4s; up to 100 results per call; full page extraction billed separately at $1 /1k pages crawled live; Knowledge results at no extra cost."
   }
  ],
- "fetched_at": "2026-10-15T12:15:27Z",
+ "fetched_at": "2026-10-16T00:22:06Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-15T12:15:27Z",
- "websearch_hash": "0c25e8b08cc6e7cce75558bb19f55bf0133d421e3491215a340b5f786570bf06"
+ "last_fetch_ts": "2026-10-16T00:22:06Z",
+ "websearch_hash": "1daf902934cc97061c6d918cc0a9df7e5be254e5dfcd90305396b4acb735aba6"
 }

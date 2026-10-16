@@ -2,15 +2,10 @@
  "plans": [
   {
    "name": "Pro",
-   "plan_type": "chat membership",
+   "plan_type": "聊天会员",
    "price": "$14.99",
    "billing": "/mo",
    "quotas": [
-    {
-     "label": "API credits",
-     "value": "$25.5 /mo",
-     "window": "per month"
-    },
     {
      "label": "Messages",
      "value": "Up to 6x free",
@@ -27,29 +22,39 @@
      "window": null
     },
     {
-     "label": "Storage",
-     "value": "Up to 15GB",
+     "label": "Task scheduling",
+     "value": "Unlimited",
      "window": null
     },
     {
-     "label": "Task scheduling",
-     "value": "Unlimited",
+     "label": "Flash answers",
+     "value": "150 / day",
      "window": null
     }
    ],
    "models": [],
-   "note": "Excluding taxes; Education: $25.5 /mo in API credits replaced by $15 /mo in API credits with Pro price $5.99/month for verified students.",
+   "note": "Relative multiples are versus the Free plan per the pricing feature table. Price excludes taxes. FAQ states Flash answers: 150 / day on Pro. API credits, storage, and connector counts are shown on the page but are not converted into allowed quota units.",
    "source_url": "https://mistral.ai/pricing"
   },
   {
    "name": "Team",
-   "plan_type": "team plan",
+   "plan_type": "聊天会员",
    "price": "$24.99",
    "billing": "/user/mo",
    "quotas": [
     {
-     "label": "Storage",
-     "value": "Up to 30GB / user",
+     "label": "Messages",
+     "value": "Up to 6x free",
+     "window": null
+    },
+    {
+     "label": "Web searches",
+     "value": "Up to 5x free",
+     "window": null
+    },
+    {
+     "label": "Image generation",
+     "value": "Up to 40x free",
      "window": null
     },
     {
@@ -58,24 +63,24 @@
      "window": null
     },
     {
-     "label": "API credits",
-     "value": "$50 /mo",
+     "label": "Flash answers",
+     "value": "200 / day",
      "window": null
     }
    ],
    "models": [],
-   "note": "Excluding taxes; Flash answers: 200 / day on Team vs 150 / day on Pro.",
+   "note": "Relative multiples are versus the Free plan per the pricing feature table. Price excludes taxes. FAQ states Flash answers: 200 / day on Team. Storage and connector counts are shown but are not treated as allowed quota units.",
    "source_url": "https://mistral.ai/pricing"
   }
  ],
  "last_error": null,
- "last_fetch_ts": "2026-10-15T12:12:02Z",
+ "last_fetch_ts": "2026-10-16T00:19:12Z",
  "source": "official",
  "source_urls": [
   "https://mistral.ai/pricing"
  ],
  "page_has_plans": true,
- "plans_hash": "dc79fea63b814fc8d734f3488042670dfee8826640de4e807ddb54152ce807b0",
- "fetched_at": "2026-10-14T00:40:27Z",
- "status_note": "页面无变化"
+ "plans_hash": "a6997b5d88c40ca220ed590d1d8fbb948b63d790b94c3b2f53d4479708d5c022",
+ "fetched_at": "2026-10-16T00:19:12Z",
+ "status_note": null
 }

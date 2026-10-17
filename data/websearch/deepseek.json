@@ -1,30 +1,29 @@
 {
  "provider_name": "DeepSeek",
  "category": "model",
- "source": "seed",
+ "source": "official",
  "seed_verified": false,
  "source_url": "https://api-docs.deepseek.com/zh-cn/guides/web_search",
  "source_urls": [
   "https://api-docs.deepseek.com/zh-cn/guides/web_search"
  ],
- "has_search": false,
+ "has_search": true,
  "offerings": [
   {
-   "name": "DeepSeek 联网搜索",
+   "name": "Search / Fetch API",
    "pricing": null,
    "price_per_1k_usd": null,
    "price_basis": null,
    "free_quota": null,
-   "output_type": "模型工具（待官网确认）",
+   "output_type": null,
    "cites_sources": null,
    "default_on": null,
-   "note": "官网公开 API 信息待自动抓取确认"
+   "note": "Search / Fetch API is now available, powered by our in-house search engine and supporting web search and fetch. Guide at /guides/search."
   }
  ],
- "fetched_at": null,
- "status_note": "官网页未解析出联网搜索信息，已保留上次 1 条",
- "last_error": "官网页未解析出联网搜索信息，已保留上次 1 条",
- "last_fetch_ts": "2026-10-17T00:12:54Z",
- "websearch_hash": "6c49c2d59ee689d5165097ffe98751cfedeab7ff8cabbbcce75a21b0184e05d4",
- "websearch_retry_after": "2026-10-17T06:12:58Z"
+ "fetched_at": "2026-10-17T12:11:33Z",
+ "status_note": null,
+ "last_error": null,
+ "last_fetch_ts": "2026-10-17T12:11:33Z",
+ "websearch_hash": "da58160caee6b91a008400898e0d8e5cd8e9b0a1a2f3a718208b3869244875e1"
 }

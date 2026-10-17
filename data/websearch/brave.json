@@ -14,61 +14,50 @@
    "name": "Search",
    "pricing": "$5.00 per 1,000 requests",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Prepaid search plan",
+   "price_basis": "Prepaid Search ($5 per 1,000 requests)",
    "free_quota": "Includes free $5 in credits every month",
-   "output_type": "Structured search results (URLs, snippets, news, images, etc.)",
+   "output_type": "结构化搜索结果",
    "cites_sources": true,
    "default_on": null,
-   "note": "50 requests per second; includes web/LLM context/news/video/image/place endpoints"
+   "note": "Capacity 50 requests per second; includes web search, LLM context, news, images, videos and more; Goggles, extra snippets, schema-enriched results."
   },
   {
    "name": "Answers",
-   "pricing": "$4.00 per 1,000 queries; +$5.00 per 1,000,000 input tokens; +$5.00 per 1,000,000 output tokens",
+   "pricing": "$4.00 per 1,000 queries + $5.00 per 1,000,000 input tokens + $5.00 per 1,000,000 output tokens",
    "price_per_1k_usd": 4.0,
-   "price_basis": "Prepaid answers plan",
+   "price_basis": "Prepaid Answers ($4 per 1,000 queries plus token fees)",
    "free_quota": "Includes free $5 in credits every month",
-   "output_type": "Summarized answers with citations",
+   "output_type": "带引用答案",
    "cites_sources": true,
    "default_on": null,
-   "note": "2 requests per second; streaming and OpenAI SDK compatibility"
+   "note": "Capacity 2 requests per second; grounding supported by citations; streaming; OpenAI SDK compatible."
   },
   {
    "name": "Spellcheck",
    "pricing": "$5.00 per 10,000 requests",
    "price_per_1k_usd": 0.5,
-   "price_basis": "Prepaid spellcheck endpoint",
+   "price_basis": "Prepaid Spellcheck ($5 per 10,000 requests)",
    "free_quota": "Includes free $5 in credits every month",
-   "output_type": "Spellcheck suggestions",
+   "output_type": "拼写检查结果",
    "cites_sources": null,
    "default_on": null,
-   "note": "100 requests per second"
+   "note": "Capacity 100 requests per second; includes spellcheck."
   },
   {
    "name": "Autosuggest",
    "pricing": "$5.00 per 10,000 requests",
    "price_per_1k_usd": 0.5,
-   "price_basis": "Prepaid autosuggest endpoint",
+   "price_basis": "Prepaid Autosuggest ($5 per 10,000 requests)",
    "free_quota": "Includes free $5 in credits every month",
-   "output_type": "Query completion suggestions",
+   "output_type": "查询建议",
    "cites_sources": null,
    "default_on": null,
-   "note": "100 requests per second"
-  },
-  {
-   "name": "Enterprise",
-   "pricing": "Contact us about bespoke plans for large-scale deployments",
-   "price_per_1k_usd": null,
-   "price_basis": "Custom enterprise terms",
-   "free_quota": null,
-   "output_type": null,
-   "cites_sources": null,
-   "default_on": null,
-   "note": "Custom terms, capacity, endpoints, ZDR, agreements/NDAs, invoicing, support"
+   "note": "Capacity 100 requests per second; includes enriched autosuggest."
   }
  ],
- "fetched_at": "2026-10-16T12:13:55Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-10-17T12:12:38Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-17T00:14:16Z",
- "websearch_hash": "34d66250b86f9f04db352f6a52dd0e8fe6687825a41600c85085958b39e738d5"
+ "last_fetch_ts": "2026-10-17T12:12:38Z",
+ "websearch_hash": "48fae87993b4ba93ed0a03bc0f17d5d09a7700a26eccc54c4044970a983af180"
 }

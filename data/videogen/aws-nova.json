@@ -58,13 +58,11 @@
   "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
   "https://docs.aws.amazon.com/nova/latest/userguide/video-generation.html"
  ],
- "last_fetch_ts": "2026-10-16T06:08:50Z",
+ "last_fetch_ts": "2026-10-16T18:08:10Z",
  "source_warnings": [],
  "videogen_hash": "cbb888e29e2fdc038b73de050874e22a2eff9c452f6f2a85ed3473b76c48292f",
- "status_note": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
- "last_error": "官网生视频抽取覆盖项由 1 变为 1，等待下轮同语义结果确认",
- "videogen_excerpt_hash": "41344aa163bbf9bfc636df2bbd0616ba106136566531a90119ec16b6bd4708a3",
- "videogen_retry_after": "2026-10-12T00:16:42Z",
- "videogen_pending_shrink_hash": "80d7d2cb2d6797bdde4e2d205f500eeea4fdc3ac42664db59c822e0bc2ec9581",
- "videogen_pending_shrink_count": 1
+ "status_note": "官网生视频抽取失败: 结构化输出校验失败: 1 validation error for VideoGenerationPage\nofferings.0\n  Value error, comparison_resolution requires comparison_group [type=value_error, input_value={'name': 'amazon.nova-ree...nd rate for Nova Reel.'}, input_type=dict]\n    For further information visit https://errors.pydantic.",
+ "last_error": "官网生视频抽取失败: 结构化输出校验失败: 1 validation error for VideoGenerationPage\nofferings.0\n  Value error, comparison_resolution requires comparison_group [type=value_error, input_value={'name': 'amazon.nova-ree...nd rate for Nova Reel.'}, input_type=dict]\n    For further information visit https://errors.pydantic.",
+ "videogen_excerpt_hash": "89ec7e17532fe7aa2e58dabe0dd632737403f2d3fb90f3bf5fe3da67087cfb0f",
+ "videogen_retry_after": "2026-10-17T00:08:19Z"
 }

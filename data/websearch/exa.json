@@ -11,64 +11,97 @@
  "has_search": true,
  "offerings": [
   {
-   "name": "/search (instant)",
+   "name": "Search API (/search instant)",
    "pricing": "$4 / 1k requests",
    "price_per_1k_usd": 4.0,
-   "price_basis": "PAYG /search (instant), base price (up to 10 results)",
-   "free_quota": "$10 in credits on signup (up to 2,500 Instant searches), resets to $10 on the first of every month; no payment method required; first team gets a one-time $10 onboarding bonus",
-   "output_type": "Real-time search results with page contents",
+   "price_basis": "PAYG /search (instant), base price up to 10 results",
+   "free_quota": "$10 credits（注册当日，最多 2,500 次 Instant 搜索）；每月 1 日重置至 $10；完成 onboarding 后团队一次性 +$10。",
+   "output_type": "实时搜索结果与页面内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "Base price covers up to 10 results; each result above 10 adds $1/1k results; AI page summaries add $1/1k pages. Volume discounts via Enterprise."
+   "note": "基础价含前 10 条结果；每超过 10 条结果加 $1/1k results；AI 页面摘要 $1/1k pages。"
   },
   {
-   "name": "/search (fast, auto)",
+   "name": "Search API (/search fast, auto)",
    "pricing": "$7 / 1k requests",
    "price_per_1k_usd": 7.0,
-   "price_basis": "PAYG /search (fast, auto), base price (up to 10 results)",
-   "free_quota": "$10 in credits on signup, resets to $10 on the first of every month; no payment method required; first team gets a one-time $10 onboarding bonus",
-   "output_type": "Real-time search results with page contents",
+   "price_basis": "PAYG /search (fast, auto), base price up to 10 results",
+   "free_quota": "$10 credits（注册当日，最多 2,500 次 Instant 搜索）；每月 1 日重置至 $10；完成 onboarding 后团队一次性 +$10。",
+   "output_type": "实时搜索结果与页面内容",
    "cites_sources": true,
    "default_on": null,
-   "note": "Base price covers up to 10 results; each result above 10 adds $1/1k results; AI page summaries add $1/1k pages. Volume discounts via Enterprise."
+   "note": "基础价含前 10 条结果；每超过 10 条结果加 $1/1k results；AI 页面摘要 $1/1k pages。"
   },
   {
-   "name": "Deep Search (deep-lite)",
+   "name": "Deep Search (/search deep-lite)",
    "pricing": "$12 / 1k requests",
    "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG Deep Search type=deep-lite, base price (up to 10 results)",
-   "free_quota": "$10 in credits on signup, resets to $10 on the first of every month; no payment method required; first team gets a one-time $10 onboarding bonus",
-   "output_type": "Multi-step research with structured outputs and citations",
+   "price_basis": "PAYG deep-lite, base price up to 10 results",
+   "free_quota": "$10 credits（注册当日，最多 2,500 次 Instant 搜索）；每月 1 日重置至 $10；完成 onboarding 后团队一次性 +$10。",
+   "output_type": "多步研究、结构化输出与引用",
    "cites_sources": true,
    "default_on": null,
-   "note": "Latency ~4 seconds. Base price covers up to 10 results; extra results and AI summaries cost same as standard search. Volume discounts via Enterprise."
+   "note": "延迟约 4 秒；额外结果与 AI 页面摘要按标准搜索计费。"
   },
   {
-   "name": "Deep Search (deep)",
+   "name": "Deep Search (/search deep)",
    "pricing": "$12 / 1k requests",
    "price_per_1k_usd": 12.0,
-   "price_basis": "PAYG Deep Search type=deep, base price (up to 10 results)",
-   "free_quota": "$10 in credits on signup, resets to $10 on the first of every month; no payment method required; first team gets a one-time $10 onboarding bonus",
-   "output_type": "Multi-step research with structured outputs and citations",
+   "price_basis": "PAYG deep, base price up to 10 results",
+   "free_quota": "$10 credits（注册当日，最多 2,500 次 Instant 搜索）；每月 1 日重置至 $10；完成 onboarding 后团队一次性 +$10。",
+   "output_type": "多步研究、结构化输出与引用",
    "cites_sources": true,
    "default_on": null,
-   "note": "Latency 4-15 seconds. Base price covers up to 10 results; extra results and AI summaries cost same as standard search. Volume discounts via Enterprise."
+   "note": "延迟 4–15 秒；额外结果与 AI 页面摘要按标准搜索计费。"
   },
   {
-   "name": "Deep Search (deep-reasoning)",
+   "name": "Deep Search (/search deep-reasoning)",
    "pricing": "$15 / 1k requests",
    "price_per_1k_usd": 15.0,
-   "price_basis": "PAYG Deep Search type=deep-reasoning, base price (up to 10 results)",
-   "free_quota": "$10 in credits on signup, resets to $10 on the first of every month; no payment method required; first team gets a one-time $10 onboarding bonus",
-   "output_type": "Multi-step research with structured outputs and citations",
+   "price_basis": "PAYG deep-reasoning, base price up to 10 results",
+   "free_quota": "$10 credits（注册当日，最多 2,500 次 Instant 搜索）；每月 1 日重置至 $10；完成 onboarding 后团队一次性 +$10。",
+   "output_type": "多步研究、结构化输出与引用",
    "cites_sources": true,
    "default_on": null,
-   "note": "Latency 12-40 seconds. Base price covers up to 10 results; extra results and AI summaries cost same as standard search. Volume discounts via Enterprise."
+   "note": "延迟 12–40 秒；额外结果与 AI 页面摘要按标准搜索计费。"
+  },
+  {
+   "name": "Answer API (/answer)",
+   "pricing": "$5 / 1k requests",
+   "price_per_1k_usd": 5.0,
+   "price_basis": "PAYG /answer",
+   "free_quota": "$10 credits（注册当日，最多 2,500 次 Instant 搜索）；每月 1 日重置至 $10；完成 onboarding 后团队一次性 +$10。",
+   "output_type": "带引用的 LLM 答案",
+   "cites_sources": true,
+   "default_on": null,
+   "note": "表格中超过 10 条结果与 AI 页面摘要均为 —。"
+  },
+  {
+   "name": "Monitors API (/monitors)",
+   "pricing": "$15 / 1k requests",
+   "price_per_1k_usd": 15.0,
+   "price_basis": "PAYG /monitors, base price up to 10 results",
+   "free_quota": "$10 credits（注册当日，最多 2,500 次 Instant 搜索）；每月 1 日重置至 $10；完成 onboarding 后团队一次性 +$10。",
+   "output_type": "定时搜索并推送新事件",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "基础价含前 10 条结果；每超过 10 条结果加 $1/1k results；AI 页面摘要 $1/1k pages。"
+  },
+  {
+   "name": "Agent API",
+   "pricing": "$0.012–$1.00 / fixed-effort run, or usage-based",
+   "price_per_1k_usd": null,
+   "price_basis": "Fixed effort per request or metered auto/ultra",
+   "free_quota": "$10 credits（注册当日，最多 2,500 次 Instant 搜索）；每月 1 日重置至 $10；完成 onboarding 后团队一次性 +$10。",
+   "output_type": "异步深度研究、列表构建与富化",
+   "cites_sources": null,
+   "default_on": null,
+   "note": "固定 effort：minimal $0.012、low $0.025、medium $0.10、high $0.50、xhigh $1.00/请求；metered：$0.10/ACU、$0.005/搜索，上限 $5/$20；Connect 提供商调用另计。"
   }
  ],
- "fetched_at": "2026-10-16T12:13:44Z",
+ "fetched_at": "2026-10-17T00:13:53Z",
  "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-16T12:13:44Z",
- "websearch_hash": "c2124894d6bd75e871387d37c59d3cbde539ad51549c5e4e6c88d0a851934ad9"
+ "last_fetch_ts": "2026-10-17T00:13:53Z",
+ "websearch_hash": "77c0c41f83e20250e667c8af2800643b7763547e1e0860c00e18b73fc26c3b77"
 }

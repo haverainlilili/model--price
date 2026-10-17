@@ -2,7 +2,7 @@
  "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
  "source": "claude",
  "currency": "CNY",
- "promotions": null,
+ "promotions": "Claude Code 和 Codex 中的网页搜索： 通过 Claude Code 的 Web Search 工具或 Codex 的 web_search 功能发起的搜索请求，在 Search API 上线后的前两周内免收 Search API 请求费用。此后将按 Search API 标准价格计费，具体开始计费时间将另行通知。",
  "models": [
   {
    "model": "deepseek-flash",
@@ -11,7 +11,7 @@
    "output_per_1m": 4.0,
    "cached_input_per_1m": 0.02,
    "currency": "CNY",
-   "note": "空闲时段价格档(高峰时段的一半)；北京时间周一至周五9:00-12:00、14:00-18:00为高峰时段，其余为空闲。旧模型名 deepseek-v4-flash、deepseek-v4-flash-vision-exp 已下线，仍可调用并由该模型按 Flash 价格计费。支持图像理解。"
+   "note": "空闲时段（非高峰时段）"
   },
   {
    "model": "deepseek-flash",
@@ -20,7 +20,7 @@
    "output_per_1m": 8.0,
    "cached_input_per_1m": 0.04,
    "currency": "CNY",
-   "note": "高峰时段价格档。"
+   "note": "高峰时段（北京时间周一至周五 9:00-12:00、14:00-18:00，不含法定节假日）"
   },
   {
    "model": "deepseek-v4-pro",
@@ -29,7 +29,7 @@
    "output_per_1m": 13.5,
    "cached_input_per_1m": 0.15,
    "currency": "CNY",
-   "note": "空闲时段价格档(高峰的一半)；不支持图像理解。"
+   "note": "空闲时段（非高峰时段）"
   },
   {
    "model": "deepseek-v4-pro",
@@ -38,14 +38,14 @@
    "output_per_1m": 27.0,
    "cached_input_per_1m": 0.3,
    "currency": "CNY",
-   "note": "高峰时段价格档。"
+   "note": "高峰时段（北京时间周一至周五 9:00-12:00、14:00-18:00，不含法定节假日）"
   }
  ],
  "page_has_pricing": true,
- "price_hash": "b40ed628c7d0dceb01e03a3555fbf8d24d0820f6450411acaa012e08bb19ca8e",
- "fetched_at": "2026-09-28T02:21:56Z",
- "status_note": "页面无变化",
+ "price_hash": "e28d29e77f9e4941ce8173cc5805aa2de959e5e6b565b9a312a1d4b7fd62b656",
+ "fetched_at": "2026-10-17T00:08:06Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-16T12:07:22Z",
+ "last_fetch_ts": "2026-10-17T00:08:06Z",
  "pricing_extraction_revision": 2
 }

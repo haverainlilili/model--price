@@ -14,83 +14,83 @@
    "name": "Search API",
    "pricing": "$5.00 per 1K requests",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Search API public pricing per successful POST /search request",
+   "price_basis": "Search API pricing (per successful POST /search request)",
    "free_quota": null,
-   "output_type": "结构化网页搜索结果",
+   "output_type": "Raw web search results with advanced filtering",
    "cites_sources": true,
    "default_on": null,
-   "note": "多查询数组最多 5 个查询仍计作一个计费单位；成功响应即使无结果也计费"
+   "note": "One billing unit per successful POST /search request (up to 5 queries); no-result responses billed; no token charges."
   },
   {
    "name": "Search API with Fast Search",
    "pricing": "$1.00 per 1K requests",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Search API public pricing with search_type: fast",
+   "price_basis": "Search API with Fast Search pricing",
    "free_quota": null,
-   "output_type": "结构化网页搜索结果",
+   "output_type": "Lower-latency web search results",
    "cites_sources": true,
    "default_on": null,
-   "note": "更低延迟网页搜索；设置 search_type: \"fast\""
+   "note": "Set search_type: \"fast\"."
   },
   {
    "name": "web_search (standard)",
-   "pricing": "$0.0025 per invocation ($2.50 per 1,000 invocations)",
+   "pricing": "$0.0025 per invocation; $2.50 per 1,000 invocations",
    "price_per_1k_usd": 2.5,
-   "price_basis": "Agent API tool pricing",
+   "price_basis": "Agent API tool pricing (per invocation)",
    "free_quota": null,
-   "output_type": "模型内置工具",
+   "output_type": "Standard web search",
    "cites_sources": null,
    "default_on": null,
-   "note": "Agent API web_search 工具；工具费用与模型 token 费用分开"
+   "note": "search_type: \"web\"; tool costs are separate from model token costs."
   },
   {
    "name": "web_search (Fast Search)",
-   "pricing": "$0.001 per invocation ($1.00 per 1,000 invocations)",
+   "pricing": "$0.001 per invocation; $1.00 per 1,000 invocations",
    "price_per_1k_usd": 1.0,
-   "price_basis": "Agent API tool pricing with search_type: \"fast\"",
+   "price_basis": "Agent API tool pricing (per invocation)",
    "free_quota": null,
-   "output_type": "模型内置工具",
+   "output_type": "Fast web search",
    "cites_sources": null,
    "default_on": null,
-   "note": "相同 web_search 工具启用 Fast Search；更低延迟"
+   "note": "Same tool with search_type: \"fast\"."
   },
   {
    "name": "image_search",
-   "pricing": "$0.0025 per successful invocation ($2.50 per 1,000 successful invocations)",
+   "pricing": "$0.0025 per successful invocation; $2.50 per 1,000 successful invocations",
    "price_per_1k_usd": 2.5,
-   "price_basis": "Agent API tool pricing",
+   "price_basis": "Agent API tool pricing (per successful invocation)",
    "free_quota": null,
-   "output_type": "结构化图像搜索结果",
+   "output_type": "Finds structured image results with domain, format, and safe-search filters",
    "cites_sources": null,
    "default_on": null,
-   "note": "支持域名、格式与安全搜索过滤"
+   "note": "Billed per successful invocation only."
   },
   {
    "name": "people_search",
-   "pricing": "$0.005 per invocation ($5 per 1,000 tool invocations)",
+   "pricing": "$0.005 per invocation; $5 per 1,000 tool invocations",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Agent API tool pricing",
+   "price_basis": "Agent API tool pricing (per invocation)",
    "free_quota": null,
-   "output_type": "人物/职业搜索结果",
+   "output_type": "Looks up professionals, employees, and people",
    "cites_sources": null,
    "default_on": null,
-   "note": "查找专业人士、员工与人物信息"
+   "note": null
   },
   {
    "name": "finance_search",
-   "pricing": "$0.005 per invocation ($5 per 1,000 tool invocations)",
+   "pricing": "$0.005 per invocation; $5 per 1,000 tool invocations",
    "price_per_1k_usd": 5.0,
-   "price_basis": "Agent API tool pricing",
+   "price_basis": "Agent API tool pricing (per invocation)",
    "free_quota": null,
-   "output_type": "金融数据/市场信息",
+   "output_type": "Retrieves financial data and market information",
    "cites_sources": null,
    "default_on": null,
-   "note": "检索金融数据与市场信息"
+   "note": null
   }
  ],
- "fetched_at": "2026-10-14T00:44:35Z",
- "status_note": "页面无变化",
+ "fetched_at": "2026-10-17T00:14:16Z",
+ "status_note": null,
  "last_error": null,
- "last_fetch_ts": "2026-10-16T12:14:02Z",
- "websearch_hash": "a07e141852aed8d8ec4b07e5b7878f1b43d7b756c9a86b7d90747a99d03fcbf5"
+ "last_fetch_ts": "2026-10-17T00:14:16Z",
+ "websearch_hash": "23642992a21851501375cf45b273312a2514b4aa86a3eeb41c6d54f4978cf469"
 }

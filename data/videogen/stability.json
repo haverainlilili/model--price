@@ -30,10 +30,13 @@
   "https://kb.stability.ai/knowledge-base/how-to-access-stable-video-diffusion",
   "https://platform.stability.ai/docs/release-notes"
  ],
- "last_fetch_ts": "2026-10-18T06:07:10Z",
- "source_warnings": [],
- "videogen_hash": "f0dfb0e7ff5ca2d55d370b2aeda72094a01ff9af7d04e424a79256b63cc1cd12",
- "status_note": "页面无变化",
- "last_error": null,
- "videogen_excerpt_hash": "44c590e6397f045cabdd17ae744329f47ba286e578056f559229473bd1c42675"
+ "last_fetch_ts": "2026-10-19T18:06:58Z",
+ "source_warnings": [
+  "https://platform.stability.ai/docs/release-notes: 重定向到非允许官网: https://docs.stability.ai"
+ ],
+ "videogen_hash": "c8d0ddd4271a98298cc4ccb7b3dd889cba5c005ba6e84d6590571ac321544f33",
+ "status_note": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
+ "last_error": "官网生视频抽取失败: API 错误(503): Error code: 503 - {'error': {'code': None, 'message': '该分组暂无可用模型（已暂停、下架、额度不足或重试次数已用尽），请稍后重试', 'param': None, 'type': 'rotation_unavailable'}}",
+ "videogen_excerpt_hash": "72ced40c9558d4b0c4d59fef9988cad9bb821b3c3f449778616e92dc1014ab61",
+ "videogen_retry_after": "2026-10-20T00:07:01Z"
 }
